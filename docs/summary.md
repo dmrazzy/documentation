@@ -304,6 +304,8 @@
   * [Resources](general/resources.md)
   * [MOSIP Support Policy](general/support-policy.md)
   * [Collab Environment Guides](general/collab-getting-started-guide/README.md)
+    * [Use Cases](general/collab-getting-started-guide/use-cases/README.md)
+      * [Loan Application](general/collab-getting-started-guide/use-cases/loan-application.md)
     * [Admin Portal](general/collab-getting-started-guide/admin-portal.md)
     * [Pre-registration](general/collab-getting-started-guide/collab-pre-registration-guide.md)
     * [Registration Client](general/collab-getting-started-guide/collab-reg-client-setup-guide.md)
