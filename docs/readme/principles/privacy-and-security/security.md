@@ -4,12 +4,6 @@
 
 This document provides a comprehensive analysis of security implementations across multiple levels. Additionally, it clearly delineates the boundaries of responsibility between MOSIP and the countries implementing the system.
 
-### MOSIP Security Principles
-
-MOSIP security principles are defined in MOSIP docs which is undergoing revision and can be found here:
-
-[https://docs.mosip.io/1.2.0/privacy-and-security](https://docs.mosip.io/1.2.0/privacy-and-security)
-
 Within this document, we have categorized security practices into 'Internal Practices' and 'Operational Protection'.
 
 **Internal security practices** are integrated into the MOSIP development lifecycle to build security within the system from the ground up. These include rigorous threat modeling, secure coding practices, comprehensive code reviews, and continuous vulnerability assessments to ensure that potential risks are identified and mitigated early. By embedding these security measures during development MOSIP fosters a proactive security culture that not only minimizes vulnerabilities but also supports a robust defense strategy throughout the system's lifecycle.
