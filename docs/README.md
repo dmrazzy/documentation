@@ -1,6 +1,6 @@
 ---
 icon: earth-africa
-description: 'The Future of Digital Identity: Secure, Scalable, Open-Source.'
+description: 'The Future of Digital Identity: Secure, Scalable and Open-Source.'
 ---
 
 # MOSIP
