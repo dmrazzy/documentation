@@ -1,12 +1,13 @@
 ---
 icon: file-magnifying-glass
+description: Understanding MOSIP’s Role in Foundational ID Systems.
 ---
 
 # Overview
 
 ## What is Digital Identification?
 
-Digital Identification is a means of identifying 'who you are' through some kind of digital medium. The digital medium could be any device such as a mobile phone or a computer or anything that has a digital means of identifying 'who you are' in both offline and online mode with your consent irrespective of your religion, caste, creed, gender, country and ethnicity. The Internet is only an enabler but is not the mandatory requirement for digital identification. While identifying 'who you are', the user bearing the identity must have absolute control of revealing a controlled set of information that they wish to reveal and not everything in order to become eligible for getting a service rendered.
+Digital Identification is a means of identifying 'who you are' through some kind of digital medium. The digital medium could be any device such as a mobile phone or a computer or anything that has a digital means of identifying 'who you are' in both offline and online mode with your consent irrespective of your religion, caste, creed, gender, country and ethnicity. The Internet is only an enabler but is not the mandatory requirement for digital identification. While identifying 'who you are', the user bearing the identity must have absolute control of revealing a controlled set of information that they wish to reveal and not everything to become eligible for getting a service rendered.
 
 ## What is a foundational ID system?
 
