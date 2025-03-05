@@ -301,6 +301,7 @@
       * [Feature Health Report](roadmap-and-releases/releases/release-notes/feature-health-report.md)
     * [Partner Management Portal v1.2.2.0](roadmap-and-releases/releases/partner-management-portal-v1.2.2.0.md)
 * [General](general/README.md)
+  * [💡 Glossary](general/glossary.md)
   * [Resources](general/resources.md)
   * [MOSIP Support Policy](general/support-policy.md)
   * [Collab Environment Guides](general/collab-getting-started-guide/README.md)
@@ -314,5 +315,4 @@
     * [eSignet](general/collab-getting-started-guide/collab-esignet-setup-guide.md)
   * [MOSIP Documentation Style Guide](general/mosip-documentation-style-guide.md)
 * [🛠️ Modules](modules.md)
-* [💡 Glossary](glossary.md)
 * [Experiment](experiment.md)
