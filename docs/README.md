@@ -5,9 +5,9 @@ description: 'The Future of Digital Identity: Secure, Scalable, Open-Source.'
 
 # MOSIP
 
-## **Welcome to MOSIP! 🌍**
+### **Welcome to MOSIP! 🌍**
 
-### **What is MOSIP?**
+#### **What is MOSIP?**
 
 **Modular Open-Source Identity Platform (MOSIP)** is an open-source, open standards-based [foundational identity platform](https://docs.mosip.io/1.2.0/readme/overview#what-is-a-foundational-id-system) designed to help countries build and manage their national ID systems. Anchored at the [International Institute of Information Technology, Bangalore (IIIT-B)](https://www.iiitb.ac.in/), MOSIP enables governments to conceive, develop, implement, and own secure and scalable digital identity solutions.
 
@@ -19,7 +19,7 @@ Our global team of experts and advisors supports countries throughout the adopti
 
 👉 [Learn more](https://www.mosip.io/)
 
-### **Our Mission & Objectives**
+#### **Our Mission & Objectives**
 
 At MOSIP, our mission is to empower governments worldwide to build and own secure, inclusive, and scalable digital identity systems. As an open-source, modular platform, MOSIP provides a strong foundation for nations to establish their digital public infrastructure, ensuring privacy, security, and interoperability.
 
@@ -36,7 +36,7 @@ By fostering an open and collaborative ecosystem of technology partners, researc
 
 👉 [Start Exploring](https://docs.mosip.io/1.2.0/readme/overview#what-is-a-foundational-id-system)&#x20;
 
-### **Why MOSIP?**
+#### **Why MOSIP?**
 
 * **Global Impact:** Empowering nations to create secure, inclusive digital identities for all.
 * **Enabling Digital Inclusion:** Develop scalable, secure ID systems that serve diverse populations.
