@@ -1,5 +1,5 @@
 ---
-icon: id-card-clip
+icon: file-magnifying-glass
 ---
 
 # Overview

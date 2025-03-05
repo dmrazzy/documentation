@@ -1,4 +1,8 @@
-# 🔐 Privacy and Security
+---
+icon: shield-keyhole
+---
+
+# Privacy and Security
 
 MOSIP's fundamental architecture and design incorporate the highest levels of privacy and security.
 

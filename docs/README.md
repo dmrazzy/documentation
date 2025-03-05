@@ -1,5 +1,5 @@
 ---
-icon: passport
+icon: earth-africa
 ---
 
 # MOSIP
