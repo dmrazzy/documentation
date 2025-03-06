@@ -5,49 +5,90 @@ description: Understanding MOSIP’s Role in Foundational ID Systems.
 
 # Overview
 
-## What is Digital Identification?
-
-Digital Identification is a means of identifying 'who you are' through some kind of digital medium. The digital medium could be any device such as a mobile phone or a computer or anything that has a digital means of identifying 'who you are' in both offline and online mode with your consent irrespective of your religion, caste, creed, gender, country and ethnicity. The Internet is only an enabler but is not the mandatory requirement for digital identification. While identifying 'who you are', the user bearing the identity must have absolute control of revealing a controlled set of information that they wish to reveal and not everything to become eligible for getting a service rendered.
-
 ## What is a foundational ID system?
 
-Governments are exploring the development of multipurpose foundational ID systems, in which individuals receive a unique identifier from the government that they can use for identity assertion and verification. It can then be used to access a wide variety of government and private services.
+A **Foundational Identity System** provides individuals with a unique identifier issued by the government, enabling identity assertion and verification across multiple services. Unlike functional IDs, which are designed for specific use cases such as healthcare, finance, and social services, foundational IDs serve as a universal framework that various sectors can leverage.
 
-Functional IDs are the IDs that are used in specific use cases. By design, they are created having the final usecase in mind such as healthcare, finance, banking, insurance, social and civil registry etc. The Functional ID systems can leverage the Foundational ID system.
+MOSIP empowers governments to build **secure, interoperable,** and **inclusive** foundational ID systems. With robust privacy protections and modular architecture, MOSIP ensures individuals have control over their personal information while enabling seamless access to public and private services.
 
-![](../.gitbook/assets/foundational-id-systems.jpg)
+Below is a diagram illustrating the relationship between **Foundational IDs** and **Functional IDs**.
+
+* **Foundational ID systems** provide individuals with a **unique, government-recognized identifier** for identity verification. They help **de-duplicate** records, **authenticate** individuals, and **verify** identity attributes.
+* **Functional IDs** are sector-specific and designed for specific use cases such as **healthcare, finance, social protection, education, and voting**. These IDs can leverage the foundational ID system to ensure accuracy, efficiency, and seamless service access.
+
+This structure helps create a **secure and interoperable identity ecosystem** for both public and private services.
+
+<figure><img src="../.gitbook/assets/Foundational_ID.png" alt=""><figcaption></figcaption></figure>
 
 ## What is MOSIP?
 
-MOSIP is a robust, secure, open-source platform for building foundational identity systems. MOSIP is **configurable** and flexible to adapt to a country’s national ID requirements.
+[MOSIP (Modular Open-Source Identity Platform)](https://www.mosip.io/#1) is a secure, scalable, and open-source framework designed to help governments and organizations build foundational identity systems. It offers a flexible and configurable approach, allowing countries to tailor their national ID systems to meet specific requirements while ensuring privacy, security, and interoperability.
 
-![](../.gitbook/assets/mosip-features.jpg)
+The below image illustrates MOSIP as a modular, open-source identity platform designed for secure and scalable digital identity systems. It highlights key features such as interoperability, open standards, security, and privacy, ensuring seamless integration without vendor lock-in.
+
+Additionally, it showcases MOSIP’s core functionalities, including ID issuance, identity verification, and lifecycle management, making it a flexible solution for national ID implementations.
+
+<figure><img src="../.gitbook/assets/WhatisMOSIP.jpg" alt=""><figcaption></figcaption></figure>
 
 ## Privacy and security
 
-![](../.gitbook/assets/privacy-and-security.jpg)
+The image below highlights MOSIP’s security and privacy principles, emphasizing its "Security by Design" and "Privacy by Intent" approach.
+
+These principles align with MOSIP’s Privacy and Security framework.
+
+For more details, please refer to [Privacy and Security](https://docs.mosip.io/1.2.0/readme/principles/privacy-and-security) section. To learn more about MOSIP’s Principles, [click here](https://docs.mosip.io/1.2.0/readme/principles).
+
+<figure><img src="../.gitbook/assets/privacyandsecurity.png" alt=""><figcaption></figcaption></figure>
 
 ## MOSIP modules
 
-![](../.gitbook/assets/all-modules.jpg)
+The image below illustrates the various MOSIP Modules:
+
+* Pre-Registration – Enables users to provide basic demographic data and book appointments for registration.
+* Registration – Facilitates registration of an individual, for availing a Unique Identification Number (UIN) by providing demographic and biometric data (fingerprint, iris, and face photograph) in online/offline mode.
+* Registration Processor – Generates a Unique Identification Number (UIN) post a regulated process and enriches data.
+* ID Authentication – Provides demographic and biometric authentication services, including Yes/No and E-KYC services, enabling access to a myriad of rights and services.
+* Resident Services – Allows residents to update and monitor usage of their IDs, giving individuals control over their own identity.
+* Partner Management – For onboarding, managing, and integrating external partners (relying parties) within the MOSIP ecosystem.
+
+To learn more about the MOSIP modules, please refer [here](https://docs.mosip.io/1.2.0/id-lifecycle-management).
+
+<figure><img src="../.gitbook/assets/MOSIP_Modules.png" alt=""><figcaption></figcaption></figure>
 
 ## MOSIP ecosystem
 
-MOSIP needs to work along with other ecosystem players to create a solution for a particular country.
+MOSIP collaborates with ecosystem partners to develop tailored identity solutions for each country.
 
-![](../.gitbook/assets/mosip-ecosystem.jpg)
+The diagram below illustrates the **MOSIP Ecosystem**, highlighting how various components integrate with the **MOSIP Platform** to deliver a comprehensive ID solution.
+
+To learn more about the MOSIP Ecosystem, please refer [here](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/partners).
+
+<figure><img src="../.gitbook/assets/ecosystem.png" alt=""><figcaption></figcaption></figure>
 
 ## MOSIP offerings
 
-Key MOSIP offerings are:
+The diagram illustrates **MOSIP’s Key Offerings** in **ID Lifecycle Management** and **ID Authentication**, highlighting two main processes:
 
-* ID Lifecycle Management
-* ID Authentication
+**1. ID Registration Process**
+
+* Step 1: Online Pre-Registration – A resident submits demographic details online.
+* Step 2: Biometric Enrollment – The resident visits a registration center for biometric data collection.
+* Step 3: ID Issuance – After successful validations and processing, the resident receives a Unique Identification Number (UIN).
+
+**2. ID Authentication Process**
+
+* An ID holder requests authentication to access services.
+* Authentication is performed via an authentication partner equipped with biometric or digital verification tools.
+* The MOSIP Authentication System validates the identity, providing eKYC or token-based responses for service access.
+
+These offerings enable secure, scalable, and modular identity management and authentication solutions.
 
 ![](../.gitbook/assets/mosip-offerings.jpg)
 
 ## Building a national ID system using MOSIP
 
-National ID systems can leverage MOSIP as the base platform and configure, customize, and extend it to build systems just the way needed. The image below depicts how MOSIP provides the base layer to build a national ID platform.
+Countries can leverage MOSIP as the base identity platform and configure, customize, and extend it to build systems just the way needed.
+
+The image below depicts how MOSIP provides the base layer to build a national ID platform.
 
 ![](../.gitbook/assets/layers.png)
