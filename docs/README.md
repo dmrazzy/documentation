@@ -5,7 +5,7 @@ description: 'The Future of Digital Identity: Secure, Scalable and Open-Source.'
 
 # MOSIP
 
-### **Welcome to MOSIP! 🌍**
+### **Welcome !🌍**
 
 #### **What is MOSIP?**
 
@@ -43,6 +43,8 @@ By fostering an open and collaborative ecosystem of technology partners, researc
 * **Open-Source Advantage:** Benefit from a transparent, community-driven platform built on open standards, offering flexibility, adaptability, and cost efficiency.
 * **Innovative Technology:** Built with an API-first design at its core, MOSIP ensures seamless integration with existing systems, enabling adaptability, interoperability, and the foundation for future-ready digital identity solutions.
 * **Scalable & Secure:** Customize features to address the unique needs of each country with robust security and scalability.
+
+### Explore Key Areas <a href="#explore-key-areas" id="explore-key-areas"></a>
 
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Explore MOSIP's core principles.</mark></td><td><a href=".gitbook/assets/Principles.png">Principles.png</a></td><td><a href="readme/principles/">principles</a></td></tr><tr><td><mark style="color:blue;">Explore different modules.</mark></td><td><a href=".gitbook/assets/Modules.png">Modules.png</a></td><td><a href="id-lifecycle-management/">id-lifecycle-management</a></td></tr><tr><td><mark style="color:blue;">Explore latest releases.</mark></td><td><a href=".gitbook/assets/Releases.png">Releases.png</a></td><td><a href="roadmap-and-releases/releases/">releases</a></td></tr><tr><td><mark style="color:blue;">Explore MOSIP's key milestones and objectives.</mark></td><td><a href=".gitbook/assets/Roadmap.png">Roadmap.png</a></td><td><a href="roadmap-and-releases/roadmap/">roadmap</a></td></tr><tr><td><mark style="color:blue;">Dive into interactive workshops,webinars and more.</mark></td><td><a href=".gitbook/assets/Resources.png">Resources.png</a></td><td><a href="general/resources.md">resources.md</a></td></tr><tr><td><mark style="color:blue;">Join the MOSIP community.</mark></td><td><a href=".gitbook/assets/Community.png">Community.png</a></td><td><a href="community/">community</a></td></tr></tbody></table>
 
