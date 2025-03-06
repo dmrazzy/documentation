@@ -1,10 +1,13 @@
 ---
 icon: map-location
+description: >-
+  Explore how MOSIP's roadmap outlines key milestones, innovations, and
+  enhancements to build a secure, scalable, and inclusive identity ecosystem
 ---
 
 # Roadmap
 
-The MOSIP community strives to deliver major [releases](https://docs.mosip.io/1.2.0/releases) as per the designated schedules, while offering minor releases every other month! The roadmap outlines the vision, goals, and planned development milestones of all our ongoing and upcoming projects over a specific period of time. It also provides a high-level overview of the MOSIP platform's future direction, features, enhancements, and major updates.
+The MOSIP community strives to deliver major [releases](https://docs.mosip.io/1.2.0/releases) as per the designated schedules, while offering minor releases every other month! The roadmap outlines the vision, goals, and planned development milestones of all our ongoing and upcoming projects over a specific period. It also provides a high-level overview of the MOSIP platform's future direction, features, enhancements, and major updates.
 
 MOSIP has been developed with a focus on addressing challenges related to identity management, privacy, security, and data protection. It is designed to offer flexibility and modularity, allowing governments to tailor identity systems according to their unique requirements.
 

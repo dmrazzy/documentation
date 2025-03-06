@@ -1,5 +1,6 @@
 ---
 icon: id-card-clip
+description: Managing identities seamlessly.
 ---
 
 # ID Lifecycle Management

@@ -1,3 +1,9 @@
+---
+description: >-
+  This roadmap outlines the planned features, progress, and release details for
+  MOSIP throughout the calendar year 2025.
+---
+
 # Roadmap 2025
 
 Here we present the product roadmap for MOSIP Identity for the calendar year 2025.

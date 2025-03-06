@@ -1,5 +1,6 @@
 ---
 icon: file-certificate
+description: Empowering users through transparent licensing.
 ---
 
 # License

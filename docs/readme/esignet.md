@@ -6,4 +6,4 @@ In today’s digital-first world, most services are transitioning online, making
 
 Additionally, eSignet offers a seamless and straightforward solution for incorporating an existing trusted identity database into the digital realm. By enabling digital identities and providing identity verification and service access, eSignet delivers a sophisticated and user-friendly experience.
 
-To know more about eSignet refer to the documentation [here](https://docs.esignet.io/).
+<table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Explore more about eSignet.</mark></td><td><a href="../.gitbook/assets/eSignet Logo.png">eSignet Logo.png</a></td><td><a href="https://docs.esignet.io/">https://docs.esignet.io/</a></td></tr></tbody></table>

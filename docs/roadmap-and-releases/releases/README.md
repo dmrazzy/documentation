@@ -1,5 +1,6 @@
 ---
-icon: rocket-launch
+icon: book-open
+description: Please refer below for all the latest release details ✨
 ---
 
 # Releases
