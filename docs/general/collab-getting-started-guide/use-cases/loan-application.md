@@ -22,7 +22,7 @@ Let’s get started! 🚀
 
 #### 1.1 Access the Self-Registration Portal <a href="#id-1.1-access-the-self-registration-portal" id="id-1.1-access-the-self-registration-portal"></a>
 
-1. Open your browser and visit the \<Self Registration Portal>.
+1. Open your browser and visit the [Self Registration Portal](https://self-register.collab.mosip.net/).
 
 #### 1.2 Complete the Registration Form <a href="#id-1.2-complete-the-registration-form" id="id-1.2-complete-the-registration-form"></a>
 
@@ -81,7 +81,7 @@ Please refer below to know more.
 #### 2.4 Download Your TAN VC <a href="#id-2.4-download-your-tan-vc" id="id-2.4-download-your-tan-vc"></a>
 
 1. Tap **+** in the INJI Mobile app.
-2. Select **Tax Department** → **Tax ID** (browser redirects to eSignet).
+2. Select Republic of Veridonia Tax Department → Tax Account Number (browser redirects to eSignet).
 3. Enter your **National ID** and the **OTP** received via email.
 4. Upon validation, your TAN VC will be downloaded.
 
@@ -90,7 +90,7 @@ Please refer below to know more.
 1. Open the **TAN VC** in the wallet.
 2. Tap **Activate** and enter the OTP to enable online authentication.
 
-**To download the VCs using the INJI web follow the steps below**
+**To download the VCs using the INJI web follow the steps below:**
 
 #### 2.6 Download your National ID VC: <a href="#id-2.6-download-your-national-id-vc" id="id-2.6-download-your-national-id-vc"></a>
 
@@ -112,7 +112,7 @@ Please refer below to know more.
 
 #### 3.1 Access the Banking Portal <a href="#id-3.1-access-the-banking-portal" id="id-3.1-access-the-banking-portal"></a>
 
-1. Open your browser and go to the \<Banking Portal>.
+1. Open your browser and go to the [Banking Portal](https://omerabank-loan.collab.mosip.net/).
 
 #### 3.2 Sign in with Your National ID <a href="#id-3.2-sign-in-with-your-national-id" id="id-3.2-sign-in-with-your-national-id"></a>
 
