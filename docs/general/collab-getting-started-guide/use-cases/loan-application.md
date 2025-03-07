@@ -1,6 +1,6 @@
 # Loan Application
 
-#### Welcome to the **Self-Experience Demo Guide!** ✨
+### Welcome to the **Self-Experience Demo Guide!** ✨
 
 Get ready to explore how your **National ID** as **Verifiable Credentials** (VCs) can be leveraged for secure and efficient access to essential services.
 
@@ -18,7 +18,9 @@ Read on and follow the steps below to begin your experience!&#x20;
 
 Let’s get started! 🚀
 
-### Step 1: Register for Your National ID ![identification card](https://mosip.atlassian.net/gateway/api/emoji/11961302-5dd7-428e-b110-aa63217873e2/1faaa/path)  <a href="#step-1-register-for-your-national-id" id="step-1-register-for-your-national-id"></a>
+***
+
+### ![identification card](https://mosip.atlassian.net/gateway/api/emoji/11961302-5dd7-428e-b110-aa63217873e2/1faaa/path) <mark style="background-color:blue;">Step 1: Register for Your National ID</mark> <a href="#step-1-register-for-your-national-id" id="step-1-register-for-your-national-id"></a>
 
 #### 1.1 Access the Self-Registration Portal <a href="#id-1.1-access-the-self-registration-portal" id="id-1.1-access-the-self-registration-portal"></a>
 
@@ -55,7 +57,9 @@ You’ll receive two emails:
 1. **UIN Issuance Email** - Includes your UIN (Unique Identification Number) / National ID in PDF format.
 2. **TAN Email Notification** - Includes instructions on downloading your National ID and TAN VC via the **INJI Mobile Wallet**.
 
-### Step 2: Download Your National ID VC & TAN VC ![mobile phone with arrow](https://mosip.atlassian.net/gateway/api/emoji/11961302-5dd7-428e-b110-aa63217873e2/1f4f2/path)  <a href="#step-2-download-your-national-id-vc-and-tan-vc" id="step-2-download-your-national-id-vc-and-tan-vc"></a>
+***
+
+### <img src="https://mosip.atlassian.net/gateway/api/emoji/11961302-5dd7-428e-b110-aa63217873e2/1f4f2/path" alt="mobile phone with arrow" data-size="line"> <mark style="background-color:orange;">Step 2: Download Your National ID VC & TAN VC</mark> <a href="#step-2-download-your-national-id-vc-and-tan-vc" id="step-2-download-your-national-id-vc-and-tan-vc"></a>
 
 #### 2.1 Install INJI Mobile App <a href="#id-2.1-install-inji-mobile-app" id="id-2.1-install-inji-mobile-app"></a>
 
@@ -108,7 +112,9 @@ Please refer below to know more.
 4. Enter your **National ID** and the **OTP** sent to your email.
 5. Upon validation, your National ID VC will be downloaded to your local device.
 
-### Step 3: Apply for a Loan Using Your National ID and TAN ![money with wings](https://mosip.atlassian.net/gateway/api/emoji/11961302-5dd7-428e-b110-aa63217873e2/1f4b8/path)  <a href="#step-3-apply-for-a-loan-using-your-national-id-and-tan" id="step-3-apply-for-a-loan-using-your-national-id-and-tan"></a>
+***
+
+### ![money with wings](https://mosip.atlassian.net/gateway/api/emoji/11961302-5dd7-428e-b110-aa63217873e2/1f4b8/path) <mark style="background-color:yellow;">Step 3: Apply for a Loan Using Your National ID and TAN</mark> <a href="#step-3-apply-for-a-loan-using-your-national-id-and-tan" id="step-3-apply-for-a-loan-using-your-national-id-and-tan"></a>
 
 #### 3.1 Access the Banking Portal <a href="#id-3.1-access-the-banking-portal" id="id-3.1-access-the-banking-portal"></a>
 
@@ -172,6 +178,8 @@ You're all set! 🎉
 
 Congratulations! You’ve successfully used your **National ID and TAN VC** to apply for a loan.
 
-This experience showcases the power of **secure foundational digital identity** and **verifiable credentials,** in enabling hassle-free access to essential services. We hope this walkthrough gave you valuable insights into the potential of **trusted digital identity ecosystems**, powered by [**MOSIP**](https://docs.mosip.io/1.2.0)**,** [**Inji**](https://docs.inji.io/)**, and** [**eSignet**](https://docs.esignet.io/).
+***
+
+This experience showcases the power of secure **foundational digital identity** and **verifiable credentials**, in enabling hassle-free access to essential services. We hope this walkthrough gave you valuable insights into the potential of trusted **digital identity ecosystems**, powered by [MOSIP](https://docs.mosip.io/1.2.0), [Inji](https://docs.inji.io/), and [eSignet](https://docs.esignet.io/).
 
 Thank you for participating and stay connected for more exciting innovations ahead! 🚀
