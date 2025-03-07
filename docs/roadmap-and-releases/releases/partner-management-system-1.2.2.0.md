@@ -10,12 +10,13 @@
 
 ## Overview
 
-We are excited to announce the launch of the **new Partner Management Portal** which is a complete/comprehensive/full release and brings significant improvement over the earlier one 1.3.0-dp.1. Now out, this also brings good sum / substantial upgrades to the UX and the UI which now has enhanced capabilities!
+We are excited to announce the launch of the **new UI of Partner Management System** which is
+comprehensive release that includes all features from the legacy PMS UI and brings significant improvement over the earlier one 1.3.0-dp.1. Now out, this also brings good sum / substantial upgrades to the UX and the UI which now has enhanced capabilities!
 
 * The new version **1.2.2.0** is a full feature release, serving as a continuation of the earlier developer preview (**1.3.0-dp.1**).
 * This release brings **Technology stack upgrade** for improved performance and security.
-* This release brings expanded system capabilities to **various Partner Types (AUTH, DEVICE & FTM) and Admin Roles**.
-* **New functionalities** now spans not only a particular part of the PMP but it is ground up improvement that we pulled off on every section being released this time.
+* This release brings expanded system capabilities to **various Partner Types (Authentication, Device & FTM Chip Provider) and Partner Admin/ Policy Manager Roles**.
+* **New functionalities** now spans not only a particular part of the PMS but it is ground up improvement that we pulled off on every section being released this time.
 * **Feature enhancements** comes to majority of features which existed and certainly the new ones and this helps you streamline partner management like never before.
 * **Improved usability & user experience** for better navigation and efficiency. UX and UI has been worked upon ground up, The user flow has now been structured and it is easy and quick to get familiar with the interface helping users identify a logical/consistent pattern in usage.
 
@@ -64,7 +65,7 @@ The release brings a refreshed new user experience to the Admin dashboard which 
 
 #### Certificate Trust Store
 
-Upload, Download or View (List View and Detailed view) of Certificates.
+Upload, Download or View (List View and Detailed view) of Root and Intermediate Certificates.
 
 #### Partners
 
@@ -99,13 +100,13 @@ API Key: View (List and Details View) or Deactivate
 
 #### SBI-Device
 
-SBI: View (List and Details View), **Approve / Reject** or **Deactivate** (if no active devices present)
+SBI: View (List and Details View), **Approve / Reject** or **Deactivate**
 
-Device: View (List and Details View), **Approve / Reject** or **Deactivate** (if no active devices present)
+Device: View (List and Details View), **Approve / Reject** or **Deactivate**
 
 #### FTM Chip
 
-View (List and Details View), **Approve / Reject** or **Deactivate** (if no active devices in FTM Chip present).
+View (List and Details View), **Approve / Reject** or **Deactivate**.
 
 ### Browser Support
 
@@ -113,15 +114,15 @@ View (List and Details View), **Approve / Reject** or **Deactivate** (if no acti
 
 ### Language Support
 
-* Multiple language is supported with support for resource bundles in 3 languages (English, Arabic, French). More resource bundles can be easily added by following the documentation, '[New Language Support](file:///wiki/spaces/PMS/pages/1606254602/New|Language|Support)'.
+* The system offers multilingual support, with resource bundles available in three languages: English, Arabic, and French. Additional languages can be easily integrated by following the guidelines provided in the '[New Language Support](https://mosip.atlassian.net/wiki/spaces/PMS/pages/1606254602/New+Language+Support)' documentation.
 
 ### Compatibility
 
-* Responsive UI design for laptop/desktop views, Optimized for standard browser sizes (laptop/desktop/tablet/larger screens).
+* Responsive UI design for laptop/desktop views, optimized for standard browser sizes (laptop/desktop/tablet/larger screens).
 
 For a comprehensive and detailed description of all the features, 'refer to [Feature Documentation](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/features)'.
 
-To know more about the upcoming features planned as part of PMS Revamp for this year, please check out [Roadmap 2025](https://docs.mosip.io/1.2.0/roadmap/roadmap-2025#inji-stack-1).
+To know more about the upcoming features planned as part of PMS Revamp for this year, please check out [Roadmap 2025](https://docs.mosip.io/1.2.0/roadmap-and-releases/roadmap/roadmap-2025#inji-stack-1).
 
 ### Known Issues
 
