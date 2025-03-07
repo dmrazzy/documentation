@@ -5,7 +5,7 @@ description: Understanding MOSIP’s Role in Foundational ID Systems.
 
 # Overview
 
-### What is a foundational ID system?
+### What is a Foundational Identity?
 
 A **Foundational Identity System** provides individuals with a unique identifier issued by the government, enabling identity assertion and verification across multiple services. Unlike functional IDs, which are designed for specific use cases such as healthcare, finance, and social services, foundational IDs serve as a universal framework that various sectors can leverage.
 
