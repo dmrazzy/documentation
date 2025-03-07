@@ -36,4 +36,4 @@ Please watch the video below to get started 🚀
 
 * **Community Forum**: Engage with the MOSIP community, ask questions, and share insights on the [MOSIP Community on Discourse](https://community.mosip.io/).
 * **Website**: Explore our official website for comprehensive information at [mosip.io](https://www.mosip.io/).
-* **Linkedin:** Connect with us on [LinkedIn](https://www.linkedin.com/company/mosip-project/posts/?feedView=all).
+* **LinkedIn:** Connect with us on [LinkedIn](https://www.linkedin.com/company/mosip-project/posts/?feedView=all).
