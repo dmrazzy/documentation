@@ -299,7 +299,7 @@
       * [Performance Test Report](roadmap-and-releases/releases/release-notes/performance-test-report.md)
       * [Security Test Report](roadmap-and-releases/releases/release-notes/security-test-report.md)
       * [Feature Health Report](roadmap-and-releases/releases/release-notes/feature-health-report.md)
-    * [Partner Management Portal v1.2.2.0](roadmap-and-releases/releases/partner-management-portal-v1.2.2.0.md)
+    * [Partner Management System 1.2.2.0](roadmap-and-releases/releases/partner-management-system-1.2.2.0.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
