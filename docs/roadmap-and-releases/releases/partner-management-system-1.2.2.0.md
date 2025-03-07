@@ -11,7 +11,7 @@
 ## Overview
 
 We are excited to announce the launch of the **new UI of Partner Management System** which is
-comprehensive release that includes all features from the legacy PMS UI and brings significant improvement over the earlier one 1.3.0-dp.1. Now out, this also brings good sum / substantial upgrades to the UX and the UI which now has enhanced capabilities!
+comprehensive release that includes all features from the legacy PMS UI and brings significant improvement over the earlier one 1.3.0-dp.1. Now out, this also brings substantial upgrades to the UX and the UI which now has enhanced capabilities.
 
 * The new version **1.2.2.0** is a full feature release, serving as a continuation of the earlier developer preview (**1.3.0-dp.1**).
 * This release brings **Technology stack upgrade** for improved performance and security.
