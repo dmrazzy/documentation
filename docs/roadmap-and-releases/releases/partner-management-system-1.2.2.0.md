@@ -14,7 +14,7 @@ We are excited to announce the launch of the **new Partner Management Portal** w
 
 * The new version **1.2.2.0** is a full feature release, serving as a continuation of the earlier developer preview (**1.3.0-dp.1**).
 * This release brings **Technology stack upgrade** for improved performance and security.
-* This release brings expanded system capabilities to **various Partner Types and Admin Roles** which now includes Partner-1, Partner-1, Partner-1.
+* This release brings expanded system capabilities to **various Partner Types (AUTH, DEVICE & FTM) and Admin Roles**.
 * **New functionalities** now spans not only a particular part of the PMP but it is ground up improvement that we pulled off on every section being released this time.
 * **Feature enhancements** comes to majority of features which existed and certainly the new ones and this helps you streamline partner management like never before.
 * **Improved usability & user experience** for better navigation and efficiency. UX and UI has been worked upon ground up, The user flow has now been structured and it is easy and quick to get familiar with the interface helping users identify a logical/consistent pattern in usage.
