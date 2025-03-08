@@ -107,6 +107,7 @@
         * [FTM Chip Provider](id-lifecycle-management/support-systems/partner-management-services/overview/ftm-chip-provider.md)
         * [Features](id-lifecycle-management/support-systems/partner-management-services/overview/features.md)
         * [Device Provider](id-lifecycle-management/support-systems/partner-management-services/overview/device-provider.md)
+        * [Partner Administration](id-lifecycle-management/support-systems/partner-management-services/overview/partner-administration.md)
       * [Develop](id-lifecycle-management/support-systems/partner-management-services/develop/README.md)
         * [Architecture](id-lifecycle-management/support-systems/partner-management-services/develop/architecture.md)
         * [Technical Overview](id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/README.md)
