@@ -1,12 +1,13 @@
 ---
 icon: nfc
+description: Ensuring Secure and Interoperable Digital Identity Through Global Standards.
 ---
 
 # Standards & Specifications
 
 At MOSIP (Modular Open Source Identity Platform), we are committed to building a secure, interoperable, and privacy-centric identity system for nations worldwide. MOSIP adheres to internationally recognized standards in biometric authentication, security, cryptography, privacy, and interoperability to ensure the highest levels of security, efficiency, and compliance.
 
-#### **1. Why Standard Matters?** <a href="#id-1.-why-standard-matters" id="id-1.-why-standard-matters"></a>
+#### **1. Why Standards Matters?** <a href="#id-1.-why-standard-matters" id="id-1.-why-standard-matters"></a>
 
 By following these global standards, MOSIP ensures that our identity platform is:\
 \

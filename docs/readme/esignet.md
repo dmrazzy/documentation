@@ -1,3 +1,7 @@
+---
+description: Enabling Secure, Inclusive, and Seamless Digital Identity Verification.
+---
+
 # eSignet
 
 In today’s digital-first world, most services are transitioning online, making a secure and trusted digital identity more important than ever. A secure and trusted digital identity is crucial to facilitate personalized access to these online services.
