@@ -208,6 +208,8 @@ uploaded.
 
 ![](./media/media/temp-pms-admin-image14.png)
 
+docs/.gitbook/assets
+
 ![](./media/media/temp-pms-admin-image15.png)
 
 Note:
