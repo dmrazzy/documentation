@@ -95,8 +95,7 @@ approval, You can read more about this
 -   [All the policy groups created so far by Partner Admin/ Policy
     Manager are displayed on 'List of Policy Groups' page.]{.mark}
 
-![](./half/media/temp-auth-partner-image2.png){width="6.84375in"
-height="3.007179571303587in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image2.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
 
 -   [On clicking the 'Create Policy Group' option on the top right of
     the screen, we can create a Policy Group by providing suitable name
@@ -104,13 +103,11 @@ height="3.007179571303587in"}
     selecting them during Partner Policy Request to create API Key/ OIDC
     Client etc.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image3.png){width="6.347222222222222in"
-height="2.7604779090113736in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image3.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 -   [On click of Submit, a success message appears.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image4.png){width="6.096946631671041in"
-height="2.6821139545056867in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image4.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 #### [Create Auth policy]{.mark}
 
@@ -125,8 +122,7 @@ using the Action menu as shown below.]{.mark}
 [On clicking Authentication Policy tab, List of all previously created
 Authentication Policies are displayed.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image5.png){width="6.184027777777778in"
-height="2.8616535433070864in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image5.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [On clicking 'Create Authentication Policy' button, Partner Admin/
 Policy manager is navigated to Create Authentication Policy page where
@@ -139,14 +135,12 @@ dropdown.]{.mark}
 [click on the upload button to upload policy data . Only json files are
 allowed for upload.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image6.png){width="5.868055555555555in"
-height="2.546596675415573in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image6.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [On clicking on Save as Draft, following success message appears
 .]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image7.png){width="6.15625in"
-height="2.724448818897638in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image7.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [On clicking 'Go Back', admin is navigated back to tabular view where
 the policy is saved as 'draft' status.]{.mark}
@@ -155,14 +149,12 @@ the policy is saved as 'draft' status.]{.mark}
 'publish' option in action menu. A popup window appears seeking for
 confirmation to publish.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image8.png){width="6.326388888888889in"
-height="2.744536307961505in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image8.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [On clicking Publish, a success message appears . Click on close to
 close the window.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image9.png){width="6.003472222222222in"
-height="2.5937117235345584in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image9.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [The given policy changes to 'Activated' status after being published.
 Once activated, the admin cannot edit the policy, hence the option is
@@ -184,157 +176,18 @@ approval request will come to you and you can approve or reject a
     to Approve/ Reject. Also an option to view the policy request
     details is also provided.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image10.png){width="6.861111111111111in"
-height="2.987739501312336in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image10.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [On clicking the Approve/ Reject option, the window appears - and
 partner admin can click on either Approve or Reject to take appropriate
 action]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image11.png){width="6.399305555555555in"
-height="2.811311242344707in"}
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image11.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 [The status- Approved / Rejected gets updated in the tabular
 view.]{.mark}
 
-![](/Users/keshavsingh/Office/pmp/half/media/image12.png){width="6.46875in"
-height="2.8723359580052494in"}
-
-
-
-
-
-<!--
-# End User Guide
-
-## PMS Admin (Partner Admin)
-
-**Partner Management Portal (PMP) is used by both; PMS Admin and Partner User.**
-
-* Partner Administrator: Partner Admin
-* Partners: Partner User
-
-{% hint style="warning" %}
-**Important**:
-
-We are revamping the PMS (Partner Management System), we also have worked on the UX and the interface, the new interface for 'Partner Users' is ready and launced with the current [**release**](../../../../roadmap-and-releases/releases/partner-management-system-1.3.0-dp1/), However please note that with the current release the interface revamp covers only the user flow of it; for admin activities you still will have to make use of 'Older Admin Interface' which also is going under the knife to come up with arfresh new UX and Interface.   This essentially means the following:
-
-* **Partner User** - 'Authentication Partners' can use the new interface to perform all the activities mentioned under '[**Authenticatioin Partner Workflow**](end-user-guide.md#authentication-partner-workflow)**'**
-* **Partner Admin** - Partner Admin still will have to user the older 'Partner Admin Interface to perform all the activities explained under '[**What all activities does a 'Partner Admin' perform for Authentication Partner?**](end-user-guide.md#what-all-activities-does-a-partner-admin-perform-for-authentication-partner)'.
-{% endhint %}
-
-## What all activities does a 'Partner Admin' perform for Authentication Partner?
-
-Being a ‘Partner Admin’ you can perform following 3 activities to complete the end to end functionality pertaining to Authentication partner.
-
-It should be noted that all these activities that you can perform as an admin you will still have to use the older 'Partner Admin Interface' as of now untill we complete its revamp which is already underway on a war footing.
-
-* Upload Root CA and Sub CA Certificates
-* Create Policy Group and Policy
-* Approve/Reject Policy
-
-### Upload Root CA and Sub CA
-
-Only after you 'Upload Root CA and Sub CA Certificates (From Older PMP Interface)' that a Partner will then be able to 'Upload CA signed Partner Certificate.
-
-> As a process of Partner onboarding onto PMP after successful registration, Partner is required to **Upload CA signed Partner Certificate** on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation to perform authentication of citizens. Also this certificate is used to encrypt the response shared in e-KYC.
-
-{% hint style="warning" %}
-**Important:**
-
-You will have to use older Partner Admin interface, Yes! you read it correct! before a Partner will be able to ‘**Upload ‘CA Signed Certificate**’ it is prerequisite that the ‘**Partner Admin**’ must upload the **Root CA** and **Sub CA** certificates and this you can do from ‘**Older PMP Interface’**.
-{% endhint %}
-
-#### To Upload Root CA and Sub CA Certificates
-
-1. Go to **Older PMP Interface** and click on **Upload CA Certificate** option on the left navigation pane.
-2. Select the Partner Domain.
-3. Choose the **Root CA Certificate** to upload (only files with extensions as .cer or .pem).
-4. Click Upload.
-5. Similarly, sub/intermediate CA certificate should be uploaded by following the above steps (1-4).
-
-<figure><img src="../../../../.gitbook/assets/pms_upload_root_ca.png" alt=""><figcaption></figcaption></figure>
-
-### Creating Policy Group and Policy
-
-As Partner Admin you are required to ‘**Create Policy Group**’ and ‘**Create Policy(s)**’ which a ‘Partner’ will be able to select while self-registering on PMP.
-
-As an admin you will also have privilege to ‘**Approve Policy Request**’ when a Partner selects a Policy and it comes to you for approval, You can read more about this [**here**](end-user-guide.md#approve-policy-request).
-
-#### Create Policy group
-
-* Login as Partner Admin into the PMS portal (Older PMP Interface).
-* Click on **Policy** > **Policy Group**. The existing policy groups are listed on the screen and the new ones can be created.
-
-<figure><img src="../../../../.gitbook/assets/pms_create_policy_group.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
-
-* Click on **Create Policy Group** (+).
-* Enter the ‘**Policy Group Name**’ and ‘**Description**’.
-* Click **Save**.
-
-<figure><img src="../../../../.gitbook/assets/pms_create_policy_group_basic_details.png" alt=""><figcaption></figcaption></figure>
-
-#### Create an Auth Policy
-
-On successful creation of **Policy Group(s)**, Polices can be created under a respective group.
-
-{% hint style="info" %}
-**Note:**
-
-**MOSIP** supports two types of policies, i.e. **Auth Policy** and **Datashare Policy**. Only **Auth Policy** is used by **Authentication Partners**.
-{% endhint %}
-
-1. Click on **Policy** > **Policy Group** on the left navigation pane, The existing policy groups are listed on the screen and the new ones can be created. You can also search or filter any data pertaining to policy groups, use the filter menu.
-
-<figure><img src="../../../../.gitbook/assets/pms_create_auth_policy.png" alt=""><figcaption></figcaption></figure>
-
-2. Click **Auth Policy** > **Create Policy**.
-3. Add the **Name** and **Description**.
-4. Select the **Policy Group** from the dropdown, (Select the **Policy Group - Auth Policy**) here under which this Policy you are creating will be added.
-5. Add the **Policies Data**.
-6. Click Save.
-
-{% hint style="info" %}
-**Note**:
-
-Once the policy is created, it will be in inactive state. You have to **Activate a Policy** before a Partner will be able to select it while ‘**Requesting a Policy**’.
-{% endhint %}
-
-#### Activate/Edit Auth policy
-
-Once you 'Create Policy' you will also be required to activate it and then it will reflect when a Partner wants to select a policy. You can also change the status of **Policy Group** ( Deactivate) or edit it using the Action menu as shown below.
-
-1. Select the Policy you want to activate or edit.
-2. From the Actions menu, select Activate/Edit.
-
-<figure><img src="../../../../.gitbook/assets/pms_activate_auth_policy.png" alt=""><figcaption></figcaption></figure>
-
-### Approve Policy Request
-
-When a Partner have chosen a 'Policy Group' and the 'Policy', an approval request will come to you and  you can approve or reject a ‘**Policy Request**’ using ‘**Request Policy**’ screen.
-
-When a Partner have chosen a 'Policy Group' and the 'Policy' an approval request will come to you and you can approve or reject a ‘**Policy Request**’ using ‘**Request Policy**’ screen.
-
-* Click on **Partner Policy Mapping** in the left navigation pane.
-* Select the policy mapping that needs an approval.
-* Click on **Manage Policy** on the ‘**Action Menu**’ appearing against a Policy.
-* Click on **Approve**.
-
-<figure><img src="../../../../.gitbook/assets/pms_approve_policy_1.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/pms_approve_policy_2.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/pms_approve_policy_3.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/pms_approve_policy_4.png" alt=""><figcaption></figcaption></figure>
-
--->
-
-
-
-
-
-
+<figure><img src="../../../../.gitbook/assets/temp-auth-partner-image12.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
 
 
