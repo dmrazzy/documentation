@@ -48,7 +48,9 @@ Admin has to register in PMS with any one of the partner type.
 Partner Admin can register in PMP as any one of the partner type and
 then get the various roles/privileges by going to Keycloak.
 
-![](./media/media/temp-pms-admin-temp-pms-admin-image1.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image1.png"</figure>
+
+
 
 ## Using Keycloak to allocate 'Partner Admin' and/or 'Policy Manager'
 
@@ -56,22 +58,22 @@ After registration .....you need to come to keycloak..
 
 1.  Go to keycloak and search your user name in Users tab.
 
-![](./media/media/temp-pms-admin-temp-pms-admin-image2.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image2.png"</figure>
 
 2.  Go to the **Role Mapping** tab.
 
-![](./media/media/temp-pms-admin-temp-pms-admin-image3.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image3.png"</figure>
 
 3.  In the **Available Roles** section, select **PARTNER_ADMIN** or
     **POLICYMANAGER**, click **Add** to move the selected role to the
     **Assigned Roles** list.
 
-![](./media/media/temp-pms-admin-temp-pms-admin-image4.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image4.png"</figure>
 
 4.  You can now log in to the **PMS** portal with the same user
     credentials and you will have access to the **Admin Dashboard**.
 
-![](./media/media/temp-pms-admin-temp-pms-admin-image5.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image5.png"</figure>
 
 **Note:** Add POLICYMANAGER role if Policies card should be made
 accessible in UI
@@ -82,7 +84,7 @@ By following the above steps (1-4) in keycloak, the admin can also
 configure POLICY_MANAGER role to view and manage **Policies** card as
 shown in the dashboard below:
 
-![](./media/media/temp-pms-admin-temp-pms-admin-image6.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6.png"</figure>
 
 **Notes:**
 
@@ -131,8 +133,7 @@ following:
 
 #### List of Root CA Certificates
 
-![](./media/media/temp-pms-admin-image7.png){width="6.511805555555555in"
-height="2.834722222222222in"}
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image7.png"</figure>
 
 #### Viewing Root CA Certificate
 
@@ -142,19 +143,19 @@ Certificates**' uploaded by admin till date with details such as
 **Validity Period** and **Validity Status** (Valid / Expired)
 [etc]{.mark}.
 
-![](./media/media/temp-pms-admin-image8.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image8.png"</figure>
 
 Each active certificate record has two options in action menu - **View**
 and **Download** Certificate.
 
-![](./media/media/temp-pms-admin-image9.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png"</figure>
 
 #### View Root CA details
 
 On clicking View, the Root CA certificate detail can be viewed
 individually.
 
-![](./media/media/temp-pms-admin-image10.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image10.png"</figure>
 
 #### Download Root CA
 
@@ -162,7 +163,7 @@ In the same page (Root CA details), an option to download the Root CA
 certificate in .p7b file is also provided. Clicking on download, a
 success message appears.
 
-![](./media/media/temp-pms-admin-image11.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image11.png"</figure>
 
 On opening the .p7b file from local system, the Root CA Certificate can
 be viewed as below:
@@ -173,14 +174,14 @@ NOTE: any external installation required
 Jadhav](https://mosip.atlassian.net/wiki/people/712020:c6ee5f54-fc2c-4d62-986e-97ddd067ffd0?ref=confluence)
 ???
 
-![](./media/media/temp-pms-admin-image12.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image12.png"</figure>
 
 ### Upload Root CA
 
 To upload Root CA/ Intermediate CA Certificate, click on 'Upload Trust
 Certificate'.
 
-![](./media/media/temp-pms-admin-image9.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png"</figure>
 
 Admin is thus [navigated]{.mark} to Upload Trust Certificate page.
 
@@ -190,7 +191,7 @@ Admin can upload Root CA / Intermediate CA certificate in the same page
 but should be in a sequential order ie. Root CA Certificate upload first
 and then Corresponding Intermediate CA certificate upload.
 
-![](./media/media/temp-pms-admin-image13.png)
+<figure><img src="../../../../.gitbook/assets/image13.png"</figure>
 
 Select the partner domain (AUTH / DEVICE / FTM) **in the Upload
 section**. Partner Domain typically refers to the specific functional
@@ -206,11 +207,9 @@ uploaded.
 -   FTM: Select Partner domain as FTM if **Root or Intermediate CA
     certificate** is being uploaded for FTM Chip Provider.
 
-![](./media/media/temp-pms-admin-image14.png)
+<figure><img src="../../../../.gitbook/assets/image14.png"</figure>
 
-docs/.gitbook/assets
-
-![](./media/media/temp-pms-admin-image15.png)
+<figure><img src="../../../../.gitbook/assets/image15.png"</figure>
 
 Note:
 
@@ -256,7 +255,7 @@ Note:
 On clicking the Intermediate CA tab, List of all Intermediate CA
 certificates uploaded by Partner Admin is displayed.
 
-![](./media/media/temp-pms-admin-image16.png){width="6.516666666666667in"
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image16.png"</figure>{width="6.516666666666667in"
 height="2.8361111111111112in"}
 
 Action menu for all active certificates displays the following options:
@@ -265,7 +264,7 @@ Action menu for all active certificates displays the following options:
 
 -   Download Certificate Chain
 
-![](./media/media/temp-pms-admin-image17.png){width="6.5in"
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image17.png"</figure>{width="6.5in"
 height="2.8361111111111112in"}
 
 #### Viewing the Intermediate CA Certificate
@@ -278,7 +277,7 @@ Certificate ID, Partner Domain - (AUTH, FTM, DEVICE), Issued To-
 Certificate,* Valid From, Valid To*- same as system browser date format*
 etc
 
-![](./media/media/temp-pms-admin-image18.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image18.png"</figure>
 
 ### Downloading the Intermediate CA Certificate
 
@@ -289,24 +288,27 @@ for the given Intermediate CA certificate is downloaded successfully\'.
 **Note:** For expired status, 'Download Certificate Chain' button will
 be disabled in View Root Certificate page / Tabular View page.
 
-![](./media/media/temp-pms-admin-image19.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image19.png"</figure>
 
 On clicking the .p7b file from local system, the certificate hierarchy
 of the intermediate CA certificate is present where its corresponding
 root certificate is also downloaded.
 
-![](./media/media/temp-pms-admin-image20.png)
+<figure><img src="../../../../.gitbook/assets/image20.png"</figure>
 
 ### [Upload Intermediate Certificate]{.mark}
 
 To upload the Intermediate CA certificate, carry out the same steps of
 Root CA Certificate upload.
 
-![](./media/media/temp-pms-admin-image21.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image21.png"</figure>
 
-![](./media/media/temp-pms-admin-image22.png)![](./media/media/temp-pms-admin-image23.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image22.png"</figure>
 
-![](./media/media/temp-pms-admin-image24.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image23.png"</figure>
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image24.png"</figure>
+
 
 **Note for Intermediate CA Certificate**:
 
@@ -342,12 +344,12 @@ panel, hamburger menu.
 
 4.  Deactivate Partner
 
-![](./media/media/temp-pms-admin-image25.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image25.png"</figure>
 
 **Note:** Deactivate option appears disabled if the partner is
 already deactivated.
 
-![](./media/media/temp-pms-admin-image26.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image26.png"</figure>
 
 ### View Partner Details
 
@@ -357,7 +359,7 @@ type**, **Organisation name**, First Name, Last Name, Phone Number,
 Email Address, Policy Group (If partner is of the type 'Authentication
 Partner'). Partner certificate details are also visible.
 
-![](./media/media/temp-pms-admin-image27.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image27.png"</figure>
 
 
 
@@ -381,12 +383,12 @@ during following instances:
     on clicking respective menu items in the button-dropdown an
     appropriate error message is displayed.
 
-![](./media/media/temp-pms-admin-image28.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image28.png"</figure>
 
 On downloading the Original / MOSIP Signed certificate, a success
 message appears.
 
-![](./media/media/temp-pms-admin-image29.png)![](./media/media/temp-pms-admin-image30.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image29.png"</figure><figure><img src="../../../../.gitbook/assets/temp-pms-admin-image30.png"</figure>
 
 
 
@@ -395,7 +397,7 @@ message appears.
 To deactivate a partner, click on Deactivate option in action menu. A
 popup window appears seeking for confirmation from the partner.
 
-![](./media/media/temp-pms-admin-image31.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image31.png"</figure>
 
 After confirming deactivation, the respective record is greyed out in
 the tabular view. The action menu here appears enabled with only 'View'
@@ -409,7 +411,7 @@ following-
 2.  Certificate section is greyed out with and download button is
     disabled.
 
-![](./media/media/temp-pms-admin-image32.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image32.png"</figure>
 
 The deactivated partner will not be able to create or utilize any of the
 services in their PMS portal (For e.g. no new transactions will work
@@ -442,7 +444,7 @@ Policies has theree tabs
  * Authentication Policy, 
  * Datashare Policy
 
-![](./media/media/temp-pms-admin-image33.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image33.png"</figure>
 
 
 Policy Group
@@ -509,7 +511,7 @@ Datashare Policy
 All the policy groups created so far by Partner Admin / Policy Manager
 are displayed on 'List of Policy Groups' page.
 
-![](./media/media/temp-pms-admin-image33.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image33.png"</figure>
 
 
 ### Details View - Policy Group
@@ -524,7 +526,7 @@ Clicking on View in action menu or by clicking the row item itself,
 admin is navigated to View Policy Group page where the policy group
 details are displayed along with its status: Activated or Deactivated.
 
-![](./media/media/temp-pms-admin-image36.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image36.png"</figure>
 
 
 
@@ -536,11 +538,11 @@ description that is self explanatory for partners, who would be
 selecting them during Partner Policy Request to create API Key / OIDC
 Client [etc]{.mark}.
 
-![](./media/media/temp-pms-admin-image34.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image34.png"</figure>
 
 On click of Submit, a success message appears.
 
-![](./media/media/temp-pms-admin-image35.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image35.png"</figure>
 
 
 
@@ -549,12 +551,12 @@ On click of Submit, a success message appears.
 If the admin wants to deactivate the Policy Group, then click on
 Deactivate option in action menu.
 
-![](./media/media/temp-pms-admin-image37.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image37.png"</figure>
 
 > A popup window appears seeking for confirmation before proceeding to
 > deactivate.
 
-![](./media/media/temp-pms-admin-image38.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image38.png"</figure>
 
 After confirming deactivation, the respective record is greyed out in
 the tabular view.
@@ -562,7 +564,7 @@ the tabular view.
 The action menu here [should be]{.mark} enabled with only View option.
 (Deactivate in action menu is disabled).
 
-![](./media/media/temp-pms-admin-image39.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image39.png"</figure>
 
 After deactivation, the View policy group page
 [MOSIP-36963](https://mosip.atlassian.net/browse/MOSIP-36963) will
@@ -586,15 +588,15 @@ with the count of such policies -
 
 a) In case of Active and Draft policies associated to Policy Group:
 
-![](./media/media/temp-pms-admin-image40.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image40.png"</figure>
 
 b) In case of Active policies associated to Policy Group:
 
-![](./media/media/temp-pms-admin-image41.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image41.png"</figure>
 
 c) In case of Draft policies associated to policy group:
 
-![](./media/media/temp-pms-admin-image42.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image42.png"</figure>
 
 
 
@@ -629,7 +631,7 @@ Deactivated.
 
     3.  Deactivated: View
 
-![](./media/media/temp-pms-admin-image43.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image43.png"</figure>
 
 
 
@@ -647,48 +649,48 @@ Only active policy groups are available in the policy group dropdown.
 Click on the upload button to upload policy data. Only json files are
 allowed for upload.
 
-![](./media/media/temp-pms-admin-image44.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image44.png"</figure>
 
 Before saving the policy in draft, the policy data can be edited in the
 text area after policy data json file has been successfully uploaded.
 
-![](./media/media/temp-pms-admin-image45.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image45.png"</figure>
 
 On clicking on Save as Draft, following success message appears.
 
-![](./media/media/temp-pms-admin-image46.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image46.png"</figure>
 
 On clicking 'Go Back', admin is navigated back to List view where the
 policy is saved as 'draft' status.
 
-![](./media/media/temp-pms-admin-image47.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image47.png"</figure>
 
 The Edit option provided to Draft policy can be used by admin to make
 any changes in the policy details (except policy group) before
 publishing the policy.
 
-![](./media/media/temp-pms-admin-image48.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image48.png"</figure>
 
 On submitting after making required changes, a success message appears.
 
-![](./media/media/temp-pms-admin-image49.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image49.png"</figure>
 
 To publish policy which is currently in draft status, click on 'publish'
 option in action menu. A popup window appears seeking for confirmation
 to publish.
 
-![](./media/media/temp-pms-admin-image50.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image50.png"</figure>
 
 On clicking Publish, a success message appears . Click on close to close
 the window.
 
-![](./media/media/temp-pms-admin-image51.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image51.png"</figure>
 
 The given policy changes to 'Activated' status after being published.
 Once activated, the admin cannot edit the policy, hence the option is
 disabled.
 
-![](./media/media/temp-pms-admin-image52.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image52.png"</figure>
 
 ### Clone Policy
 
@@ -696,7 +698,7 @@ To clone any active policy onto another policy group, click on 'clone'
 in action menu. A popup window appears to select the policy group where
 the policy has to be cloned.
 
-![](./media/media/temp-pms-admin-image53.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image53.png"</figure>
 
 On selecting the policy group where policy has to be cloned, click on
 Clone and a success message appears.
@@ -704,7 +706,7 @@ Clone and a success message appears.
 Click on Close to navigate back to List of Authentication Policies
 screen.
 
-![](./media/media/temp-pms-admin-image54.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image54.png"</figure>
 
 
 
@@ -715,7 +717,7 @@ To deactivate a policy, click on Deactivate option in action menu of any
 activated policy record. A popup window appears seeking for
 confirmation.
 
-![](./media/media/temp-pms-admin-image55.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image55.png"</figure>
 
 Note:
 
@@ -724,7 +726,7 @@ If the Policy has active partners associated to it i.e. there are
 following error message is displayed and the admin will be restricted to
 deactivate such policy groups.
 
-![](./media/media/temp-pms-admin-image56.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image56.png"</figure>
 
 
 **Note:**
@@ -746,7 +748,7 @@ deactivate such policy groups.
     partner will not be able to fetch this policy in any of the screens
     in their PMS portal.
 
-![](./media/media/temp-pms-admin-image57.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image57.png"</figure>
 
 
 
@@ -758,12 +760,12 @@ itself, admin is navigated to View Authentication Policy where policy
 details can be viewed. Also click on preview to view the policy data in
 json format.
 
-![](./media/media/temp-pms-admin-image58.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image58.png"</figure>
 
 On clicking preview, policy data can be viewed in json format and an
 option to Download the data in local system is provided.
 
-![](./media/media/temp-pms-admin-image59.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image59.png"</figure>
 
 
 
@@ -787,28 +789,28 @@ All the policy requests created by various partners are displayed in
 'List of Partner - Partner Linkages' . The different statuses possible
 are: Pending for Approval, Approved, Rejected, Deactivated.
 
-![](./media/media/temp-pms-admin-image60.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image60.png"</figure>
 
 The options provided for policy linking requests in 'Pending for
 Approval' are to Approve/ Reject. Also an option to view the policy
 request details is also provided.
 
-![](./media/media/temp-pms-admin-image61.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image61.png"</figure>
 
 On clicking the Approve/ Reject option, the window appears - and partner
 admin can click on either Approve or Reject to take appropriate action
 
-![](./media/media/temp-pms-admin-image62.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image62.png"</figure>
 
 The status- Approved / Rejected gets updated in the tabular view.
 
-![](./media/media/temp-pms-admin-image63.png)![](./media/media/temp-pms-admin-image64.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image63.png"</figure><figure><img src="../../../../.gitbook/assets/temp-pms-admin-image64.png"</figure>
 
 On clicking view of active record or the row item itself, the partner-
 policy linking view page is displayed along with comment history where
 partner comments and admin's approval status is displayed.
 
-![](./media/media/temp-pms-admin-image65.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image65.png"</figure>
 
 
 
@@ -824,7 +826,7 @@ SBI and Device creation.
     1.  2 Tabs- **SBI and Device** are displayed. SBI tab
         view is selected by default
 
-![](./media/media/temp-pms-admin-image66.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image66.png"</figure>
 
 #### **SBI features**
 
@@ -872,35 +874,35 @@ SBI and Device creation.
 The SBI can be approved or rejected by partner admin by going to
 Dashboard → SBI-Device → List of SBIs.
 
-![](./media/media/temp-pms-admin-image67.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67.png"</figure>
 
 The admin selects on Approve/ Reject option from the given record and
 chooses appropriate action.
 
-![](./media/media/temp-pms-admin-image68.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68.png"</figure>
 
 On approval, the status changes to 'Approved' and on rejection, the
 status changes to 'Rejected'
 
-![](./media/media/temp-pms-admin-image69.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69.png"</figure>
 
 To view any individual records, click on View option in the action menu.
 
-![](./media/media/temp-pms-admin-image70.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image70.png"</figure>
 
 To approve or reject an SBI, select the approve / reject option in
 action menu.
 
-![](./media/media/temp-pms-admin-image62.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image62.png"</figure>
 
 The approved / rejected status is updated on the tabular view.
 
-![](./media/media/temp-pms-admin-image71.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image71.png"</figure>
 
 To know the list of linked devices associated to this SBI, click on the
 linked devices count in the tabular view or in the individual view page.
 
-![](./media/media/temp-pms-admin-image72.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image72.png"</figure>
 
 
 ## Deactivate SBI
@@ -909,12 +911,12 @@ To deactivate an SBI, click on Deactivate option in action menu. An
 alert appears seeking for confirmation. Also admin is informed how the
 linked devices will be impacted after SBI deactivation.
 
-![](./media/media/temp-pms-admin-image73.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image73.png"</figure>
 
 After confirming Deactivation: the respective SBI record is greyed out
 and the status is displayed as 'Deactivated'.
 
-![](./media/media/temp-pms-admin-image74.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image74.png"</figure>
 
 ### Impact on linked devices after SBI deactivation
 
@@ -931,7 +933,7 @@ Impact on linked devices after SBI deactivation is as below
 3.  Rejected devices will continue to remain in the same status even
     after SBI deactivation.
 
-![](./media/media/temp-pms-admin-image75.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image75.png"</figure>
 
 ## **Device**
 
@@ -940,19 +942,19 @@ Impact on linked devices after SBI deactivation is as below
 On clicking 'Devices' tab, **List of all Devices** submitted so far are
 displayed.
 
-![](./media/media/temp-pms-admin-image76.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image76.png"</figure>
 
 ### Approve / Reject Devices
 
 On clicking the action menu of the respective device record, an option
 'Approve / Reject' is provided
 
-![](./media/media/temp-pms-admin-image77.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77.png"</figure>
 
 A popup window appears for the admin to take appropriate action-
 APPROVE/ REJECT and select the respective button
 
-![](./media/media/temp-pms-admin-image78.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78.png"</figure>
 
 The status is thus updated accordingly in **List of Devices** Page as
 Approved / Rejected based on the above action.
@@ -961,24 +963,24 @@ Approved / Rejected based on the above action.
 pending with admin for approval and no action has been taken by admin
 yet.
 
-![](./media/media/temp-pms-admin-image79.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79.png"</figure>
 
 Click on view option in action menu or the row item itself (of any
 active device record) to view the device details individually
 
-![](./media/media/temp-pms-admin-image80.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image80.png"</figure>
 
 ### Deactivate Device
 
 Click on deactivate option in action menu . A confirmation window
 appears to proceed for deactivation.
 
-![](./media/media/temp-pms-admin-image81.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image81.png"</figure>
 
 The deactivated device record is greyed out and status is also changed
 to 'Deactivated'
 
-![](./media/media/temp-pms-admin-image82.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image82.png"</figure>
 
 
 
@@ -1018,29 +1020,29 @@ View FTP Chip Details
 The List of FTM Chip details displays all FTM Chip details created by
 FTM Chip Provider
 
-![](./media/media/temp-pms-admin-image83.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image83.png"</figure>
 
-![](./media/media/temp-pms-admin-image84.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image84.png"</figure>
 
 The admin navigates to 'List of FTM Chip details' page where list of all
 FTM Chip records submitted so far by different FTM Chip providers are
 displayed.
 
-![](./media/media/temp-pms-admin-image85.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85.png"</figure>
 
 Approve / Reject FTM Chip
 
 On clicking the action menu of the respective FTM Chip record, an option
 'Approve/ Reject' is provided
 
-![](./media/media/temp-pms-admin-image86.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86.png"</figure>
 
  
 
 A popup window appears for the admin to take appropriate action-
 APPROVE/ REJECT and select the respective button
 
-![](./media/media/temp-pms-admin-image87.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87.png"</figure>
 
  
 
@@ -1053,30 +1055,30 @@ Note: \'Pending for Approval\' status is displayed when the FTM Chip
 request is pending with admin for approval and no action has been taken
 by admin yet.
 
-![](./media/media/temp-pms-admin-image88.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88.png"</figure>
 
 View Details of FTM Chip 
 
 To view FTM Chip details indivudally, click on View option in action
 menu
 
-![](./media/media/temp-pms-admin-image89.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image89.png"</figure>
 
 Download FTM Chip Certificate
 
 To download the FTM Chip Certificate uploaded by FTM Chip Provider,
 click on download button.
 
-![](./media/media/temp-pms-admin-image90.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image90.png"</figure>
 
 To deactivate an FTM Chip record, click on Deactivate option in action
 menu and a confirmation popup appears.
 
-![](./media/media/temp-pms-admin-image91.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image91.png"</figure>
 
 The deactivated FTM Chip record is greyed out after deactivation.
 
-![](./media/media/temp-pms-admin-image92.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image92.png"</figure>
 
 # **Authentication Services:**
 
@@ -1119,7 +1121,7 @@ View OIDC Clients
 Within OIDC Client tab, all OIDC Clients created by various
 Authentication partners are displayed.
 
-![](./media/media/temp-pms-admin-image93.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image93.png"</figure>
 
 For Activated records → the action menu has two options: View,
 Deactivate
@@ -1130,14 +1132,14 @@ View, Deactivate.
 On clicking view option in action menu, the admin is redirected to View
 OIDC Client details page.
 
-![](./media/media/temp-pms-admin-image94.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image94.png"</figure>
 
 ### Deactivate OIDC Client:
 
 On clicking view option in action menu, the admin is redirected to View
 OIDC Client details page.
 
-![](./media/media/temp-pms-admin-image95.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image95.png"</figure>
 
 ### 
 
@@ -1148,7 +1150,7 @@ OIDC Client details page.
 To view the list of all API Keys created by Authentication partner,
 click on API Key tab
 
-![](./media/media/temp-pms-admin-image96.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image96.png"</figure>
 
 For Activated records → the action menu has two options: View,
 Deactivate
@@ -1156,21 +1158,21 @@ Deactivate
 For Deactivated records → the action menu is enabled with only 1 option:
 View, Deactivate.
 
-![](./media/media/temp-pms-admin-image97.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image97.png"</figure>
 
 On clicking view option in action menu, the admin is redirected to View
 API Key details page.
 
-![](./media/media/temp-pms-admin-image98.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image98.png"</figure>
 
 ### Deactivate an API Key
 
 To deactivate an API Key, click on deactivate option in action menu.
 
-![](./media/media/temp-pms-admin-image99.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image99.png"</figure>
 
 The deactivated record is greyed out and is updated with Deactivated
 status.
 
-![](./media/media/temp-pms-admin-image100.png)
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image100.png"</figure>
 
