@@ -1,5 +1,3 @@
-# Device Provider
-
 # User Guide
 
 **Partner Management Portal (PMP) is used by both; PMS Admin and Partner
@@ -23,9 +21,9 @@ complete the end to end functionality pertaining to Device Provider.
 ### Upload Root CA and Sub CA
 
 Only after Partner Admin 'Upload Root CA and Sub CA Certificates' that a
-Partner will then be able to 'Upload CA signed Partner Certificate.
+Partner will be able to 'Upload CA signed Partner Certificate.
 
-As a process of partner onboarding onto PMP after successful
+As a process of partner onboarding onto PMS after successful
 registration, Partner is required to **Upload CA signed Partner
 Certificate** on behalf of their organisation which would be used to
 build a 'Trust Store' in MOSIP to cryptographically validate that they are
@@ -62,7 +60,7 @@ accept certificates which are signed only by a Trusted CA.
 
 ![](./media/media/image6.png)
 
-6.  Similarly, sub/intermediate CA certificate should be uploaded by
+6.  Similarly, sub/Intermediate CA certificate should be uploaded by
     following the above steps (2-4) by navigating to **Upload
     Intermediate CA Certificate** button provided within Intermediate
     Root CA tab.
@@ -92,9 +90,9 @@ PMP and uploading CA signed certificate is necessary'.
 
     3.  Organization Name
 
-    4.  Address, Phone number
+    4.  Address, Phone Number
 
-    5.  e-mail, Username and password
+    5.  e-mail, Username and Password
 
 ![](./media/media/image7.png)
 
@@ -144,12 +142,8 @@ User is now in **[[Home
 Page/Dashboard]{.underline}](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview)**
 where the following features are provided to Device Provider: 
 1) Partner
-Certificate, 
-2) Device Provider Services: SBI and Device creation.
-
-These features can also be accessed by clicking on side panel (in the
-form of icons) or clicking on the hamburger menu on the top left which
-is always available across all screens of PMP to help user to easily navigate.
+Certificate
+2) Device Provider Services: SBI and Device creation
 
 Once registered through the process of 'Partner Onboarding' onto PMP after
 successful registration, user is required to perform 'Upload CA signed
@@ -162,7 +156,7 @@ are from a trusted organisation.
 Later when required a Partner can also 'Download Certificate' and
 'Re-Upload Certificate' (As the need may be).
 
-Important:
+**Important**:
 
 Before a Partner can upload a 'CA Signed Certificate' it is prerequisite
 that the 'Partner Admin' should have already had uploaded the **Root
@@ -175,7 +169,7 @@ CA** and **Intermediate CA** certificates.
 
 ![](./media/media/image11.png)
 
-2.  Click on **Partner Certificate** option, Click on the **Upload**
+2.  Click on **Partner Certificate** option > Click on the **Upload**
     button to upload the partner certificate signed by CA.
 
 ![](./media/media/image12.png)
@@ -205,7 +199,7 @@ certificate and also the MOSIP Signed Certificate.
 
 #### Re-Upload Certificate
 
-Re-uploading certificate is required in cases /MOSIP/ Signed
+Re-uploading certificate is required in cases MOSIP Signed
 Certificate gets expired after one year.
 
 **Note:**
@@ -219,14 +213,13 @@ such as Device Provider Services (SBI, Devices) can function.
 
 ## Device Provider Services
 
-After the partner has uploaded partner certificate, he can now perform
+After the partner (you) have uploaded partner certificate, you can now perform
 'Device Provider Services':
 
--   SBI: Add SBI and the request is sent to admin for approval.
+-   SBI: Add SBI (The request is sent to Admin for approval).
 
--   Devices : After approval of a given SBI, devices can be added within
-    it which is then sent to admin for approval.
-
+-   Devices: After approval of a given SBI devices can be added within
+    it which is then sent to Admin for approval.
 
 
 
@@ -239,13 +232,13 @@ Details of Secure Biometric Interface (SBI) can be added by clicking on
 
 ![](./media/media/image18.png)
 
-The SBI details thus submitted is sent to admin for approval and is
+The SBI details thus submitted is sent to Admin for approval and is
 displayed for the partner in **'List of SBI'** page.
 
 ![](./media/media/image19.png)
 
 The partner can add devices only if the corresponding SBI has been
-approved by admin.
+approved by Admin.
 
 **Note**
 
@@ -277,7 +270,8 @@ status changes to 'Rejected'.
 
 ![](./media/media/image22.png)
 
-**Partner's portal- (Add Device)**
+
+**Partner's Portal - (Add Device)**
 
 To **Add Devices** under a given SBI, click on 'Add Devices'.
 
