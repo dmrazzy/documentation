@@ -117,6 +117,8 @@
           * [Backend Developers Guide](id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/backend-developers-guide.md)
           * [UI Developers Guide](id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/ui-developers-guide.md)
           * [Build and Development Guide](id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/build-and-development-guide.md)
+          * [New Language Support](id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/new-language-support.md)
+          * [API](id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/api.md)
       * [Test](id-lifecycle-management/support-systems/partner-management-services/functional-overview/README.md)
         * [End User Guide](id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md)
       * [PMS Legacy](id-lifecycle-management/support-systems/partner-management-services/pms-existing/README.md)
