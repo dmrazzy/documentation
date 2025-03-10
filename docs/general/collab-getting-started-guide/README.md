@@ -10,7 +10,7 @@ Let us dive deeper into MOSIP Collab: **Services** and **Modules** in detail.
 
 ### Introduction
 
-The Collab environment in [MOSIP ](https://docs.mosip.io/1.2.0/)offers a collaborative platform for partners and stakeholders to thoroughly test, collaborate and validate their integrations, modules and services. This environment is exclusively designed for partners and contributors involved in developing solutions on the MOSIP platform, enabling them to perform comprehensive testing and seamless integration of their solutions with the latest platform code. To gain access to this environment, kindly click [here](https://collab.mosip.net/).
+The Collab environment in [MOSIP ](https://docs.mosip.io/1.2.0/)offers a collaborative platform for partners and stakeholders to thoroughly test, collaborate and validate their integrations, modules and services. This environment is exclusively designed for partners and contributors involved in developing solutions on the MOSIP platform enabling them to perform comprehensive testing and seamless integration of their solutions with the latest platform code. To gain access to this environment, kindly click [here](https://collab.mosip.net/).
 
 ### Purpose
 
@@ -21,14 +21,14 @@ This guide has been created to offer a step-by-step overview of the fundamental 
 Before starting with the Collab environment, please ensure you have the following prerequisites in place:
 
 * **UIN Credential (Unique Identification Number)** - Issuance of [UIN](https://docs.mosip.io/1.2.0/id-lifecycle-management/identifiers#uin) as a demo credential will allow you to explore MOSIP's capabilities and experience seamless identity management firsthand. Provide your details in this UIN generation [form](https://docs.google.com/forms/d/e/1FAIpQLSc2I0CQqlYRIrEmcJ3J3tKlYOVNcYNj88YZe4MMwU2RZTrjOA/viewform), and we'll generate demo credentials that will enable you to navigate through different modules.
-* **MOCK SMPT** - A mock SMTP server is a simulated email server used for testing and development purposes. In MOSIP, it is installed as part of the default installation and is utilized to mimic the behavior of a real SMTP server, allowing developers to test email functionality and interactions without sending actual emails. To setup a mock SMTP server for the message gateway during V3 installation, click [here](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-external-dependencies#msg-gateway).
+* **MOCK SMTP** - A mock SMTP server is a simulated email server used for testing and development purposes. In MOSIP, it is installed as part of the default installation and is utilized to mimic the behavior of a real SMTP server, allowing developers to test email functionality and interactions without sending actual emails. To setup a mock SMTP server for the message gateway during V3 installation, click [here](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-external-dependencies#msg-gateway).
 
 **Let’s Get Started!**
 
 ### Step 1: Access the Collab Environment
 
 * Open your web browser and navigate to the Collab environment URL: [MOSIP Collab](https://collab.mosip.net/).
-* In the Collab environment, click on the specific module/ service that you want to access as a contributor.
+* In the Collab environment, click on the specific module/service that you want to access as a contributor.
 
 ### Step 2: Follow the module-specific guide to integrate with/ test the preferred application
 
