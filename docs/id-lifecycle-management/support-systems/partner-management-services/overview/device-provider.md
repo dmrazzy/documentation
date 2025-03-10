@@ -40,32 +40,34 @@ accept certificates which are signed only by a Trusted CA.
 
 1.  Go to **PMP** and login as Partner Admin. Click on **Certificate Trust Store** in Admin dashboard.
 
-![](./media/media/image1.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image1.png"</figure>
+<figure><img src="../../../../.gitbook/assets/
+
 
 2.  Within Root CA tab click on **Upload Trust Certificate** button on 
     the top-right of the screen.
 
-![](./media/media/image2.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image2.png"</figure>
 
 3.  Select the Partner Domain. (AUTH)
 
-![](./media/media/image3.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image3.png"</figure>
 
 4.  Choose the **Root CA Certificate** to upload (only files with
     extensions as .cer or .pem).
 
-![](./media/media/image4.png)![](./media/media/image5.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image4.png"</figure><figure><img src="../../../../.gitbook/assets/temp-device-provider-image5.png"</figure>
 
 5.  Click Submit and an appropriate success message appears.
 
-![](./media/media/image6.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image6.png"</figure>
 
 6.  Similarly, sub/Intermediate CA certificate should be uploaded by
     following the above steps (2-4) by navigating to **Upload
     Intermediate CA Certificate** button provided within Intermediate
     Root CA tab.
 
-![](./media/media/image3.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image3.png"</figure>
 
 ## Device Provider Flow
 
@@ -94,13 +96,13 @@ PMP and uploading CA signed certificate is necessary'.
 
     5.  e-mail, Username and Password
 
-![](./media/media/image7.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image7.png"</figure>
 
 3.  **On successful registration**, you will be asked to read through
     '**Terms and Conditions**' and having carefully read through it you
     can agree and accept it.
 
-![](./media/media/image8.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image8.png"</figure>
 
 **Validations**:
 
@@ -126,13 +128,13 @@ PMP and uploading CA signed certificate is necessary'.
     (considering the pre-requisites such as policy group selection and
     consent are already completed).
 
-![](./media/media/image9.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image9.png"</figure>
 
 ### Forgot Password:
 
 -   Partner User has option to 'Reset Password'.
 
--   ![](./media/media/image10.png)
+-   <figure><img src="../../../../.gitbook/assets/temp-device-provider-image10.png"</figure>
 
 
 
@@ -167,30 +169,30 @@ CA** and **Intermediate CA** certificates.
 
 1.  Go to **Device Provider Dashboard.**
 
-![](./media/media/image11.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image11.png"</figure>
 
 2.  Click on **Partner Certificate** option > Click on the **Upload**
     button to upload the partner certificate signed by CA.
 
-![](./media/media/image12.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image12.png"</figure>
 
 3.  Select the CA signed partner certificate from local system by
     clicking on the upload section (blue area).
 
-![](./media/media/image13.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image13.png"</figure>
 
 4.  Certificate is successfully fetched from local system.
 
-![](./media/media/image14.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image14.png"</figure>
 
 5.  Click on **Submit**, Partner Certificate is uploaded successfully.
 
-![](./media/media/image15.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image15.png"</figure>
 
 6.  On closing the popup, The user can view the uploaded certificate
     details in the form of a list view.
 
-![](./media/media/image16.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image16.png"</figure>
 
 #### Download Certificate
 
@@ -228,14 +230,14 @@ After the partner (you) have uploaded partner certificate, you can now perform
 Details of Secure Biometric Interface (SBI) can be added by clicking on
 'Add SBI' button which takes you to 'Add SBI Details' screen.
 
-![](./media/media/image17.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image17.png"</figure>
 
-![](./media/media/image18.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image18.png"</figure>
 
 The SBI details thus submitted is sent to Admin for approval and is
 displayed for the partner in **'List of SBI'** page.
 
-![](./media/media/image19.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image19.png"</figure>
 
 The partner can add devices only if the corresponding SBI has been
 approved by Admin.
@@ -259,16 +261,16 @@ Partner Admin.
 The SBI can be approved or rejected by partner admin by going to
 Dashboard → SBI-Device → List of SBIs.
 
-![](./media/media/image20.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image20.png"</figure>
 
 The admin can select Approve or Reject option from the given record. <!--and chooses appropriate action.-->
 
-![](./media/media/image21.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image21.png"</figure>
 
 On approval, the status changes to 'Approved' and on rejection the
 status changes to 'Rejected'.
 
-![](./media/media/image22.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image22.png"</figure>
 
 
 **Partner's Portal - (Add Device)**
@@ -279,18 +281,18 @@ To **Add Devices** under a given SBI, click on 'Add Devices'.
 - Option to Add Device is only provided if the SBI is in 'Approved'
 status.
 
-![](./media/media/image23.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image23.png"</figure>
 
 Each device detail added gets submitted for admin approval.
 
-![](./media/media/image24.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image24.png"</figure>
 
-![](./media/media/image25.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image25.png"</figure>
 
 A maximum of 25 devices can be added and viewed at once within this
 page.
 
-![](./media/media/image26.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image26.png"</figure>
 
 On clicking Add Device button after submitting 25 devices a warning
 popup is displayed as following 
@@ -298,54 +300,54 @@ popup is displayed as following
 Please note that all the previously submitted devices will not be
 visible upon refreshing but can be viewed in List of Devices Page.
 
-![](./media/media/image27.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image27.png"</figure>
 
 To add more than the stated number (25 devices), the user confirms by
 clicking on the popup, the page undergoes automatic refresh with all
 the previously submitted devices not displayed anymore as shown in the
 below screenshot and then the devices can be added sequentially.
 
-![](./media/media/image28.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image28.png"</figure>
 
 Once all the required devices are submitted, Clicking on 'Back to SBI
 List' button navigates to 'List of SBIs' page.
 
-![](./media/media/image29.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image29.png"</figure>
 
 All devices pertaining to a given SBI can be viewed in a tabular
 structure by clicking on View Devices provided in each SBI card of List
 of SBIs page.
 
-![](./media/media/image30.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image30.png"</figure>
 
 Each device record can be viewed individually (in both Partner and
 Partner Admin portal) by clicking on record itself or on clicking View
 option in action menu of the corresponding device. The partner
 admin is taken to **'View Device Details'** for detailed view.
 
-![](./media/media/image31.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image31.png"</figure>
 
 **Partner Admin portal for approval/rejection of devices:**
 
 To approve / reject a device, admin clicks on SBI-Device card in his
 homepage.
 
-![](./media/media/image32.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image32.png"</figure>
 
 On clicking 'Devices' tab, **List of all Devices** submitted so far are
 displayed.
 
-![](./media/media/image33.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image33.png"</figure>
 
 On clicking the action menu of the respective device record, an option
 'Approve/ Reject' is provided
 
-![](./media/media/image34.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image34.png"</figure>
 
 A popup window appears for the admin to take appropriate action-
 APPROVE/ REJECT and select the respective button
 
-![](./media/media/image35.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image35.png"</figure>
 
 The status is thus updated accordingly in **List of Devices** Page as
 Approved/ Rejected based on the above action.
@@ -354,7 +356,7 @@ Approved/ Rejected based on the above action.
 pending with admin for approval and no action has been taken by admin
 yet.
 
-![](./media/media/image36.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image36.png"</figure>
 
 **Deactivate Device:**
 
@@ -363,17 +365,17 @@ provided it is in 'Approved' status. To perform deactivation, click on
 'Deactivate' option in the action menu of the given Device in 'List of
 Device' page.
 
-![](./media/media/image37.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image37.png"</figure>
 
 On clicking Deactivate option, a popup window appears seeking for
 confirmation.
 
-![](./media/media/image38.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image38.png"</figure>
 
 On clicking Confirm, the status of the device changes to 'Deactivated'
 and the record is greyed out in the List of Devices page.
 
-![](./media/media/image39.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image39.png"</figure>
 
 **Deactivate SBI:**
 
@@ -383,13 +385,13 @@ To perform deactivation, click on
 'Deactivate' option in the action menu of the given SBI in 'List of SBI'
 page.
 
-![](./media/media/image40.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image40.png"</figure>
 
 On clicking 'Deactivate SBI', a popup window appears seeking for
 confirmation and cautioning the admin about the impact
 on associated devices.
 
-![](./media/media/image41.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image41.png"</figure>
 
 On deactivation of SBI - the devices associated to it gets impacted as
 below:
@@ -407,11 +409,11 @@ below:
 The SBI record is greyed out and devices cannot be added anymore within
 it.
 
-![](./media/media/image42.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image42.png"</figure>
 
 **Status of Devices before SBI Deactivation:**
 
-![](./media/media/image43.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image43.png"</figure>
 
 -   Previously **approved** device records are displayed in
     **'Deactivated'** status and those row items being greyed out.
@@ -425,17 +427,17 @@ it.
 
 **Impact on status of Devices after SBI Deactivation:**
 
-![](./media/media/image44.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image44.png"</figure>
 
 Option to deactivate an SBI is also available to Partner Admin by
 clicking on 'Deactivate option' in action menu of approved SBIs in List
 of SBI page.
 
-![](./media/media/image45.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image45.png"</figure>
 
 **Filter section in Partner portal:**
 
-![](./media/media/image46.png)
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image46.png"</figure>
 
 -   It displays an expandable and collapsible filter section on
     consecutive clicks.
