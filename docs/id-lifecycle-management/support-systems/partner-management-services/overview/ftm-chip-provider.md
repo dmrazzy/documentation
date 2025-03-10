@@ -1,5 +1,3 @@
-# FTM Chip Provider
-
 # End User Guide
 
 **Partner Management Portal (PMP) is used by both; PMS Admin and Partner
