@@ -44,7 +44,7 @@ We use Keycloak for authentication, and users select their preferred language du
    * Go to the "Realm Settings" section.
    * Click on the **"Themes"** tab.
 
-> <img src="../../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image1.png" alt="" data-size="original">
+> <img src="../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image1.png" alt="" data-size="original">
 
 3. **Add Spanish to Supported Locales**:
    * Ensure that "Internationalization" is enabled.
@@ -52,13 +52,13 @@ We use Keycloak for authentication, and users select their preferred language du
    * Click "Save" to apply changes.
    *
 
-       ![](../../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image2.png)
+       ![](../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image2.png)
 4. **Verify Language Selection in Keycloak Login Page:**
    * Navigate to the Keycloak login page.
    * Ensure that Spanish appears as an option in the language selection dropdown.
    *
 
-       ![](../../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image3.png)
+       ![](../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image3.png)
 
 #### 3. Rebuild the Application
 
@@ -88,6 +88,6 @@ After adding the new language bundle, you must **rebuild the code** to ensure th
    * Confirm that the UI displays the correct Spanish translations after logging in.
    *
 
-       ![](../../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image4.png)
+       ![](../../../../../Users/keshavsingh/Office/pmp/new-language-support/media/media/image4.png)
 
 By following these steps, you can easily add support for any new language in your applica

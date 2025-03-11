@@ -95,20 +95,20 @@ To get started with the new interface of Partner Management Portal, refer to the
 
 ### Build and Deploy
 
-To access the build and read through the deployment instructions, refer to the [Partner Management Services Deployment Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/build-and-development-guide.md).
+To access the build and read through the deployment instructions, refer to the [Partner Management Services Deployment Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/build-and-development-guide.md).
 
 **Note**: The deployment script for the PMS module-wise test rig will be addressed in the next release. Meanwhile, users who wish to run automation tests can refer to the [documentation](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/testrig) and deploy using the image `mosipid/apitest-pms:1.3.0-dp.1` .
 
 ### Configurations
 
-For details related to partner management services revamp configurations, refer to the [PMS Revamp Configuration Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/pms-configuration-guide.md)
+For details related to partner management services revamp configurations, refer to the [PMS Revamp Configuration Guide](../../../id-lifecycle-management/support-systems/partner-management-services/deploy/pms-configuration-guide.md)
 
 ### Developers Guide
 
 For a detailed description of Partner Management System, code, design, and setup steps, refer to:
 
-1. [UI Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/ui-developers-guide.md)
-2. [Backend Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/backend-developers-guide.md)
+1. [UI Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/ui-developers-guide.md)
+2. [Backend Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/backend-developers-guide/)
 
 ### API
 
@@ -120,5 +120,5 @@ For details on the test results, refer [here](test-report.md).
 
 ## Other Documentation
 
-* [Technology Stack](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/technology-stack.md)
-* [Browsers Supported](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/browsers-supported.md)
+* [Technology Stack](../../../id-lifecycle-management/support-systems/partner-management-services/develop/backend-developers-guide/technology-stack.md)
+* [Browsers Supported](../../../id-lifecycle-management/support-systems/partner-management-services/develop/browsers-supported.md)
