@@ -6,7 +6,7 @@
 
 **Release Number**: 1.2.2.0
 
-**Release Date**: 11th March, 2025
+**Release Date**: 10th March, 2025
 
 ## Overview
 
