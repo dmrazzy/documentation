@@ -113,7 +113,7 @@ View (List and Details View), **Approve / Reject** or **Deactivate**.
 
 ### Language Support
 
-* The system offers multilingual support, with resource bundles available in three languages: English, Arabic, and French. Additional languages can be easily integrated by following the guidelines provided in the '[New Language Support](../../id-lifecycle-management/support-systems/partner-management-services/develop/new-language-support.md)' documentation.
+* The system offers multilingual support, with resource bundles available in three languages: English, Arabic, and French. Additional languages can be easily integrated by following the guidelines provided in the '[New Language Support](../../../id-lifecycle-management/support-systems/partner-management-services/develop/new-language-support.md)' documentation.
 
 ### Compatibility
 
