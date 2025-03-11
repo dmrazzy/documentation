@@ -4,9 +4,9 @@
 
 **Release Name**: Partner Management System Revamp
 
-**Release Number**: v1.2.2.0
+**Release Number**: 1.2.2.0
 
-**Release Date**: Coming Soon
+**Release Date**: 11th March, 2025
 
 ## Overview
 
@@ -113,7 +113,7 @@ View (List and Details View), **Approve / Reject** or **Deactivate**.
 
 ### Language Support
 
-* The system offers multilingual support, with resource bundles available in three languages: English, Arabic, and French. Additional languages can be easily integrated by following the guidelines provided in the '[New Language Support](https://mosip.atlassian.net/wiki/spaces/PMS/pages/1606254602/New+Language+Support)' documentation.
+* The system offers multilingual support, with resource bundles available in three languages: English, Arabic, and French. Additional languages can be easily integrated by following the guidelines provided in the '[New Language Support](../../id-lifecycle-management/support-systems/partner-management-services/develop/technical-overview/new-language-support.md)' documentation.
 
 ### Compatibility
 
@@ -141,16 +141,16 @@ Below is the list of key [known issues](https://mosip.atlassian.net/issues/?filt
 
 ### Repositories Released
 
-| Repository Released         | **Tags** |
-| --------------------------- | -------- |
-| partner-management-services | v1.2.2.0 |
-| partner-management-portal   | v1.2.2.0 |
+| **Repository Released**     | **Tags**                                                                       |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| partner-management-services | [v1.2.2.0](https://github.com/mosip/partner-management-services/tree/v1.2.2.0) |
+| partner-management-portal   | [v1.2.2.0](https://github.com/mosip/partner-management-portal/tree/v1.2.2.0)   |
 
 ### Compatible Modules
 
 The following table outlines the tested and certified compatibility of PMS 1.2.2.0 with other modules.
 
-<table data-header-hidden><thead><tr><th width="440"></th><th></th></tr></thead><tbody><tr><td><strong>Module/ Repo</strong></td><td><strong>Tags</strong></td></tr><tr><td><strong>Key Manager</strong></td><td><a href="https://github.com/mosip/keymanager/tree/v1.3.0-beta.2">v1.3.0-beta.2</a></td></tr><tr><td><strong>auth manager</strong></td><td><a href="https://github.com/mosip/mosip-openid-bridge">1.2.0.1</a></td></tr><tr><td><strong>artifactory</strong></td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2">1.2.0.2</a></td></tr><tr><td><strong>IDA</strong></td><td><a href="https://github.com/mosip/id-authentication/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>eSignet</strong></td><td><a href="https://github.com/mosip/esignet/tree/v1.4.1">1.4.1</a></td></tr><tr><td><strong>Reg Proc</strong></td><td><a href="https://github.com/mosip/registration/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Notifier (Kernel)</strong></td><td><a href="https://github.com/mosip/commons/tree/v1.2.0.1/kernel">1.2.0.1</a></td></tr><tr><td><strong>Audit manager</strong></td><td><a href="https://github.com/mosip/audit-manager/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>ID Repo</strong></td><td><a href="https://github.com/mosip/id-repository/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>datashare</strong></td><td><a href="https://github.com/mosip/durian/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Keycloak</strong></td><td><a href="https://github.com/mosip/keycloak/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>config-server</strong></td><td><a href="https://github.com/mosip/mosip-config/tree/v1.1.2">v1.1.2</a></td></tr><tr><td><strong>Websub</strong></td><td><a href="https://github.com/mosip/websub/tree/v1.2.0.1">1.2.0.1</a></td></tr></tbody></table>
+<table data-header-hidden><thead><tr><th width="386.49859619140625"></th><th></th></tr></thead><tbody><tr><td><strong>Module/ Repo</strong></td><td><strong>Tags</strong></td></tr><tr><td><strong>Key Manager</strong></td><td><a href="https://github.com/mosip/keymanager/tree/v1.3.0-beta.2">v1.3.0-beta.2</a></td></tr><tr><td><strong>auth manager</strong></td><td><a href="https://github.com/mosip/mosip-openid-bridge">1.2.0.1</a></td></tr><tr><td><strong>artifactory</strong></td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2">1.2.0.2</a></td></tr><tr><td><strong>IDA</strong></td><td><a href="https://github.com/mosip/id-authentication/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>eSignet</strong></td><td><a href="https://github.com/mosip/esignet/tree/v1.4.1">1.4.1</a></td></tr><tr><td><strong>Reg Proc</strong></td><td><a href="https://github.com/mosip/registration/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Notifier (Kernel)</strong></td><td><a href="https://github.com/mosip/commons/tree/v1.2.0.1/kernel">1.2.0.1</a></td></tr><tr><td><strong>Audit manager</strong></td><td><a href="https://github.com/mosip/audit-manager/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>ID Repo</strong></td><td><a href="https://github.com/mosip/id-repository/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>datashare</strong></td><td><a href="https://github.com/mosip/durian/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Keycloak</strong></td><td><a href="https://github.com/mosip/keycloak/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>config-server</strong></td><td><a href="https://github.com/mosip/mosip-config/tree/v1.1.2">v1.1.2</a></td></tr><tr><td><strong>Websub</strong></td><td><a href="https://github.com/mosip/websub/tree/v1.2.0.1">1.2.0.1</a></td></tr></tbody></table>
 
 ### Documentation
 

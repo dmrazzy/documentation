@@ -7,6 +7,13 @@ description: Please refer below for all the latest release details ✨
 
 ## Latest Releases 🌟
 
+
+
+**Version: v1.2.2.0 - Partner Management System Revamp**&#x20;
+
+* **Date**: 11th March, 2025
+* [Release Notes](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/partner-management-system-1.2.2.0)
+
 **Version: v0.11.0 - Android Registration Client**
 
 * **Support**: Stable Release
