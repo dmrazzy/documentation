@@ -1,13 +1,16 @@
 ---
-icon: book-open
 description: Please refer below for all the latest release details ✨
+icon: book-open
 ---
 
 # Releases
 
 ## Latest Releases 🌟
 
+**Version: v1.2.1.0 - beta.1 (Part 3)**
 
+* **Date**: Coming Soon!
+* [Release Notes](1.2.1.0-beta.1-part-3.md)
 
 **Version: v1.2.2.0 - Partner Management System Revamp**&#x20;
 
