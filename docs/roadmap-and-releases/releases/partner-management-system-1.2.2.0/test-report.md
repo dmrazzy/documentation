@@ -45,31 +45,15 @@ Verification is performed on various configurations as mentioned below:
 
 #### Browser versions tested on desktop/laptop
 
-| Sl. No | Browser | Versions       |
-| ------ | ------- | -------------- |
-| 1      | Chrome  | 133.0.6943.121 |
-| 2      | Firefox | 135.0.1        |
-| 3      | Edge    | 133.0.3065.82  |
-| 4      | Safari  | 18.3           |
+<table><thead><tr><th width="293.4176025390625">Browser</th><th>Versions</th></tr></thead><tbody><tr><td>Chrome</td><td>133.0.6943.121</td></tr><tr><td>Firefox</td><td>135.0.1</td></tr><tr><td>Edge</td><td>133.0.3065.82</td></tr><tr><td>Safari</td><td>18.3</td></tr></tbody></table>
 
 #### Browser versions tested on tablet device
 
-| Sl. No | Browser | Versions      |
-| ------ | ------- | ------------- |
-| 1      | Chrome  | July 31, 2016 |
-| 2      | Firefox | July 31, 2016 |
-| 3      | Edge    | July 31, 2016 |
+<table><thead><tr><th width="303.55255126953125">Browser</th><th>Versions</th></tr></thead><tbody><tr><td>Chrome</td><td>July 31, 2016</td></tr><tr><td>Firefox</td><td>July 31, 2016</td></tr><tr><td>Edge</td><td>July 31, 2016</td></tr></tbody></table>
 
 #### Browser versions tested on extra-large screens
 
-
-
-| Sl. No | Browser | Versions       |
-| ------ | ------- | -------------- |
-| 1      | Chrome  | 133.0.6943.121 |
-| 2      | Firefox | 135.0.1        |
-| 3      | Edge    | 133.0.3065.82  |
-| 4      | Safari  | 18.3           |
+<table><thead><tr><th width="309.0426025390625">Browser</th><th>Versions</th></tr></thead><tbody><tr><td>Chrome</td><td>133.0.6943.121</td></tr><tr><td>Firefox</td><td>135.0.1</td></tr><tr><td>Edge</td><td>133.0.3065.82</td></tr><tr><td>Safari</td><td>18.3</td></tr></tbody></table>
 
 ## Screen sizes used for UI responsiveness validation
 
@@ -80,9 +64,7 @@ Verification is performed on various configurations as mentioned below:
 
 ## Feature Health
 
-
-
-\<Image>
+<figure><img src="../../../.gitbook/assets/pms-1.2.2.0-feature-health.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -118,8 +100,6 @@ Note: NA - 8 Test Cases which are descoped scenarios/not developed feature
 
 
 
-
-
 API Test Rig:
 
 | **Total** | **Passed** | **Failed** | **Skipped (N/A)** | **Ignored** | **Known issues** |
@@ -141,46 +121,14 @@ The various metrics that assist in test tracking and efficiency are as follows:
 
 ### **Tested with components:**
 
-**Module/Repo -** **Compatible Version**
-
-
-
-\[partner-management-portal]{.mark} \[mosipqa/pmp-revamp-ui:1.2.2.x]{.mark}
-
-\[partner-management-services]{.mark} \[mosipqa/partner-management-service:1.2.2.x]{.mark}
-
-\[Policy Management service]{.mark} \[mosipqa/policy-management-service:1.2.2.x]{.mark}
-
-\[Key-manager]{.mark} \[mosipqa/kernel-keymanager-service:1.3.x]{.mark}
-
-\[IDA Auth]{.mark} \[mosipid/authentication-service:1.2.1.0]{.mark}
-
-\[Artifactory]{.mark} \[mosipid/artifactory-server:1.2.0.2]{.mark}
-
-\[eSignet]{.mark} \[mosipid/esignet:1.4.1]{.mark}
-
-\[Notifier (Kernel)]{.mark} \[mosipid/kernel-notification-service:1.2.0.1]{.mark}
-
-\[Audit manager]{.mark} \[mosipid/kernel-auditmanager-service:1.2.0.1]{.mark}
-
-\[ID Repro]{.mark} \[mosipid/id-repository-identity-service:1.2.1.0]{.mark}
-
-\[datashare]{.mark} \[mosipid/data-share-service:1.2.0.1]{.mark}
-
-\[Keycloak]{.mark} \[mosipid/mosip-artemis-keycloak:1.2.0.1]{.mark}
-
-\[config-server]{.mark} \[mosipid/config-server:1.1.2]{.mark}
-
-\[Websub]{.mark} \[mosipid/websub-service:1.2.0.1]{.mark}
-
-postgres]{.mark} \[bitnami/postgresql:15.4.0-debian-11-r10]{.mark}
+<table><thead><tr><th width="325.10443115234375">Module/Repo</th><th>Compatible Version</th></tr></thead><tbody><tr><td>partner-management-portal</td><td>mosipqa/pmp-revamp-ui:1.2.2.x</td></tr><tr><td>partner-management-services</td><td>mosipqa/partner-management-service:1.2.2.x</td></tr><tr><td>Policy Management service</td><td>mosipqa/policy-management-service:1.2.2.x</td></tr><tr><td>Key-manager</td><td>mosipqa/kernel-keymanager-service:1.3.x</td></tr><tr><td>IDA Auth</td><td>mosipid/authentication-service:1.2.1.0</td></tr><tr><td>Artifactory</td><td>mosipid/artifactory-server:1.2.0.2</td></tr><tr><td>eSignet</td><td>mosipid/esignet:1.4.1</td></tr><tr><td>Notifier (Kernel)</td><td>mosipid/kernel-notification-service:1.2.0.1</td></tr><tr><td>Audit manager</td><td>mosipid/kernel-auditmanager-service:1.2.0.1</td></tr><tr><td>ID Repro</td><td>mosipid/id-repository-identity-service:1.2.1.0</td></tr><tr><td>datashare</td><td>mosipid/data-share-service:1.2.0.1</td></tr><tr><td>Keycloak</td><td>mosipid/mosip-artemis-keycloak:1.2.0.1</td></tr><tr><td>config-server</td><td>mosipid/config-server:1.1.2</td></tr><tr><td>Websub</td><td>mosipid/websub-service:1.2.0.1</td></tr><tr><td>postgres</td><td>bitnami/postgresql:15.4.0-debian-11-r10</td></tr></tbody></table>
 
 ### **Sonar Report**
 
 * **Partner-Management-Service:**
 
-{width="5.382608267716535in" height="3.0340409011373577in"}
+<figure><img src="../../../.gitbook/assets/pms-1.2.2.0-partner-management-service.png" alt=""><figcaption></figcaption></figure>
 
 * **Partner-Management-Portal:**
 
-{width="6.052083333333333in" height="2.729903762029746in"}
+<figure><img src="../../../.gitbook/assets/pms-1.2.2.0-partner-management-portal.png" alt=""><figcaption></figcaption></figure>

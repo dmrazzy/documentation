@@ -1,7 +1,3 @@
----
-icon: id-card-clip
----
-
 # MOSIP Authentication SDK
 
 ### **Overview**
