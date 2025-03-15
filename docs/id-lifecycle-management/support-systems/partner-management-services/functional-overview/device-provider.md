@@ -1,6 +1,6 @@
 # Device Provider
 
-**Partner Management Portal (PMP) is used by both; PMS Admin and Partner User.**
+** PMS Portal is used by both; **PMS Admin** and **Partner User**.
 
 * Partner Administrator: Partner Admin
 * Partners: Partner User
@@ -21,9 +21,12 @@ As a process of partner onboarding onto PMS after successful registration, Partn
 
 A **Certificate Authority (CA)** is an organization that acts to validate the identities of entities (in this case, a partner organisation) and bind them to cryptographic keys through the issuance of electronic documents known as **Digital Certificates**. A country needs to onboard valid CAs before onboarding any partner as MOSIP will only accept certificates which are signed only by a Trusted CA.
 
+
 #### Upload Root CA and Sub CA Certificates
 
-1. Go to **PMP** and login as Partner Admin. Click on **Certificate Trust Store** in Admin dashboard.
+1. Go to **PMS Portal** and login as Partner Admin.
+
+2. Click on **Certificate Trust Store** on Admin dashboard.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image1.png" alt=""><figcaption></figcaption></figure>
 
@@ -31,7 +34,7 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image2.png" alt=""><figcaption></figcaption></figure>
 
-3. Select the Partner Domain. (AUTH)
+3. Select the Partner Domain (AUTH)
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image3.png" alt=""><figcaption></figcaption></figure>
 
@@ -41,7 +44,7 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image5.png" alt=""><figcaption></figcaption></figure>
 
-5. Click Submit and an appropriate success message appears.
+5. Click Submit, an appropriate success message appears and confirms the upload.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image6.png" alt=""><figcaption></figcaption></figure>
 
@@ -49,16 +52,18 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image3.png" alt=""><figcaption></figcaption></figure>
 
+
+
 ### Device Provider Flow
 
-To be able to access the services by PMP and to validate that the partner is from a trusted organisation, undergoing self registration on PMP and uploading CA signed certificate is necessary'.
+To be able to access the services by PMS and to validate that the partner is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary'.
 
-* Self Register on PMP Interface
+* Self Register on PMS Interface
 * Upload CA signed Certificate
 
-#### Self-Register on PMP as Device Provider
+#### Self-Register on PMS as Device Provider
 
-1. The Device Provider can register themselves on PMP by clicking **Register** on the Login Page, a form comes up.
+1. The Device Provider can register themselves on PMS by clicking **Register** on the Login Page, a form comes up.
 2. Enter the Authentication Partner details:
    1. Partner type (Device Provider)
    2. First and Last name
@@ -75,30 +80,32 @@ To be able to access the services by PMP and to validate that the partner is fro
 **Validations**:
 
 * **Terms & Conditions**: Partner consent refers to voluntary and informed agreement provided by a **Partner User** on behalf of the Partner Organisation to a specific action or process where the users have a clear understanding of what they are consenting to. User consent is important to ensure data privacy, where it is compliant to obtain explicit consent from partners before collecting, processing, or sharing their personal organisation level data.
-* A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMP will be informed while seeking user consent.
+* A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMS will be informed while seeking user consent.
+
 
 #### Login:
 
-* For existing partner users who are already registered in Partner Management Portal, they can login to the portal through their email username and password.
-* On logging in the User lands to Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
+* For existing partner users who are already registered with PMS Portal, they can login to the portal through their email username and password.
+* On login, the User lands on Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image9.png" alt=""><figcaption></figcaption></figure>
+
 
 #### Forgot Password:
 
 * Partner User has option to 'Reset Password'.
-*
 
     <figure><img src="../../../../.gitbook/assets/temp-device-provider-image10.png" alt=""><figcaption></figcaption></figure>
 
+
 #### CA Signed Partner Certificate Upload / Download or Re-Upload
 
-User is now in [**\[Home Page/Dashboard\]{.underline}**](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview) where the following features are provided to Device Provider:
+User is now in [**[Home Page/Dashboard](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview) where the following features are provided to Device Provider:
 
 1. Partner Certificate
 2. Device Provider Services: SBI and Device creation
 
-Once registered through the process of 'Partner Onboarding' onto PMP after successful registration, user is required to perform 'Upload CA signed Partner Certificate' on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation.
+Once registered through the process of 'Partner Onboarding' with PMS after successful registration, user is required to perform 'Upload CA signed Partner Certificate' on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation.
 
 **Tips**:
 
@@ -108,7 +115,7 @@ Later when required a Partner can also 'Download Certificate' and 'Re-Upload Cer
 
 Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that the 'Partner Admin' should have already had uploaded the **Root CA** and **Intermediate CA** certificates.
 
-**To Upload CA signed Certificate**
+**Upload CA signed Certificate**
 
 1. Go to **Device Provider Dashboard.**
 
@@ -134,6 +141,7 @@ Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that th
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image16.png" alt=""><figcaption></figcaption></figure>
 
+
 **Download Certificate**
 
 There is also an option to download initially uploaded CA signed certificate and also the MOSIP Signed Certificate.
@@ -148,6 +156,8 @@ MOSIP Signed Certificate has a validity of 1 year from the time of Partner Certi
 
 You must ensure that you re-upload the partner certificate again so that new MOSIP signed certificate can be generated and other functionalities such as Device Provider Services (SBI, Devices) can function.
 
+-------------------
+
 ### Device Provider Services
 
 After the partner (you) have uploaded partner certificate, you can now perform 'Device Provider Services':
@@ -157,7 +167,7 @@ After the partner (you) have uploaded partner certificate, you can now perform '
 
 #### **Add SBI:**
 
-Details of Secure Biometric Interface (SBI) can be added by clicking on 'Add SBI' button which takes you to 'Add SBI Details' screen.
+You can add details of Secure Biometric Interface (SBI) by clicking on 'Add SBI' button which takes you to 'Add SBI Details' screen.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image17.png" alt=""><figcaption></figcaption></figure>
 
