@@ -1,3 +1,12 @@
+<!-- 
+Command to convert to word file (This particular file to esternal drive)
+
+pandoc /Users/keshavsingh/Office/MOSIP/MOSIPDocumentation/MOSIPDocumentation/docs/id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration.md -o /Users/keshavsingh/Office/pmp/admin-guide/pmp-admin-v-4.docx
+
+-->
+
+
+
 # Partner Administration
 
 ## Partner Administration
@@ -6,7 +15,7 @@
 
 ### What all activities does a 'Partner Admin' perform?
 
-Partner Admin \[supervises]{.mark} the overall partner and policy management functionalities in PMS. The admin is responsible for:
+Partner Admin supervises the overall partner and policy management functionalities in PMS. The admin is responsible for:
 
 * Upload Root Certificate
 * Intermediate CA Certificates
@@ -15,19 +24,20 @@ Partner Admin \[supervises]{.mark} the overall partner and policy management fun
 
 Note:
 
-Partner Admin can also assume the role of Policy Manager to
+Partner Admin can also assume the role of Policy Manager to:
 
-* Create and manage policy groups and policies
+* Create and manage Policy Group(s) and Policies
 
 ### What all activities does a 'Policy Manager' perform?
 
-As a partner admin \[cum]{.mark} policy manager a Policy Manager performs following roles:
+As a partner admin cum]{.mark} policy manager you can performs following:
 
-1. Creation and management of Policy Group, Authentication Policy, Datashare Policy
+1. Create and manage Policy Group, Authentication Policy and Datashare Policy
 
 **Notes**:
 
-In UI - both PARTNER\_ADMIN and POLICYMANAGER roles should be granted for the '**POLICIES**' card to appear in the dashboard.
+For the '**POLICIES**' card to appear on the dashboard, both; (Partner Admin and Policy Mangaer) roles must be granted.
+
 
 ### Partner Admin / Policy Manager
 
@@ -37,7 +47,7 @@ Partner admin too has to register \[himself]{.mark} just like any other 'Partner
 
 ### Registering as Partner Admin
 
-Partner Admin can register in PMP as any one of the partner type and then get the various roles/privileges by going to Keycloak.
+You (Partner Admin) can register in PMP as any one of the partner type and then get the various roles/privileges by going to Keycloak.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image1.png" alt=""><figcaption></figcaption></figure>
 
@@ -203,7 +213,7 @@ On clicking the .p7b file from local system, the certificate hierarchy of the in
 
 <figure><img src="../../../../.gitbook/assets/image20.png" alt=""><figcaption></figcaption></figure>
 
-#### \[Upload Intermediate Certificate]{.mark}
+#### Upload Intermediate Certificate
 
 To upload the Intermediate CA certificate, carry out the same steps of Root CA Certificate upload.
 
@@ -223,37 +233,42 @@ To upload the Intermediate CA certificate, carry out the same steps of Root CA C
 * Validity of Root CA Certificate > Intermediate CA Certificate > CA Signed Partner Certificate
 * Sequence of Upload: Root CA Certificate (by Partner Admin)→ Intermediate CA Certificate (by Partner Admin) → CA signed Partner Certificate (by Partner)
 
-## Partners
+# Partners
 
 As a **Partner Admin** you can view the list of all partners who have enrolled to PMS portal by clicking on the Partners card on dashboard or side panel, hamburger menu.
 
-### This \[card]{.mark} / \[Section]{.mark} has the following features:
+## ‘Partner’ has following features:
 
-1. View
-
-* List view of partner detail (Action menu: View, Deactivate)
-* Details view of individual Partner an the certificate details
-
+1. View Partner
+  * List View - (Action menu: View, Deactivate)
+  * Details View -  of individual Partner and the certificate details
 3. Download original Partner Certificate and MOSIP Signed certificate
 4. Deactivate Partner
 
+
+### View Partner Details
+
+#### Viewing a Partner
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image25.png" alt=""><figcaption></figcaption></figure>
 
 **Note:** Deactivate option appears disabled if the partner is already deactivated.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image26.png" alt=""><figcaption></figcaption></figure>
 
-#### View Partner Details
+#### Viewing a Partner's details
 
 Click on a row item or use the view option in action menu you come to 'Partner Details Page' to view the Partner Details such as **Partner type**, **Organisation name**, First Name, Last Name, Phone Number, Email Address, Policy Group (If partner is of the type 'Authentication Partner'). Partner certificate details are also visible.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image27.png" alt=""><figcaption></figcaption></figure>
 
-#### Download original certificate / MOSIP Signed certificate
+
+
+
+### Download original certificate / MOSIP Signed certificate
 
 The admin can download original certificate / MOSIP Signed certificate as and when necessary.
 
-**Notes:**
+**Note:**
 
 The download functionality of following certificates is possible only during following instances:
 
@@ -269,7 +284,9 @@ On downloading the Original / MOSIP Signed certificate, a success message appear
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image30.png" alt=""><figcaption></figcaption></figure>
 
-#### Deactivate a Partner
+
+
+### Deactivate a Partner
 
 To deactivate a partner, click on Deactivate option in action menu. A popup window appears seeking for confirmation from the partner.
 
@@ -286,42 +303,45 @@ After confirming deactivation, the respective record is greyed out in the tabula
 
 The deactivated partner will not be able to create or utilize any of the services in their PMS portal (For e.g. no new transactions will work such as creation of OIDC Client , API Key etc).
 
-**Known Issue:** Even after partner deactivation, partner is able to access the existing transactions in their PMS portal such as
+**Known Issue:** Even after partner deactivation partner is able to access the existing transactions in their PMS portal such as following:
 
 1. Existing OIDC client ids are still operational for Authentication Partner.
 2. Existing API keys are still operational for Authentication Partner.
 3. SBI / Devices / FTM - trust validation does not fail even after partner deactivation.
 
-## Policies
 
-You can use the 'Policies' section/card for creation and management of Policy Group, Authentication Policy, Datashare, You should have privileges of both; Partner Admin and Policy Manager.
 
-This \[card]{.mark} / \[Section]{.mark} is accessible to you only if both **Partner Admin** and **Policy Manager** roles are configured / allocated which, from the UI, for the card to appear in the dashboard.
+# Policies
 
-Policies has theree tabs
+You can use the 'Policies' to create and manage Policy Group, Authentication Policy and Datashare (You should have privileges of both; Partner Admin and Policy Manager).
 
-* \*\*Policy Group, (This tab is selected by default)
+The 'Policies' section is accessible to you only if both **Partner Admin** and **Policy Manager** roles are allocated and only when the 'Policies' card will appear on the the dashboard.
+
+Policies has following theree tabs:
+
+* Policy Group, (This tab is selected by default)
 * Authentication Policy,
 * Datashare Policy
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image33.png" alt=""><figcaption></figcaption></figure>
 
-Policy Group
+**Policy Group**
 
-* Create Policy Group
+Policy Group tab allows you to do following:
 * View Policy Group
   * List view
   * Details View
+* Create Policy Group
 * Deactivate Policy Group
 
 &#x20;
 
-Authentication Policy
+**Authentication Policy**
 
-* Create Authentication Policy (by mapping to an already created Policy Group)
 * View Authentication Policy
   * List view
   * Details View
+* Create Authentication Policy (by mapping to an already created Policy Group)
 * Deactivate Authentication Policy
 * Clone Authentication Policy
 * Edit Authentication Policy (Which is in draft status)
@@ -329,18 +349,20 @@ Authentication Policy
 
 &#x20;
 
-Datashare Policy
+**Datashare Policy**
 
-* Create Datashare Policy
 * View Datashare Policy:
-  1. List view
-  2. Details view
+  * List view
+  * Details view
+* Create Datashare Policy
 * Deactivate Datashare Policy
 * Clone Datashare Policy
 * Edit Datashare Policy (Which is in draft status)
 * Publish Datashare Policy (Which is in draft status so that the status changes to 'Activated')
 
-### Policy Group
+## Policy Group
+
+### View Policy Group 
 
 #### List View - Policy Groups
 
@@ -357,6 +379,7 @@ The options provided in 'Action menu are: View, Deactivate.
 Clicking on View in action menu or by clicking the row item itself, admin is navigated to View Policy Group page where the policy group details are displayed along with its status: Activated or Deactivated.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image36.png" alt=""><figcaption></figcaption></figure>
+
 
 #### Create Policy Group
 
@@ -542,40 +565,48 @@ On clicking view of active record or the row item itself, the partner- policy li
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image65.png" alt=""><figcaption></figcaption></figure>
 
-## **SBI - Device:**
 
-This card is exclusively used to manage Device Provider's requests on SBI and Device creation.
 
-1. The 'SBI-Devices' option will have the following features:
-   1. 2 Tabs- **SBI and Device** are displayed. SBI tab view is selected by default
+
+
+# **SBI - Device:**
+
+SBI - Device is exclusively used to manage Device Provider's requests on SBI and Device creation.
+
+The 'SBI-Devices' has 2 Tabs namely **SBI and Device**. SBI tab view is selected by default
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image66.png" alt=""><figcaption></figcaption></figure>
 
 **SBI features**
 
-* Tabular view of SBIs created by Device Providers along with the status
-* Approve/ Reject SBIs on clicking Approve/Reject in action menu of Pending for Approval records
-* View submitted SBI details : Either on clicking on view option in action menu of any of the submitted SBI details in the tabular view or by clicking on the active row item itself, it navigates to View SBI details page
-* Deactivate an SBI on clicking Deactivate option in action item of activated records in Tabular view screen
-* Linked Devices of a given SBI can be viewed through a filtered search on the pre-selected SBI
+* View SBI - 
+  * List View of SBIs created by Device Providers along with the status
+  * Details View - View submitted SBI details,either on clicking on view option in action menu of any of the submitted SBI details in the tabular view or by clicking on the active row item itself, it navigates to View SBI details page
+* Approve/ Reject SBIs - On clicking Approve/Reject in action menu of Pending for Approval records
+* Deactivate an SBI - On clicking Deactivate option in action item of activated records in Tabular view screen
+* View Linked Devices - Of a given SBI can be viewed through a filtered search on the pre-selected SBI
 
 &#x20;
 
 **Device features:**
 
-* Tabular view of Devices created by Device Providers along with the status
-* Approve/ Reject devices on clicking Approve/Reject in action menu of Pending for Approval records
-* View submitted Device details : Either on clicking on view option in action menu of any of the submitted API key details in the tabular view or by clicking on the row item itself, it navigates to View device details page
-* Deactivate device on clicking Deactivate option in action item of activated records in Tabular view screen
+* View
+  * List View: Of Devices created by Device Providers along with the status
+  * View submitted Device details : Either on clicking on view option in action menu of any of the submitted API key details in the tabular view or by clicking on the row item itself, it navigates to View device details page
+* Approve/ Reject devices: On clicking Approve/Reject in action menu of Pending for Approval records
+* Deactivate Device: On clicking Deactivate option in action item of activated records in Tabular view screen
 * List of all SBIs created by various different device providers are available here. Any SBIs that are pending for approval can be approved/ rejected
+
+
+# SBI
 
 ### Approve or reject SBI
 
-The SBI can be approved or rejected by partner admin by going to Dashboard → SBI-Device → List of SBIs.
+ Go to Dashboard → SBI-Device → List of SBIs to Approved or Reject.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67.png" alt=""><figcaption></figcaption></figure>
 
-The admin selects on Approve/ Reject option from the given record and chooses appropriate action.
+Select on Approve / Reject option from the given record and chooses appropriate action.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68.png" alt=""><figcaption></figcaption></figure>
 
@@ -583,7 +614,7 @@ On approval, the status changes to 'Approved' and on rejection, the status chang
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69.png" alt=""><figcaption></figcaption></figure>
 
-To view any individual records, click on View option in the action menu.
+You can click on View option in the action menu to view any individual records, 
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image70.png" alt=""><figcaption></figcaption></figure>
 
@@ -599,41 +630,50 @@ To know the list of linked devices associated to this SBI, click on the linked d
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image72.png" alt=""><figcaption></figcaption></figure>
 
+
+
 ### Deactivate SBI
 
 To deactivate an SBI, click on Deactivate option in action menu. An alert appears seeking for confirmation. Also admin is informed how the linked devices will be impacted after SBI deactivation.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image73.png" alt=""><figcaption></figcaption></figure>
 
-After confirming Deactivation: the respective SBI record is greyed out and the status is displayed as 'Deactivated'.
+After confirming Deactivation the respective SBI record is greyed out and the status is displayed as 'Deactivated'.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image74.png" alt=""><figcaption></figcaption></figure>
 
+
 #### Impact on linked devices after SBI deactivation
 
-Impact on linked devices after SBI deactivation is as below
+Impact on linked devices after SBI deactivation is as below:
 
-1. All approved device records are displayed in 'Deactivated' status and those row items being greyed out. The action menu in such records should be enabled with only View option. (Deactivate in action menu is disabled)
+1. All approved device records are displayed in 'Deactivated' status and those row items being greyed out. The action menu in such records should be enabled with only View option, (Deactivate in action menu is disabled).
 2. The devices of which the status was 'Pending for Approval' before SBI deactivation will now be displayed with 'Rejected' status.
 3. Rejected devices will continue to remain in the same status even after SBI deactivation.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image75.png" alt=""><figcaption></figcaption></figure>
 
-### **Device**
+ 
 
-#### View Devices
+## **Device**
+
+### View Devices
 
 On clicking 'Devices' tab, **List of all Devices** submitted so far are displayed.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image76.png" alt=""><figcaption></figcaption></figure>
 
-#### Approve / Reject Devices
+Click on view option in action menu or the row item itself (of any active device record) to view the device details individually.
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image80.png" alt=""><figcaption></figcaption></figure>
+
+### Approve / Reject Devices
 
 On clicking the action menu of the respective device record, an option 'Approve / Reject' is provided
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77.png" alt=""><figcaption></figcaption></figure>
 
-A popup window appears for the admin to take appropriate action- APPROVE/ REJECT and select the respective button
+A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78.png" alt=""><figcaption></figcaption></figure>
 
@@ -643,13 +683,10 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79.png" alt=""><figcaption></figcaption></figure>
 
-Click on view option in action menu or the row item itself (of any active device record) to view the device details individually
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image80.png" alt=""><figcaption></figcaption></figure>
+### Deactivate Device
 
-#### Deactivate Device
-
-Click on deactivate option in action menu . A confirmation window appears to proceed for deactivation.
+Click on deactivate option in action menu. A confirmation window appears to proceed for deactivation.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image81.png" alt=""><figcaption></figcaption></figure>
 
@@ -657,17 +694,21 @@ The deactivated device record is greyed out and status is also changed to 'Deact
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image82.png" alt=""><figcaption></figcaption></figure>
 
-## **FTM Chip:**
+
+
+# **FTM Chip:**
 
 The following features are provided to admin to manager FTM Chip Provider's requests:
 
-* \[Tabular view of FTM chip details]{.underline} along with the status of approval
-* \[Approve/ Reject]{.underline} FTM chip details submitted by FTM Chip Providers
-* \[View FTM details]{.underline} : Either on clicking on view option in action menu of active FTM Chip details in the tabular view or by clicking on the row item itself, it navigates to View FTM details page
-* \[Download FTM Chip Certificate]{.underline} : On clicking on Download option within FTM Chip Certificate section in 'View FTM Chip Certificate' page, then originally uploaded FTM Chip certificate can be downloaded
-* \[Deactivate FTM detail]{.underline} : On clicking on 'Deactivate' option in action menu of approved records in Tabular view of FTM details screen, the respective FTM detail along with its certificate will be deactivated.
+* View FTM Chip
+  * View List View: Of FTM chip details]{.underline} along with the status of approval
+  * View FTM details: Either on clicking on view option in action menu of active FTM Chip details in the tabular view or by clicking on the row item itself, it navigates to View FTM details page
+* Approve / Reject FTM chip details: submitted by FTM Chip Providers
+* Download FTM Chip Certificate: On clicking on Download option within FTM Chip Certificate section in 'View FTM Chip Certificate' page, then originally uploaded FTM Chip certificate can be downloaded
+* Deactivate FTM detail: On clicking on 'Deactivate' option in action menu of approved records in Tabular view of FTM details screen, the respective FTM detail along with its certificate will be deactivated.
 
-View FTP Chip Details
+
+## View FTP Chip Details
 
 The List of FTM Chip details displays all FTM Chip details created by FTM Chip Provider
 
@@ -675,19 +716,28 @@ The List of FTM Chip details displays all FTM Chip details created by FTM Chip P
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image84.png" alt=""><figcaption></figcaption></figure>
 
-The admin navigates to 'List of FTM Chip details' page where list of all FTM Chip records submitted so far by different FTM Chip providers are displayed.
+You can navigate to view 'List of FTM Chip details' page where list of all FTM Chip records submitted so far by different FTM Chip providers.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85.png" alt=""><figcaption></figcaption></figure>
 
-Approve / Reject FTM Chip
 
-On clicking the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided
+## View Details of FTM Chip&#x20;
+
+To view FTM Chip details indivudally, click on View option in action menu
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image89.png" alt=""><figcaption></figcaption></figure>
+
+
+
+## Approve / Reject FTM Chip
+
+Click on the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86.png" alt=""><figcaption></figcaption></figure>
 
 &#x20;
 
-A popup window appears for the admin to take appropriate action- APPROVE/ REJECT and select the respective button
+A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87.png" alt=""><figcaption></figcaption></figure>
 
@@ -697,17 +747,12 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 
 &#x20;
 
-Note: 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
+**Note**: 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88.png" alt=""><figcaption></figcaption></figure>
 
-View Details of FTM Chip&#x20;
 
-To view FTM Chip details indivudally, click on View option in action menu
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image89.png" alt=""><figcaption></figcaption></figure>
-
-Download FTM Chip Certificate
+## Download FTM Chip Certificate
 
 To download the FTM Chip Certificate uploaded by FTM Chip Provider, click on download button.
 
@@ -721,27 +766,29 @@ The deactivated FTM Chip record is greyed out after deactivation.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image92.png" alt=""><figcaption></figcaption></figure>
 
-## **Authentication Services:**
 
-The screen will have the following features:
 
-1. \[Two tabs namely **OIDC Client and API key**]{.underline} are displayed. OIDC Client tab view is selected by default \[as shown in UXD]{.mark}.
+# Authentication Services
+
+Authentication Services has two tabs namely **OIDC Client and API key**. OIDC Client tab view is selected by default.
 
 **OIDC Client**
 
-* \[Tabular view of OIDC clients created by partners]{.underline} along with the status
-* \[View submitted OIDC Client details]{.underline} : Either on clicking on view option in action menu of any of the submitted OIDC details in the tabular view or by clicking on the row item itself, it navigates to View OIDC Client details page
-* \[Deactivate]{.underline} an OIDC Client on clicking Deactivate option in action item of activated records in Tabular view screen
+* View OIDC Client
+  * Lis view of OIDC clients created by partners along with the status
+  * View submitted OIDC Client details: Either on clicking on view option in action menu of any of the submitted OIDC details in the tabular view or by clicking on the row item itself, it navigates to View OIDC Client details page
+* Deactivate an OIDC Client:  On clicking Deactivate option in action item of activated records in Tabular view screen
 
 **API Key**
 
-* \[Tabular view of API keys]{.underline} \[generated by partners]{.underline} along with the status
-* \[View submitted API Key details]{.underline} : Either on clicking on view option in action menu of any of the submitted API key details in the tabular view or by clicking on the row item itself, it navigates to View API key details page
-* \[Deactivate]{.underline} API key on clicking Deactivate option in action item of activated records in Tabular view screen
+* View API Keys
+  * Tabular view of API keys: Generated by partners along with the status
+  * View submitted API Key details: Either on clicking on view option in action menu of any of the submitted API key details in the tabular view or by clicking on the row item itself, it navigates to View API key details page
+* Deactivate: API key on clicking Deactivate option in action item of activated records in Tabular view screen
 
-### OIDC Client
+## OIDC Client
 
-View OIDC Clients
+### View OIDC Clients
 
 Within OIDC Client tab, all OIDC Clients created by various Authentication partners are displayed.
 
@@ -755,17 +802,18 @@ On clicking view option in action menu, the admin is redirected to View OIDC Cli
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image94.png" alt=""><figcaption></figcaption></figure>
 
-#### Deactivate OIDC Client:
+
+### Deactivate OIDC Client:
 
 On clicking view option in action menu, the admin is redirected to View OIDC Client details page.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image95.png" alt=""><figcaption></figcaption></figure>
 
-####
 
-### API Key
 
-#### View API Key
+## API Key
+
+### View API Key
 
 To view the list of all API Keys created by Authentication partner, click on API Key tab
 
@@ -781,7 +829,7 @@ On clicking view option in action menu, the admin is redirected to View API Key 
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image98.png" alt=""><figcaption></figcaption></figure>
 
-#### Deactivate an API Key
+### Deactivate an API Key
 
 To deactivate an API Key, click on deactivate option in action menu.
 

@@ -152,6 +152,38 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 
 <table data-header-hidden><thead><tr><th width="386.49859619140625"></th><th></th></tr></thead><tbody><tr><td><strong>Module/ Repo</strong></td><td><strong>Tags</strong></td></tr><tr><td><strong>Key Manager</strong></td><td><a href="https://github.com/mosip/keymanager/tree/v1.3.0-beta.2">v1.3.0-beta.2</a></td></tr><tr><td><strong>auth manager</strong></td><td><a href="https://github.com/mosip/mosip-openid-bridge">1.2.0.1</a></td></tr><tr><td><strong>artifactory</strong></td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2">1.2.0.2</a></td></tr><tr><td><strong>IDA</strong></td><td><a href="https://github.com/mosip/id-authentication/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>eSignet</strong></td><td><a href="https://github.com/mosip/esignet/tree/v1.4.1">1.4.1</a></td></tr><tr><td><strong>Reg Proc</strong></td><td><a href="https://github.com/mosip/registration/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Notifier (Kernel)</strong></td><td><a href="https://github.com/mosip/commons/tree/v1.2.0.1/kernel">1.2.0.1</a></td></tr><tr><td><strong>Audit manager</strong></td><td><a href="https://github.com/mosip/audit-manager/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>ID Repo</strong></td><td><a href="https://github.com/mosip/id-repository/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>datashare</strong></td><td><a href="https://github.com/mosip/durian/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Keycloak</strong></td><td><a href="https://github.com/mosip/keycloak/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>config-server</strong></td><td><a href="https://github.com/mosip/mosip-config/tree/v1.1.2">v1.1.2</a></td></tr><tr><td><strong>Websub</strong></td><td><a href="https://github.com/mosip/websub/tree/v1.2.0.1">1.2.0.1</a></td></tr></tbody></table>
 
-### Documentation
 
-To be updated.
+
+
+### Documentation
+| **Feature** | **Description** |
+|-------------|------------------|
+| New UI | Comprehensive release with significant improvements over the previous version. |
+| [Services](https://github.com/mosip/partner-management-services/tree/release-1.2.2.x) | For code and implementation of Partner Management Services |
+| [Partner Management Portal UI](https://github.com/mosip/partner-management-portal/tree/release-1.2.2.x) | For code and implementation of Partner Management Portal (revamp) |
+|[Partner Management Portal End User Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview) | To get started with the new interface of Partner Management Portal |
+| [Partner Management Services Deployment Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/build-and-development-guide) | To access the build and read through the deployment instructions |
+| [[test-rig documentation]](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/testrig) | **Note**: The deployment script for the PMS module-wise test rig will be
+addressed in the next release. Meanwhile, users who wish to run automation tests can refer to the guide and deploy using the image mosipid/apitest-pms:1.2.2.0 |
+| [PMS Revamp Configuration
+Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/pms-configuration-guide) | For details related to partner management services revamp
+configurations |
+| [Collab Guide](https://docs.mosip.io/1.2.0/collab-getting-started-guide/collab-pmp-guide) | To assist you with accessing PMS on Collab environment ,refer to this guide // this section will be updated soon!! |
+| **Developers Guide** - [UI Developer's Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide), [Backend Developer's Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide) | Developer's Guide |
+| [**API Documentation **](https://mosip.stoplight.io/docs/partner-management-portal-revamp) | API Documentation |
+| [** API Docs Changes **](file:////wiki/spaces/PMS/pages/1577451541/PMS+Revamp1.2.2.0+-+Changes+in+API+NEW) | which captures all the changes that have been made in the existing API endpoints during the PMS Revamp Release 1.2.2.0. These changes include addition of new endpoints deprecation of a few endpoints and also some other changes. |
+
+
+### Test Report
+
+For details on the test results, refer
+[here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.0).
+
+## Other Documentation
+
+-   [Technology
+    Stack](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/technology-stack)
+
+-   [Browsers
+    Supported](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/browsers-supported)
+
