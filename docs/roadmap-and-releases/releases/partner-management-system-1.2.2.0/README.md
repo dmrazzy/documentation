@@ -156,34 +156,23 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 
 
 ### Documentation
-| **Feature** | **Description** |
-|-------------|------------------|
-| New UI | Comprehensive release with significant improvements over the previous version. |
-| [Services](https://github.com/mosip/partner-management-services/tree/release-1.2.2.x) | For code and implementation of Partner Management Services |
-| [Partner Management Portal UI](https://github.com/mosip/partner-management-portal/tree/release-1.2.2.x) | For code and implementation of Partner Management Portal (revamp) |
-|[Partner Management Portal End User Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview) | To get started with the new interface of Partner Management Portal |
+
+| **Feature**          | **Description**                               |
+|----------------------|-----------------------------------------------|
+| [Partner Management Services](https://github.com/mosip/partner-management-services/tree/release-1.2.2.x) | Content |
+| [Partner Management System](https://github.com/mosip/partner-management-portal/tree/release-1.2.2.x) | For code and implementation of Partner Management Portal (revamp) |
+| [Partner Management System End User Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview) | To get started with the new interface of Partner Management Portal |
 | [Partner Management Services Deployment Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/build-and-development-guide) | To access the build and read through the deployment instructions |
-| [[test-rig documentation]](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/testrig) | **Note**: The deployment script for the PMS module-wise test rig will be
-addressed in the next release. Meanwhile, users who wish to run automation tests can refer to the guide and deploy using the image mosipid/apitest-pms:1.2.2.0 |
-| [PMS Revamp Configuration
-Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/pms-configuration-guide) | For details related to partner management services revamp
-configurations |
-| [Collab Guide](https://docs.mosip.io/1.2.0/collab-getting-started-guide/collab-pmp-guide) | To assist you with accessing PMS on Collab environment ,refer to this guide // this section will be updated soon!! |
-| **Developers Guide** - [UI Developer's Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide), [Backend Developer's Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide) | Developer's Guide |
-| [**API Documentation **](https://mosip.stoplight.io/docs/partner-management-portal-revamp) | API Documentation |
-| [** API Docs Changes **](file:////wiki/spaces/PMS/pages/1577451541/PMS+Revamp1.2.2.0+-+Changes+in+API+NEW) | which captures all the changes that have been made in the existing API endpoints during the PMS Revamp Release 1.2.2.0. These changes include addition of new endpoints deprecation of a few endpoints and also some other changes. |
+| [Test Rig Documentation](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/testrig) | **Note**: The deployment script for the Partner Management System (PMS) module-wise test rig will be addressed in the next release. Meanwhile, users who wish to run automation tests can refer to the guide and deploy using the image mosipid/apitest-pms:1.2.2.0 |
+| [PMS Revamp Configuration Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/pms-configuration-guide) | For details related to partner management services revamp configurations |
+| [UI Developer's Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide) | Developer's Guide |
+| [Backend Developer's Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide) | Developer's Guide |
+| [API Documentation](https://mosip.stoplight.io/docs/partner-management-portal-revamp) | API Documentation |
+| [API Docs Changes](file:////wiki/spaces/PMS/pages/1577451541/PMS+Revamp1.2.2.0+-+Changes+in+API+NEW) | which captures all the changes that have been made in the existing API endpoints during the PMS Revamp Release 1.2.2.0. These changes include addition of new endpoints, deprecation of a few endpoints, and also some other changes. |
 
 
 ### Test Report
 
 For details on the test results, refer
 [here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.0).
-
-## Other Documentation
-
--   [Technology
-    Stack](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/technology-stack)
-
--   [Browsers
-    Supported](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/browsers-supported)
 

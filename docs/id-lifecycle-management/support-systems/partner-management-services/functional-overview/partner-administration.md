@@ -1,12 +1,3 @@
-<!-- 
-Command to convert to word file (This particular file to esternal drive)
-
-pandoc /Users/keshavsingh/Office/MOSIP/MOSIPDocumentation/MOSIPDocumentation/docs/id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration.md -o /Users/keshavsingh/Office/pmp/admin-guide/pmp-admin-v-4.docx
-
--->
-
-
-
 # Partner Administration
 
 ## Partner Administration
