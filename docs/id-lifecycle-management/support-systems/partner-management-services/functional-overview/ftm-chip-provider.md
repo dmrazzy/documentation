@@ -1,6 +1,6 @@
 # FTM Chip Provider
 
-**Partner Management Portal (PMP) is used by both; PMS Admin and Partner User.**
+**Partner Management System (PMS) is used by both; PMS Admin and Partner User.**
 
 * Partner Administrator: Partner Admin
 * Partners: Partner User
@@ -16,7 +16,7 @@ Being a 'Partner Admin' you can perform following activities to complete the end
 
 Only after Partner Admin 'Upload Root CA and Sub CA Certificates' that a Partner will then be able to **Upload CA signed Partner Certificate**.
 
-As a process of Partner onboarding onto PMP after successful registration, Partner is required to **Upload CA signed Partner Certificate** on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation.
+As a process of Partner onboarding onto PMS after successful registration, Partner is required to **Upload CA signed Partner Certificate** on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation.
 
 **Certificate Authority (CA)** is an organization that acts to validate the identities of entities (in this case, a partner organisation) and bind them to cryptographic keys through the issuance of electronic documents known as digital certificates. A country needs to onboard valid CAs before onboarding any partner as MOSIP will only accept certificates which are signed only by a Trusted CA.
 
@@ -82,7 +82,7 @@ To be able to access the services by PMS and to validate that the partner is fro
 
 #### Login:
 
-* For existing partner users who are already registered in Partner Management Portal, they can login to the portal with their email, username and password.
+* For existing partner users who are already registered in Partner Management System, they can login to the portal with their email, username and password.
 * On logging in you come to Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image8.png" alt=""><figcaption></figcaption></figure>

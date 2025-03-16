@@ -3,22 +3,11 @@
 
 ## PMS Admin (Partner Admin)
 
-**Partner Management Portal (PMP) is used by both; PMS Admin and Partner
+**Partner Management System (PMS) is used by both; PMS Admin and Partner
 User.**
 
 -   Partner Administrator: Partner Admin
 -   Partners: Partner User
-
--   [**Partner User** - 'Authentication Partners' can use the new
-    interface to perform all the activities mentioned under
-    '**[Authentication Partner
-    Workflow](end-user-guide.md#authentication-partner-workflow)'**]{.mark}
--   [**Partner Admin** - Partner Admin still will have to user the older
-    'Partner Admin Interface to perform all the activities explained
-    under'[**What all activities does a 'Partner Admin' perform for
-    Authentication
-    Partner?**](end-user-guide.md#what-all-activities-does-a-partner-admin-perform-for-authentication-partner)'.
-    {% endhint %}]{.mark}
 
 ## What all activities does a 'Partner Admin' perform for Authentication Partner?
 
@@ -26,80 +15,53 @@ Being a 'Partner Admin' you can perform following 3 activities to
 complete the end to end functionality pertaining to Authentication
 partner.
 
-It should be noted that all these activities that you can perform as an
-admin you will still have to use the older 'Partner Admin Interface' as
-of now untill we complete its revamp which is already underway on a war
-footing.
-
 -   Upload Root CA and Sub CA Certificates
 -   Create Policy Group and Policy
 -   Approve/Reject Policy
 
 ### Upload Root CA and Sub CA
 
-Only after you 'Upload Root CA and Sub CA Certificates (From Older PMP
-Interface)' that a Partner will then be able to 'Upload CA signed
+Only after you 'Upload Root CA and Sub CA Certificates Interface)' that a Partner will then be able to 'Upload CA signed
 Partner Certificate.
 
-> As a process of Partner onboarding onto PMP after successful
-> registration, Partner is required to **Upload CA signed Partner
-> Certificate** on behalf of their organisation which would be used to
-> build a trust store in MOSIP to cryptographically validate that they
-> are from a trusted organisation to perform authentication of citizens.
-> Also this certificate is used to encrypt the response shared in e-KYC.
+As a process of Partner onboarding onto PMS after successful registration, Partner is required to **Upload CA signed Partner Certificate** on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation to perform authentication of citizens. Also this certificate is used to encrypt the response shared in e-KYC.
 
 {% hint style="warning" %} **Important:**
 
-You will have to use older Partner Admin interface, Yes! you read it
-correct! before a Partner will be able to '**Upload 'CA Signed
-Certificate**' it is prerequisite that the '**Partner Admin**' must
-upload the **Root CA** and **Sub CA** certificates and this you can do
-from '**Older PMP Interface'**. {% endhint %}
+Before a Partner will be able to '**Upload 'CA Signed Certificate**' it is prerequisite that the '**Partner Admin**' must
+upload the **Root CA** and **Sub CA**.
+
+{% endhint %}
 
 #### To Upload Root CA and Sub CA Certificates
 
-1.  In 'Certificate Trust Store' click on 'Upload Trust
-    Certificate'.
-2.  Select the Partner Domain- AUTH in Upload Trust Certificate
-    page.
-3.  Choose the **Root CA Certificate** to upload (only files with
-    extensions as .cer or .pem).
+1.  In 'Certificate Trust Store' click on 'Upload Trust Certificate'.
+2.  Select the Partner Domain- AUTH in Upload Trust Certificate page.
+3.  Choose the **Root CA Certificate** to upload (only files with extensions as .cer or .pem).
 4.  Click Submit.
-5.  Similarly, sub/intermediate CA certificate should be uploaded by
-    following the above steps (1-4).
+5.  Similarly, sub/intermediate CA certificate should be uploaded by following the above steps (1-4).
 
 <figure>
-<img src="/Users/keshavsingh/Office/pmp/half/media/image1.png"
+<img src="/Users/keshavsingh/Office/PMS/half/media/image1.png"
 style="width:6.49183in;height:2.88954in" />
 <figcaption><p>image</p></figcaption>
 </figure>
 
 ### Creating Policy Group and Policy
 
-As Partner Admin you are required to '**Create Policy Group**' and
-'**Create Policy(s)**' which a 'Partner' will be able to select while
-self-registering on PMP.
+As Partner Admin you are required to '**Create Policy Group**' and '**Create Policy(s)**' which a 'Partner' will be able to select while self-registering on PMS.
 
-As an admin you will also have privilege to '**Approve Policy
-Request**' when a Partner selects a Policy and it comes to you for
-approval, You can read more about this
-[**here**](end-user-guide.md#approve-policy-request).
+As an admin you will also have privilege to '**Approve Policy Request**' when a Partner selects a Policy and it comes to you for
+approval, You can read more about this [**here**](end-user-guide.md#approve-policy-request).
 
 #### Create Policy group
 
--   Login as Partner Admin into the PMS portal (Older PMP
-    Interface).
-
--   All the policy groups created so far by Partner Admin/ Policy
-    Manager are displayed on 'List of Policy Groups' page.
+-   Login as Partner Admin into the PMS portal.
+-   All the policy groups created so far by Partner Admin/ Policy Manager are displayed on 'List of Policy Groups' page.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image2.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
 
--   On clicking the 'Create Policy Group' option on the top right of
-    the screen, we can create a Policy Group by providing suitable name
-    and description that is self explanatory for partners, who would be
-    selecting them during Partner Policy Request to create API Key/ OIDC
-    Client etc.
+-   On clicking the 'Create Policy Group' option on the top right of the screen, we can create a Policy Group by providing suitable name and description that is self explanatory for partners, who would be selecting them during Partner Policy Request to create API Key/ OIDC Client etc.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image3.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
@@ -109,29 +71,19 @@ approval, You can read more about this
 
 #### Create Auth policy
 
-Once you 'Create Policy' you will also be required to activate it and
-then it will reflect when a Partner wants to select a policy. You can
-also change the status of **Policy Group** ( Deactivate) or edit it
-using the Action menu as shown below.
+Once you 'Create Policy' you will also be required to activate it and then it will reflect when a Partner wants to select a policy. You can also change the status of **Policy Group** ( Deactivate) or edit it using the Action menu as shown below.
 
-1.  On clicking Authentication Policy tab, List of all previously
-    created Authentication Policies are displayed.
+1.  On clicking Authentication Policy tab, List of all previously created Authentication Policies are displayed.
 
-On clicking Authentication Policy tab, List of all previously created
-Authentication Policies are displayed.
+On clicking Authentication Policy tab, List of all previously created Authentication Policies are displayed.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image5.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-On clicking 'Create Authentication Policy' button, Partner Admin/
-Policy manager is navigated to Create Authentication Policy page where
-details such as policy group, policy name, description etc will have to
-be entered.
+On clicking 'Create Authentication Policy' button, Partner Admin/Policy manager is navigated to Create Authentication Policy page where details such as policy group, policy name, description etc will have to be entered.
 
-Note: Only active policy groups are available in the policy group
-dropdown.
+Note: Only active policy groups are available in the policy group dropdown.
 
-Click on the upload button to upload policy data . Only json files are
-allowed for upload.
+Click on the upload button to upload policy data . Only json files are allowed for upload.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image6.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
@@ -139,50 +91,34 @@ On clicking on Save as Draft, following success message appears.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image7.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-On clicking 'Go Back', admin is navigated back to tabular view where
-the policy is saved as 'draft' status.
+On clicking 'Go Back', admin is navigated back to tabular view where the policy is saved as 'draft' status.
 
-To **publish policy** which is currently in draft status, click on
-'publish' option in action menu. A popup window appears seeking for
-confirmation to publish.
+To **publish policy** which is currently in draft status, click on 'publish' option in action menu. A popup window appears seeking for confirmation to publish.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image8.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-On clicking Publish, a success message appears . Click on close to
-close the window.
+On clicking Publish, a success message appears . Click on close to close the window.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image9.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-The given policy changes to 'Activated' status after being published.
-Once activated, the admin cannot edit the policy, hence the option is
-disabled.
+The given policy changes to 'Activated' status after being published.Once activated, the admin cannot edit the policy, hence the option is disabled.
 
 #### Approve Policy Request
 
-When a Partner have chosen a 'Policy Group' and the 'Policy', an
-approval request will come to you and you can approve or reject a
-'**Policy Request**' using '**Request Policy**' screen.
+When a Partner have chosen a 'Policy Group' and the 'Policy', an approval request will come to you and you can approve or reject a '**Policy Request**' using '**Request Policy**' screen.
 
-When a Partner have chosen a 'Policy Group' and the 'Policy' an
-approval request will come to you and you can approve or reject a
-'**Policy Request**' using '**Request Policy**' screen.
+When a Partner have chosen a 'Policy Group' and the 'Policy' an approval request will come to you and you can approve or reject a '**Policy Request**' using '**Request Policy**' screen.
 
 -   Click on **Partner Policy Linking** in the admin dashboard.
--   Select the policy mapping that needs an approval.The options
-    provided for policy linking requests in 'Pending for Approval' are
-    to Approve/ Reject. Also an option to view the policy request
-    details is also provided.
+-   Select the policy mapping that needs an approval.The options provided for policy linking requests in 'Pending for Approval' are to Approve/ Reject. Also an option to view the policy request details is also provided.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image10.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-On clicking the Approve/ Reject option, the window appears - and
-partner admin can click on either Approve or Reject to take appropriate
-action.
+On clicking the Approve/ Reject option, the window appears - and partner admin can click on either Approve or Reject to take appropriate action.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image11.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-The status- Approved / Rejected gets updated in the tabular
-view.
+The status- Approved / Rejected gets updated in the tabular view.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image12.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
@@ -190,12 +126,12 @@ view.
 
 ## Authentication Partner Workflow
 
-To be able to access the services by PMP and to validate that the partner is from a trusted organisation, undergoing self registration on PMP and uploading CA signed certificate is necessary'.
+To be able to access the services by PMS and to validate that the partner is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary'.
 
 * Self Register on PMS Interface
 * Upload CA signed Certificate
 
-### Self-Register on PMP as Authentication Partner
+### Self-Register on PMS as Authentication Partner
 
 1. The Authentication Partner can register themselves on MOSIP PMS portal by clicking **Register** on the Login Page, a form comes up.
 2. Enter the Authentication Partner details:
@@ -224,16 +160,16 @@ To be able to access the services by PMP and to validate that the partner is fro
 * User can select only one **Policy Group** per **Partner Type**.
 * Policy selected once cannot be edited later.
 * Terms & Conditions: Partner consent refers to voluntary and informed agreement provided by a partner user on behalf of the Partner Organisation, to a specific action or process where the users have a clear understanding of what they are consenting to. User consent is important to ensure data privacy, where it is compliant to obtain explicit consent from partners before collecting, processing, or sharing their personal/ organisation level data.
-* A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMP will be informed while seeking user consent.
+* A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMS will be informed while seeking user consent.
 {% endhint %}
 
 ### CA Signed Partner Certificate Upload / Download or Re-Upload
 
 User is now in [**Home Page/Dashboard**](end-user-guide.md#interface-overview) where the following features are provided to Authentication Partner: 1) Partner Certificate, 2) Policies and 3) Authentication Services: OIDC Client and API Key generation.
 
-These features can also be accessed by clicking on side panel (in the form of icons) or clicking on the hamburger menu <img src="../../../../.gitbook/assets/pms_hamburger_menu.png" alt="" data-size="line"> on the top left which is available across all screens of PMP to help user to easily navigate.
+These features can also be accessed by clicking on side panel (in the form of icons) or clicking on the hamburger menu <img src="../../../../.gitbook/assets/pms_hamburger_menu.png" alt="" data-size="line"> on the top left which is available across all screens of PMS to help user to easily navigate.
 
-Once registered, as a process of Partner onboarding onto PMP after successful registration, user is required to perform upload CA signed Partner Certificate on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation to perform authentication of citizens. Also this certificate is used to encrypt the response shared in e-KYC.
+Once registered, as a process of Partner onboarding onto PMS after successful registration, user is required to perform upload CA signed Partner Certificate on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation to perform authentication of citizens. Also this certificate is used to encrypt the response shared in e-KYC.
 
 {% hint style="info" %}
 **Tips**:
@@ -244,7 +180,7 @@ Later when required a Partner can also ‘Download Certificate’ and ‘Re-Uplo
 {% hint style="info" %}
 Important:
 
-Before a Partner can upload a ‘CA Signed Certificate’ it is prerequisite that the ‘Partner Admin’ should have already had uploaded the **Root CA** and **Sub CA** certificates (From older PMP interface).
+Before a Partner can upload a ‘CA Signed Certificate’ it is prerequisite that the ‘Partner Admin’ should have already had uploaded the **Root CA** and **Sub CA** certificates.
 {% endhint %}
 
 #### To Upload CA signed Certificate
@@ -376,9 +312,9 @@ The authentication partner needs to provide the following details to generate AP
 
 ## Interface Overview
 
-PMP (Partner Management Portal) is going under a comprehensive overhaul. This revamp includes improving usability and elevate the overall user experience (UX). The focus is to bring user centered design to PMP, make the PMP more intuitive, efficient, and aligned with our partners' evolving needs.
+PMS (Partner Management System) is going under a comprehensive overhaul. This revamp includes improving usability and elevate the overall user experience (UX). The focus is to bring user centered design to PMS, make the PMS more intuitive, efficient, and aligned with our partners' evolving needs.
 
-The PMP Interface 'Card View' for 'Authentication Partner' presents you with following features, These features can also be accessed by clicking on side panel (in the form of icons) or expanding the hamburger menu ( <img src="../../../../.gitbook/assets/pms_hamburger_menu.png" alt="" data-size="line">) on the top left which is available across all screens of PMP to help user to easily navigate.
+The PMS Interface 'Card View' for 'Authentication Partner' presents you with following features, These features can also be accessed by clicking on side panel (in the form of icons) or expanding the hamburger menu ( <img src="../../../../.gitbook/assets/pms_hamburger_menu.png" alt="" data-size="line">) on the top left which is available across all screens of PMS to help user to easily navigate.
 
 Card view presentation is there for each functionality with brief description to help you understand the services offered in Partner User Dashboard.
 
@@ -402,7 +338,7 @@ You can view your organisation name and username on the top right called 'User P
 
 ## Reupload a new partner certificate through the following steps
 
-1. Login to PMP and Go to Dashboard.
+1. Login to PMS and Go to Dashboard.
 2. Click on Partner Certificate option in the dashboard / side panel / hamburger menu ( <img src="../../../../.gitbook/assets/pms_hamburger_menu.png" alt="" data-size="line"> ), you will be redirected to list view of partner certificate.
 
 <figure><img src="../../../../.gitbook/assets/pms_dashboard.png" alt=""><figcaption></figcaption></figure>
