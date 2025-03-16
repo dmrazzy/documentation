@@ -9,8 +9,6 @@ User.**
 -   Partner Administrator: Partner Admin
 -   Partners: Partner User
 
-<!-- -->
-
 -   [**Partner User** - 'Authentication Partners' can use the new
     interface to perform all the activities mentioned under
     '**[Authentication Partner
@@ -58,17 +56,17 @@ Certificate**' it is prerequisite that the '**Partner Admin**' must
 upload the **Root CA** and **Sub CA** certificates and this you can do
 from '**Older PMP Interface'**. {% endhint %}
 
-#### [To Upload Root CA and Sub CA Certificates]{.mark}
+#### To Upload Root CA and Sub CA Certificates
 
-1.  [In 'Certificate Trust Store' click on 'Upload Trust
-    Certificate'.]{.mark}
-2.  [Select the Partner Domain- AUTH in Upload Trust Certificate
-    page.]{.mark}
-3.  [Choose the **Root CA Certificate** to upload (only files with
-    extensions as .cer or .pem).]{.mark}
-4.  [Click Submit.]{.mark}
-5.  [Similarly, sub/intermediate CA certificate should be uploaded by
-    following the above steps (1-4).]{.mark}
+1.  In 'Certificate Trust Store' click on 'Upload Trust
+    Certificate'.
+2.  Select the Partner Domain- AUTH in Upload Trust Certificate
+    page.
+3.  Choose the **Root CA Certificate** to upload (only files with
+    extensions as .cer or .pem).
+4.  Click Submit.
+5.  Similarly, sub/intermediate CA certificate should be uploaded by
+    following the above steps (1-4).
 
 <figure>
 <img src="/Users/keshavsingh/Office/pmp/half/media/image1.png"
@@ -76,120 +74,117 @@ style="width:6.49183in;height:2.88954in" />
 <figcaption><p>image</p></figcaption>
 </figure>
 
-### [Creating Policy Group and Policy]{.mark}
+### Creating Policy Group and Policy
 
-[As Partner Admin you are required to '**Create Policy Group**' and
+As Partner Admin you are required to '**Create Policy Group**' and
 '**Create Policy(s)**' which a 'Partner' will be able to select while
-self-registering on PMP.]{.mark}
+self-registering on PMP.
 
-[As an admin you will also have privilege to '**Approve Policy
+As an admin you will also have privilege to '**Approve Policy
 Request**' when a Partner selects a Policy and it comes to you for
 approval, You can read more about this
-[**here**](end-user-guide.md#approve-policy-request).]{.mark}
+[**here**](end-user-guide.md#approve-policy-request).
 
-#### [Create Policy group]{.mark}
+#### Create Policy group
 
--   [Login as Partner Admin into the PMS portal (Older PMP
-    Interface).]{.mark}
+-   Login as Partner Admin into the PMS portal (Older PMP
+    Interface).
 
--   [All the policy groups created so far by Partner Admin/ Policy
-    Manager are displayed on 'List of Policy Groups' page.]{.mark}
+-   All the policy groups created so far by Partner Admin/ Policy
+    Manager are displayed on 'List of Policy Groups' page.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image2.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
 
--   [On clicking the 'Create Policy Group' option on the top right of
+-   On clicking the 'Create Policy Group' option on the top right of
     the screen, we can create a Policy Group by providing suitable name
     and description that is self explanatory for partners, who would be
     selecting them during Partner Policy Request to create API Key/ OIDC
-    Client etc.]{.mark}
+    Client etc.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image3.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
--   [On click of Submit, a success message appears.]{.mark}
+-   On click of Submit, a success message appears.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image4.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-#### [Create Auth policy]{.mark}
+#### Create Auth policy
 
-[Once you 'Create Policy' you will also be required to activate it and
+Once you 'Create Policy' you will also be required to activate it and
 then it will reflect when a Partner wants to select a policy. You can
 also change the status of **Policy Group** ( Deactivate) or edit it
-using the Action menu as shown below.]{.mark}
+using the Action menu as shown below.
 
-1.  [On clicking Authentication Policy tab, List of all previously
-    created Authentication Policies are displayed.]{.mark}
+1.  On clicking Authentication Policy tab, List of all previously
+    created Authentication Policies are displayed.
 
-[On clicking Authentication Policy tab, List of all previously created
-Authentication Policies are displayed.]{.mark}
+On clicking Authentication Policy tab, List of all previously created
+Authentication Policies are displayed.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image5.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[On clicking 'Create Authentication Policy' button, Partner Admin/
+On clicking 'Create Authentication Policy' button, Partner Admin/
 Policy manager is navigated to Create Authentication Policy page where
 details such as policy group, policy name, description etc will have to
-be entered]{.mark}
+be entered.
 
-[Note: Only active policy groups are available in the policy group
-dropdown.]{.mark}
+Note: Only active policy groups are available in the policy group
+dropdown.
 
-[click on the upload button to upload policy data . Only json files are
-allowed for upload.]{.mark}
+Click on the upload button to upload policy data . Only json files are
+allowed for upload.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image6.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[On clicking on Save as Draft, following success message appears
-.]{.mark}
+On clicking on Save as Draft, following success message appears.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image7.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[On clicking 'Go Back', admin is navigated back to tabular view where
-the policy is saved as 'draft' status.]{.mark}
+On clicking 'Go Back', admin is navigated back to tabular view where
+the policy is saved as 'draft' status.
 
-[To **publish policy** which is currently in draft status, click on
+To **publish policy** which is currently in draft status, click on
 'publish' option in action menu. A popup window appears seeking for
-confirmation to publish.]{.mark}
+confirmation to publish.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image8.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[On clicking Publish, a success message appears . Click on close to
-close the window.]{.mark}
+On clicking Publish, a success message appears . Click on close to
+close the window.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image9.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[The given policy changes to 'Activated' status after being published.
+The given policy changes to 'Activated' status after being published.
 Once activated, the admin cannot edit the policy, hence the option is
-disabled.]{.mark}
+disabled.
 
-[Approve Policy Request]{.mark}
+#### Approve Policy Request
 
-[When a Partner have chosen a 'Policy Group' and the 'Policy', an
+When a Partner have chosen a 'Policy Group' and the 'Policy', an
 approval request will come to you and you can approve or reject a
-'**Policy Request**' using '**Request Policy**' screen.]{.mark}
+'**Policy Request**' using '**Request Policy**' screen.
 
-[When a Partner have chosen a 'Policy Group' and the 'Policy' an
+When a Partner have chosen a 'Policy Group' and the 'Policy' an
 approval request will come to you and you can approve or reject a
-'**Policy Request**' using '**Request Policy**' screen.]{.mark}
+'**Policy Request**' using '**Request Policy**' screen.
 
--   [Click on **Partner Policy Linking** in the admin dashboard.]{.mark}
--   [Select the policy mapping that needs an approval.The options
+-   Click on **Partner Policy Linking** in the admin dashboard.
+-   Select the policy mapping that needs an approval.The options
     provided for policy linking requests in 'Pending for Approval' are
     to Approve/ Reject. Also an option to view the policy request
-    details is also provided.]{.mark}
+    details is also provided.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image10.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[On clicking the Approve/ Reject option, the window appears - and
+On clicking the Approve/ Reject option, the window appears - and
 partner admin can click on either Approve or Reject to take appropriate
-action]{.mark}
+action.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image11.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
 
-[The status- Approved / Rejected gets updated in the tabular
-view.]{.mark}
+The status- Approved / Rejected gets updated in the tabular
+view.
 
 <figure><img src="../../../../.gitbook/assets/temp-auth-partner-image12.png"alt=""><figcaption><p>Caption</p></figcaption></figure>
-
-
 
 
 

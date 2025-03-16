@@ -54,7 +54,7 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 
 
-# What all activity can a Partner (Device Provider) perform?
+## What all activity can a Partner (Device Provider) perform?
 
 To be able to access the services by PMS and to validate that the partner (Device Provider) is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary'.
 
@@ -157,7 +157,7 @@ MOSIP Signed Certificate has a validity of 1 year from the time of Partner Certi
 You must ensure that you re-upload the partner certificate again so that new MOSIP signed certificate can be generated and other functionalities such as Device Provider Services (SBI, Devices) can function.
 
 
-# Device Provider Services
+## Device Provider Services
 
 After the you (Partner) have uploaded partner certificate, you can now perform 'Device Provider Services':
 

@@ -1,10 +1,8 @@
 # Partner Administration
 
-## Partner Administration
+## Partner Admin & Policy Manager
 
-## End User Guide - Partner Admin & Policy Manager
-
-### What all activities does a 'Partner Admin' perform?
+## What all activities does a 'Partner Admin' perform?
 
 Partner Admin supervises the overall partner and policy management functionalities in PMS. The admin is responsible for:
 
@@ -27,26 +25,22 @@ As a partner admin cum]{.mark} policy manager you can performs following:
 
 **Notes**:
 
-For the '**POLICIES**' card to appear on the dashboard, both; (Partner Admin and Policy Mangaer) roles must be granted.
+For the '**Policies**' card to appear on the dashboard, both; (Partner Admin and Policy Mangaer) roles must be granted.
 
-
-### Partner Admin / Policy Manager
-
-## Register as Partner Admin and Policy Manager
-
-Partner admin too has to register \[himself]{.mark} just like any other 'Partner Registration' by selecting any one of the partner type i.e. Admin has to register in PMS with any one of the partner type.
 
 ### Registering as Partner Admin
 
-You (Partner Admin) can register in PMP as any one of the partner type and then get the various roles/privileges by going to Keycloak.
+Partner admin too has to self-register just like any other 'Partner Registration' by selecting any one of the partner type i.e.
+
+You (Partner Admin) can first self-register in PMS as any one of the partner type and then get the various roles/privileges by going to Keycloak.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image1.png" alt=""><figcaption></figcaption></figure>
 
-### Using Keycloak to allocate 'Partner Admin' and/or 'Policy Manager'
+#### Using Keycloak to allocate/get 'Partner Admin' and/or 'Policy Manager'
 
-After registration .....you need to come to keycloak..
+After registration you need to go to keycloak to enable roles.
 
-1. Go to keycloak and search your user name in Users tab.
+1. Go to keycloak and search your 'User-Name' in Users tab.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image2.png" alt=""><figcaption></figcaption></figure>
 
@@ -54,7 +48,7 @@ After registration .....you need to come to keycloak..
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image3.png" alt=""><figcaption></figcaption></figure>
 
-3. In the **Available Roles** section, select **PARTNER\_ADMIN** or **POLICYMANAGER**, click **Add** to move the selected role to the **Assigned Roles** list.
+3. In the **Available Roles** section, select **Partner Admin** or **Policy Manager**, click **Add** to move the selected role to the **Assigned Roles** list.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image4.png" alt=""><figcaption></figcaption></figure>
 
@@ -62,19 +56,24 @@ After registration .....you need to come to keycloak..
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image5.png" alt=""><figcaption></figcaption></figure>
 
-**Note:** Add POLICYMANAGER role if Policies card should be made accessible in UI
+**Note:** Add **Policy Manager** role when you want that the 'Policies-Card'/ 'Priviledge' should also get enabled for you and turn you into a 'Policy Manager' as well.
 
-### Allocating Policy Manager Role
 
-By following the above steps (1-4) in keycloak, the admin can also configure POLICY\_MANAGER role to view and manage **Policies** card as shown in the dashboard below:
+### Registering as Policy Manager
+
+By following the above steps (1-4) in keycloak, the admin can also configure **Policy Manager** role to enable and manage **Policies** card as shown in the dashboard below:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6.png" alt=""><figcaption></figcaption></figure>
 
-**Notes:**
+**Note**:
 
-**1.** If only 'Policy Manager' role is configured in keycloak, then the user will still be able to access as a normal partner. Hence 'Partner Admin' & 'Policy Manager' roles are necessary to access all the cards above.
+1. If only 'Policy Manager' role is configured in keycloak, then the user will still be able to access the portals as a normal partner. Hence both; 'Partner Admin' & 'Policy Manager' roles are necessary to access all the cards/privileges above.
 
-2. After configuring the roles and if PMS portal is still logged in, make sure to logout and login again for the roles to get updated.
+
+**Important**: 
+After configuring the roles and if PMS portal is still logged in, make sure to logout and login again for the roles to get updated.
+
+
 
 ## Certificate Trust Store
 
@@ -83,27 +82,25 @@ Certificate Trust Store provides features such as Upload, Download, View Root CA
 * Root Trust (Root CA) Certificate
 * Intermediate Trust (Intermediate CA) Certificate
 
-### Root Trust (Root CA) Certificate
+### Root Trust (Root CA) Certificate Features
 
 You can use the 'Root Trust (Root CA) Certificate' section to do the following:
 
-* **Upload Certificate** -- Upload **Root CA** certificate such that the root of trust can be verified when an intermediate CA is uploaded.
-* **Download Root CA**: Download the root certificate as and when needed.
-* **View Root CA**
-  * **Root CA**: Tabular view of all uploaded Root CA certificates is displayed.
-  * **View Root CA Details**
-
-### Root CA Certificate
+* View Root CA
+  * List View
+  * Details View 
+* Upload Certificate: Upload Root CA certificate such that the root of trust can be verified when an intermediate CA is uploaded.
+* Download Root CA: Download the root certificate as and when needed.
 
 #### View Root CA Certificate
 
-**List of Root CA Certificates**
+##### Certificate Trust Store (List View)
+
+ * Go to Dashboard > Certificate Trust Store, all the CA Certificates appaears in 'List View' as in figure below:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image7.png" alt=""><figcaption></figcaption></figure>
 
-**Viewing Root CA Certificate**
-
-In Certificate Trust Store, the user can view the list of '**Root CA Certificates**' uploaded by admin till date with details such as **Certificate ID**, **Partner Domain**, **Issued To**, **Issued By**, **Validity Period** and **Validity Status** (Valid / Expired) \[etc]{.mark}.
+In Certificate Trust Store (List View), the user can view the list of '**Root CA Certificates**' uploaded by admin till date with details such as **Certificate ID**, **Partner Domain**, **Issued To**, **Issued By**, **Validity Period** and **Validity Status** (Valid / Expired) \[etc]{.mark}.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image8.png" alt=""><figcaption></figcaption></figure>
 
@@ -111,27 +108,16 @@ Each active certificate record has two options in action menu - **View** and **D
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
-**View Root CA details**
+
+##### View Root CA details
 
 On clicking View, the Root CA certificate detail can be viewed individually.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image10.png" alt=""><figcaption></figcaption></figure>
 
-**Download Root CA**
-
-In the same page (Root CA details), an option to download the Root CA certificate in .p7b file is also provided. Clicking on download, a success message appears.
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image11.png" alt=""><figcaption></figcaption></figure>
-
-On opening the .p7b file from local system, the Root CA Certificate can be viewed as below:
-
-NOTE: any external installation required [swetha.N](https://mosip.atlassian.net/wiki/people/636a272c11c69c7418450dbe?ref=confluence) [Prathmesh Jadhav](https://mosip.atlassian.net/wiki/people/712020:c6ee5f54-fc2c-4d62-986e-97ddd067ffd0?ref=confluence) ???
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image12.png" alt=""><figcaption></figcaption></figure>
-
 #### Upload Root CA
 
-To upload Root CA/ Intermediate CA Certificate, click on 'Upload Trust Certificate'.
+To upload Root CA / Intermediate CA Certificate, click on 'Upload Trust Certificate'.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
@@ -164,16 +150,31 @@ Note:
 
 * Issued To and Issued By is the same - which means these are self signed certificates.
 
+#### Download Root CA**
+
+In the same page (Root CA details), an option to download the Root CA certificate in .p7b file is also provided. Clicking on download, a success message appears.
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image11.png" alt=""><figcaption></figcaption></figure>
+
+On opening the .p7b file from local system, the Root CA Certificate can be viewed as below:
+
+NOTE: any external installation required [swetha.N](https://mosip.atlassian.net/wiki/people/636a272c11c69c7418450dbe?ref=confluence) [Prathmesh Jadhav](https://mosip.atlassian.net/wiki/people/712020:c6ee5f54-fc2c-4d62-986e-97ddd067ffd0?ref=confluence) ???
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image12.png" alt=""><figcaption></figcaption></figure>
+
+
+
 ### Intermediate Trust (Intermediate CA) Certificate
 
-* **Upload Root CA Certificate**: Partner Admin can upload **Intermediate CA** certificate so that the root of trust can be verified when a partner uploads Partner / FTM Chip Certificate.
-* **Download Certificate Chain of Trust**: Partner Admin downloads the certificate chain of trust of intermediate certificate as and when needed.
-* **View Intermediate CA**: Tabular view of all uploaded Intermediate CA certificates is displayed.
-* **View Intermediate Certificate details**: Uploaded intermediate certificate details is displayed along with the list of certificates within the certificate trust chain.
+* View Intermediate CA
+  * View Intermediate CA: List View of all uploaded Intermediate CA certificates is displayed.
+  * View Intermediate Certificate details: Details View of uploaded intermediate certificate is displayed along with the list of certificates within the certificate trust chain.
+* Upload Root CA Certificate: Partner Admin can upload **Intermediate CA** certificate so that the root of trust can be verified when a partner uploads Partner / FTM Chip Certificate.
+* Download Certificate Chain of Trust: Partner Admin downloads the certificate chain of trust of intermediate certificate as and when needed.
 
 #### Viewing the Intermediate CA Certificate
 
-**List of Intermediate CA Certificates**
+##### Intermediate CA Certificates (List View)
 
 On clicking the Intermediate CA tab, List of all Intermediate CA certificates uploaded by Partner Admin is displayed.
 
@@ -186,11 +187,32 @@ Action menu for all active certificates displays the following options:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image17.png" alt=""><figcaption></figcaption></figure>
 
-**Viewing the Intermediate CA Certificate**
+##### Viewing the Intermediate CA Certificate (Details View)
 
 Either by clicking on the row item or the View option in action menu, the admin is \[navigated]{.mark} to View Intermediate CA Certificate details page where the certificate details are displayed such as Certificate ID, Partner Domain - (AUTH, FTM, DEVICE), Issued To- _\<subject > field of Certificate,_ Issued By- _\<issuer > field of Certificate,_ Valid From, Valid To\*- same as system browser date format\* etc
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image18.png" alt=""><figcaption></figcaption></figure>
+
+
+#### Upload Intermediate Certificate
+
+To upload the Intermediate CA certificate, carry out the same steps of Root CA Certificate upload(explianed above).
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image21.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image22.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image23.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image24.png" alt=""><figcaption></figcaption></figure>
+
+**Note**:
+
+* The Subject of the root certificate matches the Issuer of the intermediate certificate.
+* Issued To and Issued By are different as the Intermediate CA certificate is signed by the Root CA.
+* Intermediate certificate must expire before its root certificate.
+* Validity of Root CA Certificate > Intermediate CA Certificate > CA Signed Partner Certificate
+* Sequence of Upload: Root CA Certificate (by Partner Admin)→ Intermediate CA Certificate (by Partner Admin) → CA signed Partner Certificate (by Partner)
 
 #### Downloading the Intermediate CA Certificate
 
@@ -204,31 +226,14 @@ On clicking the .p7b file from local system, the certificate hierarchy of the in
 
 <figure><img src="../../../../.gitbook/assets/image20.png" alt=""><figcaption></figcaption></figure>
 
-#### Upload Intermediate Certificate
 
-To upload the Intermediate CA certificate, carry out the same steps of Root CA Certificate upload.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image21.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image22.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image23.png" alt=""><figcaption></figcaption></figure>
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image24.png" alt=""><figcaption></figcaption></figure>
-
-**Note for Intermediate CA Certificate**:
-
-* The Subject of the root certificate matches the Issuer of the intermediate certificate.
-* Issued To and Issued By are different as the Intermediate CA certificate is signed by the Root CA.
-* Intermediate certificate must expire before its root certificate.
-* Validity of Root CA Certificate > Intermediate CA Certificate > CA Signed Partner Certificate
-* Sequence of Upload: Root CA Certificate (by Partner Admin)→ Intermediate CA Certificate (by Partner Admin) → CA signed Partner Certificate (by Partner)
 
 # Partners
 
 As a **Partner Admin** you can view the list of all partners who have enrolled to PMS portal by clicking on the Partners card on dashboard or side panel, hamburger menu.
 
-## ‘Partner’ has following features:
+## ‘Partner’ Features:
 
 1. View Partner
   * List View - (Action menu: View, Deactivate)
@@ -251,8 +256,6 @@ As a **Partner Admin** you can view the list of all partners who have enrolled t
 Click on a row item or use the view option in action menu you come to 'Partner Details Page' to view the Partner Details such as **Partner type**, **Organisation name**, First Name, Last Name, Phone Number, Email Address, Policy Group (If partner is of the type 'Authentication Partner'). Partner certificate details are also visible.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image27.png" alt=""><figcaption></figcaption></figure>
-
-
 
 
 ### Download original certificate / MOSIP Signed certificate
@@ -306,9 +309,9 @@ The deactivated partner will not be able to create or utilize any of the service
 
 You can use the 'Policies' to create and manage Policy Group, Authentication Policy and Datashare (You should have privileges of both; Partner Admin and Policy Manager).
 
-The 'Policies' section is accessible to you only if both **Partner Admin** and **Policy Manager** roles are allocated and only when the 'Policies' card will appear on the the dashboard.
+The 'Policies' section is accessible to you only if both **Partner Admin** and **Policy Manager** roles are allocated to you and also the 'Policies' card will appears enabled on the the dashboard.
 
-Policies has following theree tabs:
+## Policies has following theree tabs:
 
 * Policy Group, (This tab is selected by default)
 * Authentication Policy,
@@ -388,7 +391,7 @@ If the admin wants to deactivate the Policy Group, then click on Deactivate opti
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image37.png" alt=""><figcaption></figcaption></figure>
 
-> A popup window appears seeking for confirmation before proceeding to deactivate.
+ A popup window appears seeking for confirmation before proceeding to deactivate.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image38.png" alt=""><figcaption></figcaption></figure>
 
@@ -555,8 +558,6 @@ The status- Approved / Rejected gets updated in the tabular view.
 On clicking view of active record or the row item itself, the partner- policy linking view page is displayed along with comment history where partner comments and admin's approval status is displayed.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image65.png" alt=""><figcaption></figcaption></figure>
-
-
 
 
 

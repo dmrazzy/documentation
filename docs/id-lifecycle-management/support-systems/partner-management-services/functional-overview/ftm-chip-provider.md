@@ -93,7 +93,7 @@ To be able to access the services by PMS and to validate that the partner is fro
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image9.png" alt=""><figcaption></figcaption></figure>
 
-# CA Signed Partner Certificate Upload / Download or Re-Upload
+## CA Signed Partner Certificate Upload / Download or Re-Upload
 
 User is now in [Home Page/Dashboard](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview) where the following features are provided to FTM Chip Provider:
 
