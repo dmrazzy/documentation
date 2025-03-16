@@ -5,7 +5,7 @@
 * Partner Administrator: Partner Admin
 * Partners: Partner User
 
-## What all activities does a 'Partner Admin' perform for Device Provider?
+## What all activities can a 'Partner Admin' perform on a Device Provider?
 
 Being a 'Partner Admin' you can perform following 3 activities to complete the end to end functionality pertaining to Device Provider.
 
@@ -54,14 +54,14 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 
 
-### Device Provider Flow
+# What all activity can a Partner (Device Provider) perform?
 
-To be able to access the services by PMS and to validate that the partner is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary'.
+To be able to access the services by PMS and to validate that the partner (Device Provider) is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary'.
 
 * Self Register on PMS Interface
 * Upload CA signed Certificate
 
-#### Self-Register on PMS as Device Provider
+## Self-Register on PMS as Device Provider
 
 1. The Device Provider can register themselves on PMS by clicking **Register** on the Login Page, a form comes up.
 2. Enter the Authentication Partner details:
@@ -83,7 +83,7 @@ To be able to access the services by PMS and to validate that the partner is fro
 * A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMS will be informed while seeking user consent.
 
 
-#### Login:
+## Login:
 
 * For existing partner users who are already registered with PMS Portal, they can login to the portal through their email username and password.
 * On login, the User lands on Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
@@ -91,16 +91,16 @@ To be able to access the services by PMS and to validate that the partner is fro
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image9.png" alt=""><figcaption></figcaption></figure>
 
 
-#### Forgot Password:
+## Forgot Password:
 
 * Partner User has option to 'Reset Password'.
 
-    <figure><img src="../../../../.gitbook/assets/temp-device-provider-image10.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image10.png" alt=""><figcaption></figcaption></figure>
 
 
-#### CA Signed Partner Certificate Upload / Download or Re-Upload
+## CA Signed Partner Certificate Upload / Download or Re-Upload
 
-User is now in [**[Home Page/Dashboard](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview) where the following features are provided to Device Provider:
+You are now on [Home Page/Dashboard](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview) where the following features are provided to Device Provider:
 
 1. Partner Certificate
 2. Device Provider Services: SBI and Device creation
@@ -115,7 +115,7 @@ Later when required a Partner can also 'Download Certificate' and 'Re-Upload Cer
 
 Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that the 'Partner Admin' should have already had uploaded the **Root CA** and **Intermediate CA** certificates.
 
-**Upload CA signed Certificate**
+### Upload CA signed Certificate**
 
 1. Go to **Device Provider Dashboard.**
 
@@ -142,11 +142,11 @@ Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that th
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image16.png" alt=""><figcaption></figcaption></figure>
 
 
-**Download Certificate**
+### Download Certificate
 
 There is also an option to download initially uploaded CA signed certificate and also the MOSIP Signed Certificate.
 
-**Re-Upload Certificate**
+### Re-Upload Certificate
 
 Re-uploading certificate is required in cases MOSIP Signed Certificate gets expired after one year.
 
@@ -156,43 +156,44 @@ MOSIP Signed Certificate has a validity of 1 year from the time of Partner Certi
 
 You must ensure that you re-upload the partner certificate again so that new MOSIP signed certificate can be generated and other functionalities such as Device Provider Services (SBI, Devices) can function.
 
--------------------
 
-### Device Provider Services
+# Device Provider Services
 
-After the partner (you) have uploaded partner certificate, you can now perform 'Device Provider Services':
+After the you (Partner) have uploaded partner certificate, you can now perform 'Device Provider Services':
 
 * SBI: Add SBI (The request is sent to Admin for approval).
-* Devices: After approval of a given SBI devices can be added within it which is then sent to Admin for approval.
+* Devices: After approval from a given SBI, devices can be added within it which is then sent to Admin for approval.
 
-#### **Add SBI:**
+## Add SBI
 
-You can add details of Secure Biometric Interface (SBI) by clicking on 'Add SBI' button which takes you to 'Add SBI Details' screen.
+Click on 'Add SBI' button which takes you to 'Add SBI Details' screen, here you can add details of Secure Biometric Interface (SBI).
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image17.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image18.png" alt=""><figcaption></figcaption></figure>
 
-The SBI details thus submitted is sent to Admin for approval and is displayed for the partner in **'List of SBI'** page.
+The SBI details you submit is sent to Admin for approval and is displayed for the partner in **'List of SBI'** page.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image19.png" alt=""><figcaption></figcaption></figure>
 
-The partner can add devices only if the corresponding SBI has been approved by Admin.
+You (Partner) can add devices only if the corresponding SBI has been approved by Admin.
 
 **Note**
 
-1. User can add devices only after the SBI is approved by Partner Admin.
-2. User cannot add devices if the SBI is expired
-3. Even if SBI has expired it is still visible for Partner Admin for approval/rejection.
+1. You can add devices only after the SBI is approved by Partner Admin.
+2. You cannot add devices if the SBI is expired
+3. Even if SBI has expired it is still visible to Partner Admin for approval/rejection.
 4. If the SBI version is both deactivated and expired, deactivation will take more precedence.
 
-**Partner Admin's portal: (To approve / reject SBI)**
 
-The SBI can be approved or rejected by partner admin by going to Dashboard → SBI-Device → List of SBIs.
+## Partner Admin's portal: (To approve / reject SBI)
 
+You (Partner Admin) can approve or reject SBI.
+
+Go to Dashboard → SBI-Device → List of SBIs
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image20.png" alt=""><figcaption></figcaption></figure>
 
-The admin can select Approve or Reject option from the given record.
+You (admin) can select Approve or Reject option from the given record.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image21.png" alt=""><figcaption></figcaption></figure>
 
@@ -200,7 +201,8 @@ On approval, the status changes to 'Approved' and on rejection the status change
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image22.png" alt=""><figcaption></figcaption></figure>
 
-**Partner's Portal - (Add Device)**
+
+## Partner's Portal - (Add Device)
 
 To **Add Devices** under a given SBI, click on 'Add Devices'.
 
@@ -242,9 +244,11 @@ Each device record can be viewed individually (in both Partner and Partner Admin
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image31.png" alt=""><figcaption></figcaption></figure>
 
-**Partner Admin portal for approval/rejection of devices:**
 
-To approve / reject a device, admin clicks on SBI-Device card in his homepage.
+
+## Partner Admin portal for approval/rejection of devices
+
+To approve / reject a device, you (admin) can click on SBI-Device card on homepage.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image32.png" alt=""><figcaption></figcaption></figure>
 
@@ -266,7 +270,9 @@ The status is thus updated accordingly in **List of Devices** Page as Approved/ 
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image36.png" alt=""><figcaption></figcaption></figure>
 
-**Deactivate Device:**
+
+
+## Deactivate Device
 
 Partner / Partner Admin can deactivate an active device any time provided it is in 'Approved' status. To perform deactivation, click on 'Deactivate' option in the action menu of the given Device in 'List of Device' page.
 
@@ -280,7 +286,9 @@ On clicking Confirm, the status of the device changes to 'Deactivated' and the r
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image39.png" alt=""><figcaption></figcaption></figure>
 
-**Deactivate SBI:**
+
+
+## Deactivate SBI
 
 Partner / Partner Admin can deactivate an active SBI any time provided it is in 'Approved' status. To perform deactivation, click on 'Deactivate' option in the action menu of the given SBI in 'List of SBI' page.
 
@@ -300,7 +308,9 @@ The SBI record is greyed out and devices cannot be added anymore within it.
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image42.png" alt=""><figcaption></figcaption></figure>
 
-**Status of Devices before SBI Deactivation:**
+
+
+### Status of Devices before SBI Deactivation
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image43.png" alt=""><figcaption></figcaption></figure>
 
@@ -308,7 +318,8 @@ The SBI record is greyed out and devices cannot be added anymore within it.
 * Devices which were **'Pending for Approval**' before SBI deactivation will now be displayed with **'Rejected'** status, which means devices get auto-rejected.
 * Devices which were earlier **rejected** continue to remain in the same status even after SBI deactivation.
 
-**Impact on status of Devices after SBI Deactivation:**
+
+### Impact on status of Devices after SBI Deactivation
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image44.png" alt=""><figcaption></figcaption></figure>
 
@@ -316,7 +327,9 @@ Option to deactivate an SBI is also available to Partner Admin by clicking on 'D
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image45.png" alt=""><figcaption></figcaption></figure>
 
-**Filter section in Partner portal:**
+
+
+## Filter section in Partner portal
 
 <figure><img src="../../../../.gitbook/assets/temp-device-provider-image46.png" alt=""><figcaption></figcaption></figure>
 
