@@ -19,33 +19,90 @@ The new interface of PMP, for its user part, has undergone a complete revamp not
 * Card view presentation – You now get ‘Partner User Dashboard’ and this offers Card view presentation for each functionality with brief / one liner description to help you understand the services offered in:
 * User Profile - User can view his organisation name and username on the top right , the user dropdown on the top right- has two options: User Profile and Logout.
 
-### User Access
+### Partner Admin Features
 
-* Login: Existing Partner who has already registered can login to the portal with email / username and password.
-* Retrieve Password / Forgot Password: Partner will have option to reset password using the Forget Password option.
+#### Admin dashboard
 
-### Partner Certificate
+Refreshed new user experience to the Admin dashboard which now has structured the high level functionalities with help of cards and which are ordered logically on the dashboard.
+
+* The dashboard displays the cards for **Certificate Trust Store**, **Partners, Policies**, **Parter Policy-Linking**, **SBI-Device**, **FTM Chip** and **Authentications Services**.
+* It also displays pending requests count for Partner Policy-Linking, SBI-Device and FTM Chip.
+
+#### Certificate Trust Store
+
+Upload, Download or View (List View and Detailed view) of Root and Intermediate Certificates.
+
+#### Partners
+
+Download (Original & MOSIP Signed Certificate), Deactivate Partner or View (List and Detailed View)
+
+#### Policies
+
+You can use this section for Policy Group and Policy related operations enlisted here:
+
+* Create **Policy Group**
+* Create **Policy**
+  * Authentication Policy
+  * Datashare Policy
+* **Clone Policy** in different Policy Group
+* **Publish** Policy in draft status
+* **Edit** Policy in draft status
+* **View**
+  * **List View**
+  * **Detail View**
+* **Deactivate** Policy Group (if no active policy is linked)
+* **Deactivate** Policy (if no active partner policy mappings)
+
+#### Partner Policy Linking
+
+Approve / Reject or View (List View and Details View)
+
+#### Partner Certificate
 
 * Upload and Re-upload: Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
 * Download: Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
 
-### Policies
+### Partner Type Feature
 
-* Request Policies: Request policies within selected policy group.
-* Policy List: View a tabular list of requested policies along with Partner Admin approval status.
-* View Policy Details: Access detailed views of individual policies, including status of Partner Admin approval/rejection.
+#### User Access Features
 
-### Authentication Services:
+* Login: Existing Partner who has already registered can login to the portal with email / username and password.
+* Retrieve Password / Forgot Password: Partner will have option to reset password using the Forget Password option.
 
+#### Authentication Services:
+
+Features discussed here is provided only for Partner Type which is Authentication Partner.
+
+* Policies - Request Policy, View, Select Policy Group
+* Enable Authentication mechanisms for approved policies
+* API Key:
+  * Generate API Key: Create API Keys for approved policies.
+  * View API Key Details: View a tabular list and individual details of submitted API Keys.
+  * Deactivate: Deactivate API Keys when necessary.
 * OIDC Client:
   * Create OIDC Client: Create OIDC Clients for approved policies.
   * View OIDC Details: Access a tabular list and individual views of submitted OIDC Client details, including OIDC Client IDs.
   * Edit: Edit existing OIDC Client details.
   * Deactivate: Deactivate OIDC Client whenever needed.
-* API Key:
-  * Generate API Key: Create API Keys for approved policies.
-  * View API Key Details: View a tabular list and individual details of submitted API Keys.
-  * Deactivate: Deactivate API Keys when necessary.
+
+#### The key features of Device Provider
+
+* **Partner Certificate:**
+  * **Upload and Re-upload:** Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
+  * **Download:** Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
+* **Device Provider Services:**
+  * **SBI - Device Creation:** Add SBI, Add Devices associated to an SBI. SBI / Device submissions will go to Partner Admin for approval.
+  * **Deactivate:** Deactivate SBI or Deactivate mapped devices
+  * **View** SBI and its associated devices
+
+#### The key features of FTM Chip Provider
+
+* **Partner Certificate:**
+  * **Upload and Re-upload:** Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
+  * **Download:** Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
+* **FTM Chip Services:**
+  * **FTM Chip details:** Add FTM details, deactivate FTM details.
+  * **FTM Chip Certificate:** Upload, Re-upload or download certificate.
 
 ## Browser Support:
 
@@ -57,7 +114,7 @@ The new interface of PMP, for its user part, has undergone a complete revamp not
 
 ## Compatibility:
 
-* Optimized for standard browser sizes (laptop/desktop) with responsive UI design for laptop/desktop views.
+* Optimized for standard browser sizes (laptop/desktop/extra large screen) with responsive UI design for laptop/desktop views.
 
 
 

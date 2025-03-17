@@ -1,18 +1,20 @@
 # FTM Chip Provider
 
+## FTM Chip Provider
+
 **Partner Management System (PMS) is used by both; PMS Admin and Partner User.**
 
 * Partner Administrator: Partner Admin
 * Partners: Partner User
 
-## What all activities can a 'Partner Admin' perform on FTM Chip Provider?
+### What all activities can a 'Partner Admin' perform for FTM Chip Provider?
 
 Being a 'Partner Admin' you can perform following activities to complete the end to end functionality pertaining to Device Provider.
 
 * Upload Root CA and Sub CA Certificates
 * Approve/Reject FTM Chip
 
-### Upload Root CA and Sub CA
+#### Upload Root CA and Sub CA
 
 Only after Partner Admin 'Upload Root CA and Sub CA Certificates' that a Partner will then be able to **Upload CA signed Partner Certificate**.
 
@@ -20,7 +22,7 @@ As a process of Partner onboarding onto PMS after successful registration, Partn
 
 **Certificate Authority (CA)** is an organization that acts to validate the identities of entities (in this case, a partner organisation) and bind them to cryptographic keys through the issuance of electronic documents known as digital certificates. A country needs to onboard valid CAs before onboarding any partner as MOSIP will only accept certificates which are signed only by a Trusted CA.
 
-#### Upload Root CA and Sub CA Certificates
+**Upload Root CA and Sub CA Certificates**
 
 1. Go to **PMS Portal and login as Partner Admin**. Click on **Certificate Trust Store** in Admin dashboard
 
@@ -41,19 +43,18 @@ As a process of Partner onboarding onto PMS after successful registration, Partn
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image5.png" alt=""><figcaption></figcaption></figure>
 
 5. Click Submit and an appropriate success message appears.
-6. Similarly, sub/intermediate CA certificate should be uploaded by following the above steps (2-4) by navigating to **Upload Intermediate CA Certificate** button provided within Intermediate Root CA tab.
+6. Similarly, Sub/Intermediate CA certificate should be uploaded by following the above steps (2-4) by navigating to **Upload Intermediate CA Certificate** button provided within Intermediate Root CA tab.
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image3.png" alt=""><figcaption></figcaption></figure>
 
+#### What all activity can a Partner (FTM Chip Provider) perform?
 
-### What all activity can a Partner (FTM Chip Provider) perform?
-
-To be able to access the services by PMS and to validate that the partner is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary'.
+To be able to access the services by PMS and to validate that the partner is from a trusted organisation, undergoing self registration on PMS and uploading CA signed certificate is necessary. Here is what you are able to do as FTM Chip Provider:
 
 * Self Register on PMS Interface
 * Upload CA signed Certificate
 
-#### Self-Register on PMS as FTM Chip Provider
+**Self-Register on PMS as FTM Chip Provider**
 
 1. The FTM Chip Provider can register themselves on MOSIP PMS portal by clicking **Register** on the Login Page, a form comes up.
 2. Enter the FTM Chip Provider details:
@@ -63,37 +64,35 @@ To be able to access the services by PMS and to validate that the partner is fro
    4. Address, Phone number
    5. e-mail, Username and password
 
-&#x20;
-
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image6.png" alt=""><figcaption></figcaption></figure>
-
-&#x20;
 
 3. **On successful registration**, you will be asked to read through '**Terms and Conditions**' and having carefully read through it you can agree and accept it.
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image7.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
-
+{% hint style="info" %}
 **Validations**:
 
 * Terms & Conditions: Partner consent refers to voluntary and informed agreement provided by a partner user on behalf of the Partner Organisation, to a specific action or process where the users have a clear understanding of what they are consenting to. User consent is important to ensure data privacy, where it is compliant to obtain explicit consent from partners before collecting, processing, or sharing their personal / organisation level data.
 * A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMS will be informed while seeking user consent.
+{% endhint %}
 
-#### Login:
+
+
+**Login:**
 
 * For existing partner users who are already registered in Partner Management System, they can login to the portal with their email, username and password.
 * On logging in you come to Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image8.png" alt=""><figcaption></figcaption></figure>
 
-#### Forgot Password:
+**Forgot Password:**
 
 * Partner user has an option to reset password , you can use it when you forget password or want to change password after a certain duration.
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image9.png" alt=""><figcaption></figcaption></figure>
 
-## CA Signed Partner Certificate Upload / Download or Re-Upload
+### CA Signed Partner Certificate Upload / Download or Re-Upload
 
 User is now in [Home Page/Dashboard](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview/auth-partner/end-user-guide#interface-overview) where the following features are provided to FTM Chip Provider:
 
@@ -102,17 +101,23 @@ User is now in [Home Page/Dashboard](https://docs.mosip.io/1.2.0/modules/partner
 
 These features can also be accessed by clicking on side panel (in the form of icons) or clicking on the hamburger menu on the top left which is available across all screens of PMS to help user easily navigate.
 
-Once registered as a process of Partner onboarding onto PMS after successful registration, user is required to perform upload CA signed Partner Certificate on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation........
+Once registered as a process of Partner onboarding onto PMS after successful registration, user is required to **Upload CA signed Partner Certificate** on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation.
 
+{% hint style="info" %}
 **Tips**:
 
 Later when required a Partner can also 'Download Certificate' and 'Re-Upload Certificate' (As the need may be).
+{% endhint %}
 
-Important:
+{% hint style="info" %}
+**Important**:
 
 Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that the 'Partner Admin' should have already had uploaded the **Root CA** and **Intermediate CA** certificates.
+{% endhint %}
 
-## Upload CA signed Certificate
+
+
+### Upload CA signed Certificate
 
 1. Go to **FTM Provider** > **Dashboard**.
 
@@ -142,8 +147,7 @@ Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that th
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image16.png" alt=""><figcaption></figcaption></figure>
 
-
-## Download Certificate
+### Download Certificate
 
 There is also an option to download initially uploaded CA signed certificate and also the MOSIP Signed Certificate.
 
@@ -155,21 +159,21 @@ Success Message is displayed on successful download of Originally uploaded certi
 
 On closing the popup the user can view the uploaded certificate details in the form of a list view.
 
-
-## Download Certificate
+### Download Certificate
 
 There is also an option to download initially uploaded CA signed certificate and also the MOSIP Signed Certificate.
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image19.png" alt=""><figcaption></figcaption></figure>
 
-
-## Re-Upload Certificate**
+### Re-Upload Certificate\*\*
 
 Re-uploading certificate is required in cases when MOSIP Signed Certificate gets expired after one year.
 
+{% hint style="info" %}
 **Note:**
 
 'MOSIP Signed Certificate has a validity of 1 year from the time of Partner Certificate Upload.
+{% endhint %}
 
 You must ensure that you re-upload the partner certificate again so that new MOSIP signed certificate can be generated and other functionalities such as FTM Chip Provider Services can function.
 
@@ -177,7 +181,7 @@ You must ensure that you re-upload the partner certificate again so that new MOS
 
 The rest of the steps is same as covered in Upload Certificate flow (Step 3-7)
 
-# FTM Chip Provider Services
+## FTM Chip Provider Services
 
 After the partner has uploaded partner certificate he can now perform 'FTM Chip Provider Services':
 
@@ -185,8 +189,7 @@ After the partner has uploaded partner certificate he can now perform 'FTM Chip 
 * **Deactivate** FTM details.
 * **Re-upload** and **Download** FTM Chip Certificate.
 
-
-## **Add FTM Chip:**
+### **Add FTM Chip:**
 
 You can add details of Foundational Trust Module (FTM) chip by clicking on 'Add FTM Chip' button which takes you to 'Add FTM Chip Details' screen.
 
@@ -238,8 +241,7 @@ Once the upload is complete - the record moves to 'Pending for Approval' status 
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image28.png" alt=""><figcaption></figcaption></figure>
 
-
-## Partner Admin
+### Partner Admin
 
 To approve / reject an FTM Chip, admin clicks on 'FTM Chip' card in his homepage.
 
@@ -259,14 +261,15 @@ A popup window appears for the admin to take appropriate action- Approve / Rejec
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
+{% hint style="info" %}
 **Note**:
 
 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
+{% endhint %}
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image38.png" alt=""><figcaption></figcaption></figure>
 
-
-## Manage Certificate for approved records
+### Manage Certificate for approved records
 
 Once the FTM Chip record is approved, FTM Chip Provider can click on Manage Certificate option in action menu so that the partner can download / reupload the FTM Chip certificate in Manage FTM Chip Certificate page.
 
@@ -294,8 +297,7 @@ on click of download button, a success message is displayed on the screen.
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image45.png" alt=""><figcaption></figcaption></figure>
 
-
-## Deactivate FTM Chip
+### Deactivate FTM Chip
 
 Partner / Partner Admin can deactivate an active FTM Chip any time provided it is in 'Approved' status. To perform deactivation, click on 'Deactivate' option in the action menu of the given FTM Chip in 'List of FTM Chip details' page.
 
@@ -305,6 +307,6 @@ On clicking 'Deactivate', a popup window appears seeking for confirmation and ap
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image47.png" alt=""><figcaption></figcaption></figure>
 
-on deactivation , the status changes to 'Deactivated' status.
+On deactivation , the status changes to 'Deactivated' status.
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image48.png" alt=""><figcaption></figcaption></figure>
