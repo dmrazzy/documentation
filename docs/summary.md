@@ -254,7 +254,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
-    * [1.2.1.0-beta.1 (Part 3)](roadmap-and-releases/releases/1.2.1.0-beta.1-part-3/README.md)
+    * [1.2.1.0-beta.1 (Part 3)](roadmap-and-releases/releases/1.2.1.0-beta.1-part-3.md)
       * [Test Report](roadmap-and-releases/releases/1.2.1.0-beta.1-part-3/test-report.md)
     * [Partner Management System 1.2.2.0](roadmap-and-releases/releases/partner-management-system-1.2.2.0/README.md)
       * [Test Report](roadmap-and-releases/releases/partner-management-system-1.2.2.0/test-report.md)
