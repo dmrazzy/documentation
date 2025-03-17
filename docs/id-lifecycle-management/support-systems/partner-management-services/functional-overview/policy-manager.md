@@ -1,8 +1,10 @@
 # Policy Manager
 
-**Using Keycloak to allocate/get 'Partner Admin' and/or 'Policy Manager'**
+### **Using Keycloak to allocate/get 'Partner Admin' and/or 'Policy Manager'**
 
-After registration you need to go to keycloak to enable roles.
+Using the same partner admin credentials, follow the steps below so that the user can be configured with POLICYMANAGER role too.
+
+Steps to configure **POLICYMANAGER** role in keycloak:
 
 1. Go to keycloak and search your 'User-Name' in Users tab.
 
@@ -12,21 +14,33 @@ After registration you need to go to keycloak to enable roles.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image3.png" alt=""><figcaption></figcaption></figure>
 
-3. In the **Available Roles** section, select **Partner Admin** or **Policy Manager**, click **Add** to move the selected role to the **Assigned Roles** list.
+3. In the **Available Roles** section, select '**Policy Manager'**, click **Add** to move the selected role to the **Assigned Roles** list.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image4.png" alt=""><figcaption></figcaption></figure>
 
-4. You can now log in to the **PMS** portal with the same user credentials and you will have access to the **Admin Dashboard**.
+4. Log in to the **PMS** portal with the same user credentials, you should now have access to the **Admin Dashboard** with 'Policies' card accessible for use.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image5.png" alt=""><figcaption></figcaption></figure>
 
-**Note:** Add **Policy Manager** role when you want that the 'Policies-Card'/ 'Priviledge' should also get enabled for you and turn you into a 'Policy Manager' as well.
+{% hint style="info" %}
+**Note:**&#x20;
 
-#### Registering as Policy Manager
+Both PARTNER\_ADMIN and POLICYMANAGER roles are necessary for **Policies** card to appear on Admin dashboard UI.
 
-By following the above steps (1-4) in keycloak, the admin can also configure **Policy Manager** role to enable and manage **Policies** card as shown in the dashboard below:
+Therefore add **Policy Manager** role when you want that the 'Policies-Card' should also get enabled for you and turn you into a 'Policy Manager' as well.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6.png" alt=""><figcaption></figcaption></figure>
+If only PARTNER\_ADMIN role would have been configured, only the following cards would have been displayed:
+{% endhint %}
+
+
+
+This card is accessible for roles Partner Admin and Policy Manager.
+
+In UI- both PARTNER\_ADMIN and POLICYMANAGER roles should be granted for the card to appear in the dashboard.
+
+As a partner admin cum policy manager - creation and management of Policy Group, Authentication Policy, Datashare Policy is enabled within Policies card.
+
+
 
 {% hint style="info" %}
 **Note**:
@@ -35,11 +49,10 @@ If only 'Policy Manager' role is configured in keycloak, then the user will stil
 {% endhint %}
 
 {% hint style="success" %}
-**Important**:&#x20;
+**Important**:
 
 After configuring the roles and if PMS portal is still logged in, make sure to logout and login again for the roles to get updated.
 {% endhint %}
-
 
 ## Policies
 
@@ -248,13 +261,9 @@ To deactivate a policy, click on Deactivate option in action menu of any activat
 If the Policy has active partners associated to it i.e. there are **Approved** partner policy requests, then on clicking Confirm, following error message is displayed and the admin will be restricted to deactivate such policy groups.
 {% endhint %}
 
-
-
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image56.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
-
-
 **Note:**
 
 1. Policy can be deactivated if there are no policy requests associated with this policy.
@@ -262,7 +271,6 @@ If the Policy has active partners associated to it i.e. there are **Approved** p
 3. Policy cannot be deactivated if there are pending policy requests associated with this policy. In this case , following error message is displayed- '\<title> Error: Partner - Policy Request Detected! \<Description> Pending policy requests are associated with this policy. Please take appropriate action in List of Partner Policy Linking screen'.
 4. Once the policy is deactivated by partner admin/policy manager, the partner will not be able to fetch this policy in any of the screens in their PMS portal.
 {% endhint %}
-
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image57.png" alt=""><figcaption></figcaption></figure>
 
@@ -305,12 +313,3 @@ The status- Approved / Rejected gets updated in the tabular view.
 On clicking view of active record or the row item itself, the partner- policy linking view page is displayed along with comment history where partner comments and admin's approval status is displayed.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image65.png" alt=""><figcaption></figcaption></figure>
-
-
-
-
-
-
-
-
-
