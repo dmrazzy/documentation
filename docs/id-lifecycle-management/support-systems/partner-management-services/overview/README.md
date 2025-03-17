@@ -25,6 +25,9 @@ Partner policies control the data that needs to be shared with a partner. The po
 
 Policies are not applicable for Device Provider, FTM Provider.
 
+<figure><img src="../../../../.gitbook/assets/temp-pms-overview-image-1.png" alt=""><figcaption></figcaption></figure>
+
+
 ### Partner roles
 
 | Partner Admin          | PARTNER\_ADMIN      |
