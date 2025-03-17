@@ -2,7 +2,7 @@
 
 ## Partner Admin & Policy Manager
 
-## What all activities does a 'Partner Admin' perform?
+### What all activities does a 'Partner Admin' perform?
 
 Partner Admin supervises the overall partner and policy management functionalities in PMS. The admin is responsible for:
 
@@ -11,24 +11,27 @@ Partner Admin supervises the overall partner and policy management functionaliti
 * Manage Partners and Policies
 * Approve / Reject new entries created by different partners or deactivate partner related records
 
-Note:
+{% hint style="info" %}
+**Note**:&#x20;
 
 Partner Admin can also assume the role of Policy Manager to:
 
 * Create and manage Policy Group(s) and Policies
+{% endhint %}
 
-### What all activities does a 'Policy Manager' perform?
+#### What all activities does a 'Policy Manager' perform?
 
 As a partner admin cum]{.mark} policy manager you can performs following:
 
 1. Create and manage Policy Group, Authentication Policy and Datashare Policy
 
-**Notes**:
+{% hint style="info" %}
+**Note**:
 
 For the '**Policies**' card to appear on the dashboard, both; (Partner Admin and Policy Mangaer) roles must be granted.
+{% endhint %}
 
-
-### Registering as Partner Admin
+#### Registering as Partner Admin
 
 Partner admin too has to self-register just like any other 'Partner Registration' by selecting any one of the partner type i.e.
 
@@ -36,7 +39,7 @@ You (Partner Admin) can first self-register in PMS as any one of the partner typ
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image1.png" alt=""><figcaption></figcaption></figure>
 
-#### Using Keycloak to allocate/get 'Partner Admin' and/or 'Policy Manager'
+**Using Keycloak to allocate/get 'Partner Admin' and/or 'Policy Manager'**
 
 After registration you need to go to keycloak to enable roles.
 
@@ -58,45 +61,46 @@ After registration you need to go to keycloak to enable roles.
 
 **Note:** Add **Policy Manager** role when you want that the 'Policies-Card'/ 'Priviledge' should also get enabled for you and turn you into a 'Policy Manager' as well.
 
-
-### Registering as Policy Manager
+#### Registering as Policy Manager
 
 By following the above steps (1-4) in keycloak, the admin can also configure **Policy Manager** role to enable and manage **Policies** card as shown in the dashboard below:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
 **Note**:
 
-1. If only 'Policy Manager' role is configured in keycloak, then the user will still be able to access the portals as a normal partner. Hence both; 'Partner Admin' & 'Policy Manager' roles are necessary to access all the cards/privileges above.
+If only 'Policy Manager' role is configured in keycloak, then the user will still be able to access the portals as a normal partner. Hence both; 'Partner Admin' & 'Policy Manager' roles are necessary to access all the cards/privileges above.
+{% endhint %}
 
+{% hint style="success" %}
+**Important**:&#x20;
 
-**Important**: 
 After configuring the roles and if PMS portal is still logged in, make sure to logout and login again for the roles to get updated.
+{% endhint %}
 
-
-
-## Certificate Trust Store
+### Certificate Trust Store
 
 Certificate Trust Store provides features such as Upload, Download, View Root CA and Intermediate CA certificates to Partner Admin such that at the time of CA Signed Certificate upload by partner MOSIP verifies the certificate chain of trust and then signs the partner's certificate using MOSIP(PMS) private key.
 
 * Root Trust (Root CA) Certificate
 * Intermediate Trust (Intermediate CA) Certificate
 
-### Root Trust (Root CA) Certificate Features
+#### Root Trust (Root CA) Certificate Features
 
 You can use the 'Root Trust (Root CA) Certificate' section to do the following:
 
 * View Root CA
   * List View
-  * Details View 
+  * Details View
 * Upload Certificate: Upload Root CA certificate such that the root of trust can be verified when an intermediate CA is uploaded.
 * Download Root CA: Download the root certificate as and when needed.
 
-#### View Root CA Certificate
+**View Root CA Certificate**
 
-##### Certificate Trust Store (List View)
+**Certificate Trust Store (List View)**
 
- * Go to Dashboard > Certificate Trust Store, all the CA Certificates appaears in 'List View' as in figure below:
+* Go to Dashboard > Certificate Trust Store, all the CA Certificates appaears in 'List View' as in figure below:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image7.png" alt=""><figcaption></figcaption></figure>
 
@@ -108,14 +112,13 @@ Each active certificate record has two options in action menu - **View** and **D
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
-
-##### View Root CA details
+**View Root CA details**
 
 On clicking View, the Root CA certificate detail can be viewed individually.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image10.png" alt=""><figcaption></figcaption></figure>
 
-#### Upload Root CA
+**Upload Root CA**
 
 To upload Root CA / Intermediate CA Certificate, click on 'Upload Trust Certificate'.
 
@@ -123,11 +126,13 @@ To upload Root CA / Intermediate CA Certificate, click on 'Upload Trust Certific
 
 Admin is thus \[navigated]{.mark} to Upload Trust Certificate page.
 
+{% hint style="info" %}
 **Note**:
 
 Admin can upload Root CA / Intermediate CA certificate in the same page but should be in a sequential order ie. Root CA Certificate upload first and then Corresponding Intermediate CA certificate upload.
+{% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/image13.png" alt=""><figcaption></figcaption></figure>
+
 
 Select the partner domain (AUTH / DEVICE / FTM) **in the Upload section**. Partner Domain typically refers to the specific functional area for which the **Root or Intermediate CA certificate** is being uploaded.
 
@@ -135,22 +140,30 @@ Select the partner domain (AUTH / DEVICE / FTM) **in the Upload section**. Partn
 * DEVICE: Select Partner domain as DEVICE if **Root or Intermediate CA certificate** is being uploaded for Device Provider.
 * FTM: Select Partner domain as FTM if **Root or Intermediate CA certificate** is being uploaded for FTM Chip Provider.
 
-<figure><img src="../../../../.gitbook/assets/image14.png" alt=""><figcaption></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/image15.png" alt=""><figcaption></figcaption></figure>
 
-Note:
+{% hint style="info" %}
+
+
+**Note**:
 
 * Only .cer or .pem format certificates are allowed for upload
 * Future dated certificates \[is]{.mark} \[should]{.mark} not \[be]{.mark} allowed for upload, in case it is attempted an error message is thrown.
 * Only \[Version 3]{.mark} certificate is allowed for upload.
 * If the corresponding root certificate is not uploaded, then while submitting the Intermediate certificate upload, an error message appears asking 'Please upload corresponding Root Certificate to proceed further'.
+{% endhint %}
+
+{% hint style="success" %}
+
 
 **Note for Root CA Certificate**:
 
 * Issued To and Issued By is the same - which means these are self signed certificates.
+{% endhint %}
 
-#### Download Root CA**
+
+
+**Download Root CA**
 
 In the same page (Root CA details), an option to download the Root CA certificate in .p7b file is also provided. Clicking on download, a success message appears.
 
@@ -158,13 +171,9 @@ In the same page (Root CA details), an option to download the Root CA certificat
 
 On opening the .p7b file from local system, the Root CA Certificate can be viewed as below:
 
-NOTE: any external installation required [swetha.N](https://mosip.atlassian.net/wiki/people/636a272c11c69c7418450dbe?ref=confluence) [Prathmesh Jadhav](https://mosip.atlassian.net/wiki/people/712020:c6ee5f54-fc2c-4d62-986e-97ddd067ffd0?ref=confluence) ???
-
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image12.png" alt=""><figcaption></figcaption></figure>
 
-
-
-### Intermediate Trust (Intermediate CA) Certificate
+#### Intermediate Trust (Intermediate CA) Certificate
 
 * View Intermediate CA
   * View Intermediate CA: List View of all uploaded Intermediate CA certificates is displayed.
@@ -172,9 +181,9 @@ NOTE: any external installation required [swetha.N](https://mosip.atlassian.net/
 * Upload Root CA Certificate: Partner Admin can upload **Intermediate CA** certificate so that the root of trust can be verified when a partner uploads Partner / FTM Chip Certificate.
 * Download Certificate Chain of Trust: Partner Admin downloads the certificate chain of trust of intermediate certificate as and when needed.
 
-#### Viewing the Intermediate CA Certificate
+**Viewing the Intermediate CA Certificate**
 
-##### Intermediate CA Certificates (List View)
+**Intermediate CA Certificates (List View)**
 
 On clicking the Intermediate CA tab, List of all Intermediate CA certificates uploaded by Partner Admin is displayed.
 
@@ -187,14 +196,13 @@ Action menu for all active certificates displays the following options:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image17.png" alt=""><figcaption></figcaption></figure>
 
-##### Viewing the Intermediate CA Certificate (Details View)
+**Viewing the Intermediate CA Certificate (Details View)**
 
 Either by clicking on the row item or the View option in action menu, the admin is \[navigated]{.mark} to View Intermediate CA Certificate details page where the certificate details are displayed such as Certificate ID, Partner Domain - (AUTH, FTM, DEVICE), Issued To- _\<subject > field of Certificate,_ Issued By- _\<issuer > field of Certificate,_ Valid From, Valid To\*- same as system browser date format\* etc
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image18.png" alt=""><figcaption></figcaption></figure>
 
-
-#### Upload Intermediate Certificate
+**Upload Intermediate Certificate**
 
 To upload the Intermediate CA certificate, carry out the same steps of Root CA Certificate upload(explianed above).
 
@@ -206,6 +214,7 @@ To upload the Intermediate CA certificate, carry out the same steps of Root CA C
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image24.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
 **Note**:
 
 * The Subject of the root certificate matches the Issuer of the intermediate certificate.
@@ -213,55 +222,63 @@ To upload the Intermediate CA certificate, carry out the same steps of Root CA C
 * Intermediate certificate must expire before its root certificate.
 * Validity of Root CA Certificate > Intermediate CA Certificate > CA Signed Partner Certificate
 * Sequence of Upload: Root CA Certificate (by Partner Admin)→ Intermediate CA Certificate (by Partner Admin) → CA signed Partner Certificate (by Partner)
+{% endhint %}
 
-#### Downloading the Intermediate CA Certificate
+
+
+**Downloading the Intermediate CA Certificate**
 
 Clicking on Download, downloads the entire certificate chain as .p7b file and a success message is displayed - 'Certificate Chain of Trust for the given Intermediate CA certificate is downloaded successfully'.
 
+{% hint style="info" %}
 **Note:** For expired status, 'Download Certificate Chain' button will be disabled in View Root Certificate page / Tabular View page.
+{% endhint %}
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image19.png" alt=""><figcaption></figcaption></figure>
 
 On clicking the .p7b file from local system, the certificate hierarchy of the intermediate CA certificate is present where its corresponding root certificate is also downloaded.
 
-<figure><img src="../../../../.gitbook/assets/image20.png" alt=""><figcaption></figcaption></figure>
-
-
-
-
-# Partners
+## Partners
 
 As a **Partner Admin** you can view the list of all partners who have enrolled to PMS portal by clicking on the Partners card on dashboard or side panel, hamburger menu.
 
-## ‘Partner’ Features:
+### ‘Partner’ Features:
 
 1. View Partner
-  * List View - (Action menu: View, Deactivate)
-  * Details View -  of individual Partner and the certificate details
+
+* List View - (Action menu: View, Deactivate)
+* Details View - of individual Partner and the certificate details
+
 3. Download original Partner Certificate and MOSIP Signed certificate
 4. Deactivate Partner
 
+#### View Partner Details
 
-### View Partner Details
+**Viewing a Partner**
 
-#### Viewing a Partner
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image25.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
 **Note:** Deactivate option appears disabled if the partner is already deactivated.
+{% endhint %}
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image26.png" alt=""><figcaption></figcaption></figure>
 
-#### Viewing a Partner's details
+**Viewing a Partner's details**
 
 Click on a row item or use the view option in action menu you come to 'Partner Details Page' to view the Partner Details such as **Partner type**, **Organisation name**, First Name, Last Name, Phone Number, Email Address, Policy Group (If partner is of the type 'Authentication Partner'). Partner certificate details are also visible.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image27.png" alt=""><figcaption></figcaption></figure>
 
-
-### Download original certificate / MOSIP Signed certificate
+#### Download original certificate / MOSIP Signed certificate
 
 The admin can download original certificate / MOSIP Signed certificate as and when necessary.
 
+{% hint style="info" %}
 **Note:**
 
 The download functionality of following certificates is possible only during following instances:
@@ -269,6 +286,9 @@ The download functionality of following certificates is possible only during fol
 * This button is enabled only for Activated partner record of which the certificate is already uploaded.
 * This button is disabled for deactivated partner records/partner records whose partner certificate is not uploaded yet.
 * If Original Certificate / MOSIP Signed Certificate is expired then on clicking respective menu items in the button-dropdown an appropriate error message is displayed.
+{% endhint %}
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image28.png" alt=""><figcaption></figcaption></figure>
 
@@ -278,9 +298,7 @@ On downloading the Original / MOSIP Signed certificate, a success message appear
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image30.png" alt=""><figcaption></figcaption></figure>
 
-
-
-### Deactivate a Partner
+#### Deactivate a Partner
 
 To deactivate a partner, click on Deactivate option in action menu. A popup window appears seeking for confirmation from the partner.
 
@@ -288,30 +306,38 @@ To deactivate a partner, click on Deactivate option in action menu. A popup wind
 
 After confirming deactivation, the respective record is greyed out in the tabular view. The action menu here appears enabled with only 'View' option after deactivation and Deactivate in action menu is disabled.
 
-**Note:** After deactivation, the View partners page will display the following-
+{% hint style="info" %}
+**Note:**&#x20;
 
-1. 'Deactivated' status
+After deactivation, the View partners page will display the following&#x20;
+
+1. 'Deactivated' status.
 2. Certificate section is greyed out with and download button is disabled.
+{% endhint %}
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image32.png" alt=""><figcaption></figcaption></figure>
 
 The deactivated partner will not be able to create or utilize any of the services in their PMS portal (For e.g. no new transactions will work such as creation of OIDC Client , API Key etc).
 
-**Known Issue:** Even after partner deactivation partner is able to access the existing transactions in their PMS portal such as following:
+{% hint style="warning" %}
+**Known Issue:**&#x20;
+
+Even after partner deactivation partner is able to access the existing transactions in their PMS portal such as following:
 
 1. Existing OIDC client ids are still operational for Authentication Partner.
 2. Existing API keys are still operational for Authentication Partner.
 3. SBI / Devices / FTM - trust validation does not fail even after partner deactivation.
+{% endhint %}
 
-
-
-# Policies
+## Policies
 
 You can use the 'Policies' to create and manage Policy Group, Authentication Policy and Datashare (You should have privileges of both; Partner Admin and Policy Manager).
 
 The 'Policies' section is accessible to you only if both **Partner Admin** and **Policy Manager** roles are allocated to you and also the 'Policies' card will appears enabled on the the dashboard.
 
-## Policies has following theree tabs:
+### Policies has following theree tabs:
 
 * Policy Group, (This tab is selected by default)
 * Authentication Policy,
@@ -322,13 +348,12 @@ The 'Policies' section is accessible to you only if both **Partner Admin** and *
 **Policy Group**
 
 Policy Group tab allows you to do following:
+
 * View Policy Group
   * List view
   * Details View
 * Create Policy Group
 * Deactivate Policy Group
-
-&#x20;
 
 **Authentication Policy**
 
@@ -341,8 +366,6 @@ Policy Group tab allows you to do following:
 * Edit Authentication Policy (Which is in draft status)
 * Publish Authentication Policy (Which is in draft status so that the status changes to 'Activated')
 
-&#x20;
-
 **Datashare Policy**
 
 * View Datashare Policy:
@@ -354,17 +377,17 @@ Policy Group tab allows you to do following:
 * Edit Datashare Policy (Which is in draft status)
 * Publish Datashare Policy (Which is in draft status so that the status changes to 'Activated')
 
-## Policy Group
+### Policy Group
 
-### View Policy Group 
+#### View Policy Group
 
-#### List View - Policy Groups
+**List View - Policy Groups**
 
 All the policy groups created so far by Partner Admin / Policy Manager are displayed on 'List of Policy Groups' page.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image33.png" alt="" width="427"><figcaption></figcaption></figure>
 
-#### Details View - Policy Group
+**Details View - Policy Group**
 
 Admin can either click on 'Go Back' to redirect to 'List of Policy Groups' page as shown below or click on 'Home' to navigate back to Home page/ dashboard.
 
@@ -374,8 +397,7 @@ Clicking on View in action menu or by clicking the row item itself, admin is nav
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image36.png" alt=""><figcaption></figcaption></figure>
 
-
-#### Create Policy Group
+**Create Policy Group**
 
 On clicking the 'Create Policy Group' option on the top right of the screen, we can create a Policy Group by providing suitable name and description that is self explanatory for partners, who would be selecting them during Partner Policy Request to create API Key / OIDC Client \[etc]{.mark}.
 
@@ -385,13 +407,13 @@ On click of Submit, a success message appears.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image35.png" alt=""><figcaption></figcaption></figure>
 
-#### Deactivate Policy Group
+**Deactivate Policy Group**
 
 If the admin wants to deactivate the Policy Group, then click on Deactivate option in action menu.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image37.png" alt=""><figcaption></figcaption></figure>
 
- A popup window appears seeking for confirmation before proceeding to deactivate.
+A popup window appears seeking for confirmation before proceeding to deactivate.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image38.png" alt=""><figcaption></figcaption></figure>
 
@@ -405,9 +427,11 @@ After deactivation, the View policy group page [MOSIP-36963](https://mosip.atlas
 
 Once the policy group is deactivated by Policy Manager, the partner will not be able to fetch this policy group in any of the screens in their \[PMS portal]{.mark}.
 
+{% hint style="info" %}
 **Note:**
 
 Policy Group cannot be deactivated if there are active or draft policies associated to the given policy group.
+{% endhint %}
 
 If the Policy Group has active or draft policy / policies associated to it, then on clicking Confirm, following error message is displayed along with the count of such policies -
 
@@ -423,14 +447,16 @@ c) In case of Draft policies associated to policy group:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image42.png" alt=""><figcaption></figcaption></figure>
 
-### Authentication Policy / Datashare Policy:
+#### Authentication Policy / Datashare Policy:
 
 * On clicking Authentication Policy tab, List of all previously created Authentication Policies are displayed.
 * On clicking Datashare Policy tab, List of all previously created Datashare Policies are displayed.
 
+{% hint style="info" %}
 **Note**:
 
 The steps and features are same for both Authentication and Datashare Policy.
+{% endhint %}
 
 Policies can have the following status - Draft, Activated or Deactivated.
 
@@ -442,13 +468,15 @@ Policies can have the following status - Draft, Activated or Deactivated.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image43.png" alt=""><figcaption></figcaption></figure>
 
-#### Create Authentication Policy
+**Create Authentication Policy**
 
 On clicking 'Create Authentication Policy' button, Partner Admin / Policy manager is navigated to Create Authentication Policy page where details such as policy group, policy name, description etc will have to be entered.
 
+{% hint style="info" %}
 **Note**:
 
 Only active policy groups are available in the policy group dropdown.
+{% endhint %}
 
 Click on the upload button to upload policy data. Only json files are allowed for upload.
 
@@ -486,7 +514,7 @@ The given policy changes to 'Activated' status after being published. Once activ
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image52.png" alt=""><figcaption></figcaption></figure>
 
-#### Clone Policy
+**Clone Policy**
 
 To clone any active policy onto another policy group, click on 'clone' in action menu. A popup window appears to select the policy group where the policy has to be cloned.
 
@@ -498,28 +526,40 @@ Click on Close to navigate back to List of Authentication Policies screen.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image54.png" alt=""><figcaption></figcaption></figure>
 
-#### Deactivate Policy
+**Deactivate Policy**
 
 To deactivate a policy, click on Deactivate option in action menu of any activated policy record. A popup window appears seeking for confirmation.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image55.png" alt=""><figcaption></figcaption></figure>
 
-Note:
+{% hint style="info" %}
+**Note**:
 
 If the Policy has active partners associated to it i.e. there are **Approved** partner policy requests, then on clicking Confirm, following error message is displayed and the admin will be restricted to deactivate such policy groups.
+{% endhint %}
+
+
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image56.png" alt=""><figcaption></figcaption></figure>
 
+{% hint style="info" %}
+
+
 **Note:**
 
-1. Policy can be deactivated if there are no policy requests associated with this policy
+1. Policy can be deactivated if there are no policy requests associated with this policy.
 2. Policy can be deactivated if there are Rejected policy requests associated with this policy.
-3. Policy cannot be deactivated if there are pending policy requests associated with this policy. In this case , following error message is displayed- '\<title> Error: Partner - Policy Request Detected! \<Description> Pending policy requests are associated with this policy. Please take appropriate action in List of Partner Policy Linking screen'
+3. Policy cannot be deactivated if there are pending policy requests associated with this policy. In this case , following error message is displayed- '\<title> Error: Partner - Policy Request Detected! \<Description> Pending policy requests are associated with this policy. Please take appropriate action in List of Partner Policy Linking screen'.
 4. Once the policy is deactivated by partner admin/policy manager, the partner will not be able to fetch this policy in any of the screens in their PMS portal.
+{% endhint %}
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image57.png" alt=""><figcaption></figcaption></figure>
 
-#### Viewing Policy
+**Viewing Policy**
 
 On clicking **View** option of any policy or by clicking the row item itself, admin is navigated to View Authentication Policy where policy details can be viewed. Also click on preview to view the policy data in json format.
 
@@ -529,7 +569,7 @@ On clicking preview, policy data can be viewed in json format and an option to D
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image59.png" alt=""><figcaption></figcaption></figure>
 
-### Partner - Policy Linking:
+#### Partner - Policy Linking:
 
 The features provided to Partner Admin:
 
@@ -559,9 +599,7 @@ On clicking view of active record or the row item itself, the partner- policy li
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image65.png" alt=""><figcaption></figcaption></figure>
 
-
-
-# **SBI - Device:**
+## **SBI - Device:**
 
 SBI - Device is exclusively used to manage Device Provider's requests on SBI and Device creation.
 
@@ -571,14 +609,12 @@ The 'SBI-Devices' has 2 Tabs namely **SBI and Device**. SBI tab view is selected
 
 **SBI features**
 
-* View SBI - 
+* View SBI -
   * List View of SBIs created by Device Providers along with the status
   * Details View - View submitted SBI details,either on clicking on view option in action menu of any of the submitted SBI details in the tabular view or by clicking on the active row item itself, it navigates to View SBI details page
 * Approve/ Reject SBIs - On clicking Approve/Reject in action menu of Pending for Approval records
 * Deactivate an SBI - On clicking Deactivate option in action item of activated records in Tabular view screen
 * View Linked Devices - Of a given SBI can be viewed through a filtered search on the pre-selected SBI
-
-&#x20;
 
 **Device features:**
 
@@ -589,12 +625,11 @@ The 'SBI-Devices' has 2 Tabs namely **SBI and Device**. SBI tab view is selected
 * Deactivate Device: On clicking Deactivate option in action item of activated records in Tabular view screen
 * List of all SBIs created by various different device providers are available here. Any SBIs that are pending for approval can be approved/ rejected
 
+## SBI
 
-# SBI
+#### Approve or reject SBI
 
-### Approve or reject SBI
-
- Go to Dashboard → SBI-Device → List of SBIs to Approved or Reject.
+Go to Dashboard → SBI-Device → List of SBIs to Approved or Reject.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67.png" alt=""><figcaption></figcaption></figure>
 
@@ -606,7 +641,7 @@ On approval, the status changes to 'Approved' and on rejection, the status chang
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69.png" alt=""><figcaption></figcaption></figure>
 
-You can click on View option in the action menu to view any individual records, 
+You can click on View option in the action menu to view any individual records,
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image70.png" alt=""><figcaption></figcaption></figure>
 
@@ -622,9 +657,7 @@ To know the list of linked devices associated to this SBI, click on the linked d
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image72.png" alt=""><figcaption></figcaption></figure>
 
-
-
-### Deactivate SBI
+#### Deactivate SBI
 
 To deactivate an SBI, click on Deactivate option in action menu. An alert appears seeking for confirmation. Also admin is informed how the linked devices will be impacted after SBI deactivation.
 
@@ -634,8 +667,7 @@ After confirming Deactivation the respective SBI record is greyed out and the st
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image74.png" alt=""><figcaption></figcaption></figure>
 
-
-#### Impact on linked devices after SBI deactivation
+**Impact on linked devices after SBI deactivation**
 
 Impact on linked devices after SBI deactivation is as below:
 
@@ -645,11 +677,9 @@ Impact on linked devices after SBI deactivation is as below:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image75.png" alt=""><figcaption></figcaption></figure>
 
- 
+### **Device**
 
-## **Device**
-
-### View Devices
+#### View Devices
 
 On clicking 'Devices' tab, **List of all Devices** submitted so far are displayed.
 
@@ -659,7 +689,7 @@ Click on view option in action menu or the row item itself (of any active device
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image80.png" alt=""><figcaption></figcaption></figure>
 
-### Approve / Reject Devices
+#### Approve / Reject Devices
 
 On clicking the action menu of the respective device record, an option 'Approve / Reject' is provided
 
@@ -675,8 +705,7 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79.png" alt=""><figcaption></figcaption></figure>
 
-
-### Deactivate Device
+#### Deactivate Device
 
 Click on deactivate option in action menu. A confirmation window appears to proceed for deactivation.
 
@@ -686,9 +715,7 @@ The deactivated device record is greyed out and status is also changed to 'Deact
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image82.png" alt=""><figcaption></figcaption></figure>
 
-
-
-# **FTM Chip:**
+## **FTM Chip:**
 
 The following features are provided to admin to manager FTM Chip Provider's requests:
 
@@ -699,8 +726,7 @@ The following features are provided to admin to manager FTM Chip Provider's requ
 * Download FTM Chip Certificate: On clicking on Download option within FTM Chip Certificate section in 'View FTM Chip Certificate' page, then originally uploaded FTM Chip certificate can be downloaded
 * Deactivate FTM detail: On clicking on 'Deactivate' option in action menu of approved records in Tabular view of FTM details screen, the respective FTM detail along with its certificate will be deactivated.
 
-
-## View FTP Chip Details
+### View FTP Chip Details
 
 The List of FTM Chip details displays all FTM Chip details created by FTM Chip Provider
 
@@ -712,39 +738,33 @@ You can navigate to view 'List of FTM Chip details' page where list of all FTM C
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85.png" alt=""><figcaption></figcaption></figure>
 
-
-## View Details of FTM Chip&#x20;
+### View Details of FTM Chip
 
 To view FTM Chip details indivudally, click on View option in action menu
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image89.png" alt=""><figcaption></figcaption></figure>
 
-
-
-## Approve / Reject FTM Chip
+### Approve / Reject FTM Chip
 
 Click on the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
-
 A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87.png" alt=""><figcaption></figcaption></figure>
 
-&#x20;
-
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
-&#x20;
-
+{% hint style="info" %}
 **Note**: 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
+{% endhint %}
+
+
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88.png" alt=""><figcaption></figcaption></figure>
 
-
-## Download FTM Chip Certificate
+### Download FTM Chip Certificate
 
 To download the FTM Chip Certificate uploaded by FTM Chip Provider, click on download button.
 
@@ -758,9 +778,7 @@ The deactivated FTM Chip record is greyed out after deactivation.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image92.png" alt=""><figcaption></figcaption></figure>
 
-
-
-# Authentication Services
+## Authentication Services
 
 Authentication Services has two tabs namely **OIDC Client and API key**. OIDC Client tab view is selected by default.
 
@@ -769,7 +787,7 @@ Authentication Services has two tabs namely **OIDC Client and API key**. OIDC Cl
 * View OIDC Client
   * Lis view of OIDC clients created by partners along with the status
   * View submitted OIDC Client details: Either on clicking on view option in action menu of any of the submitted OIDC details in the tabular view or by clicking on the row item itself, it navigates to View OIDC Client details page
-* Deactivate an OIDC Client:  On clicking Deactivate option in action item of activated records in Tabular view screen
+* Deactivate an OIDC Client: On clicking Deactivate option in action item of activated records in Tabular view screen
 
 **API Key**
 
@@ -778,9 +796,9 @@ Authentication Services has two tabs namely **OIDC Client and API key**. OIDC Cl
   * View submitted API Key details: Either on clicking on view option in action menu of any of the submitted API key details in the tabular view or by clicking on the row item itself, it navigates to View API key details page
 * Deactivate: API key on clicking Deactivate option in action item of activated records in Tabular view screen
 
-## OIDC Client
+### OIDC Client
 
-### View OIDC Clients
+#### View OIDC Clients
 
 Within OIDC Client tab, all OIDC Clients created by various Authentication partners are displayed.
 
@@ -794,18 +812,15 @@ On clicking view option in action menu, the admin is redirected to View OIDC Cli
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image94.png" alt=""><figcaption></figcaption></figure>
 
-
-### Deactivate OIDC Client:
+#### Deactivate OIDC Client:
 
 On clicking view option in action menu, the admin is redirected to View OIDC Client details page.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image95.png" alt=""><figcaption></figcaption></figure>
 
+### API Key
 
-
-## API Key
-
-### View API Key
+#### View API Key
 
 To view the list of all API Keys created by Authentication partner, click on API Key tab
 
@@ -821,7 +836,7 @@ On clicking view option in action menu, the admin is redirected to View API Key 
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image98.png" alt=""><figcaption></figcaption></figure>
 
-### Deactivate an API Key
+#### Deactivate an API Key
 
 To deactivate an API Key, click on deactivate option in action menu.
 
