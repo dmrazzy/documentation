@@ -8,10 +8,6 @@ The key features of Authentication Partner and the Partner Management System are
 
 A Partner can self-register with much of the process as automated with least manual intervention.
 
-### Policy Group Selection and Choosing a Policy
-
-Partner has to select the Policy Group and then choose an applicable Policy which is based on the Partner Type the organization belongs to. Policy selection gets easier as there is description provided against each policy helping a Partner carefully select an applicable policy.
-
 ### Interface / User Experience:
 
 The new interface of PMP, for its user part, has undergone a complete revamp not only on UI but the UX been worked upon ground up. The select few points from the UX enhancements are as below:
@@ -69,7 +65,7 @@ Approve / Reject or View (List View and Details View)
 * Login: Existing Partner who has already registered can login to the portal with email / username and password.
 * Retrieve Password / Forgot Password: Partner will have option to reset password using the Forget Password option.
 
-#### Authentication Services:
+#### Key Feature of Authentication Partner:
 
 Features discussed here is provided only for Partner Type which is Authentication Partner.
 
