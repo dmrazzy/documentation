@@ -74,10 +74,10 @@ Download (Original & MOSIP Signed Certificate), Deactivate Partner or View (List
 
 You can use this section for Policy Group and Policy related operations enlisted here:
 
-* Create [**Policy Group**](file:///wiki/spaces/PMS/pages/1348665691/Overview|RELOOK)
-* Create [**Policy**](file:///wiki/spaces/PMS/pages/1348665691/Overview|RELOOK)
-  * [Authentication Policy](file:///wiki/spaces/PMS/pages/1348665691/Overview|RELOOK)
-  * [Datashare Policy](file:///wiki/spaces/PMS/pages/1348665691/Overview|RELOOK)
+* Create **Policy Group**
+* Create **Policy**
+  * Authentication Policy
+  * Datashare Policy
 * **Clone Policy** in different Policy Group
 * **Publish** Policy in draft status
 * **Edit** Policy in draft status
@@ -148,7 +148,22 @@ Below is the list of key [known issues](https://mosip.atlassian.net/issues/?filt
 
 The following table outlines the tested and certified compatibility of PMS 1.2.2.0 with other modules.
 
-<table data-header-hidden><thead><tr><th width="386.49859619140625"></th><th></th></tr></thead><tbody><tr><td><strong>Module/ Repo</strong></td><td><strong>Tags</strong></td></tr><tr><td><strong>Key Manager</strong></td><td><a href="https://github.com/mosip/keymanager/tree/v1.3.0-beta.2">v1.3.0-beta.2</a></td></tr><tr><td><strong>auth manager</strong></td><td><a href="https://github.com/mosip/mosip-openid-bridge">1.2.0.1</a></td></tr><tr><td><strong>artifactory</strong></td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2">1.2.0.2</a></td></tr><tr><td><strong>IDA</strong></td><td><a href="https://github.com/mosip/id-authentication/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>eSignet</strong></td><td><a href="https://github.com/mosip/esignet/tree/v1.4.1">1.4.1</a></td></tr><tr><td><strong>Reg Proc</strong></td><td><a href="https://github.com/mosip/registration/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Notifier (Kernel)</strong></td><td><a href="https://github.com/mosip/commons/tree/v1.2.0.1/kernel">1.2.0.1</a></td></tr><tr><td><strong>Audit manager</strong></td><td><a href="https://github.com/mosip/audit-manager/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>ID Repo</strong></td><td><a href="https://github.com/mosip/id-repository/tree/v1.2.1.0">1.2.1.0</a></td></tr><tr><td><strong>datashare</strong></td><td><a href="https://github.com/mosip/durian/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>Keycloak</strong></td><td><a href="https://github.com/mosip/keycloak/tree/v1.2.0.1">1.2.0.1</a></td></tr><tr><td><strong>config-server</strong></td><td><a href="https://github.com/mosip/mosip-config/tree/v1.1.2">v1.1.2</a></td></tr><tr><td><strong>Websub</strong></td><td><a href="https://github.com/mosip/websub/tree/v1.2.0.1">1.2.0.1</a></td></tr></tbody></table>
+| **Key Manager**       | [v1.3.0-beta.2](https://github.com/mosip/keymanager/tree/v1.3.0-beta.2) |
+| --------------------- | ----------------------------------------------------------------------- |
+| **auth manager**      | [v1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1)  |
+| **artifactory**       | [v1.2.0.2](https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2) |
+| **IDA**               | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)    |
+| **eSignet**           | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                  |
+| **Reg Proc**          | [v1.2.0.1](https://github.com/mosip/registration/tree/v1.2.0.1)         |
+| **Notifier (Kernel)** | [v1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel)       |
+| **Audit manager**     | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)        |
+| **ID Repo**           | [v1.2.1.0](https://github.com/mosip/id-repository/tree/v1.2.1.0)        |
+| **datashare**         | [v1.2.0.1](https://github.com/mosip/durian/tree/v1.2.0.1)               |
+| **Keycloak**          | [v1.2.0.1](https://github.com/mosip/keycloak/tree/v1.2.0.1)             |
+| **config-server**     | [v1.1.2](https://github.com/mosip/mosip-config/tree/v1.1.2)             |
+| **Websub**            | [v1.2.0.1](https://github.com/mosip/websub/tree/v1.2.0.1)               |
+
+
 
 ### Documentation
 
