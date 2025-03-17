@@ -132,3 +132,5 @@ The various metrics that assist in test tracking and efficiency are as follows:
 * **Partner-Management-Portal:**
 
 <figure><img src="../../../.gitbook/assets/pms-1.2.2.0-partner-management-portal.png" alt=""><figcaption></figcaption></figure>
+
+For details on the test results, refer [here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.0).
