@@ -108,7 +108,7 @@ For details related to partner management services revamp configurations, refer 
 For a detailed description of Partner Management System, code, design, and setup steps, refer to:
 
 1. [UI Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/ui-developers-guide.md)
-2. [Backend Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/backend-developers-guide/)
+2. [Backend Developer’s Guide](../../../id-lifecycle-management/support-systems/partner-management-services/develop/backend-developers-guide.md)
 
 ### API
 
@@ -120,5 +120,5 @@ For details on the test results, refer [here](test-report.md).
 
 ## Other Documentation
 
-* [Technology Stack](../../../id-lifecycle-management/support-systems/partner-management-services/develop/backend-developers-guide/technology-stack.md)
+* [Technology Stack](../../../id-lifecycle-management/support-systems/partner-management-services/develop/technology-stack.md)
 * [Browsers Supported](../../../id-lifecycle-management/support-systems/partner-management-services/develop/browsers-supported.md)

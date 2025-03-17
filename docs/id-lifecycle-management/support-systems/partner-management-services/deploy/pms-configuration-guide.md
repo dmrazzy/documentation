@@ -36,6 +36,8 @@ pmp.partner.certificaticate.upload.rest.uri=${mosip.kernel.keymanager.url}/v1/ke
 pmp.partner.certificaticate.get.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/getPartnerCertificate/{partnerCertId}
 pmp.partner.original.certificate.get.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/getPartnerSignedCertificate/{partnerCertId}
 pmp-keymanager.upload.other.domain.cert.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/uploadOtherDomainCertificate
+pmp.trust.certificates.post.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/getCaCertificates
+pmp.download.trust.certificates.get.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/getCACertificateTrustPath/{caCertId}
 ```
 
 #### Auth Adapter rest template authentication configs
@@ -166,12 +168,35 @@ These properties specify partner type roles that are used to grant access to var
 Copy
 
 ```
-mosip.role.pms.getallcertificatedetails=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
-mosip.role.pms.getallrequestedpolicies=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
-mosip.role.pms.getallapprovedauthpartnerpolicies=AUTH_PARTNER,PARTNER_ADMIN
-mosip.role.pms.getallapprovedpartneridswithpolicygroups=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
-mosip.role.pms.getallapikeysforauthpartners=AUTH_PARTNER,PARTNER_ADMIN
-mosip.role.pms.getalloidcclients=AUTH_PARTNER,PARTNER_ADMIN
-mosip.role.pms.userconsent=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
-mosip.role.pms.getallpolicygroups=AUTH_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER,ABIS_PARTNER,MANUAL_ADJUDICATION,PARTNER_ADMIN,POLICYMANAGER
+-------- Partner Management Service ---------
+mosip.role.pms.getpartnercertificates=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
+mosip.role.pms.userconsent=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
+mosip.role.pms.getsbidetails=DEVICE_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.postadddevicetosbi=DEVICE_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.postdevicewithsbimapping=PARTNER_ADMIN
+mosip.role.pms.patchdeactivatedevice=DEVICE_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.patchdeactivatesbi=DEVICE_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.getftmchipdetails=FTM_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.patchdeactivateftm=FTM_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.getoriginalftmcertificate=FTM_PROVIDER,PARTNER_ADMIN
+mosip.role.pms.getpartnerdetails=PARTNER_ADMIN
+mosip.role.pms.getadminpartners=PARTNER_ADMIN
+mosip.role.pms.getallpartnerpolicymappingrequests=PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
+mosip.role.pms.getoauthpartnersclients=PARTNER_ADMIN,AUTH_PARTNER
+mosip.role.pms.getpartnersapikeyrequests=PARTNER_ADMIN,AUTH_PARTNER
+mosip.role.pms.getpartnersftmchipdetails=PARTNER_ADMIN
+mosip.role.pms.getallsbidetails=PARTNER_ADMIN,DEVICE_PROVIDER
+mosip.role.pms.getalldevicedetails=PARTNER_ADMIN
+mosip.role.pms.gettrustcertificates=PARTNER_ADMIN
+mosip.role.pms.getdownloadtrustcertificates=PARTNER_ADMIN
+mosip.role.pms.getpartnersv3=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
+-------- Policy Management Service ---------
+mosip.role.pms.getpolicygroups=AUTH_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER,ABIS_PARTNER,MANUAL_ADJUDICATION,PARTNER_ADMIN,POLICYMANAGER
+mosip.role.pms.getallpolicies=PARTNER_ADMIN,POLICYMANAGER
+mosip.role.pms.patchdeactivatepolicy=PARTNER_ADMIN,POLICYMANAGER
+mosip.role.pms.patchdeactivatepolicygroup=PARTNER_ADMIN,POLICYMANAGER
+mosip.pms.api.id.policy.groups.get=mosip.pms.policy.groups.get
+mosip.pms.api.id.policies.get=mosip.pms.policies.get
+mosip.pms.api.id.deactivate.policy.patch=mosip.pms.deactivate.policy.patch
+mosip.pms.api.id.deactivate.policy.group.patch=mosip.pms.deactivate.policy.group.patch
 ```

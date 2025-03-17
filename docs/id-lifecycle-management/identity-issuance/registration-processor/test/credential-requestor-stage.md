@@ -26,7 +26,7 @@ The Credential Requestor Stage plays a crucial role in the MOSIP system, serving
 
 ### Partner Profile Configuration
 
-MOSIP has introduced a new partner profile for the Credential Requestor Stage. The partner profiles are maintained [here](https://github.com/mosip/mosip-config/blob/develop/registration-processor-credential-partners.json). 
+MOSIP has introduced a new partner profile for the Credential Requestor Stage. The partner profiles are maintained [here](https://github.com/mosip/mosip-config/blob/develop/registration-processor-credential-partners.json).
 
 **Sample Partner Profile**:
 
@@ -65,29 +65,28 @@ jsonCopy code{
 
 **Field Description**
 
-* ``id``: Logical unique identifier
-* ``partnerId``: Partner identifier configured in MOSIP
-* ``credentialType``: Type of credential configured in MOSIP
-* ``template``: Template used for generating the credential
-* ``appIdBasedCredentialIdSuffix``: Applicable for special conditions where the credential ID is the application ID itself, 
-    with an optional suffix (for example, ``.pdf``). Currently, this is applicable for digital card credentials.
-* ``process``: If applicable for a particular process. If applicable for all processes, value is ``null``
-* ``metaInfoFields``: Meta information fields to be sent as additional information while generating the credential
+* `id`: Logical unique identifier
+* `partnerId`: Partner identifier configured in MOSIP
+* `credentialType`: Type of credential configured in MOSIP
+* `template`: Template used for generating the credential
+* `appIdBasedCredentialIdSuffix`: Applicable for special conditions where the credential ID is the application ID itself, with an optional suffix (for example, `.pdf`). Currently, this is applicable for digital card credentials.
+* `process`: If applicable for a particular process. If applicable for all processes, value is `null`
+* `metaInfoFields`: Meta information fields to be sent as additional information while generating the credential
 
 **Configuration Changes**
 
 Once the partner profile is configured, the System Integrator (SI) should make changes to the following configurations:
 
-* ``mosip.registration.processor.credential.partner-profiles``: Specify the file name for the partner profiles. By default its → ``registration-processor-credential-partners.json``. If a country intends to change the file name only then this configuration should be updated otherwise default configuration can be used
-* ``mosip.registration.processor.credential.default.partner-ids``: Specify default partner IDs for which credentials will be created automatically
-* ``mosip.registration.processor.credential.conditional.partner-id-map``: Define conditions for conditional partners. Credentials for these partners will be requested only if the conditions are met. Use ``MVEL`` expressions for conditions
-* ``mosip.registration.processor.credential.conditional.no-match-partner-ids``: Specify a partner ID to be used when no conditions are met for conditional partners
+* `mosip.registration.processor.credential.partner-profiles`: Specify the file name for the partner profiles. By default its → `registration-processor-credential-partners.json`. If a country intends to change the file name only then this configuration should be updated otherwise default configuration can be used
+* `mosip.registration.processor.credential.default.partner-ids`: Specify default partner IDs for which credentials will be created automatically
+* `mosip.registration.processor.credential.conditional.partner-id-map`: Define conditions for conditional partners. Credentials for these partners will be requested only if the conditions are met. Use `MVEL` expressions for conditions
+* `mosip.registration.processor.credential.conditional.no-match-partner-ids`: Specify a partner ID to be used when no conditions are met for conditional partners
 
 **Conditional Partner Requests**
 
 * The stage will create credentials for default partner IDs by default
-* For conditional partners, credentials will be requested only if they match a particular ``MVEL`` expression
-* ``MVEL`` expressions can be written on any identity field as well as meta info field
+* For conditional partners, credentials will be requested only if they match a particular `MVEL` expression
+* `MVEL` expressions can be written on any identity field as well as meta info field
 * If there is no condition match for conditional partners, SI can configure a no-match partner, which will be used when no conditional partner match is found
 
 **Configuration File Locations**

@@ -1,32 +1,34 @@
-# ID-Authentication Demographic Data Normalization
+# ID Authentication Demographic Data Normalization
 
 Demographic data normalization is the process of applying rules for formatting of the demographic data (such as the address) into a common format before demographic data matching is verified during the demographic authentication in IDA. For example, for address lines, the '1st Street' can be replaced with '1 st' and 'C/o' can be removed from both the input and database data before the match is verified. These rules will be different for different languages, and may be configured/implemented differently.
 
 The ID-Authentication Demographic data normalization mentioned here is specific to the [Demo-SDK reference implementation](https://github.com/mosip/demosdk) of the [Kernel Demographic API](https://github.com/mosip/commons/tree/master/kernel/kernel-demographics-api). It takes the below configuration to apply the name and address normalization rules.
 
 For any other custom implementation of the normalization, the Demo-SDK needs to be implemented accordingly.
- 
+
 ## Demographic name/address normalization using regular expressions and their replacement configurations
 
 The below configuration is used to define the separator for normalizing regex (pattern) and the replacement word. The default is set to '='.
-   
+
 `ida.norm.sep==`
 
 The format for configuring the name/address normalization rules for any language is given below:
 
 `ida.demo.<name/address/common>.normalization.regex.<languageCode/any>[<sequential index starting from 0>]=<reqular expression>${ida.norm.sep}<replacement string>`
 
-    * name/address/common - type of normalization, common applies to both name and address
-    
-    * languageCode - this is the code for languages like hin, eng, any('any' applies to any language)
+```
+* name/address/common - type of normalization, common applies to both name and address
+
+* languageCode - this is the code for languages like hin, eng, any('any' applies to any language)
+```
 
 If replacement string is not specified, the regular expression will be replaced with empty string.
-  
+
 _Note_: It is recommended that the sequence is not broken in the middle otherwise all normalization properties will not be read for the particular type.
-  
+
 ## Normalization rules for English language
 
-~~~
+```
 ida.demo.address.normalization.regex.eng[0]=[CcSsDdWwHh]/[Oo]
 ida.demo.address.normalization.regex.eng[1]=(M|m|D|d)(rs?)(.)
 ida.demo.address.normalization.regex.eng[2]=(N|n)(O|o)(\\.)?
@@ -57,16 +59,12 @@ ida.demo.common.normalization.regex.any[0]=[\\.|,|\\-|\\*|\\(|\\)|\\[|\\]|`|\\'|
 # Trailing space is removed from property. As a workaround first replacing with " ." then removing the "."
 ida.demo.common.normalization.regex.any[1]=\\s+${ida.norm.sep} .
 ida.demo.common.normalization.regex.any[2]=\\.${ida.norm.sep}
-~~~
+```
 
 ## Normalization rules for Non-English language
 
-For non-english languages, the non-english words needs to be converted into UTF-16 and then copied to the configuration. 
-For example, convert the Unicode characters to UTF-16.
+For non-english languages, the non-english words needs to be converted into UTF-16 and then copied to the configuration. For example, convert the Unicode characters to UTF-16.
 
 Before conversion: `ida.demo.address.normalization.regex.hin[0]=पहली${ida.norm.sep}पहला`
 
 After conversion: `ida.demo.address.normalization.regex.hin[0]=\u092a\u0939\u0932\u0940${ida.norm.sep}\u092a\u0939\u0932\u093e`
-
-
-

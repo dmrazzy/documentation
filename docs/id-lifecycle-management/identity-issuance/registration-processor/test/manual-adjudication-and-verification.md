@@ -1,10 +1,11 @@
 # Manual Adjudication and Verification
 
-* When biometric duplicates are found in ABIS, the MOSIP system sends a request for manual adjudication to the Manual Adjudication System via a queue. 
+* When biometric duplicates are found in ABIS, the MOSIP system sends a request for manual adjudication to the Manual Adjudication System via a queue.
 * The system integrator can build the Manual Adjudication System, which would be listening to the `MOSIP-to-ManualAdjudication` queue for any manual adjudication requests and sends a response back in the `ManualAdjudication-to-MOSIP` system after verifying the data.
 * The data sent to the Manual Adjudication System is driven by a policy defined in MOSIP and the specification is similar to ABIS identify request.
 
 The manual adjudication stage in [registration processor](https://docs.mosip.io/1.2.0/modules/registration-processor) performs the following functions:
+
 * Sends the applicant's demographic and biometric information (via queue + Datashare) to Manual Adjudication System (MAS).
 * Receives decision from MAS and accordingly forwards the packets.
 * If rejected, notifies the applicant.
@@ -39,15 +40,16 @@ The manual adjudication stage in [registration processor](https://docs.mosip.io/
   }
 }
 ```
-#### Request parameters 
 
-`requestId`: request_id that is associated with each request present in `reg_manual_verification` table.
+#### Request parameters
 
-`referenceId`: reg_id that is associated with each request present in `reg_manual_verification` table.
+`requestId`: request\_id that is associated with each request present in `reg_manual_verification` table.
 
-`referenceURL`: Datashare url of biometrics, demographics(identity), audits, metainfo, documents of reg_id
+`referenceId`: reg\_id that is associated with each request present in `reg_manual_verification` table.
 
-`gallery`: contains the matched ref_id and referenceURL of matched ref_id.
+`referenceURL`: Datashare url of biometrics, demographics(identity), audits, metainfo, documents of reg\_id
+
+`gallery`: contains the matched ref\_id and referenceURL of matched ref\_id.
 
 ### Sample request
 
@@ -106,7 +108,7 @@ The manual adjudication stage in [registration processor](https://docs.mosip.io/
 
 #### Response parameters
 
-`returnValue`:   1-Success, 2-Failure
+`returnValue`: 1-Success, 2-Failure
 
 `candidateList`: It contains matched candidate referenceIds, count and analytics.
 
@@ -129,7 +131,6 @@ The manual adjudication stage in [registration processor](https://docs.mosip.io/
 ```
 
 ### Scenario: There are matches
-
 
 #### Response structure
 
@@ -158,7 +159,7 @@ The manual adjudication stage in [registration processor](https://docs.mosip.io/
 }
 ```
 
-## Datashare structure 
+## Datashare structure
 
 Datashare contains biometrics, identity documents, metainfo, audits related to particular rid and the datashare URL contains encrypted form of this data.
 
@@ -171,10 +172,7 @@ GET https://datashare-service/v1/datashare/get/mpolicy-default-adjudication/mpar
 ### Sample Encrypted Response
 
 {% hint style="info" %}
-
-**The structure of the encrypted data downloaded from referenceURL in MOSIP 1.2.0 or later versions.** 
-The data downloaded would be URL-safe base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY_SPLITTER#.
-
+**The structure of the encrypted data downloaded from referenceURL in MOSIP 1.2.0 or later versions.** The data downloaded would be URL-safe base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY\_SPLITTER#.
 {% endhint %}
 
 | Encrypted Key Data | KEY\_SPLITTER   | Encrypted Actual Data |
@@ -182,30 +180,25 @@ The data downloaded would be URL-safe base64 encoded. Hence, after decoding the 
 | Block 1            | #KEY\_SPLITTER# | Block 2               |
 
 {% hint style="info" %}
-
-
 **Block 1:**
 
-Block 1, i.e. the encrypted key data is again split into three parts,
-•	The 1st part is _**VER_BYTES**_ (version bytes). The Current version constant is set as VER_R2 and this is present in the first 6 bytes of Block 1.
+Block 1, i.e. the encrypted key data is again split into three parts, • The 1st part is _**VER\_BYTES**_ (version bytes). The Current version constant is set as VER\_R2 and this is present in the first 6 bytes of Block 1.
 
-•	The 2nd part is the _**Certificate Thumbprint**_ i.e. the key identifier which is present in the next 32 bytes after VER_BYTES.
+• The 2nd part is the _**Certificate Thumbprint**_ i.e. the key identifier which is present in the next 32 bytes after VER\_BYTES.
 
-•	The 3rd part is the _**Encrypted Random AES Key**_, encrypted with the RSA OAEP - SHA256-MFG1. This constitutes the remaining 256 bytes of Block 1.
-
+• The 3rd part is the _**Encrypted Random AES Key**_, encrypted with the RSA OAEP - SHA256-MFG1. This constitutes the remaining 256 bytes of Block 1.
 
 **Block 2:**
 
 Block 2, i.e. the encrypted actual data is again split into two parts,
 
-•	The 1st part is the random 32 bytes which will be used as _**AAD**_ in AES encryption (first 32 bytes). From this 32 bytes AAD data, the first 12 bytes is _**IV/Nonce**_.
+• The 1st part is the random 32 bytes which will be used as _**AAD**_ in AES encryption (first 32 bytes). From this 32 bytes AAD data, the first 12 bytes is _**IV/Nonce**_.
 
-•	The 2nd part is the encrypted data which is encrypted using AES GCM PKCS5Padding.
+• The 2nd part is the encrypted data which is encrypted using AES GCM PKCS5Padding.
 
 **The structure of the encrypted data downloaded from referenceURL in MOSIP 1.1.5.5 or prior versions.**
 
-The data downloaded would be base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY_SPLITTER#.
-
+The data downloaded would be base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY\_SPLITTER#.
 {% endhint %}
 
 | Encrypted Key Data | KEY\_SPLITTER   | Encrypted Actual Data |
@@ -226,7 +219,6 @@ Block 2, i.e. the encrypted actual data is again split into two parts,
 
 * The 1st part is the _**Encrypted data**_, encrypted using AES GCM PKCS5Padding.
 * The 2nd part is _**IV/Nonce**_ i.e. the last 32 bytes appended after encrypted data.
-
 {% endhint %}
 
 ### Sample response in case of Authentication Failure
@@ -246,20 +238,20 @@ Block 2, i.e. the encrypted actual data is again split into two parts,
   ]
 }
 ```
+
 ### Possible Error Codes and messages from Datashare URL
 
-|Error Code  |	Error Message   |
-|------------|------------------|
-|DAT-SER-003 |	File does not exist or File is empty |
-|DAT-SER-006 |	Data share not found |
-|DAT-SER-006 |	Data share usage expired |
-|KER-ATH-401 | Authentication failed |
-|KER-ATH-403 | Forbidden |
+| Error Code  | Error Message                        |
+| ----------- | ------------------------------------ |
+| DAT-SER-003 | File does not exist or File is empty |
+| DAT-SER-006 | Data share not found                 |
+| DAT-SER-006 | Data share usage expired             |
+| KER-ATH-401 | Authentication failed                |
+| KER-ATH-403 | Forbidden                            |
 
 ### Policy structure
 
-`partner Id`: `mpartner-default-adjudication`
-`policy Id`: `mpolicy-default-adjudication`
+`partner Id`: `mpartner-default-adjudication` `policy Id`: `mpolicy-default-adjudication`
 
 ```
 {
@@ -437,25 +429,25 @@ mosip.regproc.data.share.internal.domain.name
 
 In `registration-processor-default.properties`, the possible Error codes are as follows:
 
-|Error Code  |	Error Message   |
-|------------|------------------|
-|RPR-MVS-000|   manual verification failed |
-|RPR-MVS-001|  Registration Id should not empty or null|
-|RPR-MVS-002|   No matched reference id found for given RID|
-|RPR-MVS-025|   Manual adjudication failed|
-|RPR-MVS-022|   Registration Id should not empty or null|
-|RPR-MVS-022|   `TablenotAccessibleException` in Manual verification|
-|RPR-MVS-021|   Manual verification rejected|
-|RPR-MVS-025|   Manual verification resend to queue|
-|RPR-SYS-012|  IO EXCEPTION|
+| Error Code  | Error Message                                        |
+| ----------- | ---------------------------------------------------- |
+| RPR-MVS-000 | manual verification failed                           |
+| RPR-MVS-001 | Registration Id should not empty or null             |
+| RPR-MVS-002 | No matched reference id found for given RID          |
+| RPR-MVS-025 | Manual adjudication failed                           |
+| RPR-MVS-022 | Registration Id should not empty or null             |
+| RPR-MVS-022 | `TablenotAccessibleException` in Manual verification |
+| RPR-MVS-021 | Manual verification rejected                         |
+| RPR-MVS-025 | Manual verification resend to queue                  |
+| RPR-SYS-012 | IO EXCEPTION                                         |
 
 ## Verification
 
 This stage is applicable only if required biometrics are not present in the packet as per country configuration.
-* Sends applicant's demographic  documents (via Queue + Datashare) to external Verification System (VS).
+
+* Sends applicant's demographic documents (via Queue + Datashare) to external Verification System (VS).
 * Receives decision from VS and accordingly forwards the packets.
 * If rejected, notifies the applicant.
-
 
 ### Verification request to Queue is as follows:
 
@@ -477,14 +469,14 @@ This stage is applicable only if required biometrics are not present in the pack
 }
 ```
 
-`requestId`: verification_request_id that is associated with each request present in `reg_verification table`.
+`requestId`: verification\_request\_id that is associated with each request present in `reg_verification table`.
 
-`referenceId`: reg_id  that is associated with each request present in `reg_verification` table.
+`referenceId`: reg\_id that is associated with each request present in `reg_verification` table.
 
-`referenceURL`: Datashare URL of biometrics, demographics(identity) ,audits, metainfo, documents of   reg_id  .
-
+`referenceURL`: Datashare URL of biometrics, demographics(identity) ,audits, metainfo, documents of reg\_id .
 
 #### Sample request
+
 ```
 {
   "id": " mosip.verification.adjudicate ",
@@ -497,7 +489,7 @@ This stage is applicable only if required biometrics are not present in the pack
 }
 ```
 
-#### Sample Response 
+#### Sample Response
 
 ```
 {
@@ -510,9 +502,9 @@ This stage is applicable only if required biometrics are not present in the pack
 
 **Response parameters**
 
-`returnValue`:  1-success,  2-failure 
+`returnValue`: 1-success, 2-failure
 
-### Datashare structure 
+### Datashare structure
 
 Datashare contains biometrics, identity, documents, metainfo, audits related to particular `rid` and datashare URL contains encrypted form of this data.
 
@@ -525,10 +517,7 @@ GET https://datashare-service/v1/datashare/get/mpolicy-default-adjudication/mpar
 #### Sample Encrypted Response
 
 {% hint style="info" %}
-
-**The structure of the encrypted data downloaded from referenceURL in MOSIP 1.2.0 or later versions.** 
-The data downloaded would be URL-safe base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY_SPLITTER#.
-
+**The structure of the encrypted data downloaded from referenceURL in MOSIP 1.2.0 or later versions.** The data downloaded would be URL-safe base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY\_SPLITTER#.
 {% endhint %}
 
 | Encrypted Key Data | KEY\_SPLITTER   | Encrypted Actual Data |
@@ -536,28 +525,25 @@ The data downloaded would be URL-safe base64 encoded. Hence, after decoding the 
 | Block 1            | #KEY\_SPLITTER# | Block 2               |
 
 {% hint style="info" %}
-
 **Block 1:**
 
-Block 1, i.e. the encrypted key data is again split into three parts,
-•	The 1st part is _**VER_BYTES**_ (version bytes). The Current version constant is set as VER_R2 and this is present in the first 6 bytes of Block 1.
+Block 1, i.e. the encrypted key data is again split into three parts, • The 1st part is _**VER\_BYTES**_ (version bytes). The Current version constant is set as VER\_R2 and this is present in the first 6 bytes of Block 1.
 
-•	The 2nd part is the _**Certificate Thumbprint**_ i.e. the key identifier which is present in the next 32 bytes after VER_BYTES.
+• The 2nd part is the _**Certificate Thumbprint**_ i.e. the key identifier which is present in the next 32 bytes after VER\_BYTES.
 
-•	The 3rd part is the _**Encrypted Random AES Key**_, encrypted with the RSA OAEP - SHA256-MFG1. This constitutes the remaining 256 bytes of Block 1.
+• The 3rd part is the _**Encrypted Random AES Key**_, encrypted with the RSA OAEP - SHA256-MFG1. This constitutes the remaining 256 bytes of Block 1.
 
 **Block 2:**
 
 Block 2, i.e. the encrypted actual data is again split into two parts,
 
-•	The 1st part is the random 32 bytes which will be used as _**AAD**_ in AES encryption (first 32 bytes). From this 32 bytes AAD data, the first 12 bytes is _**IV/Nonce**_.
+• The 1st part is the random 32 bytes which will be used as _**AAD**_ in AES encryption (first 32 bytes). From this 32 bytes AAD data, the first 12 bytes is _**IV/Nonce**_.
 
-•	The 2nd part is the encrypted data which is encrypted using AES GCM PKCS5Padding.
+• The 2nd part is the encrypted data which is encrypted using AES GCM PKCS5Padding.
 
 **The structure of the encrypted data downloaded from referenceURL in MOSIP 1.1.5.5 or prior versions.**
 
-The data downloaded would be base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY_SPLITTER#.
-
+The data downloaded would be base64 encoded. Hence, after decoding the data will be in the below format. It will be divided into two parts after splitting using #KEY\_SPLITTER#.
 {% endhint %}
 
 | Encrypted Key Data | KEY\_SPLITTER   | Encrypted Actual Data |
@@ -578,11 +564,10 @@ Block 2, i.e. the encrypted actual data is again split into two parts,
 
 * The 1st part is the _**Encrypted data**_, encrypted using AES GCM PKCS5Padding.
 * The 2nd part is _**IV/Nonce**_ i.e. the last 32 bytes appended after encrypted data.
-
 {% endhint %}
 
-
 ### Sample Response in case of Authentication Failure
+
 ```
 {
   "id": null,
@@ -598,23 +583,22 @@ Block 2, i.e. the encrypted actual data is again split into two parts,
   ]
 }
 ```
+
 **Possible Error codes and Messages from Datashare URL**
 
-|Error Code  |	Error Message   |
-|------------|------------------|
-|DAT-SER-003|	File does not exists or File is empty|
-|DAT-SER-006|	Data share not found|
-|DAT-SER-006|	Data share usage expired|
-|KER-ATH-401|	Authentication Failed|
-|KER-ATH-403|	Forbidden|
-
+| Error Code  | Error Message                         |
+| ----------- | ------------------------------------- |
+| DAT-SER-003 | File does not exists or File is empty |
+| DAT-SER-006 | Data share not found                  |
+| DAT-SER-006 | Data share usage expired              |
+| KER-ATH-401 | Authentication Failed                 |
+| KER-ATH-403 | Forbidden                             |
 
 ### Policy structure
 
-`partner Id`: mpartner-default-adjudication
-`policy Id`: mpolicy-default-adjudication
- 
-``` 
+`partner Id`: mpartner-default-adjudication `policy Id`: mpolicy-default-adjudication
+
+```
 {
   "shareableAttributes": [
     {
@@ -783,21 +767,12 @@ mosip.regproc.data.share.internal.domain.name
 
 ### Error Codes
 
-
-|Error Code  |	Error Message   |
-|------------|------------------|
-|RPR-MVS-004|  No Assigned Record Found| 
-|RPR-MVS-025|  Multiple rids found for a reference id|
-|RPR-MVS-022|  TablenotAccessibleException in Manual verification|
-|RPR-VER-002|   Verification failed|
-|RPR-VER-004|  Resend for verification| 
-|RPR-MVS-016|  Reg Id should not be null or empty|
-|RPR-MVS-021|   Manual verification rejected|
-
-
-
-
-
-
-
-
+| Error Code  | Error Message                                      |
+| ----------- | -------------------------------------------------- |
+| RPR-MVS-004 | No Assigned Record Found                           |
+| RPR-MVS-025 | Multiple rids found for a reference id             |
+| RPR-MVS-022 | TablenotAccessibleException in Manual verification |
+| RPR-VER-002 | Verification failed                                |
+| RPR-VER-004 | Resend for verification                            |
+| RPR-MVS-016 | Reg Id should not be null or empty                 |
+| RPR-MVS-021 | Manual verification rejected                       |
