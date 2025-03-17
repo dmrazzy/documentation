@@ -35,16 +35,20 @@ For users who have already deployed MOSIP and intend to upgrade to Java 21, plea
 | mosip-config         | To be updated  |
 | demosdk              | To be updated  |
 
-**Known Issue**
-
-| Jira ID                                                       | Description                                                                                |
-| ------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| [MOSIP-40539](https://mosip.atlassian.net/browse/MOSIP-40539) | The digital card topic gets empty once the request is timed.                               |
-| [MOSIP-40613](https://mosip.atlassian.net/browse/MOSIP-40613) | Not Receiving notifications after packets are processed in qa-java21.                      |
-| [MOSIP-35873](https://mosip.atlassian.net/browse/MOSIP-35873) | Regclient: Operator onboarding using biometrics is failing in the dev-staging environment. |
-
 **Bug Fixes**
 
 | Jira ID                                                       | Description                                                                                                 |
 | ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
 | [MOSIP-39903](https://mosip.atlassian.net/browse/MOSIP-39903) | Once a sub type of biometric is marked as an exception, authentication for other biometrics is not working. |
+
+**Known Issue**
+
+| Jira ID                                                       | Description                                                                                           |
+| ------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| [MOSIP-40539](https://mosip.atlassian.net/browse/MOSIP-40539) | The digital card topic gets empty once the request is timed.                                          |
+| [MOSIP-40613](https://mosip.atlassian.net/browse/MOSIP-40613) | Not receiving notifications after packets are processed in the QA environment running Java 21.        |
+| [MOSIP-35873](https://mosip.atlassian.net/browse/MOSIP-35873) | Operator onboarding using biometrics is failing in the development staging environment for Regclient. |
+
+### Documentation
+
+* Functional Test Report
