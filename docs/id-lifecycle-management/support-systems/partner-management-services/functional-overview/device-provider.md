@@ -28,7 +28,7 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 2. Click on **Certificate Trust Store** on Admin dashboard.
 
-![Test Image](../../../../.gitbook/assets/temp-device-provider-image1.png){ width=125% }
+![Test Image](../../../../.gitbook/assets/temp-device-provider-image1.png)
 
 2. Within Root CA tab click on **Upload Trust Certificate** button on the top-right of the screen.
 
