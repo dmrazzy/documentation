@@ -122,7 +122,7 @@ Clicking on View in action menu or by clicking the row item itself, admin is nav
 
 **Create Policy Group**
 
-On clicking the 'Create Policy Group' option on the top right of the screen, we can create a Policy Group by providing suitable name and description that is self explanatory for partners, who would be selecting them during Partner Policy Request to create API Key / OIDC Client \[etc]{.mark}.
+On clicking the 'Create Policy Group' option on the top right of the screen, we can create a Policy Group by providing suitable name and description that is self explanatory for partners, who would be selecting them during Partner Policy Request to create API Key / OIDC Client etc.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image34.png" alt=""><figcaption></figcaption></figure>
 
@@ -142,13 +142,13 @@ A popup window appears seeking for confirmation before proceeding to deactivate.
 
 After confirming deactivation, the respective record is greyed out in the tabular view.
 
-The action menu here \[should be]{.mark} enabled with only View option. (Deactivate in action menu is disabled).
+The action menu here is enabled with only View option. (Deactivate in action menu is disabled).
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image39.png" alt=""><figcaption></figcaption></figure>
 
 After deactivation, the View policy group page [MOSIP-36963](https://mosip.atlassian.net/browse/MOSIP-36963) will display 'Deactivated' status
 
-Once the policy group is deactivated by Policy Manager, the partner will not be able to fetch this policy group in any of the screens in their \[PMS portal]{.mark}.
+Once the policy group is deactivated by Policy Manager, the partner will not be able to fetch this policy group in any of the screens in their PMS portal.
 
 {% hint style="info" %}
 **Note:**
@@ -183,7 +183,7 @@ The steps and features are same for both Authentication and Datashare Policy.
 
 Policies can have the following status - Draft, Activated or Deactivated.
 
-1. Only Draft or Activated row items are clickable which \[navigates]{.mark} to View Authentication Policy details.
+1. Only Draft or Activated row items are clickable which navigates to View Authentication Policy details.
 2. Action - Action menu displays a common menu item (View, Clone, Deactivate) with only the following menu items enabled for clicking based on below statuses:
    1. Draft: Publish, View, Edit
    2. Activated: View , Clone , Deactivate

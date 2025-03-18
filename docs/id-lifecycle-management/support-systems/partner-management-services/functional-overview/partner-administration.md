@@ -21,7 +21,7 @@ Partner Admin can also assume the role of Policy Manager to:
 
 #### What all activities does a 'Policy Manager' perform?
 
-As a partner admin cum]{.mark} policy manager you can performs following:
+As a partner admin cum policy manager you can performs following:
 
 1. Create and manage Policy Group, Authentication Policy and Datashare Policy
 
@@ -104,7 +104,7 @@ You can use the 'Root Trust (Root CA) Certificate' section to do the following:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image7.png" alt=""><figcaption></figcaption></figure>
 
-In Certificate Trust Store (List View), the user can view the list of '**Root CA Certificates**' uploaded by admin till date with details such as **Certificate ID**, **Partner Domain**, **Issued To**, **Issued By**, **Validity Period** and **Validity Status** (Valid / Expired) \[etc]{.mark}.
+In Certificate Trust Store (List View), the user can view the list of '**Root CA Certificates**' uploaded by admin till date with details such as **Certificate ID**, **Partner Domain**, **Issued To**, **Issued By**, **Validity Period** and **Validity Status** (Valid / Expired) etc.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image8.png" alt=""><figcaption></figcaption></figure>
 
@@ -124,7 +124,7 @@ To upload Root CA / Intermediate CA Certificate, click on 'Upload Trust Certific
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
-Admin is thus \[navigated]{.mark} to Upload Trust Certificate page.
+Admin is thus navigated to Upload Trust Certificate page.
 
 {% hint style="info" %}
 **Note**:
@@ -148,8 +148,8 @@ Select the partner domain (AUTH / DEVICE / FTM) **in the Upload section**. Partn
 **Note**:
 
 * Only .cer or .pem format certificates are allowed for upload
-* Future dated certificates \[is]{.mark} \[should]{.mark} not \[be]{.mark} allowed for upload, in case it is attempted an error message is thrown.
-* Only \[Version 3]{.mark} certificate is allowed for upload.
+* Future dated certificates is not allowed for upload, in case it is attempted an error message is thrown.
+* Only Version 3 certificate is allowed for upload.
 * If the corresponding root certificate is not uploaded, then while submitting the Intermediate certificate upload, an error message appears asking 'Please upload corresponding Root Certificate to proceed further'.
 {% endhint %}
 
@@ -198,7 +198,7 @@ Action menu for all active certificates displays the following options:
 
 **Viewing the Intermediate CA Certificate (Details View)**
 
-Either by clicking on the row item or the View option in action menu, the admin is \[navigated]{.mark} to View Intermediate CA Certificate details page where the certificate details are displayed such as Certificate ID, Partner Domain - (AUTH, FTM, DEVICE), Issued To- _\<subject > field of Certificate,_ Issued By- _\<issuer > field of Certificate,_ Valid From, Valid To\*- same as system browser date format\* etc
+Either by clicking on the row item or the View option in action menu, the admin is navigated to View Intermediate CA Certificate details page where the certificate details are displayed such as Certificate ID, Partner Domain - (AUTH, FTM, DEVICE), Issued To- _\<subject > field of Certificate,_ Issued By- _\<issuer > field of Certificate,_ Valid From, Valid To\*- same as system browser date format\* etc
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image18.png" alt=""><figcaption></figcaption></figure>
 

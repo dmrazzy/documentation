@@ -1,6 +1,6 @@
 # Overview
 
-Partners are external entities or organisations who offer products or services to ensure the effective implementation and operation of MOSIP-based identity systems.Partner Management Portal (PMP) is a web based application that is designed to facilitate the collaboration and integration of external partners in the MOSIP ecosystem. This portal serves as a central platform to onboard all types of MOSIP partners, manage their details and build partner specific functionalities for seamless interaction.
+Partners are external entities or organisations who offer products or services to ensure the effective implementation and operation of MOSIP-based identity systems. PMS Portal is a web based application that is designed to facilitate the collaboration and integration of external partners in the MOSIP ecosystem. This portal serves as a central platform to onboard all types of MOSIP partners, manage their details and build partner specific functionalities for seamless interaction.
 
 ### Who are the partners in MOSIP?
 

@@ -7,7 +7,7 @@ This guide provides step-by-step instructions for adding support for a new langu
 
 ## Repository
 
-The PMS React application source code is available at: [PMP Revamp UI Repository](https://github.com/mosip/partner-management-portal/tree/release-1.2.2.x/pmp-revamp-ui).
+The PMS React application source code is available at: [PMS Revamp UI Repository](https://github.com/mosip/partner-management-portal/tree/release-1.2.2.x/pmp-revamp-ui).
 
 ## Adding a New Language
 
