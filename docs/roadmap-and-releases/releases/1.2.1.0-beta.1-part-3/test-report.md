@@ -98,15 +98,15 @@ The DSL codebase used for the above result is the **dev2** image (`mosipdev2/dsl
 
 ### Detailed Test metrics
 
-Below are the detailed test metrics by performing manual/automation testing. The project metrics are derived from Defect density, Test coverage, Test execution coverage, test tracking and efficiency.
+Below are the detailed test metrics by performing manual/automation testing. The project metrics are derived from Defect density, Test coverage, Test execution coverage, test tracking, and efficiency.
 
 The various metrics that assist in test tracking and efficiency are as follows:
 
-●   Passed Test Cases Coverage: It measures the percentage of passed test cases. (Number of passed tests / Total number of tests executed) x 100
+●   Passed Test Cases Coverage: This measures the percentage of passed test cases. (Number of passed tests / Total number of tests executed) x 100.
 
-●   Failed Test Case Coverage: It measures the percentage of all the failed test cases. (Number of failed tests / Total number of test cases executed) x 100
+●   Failed Test Case Coverage: It measures the percentage of all the failed test cases. (Number of failed tests / Total number of test cases executed) x 100.
 
-Please find the Github link for the xls file **here**(Link to be updated).
+Please find the Github link for the xls file [here](https://github.com/mosip/test-management/blob/master/Platform%20release/1.2.1.0-B1%20Phase%203/Java21_Component_ReleasePLatform%201.2.1.0-B1%20Phase%203_Functional_Test_Report.docx).
 
 ### Sonar Report <a href="#id-3rdcrjn" id="id-3rdcrjn"></a>
 
