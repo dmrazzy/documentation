@@ -1,6 +1,6 @@
 ---
+description: Ensuring secure and interoperable digital identity through global standards.
 icon: nfc
-description: Ensuring Secure and Interoperable Digital Identity Through Global Standards.
 ---
 
 # Standards & Specifications

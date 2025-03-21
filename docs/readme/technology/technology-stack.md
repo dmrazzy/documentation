@@ -1,4 +1,5 @@
 ---
+description: MOSIP is built using the below tools and technologies.
 icon: screwdriver-wrench
 ---
 

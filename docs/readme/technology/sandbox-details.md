@@ -1,4 +1,5 @@
 ---
+description: 'Seamless Integration with MOSIP: Explore Our Sandbox Environments.'
 icon: flask-gear
 ---
 
@@ -10,7 +11,7 @@ Please find below the two sandbox environments available for your use.
 
 ## Collab
 
-Collab is our development integration environment that has QA tested dockers deployed. Our partners and contributors can use this to build on the platform or integrate with the QA-certified version of the latest platform code.
+Collab is our development integration environment that has QA-tested dockers deployed. Our partners and contributors can use this to build on the platform or integrate with the QA-certified version of the latest platform code.
 
 Regular nightly builds from engineering are deployed here and this environment is used for continuous development.
 

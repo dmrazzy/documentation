@@ -1,4 +1,5 @@
 ---
+description: 'MOSIP Documentation: Built by a Collaborative Community.'
 icon: message-question
 ---
 
@@ -15,4 +16,4 @@ This page is dedicated to recognizing and acknowledging the MOSIP Community, com
 
 We extend our heartfelt gratitude to our community members, whose invaluable feedback and contributions have significantly enhanced the quality of our documentation.
 
-* Dasun Hegoda - Enhancement of the [Functional Architecture Diagram](https://docs.mosip.io/1.2.0/overview/architecture#high-level-reference-functional-architecture)
+* Dasun Hegoda - Enhancement of the [Functional Architecture Diagram](https://docs.mosip.io/1.2.0/overview/architecture#high-level-reference-functional-architecture).

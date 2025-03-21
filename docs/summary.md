@@ -10,6 +10,7 @@
       * [Data Protection](readme/principles/privacy-and-security/data-protection.md)
       * [Privacy](readme/principles/privacy-and-security/privacy.md)
   * [Technology](readme/technology/README.md)
+    * [High Level Functional Architecture](readme/technology/high-level-functional-architecture.md)
     * [Architecture](readme/technology/architecture.md)
     * [Technology Stack](readme/technology/technology-stack.md)
     * [API](https://mosip.github.io/documentation/1.2.0/1.2.0.html)
