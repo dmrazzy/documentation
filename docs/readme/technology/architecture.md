@@ -24,4 +24,10 @@ The diagram below provides an architectural overview, visually representing the 
 
 <figure><img src="../../.gitbook/assets/MOSIP-Architecture-Overview.jpg" alt=""><figcaption><p>Architecture Overview</p></figcaption></figure>
 
+### High Level Functional Architecture
+
+The High Level Reference Functional Architecture serves as a blueprint outlining the system's high-level functioning and interactions, providing a structured framework.
+
+<figure><img src="../../.gitbook/assets/MOSIP-High-level-Functional-Architecture.jpg" alt=""><figcaption><p>High Level Reference Functional Architecture</p></figcaption></figure>
+
 To know how MOSIP can be deployed, refer to [Getting Started](https://docs.mosip.io/1.2.0/deploymentnew/getting-started). The different installation models are detailed in the [Deployment](https://docs.mosip.io/1.2.0/deploymentnew) section.
