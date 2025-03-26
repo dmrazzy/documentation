@@ -7,6 +7,11 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version:** API Test Commons Releases&#x20;
+
+* **Date**: Coming Soon!
+* [Release Notes](api-test-commons-releases/v1.3.2.md)
+
 **Version: v1.2.1.0 - beta.1 (Part 3)**
 
 * **Date**: 18th March, 2025
