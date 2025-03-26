@@ -7,7 +7,7 @@ icon: book-open
 
 ## Latest Releases 🌟
 
-**Version:** API Test Commons Releases&#x20;
+**Version: API Test Commons Releases**&#x20;
 
 * **Date**: Coming Soon!
 * [Release Notes](api-test-commons-releases/v1.3.2.md)
