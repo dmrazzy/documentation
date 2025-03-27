@@ -11,18 +11,18 @@ Pre-registration module enables a resident to:
 
 Once the resident completes the above process, their data is downloaded at the respective registration centers before their appointment, thus, saving enrollment time. The module supports multiple languages.
 
-MOSIP provides backend APIs for this module along with a reference implementation of [pre-registration portal](overview.md#pre-registration-portal).
+MOSIP provides backend APIs for this module along with a reference implementation of [pre-registration portal](./#pre-registration-portal).
 
 ## Pre-registration process
 
-![](../../../.gitbook/assets/pre-reg-process.png)
+![Pre-Registration Process](../../../../.gitbook/assets/pre-reg-process.png)
 
 ### Create an application
 
 * User provides consent
 * The user provides demographic information
 * User uploads supporting documents (Proof of Address, Birth certificate, etc.)
-* A pre-registration request ID known as [AID](../../identity-management/identifiers.md#rid-aid) is generated and provided to the user.
+* A pre-registration request ID known as [AID](../../../identity-management/identifiers.md#rid-aid) is generated and provided to the user.
 
 _Note_: The AID was formerly called PRID in the pre-registration context.
 
@@ -51,9 +51,9 @@ The relationship of the pre-registration module with other services is explained
 **NOTE:** The numbers do not signify a sequence of operations or control flow.
 {% endhint %}
 
-![](../../../.gitbook/assets/pre-reg-entity.png)
+![](../../../../.gitbook/assets/pre-reg-entity.png)
 
-1. Fetch [ID Schema](../../../id-schema/) details with the help of Syncdata service.
+1. Fetch [ID Schema](../../../../id-schema/) details with the help of Syncdata service.
 2. Fetch a new OTP for the user on the login page.
 3. Log all events.
 4. Pre-Registration interacts with Keycloak via [`kernel-auth-adapater`](https://github.com/mosip/mosip-openid-bridge/tree/release-1.2.0). The Pre-Reg module communicates with endpoints of other MOSIP modules. However, to access these endpoints, a token is required. This token is obtained from Keycloak.
@@ -78,7 +78,7 @@ For more details, refer to the [Pre-registration repo](https://github.com/pjoshi
 
 ## Pre-registration portal
 
-MOSIP provides a **reference** implementation of the pre-registration portal that may be customized as per country needs. The sample implementation is available at the [reference implementation repository](https://github.com/mosip/mosip-ref-impl). For getting started with the pre-registration, refer to the [Pre-registration user guide](test/pre-registration-user-guide.md)
+MOSIP provides a **reference** implementation of the pre-registration portal that may be customized as per country needs. The sample implementation is available at the [reference implementation repository](https://github.com/mosip/mosip-ref-impl). For getting started with the pre-registration, refer to the [Pre-registration user guide](../test/pre-registration-user-guide.md)
 
 ## Build and deploy
 

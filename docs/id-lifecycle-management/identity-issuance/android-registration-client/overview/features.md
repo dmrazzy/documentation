@@ -1,19 +1,14 @@
-# Overview
-
-## Overview
-
-The Android Registration Client is a tablet application that serves as a portable version of the existing desktop [Registration Client](https://docs.mosip.io/1.2.0/modules/registration-client). It has been developed to support accessibility on all Android devices. The creation of the Android Registration Client was driven by the need to meet the mobility requirements of countries adopting MOSIP.
-
-The primary objective of the tablet version is to facilitate the registration process for residents, especially those who are unable to physically visit registration centers. It also serves remote locations where setting up registration centers is not feasible. To address this challenge, the Android Registration Client was created, enabling operators and supervisors to easily reach remote areas and maximize resident registrations across the country.
-
-## **Features**
+# Features
 
 The first developer release of the Android Registration Client offers the following key features:
 
-1. **Operator/ Supervisor Login (offline and online)**: Operators can securely login using their credentials, whether in offline or online mode, to carry out various registration transactions. To enable offline login, the operator must have previously logged in and synchronized their data over a network.
-2. **Multi-language Support**: The Android Registration Client supports multiple languages for content display and data entry.
+1. **Operator/ Supervisor Login (offline and online)**\
+   Operators can securely login using their credentials, whether in offline or online mode, to carry out various registration transactions. To enable offline login, the operator must have previously logged in and synchronized their data over a network.
+2. **Multi-language Support**\
+   The Android Registration Client supports multiple languages for content display and data entry.
 
-* **Display Language**: Display Language refers to the language used for rendering UI elements such as labels and headings. With the Android Registration Client, Operators have the option to choose their preferred language for UI display. This language selection can be made on the login screen. Currently, the supported display languages include Arabic, French, and English.
+* **Display Language**\
+  Display Language refers to the language used for rendering UI elements such as labels and headings. With the Android Registration Client, Operators have the option to choose their preferred language for UI display. This language selection can be made on the login screen. Currently, the supported display languages include Arabic, French, and English.
 * New languages can be added by following the below steps:
 * Additional languages can be configured by adding localization files in lib/l10n folder present in the root project directory("android\_registration\_client").
 * The languages that are rendered on the UI will be based on the country configuration (after master data sync). The default display language is English. Other languages will be available in the UI after the master data sync.
@@ -29,18 +24,19 @@ The first developer release of the Android Registration Client offers the follow
 * **UserDetails sync**: userID, along with their status is synced. Only the user details belonging to machine mapped center will be synced.
 * **Certificate sync**: Certificates used to validate the server signatures, device CA certificates, and public key (specific to a center and machine, also called policy key) used to encrypt the registration packet will be synced.
 
-4. **New Registrations**: Operators can register a resident using the `New Registration` feature. The registration process can be customized through the Android Registration Client [UI specification](develop/ui-spec-documentation.md). The required data for registering an applicant are as follows:
-   * **Consent**: Before the registration process, applicants must provide consent to the terms and conditions presented on the consent screen. This explicitly asks the applicant to grant permission for storing and using their Personally Identifiable Information (PII).
-   * **Demographic Details**: Once the consent is obtained, the Operator will enter the demographic data of the applicant in the language preferred by the applicant. This includes details such as their name, gender, date of birth, and residential address.
-   * **Documents Upload**: Following the completion of the demographic details, the Operator can select the document type, input the reference, and upload the supporting documents provided by the applicant. Supporting documents may include Proof of Address, Proof of Identity, and Proof of Birth, based on the country-specific requirements.
-   *   **Biometrics**: After the documents have been uploaded, the Operator will proceed to capture the applicant's biometrics. The biometrics captured are as follows:
+4.  **New Registrations**: Operators can register a resident using the `New Registration` feature. The registration process can be customized through the Android Registration Client [UI specification](../develop/ui-spec-documentation.md). The required data for registering an applicant are as follows:
 
-       ```
-       - Fingerprints
-       - Iris 
-       - Photograph
-       - Exception photograph
-       ```
+    * **Consent**: Before the registration process, applicants must provide consent to the terms and conditions presented on the consent screen. This explicitly asks the applicant to grant permission for storing and using their Personally Identifiable Information (PII).
+    * **Demographic Details**: Once the consent is obtained, the Operator will enter the demographic data of the applicant in the language preferred by the applicant. This includes details such as their name, gender, date of birth, and residential address.
+    * **Documents Upload**: Following the completion of the demographic details, the Operator can select the document type, input the reference, and upload the supporting documents provided by the applicant. Supporting documents may include Proof of Address, Proof of Identity, and Proof of Birth, based on the country-specific requirements.
+    * **Biometrics**: After the documents have been uploaded, the Operator will proceed to capture the applicant's biometrics. The biometrics captured are as follows:
+
+    ```
+    - Fingerprints
+    - Iris 
+    - Photograph
+    - Exception photograph
+    ```
 
 The acquisition of biometric data is regulated by the country. The country has control over the capture of each type of biometric (fingerprint, iris, or face) through the global configuration. When the Operator selects the **Capture** button, the biometric SBI application is accessed to capture the biometrics.
 
@@ -81,19 +77,4 @@ This feature will only be available for a users having “Supervisor” role.
 6. **Update UIN:** In a scenario where the Resident wants to update their data, they can do so by letting the Operator know their UIN and the data that needs to be updated. Residents can update their demographic details, documents, and biometrics using this feature.
 7. **Logout:** Using this feature, once the user is done with their registration and other activities, they can logout. If no background tasks are running, the user will be immediately logged out. If there are tasks (like sync) running in the background, the user will be notified about the same. From here if the User wants to cancel the logout, the background activities will keep running whereas if the user chooses to logout, they will be logged out and the background activities will be terminated.
 8. **Update operator's biometrics:** In a scenario where the operator wants to update his biometric section from operational tasks to update.
-9. **Handles Feature:** The Handles Feature is designed to streamline citizen registration and authentication. During registration, specific attributes such as email, phone number, or national ID—can be designated as a handle. This handle serves as a unique identifier that can later be used for authentication for various services. Handles can also be used to update data in case of data discrepancies. By allowing flexible and secure identification, the feature enhances the accuracy and integrity of citizen records while simplifying user interactions with government systems.
-
-### Configuration Guide
-
-To read through the comprehensive list of configurable properties for the Android Registration Client, refer [Android Registration Client Configuration Guide](https://docs.mosip.io/1.2.0/android-registration-client/android-registration-client-configuration).
-
-### UI Specifications
-
-For more details on UI specifications for the Android Registration Client, refer [here](develop/ui-spec-documentation.md).
-
-### Compatibility
-
-The Android Registration Client is compatible with the following MOSIP platform versions:
-
-1. 1.1.5.x
-2. LTS 1.2.0 and above
+9. **Handles Feature:** The Handles Feature is designed to streamline citizen registration and authentication. During registration, specific attributes such as email, phone number, or national ID can be designated as a handle. This handle serves as a unique identifier that can later be used for authentication for various services. Handles can also be used to update data in case of data discrepancies. By allowing flexible and secure identification, the feature enhances the accuracy and integrity of citizen records while simplifying user interactions with government systems.

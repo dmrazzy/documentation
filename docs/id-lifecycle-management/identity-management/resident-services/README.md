@@ -4,35 +4,6 @@
 
 Resident services are self-service tools utilized by residents through an online portal. The [Resident Portal](https://docs.mosip.io/1.2.0/modules/resident-services/resident-portal-user-guide) is a web-based user interface application that offers services related to the residents' Unique Identification Number (UIN). Through this portal, residents can perform various operations related to their UIN or VID and can also raise any concerns they may have.
 
-The key features provided on the Resident portal are:
-
-1. Avail **UIN services** using UIN/ VID (through [e-Signet](https://docs.esignet.io/)):
-   * **View My History**: This feature enables the Resident to view the history of transactions associated with their UIN.
-   * **Manage My VID**: Residents can create, delete, and download VID cards based on requirements.
-   * **Secure My ID**: Residents can lock or unlock their authentication modalities such as fingerprint authentication, iris authentication, email OTP authentication, SMS OTP authentication, thumbprint authentication, and face authentication.
-   * **Track My Requests**: This feature enables the Residents to enter an Event ID associated with the logged-in user’s UIN to track the status of the event.
-   * **Get Personalized Card**: The residents can download a personalized card which essentially means that they can choose the attributes that they would want to be added to their cards.
-   * **Share My Data**: This feature enables Residents to choose the data that they want to share with a MOSIP-registered partner.
-   * **Update My Data**: This feature enables the Resident to update their identity data, address, email ID, phone number, and notification language preference.
-   * **Logout**: Once the Resident is done with the activities that he wanted to perform, he can end the active session by logging out from the portal.
-2. **Get Information**
-   * About Registration Centers: Residents can get a list of Registration Centers near them or Registration Centers based on the location hierarchy.
-   * List of supporting documents: Residents can get the list of all the supporting documents as Proof of Identity, Proof of Address, Proof of Relationship, etc.
-3. **Get My UIN (using UIN/ VID/ AID)**: Using this feature, the Resident can download their password-protected UIN card if the UIN card is ready or they can view the status of their Application ID (AID) if the UIN card is still under progress.
-4. **Verify email ID and/ or phone number:** Using this feature, the Resident can verify if the email ID/ Phone number given during registration is correct or not. This will be done by verifying the OTP sent over the registered email ID/ Phone number.
-5. **Book an appointment for new enrollment (via the pre-registration portal)**: Using this feature, the Resident can book an appointment to visit the Registration center.
-6. **Ancillary features**
-   * **Multi-lingual support**: Residents can view and use the Resident Portal in multiple languages including RTL languages.
-   * **Get Notifications (email and bell notifications):** Residents will be getting bell-icon notifications for the asynchronous events if they have an active session i.e. they have logged into the Resident Portal.
-   * **View profile details of the logged-in user (name, photo, and last login details)**: The Resident will be able to view the name, and photo of the logged-in user. They will also be able to see the last login details of the Resident.
-   * **Responsive UI support**: Support for the application to work seamlessly on various resolutions.
-
-Below is an image summarizing the features provided in the Resident portal.
-
-<figure><img src="../../../.gitbook/assets/rp-1.png" alt=""><figcaption></figcaption></figure>
-
-
-
 The relationship of Resident services with other services is listed below.
 
 {% hint style="info" %}
@@ -41,14 +12,12 @@ The relationship of Resident services with other services is listed below.
 
 
 
-<figure><img src="../../../.gitbook/assets/rp-2.png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../../.gitbook/assets/rp-2.png" alt="" width="563"><figcaption></figcaption></figure>
 
 1. **Audit Manager**: Resident services sends all the audit logs to the Audit Manager.
 2. **Digital card service**: Resident services use this service to download the PDF of the UIN card or VID card.
-3. **Credential Request Generator Service**: This service is used to share the credentials with various partners like print partners, authentication partners, and digital card partners.
-4. **ID Repository Identity Service**: Resident services use this service to retrieve the identity information of a credential and to lock/unlock authentication types.
+3. **Credential Request Generator Service**: This service is used to share credentials with various partners, such as print, authentication, and digital card partners.
+4. **ID Repository Identity Service**: Resident services use this service to retrieve a credential's identity information and lock/unlock authentication types.
 5. **ID Repository VID service**: This service is used to generate/revoke various types of VIDs.
 6. **ID Authentication**: This service is used by Resident services to authenticate users.
 7. **MOSIP e-Signet**: This is used to authenticate and authorize the users in the event of login using UIN/ VID.

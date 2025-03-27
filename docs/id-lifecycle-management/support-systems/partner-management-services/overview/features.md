@@ -1,32 +1,32 @@
 # Features
 
-The key features of Authentication Partner and the Partner Management System are here below.
+The key features of the Authentication Partner and the Partner Management System are below.
 
 ### Ease of Use and Usability Enhancements
 
-#### Self-registration
+### Self-registration
 
-A Partner can self-register with much of the process as automated with least manual intervention.
+A Partner can self-register with much of the process as automated with the least manual intervention.
 
-### Interface / User Experience:
+### Interface / User Experience
 
-The new interface of PMP, for its user part, has undergone a complete revamp not only on UI but the UX been worked upon ground up. The select few points from the UX enhancements are as below:
+For its user part, the new interface of PMP has undergone a complete revamp not only on UI but the UX been worked upon from the ground up. The select few points from the UX enhancements are as below:
 
-* Card view presentation – You now get ‘Partner User Dashboard’ and this offers Card view presentation for each functionality with brief / one liner description to help you understand the services offered in:
-* User Profile - User can view his organisation name and username on the top right , the user dropdown on the top right- has two options: User Profile and Logout.
+* Card view presentation – You now get ‘Partner User Dashboard’ and this offers a Card view presentation for each functionality with a brief/one-liner description to help you understand the services offered in:
+* User Profile - The user can view his organization name and username on the top right, the user dropdown on the top right- has two options: User Profile and Logout.
 
 ### Partner Admin Features
 
 #### Admin dashboard
 
-Refreshed new user experience to the Admin dashboard which now has structured the high level functionalities with help of cards and which are ordered logically on the dashboard.
+Refreshed new user experience to the Admin dashboard which now has structured the high-level functionalities with the help of cards that are ordered logically on the dashboard.
 
-* The dashboard displays the cards for **Certificate Trust Store**, **Partners, Policies**, **Parter Policy-Linking**, **SBI-Device**, **FTM Chip** and **Authentications Services**.
-* It also displays pending requests count for Partner Policy-Linking, SBI-Device and FTM Chip.
+* The dashboard displays the cards for **Certificate Trust Store**, **Partners, Policies**, **Parter Policy-Linking**, **SBI-Device**, **FTM Chip,** and **Authentications Services**.
+* It also displays the pending requests count for Partner Policy-Linking, SBI-Device, and FTM Chip.
 
 #### Certificate Trust Store
 
-Upload, Download or View (List View and Detailed view) of Root and Intermediate Certificates.
+Upload, Download, or View (List View and Detailed view) of Root and Intermediate Certificates.
 
 #### Partners
 
@@ -40,7 +40,7 @@ You can use this section for Policy Group and Policy related operations enlisted
 * Create **Policy**
   * Authentication Policy
   * Datashare Policy
-* **Clone Policy** in different Policy Group
+* **Clone Policy** in Different Policy Groups
 * **Publish** Policy in draft status
 * **Edit** Policy in draft status
 * **View**
@@ -62,12 +62,12 @@ Approve / Reject or View (List View and Details View)
 
 #### User Access Features
 
-* Login: Existing Partner who has already registered can login to the portal with email / username and password.
-* Retrieve Password / Forgot Password: Partner will have option to reset password using the Forget Password option.
+* Login: Existing Partner who has already registered can login to the portal with email/username and password.
+* Retrieve Password / Forgot Password: Partner will have the option to reset the password using the Forget Password option.
 
 #### Key Feature of Authentication Partner:
 
-Features discussed here is provided only for Partner Type which is Authentication Partner.
+Features discussed here are provided only for Partner Type which is Authentication Partner.
 
 * Policies - Request Policy, View, Select Policy Group
 * Enable Authentication mechanisms for approved policies
@@ -81,7 +81,7 @@ Features discussed here is provided only for Partner Type which is Authenticatio
   * Edit: Edit existing OIDC Client details.
   * Deactivate: Deactivate OIDC Client whenever needed.
 
-#### The key features of Device Provider
+#### The key features of the Device Provider
 
 * **Partner Certificate:**
   * **Upload and Re-upload:** Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
@@ -97,20 +97,17 @@ Features discussed here is provided only for Partner Type which is Authenticatio
   * **Upload and Re-upload:** Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
   * **Download:** Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
 * **FTM Chip Services:**
-  * **FTM Chip details:** Add FTM details, deactivate FTM details.
-  * **FTM Chip Certificate:** Upload, Re-upload or download certificate.
+  * **FTM Chip details:** Add FTM details, and deactivate FTM details.
+  * **FTM Chip Certificate:** Upload, Re-upload, or download certificate.
 
 ## Browser Support:
 
-* Complete support on Chrome, Firefox, Edge and Safari ensures a seamless user experience across these popular browsers.
+* Complete support on Chrome, Firefox, Edge, and Safari ensures a seamless user experience across these popular browsers.
 
 ## Language Support:
 
-* Currently supports English, French and Arabic with plans to incorporate additional languages in future releases.
+* Currently supports English, French, and Arabic with plans to incorporate additional languages in future releases.
 
 ## Compatibility:
 
 * Optimized for standard browser sizes (laptop/desktop/extra large screen) with responsive UI design for laptop/desktop views.
-
-
-
