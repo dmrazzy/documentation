@@ -1,6 +1,6 @@
 # End User Guide
 
-## Overview
+### Overview
 
 This guide helps in understanding the pre-registration sample UI implementation. The pre-registration portal can be used in **self-service** as well as in **assisted** mode.
 
@@ -10,7 +10,7 @@ In this mode, residents can pre-register themselves by accessing the pre-registr
 
 #### **Assisted mode**
 
-When used in an assisted mode, the operator could be handling the portal and helping other residents in filling up the details, and creating an application on their behalf. The languages that the operator and the resident understand, may or may not be the same. If we consider a country with linguistic diversity, the possibilities increase. In such cases, the operator might log in with a language that they are familiar with, and also select a language (data capture language) familiar to the resident for filling up the demographic form and other details.
+When used in an assisted mode, the operator could be handling the portal helping other residents fill up the details, and creating an application on their behalf. The languages that the operator and the resident understand, may or may not be the same. If we consider a country with linguistic diversity, the possibilities increase. In such cases, the operator might log in with a language that they are familiar with, and also select a language (data capture language) familiar to the resident for filling up the demographic form and other details.
 
 {% embed url="https://www.youtube.com/watch?v=eHb26gn5MoQ&list=PLF83tgjxrJvh6QVM27lxIYq5nlZx8rY8Z&index=4" %}
 
@@ -46,7 +46,7 @@ To create an application, the resident/operator can follow the steps below:
 
 ![](../../../../.gitbook/assets/pre-reg-language-selection.png)
 
-1. Once the OTP is verified, you will see a pop up for selecting the languages for data entry.
+1. Once the OTP is verified, you will see a pop-up for selecting the languages for data entry.
 2. Select the languages and click **Submit**.
 
 {% hint style="info" %}
@@ -75,7 +75,7 @@ To create an application, the resident/operator can follow the steps below:
 2. You can also change or verify your demographic details in the other selected language.
 3. After you have filled in and verified your demographic details, click **Continue**.
 
-_Note_: The mandatory fields/labels have a `*` mark. Field and button labels, error, and information messages will be displayed in the user-preferred language selected on the login screen. The fields displayed on this screen are configurable based on the [ID schema](../../../identity-management/id-schema.md) defined by the country.
+_Note_: The mandatory fields/labels have a `*` mark. Field and button labels, errors, and information messages will be displayed in the user-preferred language selected on the login screen. The fields displayed on this screen are configurable based on the [ID schema](../../../identity-management/id-schema.md) defined by the country.
 
 [UI specs](../develop/pre-registration-ui-specifications.md) of the Pre-registration module are used to configure the form fields in the Demographic Details and Document Upload functionality pages. These specs are saved as a JSON file with a list of fields.
 

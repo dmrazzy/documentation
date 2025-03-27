@@ -144,7 +144,7 @@ You have two options to verify your **TAN VC**:
 1. **Scan QR Code**: Use your device camera to scan the QR code from your TAN VC.
 2. **Upload TAN VC**: Upload the TAN VC file from your device.
 
-**Option 1: Scan the QR Code**
+#### **Option 1: Scan the QR Code**
 
 1. Click on the **Scan QR Code** option on the page to verify your **TAN**.
 2. You will need **two devices**: One device will have the camera open (where you are accessing the banking portal), and the other will display the **TAN VC QR code**.
@@ -153,7 +153,7 @@ You have two options to verify your **TAN VC**:
 5. Once scanned, the data will be processed for verification.
 6. After successful verification, your TAN VC credentials will be displayed on the banking portal.
 
-**Option 2: Upload the TAN VC**
+#### **Option 2: Upload the TAN VC**
 
 1. Select **Upload QR Code**.
 2. Click **Upload** and choose your **TAN VC** file with a QR code from your local device.
