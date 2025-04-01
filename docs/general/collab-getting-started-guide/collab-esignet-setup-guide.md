@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # eSignet
 
 Welcome to the eSignet Guide tailored specifically for our Collab Environment!

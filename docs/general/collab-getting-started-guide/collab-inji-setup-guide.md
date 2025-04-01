@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Inji
 
 Welcome to the Inji Guide tailored specifically for our Collab Environment!
