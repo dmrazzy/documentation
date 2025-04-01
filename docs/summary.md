@@ -331,8 +331,6 @@
   * [Collab Environment Guides](general/collab-getting-started-guide/README.md)
     * [Use Cases](general/collab-getting-started-guide/use-cases/README.md)
       * [Loan Application](general/collab-getting-started-guide/use-cases/loan-application.md)
-    * [Inji](general/collab-getting-started-guide/collab-inji-setup-guide.md)
-    * [eSignet](general/collab-getting-started-guide/collab-esignet-setup-guide.md)
   * [MOSIP Documentation Style Guide](general/mosip-documentation-style-guide.md)
 * [🛠️ Modules](modules.md)
 * [Experiment](experiment.md)
