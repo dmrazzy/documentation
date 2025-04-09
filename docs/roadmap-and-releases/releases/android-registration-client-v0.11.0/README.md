@@ -10,14 +10,19 @@
 
 The Android Registration Client is a tablet application designed to provide a mobile version of the existing desktop [Registration Client](https://docs.mosip.io/1.2.0/modules/registration-client).  It has been developed to ensure accessibility on all Android devices and to meet the mobility needs of countries implementing MOSIP.
 
-Version 0.10.0 of the Android Registration Client is the beta release, covering features such as Operator Onboarding, Update Operator Onboarding, and the dashboard.
+Version 0.11.0 of the Android Registration Client is the beta release, covering features such as Operator Onboarding, Update Operator Onboarding, and the dashboard.
 
 This release includes new features from the [Android Registration Client 0.11.0-beta.1](https://docs.mosip.io/1.2.0/releases/android-registration-client-0.11.0-beta.1) release and the precedent releases.
 
 Below is the list of added features:
 
-* **Adding handles during New registration:** When an Operator registers a resident while filling in the demographic details section, one of the mandatory fields will be marked as “handle”. This mandatory field, which is marked as the handle, has to be unique for each resident.
-* **Authentication using handles:** Once the resident is registered and the handle attribute is duly entered, the resident can use that attribute to authenticate themselves.
+#### **1. Adding** [**handles** ](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/id-repository/custom-handle#what-is-a-handle)**during New registration**
+
+When an Operator registers a resident while filling in the demographic details section, one of the mandatory fields will be marked as “handle”. This mandatory field, which is marked as the handle, has to be unique for each resident. For a detailed description of this feature, please refer to [point number 12](../../../id-lifecycle-management/identity-issuance/android-registration-client/overview/features.md).
+
+#### **2. Authentication using** [**handles**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/id-repository/custom-handle#what-is-a-handle)
+
+Once the resident is registered and the handle attribute is duly entered, the resident can use that attribute to authenticate themselves.
 
 {% hint style="info" %}
 **Note**: Compatible with[ ](https://docs.mosip.io/1.2.0/releases/release-notes)[1.2.0.2 - Reg Processor & ID Repo](https://docs.mosip.io/1.2.0/releases/1.2.0.2-reg-processor-and-id-repo).
