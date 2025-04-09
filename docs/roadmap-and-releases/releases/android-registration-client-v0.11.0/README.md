@@ -4,7 +4,7 @@
 
 **Support**: Stable Release
 
-**Release Date**: Coming Soon!
+**Release Date**: 9th April, 2025
 
 ### **Overview** <a href="#overview" id="overview"></a>
 
@@ -16,7 +16,7 @@ This release includes new features from the [Android Registration Client 0.11.0-
 
 Below is the list of added features:
 
-* **Adding handles during New registration:** When an Operator is registering a resident while filling in the demographic details section, one of the mandatory fields will be marked as “handle”. This mandatory field that is marked as the handle has to be unique for each resident.
+* **Adding handles during New registration:** When an Operator registers a resident while filling in the demographic details section, one of the mandatory fields will be marked as “handle”. This mandatory field, which is marked as the handle, has to be unique for each resident.
 * **Authentication using handles:** Once the resident is registered and the handle attribute is duly entered, the resident can use that attribute to authenticate themselves.
 
 {% hint style="info" %}
@@ -27,9 +27,9 @@ Only compatible with the below versions of Packet Manager, ID repo, and Registra
 
 ### **Repository Released** <a href="#repository-released" id="repository-released"></a>
 
-| Repositories                | Tags Released |
-| --------------------------- | ------------- |
-| android-registration-client | **v0.11.0**   |
+| Repositories                | Tags Released                                                                |
+| --------------------------- | ---------------------------------------------------------------------------- |
+| android-registration-client | [v0.11.0](https://github.com/mosip/android-registration-client/tree/v0.11.0) |
 
 #### **Compatible Modules** <a href="#compatible-modules" id="compatible-modules"></a>
 

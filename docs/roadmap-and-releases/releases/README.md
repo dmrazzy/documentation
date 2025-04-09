@@ -7,6 +7,12 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version: v0.11.0 - Android Registration Client**
+
+* **Support**: Stable Release
+* **Date:** 9th April, 2025
+* [Release Notes](https://docs.mosip.io/1.2.0/releases/android-registration-client-v0.11.0)
+
 **Version: API Test Commons Releases**&#x20;
 
 * **Date**: 27th March, 2025
@@ -21,12 +27,6 @@ icon: book-open
 
 * **Date**: 10th March, 2025
 * [Release Notes](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/partner-management-system-1.2.2.0)
-
-**Version: v0.11.0 - Android Registration Client**
-
-* **Support**: Stable Release
-* **Date:** Coming Soon!
-* [Release Notes](https://docs.mosip.io/1.2.0/releases/android-registration-client-v0.11.0)
 
 **Version: 0.9.1 - Resident Services**
 
