@@ -62,7 +62,7 @@ To learn more about the available features, processes, and user interface, pleas
 
 ### **Known Issues** <a href="#known-issues" id="known-issues"></a>
 
-To view the list of known issues, refer **here**. (To be updated)
+To view the list of known issues, refer [here](https://mosip.atlassian.net/issues/RCF-1138?jql=project%20IN%20%28%22Registration%20Client%20Flutter%22%2C%20MOSIP%29%20AND%20labels%20%3D%20ARC_release_0.11.0).
 
 ### Documentation
 
