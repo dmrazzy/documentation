@@ -30,7 +30,7 @@ Once the resident is registered and the handle attribute is duly entered, the re
 
 Only compatible with the below versions of Packet Manager, ID repo, and Registration processor.
 
-### **Repository Released** <a href="#repository-released" id="repository-released"></a>
+#### **Repository Released** <a href="#repository-released" id="repository-released"></a>
 
 | Repositories                | Tags Released                                                                |
 | --------------------------- | ---------------------------------------------------------------------------- |
@@ -48,22 +48,22 @@ The following table outlines the tested and certified compatibility of [1.2.0.2 
 | registration            | [v1.2.0.2](https://github.com/mosip/registration/tree/v1.2.0.2)   |
 | bio-utils/biometric-api | [v1.2.0.3](https://github.com/mosip/bio-utils/tree/v1.2.0.3)      |
 
-### **Build and Deploy** <a href="#build-and-deploy" id="build-and-deploy"></a>
+#### **Build and Deploy** <a href="#build-and-deploy" id="build-and-deploy"></a>
 
 To access the build and read through the deployment instructions, please refer to the[ Developer Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-developer-guide).
 
-### **Configurations** <a href="#configurations" id="configurations"></a>
+#### **Configurations** <a href="#configurations" id="configurations"></a>
 
 For details related to Android Registration Client configurations, refer to the[ Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration).
 
-### **User Guide** <a href="#user-guide" id="user-guide"></a>
+#### **User Guide** <a href="#user-guide" id="user-guide"></a>
 
 To learn more about the available features, processes, and user interface, please refer to the[ Android Registration User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide) for further information.
 
-### **Known Issues** <a href="#known-issues" id="known-issues"></a>
+#### **Known Issues** <a href="#known-issues" id="known-issues"></a>
 
 To view the list of known issues, refer [here](https://mosip.atlassian.net/issues/RCF-1138?jql=project%20IN%20%28%22Registration%20Client%20Flutter%22%2C%20MOSIP%29%20AND%20labels%20%3D%20ARC_release_0.11.0).
 
-### Documentation
+#### Documentation
 
 [QA Report](https://docs.mosip.io/1.2.0/releases/android-registration-client-v0.11.0/test-report)
