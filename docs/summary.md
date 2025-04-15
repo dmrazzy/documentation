@@ -270,6 +270,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
+    * [v1.2.1.0 - Registration Processor & Mosip Config](roadmap-and-releases/releases/v1.2.1.0-registration-processor-and-mosip-config.md)
     * [Android Registration Client v0.11.0](roadmap-and-releases/releases/android-registration-client-v0.11.0/README.md)
       * [Test Report](roadmap-and-releases/releases/android-registration-client-v0.11.0/test-report.md)
     * [API Test Commons Releases](roadmap-and-releases/releases/api-test-commons-releases/README.md)
