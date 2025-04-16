@@ -8,6 +8,8 @@ Achieving this vision has proven to be a challenge, as civil registration system
 
 In an increasingly digital world, integrating Civil Registration and Vital Statistics (CRVS) systems with national digital identity platforms like MOSIP represents a foundational shift in how countries can manage identity and vital statistics. This synergy allows for the seamless management of an individual's identity across life events, starting from birth registration, through education and employment, to end-of-life verification.
 
+<figure><img src="../../../.gitbook/assets/CRVS (1).png" alt=""><figcaption><p>Birth and Death Registration</p></figcaption></figure>
+
 #### Why Integration Matters
 
 Civil registration systems record vital life events such as births, deaths, marriages, and divorces. Meanwhile, national ID systems provide legal and verifiable identities. When these systems operate in isolation, it leads to administrative inefficiencies, fragmented data, and challenges in service access.
@@ -21,62 +23,53 @@ Through integration with MOSIP (Modular Open Source Identity Platform), CRVS sys
 
 #### Vision and Impact
 
-The combined capabilities of MOSIP and CRVS systems have the potential to demonstrate transformative impact across countries. Together, they can provide a holistic framework for:
+The combined capabilities of MOSIP and CRVS systems have the potential to demonstrate a transformative impact across countries. Together, they can provide a holistic framework for:
 
 * **Recognition** – Establishing a secure, legal identity from birth
 * **Protection** – Ensuring privacy, security, and proper authentication mechanisms
 * **Provision** – Enabling access to services through a Unique Identification Number (UIN)
 
-This vision further aligns with global Sustainable Development Goals (SDG), including the UN’s SDG Target 16.9: “Provide legal identity for all, including birth registration, by 2030.”
+This vision further aligns with global Sustainable Development Goals (SDGs), including the UN’s SDG Target 16.9: “Provide legal identity for all, including birth registration, by 2030.”
 
 #### Key Objectives of the Integration
 
-#### **Objectives**
-
-The integration of MOSIP with CRVS systems is designed to achieve several key objectives aimed at enhancing the efficiency, security, and accuracy of national identity and civil registration systems. These objectives include:
-
-1. **Streamlining Processes and Enhancing Information Exchange**\
-   The integration will create a seamless flow of information between MOSIP and CRVS systems, reducing administrative burdens and enabling faster, more efficient processing of civil registration events.
-2. **Establishing Secure and Reliable Data Verification Mechanisms**\
-   A central goal of this integration is to establish robust verification protocols, ensuring that data exchanged between the systems is accurate, reliable, and trustworthy, thereby preventing errors and enhancing security.
-3. **Issuance of Unique Identity Numbers Linked to Birth Certificates**\
-   The integration will facilitate the issuance of unique identification numbers (UIDs) linked directly to birth certificates, providing individuals with a verified, digital identity that is consistently updated as they undergo significant life events.
-4. **Improving Accuracy in Identification and Reducing Data Duplication**\
-   By linking civil registration events to the national identity system, the integration will eliminate the risk of duplicate records, ensuring that every individual has a single, verified identity across all government systems.
-5. **Maintaining Accurate Records of Deceased Individuals**\
-   One of the core aims of the integration is to ensure that the identity system is promptly updated with the status of deceased individuals, preventing identity fraud or the misuse of personal data for illicit purposes.
-6. **Establishing Accurate Spousal Relationships for Married Individuals**\
-   The integration will enable the accurate recording of marital status and spousal relationships, linking marriage registrations to identity records to maintain consistency in personal status data.
-7. **Maintaining Comprehensive and Up-to-Date Marital Status Information**\
-   By linking marriage registrations with the national identity system, the integration will ensure that marital status information is consistently updated, leading to more accurate identity records for married individuals.
-8. **Improving Data Quality and Integrity**\
-   The integration will enhance the overall quality and integrity of data across both systems, ensuring that vital events are recorded accurately and comprehensively, leading to more reliable data for governance.
-9. **Enhancing Data Reliability for Better Governance and Decision-Making**\
-   By improving data accuracy and timeliness, the integration will contribute to better governance, providing government authorities with the vital statistics needed for more informed, data-driven decision-making.
+1. **Streamlined Processes:**\
+   Enable smooth information exchange between MOSIP and CRVS to reduce manual effort and speed up registrations.
+2. **Secure Verification:**\
+   Ensure reliable and accurate data through robust verification and deduplication mechanisms.
+3. **UID Linked to Birth:**\
+   Assign unique IDs directly linked to birth certificates for a consistent digital identity.
+4. **Reduce Duplication:**\
+   Prevent duplicate identities by syncing civil events with the identity system.
+5. **Track Deceased Records:**\
+   Update identity status on death to prevent misuse of deceased individuals’ data.
+6. **Record Spousal Info:**\
+   Accurately capture and link spousal relationships in identity records.
+7. **Updated Marital Status:**\
+   Maintain consistent, current marital information linked to identities.
+8. **Improve Data Quality:**\
+   Boost the accuracy and completeness of civil and identity records.
+9. **Better Governance:**\
+   Support informed policymaking with reliable, timely demographic data.
 
 #### Integration Architecture and Guidelines
 
 The following is a list of guiding principles for this integration.
 
-1. **Data verification and trust:**
-   1. Data transmitted from CRVS to MOSIP will undergo thorough data/document verification and deduplication before any request is initiated for MOSIP to process.
-   2. MOSIP will trust all information provided by CRVS and honor the received requests. MOSIP will ensure the technical validations are all in place for packet processing.
-   3. The integration should define the mandatory attributes to be exchanged between the two systems. It is crucial to agree upon these attributes to ensure consistent and accurate data exchange.
-2. **Data flow:**
-   1. The initiation of the request with the data will be from CRVS to MOSIP
-   2. MOSIP will publish the success/failure message to provide the status of the request to the web-sub topic. CRVS will have to subscribe to the topic to get updates on the request status
-3. **Data consistency:**
-   1. It is imperative to maintain consistency in data across both platforms, MOSIP and CRVS. This ensures that accurate and up-to-date data is shared between the systems.
-4. **Fallback mechanism:**
-   1. CRVS should initiate the request by calling create packet API, if the failure occurs during creation, CRVS should be able to retry to create packet.
-   2. In the event of technical failures on the MOSIP side during packet processing, reprocessing of the packet should be in place to ensure that the packet is marked appropriately as rejected or approved.
-   3. The final packet status will be shared with CRVS by publishing to the websub for CRVS to take further steps.
-5. **Proof of authentication:**
-   1. For any request submitted to MOSIP, it is essential to include the biometric data of the informant or applicant, whenever feasible, to ensure the accurate verification of the individual initiating the request and confirm their legitimacy.
-   2. For cases where biometric data is not collected by CRVS, it is recommended for CRVS to use eSignet for the applicant or introducer authentication. Post-authentication user info token should be shared with MOSIP for validation and auditing purposes.
-6. **Multiple CRVS systems:**
-   1. If a country deploys multiple CRVS systems, each system will be treated as a separate partner for MOSIP. This allows for independent management and integration with each CRVS system.
-   2. Credentials generated/update messages from MOSIP will be sent to the requesting CRVS system only. It is the responsibility of the country and CRVS systems to manage the sharing of information across multiple CRVS systems
+#### **Guidelines**&#x20;
+
+1. **Data Verification & Trust:**\
+   CRVS initiates verified, deduplicated requests; MOSIP processes trusted, validated data with agreed-upon attributes.
+2. **Data Consistency:**\
+   Ensure aligned, updated data across CRVS and MOSIP systems.
+3. **Fallback Mechanism:**\
+   Allow retries and reprocessing for packet creation and errors.
+4. **Authentication Proof:**\
+   Use biometrics or eSignet to verify requestors and share authentication tokens with MOSIP.
+5. **Credential Sharing & Status Updates:**\
+   Identity credentials and packet statuses are shared via WebSub; supports UIN, VID, or PSUT.
+6. **Multiple CRVS Support:**\
+   Treat each CRVS as a separate partner; ensure coordinated data sharing among them.
 
 #### About the Platforms
 
@@ -91,7 +84,7 @@ Refer here for details on the MOSIP-CRVS integration [scope](https://mosip.atlas
 {% endhint %}
 
 {% hint style="info" %}
-Amongst the various CRVS systems, MOSIP has integrated with [**OpenCRVS**](https://documentation.opencrvs.org/), a digital civil registration solution. To know more about this integration click here. (Link to be updated)
+Amongst the various CRVS systems, MOSIP has integrated with [**OpenCRVS**](https://documentation.opencrvs.org/), a digital civil registration solution. To know more about this integration, click here. (Link to be updated)
 {% endhint %}
 
 **Assumption:** This approach assumes that the CRVS system is recognized as the authoritative source of vital event data and is legally authorized to issue official birth and death certificates in accordance with the laws of the country.
