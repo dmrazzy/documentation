@@ -4,7 +4,7 @@
 
 This section defines the scope of integration between Civil Registration and Vital Statistics (CRVS) systems and the Modular Open-Source Identity Platform (MOSIP). The integration is designed to support a comprehensive set of use cases, including birth and death registrations, demographic updates, and other vital events such as marriage and divorce. Continue reading to explore the use cases enabled through this integration.
 
-<figure><img src="../../../.gitbook/assets/birth_death_CRVS.png" alt=""><figcaption><p>Birth and Death Registration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/CRVS.png" alt=""><figcaption><p>Birth and Death Registration</p></figcaption></figure>
 
 #### **1. Birth registration:** <a href="#id-1.-birth-registration" id="id-1.-birth-registration"></a>
 

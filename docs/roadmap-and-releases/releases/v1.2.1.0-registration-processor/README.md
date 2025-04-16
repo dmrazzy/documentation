@@ -19,8 +19,12 @@ We’re excited to announce the release of **Registration Processor v1.2.1.0**, 
    Introduced a new API to trigger workflow execution when a packet is pushed from any external system, enabling seamless third-party integration.
 2. **Role-Based API Access for External Systems:**
    1. Added support for **role-based access control** for APIs exposed to external systems, ensuring secure and permissioned integrations.
-   2. Access to third-party integrators should be limited only to these new APIs using firewall check&#x73;**.**
-3. **VID & UIN-Based Updates:**\
+
+{% hint style="info" %}
+Access to third-party integrators should be limited only to these new APIs using firewall check&#x73;**.**
+{% endhint %}
+
+1. **VID & UIN-Based Updates:**\
    Enhanced flexibility by enabling support to **update individual details using VID or UIN**, improving usability across various ID scenarios.
 
 #### **Key Known Issues** <a href="#key-known-issues" id="key-known-issues"></a>
@@ -56,7 +60,7 @@ Please refer to [this link](https://mosip.atlassian.net/issues/MOSIP-41091?filte
 
 ### **Config Changes** <a href="#config-changes" id="config-changes"></a>
 
-Please refer to [this link](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration/approach/configurations-details) to know more about the config properties added.
+Please refer to [this](../../../id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details.md) link to know more about the config properties added.
 
 #### **Documentation** <a href="#documentation" id="documentation"></a>
 
