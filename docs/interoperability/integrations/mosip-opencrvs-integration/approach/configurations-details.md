@@ -1,8 +1,12 @@
 # Configurations Details
 
+### Overview
+
+This guide details the configuration updates required in MOSIP to enable CRVS-initiated birth and death registration requests. It covers ID schema changes to add key fields, updates to authentication policies, property files, and identity mapping, along with new Camel routes and workflow settings. These changes ensure the proper handling and processing of vital events within the MOSIP ecosystem.
+
 #### ID Schema Update for Initiating Infant Birth Requests <a href="#id-schema-update-for-initiating-infant-birth-requests" id="id-schema-update-for-initiating-infant-birth-requests"></a>
 
-Before initiating an infant birth registration request from the CRVS system, it is essential to update the ID schema in MOSIP to include the necessary fields required for capturing introducer information.
+Before initiating an infant birth registration request from the CRVS system, updating the ID schema in MOSIP to include the necessary fields required for capturing introducer information is essential.
 
 The following fields should be added to support the processing of infant birth registration requests:
 
@@ -11,14 +15,14 @@ The following fields should be added to support the processing of infant birth r
 
 #### ID Schema Update for Initiating Death Requests <a href="#id-schema-update-for-initiating-death-requests" id="id-schema-update-for-initiating-death-requests"></a>
 
-Before initiating a death registration request from the CRVS system, it is essential to update the ID schema in MOSIP to include the necessary fields required for capturing information related to the deceased and informant.
+Before initiating a death registration request from the CRVS system, updating the ID schema in MOSIP to include the necessary fields required for capturing information related to the deceased and informant is essential.
 
 The following fields should be added to support the processing of death registration requests:
 
 * **deceasedDeclarationDate** _(Optional)_
   * **Description**: The date on which the individual was declared deceased.
 * **declaredAsDeceased** _(Mandatory)_
-  * **Description**: A flag indicating that the individual has been officially marked as deceased.
+  * **Description**: A flag indicating that the individual has been officially declared deceased.
 * **typeOfDeath** _(Optional)_
   * **Description**: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
 * **deceasedInformer** _(Optional)_
