@@ -432,6 +432,6 @@ Once all the above pre-requisites are in place the next step is to initiate a re
 
 In MOSIP, after a packet is created, it is processed for validation and verification of the information in the **Registration Processor**. Inside the Registration Processor, each packet follows a specific workflow defined by the **Camel route**.
 
-For the integration with CRVS, the newly created packet is uploaded to the Object Store. To pick up this new packet and trigger the processing, we have developed a new API. This API ensures to trigger the appropriate workflow for further processing of registration packets. For this integration, the camel route workflow to be executed is determined by the values provided for the **source** and **process**.\
+For the integration with CRVS, the newly created packet is uploaded to the Object Store. To pick up this new packet and trigger the processing, we have developed a new API. This API ensures to trigger the appropriate workflow is triggered for further processing of registration packets. For this integration, the camel route workflow to be executed is determined by the values provided for the **source** and **process**.\
 \
 **Create Workflow Instance Stoplight Endpoint:** [https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)
