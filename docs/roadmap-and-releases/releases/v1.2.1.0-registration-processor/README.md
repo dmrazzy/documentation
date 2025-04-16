@@ -4,14 +4,14 @@
 
 **Release Date**: 16th April, 2025
 
-**Overview:**
+**Overview**
 
-We’re excited to announce the release of [**Registration Processor v1.2.1.0**](https://github.com/mosip/registration/tree/1.2.1.0), designed to make external system integration easier and more efficient than ever. This version introduces **support for packet creation from external sources**, empowering any external system to integrate seamlessly with MOSIP’s registration ecosystem.
+We’re excited to announce the release of [Registration Processor v1.2.1.0](https://github.com/mosip/registration/tree/1.2.1.0), designed to make external system integration easier and more efficient than ever. This version introduces support for packet creation from external sources, empowering any external system to integrate seamlessly with MOSIP’s registration ecosystem.
 
-**What’s new?**
+#### What’s new?
 
-* A new API has been added to the [**registration processor module**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/registration-processor/overview) to trigger packet processing
-* Support for **packet creation from external systems** by leveraging the existing **create packet API of the** [**packet manager module**](https://docs.mosip.io/1.2.0/id-lifecycle-management/supporting-components/packet-manager)**.**
+* A new API has been added to the [registration processor module](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/registration-processor/overview) to trigger packet processing
+* Support for packet creation from external systems by leveraging the existing create packet API of the [packet manager module](https://docs.mosip.io/1.2.0/id-lifecycle-management/supporting-components/packet-manager).
 
 #### **Major Highlights** <a href="#major-highlights" id="major-highlights"></a>
 
@@ -72,4 +72,4 @@ Please refer to [this](../../../id-lifecycle-management/identity-issuance/regist
 
 1. [API Documentation](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)
 2. [Integration Guides](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration)
-3. QA Report
+3. [QA Report](test-report.md)
