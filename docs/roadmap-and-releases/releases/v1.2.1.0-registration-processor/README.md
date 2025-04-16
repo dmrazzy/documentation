@@ -1,6 +1,6 @@
-# v1.2.1.0 - Registration Processor & Mosip Config
+# v1.2.1.0 - Registration Processor
 
-**Release Version** : v1.2.1.0 - Registration Processor & Mosip Config
+**Release Version** : v1.2.1.0 - Registration Processor
 
 **Release Date**: Coming Soon!
 
@@ -21,15 +21,7 @@ We’re excited to announce the release of **Registration Processor v1.2.1.0**, 
    1. Added support for **role-based access control** for APIs exposed to external systems, ensuring secure and permissioned integrations.
    2. Access to third-party integrators should be limited only to these new APIs using firewall check&#x73;**.**
 3. **VID & UIN-Based Updates:**\
-   Enhanced flexibility by enabling support to **update individual details using either VID or UIN**, improving usability across various ID scenarios.
-
-#### **Security Enhancements** <a href="#security-enhancements" id="security-enhancements"></a>
-
-To be updated soon!
-
-#### **Bug Fixes** <a href="#bug-fixes" id="bug-fixes"></a>
-
-To be updated soon!
+   Enhanced flexibility by enabling support to **update individual details using VID or UIN**, improving usability across various ID scenarios.
 
 #### **Key Known Issues** <a href="#key-known-issues" id="key-known-issues"></a>
 
@@ -42,10 +34,10 @@ Please refer to [this link](https://mosip.atlassian.net/issues/MOSIP-41091?filte
 
 #### **Repositories Released** <a href="#repositories-released" id="repositories-released"></a>
 
-| **Repository Released** | **Tags**      |
-| ----------------------- | ------------- |
-| **registration**        |  **v1.2.1.0** |
-| **mosip-config**        |  **v1.2.4.0** |
+| **Repository Released** | **Tags**                                                         |
+| ----------------------- | ---------------------------------------------------------------- |
+| **registration**        |  [v1.2.1.0](https://github.com/mosip/registration/tree/1.2.1.0)  |
+| **mosip-config**        |  [v1.2.4.0](https://github.com/mosip/mosip-config/tree/v1.2.4.0) |
 
 #### **Compatible Modules** <a href="#compatible-modules" id="compatible-modules"></a>
 
@@ -62,9 +54,12 @@ Please refer to [this link](https://mosip.atlassian.net/issues/MOSIP-41091?filte
 | kernel-auth-service         | [1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1/kernel/kernel-auth-service) |
 | kernel-otp-manager          | [1.2.0.1](https://github.com/mosip/otp-manager/tree/v1.2.0.1/kernel/kernel-otpmanager-service)   |
 
+### **Config Changes** <a href="#config-changes" id="config-changes"></a>
+
+Please refer to [this link](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration/approach/configurations-details) to know more about the config properties added.
+
 #### **Documentation** <a href="#documentation" id="documentation"></a>
 
-1. API Documentation (To be updated)
-2. Integration Guides  (To be updated)
-3. End User Guide  (To be updated)
-4. QA Report  (To be updated)
+1. [API Documentation](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)
+2. [Integration Guides](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration)
+3. QA Report(To be updated soon)

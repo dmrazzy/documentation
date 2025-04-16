@@ -10,7 +10,7 @@ icon: book-open
 **Version:  v1.2.1.0 - Registration Processor & Mosip Config**
 
 * **Date:** Coming soon!
-* [Release Notes](v1.2.1.0-registration-processor-and-mosip-config.md)
+* [Release Notes](v1.2.1.0-registration-processor/)
 
 **Version: v0.11.0 - Android Registration Client**
 
