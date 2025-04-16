@@ -87,3 +87,5 @@ The following property files have been updated with the mentioned properties to 
   A version of the workflow instance API.
 * `registration.processor.notification.additional-process.category-mapping`\
   Mapping of the additional process to the internal process for notification.
+
+For more details on ID schema and configurations please refer [here](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/registration-client/deploy/registration-client-configuration).
