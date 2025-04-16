@@ -1,26 +1,33 @@
 # Technical Details
 
-This section outlines the technical requirements for integrating a Civil Registration and Vital Statistics (CRVS) system with MOSIP, applicable to any country implementation. It covers the necessary prerequisites and API specifications to facilitate a seamless and secure connection between the two systems, enabling smooth data exchange and processing of birth registration requests. These steps may be carried out by the System Integrator (SI) or the CRVS team, depending on the country’s implementation model and agreements.
+This section outlines the technical requirements for integrating a Civil Registration and Vital Statistics (CRVS) system with MOSIP, applicable to any country implementation. It covers the necessary prerequisites and API specifications to facilitate a seamless and secure connection between the two systems, enabling smooth data exchange and processing of birth registration requests. Depending on the country's implementation model and agreements, these steps may be carried out by the System Integrator (SI) or the CRVS team.
 
-#### **ID schema Configuration** <a href="#id-schema-configuration" id="id-schema-configuration"></a>
+#### **ID schema Configuration:** <a href="#id-schema-configuration" id="id-schema-configuration"></a>
 
-To initiate any registration request, the country must define an ID schema based on the specific requirements for CRVS integration. The [sample ID schema](../../../../_files/id-schema/id-schema-sample.json) can be referred to here and should customized to include all required fields for packet generation as per the country’s requirement. This schema governs the structure of the data submitted to MOSIP for processing and storage in the Identity Repository.
+To initiate any registration request, the country must define an ID schema based on the specific requirements for CRVS integration. The sample ID schema can be referred to [here](../../../../../../_files/id-schema/id-schema-sample.json) and should be customized to include all required fields for packet generation per the country’s requirements. This schema governs the structure of the data submitted to MOSIP for processing and storage in the Identity Repository.
 
 {% hint style="info" %}
-**Note:** MOSIP recommends using the latest release ID schema for country customization.
+**Note:** MOSIP advises adopting and customizing the latest released ID schema version to meet country-specific needs.
 {% endhint %}
 
 For comprehensive guidance on defining and customizing the ID schema in MOSIP, please refer to the [documentation here](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-management/id-schema).
 
 #### **1. Create Client ID/Role for the CRVS** <a href="#id-1.-create-client-id-role-for-the-crvs" id="id-1.-create-client-id-role-for-the-crvs"></a>
 
-As part of the integration approach, the MOSIP packet manager module APIs are exposed, allowing external systems (in this case, CRVS) to use these APIs for packet creation and processing requests. To facilitate this, the external system must be assigned a specific new client ID and secret, ensuring secure and authenticated communication. Additionally, a new, specific role should be created for the external user, which will be associated with the API request in subsequent calls for packet creation and processing.
+As part of the integration approach, two specific API’s are exposed:
+
+1. Create a packet API from the MOSIP packet manager module to create a packet
+2. Trigger the API from the registration processor module to process the packet.
+
+allowing external systems (in this case, CRVS) to use these APIs to initiate requests.
+
+To facilitate this, the external system must be assigned a specific new client ID and secret, ensuring secure and authenticated communication. Additionally, a new, specific role should be created for the external user, which will be associated with the API request in subsequent calls for packet creation and processing.
 
 This role helps MOSIP validate and verify that the request is coming from an authorized and authentic source, ensuring secure and accurate handling of the registration process. By associating the role with the API request, MOSIP can properly authenticate the external system and manage permissions for the request flow.
 
-Read on to further know about the specific steps involved:
+Read on to learn more about the specific steps involved
 
-#### **Create the Client**
+**Create the Client**
 
 * **Log in to Keycloak Admin Console**
   * Access the keycloak admin console.
@@ -29,23 +36,23 @@ Read on to further know about the specific steps involved:
   * If you are not already in the desired realm, switch to it from the top-left drop-down menu. The realm should be the one where you want to create the client.
 * **Create a New Client**
   * In the left-hand menu, go to **Clients** and click on **Create**.
-* **Enter the Client's Details**
+* **Enter the Client Details**
   * **Client ID**: Enter `mosip-crvs1-client` as the client ID (or a relevant name based on your deployment).
   * **Client Protocol**: Select `openid-connect`.
   * **Root URL**: Leave this field blank or enter the URL if required.
 * **Save the Client**
   * After entering the necessary details, click **Save** to create the client.
 
-Once the client is created please update the properties in the below locations:
+Once the client is created, please update the properties in the locations below:
 
-1. `auth.server.admin.allowed.audience` in [Packet manager default properties](https://github.com/mosip/mosip-config/blob/v1.2.4.0/packet-manager-default.properties#L24).
-2. `auth.server.admin.allowed.audience` in [Registration processor default properties](https://github.com/mosip/mosip-config/blob/v1.2.4.0/registration-processor-default.properties#L996).
+1. `auth.server.admin.allowed.audience` In the [Packet manager default properties](https://github.com/mosip/mosip-config/blob/v1.2.4.0/packet-manager-default.properties#L24).
+2. `auth.server.admin.allowed.audience` In the [Registration processor default properties](https://github.com/mosip/mosip-config/blob/v1.2.4.0/registration-processor-default.properties#L996).
 
 {% hint style="info" %}
-**Note:** The client name specified here is a placeholder and can be customized to suit the specific requirements of the System Integrator SI/CRVS.
+**Note:** The client name specified here is a placeholder and can be customised to suit the specific requirements of the System Integrator SI/CRVS.
 {% endhint %}
 
-#### **Configuring the Client**
+**Configuring the Client**
 
 * **Access the Settings Tab**
   * After creating the client, navigate to the **Settings** tab.
@@ -56,12 +63,12 @@ Once the client is created please update the properties in the below locations:
 * **Save the Changes**
   * Once the configuration is complete, click **Save** to apply the changes.
 
-#### **Generate and note the Secret key**
+**Generate and note the Secret key**
 
 * Navigate to the **Credentials** tab.
-* If you select the **confidential** access type, keycloak will generate a **Secret Key**. Note this secret as it will be used for authentication in subsequent API calls.
+* If you selected the **confidential** access type, keycloak will generate a **Secret Key**. Note this secret as it will be used for authentication in subsequent API calls.
 
-#### **Creating the Role**&#x20;
+**Creating the Role**&#x20;
 
 * **Go to the Roles Section**
   * In the Keycloak Admin Console, under your realm, navigate to **Roles**.
@@ -83,9 +90,9 @@ Once the client is created please update the properties in the below locations:
 
 #### **2. Fetch Access Token to Call the APIs** <a href="#id-2.-fetch-access-token-to-call-the-apis" id="id-2.-fetch-access-token-to-call-the-apis"></a>
 
-Once the role is created and mapped to the client ID. As a follow-up step below keycloak API is to be called to authenticate the CRVS associated with the new role. In the response of the API, there is an access token returned in the response header. This is the access token that should be used when initiating any request using the packet manager API.\
+Once the role is created and mapped to the client ID. As a follow-up step, below keycloak API is to be called to authenticate the CRVS associated with the new role. In the response of the API, there is an access token returned in the response header. This is the access token that should be used when initiating any request using the packet manager API.\
 \
-**Authenticate Endpoint:** `{domainname}/v1/authmanager/authenticate/clientidsecretkey`
+**Authenticate Endpoint:** {domainname}/v1/authmanager/authenticate/clientidsecretkey
 
 **Method:** POST
 
@@ -99,25 +106,24 @@ Once the role is created and mapped to the client ID. As a follow-up step below 
     "appId": {{appId}},
     "clientId": {{clientId}},
     "secretKey": {{secretKey}}
-              },
+  },
   "requesttime": "{{requestTime}}",
   "version": "string"
-}
 ```
 
-In the API above the fields Client ID and Secret key are the values created in the previous steps as mentioned above. Once the authentication is successful in the response header we will receive an access token which is to be noted and used for the subsequent packet manager API request.
+In the API above, the fields Client ID and Secret key are the values created in the previous steps, as mentioned above. Once the authentication is successful, in the response header, we will receive an access token, which is to be noted and used for the subsequent packet manager API request.
 
 #### 3. Create the Default Officer  <a href="#id-3.-create-the-default-officer" id="id-3.-create-the-default-officer"></a>
 
 To process the request coming from CRVS, a default officer is to be registered and assigned to the CRVS. The officer is to be added from keycloak by the admin.
 
-* **Login to Keycloak**
+* **Log in to Keycloak**
   * Open the Keycloak admin portal.
   * Log in using your admin credentials.
 * **Navigate to the Users Section**
   * In the left-hand menu, click on Users.
 * **Add a New User**
-  * Click on the Add User button to create a new user.
+  * Click on the Add user button to create a new user.
   * Fill in the required fields under the details tab:
     * **Username**: Enter a unique username for the officer (this will become the Officer ID).
     * **First Name**: Enter the officer's first name.
@@ -132,20 +138,19 @@ To process the request coming from CRVS, a default officer is to be registered a
 * **Assign Roles to the User**
   * Navigate to the **Role Mappings** tab.
   * Under **Available Roles**, select the role **Registration\_officer**.
-  * Click the **Add Selected** button to assign the role.
+  * Click the **Add selected** button to assign the role.
 * **Finalize the Officer Creation**
-  * After saving, the officer's **username** from Step 3 will serve as the **Officer ID**.
+  * After saving, the officer's **username** from step 3 will serve as the **Officer ID**.
   * This **Officer ID** will be used in the subsequent create packet API request. Ensure you pass this ID correctly in the request.
 
 #### 4. Create Centre  <a href="#id-4.-create-centre" id="id-4.-create-centre"></a>
 
 A unique default centre will be assigned to the CRVS to process requests. This centre can be created through the Admin Portal. For detailed instructions on how to create a centre, refer to the [**Admin Portal Center Creation Guide**.](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/administration/test/admin-portal-user-guide#create-center)
 
-#### **Fetching the Centre ID**
-
+**Fetching the Centre ID**\
 As of now, there is no direct support for fetching the specific centre ID in MOSIP. To retrieve the Centre ID, use the API below to get a list of all centres in the system. From this list, manually search for the Centre ID associated with the newly created centre for CRVS. The “id“ attribute in the response will be the centre ID.
 
-**Get List of All Centres Endpoint:** {domain}/v1/admin/masterdata/registrationcenters
+**Get List of All Centres Endpoint:** `{domain}/v1/admin/masterdata/registrationcenters`
 
 **Method:** GET\
 \
@@ -157,18 +162,18 @@ A unique default machine will be assigned to the CRVS to process requests. This 
 
 Before creating a new machine, it is required that a public key is fetched using the below API. The public key received in the response of this API is to be used as the public key & signing public key, while adding the details in the admin portal, to create and onboard the machine.
 
-**URL**: {domain}/v1/keymanager/tpmsigning/publickey
+**URL**: `{domain}/v1/keymanager/tpmsigning/publickey`
 
 **Method**: POST
 
 **API Request Structure:**
 
 ```json
- {     "request" : 
+{     "request" : 
     {         
         "serverProfile" : "Prod"    
      } 
-  }
+}
 ```
 
 **Sample Response:**
@@ -179,24 +184,25 @@ Before creating a new machine, it is required that a public key is fetched using
     "version": null,
     "responsetime": "2025-04-15T14:04:31.683Z",
     "metadata": null,
-    "response": {
+    "response": 
+    {
         "publicKey": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAzWOM81oggDiy26SPzASVCLpEf0sJC-81j7GCpDHVcHCAfQVIxaBP9K6u2R19mgiakVY92Nlb5y4PUKV1EpLbZKQxaK14gU4ks7hroCM_gbEssaon7lCFCu8uobKriXlC9RI1ZY9HF9QFfilCuGC9q58gZ_YC-VMGZOB9YtN_5QRbXvI9XQr-d1eODtOVuVCpsPz6FkEHOSWdj0HPLeGTLZO7Ac7dfMyksNJzfmad6PQ7i2GHQ1ZqK6aVTZOt37_kuGkUz7CzVhBNhsdYVeK-qG331dI66XMxSVYNK5O9poDzH1mAAIG_2MdxAEWHcDstZl6YvmWn5-JEhS6QdB6mFwIDAQAB"
     },
     "errors": null
 }
 ```
 
-For detailed instructions on how to create a machine, please refer to the [Admin Portal Machine Creation Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/administration/test/admin-portal-user-guide#machines).
+For detailed instructions on how to create a machine, refer to the [**Admin Portal Machine Creation Guide**](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/administration/test/admin-portal-user-guide#machines)
 
 {% hint style="info" %}
-**Note: “/home/mosip/.mosipkeys“** location must be volume mounted and kept secure as per the best security practices for unauthorized access.
+**Note: “/home/mosip/.mosipkeys“** location must be volume mounted and kept secure as per the best security practices to prevent unauthorised access.
 {% endhint %}
 
 #### **Fetching the Machine ID**
 
 As of now, there is no direct support for fetching the specific machine ID in MOSIP. To retrieve the machine ID, use the API below to get a list of all centres in the system. From this list, manually search for the machine ID associated with the newly created centre for CRVS. The “id“ attribute in the response will be the machine ID.
 
-**Get List of All Machine Endpoint:** {domain}/v1/masterdata/machines
+**Get List of All Machine Endpoint:** `{domain}/v1/masterdata/machines`
 
 **Method:** GET
 
@@ -206,7 +212,7 @@ Once the **Machine ID** is identified, ensure it is saved securely for future re
 
 Once the officer, centre, and machine are created for CRVS, the next step is to map the user to the centre. This ensures the user is properly associated with the correct zone and centre for their operations.
 
-* **Login to Admin UI**
+* **Log in to Admin UI**
   * Log in to the Admin UI using the **admin** user created in Keycloak if it is a fresh environment.
 * **Map Zone to User**
   * Navigate to **Resources** → **User Zone Mapping** → **Map Zone**.
@@ -225,25 +231,25 @@ Once the officer, centre, and machine are created for CRVS, the next step is to 
 
 #### 7. Create the RID <a href="#id-7.-create-the-rid" id="id-7.-create-the-rid"></a>
 
-The Registration ID (RID) refers to the unique identifier assigned to track the packet that is being processed for events such as birth or death registration. It can be used by MOSIP or CRVS to track the progress and status of a specific event.
+The Registration ID (RID) refers to the unique identifier assigned to track the packet that is being processed for events such as birth or death registration. It can be used by MOSIP or CRVS to track the progress and status of the specific event.
 
-**RID Structure:**
+**RID Structure(Recommended):**
 
 * **Centre ID** (First 5 digits): The first 5 digits of the RID represent the **Centre ID**.
 * **Machine ID** (Next 5 digits): The next 5 digits of the RID represent the **Machine ID**.
 * **Random Sequence** (next N digits): The next N digits can be a randomly generated sequence based on the length that the country wants to use for the RID.
 
-#### **Example of RID:**
+**Example of RID:**
 
-For the RID `10001100771006920220128223618`, the breakdown is as follows:
+For the RID `10001100771006920220128223618`The breakdown is as follows:
 
 * **Centre ID**: `10001` (First 5 digits)
 * **Machine ID**: `10077` (Next 5 digits)
 * **Random Sequence**: `1006920220128223618` (Remaining 16 digits)
 
-CRVS can generate the RID in this specified format and include it in the Create Packet API Request to ensure proper packet identification and mapping.
+The RID format mentioned above is the recommendation to be followed, but not mandatory. CRVS can generate the RID in any specified format as per their requirement and include it in the Create Packet API Request to ensure proper packet identification and mapping.
 
-Once all the above pre-requisites are in place the next step is to initiate a request(birth/death/update) by calling the create packet API of MOSIP’s packet manager module. API structure, required fields, and other details are mentioned further in this document.
+Once all the above pre-requisites are in place, the next step is to initiate a request(birth/death/update) by calling the create packet API of MOSIP’s packet manager module. API structure, required fields, and other details are mentioned further in this document.
 
 #### **8. Create Packet API** (Packet Manager Module) <a href="#id-8.-create-packet-api-packet-manager-module" id="id-8.-create-packet-api-packet-manager-module"></a>
 
@@ -308,7 +314,7 @@ Once all the above pre-requisites are in place the next step is to initiate a re
 				"createdBy": "crvs",
 				"moduleName": "Packet Handler",
 				"moduleId": "REG-MOD-117",
-				"description": "Packet Succesfully Created",
+				"description": "Packet Successfully Created",
 				"actionTimeStamp": "2025-02-25T07:52:49.214Z"
 			}
         ],   
@@ -321,20 +327,23 @@ Once all the above pre-requisites are in place the next step is to initiate a re
 **Note**: The API request shared above is only a sample and is not to be used for any implementation.
 {% endhint %}
 
-#### **Field Descriptions:**
+#### **Field Descriptions**
 
-#### **Request Object:**
+#### **Request Object**
 
-* `source`: Specifies the source of the registration request.This will be same for any request that comes to MOSIP for birth or death.
+* `source`: Specifies the source of the registration request. This will be the same for any request that comes to MOSIP for birth or death.
 * `process`: Identifies the specific process for the registration.
   * `CRVS_NEW` - When initiating an infant birth request
-  * `CRVS_DEATH` - When intimating death registration request
-* `id`: The unique identifier for the registration request(RID).
+  * `CRVS_DEATH` - When initiating a death registration request
+* `id`The unique identifier for the registration request(RID).
+
+As per the current implementation, if the same RID is used twice, the record will be updated with the latest request data.
+
 * `ref_id:` Combination of centre ID and machine ID.
   * Ex - “centerid\_machineid”
-* `schema_version`: The version of ID schema that country is using in production.
+* `schema_version`The version of the ID schema that the country is using in production.
 
-#### **Field object:**
+**Field object:**
 
 * `fullName`: The full name of the individual.
 * `dateOfBirth`: The date of birth of the individual.
@@ -351,30 +360,32 @@ Once all the above pre-requisites are in place the next step is to initiate a re
 * `province`: Province of residence.
 * Additional fields
   * Birth registration field:
-    * `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending the request for the birth registration
+    * `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the birth registration
   * Death registration field:
-    * `deceasedInformer`: Informant’s eSignet user info jwt token, to be passed when sending the request for the death registration
+    * `deceasedInformer`: Informant’s eSignet user info jwt token, to be passed when sending a request for the death registration
     * `deceasedDeclarationDate`: The date on which the individual was declared deceased.
     * `declaredAsDeceased`: A flag indicating that the individual has been officially marked as deceased.
     * `typeOfDeath`: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
 
-#### **MetaInfo Object (Center and Operator Information):**
+**MetaInfo Object (Center and Operator Information):**
 
-* `centerId`: Unique identifier for the center where the registration is processed.
+* `centerId`: Unique identifier for the centre where the registration is processed.
 * `machineId`: Unique identifier for the machine used for registration.
 * `operationsData`: Contains fields such as officer ID, officer password, supervisor ID, etc.
 * `registration_type`: This is the value same as the process field for birth(`CRVS_NEW`) or death(`CRVS_DEATH`).
 
 `centerId`, `machineId`, `officerId` must be provided along with any additional relevant operational information for the request to be processed.
 
-#### **Audit Object:**
+**Audit Object:**
 
 * `uuid`: Unique uuid to be sent with any request coming from CRVS.
-* Please add the values for the other fields in the audit object as per the details of the machine and person who is registering the request from the CRVS.
+* Please add the values for the other fields in the audit object as per the details of the machine and the person who is registering the request from the CRVS.
 
-`schemaJson`: Stringified schema json used by the country.
+It is required that at least one attribute in the audit object is populated with valid data before making the request.
 
-#### **Sample Response:**
+`schemaJson`: JSON schema (in stringified format) used by the country
+
+**Sample Response:**
 
 ```json
 {
@@ -428,10 +439,11 @@ Once all the above pre-requisites are in place the next step is to initiate a re
 
 ```
 
-#### &#x20;9. **Sync & Trigger API (Workflow Manager Service)** <a href="#id-9.-sync-and-trigger-api-workflow-manager-service" id="id-9.-sync-and-trigger-api-workflow-manager-service"></a>
-
-In MOSIP, after a packet is created, it is processed for validation and verification of the information in the **Registration Processor**. Inside the Registration Processor, each packet follows a specific workflow defined by the **Camel route**.
-
-For the integration with CRVS, the newly created packet is uploaded to the Object Store. To pick up this new packet and trigger the processing, we have developed a new API. This API ensures to trigger the appropriate workflow is triggered for further processing of registration packets. For this integration, the camel route workflow to be executed is determined by the values provided for the **source** and **process**.\
 \
-**Create Workflow Instance Stoplight Endpoint:** [https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)
+9\. **Trigger API (Registration Processor Module)**
+
+In MOSIP, after a packet is created, it is processed for validations and verification of the information in the **Registration Processor**. Inside the Registration Processor, each packet follows a specific workflow defined by the **Camel route**.
+
+For the integration with CRVS, the newly created packet is uploaded to the Object Store. To pick up this new packet and trigger the processing, we have developed a new API. This API ensures to trigger the appropriate workflow is triggered for further processing of the registration packet. For this integration, the camel route workflow to be executed is determined by the values provided for the **source** and **process**.\
+\
+**Create Workflow Instance Stoplight Endpoint:** [Create workflow instance for packet processing. | Registration processor](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)

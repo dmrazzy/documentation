@@ -15,9 +15,9 @@ We’re excited to announce the release of [Registration Processor v1.2.1.0](htt
 
 #### **Major Highlights** <a href="#major-highlights" id="major-highlights"></a>
 
-1. **New API in Registration Processor Module:**\
+1. [**New API in Registration Processor Module:**](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration/approach/technical-details#id-9.-sync-and-trigger-api-workflow-manager-service)\
    Introduced a new API to trigger workflow execution when a packet is pushed from any external system, enabling seamless third-party integration.
-2. **Role-Based API Access for External Systems:**\
+2. [**Role-Based API Access for External Systems:**](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration/approach/technical-details#id-1.-create-client-id-role-for-the-crvs)\
    Added support for **role-based access control** for APIs exposed to external systems, ensuring secure integrations.
 3. **VID & UIN-Based Updates:**\
    Enhanced flexibility by enabling support to **update individual details using VID or UIN**, improving usability across various ID scenarios.

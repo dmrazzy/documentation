@@ -8,7 +8,7 @@ Achieving this vision has proven to be a challenge, as civil registration system
 
 In an increasingly digital world, integrating Civil Registration and Vital Statistics (CRVS) systems with national digital identity platforms like MOSIP represents a foundational shift in how countries can manage identity and vital statistics. This synergy allows for the seamless management of an individual's identity across life events, starting from birth registration, through education and employment, to end-of-life verification.
 
-<div align="right"><figure><img src="../../../.gitbook/assets/CRVS (1).png" alt=""><figcaption><p>Birth and Death Registration</p></figcaption></figure></div>
+<div align="right"><figure><img src="../../../../../.gitbook/assets/CRVS (1).png" alt=""><figcaption><p>Birth and Death Registration</p></figcaption></figure></div>
 
 #### Why Integration Matters
 
@@ -89,7 +89,7 @@ The following is a list of guiding principles for this integration.
 In summary, this integration represents a significant stride in building resilient, citizen-centric digital infrastructure. By combining the strengths of CRVS and MOSIP, countries can ensure inclusive access to public services and rights, starting from birth and extending throughout every life milestone.
 
 {% hint style="info" %}
-Refer here for details on the MOSIP-CRVS integration [scope](https://mosip.atlassian.net/wiki/spaces/PROD/pages/1626964070/Scope?atlOrigin=eyJpIjoiZGI0NjU4MWQ3ZDEwNGE1ZDkwMmEyZGJlYTJlZWE3MzkiLCJwIjoiYyJ9) and [approach](https://mosip.atlassian.net/wiki/spaces/PROD/pages/1626604080/Approach?atlOrigin=eyJpIjoiNTRkZWJkMjkwZDA0NGI2ZDhhMDg3ZTJkYWQzMDA5MjgiLCJwIjoiYyJ9).
+Refer here for details on the MOSIP-CRVS integration [scope](scope.md) and [approach](approach/).
 {% endhint %}
 
 {% hint style="info" %}
