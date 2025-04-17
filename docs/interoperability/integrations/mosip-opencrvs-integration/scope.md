@@ -14,7 +14,7 @@ For infants who do not yet have a national ID, if CRVS initiates a request to MO
 
 **High level workflow**
 
-<figure><img src="../../../../../.gitbook/assets/Infant_birth_registration.png" alt=""><figcaption><p>Infant Birth Registration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Infant_birth_registration.png" alt=""><figcaption><p>Infant Birth Registration</p></figcaption></figure>
 
 Steps and required info is listed below:
 
@@ -85,7 +85,7 @@ These fields must be updated by CRVS with the appropriate information for the de
 
 **High level workflow**
 
-<figure><img src="../../../../../.gitbook/assets/death_registration.png" alt=""><figcaption><p>Death Registration</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/death_registration.png" alt=""><figcaption><p>Death Registration</p></figcaption></figure>
 
 The steps and required info are listed below:
 
@@ -149,7 +149,7 @@ Any other data changes, such as biometrics, are not supported when the request c
 
 **High Level Workflow**
 
-<figure><img src="../../../../../.gitbook/assets/Infant_Demo _Data_Update.png" alt=""><figcaption><p>Infant Demo Data Update</p></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/Infant_Demo _Data_Update.png" alt=""><figcaption><p>Infant Demo Data Update</p></figcaption></figure>
 
 The different scenarios for the update are listed with the basic flow and expected behavior from MOSIP.
 

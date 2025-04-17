@@ -4,7 +4,7 @@ This section outlines the technical requirements for integrating a Civil Registr
 
 #### **ID schema Configuration:** <a href="#id-schema-configuration" id="id-schema-configuration"></a>
 
-To initiate any registration request, the country must define an ID schema based on the specific requirements for CRVS integration. The sample ID schema can be referred to [here](../../../../../../_files/id-schema/id-schema-sample.json) and should be customized to include all required fields for packet generation per the country’s requirements. This schema governs the structure of the data submitted to MOSIP for processing and storage in the Identity Repository.
+To initiate any registration request, the country must define an ID schema based on the specific requirements for CRVS integration. The sample ID schema can be referred to [here](../../../../_files/id-schema/id-schema-sample.json) and should be customized to include all required fields for packet generation per the country’s requirements. This schema governs the structure of the data submitted to MOSIP for processing and storage in the Identity Repository.
 
 {% hint style="info" %}
 **Note:** MOSIP advises adopting and customizing the latest released ID schema version to meet country-specific needs.
