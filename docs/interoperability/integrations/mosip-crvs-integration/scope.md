@@ -2,7 +2,7 @@
 
 #### **Overview** <a href="#overview" id="overview"></a>
 
-This section defines the scope of integration between Civil Registration and Vital Statistics (CRVS) systems and the Modular Open-Source Identity Platform (MOSIP). The integration is designed to support a comprehensive set of use cases, including birth and death registrations, demographic updates, and other vital events such as marriage and divorce.
+This section defines the scope of integration between Civil Registration and Vital Statistics (CRVS) systems and Modular Open-Source Identity Platform (MOSIP). The integration is designed to support a comprehensive set of use cases, including birth and death registrations, demographic updates, and other vital events such as marriage and divorce.
 
 #### **Use Cases Supported Through CRVS-MOSIP Integration** <a href="#use-cases-supported-through-crvs-mosip-integration" id="use-cases-supported-through-crvs-mosip-integration"></a>
 
@@ -32,7 +32,9 @@ This integration currently supports the following use cases:
 
 When a birth (of an infant) is registered in the CRVS system, the CRVS system shares the birth data with MOSIP, which then creates an ID for the newborn. This ID can be issued as a credential, granting immediate access to services requiring identity verification, like healthcare and education.
 
-**Approach**: For newborns who do not yet possess a national ID, the CRVS system can initiate a national ID registration request on their behalf. This request is initiated by a guardian, parent, or another authorized individual, referred to in MOSIP as the **“Introducer”** or an **“Informant”** in the CRVS system. The introducer must already be registered in MOSIP and have a valid national ID, which is used for authentication through **eSignet** to ensure the legitimacy of the registration.
+#### **Approach**
+
+For newborns who do not yet possess a national ID, the CRVS system can initiate a national ID registration request on their behalf. This request is initiated by a guardian, parent, or another authorized individual, referred to in MOSIP as the **“Introducer”** or an **“Informant”** in the CRVS system. The introducer must already be registered in MOSIP and have a valid national ID, which is used for authentication through **eSignet** to ensure the legitimacy of the registration.
 
 To further enhance security and data accuracy, the CRVS system utilizes MOSIP’s authentication mechanisms to verify the identities of parents or informants during the birth registration process. This helps prevent fraudulent registrations and strengthens overall data quality and system integrity.
 
@@ -131,7 +133,9 @@ When a death (infant or adult) is registered in the CRVS system, the information
 
 This integrated approach to ID lifecycle management supports the accuracy of records within the national ID system, enabling secure and uninterrupted access to essential services throughout an individual's life.
 
-**Approach:** A death registration request is initiated by the CRVS system based on the informant reporting the deceased. For MOSIP, the informant must be a registered user with a valid national ID. This ID is authenticated using eSignet. During the death registration, MOSIP marks the individual as deceased using a status flag, without deactivating the ID. The date of death declaration is recorded in the system.
+**Approach**
+
+A death registration request is initiated by the CRVS system based on the informant reporting the deceased. For MOSIP, the informant must be a registered user with a valid national ID. This ID is authenticated using eSignet. During the death registration, MOSIP marks the individual as deceased using a status flag, without deactivating the ID. The date of death declaration is recorded in the system.
 
 To facilitate this process, the following fields can be added to the ID schema:
 
@@ -148,11 +152,12 @@ It is up to each country to determine which fields should be included in the ID 
 
 Steps and required information are provided below:
 
-1. **Step 1: Registration Initiation & Authentication:**
-   1. The informant visits the CRVS Registration Centre.
-   2. Provides necessary details.
-   3. The CRVS system verifies the informant's identity via eSignet.
-   4. On successful authentication, CRVS adds the eSignet user info token to the ID schema and proceeds.
+**Step 1: Registration Initiation & Authentication:**
+
+1. The informant visits the CRVS Registration Centre.
+2. Provides necessary details.
+3. The CRVS system verifies the informant's identity via eSignet.
+4. On successful authentication, CRVS adds the eSignet user info token to the ID schema and proceeds.
 
 **Required Information for MOSIP to Process the Request:**
 
@@ -164,30 +169,38 @@ Steps and required information are provided below:
   * Informant's UIN/VID
   * eSignet User Info Token
 
-2. **Step 2: Packet Creation:**
-   1. CRVS sends a request to the Packet Manager API.
-   2. Includes access token, client ID, ID schema version, and RID.
-   3. The packet is stored in the object store.
-3. **Step 3: Workflow Trigger:**
-   1. CRVS triggers the registration workflow by calling the "trigger" API using the access token.
-   2. This ensures the death registration is processed within MOSIP.
-4. **Step 4: Validation:**
-   1. MOSIP checks the UINs/VIDs current status to determine if it was previously marked as deceased.
-   2. If not, MOSIP updates the death declaration flag to "Y - YES".
-5. **Step 5: Notifications:**
-   1. Once the packet is processed and approved, a notification is sent to the registered email and phone number regarding the update.
-   2. Update is also shared with CRVS through a WebSub event.
+**Step 2: Packet Creation:**
+
+1. CRVS sends a request to the Packet Manager API.
+2. Includes access token, client ID, ID schema version, and RID.
+3. The packet is stored in the object store.
+
+**Step 3: Workflow Trigger:**
+
+1. CRVS triggers the registration workflow by calling the "trigger" API using the access token.
+2. This ensures the death registration is processed within MOSIP.
+
+**Step 4: Validation:**
+
+1. MOSIP checks the UINs/VIDs current status to determine if it was previously marked as deceased.
+2. If not, MOSIP updates the death declaration flag to "Y - YES".
+
+**Step 5: Notifications:**
+
+1. Once the packet is processed and approved, a notification is sent to the registered email and phone number regarding the update.
+2. Update is also shared with CRVS through a WebSub event.
 
 2.2 **Duplicate Request for Death Registration:**
 
-1.  A request is considered a duplicate under the following conditions:
+1. A request is considered a duplicate under the following conditions:
+   1. **Same RID Used for Multiple Requests:**\
+      Multiple requests are made using the same RID (Request ID) for the same deceased individual.
+   2. **Same Demographic Data with Different RIDs:**\
+      Multiple requests are made for the same individual using identical demographic data but with different RIDs.
 
-    1. **Same RID Used for Multiple Requests:**\
-       Multiple requests are made using the same RID (Request ID) for the same deceased individual.
-    2. **Same Demographic Data with Different RIDs:**\
-       Multiple requests are made for the same individual using identical demographic data but with different RIDs.
-
-    **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. However, MOSIP has its own internal deduplication mechanism to detect and reject duplicate packets.
+{% hint style="info" %}
+**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. However, MOSIP has its internal deduplication mechanism to detect and reject duplicate packets.
+{% endhint %}
 
 2.3 **Failure Handling:**
 
@@ -196,7 +209,7 @@ Steps and required information are provided below:
    2. MOSIP includes a retry mechanism to reprocess such requests.
 2. **Validation Failures**
    1. Failures due to data validation errors or uniqueness conflicts.
-   2. MOSIP returns a failure response and rejects the request, if required fields are missing or data is incomplete.
+   2. MOSIP returns a failure response and rejects the request if required fields are missing or data is incomplete.
    3. MOSIP will publish a **failure event** to the **WebSub topic**, detailing the rejection reason.
    4. CRVS must subscribe to the WebSub topic to receive and act on such notifications.
 
@@ -226,9 +239,9 @@ The various scenarios for demographic data updates are outlined below, along wit
 This includes scenarios such as:
 
 * Corrections to inaccurate information submitted during birth registration
-* Changes resulting from life events like adoption or change in guardianship
+* Changes resulting from life events like adoption or a change in guardianship
 
-Steps and required information is provided below:
+Steps and required information are provided below:
 
 1. **Step 1: Update Request Initiation & Authentication**
    1. The parent, guardian, or introducer visits the CRVS registration centre and provides updated demographic details.
@@ -245,16 +258,21 @@ Steps and required information is provided below:
 * **Informant Information** (Extendable as per country needs):
   * eSignet User Info Token
 
-2. **Step 2: Packet Creation**
-   1. CRVS creates a registration packet by calling the Packet Manager API with access token, client ID, ID schema version, and RID.
-   2. The packet is stored in the Object Store.
-3. **Workflow Trigger:**
-   1. CRVS triggers processing by calling the "trigger" API with the access token.
-   2. This ensures the update packet is processed within MOSIP.
-4. **Update & Notification:**
-   1. Once approved, the demo data is updated in MOSIP.
-   2. Notifications are sent to the registered email and phone number.
-   3. Update status is also shared with CRVS via a WebSub event.
+**Step 2: Packet Creation**
+
+1. CRVS creates a registration packet by calling the Packet Manager API with an access token, client ID, ID schema version, and RID.
+2. The packet is stored in the Object Store.
+
+**Step 3: Workflow Trigger:**
+
+1. CRVS triggers processing by calling the "trigger" API with the access token.
+2. This ensures the update packet is processed within MOSIP.
+
+**Step 4: Update & Notification:**
+
+1. Once approved, the demo data is updated in MOSIP.
+2. Notifications are sent to the registered email and phone number.
+3. Update status is also shared with CRVS via a WebSub event.
 
 **3.2 Duplicate Infant Demo Data Update Requests**
 
@@ -269,8 +287,8 @@ An update request is considered a duplicate under the following conditions:
 **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. However, MOSIP has its internal deduplication mechanism to detect and reject duplicate packets.
 {% endhint %}
 
-1. **Multiple Update Requests for the Same Infant (with Same or Different Demo Data):**
-   1. When MOSIP receives multiple update requests for the same infant, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission.
+2. **Multiple Update Requests for the Same Infant (with Same or Different Demo Data):**
+   1. When MOSIP receives multiple update requests for the same infant, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission
    2. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
 
 **3.3** **Adult Demo Data Update Request Initiated by CRVS System**
