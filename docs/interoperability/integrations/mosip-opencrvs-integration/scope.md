@@ -15,7 +15,7 @@ This integration currently supports the following use cases:
    4. Failure handling
 2. Death registration \<hyperlink to respective sections below>
    1. New death registration initiated by CRVS
-   2. Duplicate request for death registration
+   2. Duplicate and/or repeated requests for death registration
    3. Failure handling
 3. Demographic data update \<hyperlink to respective sections below>
    1. Infant demo data update request initiated by CRVS
@@ -105,7 +105,7 @@ Duplicate and/or repeated requests may arise under the following conditions:
    2. Currently, the request will be processed and an additional UIN will be issued for the infant for the additional RID.
 
 {% hint style="info" %}
-**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate/repeated requests.
+**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate and/or repeated requests.
 {% endhint %}
 
 **1.3 Adult Birth Registration Requests:**
@@ -193,16 +193,19 @@ Steps and required information are provided below:
 1. Once the packet is processed and approved, a notification is sent to the registered email and phone number regarding the update.
 2. Update is also shared with CRVS through a WebSub event.
 
-2.2 **Duplicate Request for Death Registration:**
+2.2 **Duplicate and/or Repeated Requests for Death Registration:**
 
 1. A request is considered a duplicate under the following conditions:
-   1. **Same RID Used for Multiple Requests:**\
-      Multiple requests are made using the same RID (Request ID) for the same deceased individual.
-   2. **Same Demographic Data with Different RIDs:**\
-      Multiple requests are made for the same individual using identical demographic data but with different RIDs.
+   1. **Same RID Used for Multiple Requests:**
+      1. Multiple requests are made using the same RID (Request ID) for the same deceased individual.
+      2. Currently, the request will be processed even if the same RID is used in multiple requests.
+      3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
+   2. **Same Data with Different RIDs:**
+      1. Multiple requests are made for the same individual using identical data but with different RIDs.
+      2. Currently, the request will be processed and data will be updated based on the latest request.
 
 {% hint style="info" %}
-**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for duplicate requests.
+**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate and/or repeated requests.
 {% endhint %}
 
 2.3 **Failure Handling:**
