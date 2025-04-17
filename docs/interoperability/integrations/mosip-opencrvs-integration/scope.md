@@ -196,11 +196,11 @@ Steps and required information are provided below:
 2.2 **Duplicate and/or Repeated Requests for Death Registration:**
 
 1. A request is considered a duplicate under the following conditions:
-   1. **Same RID Used for Multiple Requests:**
+   1. **Repeated Requests - Same RID Used for Multiple Requests:**
       1. Multiple requests are made using the same RID (Request ID) for the same deceased individual.
       2. Currently, the request will be processed even if the same RID is used in multiple requests.
       3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
-   2. **Same Data with Different RIDs:**
+   2. **Duplicate Requests - Same Data with Different RIDs:**
       1. Multiple requests are made for the same individual using identical data but with different RIDs.
       2. Currently, the request will be processed and data will be updated based on the latest request.
 
