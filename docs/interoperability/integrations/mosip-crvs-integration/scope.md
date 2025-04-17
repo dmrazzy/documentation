@@ -8,16 +8,16 @@ This section defines the scope of integration between Civil Registration and Vit
 
 This integration currently supports the following use cases:
 
-1. Birth registration \<hyperlink to respective sections below>
+1. [Birth registration](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-1.-birth-registration)&#x20;
    1. New infant birth registration initiated by the CRVS system
    2. Duplicate infant birth registration request initiated by the CRVS system
    3. Adult birth registration requests
    4. Failure handling
-2. Death registration \<hyperlink to respective sections below>
+2. [Death registration ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
    1. New death registration initiated by CRVS
    2. Duplicate request for death registration
    3. Failure handling
-3. Demographic data update \<hyperlink to respective sections below>
+3. [Demographic data update ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)
    1. Infant demo data update request initiated by CRVS
    2. Duplicate infant demo data update requests
    3. Adult demo data update request initiated by CRVS
