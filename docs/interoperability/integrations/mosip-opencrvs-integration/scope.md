@@ -8,18 +8,18 @@ This section defines the scope of integration between Civil Registration and Vit
 
 This integration currently supports the following use cases:
 
-1. [Birth registration](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-1.-birth-registration)&#x20;
+1. Birth registration \<hyperlink to respective sections below>
    1. New infant birth registration initiated by the CRVS system
-   2. Duplicate infant birth registration request initiated by the CRVS system
+   2. Duplicate and/or repeated infant birth registration requests initiated by the CRVS system
    3. Adult birth registration requests
    4. Failure handling
-2. [Death registration ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
+2. Death registration \<hyperlink to respective sections below>
    1. New death registration initiated by CRVS
    2. Duplicate request for death registration
    3. Failure handling
-3. [Demographic data update ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)
+3. Demographic data update \<hyperlink to respective sections below>
    1. Infant demo data update request initiated by CRVS
-   2. Duplicate infant demo data update requests
+   2. Duplicate and/or repeated infant demo data update requests
    3. Adult demo data update request initiated by CRVS
 
 {% hint style="info" %}
@@ -92,17 +92,20 @@ Steps and required information are provided below:
   3. The update event with identity credentials is published to the subscribed **WebSub topic**.
   4. CRVS receives this update and can proceed with issuing the birth certificate.
 
-**1.2 Duplicate Infant Birth Registration Request Initiated by CRVS**
+**1.2 Duplicate and/or Repeated Infant Birth Registration Requests Initiated by CRVS**
 
-Duplicate requests may arise under the following conditions:
+Duplicate and/or repeated requests may arise under the following conditions:
 
-1. **Same RID Used In Multiple Requests:**\
-   Multiple requests are made using the same RID (Request ID) for the birth registration of the same infant.
-2. **Same Infant Demographic Data with Different RIDs:**\
-   Multiple requests are made using identical infant demographic data but with different RIDs.
+1. **Repeated Requests- Same RID Used In Multiple Requests:**&#x20;
+   1. When multiple requests are made using the same RID (Request ID) for the birth registration of the same infant (with same or different data).
+   2. Currently, the request will be processed even if the same RID is used in multiple requests.
+   3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
+2. **Duplicate Requests - Same Infant Demographic Data with Different RIDs:**
+   1. Multiple requests are made using identical infant demographic data but with different RIDs.
+   2. Currently, the request will be processed and an additional UIN will be issued for the infant for the additional RID.
 
 {% hint style="info" %}
-**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. However, MOSIP has its internal deduplication mechanism to detect and reject duplicate packets.
+**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate/repeated requests.
 {% endhint %}
 
 **1.3 Adult Birth Registration Requests:**
@@ -199,7 +202,7 @@ Steps and required information are provided below:
       Multiple requests are made for the same individual using identical demographic data but with different RIDs.
 
 {% hint style="info" %}
-**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. However, MOSIP has its internal deduplication mechanism to detect and reject duplicate packets.
+**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for duplicate requests.
 {% endhint %}
 
 2.3 **Failure Handling:**
@@ -274,22 +277,22 @@ Steps and required information are provided below:
 2. Notifications are sent to the registered email and phone number.
 3. Update status is also shared with CRVS via a WebSub event.
 
-**3.2 Duplicate Infant Demo Data Update Requests**
+**3.2 Duplicate and/or Repeated Infant Demo Data Update Requests**
 
 An update request is considered a duplicate under the following conditions:
 
-1. **Same RID Used for Multiple Requests:**
+1. **Repeated Requests - Same RID Used for Multiple Requests:**
    1. Multiple requests are made using the same RID (Request ID) for the update of the same individual.
    2. Currently, the request will be processed even if the same RID is used in multiple requests.
    3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
 
 {% hint style="info" %}
-**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. However, MOSIP has its internal deduplication mechanism to detect and reject duplicate packets.
+**Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate/repeated requests.
 {% endhint %}
 
-2. **Multiple Update Requests for the Same Infant (with Same or Different Demo Data):**
-   1. When MOSIP receives multiple update requests for the same infant, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission
-   2. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
+2. **Duplicate Requests - Multiple Update Requests with Different RIDs for the Same Infant (with Same or Different Demo Data):**
+   1. When MOSIP receives multiple update requests for the same infant with different RIDs, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission.
+   2. Currently, the request will be processed and data will be updated based on the latest request.
 
 **3.3** **Adult Demo Data Update Request Initiated by CRVS System**
 
