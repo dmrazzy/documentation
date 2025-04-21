@@ -8,16 +8,16 @@ This section defines the scope of integration between Civil Registration and Vit
 
 This integration currently supports the following use cases:
 
-1. Birth registration \<hyperlink to respective sections below>
+1. [Birth registration](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-1.-birth-registration)
    1. New infant birth registration initiated by the CRVS system
    2. Duplicate and/or repeated infant birth registration requests initiated by the CRVS system
    3. Adult birth registration requests
    4. Failure handling
-2. Death registration \<hyperlink to respective sections below>
+2. [Death registration ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
    1. New death registration initiated by CRVS
    2. Duplicate and/or repeated requests for death registration
    3. Failure handling
-3. Demographic data update \<hyperlink to respective sections below>
+3. [Demographic data update](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)&#x20;
    1. Infant demo data update request initiated by CRVS
    2. Duplicate and/or repeated infant demo data update requests
    3. Adult demo data update request initiated by CRVS
@@ -28,9 +28,9 @@ This integration currently supports the following use cases:
 
 #### **1. Birth Registration:** <a href="#id-1.-birth-registration" id="id-1.-birth-registration"></a>
 
-**1.1 New Infant Birth Registration Initiated by CRVS System**
+**1.1 Birth Registration Initiated by CRVS System**
 
-When a birth (of an infant) is registered in the CRVS system, the CRVS system shares the birth data with MOSIP, which then creates an ID for the newborn. This ID can be issued as a credential, granting immediate access to services requiring identity verification, like healthcare and education.
+When a birth (of an infant) is registered in the CRVS system, the CRVS system shares the demographic data with MOSIP, which then creates an ID for the newborn. This ID can be issued as a credential, granting immediate access to services requiring identity verification, like healthcare and education.
 
 #### **Approach**
 
@@ -52,7 +52,7 @@ A high-level workflow diagram for this process is provided below.
 
 Steps and required information are provided below:
 
-**Step 1: Operator Login & Authentication**
+#### **Step 1: Operator Login & Authentication**
 
 1. The CRVS operator logs into the CRVS portal and enters the required details for the newborn and the parent/introducer.
 2. The introducer’s identity (VID/UIN) is authenticated via **eSignet**.
@@ -61,61 +61,56 @@ Steps and required information are provided below:
 **Required Information for MOSIP to Process the Request:**\
 **Newborn Information** (Additional fields can be included based on country needs)
 
-* Name
-* Gender
-* Date of Birth (DOB)
+1. Name
+2. Gender
+3. Date of Birth (DOB)
 
 **Introducer/Informant Information** (Additional fields can be included based on country needs)
 
-* Introducers' VID/UIN
-* eSignet User Info Token
+1. Introducers' VID/UIN
+2. eSignet User Info Token
 
 **Step 2: Packet Creation**
 
-* CRVS creates a registration packet by calling the **Packet Manager API**, using:
-  1. Access Token
-  2. Client ID
-  3. ID Schema Version
-  4. Unique Registration ID (RID)
-* The packet is stored in the **Object Store** for further processing.
+CRVS creates a registration packet by calling the **Packet Manager API**, using:
+
+1. Access Token
+2. Client ID
+3. ID Schema Version
+4. Unique Registration ID (RID)
+
+The packet is stored in the **Object Store** for further processing.
 
 **Step 3: Workflow Trigger & Notification**
 
-* CRVS calls the **Trigger API** to initiate the processing workflow.
-* Once the packet reaches a "Completed" state, MOSIP publishes an event to a **WebSub topic**, notifying subscribers.
+1. CRVS calls the **Trigger API** to initiate the processing workflow.
+2. Once the packet reaches a "Completed" state, MOSIP publishes an event to a **WebSub topic**, notifying subscribers.
 
-**Step 4: Identity Credential Sharing**
+**Step 4: Identity Credential Sharing**\
+Upon successful processing:
 
-* Upon successful processing:
-  1. The newborn’s demographic data is updated in MOSIP.
-  2. A notification is sent to the registered email/phone number.
-  3. The update event with identity credentials is published to the subscribed **WebSub topic**.
-  4. CRVS receives this update and can proceed with issuing the birth certificate.
+1. The newborn’s demographic data is updated in MOSIP.
+2. A notification is sent to the registered email/phone number.
+3. The update event with identity credentials is published to the subscribed **WebSub topic**.
+4. CRVS receives this update and can proceed with issuing the birth certificate.
 
-**1.2 Duplicate and/or Repeated Infant Birth Registration Requests Initiated by CRVS**
+#### **1.2 Duplicate and/or Repeated Infant Birth Registration Requests Initiated by CRVS**
 
 Duplicate and/or repeated requests may arise under the following conditions:
 
 1. **Repeated Requests- Same RID Used In Multiple Requests:**&#x20;
-   1. When multiple requests are made using the same RID (Request ID) for the birth registration of the same infant (with same or different data).
+   1. When multiple requests are made using the same RID (Request ID) for the birth registration of the same infant (with the same or different data).
    2. Currently, the request will be processed even if the same RID is used in multiple requests.
    3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
 2. **Duplicate Requests - Same Infant Demographic Data with Different RIDs:**
    1. Multiple requests are made using identical infant demographic data but with different RIDs.
-   2. Currently, the request will be processed and an additional UIN will be issued for the infant for the additional RID.
+   2. Currently, the request will be processed, and an additional UIN will be issued for the infant for the additional RID.
 
 {% hint style="info" %}
 **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate and/or repeated requests.
 {% endhint %}
 
-**1.3 Adult Birth Registration Requests:**
-
-1. In cases where an adult does not possess either a national ID or a birth certificate and requests a national ID through CRVS, MOSIP does not support such requests.
-2. A configurable age limit exists in MOSIP to define who qualifies as a child.
-3. MOSIP will validate the individual's age based on the submitted details.
-4. If the individual’s age exceeds this threshold, MOSIP will reject the packet during validation.
-
-**1.4 Failure Handling**
+**1.3 Failure Handling**
 
 1. **Technical Failures**
    1. There is a possibility that some requests may fail due to failure caused by **internal MOSIP** technical problems during processing.
@@ -142,10 +137,10 @@ A death registration request is initiated by the CRVS system based on the inform
 
 To facilitate this process, the following fields can be added to the ID schema:
 
-* declaredAsDeceased
-* deceasedDeclarationDate
-* typeOfDeath
-* deceasedInformer
+1. declaredAsDeceased
+2. deceasedDeclarationDate
+3. typeOfDeath
+4. deceasedInformer
 
 It is up to each country to determine which fields should be included in the ID schema, based on their specific use case.
 
@@ -164,13 +159,13 @@ Steps and required information are provided below:
 
 **Required Information for MOSIP to Process the Request:**
 
-* **Deceased Information** (Extendable as per country needs):
-  * Name
-  * Date & Time of Death
-  * UIN/VID
-* **Informant Information** (Extendable as per country needs):
-  * Informant's UIN/VID
-  * eSignet User Info Token
+1. **Deceased Information** (Extendable as per country needs):
+   1. Name
+   2. Date & Time of Death
+   3. UIN/VID
+2. **Informant Information** (Extendable as per country needs):
+   1. Informant's UIN/VID
+   2. eSignet User Info Token
 
 **Step 2: Packet Creation:**
 
@@ -196,13 +191,13 @@ Steps and required information are provided below:
 2.2 **Duplicate and/or Repeated Requests for Death Registration:**
 
 1. A request is considered a duplicate under the following conditions:
-   1. **Repeated Requests - Same RID Used for Multiple Requests:**
-      1. Multiple requests are made using the same RID (Request ID) for the same deceased individual.
-      2. Currently, the request will be processed even if the same RID is used in multiple requests.
+   1. **Repeated Requests - Same AID Used for Multiple Requests:**
+      1. Multiple requests are made using the same AID for the same deceased individual.
+      2. Currently, the request will be processed even if the same AID is used in multiple requests.
       3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
-   2. **Duplicate Requests - Same Data with Different RIDs:**
-      1. Multiple requests are made for the same individual using identical data but with different RIDs.
-      2. Currently, the request will be processed and data will be updated based on the latest request.
+   2. **Duplicate Requests - Same Data with Different AIDs:**
+      1. Multiple requests are made for the same individual using identical data but with different AIDs.
+      2. Currently, the request will be processed, and data will be updated based on the latest request.
 
 {% hint style="info" %}
 **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate and/or repeated requests.
@@ -225,10 +220,10 @@ Demographic data updates may be required due to life events such as marriage, di
 \
 The integration supports updates for the following fields:
 
-* Name
-* Date of Birth (DOB)
-* Gender
-* Address
+1. Name
+2. Date of Birth (DOB)
+3. Gender
+4. Address
 
 {% hint style="info" %}
 **Note:** Updates to biometrics or any other data beyond the fields listed above are not supported via CRVS. For such changes, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
@@ -244,8 +239,8 @@ The various scenarios for demographic data updates are outlined below, along wit
 
 This includes scenarios such as:
 
-* Corrections to inaccurate information submitted during birth registration
-* Changes resulting from life events like adoption or a change in guardianship
+1. Corrections to inaccurate information submitted during birth registration
+2. Changes resulting from life events like adoption or a change in guardianship
 
 Steps and required information are provided below:
 
@@ -256,13 +251,13 @@ Steps and required information are provided below:
 
 **Required Information for MOSIP to Process the Request:**
 
-* **Individual’s Update Information** (Any or all of the following fields):
-  * Name
-  * Date of Birth (DOB)
-  * Gender
-  * Address
-* **Informant Information** (Extendable as per country needs):
-  * eSignet User Info Token
+1. **Individual’s Update Information** (Any or all of the following fields):
+   1. Name
+   2. Date of Birth (DOB)
+   3. Gender
+   4. Address
+2. **Informant Information** (Extendable as per country needs):
+   1. eSignet User Info Token
 
 **Step 2: Packet Creation**
 
@@ -295,7 +290,7 @@ An update request is considered a duplicate under the following conditions:
 
 2. **Duplicate Requests - Multiple Update Requests with Different RIDs for the Same Infant (with Same or Different Demo Data):**
    1. When MOSIP receives multiple update requests for the same infant with different RIDs, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission.
-   2. Currently, the request will be processed and data will be updated based on the latest request.
+   2. Currently, the request will be processed, and data will be updated based on the latest request.
 
 **3.3** **Adult Demo Data Update Request Initiated by CRVS System**
 

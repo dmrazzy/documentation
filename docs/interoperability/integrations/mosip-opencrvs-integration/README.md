@@ -33,24 +33,26 @@ This vision further aligns with global Sustainable Development Goals (SDGs), inc
 
 #### Key Objectives of the Integration
 
+#### **Objectives** <a href="#objectives" id="objectives"></a>
+
+The integration of MOSIP with CRVS systems is designed to achieve several key objectives aimed at enhancing the efficiency, security, and accuracy of national identity and civil registration systems. These objectives include:
+
 1. **Streamlining Processes and Enhancing Information Exchange**\
    The integration will create a seamless flow of information between MOSIP and CRVS systems, reducing administrative burdens and enabling faster, more efficient processing of civil registration events.
 2. **Establishing Secure and Reliable Data Verification Mechanisms**\
    A central goal of this integration is to establish robust verification protocols, ensuring that data exchanged between the systems is accurate, reliable, and trustworthy, thereby preventing errors and enhancing security.
 3. **Issuance of Unique Identity Numbers Linked to Birth Certificates**\
-   The integration will facilitate the issuance of unique identification numbers (UIDs) linked directly to birth certificates, providing individuals with a verified, digital identity that is consistently updated as they undergo significant life events.
+   The integration will facilitate the issuance of unique identification numbers (UINs) linked directly to birth certificates, providing individuals with a verified, digital identity that is consistently updated as they undergo significant life events.
 4. **Improving Accuracy in Identification and Reducing Data Duplication**\
    By linking civil registration events to the national identity system, the integration will eliminate the risk of duplicate records, ensuring that every individual has a single, verified identity across all government systems.
 5. **Maintaining Accurate Records of Deceased Individuals**\
    One of the core aims of the integration is to ensure that the identity system is promptly updated with the status of deceased individuals, preventing identity fraud or the misuse of personal data for illicit purposes.
-6. **Establishing Accurate Spousal Relationships for Married Individuals**\
-   The integration will enable the accurate recording of marital status and spousal relationships, linking marriage registrations to identity records to maintain consistency in personal status data.
-7. **Maintaining Comprehensive and Up-to-Date Marital Status Information**\
-   By linking marriage registrations with the national identity system, the integration will ensure that marital status information is consistently updated, leading to more accurate identity records for married individuals.
-8. **Improving Data Quality and Integrity**\
-   The integration will enhance the overall quality and integrity of data across both systems, ensuring that vital events are recorded accurately and comprehensively, leading to more reliable data for governance.
-9. **Enhancing Data Reliability for Better Governance and Decision-Making**\
-   By improving data accuracy and timeliness, the integration will contribute to better governance, providing government authorities with the vital statistics needed for more informed, data-driven decision-making.
+6. **Establishing and Maintaining Accurate Spousal and Marital Status Information**\
+   The integration will enable accurate recording of spousal relationships by linking marriage registrations with national identity records. This ensures that marital status information is consistently updated and maintained, resulting in more reliable and up-to-date personal identity data for married individuals.
+7. **Enhancing Data Quality, Integrity, and Reliability for Better Governance**\
+   The integration will improve the accuracy, completeness, and timeliness of vital event records across systems, enhancing overall data quality and integrity. This reliable data foundation will support better governance by equipping authorities with accurate statistics for more informed, data-driven decision-making.
+8. **Ensuring Strong Security and Privacy Protections**\
+   The integration will adhere to stringent data protection and cybersecurity standards, ensuring that personal information is safeguarded throughout the data exchange process. Privacy-by-design principles will be embedded to prevent unauthorized access, misuse, or breaches, thereby building public trust and protecting individual rights.
 
 #### Integration Architecture and Guidelines
 
@@ -82,7 +84,7 @@ The following is a list of guiding principles for this integration.
 
 #### About the Platforms
 
-**MOSIP** is an open-source, modular identity platform designed for scalability, interoperability, and compliance with global standards. It allows countries to customize identity systems tailored to their governance needs. To learn more about MOSIP, click [here](https://docs.mosip.io/1.2.0/id-lifecycle-management)\
+**MOSIP** is an open-source, modular identity platform designed for scalability, interoperability, and compliance with global standards. It allows countries to customize identity systems tailored to their governance needs. To learn more about MOSIP, click [here](https://docs.mosip.io/1.2.0/id-lifecycle-management).\
 \
 **Civil Registration and Vital Statistics (CRVS)** systems are essential for documenting key life events such as births, deaths, marriages, and divorces. These systems provide individuals with legal recognition and play a vital role in ensuring access to rights and services. Additionally, CRVS systems generate important demographic data that supports effective policy-making, governance, and resource planning.\
 \

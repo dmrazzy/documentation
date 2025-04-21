@@ -229,25 +229,25 @@ Once the officer, centre, and machine are created for CRVS, the next step is to 
   * Click **Save**.
   * Activate the user, as outlined in Step 3.
 
-#### 7. Create the RID <a href="#id-7.-create-the-rid" id="id-7.-create-the-rid"></a>
+#### 7. Create the AID <a href="#id-7.-create-the-rid" id="id-7.-create-the-rid"></a>
 
-The Registration ID (RID) refers to the unique identifier assigned to track the packet that is being processed for events such as birth or death registration. It can be used by MOSIP or CRVS to track the progress and status of the specific event.
+The Application ID (AID) refers to the unique identifier assigned to track the packet that is being processed for events such as birth or death registration. It can be used by MOSIP or CRVS to track the progress and status of the specific event.
 
-**RID Structure(Recommended):**
+**AID Structure(Recommended):**
 
 * **Centre ID** (First 5 digits): The first 5 digits of the RID represent the **Centre ID**.
 * **Machine ID** (Next 5 digits): The next 5 digits of the RID represent the **Machine ID**.
 * **Random Sequence** (next N digits): The next N digits can be a randomly generated sequence based on the length that the country wants to use for the RID.
 
-**Example of RID:**
+**Example of AID:**
 
-For the RID `10001100771006920220128223618`The breakdown is as follows:
+For the AID `10001100771006920220128223618`The breakdown is as follows:
 
 * **Centre ID**: `10001` (First 5 digits)
 * **Machine ID**: `10077` (Next 5 digits)
 * **Random Sequence**: `1006920220128223618` (Remaining 16 digits)
 
-The RID format mentioned above is the recommendation to be followed, but not mandatory. CRVS can generate the RID in any specified format as per their requirement and include it in the Create Packet API Request to ensure proper packet identification and mapping.
+The AID format mentioned above is the recommendation to be followed, but not mandatory. CRVS can generate the AID in any specified format as per their requirement and include it in the Create Packet API Request to ensure proper packet identification and mapping.
 
 Once all the above pre-requisites are in place, the next step is to initiate a request(birth/death/update) by calling the create packet API of MOSIP’s packet manager module. API structure, required fields, and other details are mentioned further in this document.
 
@@ -309,7 +309,7 @@ Once all the above pre-requisites are in place, the next step is to initiate a r
 				"applicationName": "REGISTRATION",
 				"sessionUserId": "crvs",
 				"sessionUserName": "crvs",
-				"id": {{rid}},
+				"id": {{aid}},
 				"idType": "REGISTRATION_ID",
 				"createdBy": "crvs",
 				"moduleName": "Packet Handler",
@@ -335,9 +335,11 @@ Once all the above pre-requisites are in place, the next step is to initiate a r
 * `process`: Identifies the specific process for the registration.
   * `CRVS_NEW` - When initiating an infant birth request
   * `CRVS_DEATH` - When initiating a death registration request
-* `id`The unique identifier for the registration request(RID).
+* `id`The unique identifier for the registration request(AID).
 
-As per the current implementation, if the same RID is used twice, the record will be updated with the latest request data.
+{% hint style="info" %}
+**Note**: As per the current implementation, if the same AID is used twice, the record will be updated with the latest request data.
+{% endhint %}
 
 * `ref_id:` Combination of centre ID and machine ID.
   * Ex - “centerid\_machineid”
