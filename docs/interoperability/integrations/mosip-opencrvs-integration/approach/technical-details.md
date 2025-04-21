@@ -198,11 +198,11 @@ For detailed instructions on how to create a machine, refer to the [**Admin Port
 **Note: “/home/mosip/.mosipkeys“** location must be volume mounted and kept secure as per the best security practices to prevent unauthorised access.
 {% endhint %}
 
-#### **Fetching the Machine ID**
+**Fetching the Machine ID**
 
 As of now, there is no direct support for fetching the specific machine ID in MOSIP. To retrieve the machine ID, use the API below to get a list of all centres in the system. From this list, manually search for the machine ID associated with the newly created centre for CRVS. The “id“ attribute in the response will be the machine ID.
 
-**Get List of All Machine Endpoint:** `{domain}/v1/masterdata/machines`
+**Get a List of All Machine Endpoints:** `{domain}/v1/masterdata/machines`
 
 **Method:** GET
 
@@ -212,22 +212,22 @@ Once the **Machine ID** is identified, ensure it is saved securely for future re
 
 Once the officer, centre, and machine are created for CRVS, the next step is to map the user to the centre. This ensures the user is properly associated with the correct zone and centre for their operations.
 
-* **Log in to Admin UI**
-  * Log in to the Admin UI using the **admin** user created in Keycloak if it is a fresh environment.
-* **Map Zone to User**
-  * Navigate to **Resources** → **User Zone Mapping** → **Map Zone**.
-  * Select the **username** for which the zone is to be mapped.
-  * Choose the appropriate **zone** from the dropdown.
-  * Click **Save**.
-  * Refer to the accompanying images for further guidance.
-* **Activate the User**
-  * After mapping the zone, activate the user.
-* **Map Centre to User**
-  * Navigate to **Resources** → **User Centre Mapping**.
-  * Select the **username** for which the centre needs to be mapped.
-  * Choose the appropriate **centre** from the dropdown.
-  * Click **Save**.
-  * Activate the user, as outlined in Step 3.
+1. **Log in to Admin UI**
+   1. Log in to the Admin UI using the **admin** user created in Keycloak if it is a fresh environment.
+2. **Map Zone to User**
+   1. Navigate to **Resources** → **User Zone Mapping** → **Map Zone**.
+   2. Select the **username** for which the zone is to be mapped.
+   3. Choose the appropriate **zone** from the dropdown.
+   4. Click **Save**.
+   5. Refer to the accompanying images for further guidance.
+3. **Activate the User**
+   1. After mapping the zone, activate the user.
+4. **Map Centre to User**
+   1. Navigate to **Resources** → **User Centre Mapping**.
+   2. Select the **username** for which the centre needs to be mapped.
+   3. Choose the appropriate **centre** from the dropdown.
+   4. Click **Save**.
+   5. Activate the user, as outlined in Step 3.
 
 #### 7. Create the AID <a href="#id-7.-create-the-rid" id="id-7.-create-the-rid"></a>
 
@@ -235,17 +235,17 @@ The Application ID (AID) refers to the unique identifier assigned to track the p
 
 **AID Structure(Recommended):**
 
-* **Centre ID** (First 5 digits): The first 5 digits of the RID represent the **Centre ID**.
-* **Machine ID** (Next 5 digits): The next 5 digits of the RID represent the **Machine ID**.
-* **Random Sequence** (next N digits): The next N digits can be a randomly generated sequence based on the length that the country wants to use for the RID.
+1. **Centre ID** (First 5 digits): The first 5 digits of the RID represent the **Centre ID**.
+2. **Machine ID** (Next 5 digits): The next 5 digits of the RID represent the **Machine ID**.
+3. **Random Sequence** (next N digits): The next N digits can be a randomly generated sequence based on the length that the country wants to use for the RID.
 
 **Example of AID:**
 
 For the AID `10001100771006920220128223618`The breakdown is as follows:
 
-* **Centre ID**: `10001` (First 5 digits)
-* **Machine ID**: `10077` (Next 5 digits)
-* **Random Sequence**: `1006920220128223618` (Remaining 16 digits)
+1. **Centre ID**: `10001` (First 5 digits)
+2. **Machine ID**: `10077` (Next 5 digits)
+3. **Random Sequence**: `1006920220128223618` (Remaining 16 digits)
 
 The AID format mentioned above is the recommendation to be followed, but not mandatory. CRVS can generate the AID in any specified format as per their requirement and include it in the Create Packet API Request to ensure proper packet identification and mapping.
 
@@ -331,11 +331,11 @@ Once all the above pre-requisites are in place, the next step is to initiate a r
 
 #### **Request Object**
 
-* `source`: Specifies the source of the registration request. This will be the same for any request that comes to MOSIP for birth or death.
-* `process`: Identifies the specific process for the registration.
-  * `CRVS_NEW` - When initiating an infant birth request
-  * `CRVS_DEATH` - When initiating a death registration request
-* `id`The unique identifier for the registration request(AID).
+1. `source`: Specifies the source of the registration request. This will be the same for any request that comes to MOSIP for birth or death.
+2. `process`: Identifies the specific process for the registration.
+   * `CRVS_NEW` - When initiating an infant birth request
+   * `CRVS_DEATH` - When initiating a death registration request
+3. `id`The unique identifier for the registration request(AID).
 
 {% hint style="info" %}
 **Note**: As per the current implementation, if the same AID is used twice, the record will be updated with the latest request data.
@@ -347,41 +347,41 @@ Once all the above pre-requisites are in place, the next step is to initiate a r
 
 **Field object:**
 
-* `fullName`: The full name of the individual.
-* `dateOfBirth`: The date of birth of the individual.
-* `gender`: Gender of the individual.
-* `addressLine1`: First line of the address.
-* `addressLine2`: Second line of the address.
-* `city`: City of residence.
-* `state`: State of residence.
-* `postalCode`: Postal code of the address.
-* `email`: Email address.
-* `phone`: Contact phone number.
-* `zone`: Geographic zone.
-* `region`: Region of the address.
-* `province`: Province of residence.
-* Additional fields
-  * Birth registration field:
-    * `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the birth registration
-  * Death registration field:
-    * `deceasedInformer`: Informant’s eSignet user info jwt token, to be passed when sending a request for the death registration
-    * `deceasedDeclarationDate`: The date on which the individual was declared deceased.
-    * `declaredAsDeceased`: A flag indicating that the individual has been officially marked as deceased.
-    * `typeOfDeath`: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
+1. `fullName`: The full name of the individual.
+2. `dateOfBirth`: The date of birth of the individual.
+3. `gender`: Gender of the individual.
+4. `addressLine1`: First line of the address.
+5. `addressLine2`: Second line of the address.
+6. `city`: City of residence.
+7. `state`: State of residence.
+8. `postalCode`: Postal code of the address.
+9. `email`: Email address.
+10. `phone`: Contact phone number.
+11. `zone`: Geographic zone.
+12. `region`: Region of the address.
+13. `province`: Province of residence.
+14. Additional fields
+    1. Birth registration field:
+       1. `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the birth registration
+    2. Death registration field:
+       1. `deceasedInformer`: Informant’s eSignet user info jwt token, to be passed when sending a request for the death registration
+       2. `deceasedDeclarationDate`: The date on which the individual was declared deceased.
+       3. `declaredAsDeceased`: A flag indicating that the individual has been officially marked as deceased.
+       4. `typeOfDeath`: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
 
 **MetaInfo Object (Center and Operator Information):**
 
-* `centerId`: Unique identifier for the centre where the registration is processed.
-* `machineId`: Unique identifier for the machine used for registration.
-* `operationsData`: Contains fields such as officer ID, officer password, supervisor ID, etc.
-* `registration_type`: This is the value same as the process field for birth(`CRVS_NEW`) or death(`CRVS_DEATH`).
+1. `centerId`: Unique identifier for the centre where the registration is processed.
+2. `machineId`: Unique identifier for the machine used for registration.
+3. `operationsData`: Contains fields such as officer ID, officer password, supervisor ID, etc.
+4. `registration_type`: This is the value same as the process field for birth(`CRVS_NEW`) or death(`CRVS_DEATH`).
 
 `centerId`, `machineId`, `officerId` must be provided along with any additional relevant operational information for the request to be processed.
 
 **Audit Object:**
 
-* `uuid`: Unique uuid to be sent with any request coming from CRVS.
-* Please add the values for the other fields in the audit object as per the details of the machine and the person who is registering the request from the CRVS.
+1. `uuid`: Unique uuid to be sent with any request coming from CRVS.
+2. Please add the values for the other fields in the audit object as per the details of the machine and the person who is registering the request from the CRVS.
 
 It is required that at least one attribute in the audit object is populated with valid data before making the request.
 
@@ -448,4 +448,4 @@ In MOSIP, after a packet is created, it is processed for validations and verific
 
 For the integration with CRVS, the newly created packet is uploaded to the Object Store. To pick up this new packet and trigger the processing, we have developed a new API. This API ensures to trigger the appropriate workflow is triggered for further processing of the registration packet. For this integration, the camel route workflow to be executed is determined by the values provided for the **source** and **process**.\
 \
-**Create Workflow Instance Stoplight Endpoint:** [Create workflow instance for packet processing. | Registration processor](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)
+API Documentatio&#x6E;**:** [Create workflow instance for packet processing. | Registration processor](https://mosip.stoplight.io/docs/registration-processor/branches/main/d56c892cfa950-create-workflow-instance-for-packet-processing)

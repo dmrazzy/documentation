@@ -34,9 +34,9 @@ To successfully integrate with MOSIP’s registration process, external systems 
 6. **Map Officer to Centre and Machine**\
    Establish mappings to link the created Officer ID with the relevant Centre ID and Machine ID.
    * This step ensures that the officer is correctly associated with a specific registration centre and the hardware device authorized to perform registrations.
-7. **Generate and Use a Unique Registration ID (RID)**\
-   For each registration event (e.g., birth or death), the CRVS system must generate a unique **Registration ID (RID)**.
-   * The RID should be included in the packet submitted to MOSIP.
+7. **Generate and Use a Unique Application ID (AID)**\
+   For each registration event (e.g., birth or death), the CRVS system must generate a unique **Application ID (AID).**
+   * The AID should be included in the packet submitted to MOSIP.
    * It will serve as the reference ID for tracking the request and receiving response events via WebSub.
 
 #### **Steps** <a href="#steps" id="steps"></a>
