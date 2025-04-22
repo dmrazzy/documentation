@@ -2,25 +2,24 @@
 
 #### **Overview** <a href="#overview" id="overview"></a>
 
-This section defines the scope of integration between Civil Registration and Vital Statistics (CRVS) systems and Modular Open-Source Identity Platform (MOSIP). The integration is designed to support a comprehensive set of use cases, including birth and death registrations, demographic updates, and other vital events such as marriage and divorce.
+This section defines the scope of integration between Civil Registration and Vital Statistics (CRVS) systems and Modular Open-Source Identity Platform (MOSIP). The integration supports a comprehensive set of use cases, including birth and death registrations, demographic updates, and other vital events such as marriage and divorce.
 
 #### **Use Cases Supported Through CRVS-MOSIP Integration** <a href="#use-cases-supported-through-crvs-mosip-integration" id="use-cases-supported-through-crvs-mosip-integration"></a>
 
 This integration currently supports the following use cases:
 
 1. [Birth registration](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-1.-birth-registration)
-   1. New infant birth registration initiated by the CRVS system
-   2. Duplicate and/or repeated infant birth registration requests initiated by the CRVS system
-   3. Adult birth registration requests
-   4. Failure handling
+   1. [Birth registration is initiated by the CRVS system](scope.md#id-1.1-birth-registration-initiated-by-crvs-system).
+   2. [Duplicate and/or repeated infant birth registration requests initiated by the CRVS system](scope.md#id-1.2-duplicate-and-or-repeated-infant-birth-registration-requests-initiated-by-crvs)
+   3. [Failure handling](scope.md#id-1.3-failure-handling).
 2. [Death registration ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
-   1. New death registration initiated by CRVS
-   2. Duplicate and/or repeated requests for death registration
-   3. Failure handling
+   1. [New death registration initiated by CRVS](scope.md#id-2.1-new-death-registration-initiated-by-crvs).
+   2. [Duplicate and/or repeated requests for death registration](scope.md#id-2.2-duplicate-and-or-repeated-requests-for-death-registration).
+   3. [Failure handling](scope.md#id-2.3-failure-handling).
 3. [Demographic data update](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)&#x20;
-   1. Infant demo data update request initiated by CRVS
-   2. Duplicate and/or repeated infant demo data update requests
-   3. Adult demo data update request initiated by CRVS
+   1. [Infant demo data update request initiated by CRVS](scope.md#id-3.1-infant-demo-data-update-request-initiated-by-crvs).
+   2. [Duplicate and/or repeated infant demo data update requests](scope.md#id-3.2-duplicate-and-or-repeated-infant-demo-data-update-requests).
+   3. [Adult demo data update request initiated by CRVS](scope.md#id-3.3-adult-demo-data-update-request-initiated-by-crvs-system).
 
 {% hint style="info" %}
 **Note**: These are the currently supported scenarios. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
@@ -28,7 +27,7 @@ This integration currently supports the following use cases:
 
 #### **1. Birth Registration:** <a href="#id-1.-birth-registration" id="id-1.-birth-registration"></a>
 
-**1.1 Birth Registration Initiated by CRVS System**
+#### **1.1 Birth Registration Initiated by CRVS System**
 
 When a birth (of an infant) is registered in the CRVS system, the CRVS system shares the demographic data with MOSIP, which then creates an ID for the newborn. This ID can be issued as a credential, granting immediate access to services requiring identity verification, like healthcare and education.
 
@@ -110,7 +109,7 @@ Duplicate and/or repeated requests may arise under the following conditions:
 **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate and/or repeated requests.
 {% endhint %}
 
-**1.3 Failure Handling**
+#### **1.3 Failure Handling**
 
 1. **Technical Failures**
    1. There is a possibility that some requests may fail due to failure caused by **internal MOSIP** technical problems during processing.
@@ -125,7 +124,7 @@ Duplicate and/or repeated requests may arise under the following conditions:
 
 #### 2. Death Registration <a href="#id-2.-death-registration" id="id-2.-death-registration"></a>
 
-**2.1 New Death Registration Initiated by CRVS:**
+#### **2.1 New Death Registration Initiated by CRVS:**
 
 When a death (infant or adult) is registered in the CRVS system, the information is shared with MOSIP, including the deceased’s National ID number. Once received, the individual’s ID undergoes a regulated update process. This ensures timely updates to social security systems and other related services, promoting consistency across systems and easing administrative burdens for bereaved families.
 
@@ -180,7 +179,7 @@ Steps and required information are provided below:
 
 **Step 4: Validation:**
 
-1. MOSIP checks the UINs/VIDs current status to determine if it was previously marked as deceased.
+1. MOSIP checks the UINs/VIDs' current status to determine if it was previously marked as deceased.
 2. If not, MOSIP updates the death declaration flag to "Y - YES".
 
 **Step 5: Notifications:**
@@ -188,7 +187,7 @@ Steps and required information are provided below:
 1. Once the packet is processed and approved, a notification is sent to the registered email and phone number regarding the update.
 2. Update is also shared with CRVS through a WebSub event.
 
-2.2 **Duplicate and/or Repeated Requests for Death Registration:**
+#### **2.2 Duplicate and/or Repeated Requests for Death Registration:**
 
 1. A request is considered a duplicate under the following conditions:
    1. **Repeated Requests - Same AID Used for Multiple Requests:**
@@ -203,7 +202,7 @@ Steps and required information are provided below:
 **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, the above scenarios are not currently handled for rejection of duplicate and/or repeated requests.
 {% endhint %}
 
-2.3 **Failure Handling:**
+#### 2.3 **Failure Handling:**
 
 1. **Technical Failures**
    1. Failures due to internal MOSIP issues.
@@ -235,7 +234,7 @@ The integration supports updates for the following fields:
 
 The various scenarios for demographic data updates are outlined below, along with the basic workflow and the expected behavior from MOSIP in each case.
 
-**3.1 Infant Demo Data Update Request Initiated by CRVS**
+#### **3.1 Infant Demo Data Update Request Initiated by CRVS**
 
 This includes scenarios such as:
 
@@ -275,7 +274,7 @@ Steps and required information are provided below:
 2. Notifications are sent to the registered email and phone number.
 3. Update status is also shared with CRVS via a WebSub event.
 
-**3.2 Duplicate and/or Repeated Infant Demo Data Update Requests**
+#### **3.2 Duplicate and/or Repeated Infant Demo Data Update Requests**
 
 An update request is considered a duplicate under the following conditions:
 
@@ -292,7 +291,7 @@ An update request is considered a duplicate under the following conditions:
    1. When MOSIP receives multiple update requests for the same infant with different RIDs, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission.
    2. Currently, the request will be processed, and data will be updated based on the latest request.
 
-**3.3** **Adult Demo Data Update Request Initiated by CRVS System**
+#### **3.3** **Adult Demo Data Update Request Initiated by CRVS System**
 
 While adults may experience life events (e.g., marriage or divorce) that require updates to name or address, MOSIP does not support adult demographic data updates via CRVS. For such requests, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
 
