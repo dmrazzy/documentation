@@ -9,17 +9,17 @@ This section defines the scope of integration between Civil Registration and Vit
 This integration currently supports the following use cases:
 
 1. [Birth registration](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-1.-birth-registration)
-   1. [Birth registration is initiated by the CRVS system](scope.md#id-1.1-birth-registration-initiated-by-crvs-system).
+   1. [Birth registration is initiated by the CRVS system](scope.md#id-1.1-birth-registration-initiated-by-crvs-system)
    2. [Duplicate and/or repeated infant birth registration requests initiated by the CRVS system](scope.md#id-1.2-duplicate-and-or-repeated-infant-birth-registration-requests-initiated-by-crvs)
-   3. [Failure handling](scope.md#id-1.3-failure-handling).
+   3. [Failure handling](scope.md#id-1.3-failure-handling)
 2. [Death registration ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
-   1. [New death registration initiated by CRVS](scope.md#id-2.1-new-death-registration-initiated-by-crvs).
-   2. [Duplicate and/or repeated requests for death registration](scope.md#id-2.2-duplicate-and-or-repeated-requests-for-death-registration).
-   3. [Failure handling](scope.md#id-2.3-failure-handling).
+   1. [New death registration initiated by CRVS](scope.md#id-2.1-new-death-registration-initiated-by-crvs)
+   2. [Duplicate and/or repeated requests for death registration](scope.md#id-2.2-duplicate-and-or-repeated-requests-for-death-registration)
+   3. [Failure handling](scope.md#id-2.3-failure-handling)
 3. [Demographic data update](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)&#x20;
-   1. [Infant demo data update request initiated by CRVS](scope.md#id-3.1-infant-demo-data-update-request-initiated-by-crvs).
-   2. [Duplicate and/or repeated infant demo data update requests](scope.md#id-3.2-duplicate-and-or-repeated-infant-demo-data-update-requests).
-   3. [Adult demo data update request initiated by CRVS](scope.md#id-3.3-adult-demo-data-update-request-initiated-by-crvs-system).
+   1. [Infant demo data update request initiated by CRVS](scope.md#id-3.1-infant-demo-data-update-request-initiated-by-crvs)
+   2. [Duplicate and/or repeated infant demo data update requests](scope.md#id-3.2-duplicate-and-or-repeated-infant-demo-data-update-requests)
+   3. [Adult demo data update request initiated by CRVS](scope.md#id-3.3-adult-demo-data-update-request-initiated-by-crvs-system)
 
 {% hint style="info" %}
 **Note**: These are the currently supported scenarios. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
