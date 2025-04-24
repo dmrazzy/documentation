@@ -23,7 +23,7 @@ By following these global standards, MOSIP ensures that our identity platform is
 To ensure seamless biometric interoperability and security, MOSIP follows:
 
 * **ISO/IEC 19794** – Standardized biometric data formats for fingerprints, iris, and facial recognition.
-* **CBEFF (Common Biometric Exchange Formats Framework)** – Facilitates interoperability and efficient biometric data exchange.
+* [**CBEFF** ](https://docs.mosip.io/1.2.0/id-lifecycle-management/supporting-components/biometrics/cbeff-xml#cbeff)**(Common Biometric Exchange Formats Framework)** – Facilitates interoperability and efficient biometric data exchange.
 * **IEEE P3167 (DRAFT)** – Strengthening the trustworthiness of biometric devices and their captured data while ensuring overall data security.
 
 ### **2. Security & Cryptography Standards for Data Protection** <a href="#id-2.-security-and-cryptography-standards-for-data-protection" id="id-2.-security-and-cryptography-standards-for-data-protection"></a>
@@ -40,3 +40,7 @@ To enable effortless integration with national and global identity ecosystems, M
 * **OAuth 2.0 / OpenID Connect** – Providing secure and scalable authentication mechanisms.
 * **REST, OpenAPI Standards** – Ensuring standardized communication across different platforms.
 * **JMS (Java Message Service) & WebSub** – Facilitating real-time messaging and event-driven architecture.
+
+### **4. MOSIP Standards** <a href="#id-3.-open-standards-for-seamless-interoperability" id="id-3.-open-standards-for-seamless-interoperability"></a>
+
+* **Claim 169** – A globally registered specification under the [IANA CBOR Web Token (CWT) registry](https://www.iana.org/assignments/cwt/cwt.xhtml), developed by [MOSIP (Modular Open Source Identity Platform).](https://www.mosip.io/) It allows demographic and biometric data (like a low-res face image) to be embedded in a digitally signed QR code, enabling reliable offline identity verification. [Click here](mosip-standards/169-qr-code-specifications-1.0.0.md) to know more.
