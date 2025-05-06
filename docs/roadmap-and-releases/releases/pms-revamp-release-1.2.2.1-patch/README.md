@@ -14,7 +14,7 @@ This patch builds upon PMS v1.2.2.0, introducing key **compatibility fixes**, sp
 
 These updates improve backward compatibility and ensure smoother integration across supported MOSIP platform modules.
 
-### Key Manager configurations to make PMS backward compatible
+### Key Manager configurations to turn PMS backward compatible
 
 New configurations are now available for backward compatibility with different versions of MOSIP platform. Set these configurations as below:
 
@@ -90,7 +90,7 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 | **Audit manager**     | [1.1.5.5](https://github.com/mosip/audit-manager/tree/1.1.5.5)               | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)        |
 | **ID Repo**           | [v1.1.5.5-P2](https://github.com/mosip/id-repository/tree/v1.1.5.5-P2)       | [v1.2.1.0](https://github.com/mosip/id-repository/tree/v1.2.1.0)        |
 | **datashare**         | [1.1.5.3-P2](https://github.com/mosip/durian/tree/v1.1.5.3-P2)               | [v1.2.0.1](https://github.com/mosip/durian/tree/v1.2.0.1)               |
-| **Keycloak**          | mosipid/mosip-keycloak:9.0.0                                                 | [v1.2.0.1](https://github.com/mosip/keycloak/tree/v1.2.0.1)             |
+| **Keycloak**          | [mosipid/mosip-keycloak:9.0.0](https://github.com/mosip/keycloak)            | [v1.2.0.1](https://github.com/mosip/keycloak/tree/v1.2.0.1)             |
 | **config-server**     | [1.1.0](https://github.com/mosip/mosip-config/tree/v1.1.0)                   | [v1.1.2](https://github.com/mosip/mosip-config/tree/v1.1.2)             |
 | **Websub**            | NA                                                                           | [v1.2.0.1](https://github.com/mosip/websub/tree/v1.2.0.1)               |
 
