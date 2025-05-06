@@ -10,9 +10,11 @@
 
 We are pleased to announce the release of **PMS Revamp v1.2.2.1**, now backward compatible with multiple earlier versions of the MOSIP Platform.
 
-This patch builds upon PMS v1.2.2.0, introducing key **compatibility fixes**, especially for the following **KeyManager** versions: v1.1.5, v1.2.0.1, v1.2.1.0 and v1.3.0-beta.1
+This patch builds upon PMS v1.2.2.0, introducing key **compatibility fixes**, specially for the following **KeyManager** versions: v1.1.5, v1.2.0.1, v1.2.1.0, v1.3.0-beta.1 and 1.3.0-beta.2.
 
 These updates improve backward compatibility and ensure smoother integration across supported MOSIP platform modules.
+
+### Key Manager configurations to make PMS backward compatible
 
 New configurations are now available for backward compatibility with different versions of MOSIP platform. Set these configurations as below:
 
@@ -85,7 +87,7 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 | **eSignet**           | NA                                                                           | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                  |
 | **Reg Proc**          | [v1.1.5.5-P5](https://github.com/mosip/registration/tree/v1.1.5.5-P5)        | [v1.2.0.1](https://github.com/mosip/registration/tree/v1.2.0.1)         |
 | **Notifier (Kernel)** | [1.1.5.3](https://github.com/mosip/commons/tree/v1.1.5.3/kernel)             | [v1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel)       |
-| **Audit manager**     | mosipid/kernel-notification-service:1.1.5.3                                  | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)        |
+| **Audit manager**     | [1.1.5.5](https://github.com/mosip/audit-manager/tree/1.1.5.5)               | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)        |
 | **ID Repo**           | [v1.1.5.5-P2](https://github.com/mosip/id-repository/tree/v1.1.5.5-P2)       | [v1.2.1.0](https://github.com/mosip/id-repository/tree/v1.2.1.0)        |
 | **datashare**         | [1.1.5.3-P2](https://github.com/mosip/durian/tree/v1.1.5.3-P2)               | [v1.2.0.1](https://github.com/mosip/durian/tree/v1.2.0.1)               |
 | **Keycloak**          | mosipid/mosip-keycloak:9.0.0                                                 | [v1.2.0.1](https://github.com/mosip/keycloak/tree/v1.2.0.1)             |
