@@ -34,11 +34,7 @@ Now you can generate your own **UIN** Credential using the Collab environment's 
 
 1. Navigate to the [Collab Environment](https://collab.mosip.net/) and click on the **Get UIN** button located at the top-right corner of the page. This will open the **Self Registration Form**.
 
-<figure>
-<img src="/Users/keshavsingh/Office/PMS/half/media/mosip-collab-srf-1.png"
-style="width:6.49183in;height:2.88954in" />
-<figcaption><p>image</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-1.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure> 
 
 2. Fill in the required details in the form:
     - **Full Name** (Required)
@@ -49,11 +45,7 @@ style="width:6.49183in;height:2.88954in" />
     - **Address**
 3. Upload or capture a photo using the **Photo** section.
 
-<figure>
-<img src="/Users/keshavsingh/Office/PMS/half/media/mosip-collab-srf-2.png"
-style="width:6.49183in;height:2.88954in" />
-<figcaption><p>image</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-2.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
 
 4. Read through the consent statement and provide your consent by checking the checkbox.
 5. Complete the CAPTCHA to ensure security.
@@ -61,21 +53,17 @@ style="width:6.49183in;height:2.88954in" />
     - Click **Register** to submit the form and generate your UIN.
     - Click **Cancel** to go back and make any necessary corrections.
 
-<figure>
-<img src="/Users/keshavsingh/Office/PMS/half/media/mosip-collab-srf-3.png"
-style="width:6.49183in;height:2.88954in" />
-<figcaption><p>image</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-3.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
 
 7. Upon successful registration, you will receive a confirmation message and your UIN as a PDF attachment via email.
 
-<figure>
-<img src="/Users/keshavsingh/Office/PMS/half/media/mosip-collab-srf-4.png"
-style="width:6.49183in;height:2.88954in" />
-<figcaption><p>image</p></figcaption>
-</figure>
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-4.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
 
 Obtaining demo credentials will enable you to explore various modules seamlessly. The provision of a Unique Identification Number (UIN) as a demonstration credential allows you to experience MOSIP's capabilities firsthand, offering a practical understanding of its identity management features.
+
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-5.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure> 
+
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-6.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure> 
 
 
 **Step 1: Access the Collab Environment**
