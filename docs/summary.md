@@ -341,6 +341,7 @@
   * [Collab Environment Guides](general/collab-getting-started-guide/README.md)
     * [Use Cases](general/collab-getting-started-guide/use-cases/README.md)
       * [Loan Application](general/collab-getting-started-guide/use-cases/loan-application.md)
+    * [Generating Demo Digital Identities](general/collab-getting-started-guide/generating-demo-digital-identities.md)
   * [MOSIP Documentation Style Guide](general/mosip-documentation-style-guide.md)
 * [🛠️ Modules](modules.md)
 * [Experiment](experiment.md)
