@@ -12,7 +12,7 @@ Now you can generate your own **UIN** Credential and TAN ID using the Collab env
 {% hint style="success" %}
 **Note**:&#x20;
 
-When you generate **UIN** using '[**Self Registration Portal**](https://self-register.collab.mosip.net/)' you also get **TAN ID** along with **UIN** out of the same process when you submit the form (in a separate email received alsmost at the same time you receive mail containing your **UIN**.
+When you generate **UIN** using '[**Self Registration Portal**](https://self-register.collab.mosip.net/)' you also get **TAN ID** along with **UIN** out of the same process after you submit the form (You get the TAN ID in a separate email received, however, almost at the same time you received the **UIN** email.
 {% endhint %}
 
 1. Navigate to the [Collab Environment](https://collab.mosip.net/) and click on the **Get UIN** button located at the top-right corner of the page. This will open the [**Self Registration Form**](https://self-register.collab.mosip.net/).
