@@ -15,21 +15,20 @@ Now you can generate your own **UIN** Credential using the Collab environment's 
    * **Mobile Number**
    * **Address**
 3. Upload or capture a photo using the **Photo** section.
-
-<figure><img src="../../.gitbook/assets/mosip-collab-srf-2.png" alt="" width="375"><figcaption><p>Confirm Details</p></figcaption></figure>
-
 4. Read through the consent statement and provide your consent by checking the checkbox.
 5. Complete the CAPTCHA to ensure security.
 6. Click the **Preview** button to review the details you have entered. On the preview screen, you can:
    * Click **Register** to submit the form and generate your UIN.
    * Click **Cancel** to go back and make any necessary corrections.
 
-<figure><img src="../../.gitbook/assets/mosip-collab-srf-3.png" alt="" width="375"><figcaption><p>UIN Generation Success</p></figcaption></figure>
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-2.png" alt="" width="375"><figcaption><p>Confirm Details</p></figcaption></figure>
 
 7. Upon successful registration, you will receive a confirmation message and your UIN as a PDF attachment via email.
 
+<figure><img src="../../.gitbook/assets/mosip-collab-srf-3.png" alt="" width="375"><figcaption><p>UIN Generation Success</p></figcaption></figure>
+
 <figure><img src="../../.gitbook/assets/mosip-collab-srf-4.png" alt="" width="375"><figcaption><p>Mail containg the UIN </p></figcaption></figure>
 
-Obtaining demo credentials will enable you to explore various modules seamlessly. The provision of a Unique Identification Number (UIN) as a demonstration credential allows you to experience MOSIP's capabilities firsthand, offering a practical understanding of its identity management features.
-
 <figure><img src="../../.gitbook/assets/mosip-collab-srf-5.png" alt="" width="375"><figcaption><p>UIN PDF</p></figcaption></figure>
+
+Obtaining demo credentials will enable you to explore various modules seamlessly. The provision of a Unique Identification Number (UIN) as a demonstration credential allows you to experience MOSIP's capabilities firsthand, offering a practical understanding of its identity management features.
