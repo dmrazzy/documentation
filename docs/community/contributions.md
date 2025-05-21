@@ -10,7 +10,7 @@ MOSIP is a product of the combined efforts of multiple stakeholders. Contributio
 
 ## [LTIMindtree Ltd](https://www.mindtree.com/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-ltmindtree.png" alt="" width="375"><figcaption><p>LTMindtree</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-ltmindtree.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 MOSIP partnered with LTIMindtree in August 2018 and since then it has been a fruitful association in areas of engineering, architecture, devops to name a few. Mindtree has contributed, through secondment of engineering resources, approximately 2260 person days of engineering effort, which roughly translates to more than 21000 person hours of work on the MOSIP project.
 
@@ -18,7 +18,7 @@ MOSIP partnered with LTIMindtree in August 2018 and since then it has been a fru
 
 ## [Technoforte Software Private Limited](https://www.technoforte.co.in/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-technoforte.png" alt="" width="375"><figcaption><p>Technoforte</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-technoforte.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 The team at Technoforte has contributed multiple resources towards security testing, manual testing, automated testing, development, and devops. Technoforte has made significant contributions to the development of Partner Management Module, defining the partner policy, and setting up the partner portal. The team is also part of the community led effort of Android Reg Client development.
 
@@ -44,7 +44,7 @@ Singapore based Newlogic is a software consultancy company providing innovative 
 
 ## [Thoughtworks](https://www.thoughtworks.com/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-thoughtworks.png" alt="" width="375"><figcaption><p>Thoughtworks</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-thoughtworks.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 In 2022, Thoughtworks partnered with MOSIP as an engineering ally, embarking on a significant journey together. Key milestone was the creation of Tuvali, a BLE layer adhering to OpenID4VP standards. An alternate to Google Nearby, Tuvali facilitates the exchange of verifiable IDs across wallets and devices even without internet connectivity. This innovation empowers governments to effectively provide efficient and monitored citizen services.
 
@@ -56,7 +56,7 @@ The organization has broadened its contributions to other essential components o
 
 ## [Infosys](https://www.infosys.com/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-infosys.png" alt="" width="375"><figcaption><p>Infosys</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-infosys.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 Infosys began collaborating with MOSIP in early 2023 as part of its Technology for good initiative. The company has been actively contributing to the development of the eSignet module, Android Registration Client, and other related modules. Through this pro bono collaboration, Infosys demonstrates its commitment to using technology for social good and empowering individuals with secure and reliable digital identities.
 
@@ -64,7 +64,7 @@ Infosys began collaborating with MOSIP in early 2023 as part of its Technology f
 
 ## [CyberPWN](https://cyberpwn.com/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-cyberpwn.png" alt="" width="375"><figcaption><p>Cyberpwn</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-cyberpwn.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 In January 2020, CyberPWN partnered with IIIT Bangalore to offer development assistance for MOSIP. Presently, CyberPWN's product engineering team, consisting of 30+ engineers, actively contributes expertise in multiple areas of MOSIP, encompassing Architecture, Product Management, Product Development, Quality Assurance, DevSecOps, Security, and Biometrics.
 
@@ -82,7 +82,7 @@ Their contribution to MOSIP highlights their commitment to driving innovation an
 
 ## [Students @ IIIT Bangalore](https://www.iiitb.ac.in/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-iiitb.png" alt="" width="375"><figcaption><p>iiitb</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-iiitb.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 IIIT Bangalore has been home to MOSIP since its inception in 2018 and the students of the institute have been at the forefront of the MOSIP’s community-led development. The students have on an ongoing basis contributed to solving engineering problems in MOSIP for real-world applications. Their major ongoing contributions include:
 
@@ -110,7 +110,7 @@ The following workflows were developed under this project:
 
 ## [Protean](https://www.proteantech.in/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-protean.png" alt="" width="375"><figcaption><p>Protean</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-protean.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 Protean partnered with MOSIP in September 2018 and since then the company has actively contributed in development and testing of various modules of MOSIP like Pre-Registration, Registration, Registration Processor, and other related modules.
 
@@ -120,7 +120,7 @@ So far, Protean has contributed approximately 1905 person per days of developmen
 
 ## [Sunird](https://sunbird.org/)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-sunbird.png" alt="" width="375"><figcaption><p>Sunbird</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-sunbird.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 The Sunbird community has developed 20+ digital solutions (called “building blocks”) which can be used individually or combined to create larger and more complex solutions. One of the building blocks, Sunbird RC has been used in the creation of Inji - a digital credentialing stack. The Sunbird RC team has actively led the development and contribution of a few components within Inji, such as Inji Certify, Inji Verify, and Inji Web.
 
@@ -128,7 +128,7 @@ The Sunbird community has developed 20+ digital solutions (called “building bl
 
 ## [Hirekarma](https://hirekarma.in)
 
-<div align="center"><figure><img src="../.gitbook/assets/community-contributor-hirekarma.png" alt="" width="375"><figcaption><p>Hirekarma</p></figcaption></figure></div>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-hirekarma.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 The team at HireKarma has actively contributed to the community by developing multiple test automation suites for the MOSIP ID platform as well as the eSignet and Inji product lines.
 
