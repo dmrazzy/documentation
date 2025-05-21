@@ -126,10 +126,10 @@ The Sunbird community has developed 20+ digital solutions (called “building bl
 
 **About Sunbird**: Sunbird is an open-source collective, seeded by the EkStep Foundation.
 
-## [Hirekarma](https://hirekarma.in)
+## [HireKarma](https://hirekarma.in)
 
 <div align="center"><figure><img src="../.gitbook/assets/community-contributor-hirekarma.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 The team at HireKarma has actively contributed to the community by developing multiple test automation suites for the MOSIP ID platform as well as the eSignet and Inji product lines.
 
-**About Hirekarma**: HireKarma is an India based software company that delivers innovative technology solutions to enterprises, educational institutions and government organizations.
+**About HireKarma**: HireKarma is an India based software company that delivers innovative technology solutions to enterprises, educational institutions and government organizations.
