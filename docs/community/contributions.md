@@ -118,7 +118,7 @@ So far, Protean has contributed approximately 1905 person per days of developmen
 
 **About Protean**: Protean (NSDL e-Governance) offers digital ecosystem, curated to cater to billions. With over 25+ years providing unparalleled experience in creating population scale e-governance solutions, the company has empowered billions of lives across the country. Protean is building a digitised ecosystem for 1.4 billion people transforming citizen services for a better future.
 
-## [Sunird](https://sunbird.org/)
+## [Sunbird](https://sunbird.org/)
 
 <div align="center"><figure><img src="../.gitbook/assets/community-contributor-sunbird.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
