@@ -7,6 +7,11 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version**: **v1.2.2.1** - **Partner Management System Revamp (Patch)**
+
+* **Date**: 21st May, 2025
+* [Release Notes](pms-revamp-release-1.2.2.1-patch/)
+
 **Version:  v1.2.1.0 - Registration Processor & Mosip Config**
 
 * **Date:** 16th April, 2025

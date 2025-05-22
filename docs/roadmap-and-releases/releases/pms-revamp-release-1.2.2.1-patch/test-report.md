@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Test Report
 
 ## Testing Scope

@@ -4,7 +4,7 @@
 
 **Release Number**: v1.2.2.1
 
-**Release Date**: Coming Soon
+**Release Date**: 21st May, 2025
 
 ### Overview
 
@@ -68,11 +68,11 @@ mosip.pms.root.and.intermediate.certificates.available=true
 
 ### **Repositories Released**
 
-| Repository Released         | Version  |
-| --------------------------- | -------- |
-| partner-management-services | v1.2.2.1 |
-| partner-management-portal   | v1.2.2.1 |
-| keymanager                  | v1.1.5.6 |
+| Repository Released         | Version                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| partner-management-services | [v1.2.2.1](https://github.com/mosip/partner-management-services/tree/v1.2.2.1) |
+| partner-management-portal   | [v1.2.2.1](https://github.com/mosip/partner-management-portal/tree/v1.2.2.1)   |
+| keymanager                  | [v1.1.5.6](https://github.com/mosip/keymanager/tree/v1.1.5.5-P3)               |
 
 ### Compatible Modules
 
@@ -80,7 +80,7 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 
 | Module/ Repo          | 1.1.5.x versions                                                             | 1.2.2.0 versions                                                        |
 | --------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Key Manager**       | v1.1.5.6                                                                     | [v1.3.0-beta.2](https://github.com/mosip/keymanager/tree/v1.3.0-beta.2) |
+| **Key Manager**       | [v1.1.5.6](https://github.com/mosip/keymanager/tree/v1.1.5.5-P3)             | [v1.3.0-beta.2](https://github.com/mosip/keymanager/tree/v1.3.0-beta.2) |
 | **auth manager**      | [1.1.5.5-P2](https://github.com/mosip/mosip-openid-bridge/tree/v1.1.5.5-P2)  | [v1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1)  |
 | **artifactory**       | [1.1.5.5-P2](https://github.com/mosip/artifactory-ref-impl/tree/v1.1.5.5-P2) | [v1.2.0.2](https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2) |
 | **IDA**               | [1.2.0.1-B4](https://github.com/mosip/id-authentication/tree/v1.2.0.1-B4)    | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)    |
@@ -102,5 +102,5 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 * [UI Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide)
 * [Backend Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide)
 * [API Documentation](https://mosip.stoplight.io/docs/partner-management-portal-revamp)
-* [Test Report](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.0)
+* [Test Report](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.1)
 
