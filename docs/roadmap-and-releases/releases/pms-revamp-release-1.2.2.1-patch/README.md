@@ -21,6 +21,10 @@ New configurations are now available for backward compatibility with different v
 **For 1.1.5 Key Manager**:
 
 ```
+pmp.partner.certificaticate.upload.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/v2/uploadPartnerCertificate
+```
+
+```
 mosip.pms.ca.signed.partner.certificate.available=false
 mosip.pms.oidc.client.available=false
 mosip.pms.root.and.intermediate.certificates.available=false
