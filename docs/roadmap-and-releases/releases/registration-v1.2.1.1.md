@@ -4,7 +4,7 @@
 
 **Release Type:** Patch Release
 
-**Release Date:** Coming Soon
+**Release Date:** 27th May, 2025
 
 ### Overview
 
@@ -37,18 +37,17 @@ The following bugs have been fixed in this release:
 
 ### Compatible Modules
 
-| **Module/Repo**             | **Compatible Version** |
-| --------------------------- | ---------------------- |
-| ID Authentication           |                        |
-| key-manager                 |                        |
-| kernel - core               |                        |
-| kernel-notification-service |                        |
-| kernel-idgenerator-service  |                        |
-| kernel-auth-adaptor         |                        |
-| kernel-auth-service         |                        |
-| kernel-otp-manager          |                        |
+| Module/Repo                 | Compatible Version                                                                               |
+| --------------------------- | ------------------------------------------------------------------------------------------------ |
+| ID Authentication           | [1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)                              |
+| key-manager                 | [1.2.1.0](https://github.com/mosip/keymanager/tree/v1.2.1.0)                                     |
+| kernel - core               | [1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel/kernel-core)                     |
+| kernel-notification-service | [1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel/kernel-notification-service)     |
+| kernel-idgenerator-service  | [1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel/kernel-idgenerator-service)      |
+| kernel-auth-adaptor         | [1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1/kernel/kernel-auth-adapter) |
+| kernel-auth-service         | [1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1/kernel/kernel-auth-service) |
+| kernel-otp-manager          | [1.2.0.1](https://github.com/mosip/otp-manager/tree/v1.2.0.1/kernel/kernel-otpmanager-service)   |
 
+### Documentation
 
-
-
-
+* [MOSIP Documentation](https://docs.mosip.io/1.2.0)

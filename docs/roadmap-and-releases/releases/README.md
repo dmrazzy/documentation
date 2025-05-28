@@ -7,6 +7,11 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version**: Registration v1.2.1.1 (Patch)
+
+* **Date:** 27th May, 2025
+* [Release Notes](registration-v1.2.1.1.md)
+
 **Version**: **v1.2.2.1** - **Partner Management System Revamp (Patch)**
 
 * **Date**: 21st May, 2025
