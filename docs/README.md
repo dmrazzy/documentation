@@ -1,6 +1,6 @@
 ---
-icon: earth-africa
 description: 'The Future of Digital Identity: Secure, Scalable and Open-Source.'
+icon: earth-africa
 ---
 
 # MOSIP
@@ -78,5 +78,5 @@ To know more, click [here](https://docs.mosip.io/1.2.0/readme/principles/inclusi
 <table data-view="cards"><thead><tr><th></th><th data-hidden data-card-cover data-type="files"></th><th data-hidden data-card-target data-type="content-ref"></th></tr></thead><tbody><tr><td><mark style="color:blue;">Explore MOSIP's core principles.</mark></td><td><a href=".gitbook/assets/Principles.png">Principles.png</a></td><td><a href="readme/principles/">principles</a></td></tr><tr><td><mark style="color:blue;">Explore different modules.</mark></td><td><a href=".gitbook/assets/Modules.png">Modules.png</a></td><td><a href="id-lifecycle-management/">id-lifecycle-management</a></td></tr><tr><td><mark style="color:blue;">Explore latest releases.</mark></td><td><a href=".gitbook/assets/Releases.png">Releases.png</a></td><td><a href="roadmap-and-releases/releases/">releases</a></td></tr><tr><td><mark style="color:blue;">Explore MOSIP's key milestones and objectives.</mark></td><td><a href=".gitbook/assets/Roadmap.png">Roadmap.png</a></td><td><a href="roadmap-and-releases/roadmap/">roadmap</a></td></tr><tr><td><mark style="color:blue;">Dive into interactive workshops,webinars and more.</mark></td><td><a href=".gitbook/assets/Resources.png">Resources.png</a></td><td><a href="general/resources.md">resources.md</a></td></tr><tr><td><mark style="color:blue;">Join the MOSIP community.</mark></td><td><a href=".gitbook/assets/Community.png">Community.png</a></td><td><a href="community/">community</a></td></tr></tbody></table>
 
 {% hint style="info" %}
-**Note:** To read through the previous version of the documentation, please refer to our [Older Documentation](https://docs.mosip.io/1.1.5).
+**Note:** To read through the previous version of the documentation, please refer to our [Older Documentation](https://docs.mosip.io/1.1.5)!
 {% endhint %}
