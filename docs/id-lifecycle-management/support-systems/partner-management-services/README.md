@@ -56,3 +56,4 @@ Partner policies control the data that needs to be shared with a partner. The po
 [PMS Revamp](broken-reference)
 
 [PMS Legacy](pms-existing/)
+.
