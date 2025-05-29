@@ -1,6 +1,6 @@
 # AWS Installation Guidelines
 
-### Overview
+## Overview
 
 * MOSIP modules are deployed in the form of microservices in a Kubernetes cluster.
 * [Wireguard](https://www.wireguard.com/) is used as a trust network extension to access the admin, control, and observation pane
@@ -21,16 +21,16 @@
     * [MOSIP External Components](https://github.com/mosip/mosip-infra/blob/v1.2.0.1-B1/deployment/v3/external/README.md#mosip-external-components)
     * [Mosip Services](https://github.com/mosip/mosip-infra/blob/v1.2.0.1-B1/deployment/v3/mosip/README.md#mosip-services)
 
-### Deployment Repos
+## Deployment Repos
 
 * [k8s-infra](https://github.com/mosip/k8s-infra/tree/v1.2.0.1-B1) : contains scripts to install and configure Kubernetes cluster with required monitoring, logging and alerting tools.
 * [mosip-infra](https://github.com/mosip/mosip-infra/tree/v1.2.0.1-B1/deployment/v3) : contains deployment scripts to run charts in defined sequence.
 * [mosip-config](https://github.com/mosip/mosip-config/tree/v1.2.0.1-B1) : contains all the configuration files required by the MOSIP modules.
 * [mosip-helm](https://github.com/mosip/mosip-helm/tree/v1.2.0.1-B1) : contains packaged helm charts for all the MOSIP modules.
 
-### Pre-requisites:
+## Pre-requisites:
 
-#### Hardware Requirements
+### Hardware Requirements
 
 VM’s required have any Operating System and can be selected as per convenience.\
 In this installation guide, we are referring to `Ubuntu OS` throughout.
@@ -41,7 +41,7 @@ In this installation guide, we are referring to `Ubuntu OS` throughout.
 | 2 | Rancher Cluster nodes (EKS managed) | 2          | 8 GB    | 32 GB             | 2               | 2                                |
 | 3 | Mosip Cluster nodes (EKS managed)   | 8          | 32 GB   | 64 GB             | 6               | 6                                |
 
-#### Network Requirements
+### Network Requirements
 
 * All the VM's should be able to communicate with each other.
 * Need stable Intra network connectivity between these VM's.
@@ -59,7 +59,7 @@ In this installation guide, we are referring to `Ubuntu OS` throughout.
 | - | ---------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 1 | Wireguard Bastion Host | <ul><li>One Private interface: that is on the same network as all the rest of nodes. (Eg: inside local NAT Network )</li><li>One public interface: Either has a direct public IP, or a firewall NAT (global address) rule that forwards traffic on 51820/udp port to this interface ip.</li></ul> |
 
-#### DNS Requirements
+### DNS Requirements
 
 |    | **Domain name**                                                     | **Mapping details**                    | **Purpose**                                                                                                                                                                                                                                     |
 | -- | ------------------------------------------------------------------- | -------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -87,14 +87,14 @@ In this installation guide, we are referring to `Ubuntu OS` throughout.
 * Only proceed to DNS mapping after the ingressgateways are installed and the load balancer is already configured.
 * The above table is just a placeholder for hostnames, the actual name itself varies from organisation to organisation.
 
-#### Certificate requirements
+### Certificate requirements
 
 As only secured `https` connections are allowed via nginx server, you will need the below mentioned valid ssl certificates:
 
 * One valid wildcard ssl certificate related to domain used for accesing Observation cluster which will be created using ACM (Amazon certificate manager). In above e.g. \*.[org.net](http://org.net/) is the similiar example domain.
 * One valid wildcard ssl certificate related to domain used for accessing MOSIP cluster which will be created using ACM (Amazon certificate manager). In above e.g. \*.[sandbox.xyz.net](http://sandbox.xyz.net/) is the similiar example domain.
 
-#### Prerequisite for complete deployment in Personal Computer
+### Prerequisite for complete deployment in Personal Computer
 
 * [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl) client version 1.23.6
 * [helm](https://helm.sh/docs/intro/install/) client version 3.8.2 and add below repos as well :
@@ -123,13 +123,13 @@ As only secured `https` connections are allowed via nginx server, you will need 
       **Note:**\
       Above mentioned environment variables will be used throughout the installation to move between one directory to other to run install scripts.
 
-### Installation
+## Installation
 
-#### [Wireguard](https://www.wireguard.com/)
+### [Wireguard](https://www.wireguard.com/)
 
 A Wireguard bastion host (Wireguard server) provides secure private channel to access MOSIP cluster. The host restricts public access, and enables access to only those clients who have their public key listed in Wireguard server. Wireguard listens on UDP port 51820.
 
-#### Architecture diagram
+### Architecture diagram
 
 ![](../../../.gitbook/assets/deployment_architecture.png)
 
@@ -195,7 +195,7 @@ A Wireguard bastion host (Wireguard server) provides secure private channel to a
     ```
 * Once Connected to wireguard you should be now able to login using private ip’s.
 
-#### Observation K8s Cluster setup and configuration
+### Observation K8s Cluster setup and configuration
 
 **Observation K8s Cluster setup**
 
@@ -229,7 +229,7 @@ A Wireguard bastion host (Wireguard server) provides secure private channel to a
     * `kubect get nodes`
       * Command will result in details of the nodes of the rancher cluster.
 
-#### Observation K8s Cluster’s Ingress and Storage class setup
+### Observation K8s Cluster’s Ingress and Storage class setup
 
 Once the rancher cluster is ready we need ingress and storage class to be set for other applications to be installed.
 
@@ -272,7 +272,7 @@ Once the rancher cluster is ready we need ingress and storage class to be set fo
       ```
   * we need the EBS driver for our storage class to work, follow the steps [here](https://www.stacksimplify.com/aws-eks/kubernetes-storage/install-aws-ebs-csi-driver-on-aws-eks-for-persistent-storage/) to setup EBS driver.
 
-### Domain name
+## Domain name
 
 Create the following domain names:
 
@@ -281,7 +281,7 @@ Create the following domain names:
 
 Point the above to **internal** ip address of the NLB. This assumes that you have a [Wireguard Bastion Host](https://docs.mosip.io/1.2.0/deployment/wireguard/wireguard-bastion) has been installed. On AWS this is done on Route 53 console.
 
-#### Rancher K8s Cluster Apps Installation
+### Rancher K8s Cluster Apps Installation
 
 * **Rancher UI** : Rancher provides full CRUD capability of creating and managing kubernetes cluster.
   * Install rancher using Helm, update `hostname` in `rancher-values.yaml` and run the following command to install.
@@ -338,7 +338,7 @@ Point the above to **internal** ip address of the NLB. This assumes that you hav
 
       [https://rancher.com/docs/rancher/v2.6/en/troubleshooting/expired-webhook-certificates/](https://rancher.com/docs/rancher/v2.6/en/troubleshooting/expired-webhook-certificates/)
 
-#### MOSIP K8s Cluster setup
+### MOSIP K8s Cluster setup
 
 *   Setup mosip cluster
 
@@ -373,7 +373,7 @@ Point the above to **internal** ip address of the NLB. This assumes that you hav
       * `kubect get nodes`
         * Command will result in details of the nodes of the MOSIP cluster.
 
-#### Import Mosip Cluster into Rancher UI
+### Import Mosip Cluster into Rancher UI
 
 * Login as admin in Rancher console
 * Select `Import Existing` for cluster addition.
@@ -389,7 +389,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 * Wait for few seconds after executing the command for the cluster to get verified.
 * Your cluster is now added to the rancher management server.
 
-#### MOSIP K8 Cluster Global configmap, Ingress and Storage Class setup
+### MOSIP K8 Cluster Global configmap, Ingress and Storage Class setup
 
 * **Global configmap**: Global configmap contains list of necesary details to be used throughout the namespaces of the cluster for common details.
   * `cd $K8_ROOT/mosip`
@@ -456,7 +456,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
         curl https://api.sandbox.xyz.net/httpbin/get?show_env=true
         ```
 
-#### Monitoring Module deployment
+### Monitoring Module deployment
 
 Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
 
@@ -468,7 +468,7 @@ Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
     ```
 * Click on `Install`.
 
-#### Alerting Setup
+### Alerting Setup
 
 Alerting is part of cluster monitoring, where alert notifications are sent to the configured email or slack channel.
 
@@ -505,7 +505,7 @@ Alerting is part of cluster monitoring, where alert notifications are sent to th
     ```
 * Alerting is Installed.
 
-#### Logging Module Setup and Installation
+### Logging Module Setup and Installation
 
 Mosip uses Rancher Fluentd and elasticsearch to collect logs from all services and reflect the same in Kibana Dashboard.
 
@@ -537,7 +537,7 @@ Mosip uses Rancher Fluentd and elasticsearch to collect logs from all services a
     * Open kibana dashboard from: `https://kibana.sandbox.xyz.net`.
     * _Kibana_ --> _Menu_ (on top left) --> _Dashboard_ --> Select the dashboard.
 
-#### Mosip External Dependencies setup
+### Mosip External Dependencies setup
 
 * External Dependencies: are set of external requirements needed for funtioning of MOSIP’s core services like DB, object store, hsm etc.
 * ```java
@@ -546,7 +546,7 @@ Mosip uses Rancher Fluentd and elasticsearch to collect logs from all services a
   ```
 * Check detailed installation instruction of all the [external componets](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-external-dependencies).
 
-#### MOSIP Modules Deployment
+### MOSIP Modules Deployment
 
 * Now that all the Kubernetes cluster and external dependencies are already installed, you can continue with MOSIP service deployment.
   * ```java
@@ -555,7 +555,7 @@ Mosip uses Rancher Fluentd and elasticsearch to collect logs from all services a
     ```
 * Check the detailed MOSIP Modules Deployment [MOSIP Modular installation](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-modules-deployment) steps.
 
-#### API Testrig
+### API Testrig
 
 * MOSIP’s successfull deployment can be verified by comparing the results of api testrig with testrig benchmark.
   * ```java
