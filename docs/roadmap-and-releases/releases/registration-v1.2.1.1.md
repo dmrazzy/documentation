@@ -51,3 +51,4 @@ The following bugs have been fixed in this release:
 ### Documentation
 
 * [MOSIP Documentation](https://docs.mosip.io/1.2.0)
+* [QA Report](https://github.com/mosip/test-management/tree/master/Platform%20release/1.2.1.1-PatchRelease)
