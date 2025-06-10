@@ -1,13 +1,19 @@
 # MOSIP External Dependencies
 
+{% hint style="warning" %}
+**Note**:&#x20;
+
+This version of the guide is currently under revision and enhancement. For any support, please reach out to us on [community.mosip.io](http://community.mosip.io/).
+{% endhint %}
+
 External Dependencies are set of external requirements that are needed for functioning of MOSIP’s core services like DB, Object Store, and HSM etc.
 
 List of external dependencies:
 
 * [Postgres](https://www.postgresql.org/): Relational Database system used for storing data in MOSIP.
 * IAM: IAM tool is for authentication and authorization. Reference implementation here uses [Keycloak](https://www.keycloak.org/) for the same purpose.
-* [HSM](https://en.wikipedia.org/wiki/Hardware\_security\_module): Hardware Security Module (HSM) stores the cryptographic keys used in MOSIP. Reference implementation is provided as SoftHSM here.
-* [Object Store](https://en.wikipedia.org/wiki/Object\_storage): MOSIP uses S3 API compliant object store for storing biometric and other data. Reference implementation here uses [MinIO](https://min.io/).
+* [HSM](https://en.wikipedia.org/wiki/Hardware_security_module): Hardware Security Module (HSM) stores the cryptographic keys used in MOSIP. Reference implementation is provided as SoftHSM here.
+* [Object Store](https://en.wikipedia.org/wiki/Object_storage): MOSIP uses S3 API compliant object store for storing biometric and other data. Reference implementation here uses [MinIO](https://min.io/).
 * Anti-virus: Used for document scanning and packets scanning throughout MOSIP modules. Reference implementation uses dockerised version of [ClamAV](https://www.clamav.net/).
 * Queuing tool: Tool used for queuing messages to external MOSIP components. Reference implementation used [Artemis ActiveMQ](https://activemq.apache.org/components/artemis/).
 * Event Publisher/ streamer: MOSIP uses Kafka for publishing events to it's internal as well as external partners modules.

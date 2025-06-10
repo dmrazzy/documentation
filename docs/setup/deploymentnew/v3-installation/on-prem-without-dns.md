@@ -1,5 +1,11 @@
 # On-Prem without DNS Installation Guidelines
 
+{% hint style="warning" %}
+**Note**:&#x20;
+
+This version of the guide is currently under revision and enhancement. For any support, please reach out to us on [community.mosip.io](http://community.mosip.io/).
+{% endhint %}
+
 ## Overview
 
 * MOSIP modules are deployed in the form of microservices in kubernetes cluster.

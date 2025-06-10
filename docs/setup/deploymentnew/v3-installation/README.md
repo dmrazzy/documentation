@@ -1,5 +1,11 @@
 # V3 installation
 
+{% hint style="warning" %}
+**Note**:&#x20;
+
+This version of the guide is currently under revision and enhancement. For any support, please reach out to us on [community.mosip.io](http://community.mosip.io/).
+{% endhint %}
+
 **Version**: 1.2.0.1 (Latest stable release)
 
 * Release date: 19th March 2024

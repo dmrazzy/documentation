@@ -1,5 +1,11 @@
 # MOSIP Modules Deployment
 
+{% hint style="warning" %}
+**Note**:&#x20;
+
+This version of the guide is currently under revision and enhancement. For any support, please reach out to us on [community.mosip.io](http://community.mosip.io/).
+{% endhint %}
+
 Below is the sequence of installation of MOSIP modules and the sequence must be followed to resolve all interdependencies.
 
 1. [Config Server Secrets](https://github.com/mosip/mosip-infra/blob/1.2.0.1/deployment/v3/mosip/conf-secrets/README.md)
@@ -9,7 +15,7 @@ Below is the sequence of installation of MOSIP modules and the sequence must be 
 5. [WebSub](https://github.com/mosip/mosip-infra/blob/1.2.0.1/deployment/v3/mosip/websub/README.md)
 6. [Mock SMTP](https://github.com/mosip/mosip-infra/blob/develop/deployment/v3/mosip/mock-smtp/README.md)
 7. [Kernel](https://github.com/mosip/mosip-infra/blob/1.2.0.1/deployment/v3/mosip/kernel/README.md)
-8. [Masterdata-loader]()
+8. [Masterdata-loader](mosip-modules-deployment.md)
 9. [Biosdk server](https://github.com/mosip/mosip-infra/tree/1.2.0.1/deployment/v3/mosip/biosdk)
 10. [Packet Manager](https://github.com/mosip/mosip-infra/blob/1.2.0.1/deployment/v3/mosip/packetmanager/README.md)
 11. [Datashare](https://github.com/mosip/mosip-infra/blob/1.2.0.1/deployment/v3/mosip/datashare/README.md)
@@ -65,6 +71,7 @@ cd $INFRA_ROOT/deployment/v3/mosip/websub
 ```
 
 * Mock-SMTP
+
 ```
 cd $INFRA_ROOT/deployment/v3/mosip/mock-smtp
 ./install.sh
