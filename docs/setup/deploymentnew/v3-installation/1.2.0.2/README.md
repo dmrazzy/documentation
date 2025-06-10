@@ -4,6 +4,8 @@ hidden: true
 
 # 1.2.0.2
 
+<!--
+
 ## V3 installation
 
 **Version**: 1.2.0.1 (Latest stable release)
@@ -41,3 +43,5 @@ hidden: true
 * Release date: 14th Oct 2022
 * [Release notes](https://docs.mosip.io/1.2.0/releases/release-notes-1.2.0.1-beta)
 * [Deployment Instructions](https://github.com/mosip/mosip-infra/tree/v1.2.0.1-B1/deployment/v3#readme)
+
+-->
