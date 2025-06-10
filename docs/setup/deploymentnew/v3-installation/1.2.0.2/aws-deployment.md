@@ -6,41 +6,41 @@
 * Bastian server restricts public access, and enables access to only those clients who have their public key listed with it.
 * Bastian server listens on UDP port 51820.
 
-__Setup Wirguard VM__
+**Setup Wirguard VM**
 
-  * Create a Wireguard server VM from aws console with mentioned Hardware and Network (requirements)[TODO link].
-  * Edit the security group and add the following inbound rules in aws console
-    * type ‘custom TCP', port range ‘51820’ and source '0.0.0.0/0’
-    * type ‘custom UDP', port range ‘51820’ and source '0.0.0.0/0’
-  * Install docker in the Wireguard machine as given [here](https://docs.docker.com/engine/install/ubuntu/).
+* Create a Wireguard server VM from aws console with mentioned '[**Hardware and Network Requirements**](pre-requisites.md)'.
+* Edit the security group and add the following inbound rules in aws console
+  * type ‘custom TCP', port range ‘51820’ and source '0.0.0.0/0’
+  * type ‘custom UDP', port range ‘51820’ and source '0.0.0.0/0’
+* Install docker in the Wireguard machine as given [here](https://docs.docker.com/engine/install/ubuntu/).
 
 **Setup Wireguard Bastian server**
-  * SSH to wireguard VM
-  * Create directory for storing wireguard config files.
-    `mkdir -p wireguard/config`
-  *   Install and start wireguard server using docker as given below:
 
-        ```sh
-        sudo docker run -d \
-           --name=wireguard \
-           --cap-add=NET_ADMIN \
-           --cap-add=SYS_MODULE \
-           -e PUID=1000 \
-           -e PGID=1000 \
-           -e TZ=Asia/Calcutta\
-           -e PEERS=30 \
-           -p 51820:51820/udp \
-           -v /home/ubuntu/wireguard/config:/config \
-           -v /lib/modules:/lib/modules \
-           --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
-           --restart unless-stopped \
-           ghcr.io/linuxserver/wireguard
-        ```
+* SSH to wireguard VM
+* Create directory for storing wireguard config files.`mkdir -p wireguard/config`
+*   Install and start wireguard server using docker as given below:
 
-      **Note:**\
-        \* Increase the no of peers above in case needed more than 30 wireguard client confs. (`-e PEERS=30`)\
-        \* Change the directory to be mounted to wireguard docker in case needed.\
-        \* All your wireguard confs will be generated in the mounted directory. (`-v /home/ubuntu/wireguard/config:/config`)
+    ```sh
+    sudo docker run -d \
+       --name=wireguard \
+       --cap-add=NET_ADMIN \
+       --cap-add=SYS_MODULE \
+       -e PUID=1000 \
+       -e PGID=1000 \
+       -e TZ=Asia/Calcutta\
+       -e PEERS=30 \
+       -p 51820:51820/udp \
+       -v /home/ubuntu/wireguard/config:/config \
+       -v /lib/modules:/lib/modules \
+       --sysctl="net.ipv4.conf.all.src_valid_mark=1" \
+       --restart unless-stopped \
+       ghcr.io/linuxserver/wireguard
+    ```
+
+    **Note:**\
+    \* Increase the no of peers above in case needed more than 30 wireguard client confs. (`-e PEERS=30`)\
+    \* Change the directory to be mounted to wireguard docker in case needed.\
+    \* All your wireguard confs will be generated in the mounted directory. (`-v /home/ubuntu/wireguard/config:/config`)
 
 **Setup Wireguard Client in your PC**
 
@@ -89,14 +89,11 @@ __Setup Wirguard VM__
   * Install
     * `eksctl create cluster -f rancher.cluster.config`
   * Wait for the cluster creation to complete, generally it takes around 30 minutes to create or update cluster.
-  * Once EKS K8 cluster is ready below mentioned output will be displayed in the console screen.
-    `EKS cluster "my-cluster" in "region-code" region is ready`
+  * Once EKS K8 cluster is ready below mentioned output will be displayed in the console screen.`EKS cluster "my-cluster" in "region-code" region is ready`
   * The config file for the new cluster will be created on `~/.kube/config`
   * Make sure to backup and store the `~/.kube/config` with new name. e.g. `~/.kube/obs-cluster.config`.
-  * Change file permission using below command:
-    `chmod 400 ~/.kube/obs-cluster.config`
-  * Set the `KUBECONFIG` properly so that you can access the cluster.
-    `export KUBECONFIG=~/.kube/obs-cluster.config`
+  * Change file permission using below command:`chmod 400 ~/.kube/obs-cluster.config`
+  * Set the `KUBECONFIG` properly so that you can access the cluster.`export KUBECONFIG=~/.kube/obs-cluster.config`
   * Test cluster access:
     * `kubect get nodes`
       * Command will result in details of the nodes of the rancher cluster.
@@ -105,19 +102,20 @@ __Setup Wirguard VM__
 
 Once the rancher cluster is ready we need ingress and storage class to be set for other applications to be installed.
 
-**3.a. [Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/)** : used for ingress in rancher cluster.
-  *   ```sh
-      cd $K8_ROOT/rancher/aws
-      helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
-      helm repo update
-      helm install \                               
-        ingress-nginx ingress-nginx/ingress-nginx \
-        --namespace ingress-nginx \
-        --create-namespace  \
-      -f nginx.values.yaml
-      ```
+**3.a.** [**Nginx Ingress Controller**](https://kubernetes.github.io/ingress-nginx/deploy/) : used for ingress in rancher cluster.
 
-      The above will automatically spawn an [Internal AWS Network Load Balancer (L4)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html).
+*   ```sh
+    cd $K8_ROOT/rancher/aws
+    helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
+    helm repo update
+    helm install \                               
+      ingress-nginx ingress-nginx/ingress-nginx \
+      --namespace ingress-nginx \
+      --create-namespace  \
+    -f nginx.values.yaml
+    ```
+
+    The above will automatically spawn an [Internal AWS Network Load Balancer (L4)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html).
 * Check the following on AWS console:
   *   An NLB has been created. You may also see the DNS of NLB with
 
@@ -174,7 +172,7 @@ Once the rancher cluster is ready we need ingress and storage class to be set fo
         kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{ .data.bootstrapPassword|base64decode}}{{ "\n" }}'
         ```
     * Assign a password. IMPORTANT: makes sure this password is securely saved and retrievable by Admin.
-* **5.b. [Keycloak](https://www.keycloak.org/)** : Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
+* **5.b.** [**Keycloak**](https://www.keycloak.org/) : Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
   * ```sh
     cd $K8_ROOT/rancher/keycloak
     ./install.sh <iam.host.name>
@@ -287,12 +285,15 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
     cd $K8_ROOT/istio
     ./install.sh
     ```
-* **8.d. Load Balancers setup for istio-ingress**
+*   **8.d. Load Balancers setup for istio-ingress**
+
     * The above istio installation will automatically spawn an [Internal AWS Network Load Balancer (L4)](https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html).
     * These may be also seen with
+
     ```sh
     kubectl -n istio-system get svc
     ```
+
     * You may view them on AWS console in Loadbalancer section.
     * TLS termination is supposed to be on LB. So all our traffic coming to ingress controller shall be HTTP.
     * Obtain AWS TLS certificate as given [here](https://docs.aws.amazon.com/acm/latest/userguide/dns-validation.html)
@@ -329,7 +330,6 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 
 * Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
 * **Note** : This is optional for sandbox to be deployed in case monitoring is necesary and for production they can always go with alternate tools option.
-
   * Select 'Monitoring' App from Rancher console -> _Apps & Marketplaces_.
   * In Helm options, open the YAML file and disable Nginx Ingress.
     * ```sh
@@ -342,13 +342,13 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 
 * Alerting is part of cluster monitoring, where alert notifications are sent to the configured email or slack channel.
 * **Note** : This is optional for sandbox to be deployed in case alerting is necesary and for production they can always go with alternate tools option.
-
   * Monitoring should be deployed which includes deployment of prometheus, grafana and alertmanager.
   * Create [slack incoming webhook](https://api.slack.com/messaging/webhooks).
   * After setting slack incoming webhook update `slack_api_url` and `slack_channel_name` in `alertmanager.yml`.
     * `cd $K8_ROOT/monitoring/alerting/`
     * `nano alertmanager.yml`
     *   Update
+
         ```sh
         global:
           resolve_timeout: 5m
@@ -362,6 +362,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
     * `cd $K8_ROOT/monitoring/alerting/`
     * `nano patch-cluster-name.yaml`
     *   Update
+
         ```sh
         spec:
           externalLabels:
@@ -378,7 +379,6 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 
 * Mosip uses Rancher Fluentd and elasticsearch to collect logs from all services and reflect the same in Kibana Dashboard.
 * **Note** : This is optional for sandbox to be deployed in case logging is necesary and for production they can always go with alternate tools option.
-
 * Install Rancher FluentD system : for screpping logs outs of all the microservices from Mosip k8 cluster.
   * Install Logging from Apps and marketplace within the Rancher UI.
   * Select Chart Version `100.1.3+up3.17.7` from Rancher console -> _Apps & Marketplaces_.

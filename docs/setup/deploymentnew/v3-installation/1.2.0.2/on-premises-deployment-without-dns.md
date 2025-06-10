@@ -27,7 +27,7 @@
 
 ### Architecture diagram
 
-![](<../../../.gitbook/assets/deployment_architecture (1).png>)
+<figure><img src="../../../../.gitbook/assets/deployment_architecture.png" alt=""><figcaption></figcaption></figure>
 
 ### Deployment repos
 

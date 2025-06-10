@@ -27,9 +27,13 @@
 
 ## Architecture diagram
 
-![](<../../../.gitbook/assets/deployment_architecture (1).png>)
 
-## Deployment repos
+
+<figure><img src="../../../../.gitbook/assets/deployment_architecture.png" alt=""><figcaption></figcaption></figure>
+
+
+
+Deployment repos
 
 * [k8s-infra](https://github.com/mosip/k8s-infra/tree/v1.2.0.2) : contains the scripts to install and configure Kubernetes cluster with required monitoring, logging and alerting tools.
 * [mosip-infra](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3) : contains the deployment scripts to run charts in defined sequence.
