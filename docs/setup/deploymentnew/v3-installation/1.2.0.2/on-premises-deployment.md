@@ -144,7 +144,6 @@
 
         * This command assumes the `cluster.yml` file is in the same directory as where you are running the command.
         * `rke up`
-        *
 
         ````
         INFO[0000] Building Kubernetes cluster
