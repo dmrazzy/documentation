@@ -55,7 +55,11 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 1. BioSDK library: [IBioAPIV2](https://github.com/mosip/bio-utils/blob/4a708ba24e9553dc187ecae468b07987744431c8/kernel-biometrics-api/src/main/java/io/mosip/kernel/biometrics/spi/IBioApiV2.java#L15)
 2. BioSDK service: TBD.
 
+
 ---
+
+
+
 
 
 
@@ -72,14 +76,24 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
     - `level`, `purpose`, `quality`, `errors`
 - **Descriptions:** Explain the role and usage of each field.
 
-## 4. Scenarios & Sample Payloads
 
-### 4.1 Normal Packets
 
-- **Description:** All biometric modalities captured successfully.
+For the Structure, Parameter etc.. and their definition you can also refer to [CBEFF](To be linked). 
+
+
+
+
+# 4. Scenarios & Sample Payloads
+
+## 4.1 Packets with all biometric data; Eye (Left and Right), Finger (All or particular ones)
+
+
+- **Description:** All biometric modalities captured successfully (ye (Left and Right), Finger (All or particular ones)
 - **Sample Request:**  
 
-#### Both Eye Capture
+
+### Both Eye Capture Request
+Request - Packet with only left and rigth eye biometric data..
 
 ```json
 {
@@ -132,7 +146,7 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 						"score": 100
 					}
 				},
-				"bdb":[], // Sample data
+				"bdb":[], // Sample data - 
 				"sb": [], // Sample data
 				"others": {
 					"SPEC_VERSION": "0.9.5",
@@ -212,9 +226,47 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 	}
 }
 ```
+<!--
+##### Description
+
+This JSON sample demonstrates a "Both Eye Capture" scenario for iris biometrics using the SDK. The structure and key fields are as follows:
+
+**Top-Level Fields**
+- `sample`: Main object holding biometric data and metadata.
+	- `segments`: Array containing one object per eye (left and right). Each segment represents a single iris capture.
+	- `others`: Reserved for additional data (empty in this example).
+- `modalitiesToExtract`: Specifies which biometric modalities to extract (here, `"IRIS"`).
+- `flags`: Additional configuration, such as iris format.
+
+**Inside Each `segment`**
+*`version` / `cbeffversion`: Versioning for the segment and CBEFF standard.
+* `birInfo`: Biometric Information Record metadata (e.g., `integrity` flag).
+* `bdbInfo`: Metadata about the biometric data block, including:
+	- `index`: Unique identifier for the capture.
+	- `format`: Organization and type.
+	- `creationDate`: Timestamp of capture.
+	- `type` / `subtype`: Biometric type (always `"IRIS"`) and which eye (`"Left"` or `"Right"`).
+	- `level`: Data level (e.g., `"RAW"`).
+	- `purpose`: Purpose of capture (e.g., `"ENROLL"`).
+	- `quality`: Quality assessment, including algorithm and score.
+* `bdb`: Biometric data block (empty array here; would contain encoded iris data in real use).
+* `sb`: Supplemental block (empty array here).
+* `others`: Additional metadata, such as:
+	- `SPEC_VERSION`: Specification version.
+	- `RETRIES`: Number of capture attempts.
+	- `FORCE_CAPTURED`: Whether capture was forced.
+	- `EXCEPTION`: If an exception occurred.
+	- `PAYLOAD`: Encoded payload with device and transaction details.
+	- `SDK_SCORE`: SDK-calculated quality score.
+
+**Usage**
+This structure standardizes the representation of both-eye iris captures, including all necessary metadata for quality control, auditing, and further biometric processing.
+
+-->
 
 
-- **Sample Response:**  
+### Both Eyes (Left and Right eys) Response
+  
     [`Botheyes_Response.json`](./SampleRequests&Responses/Botheyes_Response.json)
 
 ```json
@@ -376,9 +428,10 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ```
 
-### 4.2 Partial Exceptions
+## Partial Exceptions
 
-- **Description:** One or more modalities contain exceptions (e.g., only one eye captured).
+One or more modalities contain exceptions (e.g., only one eye captured).
+
 - **Sample Request:**  
     [`Single_Eye_Exception_Capture.json`](./SampleRequests&Responses/Single_Eye_Exception_Capture.json)
 ```json
@@ -667,9 +720,12 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ### 4.3 Total Exceptions
 
-- **Description:** Entire modality marked as exception.
-- **Sample Request:**  
+Entire modality marked as exception (Both eyes; left and right, All fingers)
+
+#### Sample Request Payload
+
     [`Total_EyeException_Capture.json`](./SampleRequests&Responses/Total_EyeException_Capture.json)
+
 ```json
 
 {
@@ -801,7 +857,8 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 ```
 
 
-- **Sample Response:**  
+#### Sample Response Payload
+
     [`Total_EyeException_Response.json`](./SampleRequests&Responses/Total_EyeException_Response.json)
 
 ```json
@@ -934,10 +991,12 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ```
 
+## Other Modalities
 
-### 4.4 Other Modalities
+### Fingers
 
-- **Fingers:**  
+#### Sample Request: Just One Finger Capture
+
     - [`Sample_Finger_JustOneFinger_Capture.json`](./SampleRequests&Responses/Sample_Finger_JustOneFinger_Capture.json)
 
 ```json
@@ -1019,6 +1078,7 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ```
 
+#### Sample Response - Just One Finger Response.
 
     - [`Sample_Finger_JustOneFinger_Response.json`](./SampleRequests&Responses/Sample_Finger_JustOneFinger_Response.json)
 
@@ -1114,8 +1174,10 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ```
 
+### Face
 
-- **Face:**  
+#### Face Request
+
     - [`face_request.json`](./SampleRequests&Responses/face_request.json)
 
 ```json
@@ -1193,7 +1255,7 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ```
 
-
+#### Face Response
 
     - [`face_response.json`](./SampleRequests&Responses/face_response.json)
 
@@ -1286,6 +1348,7 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ```
 
+---
 
 ## 5. Field Reference
 
@@ -1313,4 +1376,5 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 ---
 
-_This structure ensures your documentation is clear, comprehensive, and easy to navigate for integrators and developers._
+
+Glossary: `bdb` stands for "Biometric Data Block". It contains the actual biometric data (such as the encoded iris, fingerprint, or face image/template) captured from the device. In the sample, it is shown as an empty array (`[]`) for illustration, but in real scenarios, this field will contain the binary or encoded biometric data specific to the modality and subtype (e.g., Left Iris). "sb": null
