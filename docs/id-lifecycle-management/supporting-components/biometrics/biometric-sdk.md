@@ -53,7 +53,7 @@ mosip.regproc.biosdk-service.url=http://mock-biosdk-service.default:80
 mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 ```
 
-
+<!--
 
 ## BIOSDK Scenarios & Sample Payloads
 
@@ -684,3 +684,6 @@ Sample payloads demonstrating a normal capture scenario where biometric data for
 ```
 
 </details>
+
+
+-->
