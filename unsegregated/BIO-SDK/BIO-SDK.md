@@ -60,40 +60,25 @@ mosip.idrepo.biosdk-service.url=http://mock-biosdk-service.default:80
 
 
 
+# BIOSDK Scenarios & Sample Payloads
+Below are various biometric capture and response scenarios, each accompanied by sample request and response JSON payloads. These examples illustrate how different modalities (such as iris, fingerprint, and face) are represented in the payloads, including normal captures, partial exceptions, and total exceptions.
+
+For a comprehensive understanding of the structure, parameters, and field definitions used in these payloads, please refer to the [CBEFF Sample](https://docs.mosip.io/1.2.0/id-lifecycle-management/supporting-components/biometrics/cbeff-xml#cbeff-sample). The CBEFF (Common Biometric Exchange Formats Framework) standard defines the organization of biometric data blocks, metadata, and segment information, ensuring interoperability and consistency across biometric systems.
+
+Each scenario includes:
+- A brief description of the use case (e.g., both eyes captured, single finger, exception cases).
+- Sample JSON payloads for both request and response, demonstrating the expected structure and key fields.
+- Explanations of how to indicate exceptions or missing modalities within the payloads.
+
+Refer to the linked CBEFF documentation for detailed definitions of fields such as `bdb`, `sb`, `quality`, `EXCEPTION`, and others.
 
 
 
-## 2. API Overview
+# Both Eyes Capture
 
-- **Endpoints:** Summarize key endpoints (e.g., `/capture`, `/extract`).
-- **Authentication:** Note any authentication/authorization requirements.
+Sample payload demonstrating a normal capture scenario where biometric data for both eyes (Left and Right) is collected. This request structure is used when capturing both eyes without any exceptions or missing modalities.
 
-## 3. Data Model
-
-- **Main Objects:**  
-    - `sample`, `segments`, `bdbInfo`, `quality`, etc.
-- **Common Fields:**  
-    - `level`, `purpose`, `quality`, `errors`
-- **Descriptions:** Explain the role and usage of each field.
-
-
-
-For the Structure, Parameter etc.. and their definition you can also refer to [CBEFF](To be linked). 
-
-
-
-
-# 4. Scenarios & Sample Payloads
-
-## 4.1 Packets with all biometric data; Eye (Left and Right), Finger (All or particular ones)
-
-
-- **Description:** All biometric modalities captured successfully (ye (Left and Right), Finger (All or particular ones)
-- **Sample Request:**  
-
-
-### Both Eye Capture Request
-Request - Packet with only left and rigth eye biometric data..
+## Sample Request
 
 ```json
 {
@@ -146,8 +131,8 @@ Request - Packet with only left and rigth eye biometric data..
 						"score": 100
 					}
 				},
-				"bdb":[], // Sample data - 
-				"sb": [], // Sample data
+				"bdb":[], // RklSADAyMA\..... 
+				"sb": [], // ZXlKNE5XTWlP.....
 				"others": {
 					"SPEC_VERSION": "0.9.5",
 					"RETRIES": "1",
@@ -204,8 +189,8 @@ Request - Packet with only left and rigth eye biometric data..
 						"score": 100
 					}
 				},
-				"bdb": [], // Sample data
-				"sb": [], // Sample data
+				"bdb": [], // ZXlKNE5XTWlP.....
+				"sb": [], // ZXlKNE5XTWlP.....
 				"others": {
 					"SPEC_VERSION": "0.9.5",
 					"RETRIES": "1",
@@ -226,46 +211,8 @@ Request - Packet with only left and rigth eye biometric data..
 	}
 }
 ```
-<!--
-##### Description
 
-This JSON sample demonstrates a "Both Eye Capture" scenario for iris biometrics using the SDK. The structure and key fields are as follows:
-
-**Top-Level Fields**
-- `sample`: Main object holding biometric data and metadata.
-	- `segments`: Array containing one object per eye (left and right). Each segment represents a single iris capture.
-	- `others`: Reserved for additional data (empty in this example).
-- `modalitiesToExtract`: Specifies which biometric modalities to extract (here, `"IRIS"`).
-- `flags`: Additional configuration, such as iris format.
-
-**Inside Each `segment`**
-*`version` / `cbeffversion`: Versioning for the segment and CBEFF standard.
-* `birInfo`: Biometric Information Record metadata (e.g., `integrity` flag).
-* `bdbInfo`: Metadata about the biometric data block, including:
-	- `index`: Unique identifier for the capture.
-	- `format`: Organization and type.
-	- `creationDate`: Timestamp of capture.
-	- `type` / `subtype`: Biometric type (always `"IRIS"`) and which eye (`"Left"` or `"Right"`).
-	- `level`: Data level (e.g., `"RAW"`).
-	- `purpose`: Purpose of capture (e.g., `"ENROLL"`).
-	- `quality`: Quality assessment, including algorithm and score.
-* `bdb`: Biometric data block (empty array here; would contain encoded iris data in real use).
-* `sb`: Supplemental block (empty array here).
-* `others`: Additional metadata, such as:
-	- `SPEC_VERSION`: Specification version.
-	- `RETRIES`: Number of capture attempts.
-	- `FORCE_CAPTURED`: Whether capture was forced.
-	- `EXCEPTION`: If an exception occurred.
-	- `PAYLOAD`: Encoded payload with device and transaction details.
-	- `SDK_SCORE`: SDK-calculated quality score.
-
-**Usage**
-This structure standardizes the representation of both-eye iris captures, including all necessary metadata for quality control, auditing, and further biometric processing.
-
--->
-
-
-### Both Eyes (Left and Right eys) Response
+## Sample Response
   
     [`Botheyes_Response.json`](./SampleRequests&Responses/Botheyes_Response.json)
 
@@ -344,7 +291,7 @@ This structure standardizes the representation of both-eye iris captures, includ
 							"qualityCalculationFailed": null
 						}
 					},
-					"bdb": [], // Sample data for Left Iris
+					"bdb": [], // ZXlKNE5XTWlP.....
 					"sb": null,
 					"birs": null,
 					"sbInfo": null,
@@ -428,12 +375,28 @@ This structure standardizes the representation of both-eye iris captures, includ
 
 ```
 
-## Partial Exceptions
 
-One or more modalities contain exceptions (e.g., only one eye captured).
+# Partial Exceptions
 
-- **Sample Request:**  
-    [`Single_Eye_Exception_Capture.json`](./SampleRequests&Responses/Single_Eye_Exception_Capture.json)
+In some scenarios, not all biometric modalities can be successfully captured. For example, if only one eye (left or right) is captured and the other is unavailable due to a medical or physical exception, the request and response payloads must indicate this partial exception.
+
+A partial exception occurs when:
+- Only a subset of the required modalities or subtypes (e.g., only the left iris) is captured.
+- The remaining modalities or subtypes (e.g., right iris) are marked as exceptions.
+
+In the request payload, the segment corresponding to the missing or exceptional modality will have:
+- `"EXCEPTION": "true"` in the `others` field.
+- A `quality.score` of `0` in the `bdbInfo`.
+- Typically, empty or omitted `bdb` and `sb` fields.
+
+The response will reflect the same, indicating which segments were processed normally and which were marked as exceptions. This allows downstream systems to distinguish between successfully captured biometrics and those unavailable due to exceptions.
+
+Refer to the sample request and response below for a single-eye capture with a partial exception for the other eye.
+
+## Single Eye - Exception Capture (Sample Request)
+
+This scenario demonstrates a partial exception where only one eye (e.g., left iris) is successfully captured, while the other (right iris) may be unavailable due to a medical or physical reason. The request payload marks the missing eye as an exception, allowing the system to process available biometrics while recording the exception for the other.
+
 ```json
 
 {
@@ -486,8 +449,8 @@ One or more modalities contain exceptions (e.g., only one eye captured).
 						"score": 100
 					}
 				},
-				"bdb": [], //Sample data for the BDB field
-				"sb": [], //Sample data for the SB field
+				"bdb": [], //ZXlKNE5XTWlP.....
+				"sb": [], // ZXlKNE5XTWlP.....
 				"others": {
 					"SPEC_VERSION": "0.9.5",
 					"RETRIES": "1",
@@ -567,8 +530,12 @@ One or more modalities contain exceptions (e.g., only one eye captured).
 
 ```
 
+## Single Eye - Exception Response (Sample Response - Right Eye iris data not captured)
 
-- **Sample Response:**  
+This sample response shows a partial exception scenario where only the left iris is processed successfully, while the right iris is marked as an exception (not captured). The left segment contains processed data, and the right segment has `"EXCEPTION": "true"` and a quality score of `0`, indicating the exception.
+
+<!-- EXCEPTION - True - Cross check that Where is this --> 
+
     [`Single_Eye_exception_Response.json`](./SampleRequests&Responses/Single_Eye_exception_Response.json)
 
 ```json
@@ -647,7 +614,7 @@ One or more modalities contain exceptions (e.g., only one eye captured).
 							"qualityCalculationFailed": null
 						}
 					},
-					"bdb": [], // Sample data for bdb
+					"bdb": [], // ZXlKNE5XTWlP.....
 					"sb": null,
 					"birs": null,
 					"sbInfo": null,
@@ -718,13 +685,15 @@ One or more modalities contain exceptions (e.g., only one eye captured).
 
 ```
 
-### 4.3 Total Exceptions
+# Total Exceptions 
 
-Entire modality marked as exception (Both eyes; left and right, All fingers)
+'Entire Modality Marked as Exception' This scenario occurs when all required subtypes of a modality (e.g., both eyes for iris, all fingers for fingerprint, or face) cannot be captured due to medical or physical reasons. In the sample request, both left and right iris segments have a `quality.score` of `0`, indicating that no valid biometric data was collected for either eye. The same approach applies for all fingers or face if those modalities are unavailable.
 
-#### Sample Request Payload
 
-    [`Total_EyeException_Capture.json`](./SampleRequests&Responses/Total_EyeException_Capture.json)
+## Bothe Eyes (Left and Right - Total Exception) Sample Request
+
+**Note**: For total exception the scenario considered here is only for both the eyes only i.e. Right and Left eyes (and not all modalities such as finguers, face etc.)
+
 
 ```json
 
@@ -857,7 +826,10 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 ```
 
 
-#### Sample Response Payload
+## Both Eyes (Left and Right - Total Exception) Sample Response
+
+**Note**: For total exception the scenario considered here is only for both the eyes only i.e. Left and Right eyes (and not all modalities such as finguers, face etc.)
+Here the response shows exception as the quality score is 0.
 
     [`Total_EyeException_Response.json`](./SampleRequests&Responses/Total_EyeException_Response.json)
 
@@ -991,11 +963,13 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 
 ```
 
-## Other Modalities
+# Other Modalities
 
-### Fingers
+## Fingers
 
-#### Sample Request: Just One Finger Capture
+### Just One Finger Capture - Sample Request
+
+This example demonstrates a request payload for capturing a single finger (e.g., right thumb) biometric. The JSON includes metadata, quality score, and sample data for one finger segment, following the standard structure used for all modalities.
 
     - [`Sample_Finger_JustOneFinger_Capture.json`](./SampleRequests&Responses/Sample_Finger_JustOneFinger_Capture.json)
 
@@ -1052,8 +1026,8 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 						"score": 90
 					}
 				},
-				"bdb": [], // Sample BDB data
-				"sb": [], // Sample SB data
+				"bdb": [], // RklSADAyMA\.....
+				"sb": [], // ZXlKNE5XTWlP.....
 				"others": {
 					"SPEC_VERSION": "0.9.5",
 					"RETRIES": "1",
@@ -1078,9 +1052,10 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 
 ```
 
-#### Sample Response - Just One Finger Response.
+### Just One Finger Capture - Sample Response
 
-    - [`Sample_Finger_JustOneFinger_Response.json`](./SampleRequests&Responses/Sample_Finger_JustOneFinger_Response.json)
+Sample response for a scenario where only a single finger (e.g., right thumb) has been captured and processed. This response demonstrates the structure and key fields returned by the BioSDK when biometric data for just one finger is provided.
+
 
 ```json
 
@@ -1159,7 +1134,7 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 							"qualityCalculationFailed": null
 						}
 					},
-					"bdb": [], // Sample BDB data
+					"bdb": [], // RklSADAyMA\.....
 					"sb": null,
 					"birs": null,
 					"sbInfo": null,
@@ -1174,9 +1149,9 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 
 ```
 
-### Face
+## Face
 
-#### Face Request
+### Face - Sample Request
 
     - [`face_request.json`](./SampleRequests&Responses/face_request.json)
 
@@ -1255,7 +1230,7 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 
 ```
 
-#### Face Response
+#### Face - Sample Response
 
     - [`face_response.json`](./SampleRequests&Responses/face_response.json)
 
@@ -1333,7 +1308,7 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 							"qualityCalculationFailed": null
 						}
 					},
-					"bdb": [], // Sample BDB data
+					"bdb": [], // RklSADAyMA\.....
 					"sb": null,
 					"birs": null,
 					"sbInfo": null,
@@ -1348,31 +1323,7 @@ Entire modality marked as exception (Both eyes; left and right, All fingers)
 
 ```
 
----
 
-## 5. Field Reference
-
-- **Field Descriptions:** Table or list explaining each field in request/response JSON.
-- **Special Notes:**  
-    - `level: PROCESSED`
-    - `purpose: VERIFY`
-    - Error handling details
-
-## 6. Error Handling
-
-- **Error Structure:** Describe the structure of error responses.
-- **Error Codes:** List possible error codes and their meanings.
-
-## 7. Appendix
-
-- **Sample Files:**  
-    [SampleRequests&Responses Directory](./SampleRequests&Responses/)
-- **Versioning & Changelog:** Track changes and versions.
-- **Additional Tips:**  
-    - For each scenario, show both request and response samples.
-    - Use code blocks for JSON snippets and provide links to full files.
-    - Clearly explain fields, especially those that change in exception scenarios.
-    - Reference sample files directly for clarity.
 
 ---
 
