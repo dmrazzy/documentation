@@ -29,6 +29,7 @@ As only secured https connections are allowed via nginx server will need below m
 
 ## Personal computer requirements
 
+* [git](https://github.com/git-guides/install-git) - version >= 2.25.1.
 * [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)- any client version above 1.19
 * [helm](https://helm.sh/docs/intro/install/)- any client version above 3.0.0 and add below repos as well:
 
