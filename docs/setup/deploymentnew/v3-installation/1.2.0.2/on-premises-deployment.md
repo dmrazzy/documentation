@@ -153,8 +153,9 @@
         ...
         INFO[0101] Finished building Kubernetes cluster successfully
         ```
-        * The last line should read `Finished building Kubernetes cluster` successfully to indicate that your cluster is ready to use.
         ````
+        * The last line should read `Finished building Kubernetes cluster` successfully to indicate that your cluster is ready to use.
+
     * As part of the Kubernetes creation process, a `kubeconfig` file has been created and written at `kube_config_cluster.yml`, which can be used to start interacting with your Kubernetes cluster.
     * Copy the kubeconfig files
 
@@ -243,12 +244,13 @@ helm install \
 
 ### 4.b. Install Nginx :
 
-*   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
+  * Login to nginx server node.
+  *   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
 
-    ```
-    cd $K8_ROOT/rancher/on-prem/nginx
-    sudo ./install.sh
-    ```
+      ```
+      cd $K8_ROOT/rancher/on-prem/nginx
+      sudo ./install.sh
+      ```
 * Provide below mentioned inputs as and when promted
   * Rancher nginx ip : internal ip of the nginx server VM.
   * SSL cert path : path of the ssl certificate to be used for ssl termination.
@@ -334,15 +336,10 @@ helm install \
   * Go to the "Groups" section in Keycloak and create groups with default roles.
   * Navigate to the "Users" section in Keycloak, select a user, and then go to the "Groups" tab. From the list of groups, add the user to the required group.
 
-**Certificates expiry**
-
-In case you see certificate expiry message while adding users, on **local** cluster run these commands:
-
 ## 6. MOSIP K8s Cluster setup
 
 * Pre-requisites:
-*   Install all the required tools mentioned in Pre-requisites for PC.
-
+  * Install all the required tools mentioned in Pre-requisites for PC.
     * kubectl
     * helm
 
@@ -350,12 +347,12 @@ In case you see certificate expiry message while adding users, on **local** clus
     helm repo add bitnami https://charts.bitnami.com/bitnami
     helm repo add mosip https://mosip.github.io/mosip-helm
     ```
-* ansible
-* rke (version 1.3.10)
-* Setup MOSIP K8 Cluster node VM’s as per the hardware and network [requirements](TODO/).
+  * ansible
+  * rke (version 1.3.10)
+  * Setup MOSIP K8 Cluster node VM’s as per the hardware and network [requirements](TODO/).
 * Run `env-check-setup.yaml` to check if cluster nodes are fine and dont have known issues in it.
-  * cd $K8\_ROOT/rancher/on-prem
-  * create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for MOSIP k8 cluster nodes.
+  * `cd $K8\_ROOT/rancher/on-prem`
+  * Create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for MOSIP k8 cluster nodes.
     * `cp hosts.ini.sample hosts.ini`
     * `ansible-playbook -i hosts.ini env-check-setup.yaml`
     * This ansible checks if localhost mapping ia already present in `/etc/hosts` file in all cluster nodes, if not it adds the same.
@@ -366,7 +363,7 @@ In case you see certificate expiry message while adding users, on **local** clus
     * `ssh-copy-id <remote-user>@<remote-ip>`
   * SSH into the node to check password-less SSH
     * `ssh -i ~/.ssh/<your private key> <remote-user>@<remote-ip>`
-  * Rancher UI : (deployed in Rancher K8 cluster)
+  * Rancher UI : (deployed in Observation K8 cluster)
 * Open ports and Install docker on MOSIP K8 Cluster node VM’s.
   * `cd $K8_ROOT/mosip/on-prem`
   * create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for wireguard VM.
@@ -449,8 +446,7 @@ In case you see certificate expiry message while adding users, on **local** clus
 
 ### 7.a. Global configmap:
 
-\*Global configmap contains the list of neccesary details to be used throughout the namespaces of the cluster for common details.
-
+* Global configmap contains the list of neccesary details to be used throughout the namespaces of the cluster for common details.
 * `cd $K8_ROOT/mosip`
 * Copy `global_configmap.yaml.sample` to `global_configmap.yaml`.
 * Update the domain names in `global_configmap.yaml` and run.
@@ -484,13 +480,11 @@ In case you see certificate expiry message while adding users, on **local** clus
 * Select `Import` Existing for cluster addition.
 * Select `Generic` as cluster type to add.
 * Fill the `Cluster Name` field with unique cluster name and select `Create`.
-* You will get the kubecl commands to be executed in the kubernetes cluster. Copy the command and execute from your PC (make sure your `kube-config` file is correctly set to MOSIP cluster).
-
+* You will get the kubectl commands to be executed in the kubernetes cluster. Copy the command and execute from your PC (make sure your `kube-config` file is correctly set to MOSIP cluster).
 ```
 e.g.:
 kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt5bckwf4ctdgr7xkmmtwg8dfjk4hmbpk_c-m-db8kcj4r.yaml
 ```
-
 * Wait for few seconds after executing the command for the cluster to get verified.
 * Your cluster is now added to the rancher management server.
 
@@ -526,12 +520,12 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 
 ### 9.b. Nginx server setup for MOSIP K8's cluster
 
-*   Clone k8s-infra
-
-    ```
-    cd $K8_ROOT/mosip/on-prem/nginx
-    sudo ./install.sh
-    ```
+* Login to the nginx server node.
+* Clone k8s-infra
+  ```
+  cd $K8_ROOT/mosip/on-prem/nginx
+  sudo ./install.sh
+  ```
 * Provide below mentioned inputs as and when prompted
   * MOSIP nginx server internal ip
   * MOSIP nginx server public ip
@@ -539,7 +533,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
   * SSL cert path
   * SSL key path
   * Cluster node ip's (comma seperated no whitespace)
-* Post installation check\\
+* Post installation check
   * `sudo systemctl status nginx`
   * Steps to uninstall nginx (incase it is required)\
     `sudo apt purge nginx nginx-common`
@@ -565,8 +559,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 ## 10. Monitoring module deployment
 
 * Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
-*
-  * **Note** : This is optional for sandbox to be deployed in case monitoring is necesary and for production they can always go with alternate tools option.
+> Note : This is optional for sandbox to be deployed in case monitoring is necesary and for production they can always go with alternate tools option.
 * Select 'Monitoring' App from Rancher console -> `Apps & Marketplaces`.
 *   In Helm options, open the YAML file and disable Nginx Ingress.
 
