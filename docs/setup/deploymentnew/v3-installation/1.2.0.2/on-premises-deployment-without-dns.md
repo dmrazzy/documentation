@@ -106,6 +106,7 @@
   * Update `vpc_ip` variable in `ports.yaml` with vpc CIDR ip to allow access only from machines inside same vpc.
   * Execute `ports.yml` to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
   * Disable swap in cluster nodes. (Ignore if swap is already disabled)`ansible-playbook -i hosts.ini swap.yaml`
+    > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
   * execute `docker.yml` to install docker and add user to docker group:`ansible-playbook -i hosts.ini docker.yaml`
 * Creating RKE Cluster Configuration file
   * `rke config`
@@ -402,7 +403,8 @@ helm repo add mosip https://mosip.github.io/mosip-helm
   * execute `ports.yml` to enable ports on VM level using ufw:
     * `ansible-playbook -i hosts.ini ports.yaml`
   * Disable swap in cluster nodes. (Ignore if swap is already disabled)
-    * ansible-playbook -i hosts.ini swap.yaml
+    * `ansible-playbook -i hosts.ini swap.yaml`
+    > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
   * execute `docker.yml` to install docker and add user to docker group:
     * ansible-playbook -i hosts.ini docker.yaml
 * Creating RKE Cluster Configuration file
