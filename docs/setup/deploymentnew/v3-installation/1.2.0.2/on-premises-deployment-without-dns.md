@@ -11,7 +11,7 @@
 
 * Create a Wireguard server VM with mentioned '[**Hardware and Network Requirements**'](pre-requisites.md).
 * Open required ports in the Bastian server VM.
-  * `cd $K8\_ROOT/wireguard/`
+  * `cd $K8_ROOT/wireguard/`
   * Create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for wireguard VM`cp hosts.ini.sample hosts.ini`
   * Execute ports.yml to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
 
@@ -57,7 +57,7 @@
 
 **Setup Wireguard Client in your PC**
 
-* Install Wireguard client in your PC using (steps)\[https://www.wireguard.com/install/].
+* Install Wireguard client in your PC using [steps](https://www.wireguard.com/install/).
 *   Assign `wireguard.conf`:
 
     * SSH to the wireguard server VM.
@@ -379,9 +379,9 @@ helm repo add mosip https://mosip.github.io/mosip-helm
 
 * ansible
 * rke (version 1.3.10)
-* Setup MOSIP K8 Cluster node VM’s as per the hardware and network [requirements](TODO/).
+* Setup MOSIP K8 Cluster node VM’s as per '[**Hardware and Network Requirements**'](pre-requisites.md).
 * Run `env-check.yaml` to check if cluster nodes are fine and don't have known issues in it.
-  * cd $K8\_ROOT/rancher/on-prem
+  * cd $K8_ROOT/rancher/on-prem
   * create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for MOSIP k8 cluster nodes.
     * `cp hosts.ini.sample hosts.ini`
     * `ansible-playbook -i hosts.ini env-check.yaml`
