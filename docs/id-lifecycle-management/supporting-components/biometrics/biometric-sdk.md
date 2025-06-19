@@ -70,7 +70,7 @@ Each scenario includes:
 
 Refer to the linked CBEFF documentation for detailed definitions of fields such as `bdb`, `sb`, `quality`, `EXCEPTION`, and others.
 
-## Scenario 1: Both Eyes Capture
+## Both Eyes Capture
 
 Sample payload demonstrating a normal capture scenario where in biometric data for both eyes (Left and Right) is collected.**Note**: For now, here with this example we are providing the sample which considers both the eyes (left and right) and have called it normal scenario as this presents a successful capture of data of both the eyes (left and right), however a typical normal scenario will include a successful capture of all the modalities such as both the eyes, all fingers and face.
 
