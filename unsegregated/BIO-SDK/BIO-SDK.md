@@ -536,8 +536,6 @@ This scenario demonstrates a partial exception where only one eye (e.g., left ir
 
 This sample response shows a partial exception scenario wherein only the left iris is processed successfully, while the right iris is marked as an exception (not captured). The left segment contains processed data, and the right segment has `"EXCEPTION": "true"` and a quality score of `0`, indicating the exception.
 
-<!-- EXCEPTION - True - Cross check that Where is this --> 
-
     [`Single_Eye_exception_Response.json`](./SampleRequests&Responses/Single_Eye_exception_Response.json)
 
 ```json
