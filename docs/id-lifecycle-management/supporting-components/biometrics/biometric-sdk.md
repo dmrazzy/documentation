@@ -222,11 +222,11 @@ This request structure is used when capturing both eyes without any exceptions o
 
 #### Sample Response
 
+<!-- [`Botheyes_Response.json`](SampleRequests\&Responses/Botheyes_Response.json) -->
+
 <details>
 
 <summary>Both Eyes Capture: Sample Response</summary>
-
-[`Botheyes_Response.json`](SampleRequests\&Responses/Botheyes_Response.json)
 
 ```json
 {
@@ -559,9 +559,8 @@ This scenario demonstrates a partial exception where only one eye (e.g., left ir
 
 This sample response shows a partial exception scenario wherein only the left iris is processed successfully, while the right iris is marked as an exception (not captured). The left segment contains processed data, and the right segment has `"EXCEPTION": "true"` and a quality score of `0`, indicating the exception.
 
-```
-[`Single_Eye_exception_Response.json`](./SampleRequests&Responses/Single_Eye_exception_Response.json)
-```
+<!-- [`Single_Eye_exception_Response.json`](./SampleRequests&Responses/Single_Eye_exception_Response.json) -->
+
 
 <details>
 
@@ -717,7 +716,6 @@ This sample response shows a partial exception scenario wherein only the left ir
 ```
 
 
-
 </details>
 
 
@@ -726,9 +724,9 @@ This sample response shows a partial exception scenario wherein only the left ir
 
 'Entire Modality Marked as Exception' This scenario occurs when all required subtypes of a modality (e.g., both eyes for iris, all fingers for fingerprint, or face) cannot be captured due to medical or physical reasons. In the sample request, both left and right iris segments have `EXCEPTION": true` `quality.score` of `0`, indicating that no valid biometric data was collected for either eye. The same approach applies for all fingers or face if those modalities are unavailable.
 
-### Bothe Eyes (Left and Right - Total Exception) Sample Request
+### Both Eyes (Left and Right - Total Exception) Sample Request
 
-**Note**: For total exception the scenario considered here is only for both the eyes only i.e. Right and Left eyes (and not all modalities such as finguers, face etc.)
+**Note**: For total exception the scenario considered here is only for both the eyes only i.e. Right and Left eyes (and not all modalities such as fingers, face etc.)
 
 
 
@@ -877,8 +875,7 @@ This sample response shows a partial exception scenario wherein only the left ir
 **Note**: For total exception the scenario considered here is only for both the eyes i.e. Left and Right eyes (and not all modalities such as finguers, face etc.)\
 Here the response shows `EXCEPTION": true` and the quality score is `0`.
 
-[`Total_EyeException_Response.json`](SampleRequests\&Responses/Total_EyeException_Response.json)
-
+<!-- [`Total_EyeException_Response.json`](SampleRequests\&Responses/Total_EyeException_Response.json) -->
 
 
 <details>
@@ -1027,7 +1024,7 @@ Here the response shows `EXCEPTION": true` and the quality score is `0`.
 
 This example demonstrates a sample request payload to capture just one finger (e.g., right thumb). The JSON includes metadata, quality score, and sample data for only one finger segment, following the standard structure used for all modalities.
 
-[`Sample_Finger_JustOneFinger_Capture.json`](SampleRequests\&Responses/Sample_Finger_JustOneFinger_Capture.json)
+<!-- [`Sample_Finger_JustOneFinger_Capture.json`](SampleRequests\&Responses/Sample_Finger_JustOneFinger_Capture.json) -->
 
 <details>
 
@@ -1121,7 +1118,6 @@ This example demonstrates a sample request payload to capture just one finger (e
 #### Just One Finger Capture - Sample Response
 
 Sample response for a scenario where only a single finger (e.g., right thumb) has been captured and processed. This response demonstrates the structure and key fields returned by the BioSDK when biometric data for just one finger is provided.
-
 
 
 <details>
@@ -1232,8 +1228,7 @@ Sample response for a scenario where only a single finger (e.g., right thumb) ha
 
 This sample JSON request represents a biometric capture payload for a face modality.
 
-[`face_request.json`](SampleRequests\&Responses/face_request.json)
-
+<!-- [`face_request.json`](SampleRequests\&Responses/face_request.json) -->
 
 
 <details>
@@ -1325,7 +1320,8 @@ This sample JSON request represents a biometric capture payload for a face modal
 
 This sample JSON response represents a biometric capture payload for a face modality.
 
-[`face_response.json`](SampleRequests\&Responses/face_response.json)
+<!-- [`face_response.json`](SampleRequests\&Responses/face_response.json) -->
+
 
 <details>
 
