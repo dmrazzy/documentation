@@ -28,6 +28,7 @@ As only secured https connections are allowed via nginx server will need below m
 * One valid wildcard ssl certificate related to domain used for accessing Mosip cluster, this needs to be stored inside the nginx server VM for mosip cluster. In above e.g.: \*.sandbox.xyz.net is the similar example domain.
 
 ## Personal computer requirements
+> Note: In case unfamiliar with below mentioned tools and trying deployment from personel computer having Windows OS, suggestion is to use WSL for easy proceedings. 
 
 * [git](https://github.com/git-guides/install-git) - version >= 2.25.1.
 * [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)- any client version above 1.19
