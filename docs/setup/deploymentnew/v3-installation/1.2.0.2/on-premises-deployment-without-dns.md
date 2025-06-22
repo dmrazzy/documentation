@@ -403,6 +403,12 @@ helm repo add mosip https://mosip.github.io/mosip-helm
   * cd $K8_ROOT/rancher/on-prem
   * create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for MOSIP k8 cluster nodes.
     * `cp hosts.ini.sample hosts.ini`
+    > Note:
+    > * Ensure you are inside `on-prem` directory as mentioned above.
+    > * ansible_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
+    > * ansible_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
+    > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`
+    > ![hosts.ini](../../../../_images/nodes-hosts-ini.png)
     * `ansible-playbook -i hosts.ini env-check.yaml`
     * This ansible checks if localhost mapping is already present in `/etc/hosts` file in all cluster nodes, if not it adds the same.
 * Setup passwordless ssh into the cluster nodes via pem keys. (Ignore if VM’s are accessible via pem’s).
