@@ -37,7 +37,8 @@
       ```
 * Setup Wireguard server
   * SSH to wireguard VM
-  * Create directory for storing wireguard config files.\
+  * `ssh -i <path to .pem> ubuntu@<public ip of wireguard server VM>
+  * Create directory for storing wireguard config files.
     `mkdir -p wireguard/config`
   *   Install and start wireguard server using docker as given below:
 
