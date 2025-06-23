@@ -170,6 +170,13 @@
         INFO[0101] Finished building Kubernetes cluster successfully
         ```
     * The last line should read `Finished building Kubernetes cluster` successfully to indicate that your cluster is ready to use.
+    > Note:
+    > * Incase `rke up` command is unsucessfull due to any underline error then we need to fix the same by checking the logs.
+    > * Once the issue is fixed we need to remove the cluster using `rke remove`.
+    > * Once `rke remove` is executed sucessfully need to delete cluster related incomplete configuration using :
+    >   ```
+    >   ansible-playbook -i hosts.ini ../../utils/rke-components-delete.yaml
+    >   ```
   * As part of the Kubernetes creation process, a `kubeconfig` file has been created and written at `kube_config_cluster.yml`, which can be used to start interacting with your Kubernetes cluster.
   * Copy the kubeconfig files
 
