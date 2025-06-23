@@ -37,7 +37,7 @@
       ```
 * Setup Wireguard server
   * SSH to wireguard VM
-  * `ssh -i <path to .pem> ubuntu@<public ip of wireguard server VM>
+  * `ssh -i <path to .pem> ubuntu@<public ip of wireguard server VM>`
   * Create directory for storing wireguard config files.
     `mkdir -p wireguard/config`
   *   Install and start wireguard server using docker as given below:
@@ -60,7 +60,6 @@
       ```
 
 > Note:
->
 > * Increase the no. of peers above in case more than 30 wireguard client confs (-e PEERS=30) are needed.
 > * Change the directory to be mounted to wireguard docker as per need. All your wireguard confs will be generated in the mounted directory (`-v /home/ubuntu/wireguard/config:/config`).
 
