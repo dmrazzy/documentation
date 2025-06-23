@@ -156,7 +156,6 @@
       ```
   * Update the name of the kubernetes cluster in `cluster.yml`.
     * `cluster_name: observation-cluster`
-* For production deployments edit the `cluster.yml`, according to this [RKE Cluster Hardening Guide](https://github.com/mosip/k8s-infra/blob/v1.2.0.1-B1/docs/rke-cluster-hardening.md).
 * Setup up the cluster:
   * Once `cluster.yml` is ready, you can bring up the kubernetes cluster using simple command.
     * This command assumes the `cluster.yml` file is in the same directory as where you are running the command.
