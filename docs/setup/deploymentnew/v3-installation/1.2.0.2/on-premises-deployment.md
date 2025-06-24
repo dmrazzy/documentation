@@ -85,6 +85,9 @@
           * `nano peer1.conf`
             * Delete the DNS IP.
             * Update the allowed IP's to subnets CIDR ip . e.g. 10.10.20.0/23
+            > Note:
+            > * CIDR Range will be shared by the Infra provider.
+            > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
           * Share the updated `peer.conf` with respective peer to connect to wireguard server from Personel PC.
     * Add `peer.conf` in your PC’s `/etc/wireguard` directory as `wg0.conf`.
     * Start the wireguard client and check the status:
@@ -119,6 +122,9 @@
   > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`
   > ![hosts.ini](../../../../_images/nodes-hosts-ini.png)
   * Update `vpc_ip` variable in `ports.yaml` with vpc CIDR ip to allow access only from machines inside same vpc.
+    > Note:
+    > * CIDR Range will be shared by the Infra provider.
+    > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
   * Execute `ports.yml` to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
   * Disable swap in cluster nodes. (Ignore if swap is already disabled)
     * `ansible-playbook -i hosts.ini swap.yaml`
@@ -398,6 +404,9 @@ helm install \
   * create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for wireguard VM.
     * `cp hosts.ini.sample hosts.ini`
   * Update `vpc_ip` variable in `ports.yaml` with `vpc CIDR ip` to allow access only from machines inside same vpc.
+    > Note:
+    > * CIDR Range will be shared by the Infra provider.
+    > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
   * execute `ports.yml` to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
   * Disable swap in cluster nodes. (Ignore if swap is already disabled)
     * `ansible-playbook -i hosts.ini swap.yaml`
