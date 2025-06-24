@@ -65,7 +65,7 @@ Approve / Reject or View (List View and Details View)
 * Login: Existing Partner who has already registered can login to the portal with email/username and password.
 * Retrieve Password / Forgot Password: Partner will have the option to reset the password using the Forget Password option.
 
-#### Key Feature of Authentication Partner:
+#### Key Feature of Authentication Partner
 
 Features discussed here are provided only for Partner Type which is Authentication Partner.
 
@@ -75,7 +75,7 @@ Features discussed here are provided only for Partner Type which is Authenticati
   * Generate API Key: Create API Keys for approved policies.
   * View API Key Details: View a tabular list and individual details of submitted API Keys.
   * Deactivate: Deactivate API Keys when necessary.
-* OIDC Client:
+* OIDC Client
   * Create OIDC Client: Create OIDC Clients for approved policies.
   * View OIDC Details: Access a tabular list and individual views of submitted OIDC Client details, including OIDC Client IDs.
   * Edit: Edit existing OIDC Client details.
@@ -83,22 +83,70 @@ Features discussed here are provided only for Partner Type which is Authenticati
 
 #### The key features of the Device Provider
 
-* **Partner Certificate:**
+* **Partner Certificate**
   * **Upload and Re-upload:** Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
   * **Download:** Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
-* **Device Provider Services:**
+* **Device Provider Services**
   * **SBI - Device Creation:** Add SBI, Add Devices associated to an SBI. SBI / Device submissions will go to Partner Admin for approval.
   * **Deactivate:** Deactivate SBI or Deactivate mapped devices
   * **View** SBI and its associated devices
 
 #### The key features of FTM Chip Provider
 
-* **Partner Certificate:**
+* **Partner Certificate**
   * **Upload and Re-upload:** Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
   * **Download:** Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
-* **FTM Chip Services:**
+* **FTM Chip Services**
   * **FTM Chip details:** Add FTM details, and deactivate FTM details.
   * **FTM Chip Certificate:** Upload, Re-upload, or download certificate.
+
+
+
+### Receive Notifications via PMS portal and email
+
+Users receive timely notifications through both the PMS portal and email regarding the upcoming expiry of certificates linked to the Partner Management System (PMS).
+
+#### Notification Details
+
+* **Notification Channels**
+  * Email
+  * PMS Portal notifications
+* **Recipients**
+  * **Partner Admins**
+    * Receive notifications about the expiry of all **Root / Intermediate CA certificates** (regardless of who uploaded them) which is set to expire in next 30 days.
+    * Receive a **weekly summary** listing partners whose partner certificates are expiring in the next 7 days.
+    * Receive individual notifications before the expiry of:
+      * Root CA Certificates
+      * Intermediate CA Certificates
+  * **Partner Users**
+    * Receive notifications for partner certificates they personally uploaded.
+    * Notifications are specific to their uploaded partner certificates or corresponding MOSIP signed certificates expiring within the next 30 days.
+
+#### Notification Schedule
+
+* **For Individual Certificate (Root CA/ Intermediate CA/ Partner Certificate) Expirations:**
+  * 30 days before expiry
+  * 15 days before expiry
+  * Daily reminders starting from 10 days before expiry up to the expiry date (i.e., from Day -10 to Day 0).
+* **For Weekly Summary Notifications (for Partner Admins)**
+  * Sent every 7 days.
+  * Lists all partner certificates expiring within the next 7 days.
+  * The next weekly notification triggers only after another 7 days.
+
+#### Notification Language Handling
+
+* **Email Notifications**
+  * Sent in the language selected by the user during registration (partner/partner admin).
+* **PMS Portal Notifications**
+  * Displayed in the language selected at the time of login, regardless of the user’s registration language preference.
+
+#### Notification Retention
+
+* Notifications in the PMS portal older than **60 days** are **automatically deleted**.
+
+### **Audit Logging for Certificate Expiry Notifications**
+
+To enhance traceability, PMS now captures audit logs for all certificate expiry-related notifications, including those shown on the portal and sent via email. Notifications for Root CA, Intermediate CA, and Partner Certificates—as well as the Weekly Summary of partner certificates sent to Partner Admins—are tracked for both success and failure events. Each event is recorded in the audit.app\_audit\_log table with a unique event ID and reference details. The logs include metadata such as module name, notification ID, and type. The feature ensures greater transparency and accountability in certificate lifecycle communication.
 
 ## Browser Support:
 
