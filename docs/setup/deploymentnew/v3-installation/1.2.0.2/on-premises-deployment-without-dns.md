@@ -196,35 +196,38 @@
       * `cluster.yml`: The RKE cluster configuration file.
       * `kube_config_cluster.yml`: The [Kubeconfig file](https://rancher.com/docs/rke/latest/en/kubeconfig/) for the cluster, this file contains credentials for full access to the cluster.
       * `cluster.rkestate`: The [Kubernetes Cluster State file](https://rancher.com/docs/rke/latest/en/installation/#kubernetes-cluster-state), this file contains credentials for full access to the cluster.
-  * In case not having Public DNS system add the custom DNS configuration for the cluster.
-    *   Check whether coredns pods are up and running in your cluster via the below command:
-    ```
-    kubectl -n kube-system get pods -l k8s-app=kube-dns
-    ```
-    * Update the IP address and domain name in the below DNS hosts template and add it in the coredns configmap Corefile key in the kube-system namespace.
-    ```
-    hosts {
-     <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
-     fallthrough
-          }
-     ```
+  * In case not having Public DNS system add the custom DNS configuration for all the hostnames to be used for testing in Cluster's coredns configmap.
+    * Check whether coredns pods are up and running in your cluster via the below command:
+      ```
+      kubectl -n kube-system get pods -l k8s-app=kube-dns
+      ```
     * To update the coredns configmap, use the below command.
-    ```
-    kubectl -n kube-system edit cm coredns
-    ```
-    *   Check whether the DNS changes are correctly updated in coredns configmap.
-    ```
-    kubectl -n kube-system get cm coredns -o yaml
-    ```
-    *   Restart the `coredns` pod in the `kube-system` namespace.
-    ```
-    kubectl -n kube-system rollout restart deploy coredns coredns-autoscaler
-    ```
-    *   Check status of coredns restart.
-    ```
-    kubectl -n kube-system rollout status deploy coredns
-    kubectl -n kube-system rollout status coredns-autoscaler
-    ```
+      ```
+      kubectl -n kube-system edit cm coredns
+      ```
+      > Note:
+      > Default editor in WSL and Ubuntu is `vi`. Incase not familiar with `vi` change the editor to your prefered one:
+      > `export EDITOR=<prefered editor>`
+    * Update the IP address and domain name in the below DNS hosts template and add it in the coredns configmap Corefile key in the kube-system namespace.
+      ```
+      hosts {
+       <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
+       fallthrough
+            }
+      ```
+    * Check whether the DNS changes are correctly updated in coredns configmap.
+      ```
+      kubectl -n kube-system get cm coredns -o yaml
+      ```
+    * Restart the `coredns` pod in the `kube-system` namespace.
+      ```
+      kubectl -n kube-system rollout restart deploy coredns coredns-autoscaler
+      ```
+    * Check status of coredns restart.
+      ```
+      kubectl -n kube-system rollout status deploy coredns
+      kubectl -n kube-system rollout status coredns-autoscaler
+      ```
 
 ## 3. Observation K8s Cluster Ingress and Storage class setup
 
@@ -305,8 +308,10 @@ Once the rancher cluster is ready, we need ingress and storage class to be set f
 * Steps to Uninstall nginx (in case required). `sudo apt purge nginx nginx-common`.
 * DNS mapping:
   * Once nginx server is installed successfully, create DNS mapping for rancher cluster related domains as mentioned in DNS requirement section. (rancher.org.net, keycloak.org.net)
-  * In case used Openssl for wildcard ssl certificate add DNS entries in local hosts file of your system.
+  *Add DNS entries in local hosts file of your system.
     * For example: `/etc/hosts` files for Linux machines.
+    * `nano /etc/hosts`
+    * Update the domain and IP address.
       ```
       <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
       ```
@@ -508,46 +513,42 @@ helm repo add mosip https://mosip.github.io/mosip-helm
     * `cluster.yml`: The RKE cluster configuration file.
     * `kube_config_cluster.yml`: The [Kubeconfig file](https://rke.docs.rancher.com/kubeconfig) for the cluster, this file contains credentials for full access to the cluster.
     * `cluster.rkestate`: The [Kubernetes Cluster State file](https://rke.docs.rancher.com/installation#kubernetes-cluster-state), this file contains credentials for full access to the cluster.
-* In case not having Public DNS system add the custom DNS configuration for the cluster.
-  *   Check whether coredns pods are up and running in your cluster via the below command:
-
-      ```
-      kubectl -n kube-system get pods -l k8s-app=kube-dns
-      ```
-  *   Update the IP address and domain name in the below DNS hosts template and add it in the coredns configmap Corefile key in the kube-system namespace.
-
-      ```
-      hosts {
-        <PUBLIC_IP_OF_MOSIP_NGINX_NODE>    api.sandbox.xyz.net resident.sandbox.xyz.net esignet.sandbox.xyz.net prereg.sandbox.xyz.net healthservices.sandbox.xyz.net
-        <INTERNAL_IP_OF_MOSIP_NGINX_NODE>  sandbox.xyz.net api-internal.sandbox.xyz.net activemq.sandbox.xyz.net kibana.sandbox.xyz.net regclient.sandbox.xyz.net admin.sandbox.xyz.net minio.sandbox.xyz.net iam.sandbox.xyz.net kafka.sandbox.xyz.net postgres.sandbox.xyz.net pmp.sandbox.xyz.net onboarder.sandbox.xyz.net smtp.sandbox.xyz.net compliance.sandbox.xyz.net
-        
-        ## Observation 
-        <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
-        fallthrough
-      }
-      ```
-  *   To update the coredns configmap, use the below command.
-
-      ```
-      kubectl -n kube-system edit cm coredns
-      ```
-  *   Check whether the DNS changes are correctly updated in coredns configmap.
-
-      ```
-      kubectl -n kube-system get cm coredns -o yaml
-      ```
-  *   Restart the `coredns` pod in the `kube-system` namespace.
-
-      ```
-      kubectl -n kube-system rollout restart deploy coredns coredns-autoscaler
-      ```
-  *   Check status of coredns restart.
-
-      ```
-      kubectl -n kube-system rollout status deploy coredns
-      kubectl -n kube-system rollout status coredns-autoscaler
-      ```
-
+* In case not having Public DNS system add the custom DNS configuration for all the hostnames to be used for testing in Cluster's coredns configmap.
+  * Check whether coredns pods are up and running in your cluster via the below command:
+    ```
+    kubectl -n kube-system get pods -l k8s-app=kube-dns
+    ```
+  * To update the coredns configmap, use the below command.
+    ```
+    kubectl -n kube-system edit cm coredns
+    ```
+    > Note:
+    > Default editor in WSL and Ubuntu is `vi`. Incase not familiar with `vi` change the editor to your prefered one:
+    > `export EDITOR=<prefered editor>`
+  * Update the IP address and domain name in the below DNS hosts template and add it in the coredns configmap Corefile key in the kube-system namespace.
+    ```
+    hosts {
+      <PUBLIC_IP_OF_MOSIP_NGINX_NODE>    api.sandbox.xyz.net resident.sandbox.xyz.net esignet.sandbox.xyz.net prereg.sandbox.xyz.net healthservices.sandbox.xyz.net
+      <INTERNAL_IP_OF_MOSIP_NGINX_NODE>  sandbox.xyz.net api-internal.sandbox.xyz.net activemq.sandbox.xyz.net kibana.sandbox.xyz.net regclient.sandbox.xyz.net admin.sandbox.xyz.net minio.sandbox.xyz.net iam.sandbox.xyz.net kafka.sandbox.xyz.net postgres.sandbox.xyz.net pmp.sandbox.xyz.net onboarder.sandbox.xyz.net smtp.sandbox.xyz.net compliance.sandbox.xyz.net
+            
+      ## Observation 
+      <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
+      fallthrough
+    }
+    ```
+  * Check whether the DNS changes are correctly updated in coredns configmap.
+    ```
+    kubectl -n kube-system get cm coredns -o yaml
+    ```
+  * Restart the `coredns` pod in the `kube-system` namespace.
+    ```
+    kubectl -n kube-system rollout restart deploy coredns coredns-autoscaler
+    ```
+  * Check status of coredns restart.
+    ```
+    kubectl -n kube-system rollout status deploy coredns
+    kubectl -n kube-system rollout status coredns-autoscaler
+    ```
 ## 7. MOSIP K8 Cluster Global configmap, Ingress and Storage Class setup
 
 ### 7.a. Global configmap:
