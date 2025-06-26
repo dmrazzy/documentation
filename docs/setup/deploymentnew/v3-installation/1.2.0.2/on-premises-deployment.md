@@ -10,20 +10,24 @@
 **Setup Wireguard VM and wireguard bastion server**
 
 * Create a Wireguard server VM with mentioned '[**Hardware and Network Requirements**'](pre-requisites.md).
-* Open required ports in the Bastian server VM.
-  * `cd $K8_ROOT/wireguard/`
-  * Create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for wireguard VM
-  * `cp hosts.ini.sample hosts.ini`
-  > Note :
-  > * Remove `[Cluster]` complete section from copied `hosts.ini` file.
-  > * Add below mentioned details:
-  >   * ansible_host : public IP of Wireguard Bastion server. eg. 100.10.20.56
-  >   * ansible_user : user to be used for installation. In this ref-impl we use Ubuntu user.
-  >   * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`
-  >   ![hosts.ini](../../../../_images/wireguard-hosts-ini.png)
-  * Execute ports.yml to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
+*   Open required ports in the Bastian server VM.
+
+    * `cd $K8_ROOT/wireguard/`
+    * Create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for wireguard VM
+    * `cp hosts.ini.sample hosts.ini`
+
+    > Note :
+    >
+    > * Remove `[Cluster]` complete section from copied `hosts.ini` file.
+    > * Add below mentioned details:
+    >   * ansible\_host : public IP of Wireguard Bastion server. eg. 100.10.20.56
+    >   * ansible\_user : user to be used for installation. In this ref-impl we use Ubuntu user.
+    >   * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`![hosts.ini](../../../../_images/wireguard-hosts-ini.png)
+
+    * Execute ports.yml to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
 
 > Note:
+>
 > * Permission of the pem files to access nodes should have 400 permission. `sudo chmod 400 ~/.ssh/privkey.pem`
 > * These ports are only needed to be opened for sharing packets over UDP.
 > * Take necessary measure on firewall level so that the Wireguard server can be reachable on 51820/udp.
@@ -37,8 +41,7 @@
 * Setup Wireguard server
   * SSH to wireguard VM
   * `ssh -i <path to .pem> ubuntu@<Wireguard server public ip>`
-  * Create directory for storing wireguard config files.
-    `mkdir -p wireguard/config`
+  * Create directory for storing wireguard config files.`mkdir -p wireguard/config`
   *   Install and start wireguard server using docker as given below:
 
       ```
@@ -82,12 +85,15 @@
         * use `ls` cmd to see the list of peers.
         * get inside your selected peer directory, and add mentioned changes in `peer.conf`:
           * `cd peer1`
-          * `nano peer1.conf`
-            * Delete the DNS IP.
-            * Update the allowed IP's to subnets CIDR ip . e.g. 10.10.20.0/23
-            > Note:
-            > * CIDR Range will be shared by the Infra provider.
-            > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
+          *   `nano peer1.conf`
+
+              * Delete the DNS IP.
+              * Update the allowed IP's to subnets CIDR ip . e.g. 10.10.20.0/23
+
+              > Note:
+              >
+              > * CIDR Range will be shared by the Infra provider.
+              > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
           * Share the updated `peer.conf` with respective peer to connect to wireguard server from Personel PC.
     * Add `peer.conf` in your PC’s `/etc/wireguard` directory as `wg0.conf`.
     * Start the wireguard client and check the status:
@@ -111,25 +117,32 @@
 >
 > * Make sure the permission for `privkey.pem` for ssh is set to 400.
 
-* Open ports and install docker on Observation K8 Cluster node VM’s.
-  * `cd $K8_ROOT/rancher/on-prem`
-  * Copy `hosts.ini.sample` to `hosts.ini` and update required details.
-  * `cp hosts.ini.sample hosts.ini`
-  > Note:
-  > * Ensure you are inside `on-prem` directory as mentioned above.
-  > * ansible_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
-  > * ansible_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
-  > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`
-  > ![hosts.ini](../../../../_images/nodes-hosts-ini.png)
-  * Update `vpc_ip` variable in `ports.yaml` with vpc CIDR ip to allow access only from machines inside same vpc.
+*   Open ports and install docker on Observation K8 Cluster node VM’s.
+
+    * `cd $K8_ROOT/rancher/on-prem`
+    * Copy `hosts.ini.sample` to `hosts.ini` and update required details.
+    * `cp hosts.ini.sample hosts.ini`
+
     > Note:
-    > * CIDR Range will be shared by the Infra provider.
-    > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
-  * Execute `ports.yml` to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
-  * Disable swap in cluster nodes. (Ignore if swap is already disabled)
-    * `ansible-playbook -i hosts.ini swap.yaml`
-    > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
-  * execute `docker.yml` to install docker and add user to docker group:`ansible-playbook -i hosts.ini docker.yaml`
+    >
+    > * Ensure you are inside `on-prem` directory as mentioned above.
+    > * ansible\_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
+    > * ansible\_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
+    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`![hosts.ini](../../../../_images/nodes-hosts-ini.png)
+
+    *   Update `vpc_ip` variable in `ports.yaml` with vpc CIDR ip to allow access only from machines inside same vpc.
+
+        > Note:
+        >
+        > * CIDR Range will be shared by the Infra provider.
+        > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
+    * Execute `ports.yml` to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
+    *   Disable swap in cluster nodes. (Ignore if swap is already disabled)
+
+        * `ansible-playbook -i hosts.ini swap.yaml`
+
+        > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
+    * execute `docker.yml` to install docker and add user to docker group:`ansible-playbook -i hosts.ini docker.yaml`
 * Creating RKE Cluster Configuration file
   * `rke config`
   *   Command will prompt for nodal details related to cluster, provide inputs w.r.t below mentioned points:
@@ -177,14 +190,18 @@
         INFO[0101] Finished building Kubernetes cluster successfully
         ```
         ````
+
         * The last line should read `Finished building Kubernetes cluster` successfully to indicate that your cluster is ready to use.
+
         > Note:
+        >
         > * Incase `rke up` command is unsucessfull due to any underline error then we need to fix the same by checking the logs.
         > * Once the issue is fixed we need to remove the cluster using `rke remove`.
-        > * Once `rke remove` is executed sucessfully need to delete cluster related incomplete configuration using :
-        >   ```
-        >   ansible-playbook -i hosts.ini ../../utils/rke-components-delete.yaml
-        >   ```
+        > *   Once `rke remove` is executed sucessfully need to delete cluster related incomplete configuration using :
+        >
+        >     ```
+        >     ansible-playbook -i hosts.ini ../../utils/rke-components-delete.yaml
+        >     ```
     * As part of the Kubernetes creation process, a `kubeconfig` file has been created and written at `kube_config_cluster.yml`, which can be used to start interacting with your Kubernetes cluster.
     * Copy the kubeconfig files
 
@@ -273,13 +290,13 @@ helm install \
 
 ### 4.b. Install Nginx :
 
-  * Login to nginx server node.
-  *   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
+* Login to nginx server node.
+*   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
 
-      ```
-      cd $K8_ROOT/rancher/on-prem/nginx
-      sudo ./install.sh
-      ```
+    ```
+    cd $K8_ROOT/rancher/on-prem/nginx
+    sudo ./install.sh
+    ```
 * Provide below mentioned inputs as and when promted
   * Rancher nginx ip : internal ip of the nginx server VM.
   * SSL cert path : path of the ssl certificate to be used for ssl termination.
@@ -368,27 +385,30 @@ helm install \
 ## 6. MOSIP K8s Cluster setup
 
 * Pre-requisites:
-  * Install all the required tools mentioned in Pre-requisites for PC.
-    * kubectl
-    * helm
+  *   Install all the required tools mentioned in Pre-requisites for PC.
 
-    ```
-    helm repo add bitnami https://charts.bitnami.com/bitnami
-    helm repo add mosip https://mosip.github.io/mosip-helm
-    ```
+      * kubectl
+      * helm
+
+      ```
+      helm repo add bitnami https://charts.bitnami.com/bitnami
+      helm repo add mosip https://mosip.github.io/mosip-helm
+      ```
   * ansible
   * rke (version 1.3.10)
   * Setup MOSIP K8 Cluster node VM’s as per '[**Hardware and Network Requirements**'](pre-requisites.md).
 * Run `env-check-setup.yaml` to check if cluster nodes are fine and dont have known issues in it.
   * `cd $K8_ROOT/rancher/on-prem`
-  * Create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for MOSIP k8 cluster nodes.
-    * `cp hosts.ini.sample hosts.ini`
-    > Note:
-    > * Ensure you are inside `on-prem` directory as mentioned above.
-    > * ansible_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
-    > * ansible_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
-    > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`
-    > ![hosts.ini](../../../../_images/nodes-hosts-ini.png)
+  *   Create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for MOSIP k8 cluster nodes.
+
+      * `cp hosts.ini.sample hosts.ini`
+
+      > Note:
+      >
+      > * Ensure you are inside `on-prem` directory as mentioned above.
+      > * ansible\_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
+      > * ansible\_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
+      > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`![hosts.ini](../../../../_images/nodes-hosts-ini.png)
   * `ansible-playbook -i hosts.ini env-check-setup.yaml`
   * This ansible checks if localhost mapping ia already present in `/etc/hosts` file in all cluster nodes, if not it adds the same.
 * Setup passwordless ssh into the cluster nodes via pem keys. (Ignore if VM’s are accessible via pem’s).
@@ -403,14 +423,18 @@ helm install \
   * `cd $K8_ROOT/mosip/on-prem`
   * create copy of `hosts.ini.sample` as `hosts.ini` and update the required details for wireguard VM.
     * `cp hosts.ini.sample hosts.ini`
-  * Update `vpc_ip` variable in `ports.yaml` with `vpc CIDR ip` to allow access only from machines inside same vpc.
-    > Note:
-    > * CIDR Range will be shared by the Infra provider.
-    > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
+  *   Update `vpc_ip` variable in `ports.yaml` with `vpc CIDR ip` to allow access only from machines inside same vpc.
+
+      > Note:
+      >
+      > * CIDR Range will be shared by the Infra provider.
+      > * Make sure all the nodes are covered in the provided CIDR range. (nginx server, K8 cluster nodes for observation as well as mosip).
   * execute `ports.yml` to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
-  * Disable swap in cluster nodes. (Ignore if swap is already disabled)
-    * `ansible-playbook -i hosts.ini swap.yaml`
-    > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
+  *   Disable swap in cluster nodes. (Ignore if swap is already disabled)
+
+      * `ansible-playbook -i hosts.ini swap.yaml`
+
+      > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
   * execute `docker.yml` to install docker and add user to docker group:`ansible-playbook -i hosts.ini docker.yaml`
 * Creating RKE Cluster Configuration file
   * rke config
@@ -521,10 +545,12 @@ helm install \
 * Select `Generic` as cluster type to add.
 * Fill the `Cluster Name` field with unique cluster name and select `Create`.
 * You will get the kubectl commands to be executed in the kubernetes cluster. Copy the command and execute from your PC (make sure your `kube-config` file is correctly set to MOSIP cluster).
+
 ```
 e.g.:
 kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt5bckwf4ctdgr7xkmmtwg8dfjk4hmbpk_c-m-db8kcj4r.yaml
 ```
+
 * Wait for few seconds after executing the command for the cluster to get verified.
 * Your cluster is now added to the rancher management server.
 
@@ -561,11 +587,12 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 ### 9.b. Nginx server setup for MOSIP K8's cluster
 
 * Login to the nginx server node.
-* Clone k8s-infra
-  ```
-  cd $K8_ROOT/mosip/on-prem/nginx
-  sudo ./install.sh
-  ```
+*   Clone k8s-infra
+
+    ```
+    cd $K8_ROOT/mosip/on-prem/nginx
+    sudo ./install.sh
+    ```
 * Provide below mentioned inputs as and when prompted
   * MOSIP nginx server internal ip
   * MOSIP nginx server public ip
@@ -599,7 +626,9 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 ## 10. Monitoring module deployment
 
 * Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
+
 > Note : This is optional for sandbox to be deployed in case monitoring is necesary and for production they can always go with alternate tools option.
+
 * Select 'Monitoring' App from Rancher console -> `Apps & Marketplaces`.
 *   In Helm options, open the YAML file and disable Nginx Ingress.
 

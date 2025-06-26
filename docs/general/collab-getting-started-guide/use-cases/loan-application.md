@@ -14,9 +14,9 @@ By following these simple steps, you will:
 
 Throughout this process, you will interact with the [**MOSIP** ](https://docs.mosip.io/1.2.0)national ID platform, the [**Inji** ](https://docs.inji.io/)credentialing stack, and the [**eSignet** ](https://docs.esignet.io/)OIDC login provider.
 
-Read on and follow the steps below to begin your experience!&#x20;
+Observe the user flow and follow the instructions and steps below it to begin your experience! Let’s get started! 🚀
 
-Let’s get started! 🚀
+<figure><img src="../../../.gitbook/assets/loan-app-use-case-user-flow.png" alt=""><figcaption></figcaption></figure>
 
 ***
 
