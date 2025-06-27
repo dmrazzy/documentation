@@ -437,7 +437,7 @@ helm install \
       > Caution: Always verify swap status with `swapon --show` before running the playbook to avoid unnecessary operations.
   * execute `docker.yml` to install docker and add user to docker group:`ansible-playbook -i hosts.ini docker.yaml`
 * Creating RKE Cluster Configuration file
-  * rke config
+  * `rke config`
   *   Command will prompt for nodal details related to cluster, provide inputs w.r.t below mentioned points:
 
       * `SSH Private Key Path` :
@@ -498,7 +498,7 @@ helm install \
     * `export KUBECONFIG="$HOME/.kube/<cluster_name>_config`
     ```
 * Test cluster access:
-  * `kubect get nodes`
+  * `kubectl get nodes`
   * Command will result in details of the nodes of the rancher cluster.
 * Save Your files
   * Save a copy of the following files in a secure location, they are needed to maintain, troubleshoot and upgrade your cluster.:
@@ -513,6 +513,7 @@ helm install \
 * Global configmap contains the list of neccesary details to be used throughout the namespaces of the cluster for common details.
 * `cd $K8_ROOT/mosip`
 * Copy `global_configmap.yaml.sample` to `global_configmap.yaml`.
+  * `cp global_configmap.yaml.sample global_configmap.yaml`
 * Update the domain names in `global_configmap.yaml` and run.
 * `kubectl apply -f global_configmap.yaml`
 
