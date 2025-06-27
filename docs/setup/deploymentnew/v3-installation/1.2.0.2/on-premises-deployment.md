@@ -346,23 +346,84 @@ helm install \
 
 ### 5.c. Keycloak - Rancher UI Integration
 
-* Login as `admin` user in Keycloak and make sure an email id, and first name field is populated for admin user. This is important for Rancher authentication as given below.
+* Login as `admin` user in Keycloak and make sure `email` and `firstName` fields are populated for the admin user. These are required for Rancher authentication to work properly.
 * Enable authentication with Keycloak using the steps given [here](https://ranchermanager.docs.rancher.com/v2.6/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/authentication-config/configure-keycloak-saml).
-* In Keycloak add another Mapper for the rancher client (in Master realm) with following fields:
-  * Protocol: saml
-  * Name: username
-  * Mapper Type: User Property
-  * Property: username
-  * Friendly Name: username
-  * SAML Attribute Name: username
-  * SAML Attribute NameFormat: Basic
-  * Specify the following mappings in Rancher's Authentication Keycloak form:
-    * Display Name Field: givenName
-    * User Name Field: email
-    * UID Field: username
-    * Entity ID Field: https://your-rancher-domain/v1-saml/keycloak/saml/metadata
-    * Rancher API Host: https://your-rancher-domain
-    * Groups Field: member
+* In Keycloak (in the `master` realm), create a new client with the following values:
+    * `Client ID`: `https://<your-rancher-host>/v1-saml/keycloak/saml/metadata`
+    * `Client Protocol`: `saml`
+    * `Root URL`: *(leave empty)*
+    * After saving, configure the client with:
+        * `Name`: `rancher`
+        * `Enabled`: `ON`
+        * `Login Theme`: `keycloak`
+        * `Sign Documents`: `ON`
+        * `Sign Assertions`: `ON`
+        * `Encrypt Assertions`: `OFF`
+        * `Client Signature Required`: `OFF`
+        * `Force POST Binding`: `OFF`
+        * `Front Channel Logout`: `OFF`
+        * `Force Name ID Format`: `OFF`
+        * `Name ID Format`: `username`
+        * `Valid Redirect URIs`: `https://<your-rancher-host>/v1-saml/keycloak/saml/acs`
+        * `IDP Initiated SSO URL Name`: `IdPSSOName`
+    * Save the client 
+* In the same client, go to the `Mappers` tab and create the following:
+    * **Mapper 1**:
+        * `Protocol`: `saml`
+        * `Name`: `username`
+        * `Mapper Type`: `User Property`
+        * `Property`: `username`
+        * `Friendly Name`: `username`
+        * `SAML Attribute Name`: `username`
+        * `SAML Attribute NameFormat`: `Basic`
+    * **Mapper 2**:
+        * `Protocol`: `saml`
+        * `Name`: `groups`
+        * `Mapper Type`: `Group List`
+        * `Group Attribute Name`: `member`
+        * `Friendly Name`: (Leave empty)
+        * `SAML Attribute NameFormat`: `Basic`
+        * `Single Group Attribute`: `ON`
+        * `Full Group Path`: `OFF`
+    * Click `Add Builtin` → select all → `Add Selected`
+* Download the Keycloak SAML descriptor XML file from:
+    * `https://<your-keycloak-host>/auth/realms/master/protocol/saml/descriptor`
+* Generate a self-signed SSL certificate and private key (if not already available):
+  ```bash
+  openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout myservice.key -out myservice.cert
+
+* #### Rancher UI Configuration
+
+    * **In Rancher UI, go to :**
+
+   `Users & Authentication` → `Auth Providers` → `Keycloak (SAML)`
+
+    * **Configure the fields as follows :**
+
+      `Display Name Field`: `givenName`
+  
+      `User Name Field`: `email` or `uid`
+  
+      `UID Field`: `username`
+
+      `Groups Field`: `member`
+
+      `Entity ID Field`: (Leave empty)
+
+      `Rancher API Host`: `https://<your-rancher-host>`
+
+    *  **Upload the following files:**
+
+  `Private Key`: `myservice.key`
+
+  `Certificate`: `myservice.cert`
+
+  `SAML Metadata XML`: (from the Keycloak descriptor link)
+
+    * Click **Enable** to activate Keycloak authentication.
+
+    * **After successful integration, Rancher users should be able to log in using their Keycloak**
+
 
 ### 5.d. RBAC for Rancher using Keycloak
 
