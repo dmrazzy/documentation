@@ -6,16 +6,17 @@ description: >-
 
 # Roadmap 2025
 
-Here we present the product roadmap for MOSIP Identity for the calendar year 2025.
-
-The quarters are defined as follows:
-
-* <mark style="background-color:blue;">**Q1**</mark>: Jan'25 – Mar'25
-* <mark style="background-color:orange;">**Q2**</mark>: Apr'25 – Jun'25
-* <mark style="background-color:red;">**Q3**</mark>: Jul'25 – Sep'25
-* <mark style="background-color:green;">**Q4**</mark>: Oct'25 – Dec'25
+Here we present the product roadmap for MOSIP Identity for the calendar year 2025. Annual product cycle of MOSIP commences in January and concludes in December.
 
 Explore the detailed product roadmaps below for [MOSIP Identity](roadmap-2025.md#mosip-identity), [Resident Portal](roadmap-2025.md#resident-portal), [ARC- Android Registration Client](roadmap-2025.md#arc-android-registration-client), [Inji Stack](roadmap-2025.md#inji-stack), [eSignet](roadmap-2025.md#esignet), [PMS (Partner Management System)](roadmap-2025.md#inji-stack-1), and [Automation](roadmap-2025.md#automation).
+
+{% hint style="warning" %}
+**Prioritization**: Through this roadmap the startegic or adaptive prioritization, if there is, has been indicated as below:
+
+* Add \[ <sup>**➕**</sup> ]: Added new.
+* Strategic priortization \[ <sup>**↑**</sup> ] : Brought ahead in schedule.
+* Adaptive reschedule \[ <sup>**↓**</sup> ]: Is moved to approaching quarters.
+{% endhint %}
 
 ## MOSIP Identity&#x20;
 
