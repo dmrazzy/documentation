@@ -284,7 +284,7 @@ helm install ingress-nginx ingress-nginx/ingress-nginx \
 > * `kubectl get all -n ingress-nginx`
 > * Command should result with list of all the pods, deployments etc in ingress nginx namespace.
 
-### 7.c. Storage classes
+### 3.b. Storage classes
 Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
 * Move to nfs directory in your personel computer.
   ```
@@ -363,6 +363,10 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
      longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
      nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
     ```
+  * Set `nfs-client` as default storage class.
+    ```
+    kubectl patch storageclass nfs-client -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+    ```
 
 ## 4. Setting up nginx server for Observation K8s Cluster
 
@@ -372,7 +376,11 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 * SSL certificates can be generated in multiple ways, either via lets encrypt if you have public DNS or via openssl certs when you don't have Public DNS.
   * Openssl : Generate wildcard ssl certificate using openssl in case you don't have public DNS using below steps. (Ensure to use this only in development env, not suggested for Production env).
     * Generate a self-signed certificate for your domain, such as \*.sandbox.xyz.net.
-    *   Execute the following command to generate a self-signed SSL certificate. Prior to execution, kindly ensure to update environmental variables & rancher domain passed to openssl command:
+    * SSH to the nginx VM.
+      ```
+      ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
+      ```
+    * Execute the following command to generate a self-signed SSL certificate. Prior to execution, kindly ensure to update environmental variables & rancher domain passed to openssl command:
 
         ```
         mkdir -p /etc/ssl/certs/
@@ -399,6 +407,9 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 ### 4.b. Install Nginx :
 
 * Login to nginx server node.
+  ```
+  ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
+  ```
 *   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
 
     ```
@@ -415,14 +426,14 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 * Steps to Uninstall nginx (in case required). `sudo apt purge nginx nginx-common`.
 * DNS mapping:
   * Once nginx server is installed successfully, create DNS mapping for rancher cluster related domains as mentioned in DNS requirement section. (rancher.org.net, keycloak.org.net)\
-    \*Add DNS entries in local hosts file of your system.
+    * Add DNS entries in local hosts file of your system.
     * For example: `/etc/hosts` files for Linux machines.
     * `nano /etc/hosts`
-    *   Update the domain and IP address.
+    * Update the domain and IP address.
 
-        ```
-        <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
-        ```
+      ```
+      <INTERNAL_IP_OF_OBS_NGINX_NODE>    rancher.xyz.net keycloak.xyz.net
+      ```
 
 ## 5. Observation K8's Cluster Apps Installation
 
@@ -441,7 +452,7 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 * Create a secret containing the observation nginx self-signed public certificate (i.e. `tls.crt` ) generated in [openssl section](on-prem-without-dns.md#setting-up-nginx-server-for-observation-k8s-cluster).
 
 ```
-kubectl -n cattle-system create secret generic tls-ca --from-file=cacerts.pem=./tls.crt
+kubectl -n cattle-system create secret generic tls-ca --from-file=cacerts.pem=<tls certificate path>
 ```
 
 * USe below command to install Rancher UI:
@@ -870,6 +881,10 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 * For Nginx server setup, we need ssl certificate, add the same into Nginx server.
 * SSL certificates can be generated in multiple ways. Either via lets encrypt if you have public DNS or via openssl certs when you don't have Public DNS.
   * Openssl : Generate wildcard ssl certificate using openssl in case you don't have public DNS using below steps. (Ensure to use this only in development env, not suggested for Production env).
+  * SSH to the nginx VM.
+    ```
+    ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
+    ```
   *   Install docker on nginx node.
 
       ```
@@ -877,22 +892,27 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
       sudo apt install docker.io -y
       sudo systemctl restart docker
       ```
-  * Generate a self-signed certificate for your domain, such as \*.sandbox.xyz.net.
-  * Execute the following command to generate a self-signed SSL certificate. Prior to execution, kindly ensure that the environmental variables passed to the OpenSSL Docker container have been properly updated:`docker volume create --name gensslcerts --opt type=none --opt device=/etc/ssl --opt o=bind docker run -it --mount type=volume,src='gensslcerts',dst=/home/mosip/ssl,volume-driver=local \ -e VALIDITY=700 \ -e COUNTRY=IN \ -e STATE=KAR \ -e LOCATION=BLR \ -e ORG=MOSIP \ -e ORG_UNIT=MOSIP \ -e COMMON_NAME=*.sandbox.xyz.net \ mosipdev/openssl:latest`
+  * Generate a self-signed certificate for your domain, such as `*.sandbox.xyz.net`.
+  * Execute the following command to generate a self-signed SSL certificate. Prior to execution, kindly ensure that the environmental variables passed to the OpenSSL Docker container have been properly updated:
+  * ```
+    docker volume create --name gensslcerts --opt type=none --opt device=/etc/ssl --opt o=bind docker run -it --mount type=volume,src='gensslcerts',dst=/home/mosip/ssl,volume-driver=local \ -e VALIDITY=700 \ -e COUNTRY=IN \ -e STATE=KAR \ -e LOCATION=BLR \ -e ORG=MOSIP \ -e ORG_UNIT=MOSIP \ -e COMMON_NAME=<*.sandbox.xyz.net> \ mosipdev/openssl:latest
+    ```
   * Above command will generate certs in below specified location. Use it when prompted during nginx installation.
-    * fullChain path: /etc/ssl/certs/nginx-selfsigned.crt.
-    * privKey path: /etc/ssl/private/nginx-selfsigned.key.
+    * fullChain path: /etc/ssl/certs/tls.crt.
+    * privKey path: /etc/ssl/private/tls.key.
 
 ### 9.b. Nginx server setup for MOSIP K8's cluster
 
 * Install nginx:
   * Login to nginx server node.
-  *   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
-
-      ```
-      cd $K8_ROOT/mosip/on-prem/nginx
-      sudo ./install.sh
-      ```
+    ```
+    ssh -i ~/.ssh/<pem to ssh> -i ubuntu@
+    ```
+  * Clone [k8s-infra](https://github.com/mosip/k8s-infra).
+    ```
+    cd $K8_ROOT/mosip/on-prem/nginx
+    sudo ./install.sh
+    ```
   * Provide below mentioned inputs as and when prompted
     * MOSIP nginx server internal ip
     * MOSIP nginx server public ip
