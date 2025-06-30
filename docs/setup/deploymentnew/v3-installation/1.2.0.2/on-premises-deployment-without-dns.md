@@ -467,7 +467,8 @@ helm install rancher rancher/rancher --version 2.6.3 \
 
 *   Login:
 
-    * Open [Rancher](https://rancher.org.net) page.
+    * Connect to Wireguard Bastion. (Incase using WSL make sure to connect using Windows Wireguard instead of WSL one).
+    * Open Rancher page.
     * Get Bootstrap password using
 
     ```
@@ -478,19 +479,18 @@ helm install rancher rancher/rancher --version 2.6.3 \
 
 ### 5.b. Keycloak
 
-* [Keycloak](https://www.keycloak.org/): Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
+* [Keycloak](https://www.keycloak.org/):
+Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
 
 ```
 cd $K8_ROOT/apps/keycloak
 ./install.sh <iam.host.name>
 ```
-
-* `keycloak_client.json`: Used to create SAML client on Keycloak for Rancher integration.
-
+* Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps definedAdd commentMore actions
+  ![keycloak-access](../../../../_images/keycloak-login.png).
 ### 5.c. Keycloak - Rancher UI Integration
 
 * Login as `admin` user in Keycloak and make sure `email` and `firstName` fields are populated for the admin user. These are required for Rancher authentication to work properly.
-* Enable authentication with Keycloak using the steps given [here](https://ranchermanager.docs.rancher.com/v2.6/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/authentication-config/configure-keycloak-saml).
 * In Keycloak (in the `master` realm), create a new client with the following values:
     * `Client ID`: `https://<your-rancher-host>/v1-saml/keycloak/saml/metadata`
     * `Client Protocol`: `saml`
