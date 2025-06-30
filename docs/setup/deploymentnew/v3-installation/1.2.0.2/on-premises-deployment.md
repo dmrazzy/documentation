@@ -385,44 +385,40 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 ## 5. Observation K8's Cluster Apps Installation
 
 ### 5.a. Rancher UI
-
-* Rancher provides full CRUD capability of creating and managing kubernetes cluster.
-*   Install rancher using Helm, update `hostname` in `rancher-values.yaml` and run the following command to install.
-
-    ```
-    cd $K8_ROOT/rancher/rancher-ui
-    helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
-    helm repo update
-    helm install rancher rancher-latest/rancher \
-    --namespace cattle-system \
-    --create-namespace \
-    -f rancher-values.yaml
-    ```
-*   Login:
-
-    * Open [Rancher](https://rancher.org.net) page.
-    * Get Bootstrap password using
-
-    ```
-    kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{ .data.bootstrapPassword|base64decode}}{{ "\n" }}'
-    ```
+Rancher provides full CRUD capability of creating and managing kubernetes cluster.
+* Install rancher using Helm, update `hostname` in `rancher-values.yaml` and run the following command to install.
+  ```
+  cd $K8_ROOT/rancher/rancher-ui
+  helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+  helm repo update
+  helm install rancher rancher-latest/rancher \
+  --namespace cattle-system \
+  --create-namespace \
+  -f rancher-values.yaml
+  ```
+* Login:
+  * Connect to the Wireguard. (in case using Windows via WSL, make sute to connect to wireguard server from windows instead of WSL).
+  * Open Rancher page.
+  * Get Bootstrap password using
+  ```
+  kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{ .data.bootstrapPassword|base64decode}}{{ "\n" }}'
+  ```
 
 > Note: Assign a password. IMPORTANT: makes sure this password is securely saved and retrievable by Admin.
 
 ### 5.b. Keycloak
 
-*   [Keycloak](../../\(https:/www.keycloak.org/\)/) is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
-
-    ```
-    cd $K8_ROOT/rancher/keycloak
-    ./install.sh <iam.host.name>
-    ```
-* `keycloak_client.json`: Used to create SAML client on Keycloak for Rancher integration.
+* Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
+  ```
+  cd $K8_ROOT/rancher/keycloak
+  ./install.sh <iam.host.name>
+  ```
+* Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps defined
+  ![keycloak-access](../../../../_images/keycloak-access.png).
 
 ### 5.c. Keycloak - Rancher UI Integration
 
 * Login as `admin` user in Keycloak and make sure `email` and `firstName` fields are populated for the admin user. These are required for Rancher authentication to work properly.
-* Enable authentication with Keycloak using the steps given [here](https://ranchermanager.docs.rancher.com/v2.6/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/authentication-config/configure-keycloak-saml).
 * In Keycloak (in the `master` realm), create a new client with the following values:
     * `Client ID`: `https://<your-rancher-host>/v1-saml/keycloak/saml/metadata`
     * `Client Protocol`: `saml`
