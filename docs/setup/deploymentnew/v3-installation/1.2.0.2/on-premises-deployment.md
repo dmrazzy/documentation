@@ -414,7 +414,7 @@ Rancher provides full CRUD capability of creating and managing kubernetes cluste
   ./install.sh <iam.host.name>
   ```
 * Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps defined
-  ![keycloak-access](../../../../_images/keycloak-access.png).
+  ![keycloak-access](../../../../_images/keycloak-login.png).
 
 ### 5.c. Keycloak - Rancher UI Integration
 
