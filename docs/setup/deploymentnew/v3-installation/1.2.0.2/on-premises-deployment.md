@@ -327,6 +327,10 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
      longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
      nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
     ```
+  * Set `nfs-client` storage class as default:
+    ```
+    kubectl patch storageclass nfs-client -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+    ```
 ## 4. Setting up nginx server for Observation K8s Cluster
 
 ### 4.a. SSL Certificate setup for TLS termination
@@ -360,12 +364,14 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 ### 4.b. Install Nginx :
 
 * Login to nginx server node.
-*   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
-
-    ```
-    cd $K8_ROOT/rancher/on-prem/nginx
-    sudo ./install.sh
-    ```
+  ```
+  ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
+  ```
+* Clone [k8s-infra](https://github.com/mosip/k8s-infra)
+  ```
+  cd $K8_ROOT/rancher/on-prem/nginx
+  sudo ./install.sh
+  ```
 * Provide below mentioned inputs as and when promted
   * Rancher nginx ip : internal ip of the nginx server VM.
   * SSL cert path : path of the ssl certificate to be used for ssl termination.
