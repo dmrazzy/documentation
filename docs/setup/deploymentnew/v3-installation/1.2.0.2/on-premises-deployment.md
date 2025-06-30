@@ -248,16 +248,85 @@ helm install \
 > * `kubectl get all -n ingress-nginx`
 > * Command should result with list of all the pods, deployments etc in ingress nginx namespace.
 
-### 3.b. Storage classes setup
+### 3.b. Storage classes
+Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
+* Move to nfs directory in your personel computer.
+  ```
+  cd $K8_ROOT/mosip/nfs
+  ```
+* Create a copy of hosts.ini.sample as hosts.ini.
+  ```
+  cp hosts.ini.sample hosts.ini
+  ```
+* Update the NFS machine details in `hosts.ini` file.
+  > Note :
+  > * Add below mentioned details:
+  > * ansible_host : internal IP of NFS server. eg. 10.12.23.21
+  > * ansible_user : user to be used for installation, in this ref-impl we use Ubuntu user.
+  > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`
+  > ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
+* Make sure Kubeconfig file is set correctly to point to required Observation cluster.
+  ```
+  kubectl config view
+  ```
+  Note:
+  * Output should show the cluster name to confirm you are pointing to right kubernetes cluster.
+  * If not pinting to right K8 cluster change the kubeconfig to connect to right K8 cluster.
+* Enable firewall with required ports:
+  ```
+  ansible-playbook -i ./hosts.ini nfs-ports.yaml
+  ```
+* SSH to the nfs node:
+  ```
+  ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal ip of nfs server>
+  ```
+* Clone `k8s-infra` repo in nginx VM:
+  ```
+  git clone https://github.com/mosip/k8s-infra -b v1.2.0.1
+  ```
+* Move to the nfs directory:
+  ```
+  cd /home/ubuntu/k8s-infra/mosip/nfs/
+  ```
+* Execute script to install nfs server:
+  ```
+  sudo ./install-nfs-server.sh
+  ```
+  Note:
+  > * Script prompts for below mentioned user inputs:
+  > ```
+  > .....
+  > Please Enter Environment Name: <envName>
+  > .....
+  > .....
+  > .....
+  > [ Export the NFS Share Directory ] 
+  > exporting *:/srv/nfs/mosip/<envName>
+  > NFS Server Path: /srv/nfs/mosip/<envName>
+  > ```
+  > * envName: env name eg. dev/qa/uat...
+* Switch to your personel computer and excute below mentioned commands:
+  ```
+  cd $K8_ROOT/mosip/nfs/
 
-* Multiple storage classes options are available for onprem K8's cluster.
-* In MOSIP's this reference deployment will continue to use NFS as a staorage class.
-  * [NFS client provisioner storage class](https://github.com/mosip/k8s-infra/blob/v1.2.0.1/mosip/nfs/README.md).
-* Other available options are as follows:
-  * [Vsphere storage class](https://github.com/vmware-archive/vsphere-storage-for-kubernetes): If you are already using VMware virtual machines, you can proceed with the vSphere storage class.
-  * [ceph-csi](https://github.com/mosip/k8s-infra/blob/main/ceph/README.md)
-  * [Longhorn](https://github.com/mosip/k8s-infra/blob/v1.2.0.1/longhorn/README.md)
-
+  ./install-nfs-client-provisioner.sh
+  ```
+  Note:
+  > * Script prompts for:
+  > * NFS Server: NFS server ip for persistence.
+  > * NFS Path : NFS path for storing the persisted data. eg. /srv/nfs/mosip/<env-name>
+* Post installation check:
+  * Check status of NFS Client Provisioner.
+    ```
+    kubectl -n nfs get deployment.apps/nfs-client-provisioner 
+    ```
+  * Check status of nfs-client storage class.
+    ```
+     kubectl get storageclass
+     NAME                 PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+     longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
+     nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
+    ```
 ## 4. Setting up nginx server for Observation K8s Cluster
 
 ### 4.a. SSL Certificate setup for TLS termination
@@ -590,16 +659,85 @@ helm install \
       * `istio-ingressgateway-internal`: internal facing istio service.
       * `istiod`: Istio daemon for replicating the changes to all envoy filters.
 
-### 7.c. Storage classes
+### 7.c.  Storage classes
+Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
+* Move to nfs directory in your personel computer.
+  ```
+  cd $K8_ROOT/mosip/nfs
+  ```
+* Create a copy of hosts.ini.sample as hosts.ini.
+  ```
+  cp hosts.ini.sample hosts.ini
+  ```
+* Update the NFS machine details in `hosts.ini` file.
+  > Note :
+  > * Add below mentioned details:
+  > * ansible_host : internal IP of NFS server. eg. 10.12.23.21
+  > * ansible_user : user to be used for installation, in this ref-impl we use Ubuntu user.
+  > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`
+  > ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
+* Make sure Kubeconfig file is set correctly to point to required mosip cluster.
+  ```
+  kubectl config view
+  ```
+  Note:
+  * Output should show the cluster name to confirm you are pointing to right kubernetes cluster.
+  * If not pinting to right K8 cluster change the kubeconfig to connect to right K8 cluster.
+* Enable firewall with required ports:
+  ```
+  ansible-playbook -i ./hosts.ini nfs-ports.yaml
+  ```
+* SSH to the nfs node:
+  ```
+  ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal ip of nfs server>
+  ```
+* Clone `k8s-infra` repo in nginx VM:
+  ```
+  git clone https://github.com/mosip/k8s-infra -b v1.2.0.1
+  ```
+* Move to the nfs directory:
+  ```
+  cd /home/ubuntu/k8s-infra/mosip/nfs/
+  ```
+* Execute script to install nfs server:
+  ```
+  sudo ./install-nfs-server.sh
+  ```
+  Note:
+  > * Script prompts for below mentioned user inputs:
+  > ```
+  > .....
+  > Please Enter Environment Name: <envName>
+  > .....
+  > .....
+  > .....
+  > [ Export the NFS Share Directory ] 
+  > exporting *:/srv/nfs/mosip/<envName>
+  > NFS Server Path: /srv/nfs/mosip/<envName>
+  > ```
+  > * envName: env name eg. dev/qa/uat...
+* Switch to your personel computer and excute below mentioned commands:
+  ```
+  cd $K8_ROOT/mosip/nfs/
 
-* Multiple storage classes options are available for onprem K8's cluster.
-* In MOSIP's this reference deployment will continue to use NFS as a staorage class.
-  * [NFS client provisioner storage class](https://github.com/mosip/k8s-infra/blob/v1.2.0.1/mosip/nfs/README.md).
-* Other available options are as follows:
-  * [Vsphere storage class](https://github.com/vmware-archive/vsphere-storage-for-kubernetes): If you are already using VMware virtual machines, you can proceed with the vSphere storage class.
-  * [ceph-csi](https://github.com/mosip/k8s-infra/blob/main/ceph/README.md)
-  * [Longhorn](https://github.com/mosip/k8s-infra/blob/v1.2.0.1/longhorn/README.md)
-
+  ./install-nfs-client-provisioner.sh
+  ```
+  Note:
+  > * Script prompts for:
+  > * NFS Server: NFS server ip for persistence.
+  > * NFS Path : NFS path for storing the persisted data. eg. /srv/nfs/mosip/<env-name>
+* Post installation check:
+  * Check status of NFS Client Provisioner.
+    ```
+    kubectl -n nfs get deployment.apps/nfs-client-provisioner 
+    ```
+  * Check status of nfs-client storage class.
+    ```
+     kubectl get storageclass
+     NAME                 PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+     longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
+     nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
+    ```
 ## 8. Import MOSIP Cluster into Rancher UI
 
 * Login as admin in Rancher console
