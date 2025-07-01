@@ -49,7 +49,7 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 | **config-server**     | [v1.1.2](https://github.com/mosip/mosip-config/tree/v1.1.2)             |
 | **Websub**            | [v1.2.0.1](https://github.com/mosip/websub/tree/v1.2.0.1)               |
 
-To know more on the module- wise versions we have tested within 1.1.5.x platform , please refer to QA reports.
+To know more on the module- wise versions we have tested within 1.1.5.x platform , please refer to [QA reports](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.2).
 
 ### Documentation
 
@@ -59,4 +59,4 @@ To know more on the module- wise versions we have tested within 1.1.5.x platform
 * [UI Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide)
 * [Backend Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide)
 * [API Documentation](https://mosip.stoplight.io/docs/partner-management-portal-revamp)
-* [Test Report]
+* [Test Report](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.2)
