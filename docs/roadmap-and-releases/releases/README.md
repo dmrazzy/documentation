@@ -7,6 +7,11 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version**: Partner Management System Revamp 1.2.2.2 (Patch)
+
+* **Date:** Coming Soon
+* [Release Notes](pms-revamp-v1.2.2.2.md)
+
 **Version**: Registration v1.2.1.1 (Patch)
 
 * **Date:** 27th May, 2025

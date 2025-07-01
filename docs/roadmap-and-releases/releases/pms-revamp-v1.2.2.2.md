@@ -1,6 +1,6 @@
-# Partner Management System Revamp (Patch)
+# Partner Management System Revamp 1.2.2.2 (Patch)
 
-**Release Name**: Partner Management System Revamp (Patch)
+**Release Name**: Partner Management System Revamp 1.2.2.2 (Patch)
 
 **Release Number**: v1.2.2.2
 
@@ -24,8 +24,8 @@ These updates enhance platform interoperability and ensure smoother integration 
 
 ### **Repositories Released**
 
-| Repository Released         | Version                                                                        |
-| --------------------------- | ------------------------------------------------------------------------------ |
+| Repository Released         | Version  |
+| --------------------------- | -------- |
 | partner-management-services | v1.2.2.2 |
 | partner-management-portal   | v1.2.2.2 |
 
@@ -33,7 +33,7 @@ These updates enhance platform interoperability and ensure smoother integration 
 
 The following table outlines the tested and certified compatibility of PMS 1.2.2.2 with other backward compatible modules.
 
-| Module/ Repo          | 1.2.2.0 versions                                                        |
+| Module/ Repo          | Versions                                                                |
 | --------------------- | ----------------------------------------------------------------------- |
 | **Key Manager**       | [v1.3.0-beta.2](https://github.com/mosip/keymanager/tree/v1.3.0-beta.2) |
 | **auth manager**      | [v1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1)  |
