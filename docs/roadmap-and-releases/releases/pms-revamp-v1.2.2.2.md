@@ -26,8 +26,8 @@ These updates enhance platform interoperability and ensure smoother integration 
 
 | Repository Released         | Version                                                                        |
 | --------------------------- | ------------------------------------------------------------------------------ |
-| partner-management-services | [v1.2.2.2](https://github.com/mosip/partner-management-services/tree/v1.2.2.1) |
-| partner-management-portal   | [v1.2.2.2](https://github.com/mosip/partner-management-portal/tree/v1.2.2.1)   |
+| partner-management-services | v1.2.2.2 |
+| partner-management-portal   | v1.2.2.2 |
 
 ### Compatible Modules
 
@@ -59,4 +59,4 @@ To know more on the module- wise versions we have tested within 1.1.5.x platform
 * [UI Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide)
 * [Backend Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide)
 * [API Documentation](https://mosip.stoplight.io/docs/partner-management-portal-revamp)
-* [Test Report](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.2.2.1)
+* [Test Report]
