@@ -1122,7 +1122,7 @@ Click [here](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-ext
 ## 14. MOSIP Modules Deployment
 
 * Now that all the Kubernetes cluster and external dependencies are already installed, will continue with MOSIP service deployment.
-*   While installing a few modules, installation script prompts to check if you have public domain and valid SSL certificates on the server. Opt option n as we are using self-signed certificates. For example:
+* While installing a few modules, installation script prompts to check if you have public domain and valid SSL certificates on the server. Opt option n as we are using self-signed certificates. For example:
 
     ```
     ./install.sh
@@ -1137,7 +1137,28 @@ Click [here](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-ext
     ./install-all.sh
     ```
 
-Check detailed [MOSIP Modules Deployment](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-modules-deployment) installation steps.
+> Note:
+> * In case of failure on execution of `install-all.sh` follow [MOSIP Modules Deployment](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-modules-deployment) installation steps from the failure point.
+> * Installation for config-server and admin service is facing delay in this version hence need to execute below mentioned commands respectively for config-server and admin-service once the script fails.
+>   * For config server:
+>     * Update `failureThreshold` for `startupProbe` to 60.
+>       ```
+>       kubectl -n config-server edit deployment config-server 
+>       ```  
+>   * For admin service:
+>     * Update `failureThreshold` for `startupProbe` to 60.
+>     ```
+>     kubectl -n admin edit deployment admin-service 
+>     ```  
+>     * Once admin service is up and running re-execute `install.sh` script after commenting out below mentioned commands:
+>     ```
+>     #echo Installing Admin-Proxy into Masterdata and Keymanager.
+>     #kubectl -n $NS apply -f admin-proxy.yaml
+>     #echo Installing admin hotlist service.
+>     #helm -n $NS install admin-hotlist mosip/admin-hotlist --version $CHART_VERSION
+>     #echo Installing admin service. Will wait till service gets installed.
+>     #helm -n $NS install admin-service mosip/admin-service --set istio.corsPolicy.allowOrigins\[0\].prefix=https://$ADMIN_HOST --wait --version $CHART_VERSION
+>     ```
 
 ## 15. API Testrig
 
