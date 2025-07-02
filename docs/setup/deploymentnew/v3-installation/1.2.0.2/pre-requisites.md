@@ -30,10 +30,12 @@ As only secured https connections are allowed via nginx server will need below m
 * One valid wildcard ssl certificate related to domain used for accessing Mosip cluster, this needs to be stored inside the nginx server VM for mosip cluster. In above e.g.: \*.sandbox.xyz.net is the similar example domain.
 
 ## Personal computer requirements
-> Note: In case unfamiliar with below mentioned tools and trying deployment from personel computer having Windows OS, suggestion is to use WSL for easy proceedings. 
+> Note:
+> * In case unfamiliar with below mentioned tools and trying deployment from personel computer having Windows OS, suggestion is to use WSL for easy proceedings.
+> * Please ensure the following tools with the specified versions are installed on your personal computer.
 
-* [git](https://github.com/git-guides/install-git) - version >= 2.25.1.
-* [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)- any client version above 1.19
+* [git](https://github.com/git-guides/install-git) - version 2.25.1 or higher.
+* [kubectl](https://kubernetes.io/docs/tasks/tools/#kubectl)- version 2.12.4 or higher
 * [helm](https://helm.sh/docs/intro/install/)- any client version above 3.0.0 and add below repos as well:
 
 ```
@@ -44,7 +46,7 @@ helm repo add mosip https://mosip.github.io/mosip-helm
 * [Istioctl](https://istio.io/latest/docs/setup/getting-started/#download) : version: 1.15.0
 * [rke](https://rancher.com/docs/rke/latest/en/installation/) : version: [1.3.10](https://github.com/rancher/rke/releases/tag/v1.3.10)
 * [Ansible](https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html) -  version > 2.12.4
-*   Create a directory as mosip in your PC and:
+* Once the above tools are installed, create a directory named `mosip` on your PC and follow the steps below:
 
     * clone k8’s infra repo with tag : 1.2.0.2 (**whichever is the latest version**) inside mosip directory. `git clone https://github.com/mosip/k8s-infra -b v1.2.0.2`
     * clone mosip-infra with tag : 1.2.0.2 (**whichever is the latest version**) inside mosip directory. `git clone https://github.com/mosip/mosip-infra -b v1.2.0.2`
