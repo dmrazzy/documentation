@@ -406,7 +406,7 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 
 ### 4.b. Install Nginx :
 
-* Move to nginx directory in your local:Add commentMore actions
+* Move to nginx directory in your local
 * `cd $K8_ROOT/mosip/on-prem/nginx/`
 * Open required ports :
   * Use any editor to create new `hosts.ini` file:
@@ -427,17 +427,17 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
   ```
   ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
   ```
-*   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
+  * Clone [k8s-infra](https://github.com/mosip/k8s-infra)
 
     ```
     cd $K8_ROOT/rancher/on-prem/nginx
     sudo ./install.sh
     ```
-* Provide below mentioned inputs as and when promted
-  * Rancher nginx ip : internal ip of the nginx server VM.
-  * SSL cert path : path of the ssl certificate to be used for ssl termination.
-  * SSL key path : path of the ssl key to be used for ssl termination.
-  * Cluster node IPs : IPs of the rancher cluster node
+  * Provide below mentioned inputs as and when promted
+    * Rancher nginx ip : internal ip of the nginx server VM.
+    * SSL cert path : path of the ssl certificate to be used for ssl termination.
+    * SSL key path : path of the ssl key to be used for ssl termination.
+    * Cluster node IPs : IPs of the rancher cluster node
 * Post installation check:
   * `sudo systemctl status nginx`
 * Steps to Uninstall nginx (in case required). `sudo apt purge nginx nginx-common`.
@@ -953,7 +953,7 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
     * SSL cert path
     * SSL key path
     * Cluster node ip's (comma separated no whitespace)
-*   When utilizing an openssl wildcard SSL certificate, please add the following server block to the nginx server configuration within the http block. Disregard this if using SSL certificates obtained through letsencrypt or for publicly available domains. Please note that this should only be used in a development environment and is not recommended for production environments.
+* When utilizing an openssl wildcard SSL certificate, please add the following server block to the nginx server configuration within the http block. Disregard this if using SSL certificates obtained through letsencrypt or for publicly available domains. Please note that this should only be used in a development environment and is not recommended for production environments.
 
     * `nano /etc/nginx/nginx.conf`
     * ```
