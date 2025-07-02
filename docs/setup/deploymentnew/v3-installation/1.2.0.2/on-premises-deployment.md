@@ -848,7 +848,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
     ```
 * Click on `Install`.
 
-## 11. Alerting setup (OPTIONAL)
+## 11. Alerting setup
 > Note :
 > * Alerting in the sandbox environment is optional and can be deployed if required.
 > * For production environments, alternative alerting tools can be used.
@@ -892,7 +892,7 @@ cd $K8_ROOT/monitoring/alerting/
 
 * Alerting is installed.
 
-## 12. Logging module setup and installation (OPTINAL)
+## 12. Logging module setup and installation
 > Note :
 > * Logging in the sandbox environment is optional and can be deployed if required.
 > * For production environments, alternative logging tools can be used.
