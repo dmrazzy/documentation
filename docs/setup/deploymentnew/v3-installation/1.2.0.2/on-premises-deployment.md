@@ -363,7 +363,23 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 
 ### 4.b. Install Nginx :
 
-* Login to nginx server node.
+* Move to nginx directory in your local:
+* `cd $K8_ROOT/mosip/on-prem/nginx/`
+* Open required ports :
+  * Use any editor to create new `hosts.ini` file:
+  * ```
+    nano hosts.ini
+    ```
+  * Add below mentioned lines with updated details of nginx server to the `hosts.ini` and save.
+    ```
+    [nginx]
+    node-nginx ansible_host=<internal ip> ansible_user=root ansible_ssh_private_key_file=<pvt .pem file>
+    ```
+  * Execute below mentoned command to open required ports:
+    ```
+    ansible-playbook -i hosts.ini mosip/on-prem/nginx/nginx_ports.yaml
+    ```
+*  Login to nginx server node.
   ```
   ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
   ```
@@ -788,13 +804,28 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 
 ### 9.b. Nginx server setup for MOSIP K8's cluster
 
+* Move to nginx directory in your local:
+* `cd $K8_ROOT/mosip/on-prem/nginx/`
+* Open required ports :
+  * Use any editor to create new `hosts.ini` file:
+  * ```
+    nano hosts.ini
+    ```
+  * Add below mentioned lines with updated details of nginx server to the `hosts.ini` and save.
+    ```
+    [nginx]
+    node-nginx ansible_host=<internal ip> ansible_user=root ansible_ssh_private_key_file=<pvt .pem file>
+    ```
+  * Execute below mentoned command to open required ports:
+    ```
+    ansible-playbook -i hosts.ini mosip/on-prem/nginx/nginx_ports.yaml
+    ```
 * Login to the nginx server node.
-*   Clone k8s-infra
-
-    ```
-    cd $K8_ROOT/mosip/on-prem/nginx
-    sudo ./install.sh
-    ```
+* Clone k8s-infra
+  ```
+  cd $K8_ROOT/mosip/on-prem/nginx
+  sudo ./install.sh
+  ```
 * Provide below mentioned inputs as and when prompted
   * MOSIP nginx server internal ip
   * MOSIP nginx server public ip
