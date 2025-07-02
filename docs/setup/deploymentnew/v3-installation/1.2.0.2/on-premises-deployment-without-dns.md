@@ -983,10 +983,19 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 
 ## 10. Monitoring module deployment
 
-* Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
-
-> Note : This is optional for sandbox to be deployed in case monitoring is necesary and for production they can always go with alternate tools option.
-
+> Note :
+> * Monitoring in the sandbox environment is optional and can be deployed if required.
+> * For production environments, alternative monitoring tools can be used.
+> * These steps can also be skipped in development environments if monitoring is not needed.
+> * Incase skipping execute below commands to install monitoring crd as the same is required by mosip services:
+> ```
+> helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+> helm repo update
+> kubectl create ns cattle-monitoring-system
+> helm -n cattle-monitoring-system install rancher-monitoring-crd mosip/rancher-monitoring-crd
+> ```
+> 
+Prometheus and Grafana and Alertmanager tools are used for cluster monitoring.
 * Select 'Monitoring' App from Rancher console -> `Apps & Marketplaces`.
 *   In Helm options, open the YAML file and disable Nginx Ingress.
 
@@ -997,6 +1006,10 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 * Click on `Install`.
 
 ## 11. Alerting setup
+> Note :
+> * Alerting in the sandbox environment is optional and can be deployed if required.
+> * For production environments, alternative alerting tools can be used.
+> * These steps can also be skipped in development environments if alerting is not needed.
 
 * Alerting is part of cluster monitoring, where alert notifications are sent to the configured email or slack channel.
 * Monitoring should be deployed which includes deployment of prometheus, grafana and alertmanager.
@@ -1037,6 +1050,11 @@ cd $K8_ROOT/monitoring/alerting/
 * Alerting is installed.
 
 ## 12. Logging module setup and installation
+
+> Note :
+> * Logging in the sandbox environment is optional and can be deployed if required.
+> * For production environments, alternative logging tools can be used.
+> * These steps can also be skipped in development environments if logging is not needed.
 
 MOSIP uses [Rancher Fluentd](https://ranchermanager.docs.rancher.com/v2.0-v2.4/explanations/integrations-in-rancher/cluster-logging/fluentd) and elasticsearch to collect logs from all services and reflect the same in Kibana Dashboard.
 
