@@ -957,8 +957,29 @@ Now that all the Kubernetes cluster and external dependencies are already instal
 cd $INFRA_ROOT/deployment/v3/mosip/all
 ./install-all.sh
 ```
+> Note:
+> * In case of failure on execution of `install-all.sh` follow [MOSIP Modules Deployment](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-modules-deployment) installation steps from the failure point.
+> * Installation for config-server and admin service is facing delay in this version hence need to execute below mentioned commands respectively for config-server and admin-service once the script fails.
+>   * For config server:
+>     * Update `failureThreshold` for `startupProbe` to 60.
+>       ```
+>       kubectl -n config-server edit deployment config-server 
+>       ```  
+>   * For admin service:
+>     * Update `failureThreshold` for `startupProbe` to 60.
+>     ```
+>     kubectl -n admin edit deployment admin-service 
+>     ```  
+>     * Once admin service is up and running re-execute `install.sh` script after commenting out below mentioned commands:
+>     ```
+>     #echo Installing Admin-Proxy into Masterdata and Keymanager.
+>     #kubectl -n $NS apply -f admin-proxy.yaml
+>     #echo Installing admin hotlist service.
+>     #helm -n $NS install admin-hotlist mosip/admin-hotlist --version $CHART_VERSION
+>     #echo Installing admin service. Will wait till service gets installed.
+>     #helm -n $NS install admin-service mosip/admin-service --set istio.corsPolicy.allowOrigins\[0\].prefix=https://$ADMIN_HOST --wait --version $CHART_VERSION
+>     ``` 
 
-Check detailed [MOSIP Modules Deployment](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-modules-deployment) installation steps.
 
 ## 15. API Testrig
 
