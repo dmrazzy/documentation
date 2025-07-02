@@ -1015,10 +1015,85 @@ cd $INFRA_ROOT/deployment/v3/mosip/all
 
 ## 15. API Testrig
 
-* MOSIP’s successfull deployment can be verified by comparing the results of api testrig with testrig benchmark.
-  * ```sh
-    cd $INFRA_ROOT/deployment/v3/apitestrig
-    ./install.sh
-    ```
-    * When prompted input the hour of the day to execute the api-testrig.
-    * Daily api testrig cron jon will be executed at the very opted hour of the day.
+MOSIP’s successfull deployment can be verified by comparing the results of api testrig with testrig benchmark.
+* Navigate to the Infra Root Directory:
+  ```
+  cd $INFRA_ROOT
+  ```
+* Clone the Functional Tests Repository
+  ```
+  git clone -b v1.3.3 https://github.com/mosip/mosip-functional-tests.git
+  ```
+* After cloned successfully try to install apitestrig
+  ```
+  cd $INFRA_ROOT/mosip-functional-tests/deploy/apitestrig
+  ```
+* Make script executable
+  ```
+  chmod +x copy_cm_func.sh
+  ```
+* Run the Installer Script
+  ```
+  ./install.sh
+  ```
+  > Note:
+  > * Script prompts for below mentioned inputs please provide as and when needed:
+  >   * Enter the time (hr) to run the cronjob every day (0–23): Specify the hour you want the cronjob to run (e.g., 6 for 6 AM)
+  >   * Do you have a public domain and valid SSL certificate? (Y/n):
+  >     * Y – If you have a public domain and valid SSL certificate
+  >     * n – If you do not have one (recommended only for development environments)
+  >   * Retention days to remove old reports (Default: 3): Press Enter to accept the default or specify another value (e.g., 5).
+  >   * Provide Slack Webhook URL to notify server issues on your Slack channel: (change the URL to your channel one)
+  >     ```
+  >     https://hooks.slack.com/services/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 
+  >     ```
+  >   * Is the eSignet service deployed? (yes/no):
+  >     * no – If eSignet is not deployed, related test cases will be skipped.
+  >   * Is values.yaml for the apitestrig chart set correctly as part of the prerequisites? (Y/n):
+        * Enter Y if this step is already completed.
+  >   * Do you have S3 details for storing API-Testrig reports? (Y/n):
+  >     * Enter Y to proceed with S3 configuration.
+  >     * S3 Host: eg. `http://minio.minio:9000`
+  >     * S3 Region:(Leave blank or enter your specific region, if applicable)
+  >     * S3 Access Key:admin
+
+## 16. DSL Rig
+  * Install Packetcreater
+     * Navigate to the packetcreator directory:
+       ```
+       cd $INFRA_ROOT/deployment/v3/testrig/packetcreator 
+       ```
+     * Run the installation script:
+       ```
+       ./install.sh
+       ```
+     * NFS server details provide the following inputs:
+       * NFS Host: <NFS server ip>
+       * NFS PEM File : <pem-to-ssh-nfs-server>
+       * User for SSH Login: ubuntu
+     * Select the Ingress Controller Type:
+       * 1. Ingress
+       * 2. Istio  (Choose 2)
+  * Install DSLrig
+     * Navigate to the dslrig directory:
+       ```
+       cd $INFRA_ROOT/deployment/v3/testrig/dslrig
+       ```
+  * Run the installation script:
+     ```
+     * ./install.sh
+     ```
+    > Note:
+    > * When prompted, provide the following inputs:
+    >   * NFS Host: <nfs server ip>
+    >   * NFS PEM : <pem to ssh to nfs server>
+    >   * User for SSH Login:ubuntu
+    >   * Cronjob Time (hour of the day, 0–23): (e.g., enter 6 for 6 AM)
+    >   * Do you have a public domain and valid SSL certificate? (Y/n):
+    >     * Y: If you have a valid public domain and SSL certificate
+    >     * n: Use only in development environments
+    >   * Packet Utility Base URL:
+    >     ```
+    >     https://packetcreator.packetcreator:80/v1/packetcreator 
+    >     ```
+    >   * Retention Days to Remove Old Reports (default is 3): (Press Enter to accept default or provide a custom value)
