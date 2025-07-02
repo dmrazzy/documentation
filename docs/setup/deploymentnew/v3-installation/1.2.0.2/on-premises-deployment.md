@@ -408,6 +408,7 @@ Rancher provides full CRUD capability of creating and managing kubernetes cluste
   helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
   helm repo update
   helm install rancher rancher-latest/rancher \
+  --version 2.6.9 \
   --namespace cattle-system \
   --create-namespace \
   -f rancher-values.yaml
