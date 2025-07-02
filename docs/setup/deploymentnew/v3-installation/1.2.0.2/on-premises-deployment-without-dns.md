@@ -475,7 +475,7 @@ kubectl -n cattle-system create secret generic tls-ca --from-file=cacerts.pem=<t
 * USe below command to install Rancher UI:
 
 ```
-helm install rancher rancher/rancher --version 2.6.3 \
+helm install rancher rancher/rancher --version 2.6.9 \
 --namespace cattle-system \
 --create-namespace \
 --set privateCA=true \
