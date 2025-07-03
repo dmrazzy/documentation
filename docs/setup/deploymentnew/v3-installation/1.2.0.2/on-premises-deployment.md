@@ -980,6 +980,18 @@ cd $INFRA_ROOT/deployment/v3/external/all
 ```
 
 Click [here](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-external-dependencies) to check the detailed installation instructions of all the external components.
+> Note:
+> * Connect to `mosip_pms` DB in postgres and execute the query to change `valid_to_date` for `mpolicy-default-mobile` in `pms.auth_policy` table.
+>   * Open the terminal.
+>   * Use the psql command to connect to the PostgreSQL server. The general syntax is:
+>     ```
+>     psql -h <host> -p 5432 -U postgres -d mosip_pms
+>     ```
+>     * <host>: The server address (e.g., localhost or an IP address).
+>     * Assuming other details remain same like port and user.
+>     ```
+>     UPDATE pms.auth_policy SET valid_to_date = valid_to_date + interval '1 year' WHERE name = 'mpolicy-default-mobile';
+>     ```
 
 ## 14. MOSIP Modules Deployment
 
