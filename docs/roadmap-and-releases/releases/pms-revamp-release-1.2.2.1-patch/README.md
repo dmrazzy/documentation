@@ -88,7 +88,7 @@ The following table outlines the tested and certified compatibility of PMS 1.2.2
 
 | Module/ Repo          | 1.1.5.x versions                                                             | 1.2.2.0 versions                                                        |
 | --------------------- | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------- |
-| **Key Manager**       | [v1.1.5.6](https://github.com/mosip/keymanager/tree/v1.1.5.5-P3)             | [v1.3.0-beta.2](https://github.com/mosip/keymanager/tree/v1.3.0-beta.2) |
+| **Key Manager**       | [v1.1.5.5-P3](https://github.com/mosip/keymanager/tree/v1.1.5.5-P3)             | [v1.3.0-beta.2](https://github.com/mosip/keymanager/tree/v1.3.0-beta.2) |
 | **auth manager**      | [1.1.5.5-P2](https://github.com/mosip/mosip-openid-bridge/tree/v1.1.5.5-P2)  | [v1.2.0.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.2.0.1)  |
 | **artifactory**       | [1.1.5.5-P2](https://github.com/mosip/artifactory-ref-impl/tree/v1.1.5.5-P2) | [v1.2.0.2](https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2) |
 | **IDA**               | [1.2.0.1-B4](https://github.com/mosip/id-authentication/tree/v1.2.0.1-B4)    | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)    |
