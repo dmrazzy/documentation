@@ -348,7 +348,7 @@
       * [Performance Test Report](roadmap-and-releases/releases/release-notes/performance-test-report.md)
       * [Security Test Report](roadmap-and-releases/releases/release-notes/security-test-report.md)
       * [Feature Health Report](roadmap-and-releases/releases/release-notes/feature-health-report.md)
-    * [1.2.1.0-beta.1-Part-4](roadmap-and-releases/releases/1.2.1.0-beta.1-part-4.md)
+    * [1.2.1.0-beta.1 (Part-4)](roadmap-and-releases/releases/1.2.1.0-beta.1-part-4.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
