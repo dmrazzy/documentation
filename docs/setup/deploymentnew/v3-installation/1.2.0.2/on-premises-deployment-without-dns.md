@@ -500,7 +500,7 @@ helm install rancher rancher/rancher --version 2.6.9 \
 Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
 
 ```
-cd $K8_ROOT/apps/keycloak
+cd $K8_ROOT/rancher/keycloak
 ./install.sh <iam.host.name>
 ```
 * Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps definedAdd commentMore actions
@@ -589,7 +589,7 @@ cd $K8_ROOT/apps/keycloak
 ### 5.d. RBAC for Rancher using Keycloak
 
 * For users in Keycloak assign roles in Rancher - **cluster** and **project** roles. Under `default` project add all the namespaces. Then, to a non-admin user you may provide Read-Only role (under projects).
-* If you want to create custom roles, you can follow the steps given [here](https://github.com/mosip/k8s-infra/blob/v1.2.0.1/docs/create-custom-role.md).
+* In case your cluster is used by multiple peoples with multiple roles and you want to create custom roles, you can follow the steps given [here](https://github.com/mosip/k8s-infra/blob/v1.2.0.1/docs/create-custom-role.md).
 * Add a member to cluster/project in Rancher:
   * Navigate to RBAC cluster members
   * Add member name exactly as `username` in Keycloak
@@ -774,6 +774,8 @@ helm repo add mosip https://mosip.github.io/mosip-helm
       kubectl -n kube-system rollout status deploy coredns
       kubectl -n kube-system rollout status coredns-autoscaler
       ```
+      > Note:
+      > * Since this deployment is without proper DNS and using self signed certificate please be informed that while accessing the UI components in browsr the sites will be in `Not-secure` state.  
 
 ## 7. MOSIP K8 Cluster Global configmap, Ingress and Storage Class setup
 
@@ -793,9 +795,11 @@ helm repo add mosip https://mosip.github.io/mosip-helm
   * This will bring up all the Istio components and the Ingress Gateways.
   * Check Ingress Gateway services:
     * `kubectl get svc -n istio-system`
-      * `istio-ingressgateway`: external facing istio service.
-      * `istio-ingressgateway-internal`: internal facing istio service.
-      * `istiod`: Istio daemon for replicating the changes to all envoy filters.
+    > Note:
+    > Response should contain service names as mentioned below. 
+    > * `istio-ingressgateway`: external facing istio service.
+    > * `istio-ingressgateway-internal`: internal facing istio service.
+    > * `istiod`: Istio daemon for replicating the changes to all envoy filters.
 
 ### 7.c.  Storage classes
 Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
