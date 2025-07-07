@@ -1098,6 +1098,31 @@ MOSIP’s successfull deployment can be verified by comparing the results of api
      * ./install.sh
      ```
     > Note:
+    > Before running install.sh, please ensure the following is added in the Helm install command:
+    > ```
+    > --set dslorchestrator.configmaps.dslorchestrator.servicesNotDeployed="esignet" \
+    > ```
+    > After adding the above, the full Helm installation command should look like this:
+    >```
+    > helm -n $NS install dslorchestrator mosip/dslorchestrator \
+    >  --set crontime="0 $time * * *" \
+    >  --version $CHART_VERSION \
+    >  --set dslorchestrator.configmaps.s3.s3-host='http://minio.minio:9000' \
+    >  --set dslorchestrator.configmaps.s3.s3-user-key='admin' \
+    >  --set dslorchestrator.configmaps.s3.s3-region='' \
+    >  --set dslorchestrator.configmaps.db.db-server="$DB_HOST" \
+    >  --set dslorchestrator.configmaps.db.db-su-user="postgres" \
+    >  --set dslorchestrator.configmaps.db.db-port="5432" \
+    >  --set dslorchestrator.configmaps.dslorchestrator.USER="$USER" \
+    >  --set dslorchestrator.configmaps.dslorchestrator.ENDPOINT="https://$API_INTERNAL_HOST" \
+    >  --set dslorchestrator.configmaps.dslorchestrator.packetUtilityBaseUrl="$packetUtilityBaseUrl" \
+    >  --set persistence.nfs.server="$NFS_HOST" \
+    >  --set persistence.nfs.path="/srv/nfs/mosip/dsl-scenarios/$ENV_NAME" \
+    >  --set dslorchestrator.configmaps.dslorchestrator.reportExpirationInDays="$reportExpirationInDays" \
+    >  --set dslorchestrator.configmaps.dslorchestrator.NS="$NS" \
+    >  --set dslorchestrator.configmaps.dslorchestrator.servicesNotDeployed="esignet" \
+    >  $ENABLE_INSECURE
+    > ```
     > * When prompted, provide the following inputs:
     >   * NFS Host: <nfs server ip>
     >   * NFS PEM : <pem to ssh to nfs server>
