@@ -75,8 +75,8 @@ mosip.pms.root.and.intermediate.certificates.available=true
 
 | Repository Released         | Version  |
 | --------------------------- | -------- |
-| partner-management-services | [v1.2.2.2] (https://github.com/mosip/partner-management-services/tree/v1.2.2.2) |
-| partner-management-portal   | [v1.2.2.2] (https://github.com/mosip/partner-management-portal/tree/v1.2.2.2) |
+| partner-management-services | [v1.2.2.2](https://github.com/mosip/partner-management-services/tree/v1.2.2.2) |
+| partner-management-portal   | [v1.2.2.2](https://github.com/mosip/partner-management-portal/tree/v1.2.2.2) |
 
 ### Compatible Modules
 
