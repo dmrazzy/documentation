@@ -674,9 +674,11 @@ Rancher provides full CRUD capability of creating and managing kubernetes cluste
   * This will bring up all the Istio components and the Ingress Gateways.
   * Check Ingress Gateway services:
     * `kubectl get svc -n istio-system`
-      * `istio-ingressgateway`: external facing istio service.
-      * `istio-ingressgateway-internal`: internal facing istio service.
-      * `istiod`: Istio daemon for replicating the changes to all envoy filters.
+    > Note:
+    > Response should contain service names as mentioned below. 
+    > * `istio-ingressgateway`: external facing istio service.
+    > * `istio-ingressgateway-internal`: internal facing istio service.
+    > * `istiod`: Istio daemon for replicating the changes to all envoy filters.
 
 ### 7.c.  Storage classes
 Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
