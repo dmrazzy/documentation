@@ -127,6 +127,7 @@
         * [Build and Development Guide](id-lifecycle-management/support-systems/partner-management-services/develop/build-and-development-guide.md)
         * [New Language Support](id-lifecycle-management/support-systems/partner-management-services/develop/new-language-support.md)
         * [Browsers Supported](id-lifecycle-management/support-systems/partner-management-services/develop/browsers-supported.md)
+        * [Load Email Templates for Notifications in Master Data](id-lifecycle-management/support-systems/partner-management-services/develop/load-email-templates-for-notifications-in-master-data.md)
       * [Test](id-lifecycle-management/support-systems/partner-management-services/functional-overview/README.md)
         * [Try It Out](id-lifecycle-management/support-systems/partner-management-services/functional-overview/try-it-out.md)
         * [Partner Administrator](id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration.md)

@@ -1,43 +1,104 @@
 # Build and Development Guide
 
-## Build and Development Guide
-
 This guide contains all the information required for successful deployment and running of Partner Management Portal. It includes information about the Database and roles.
 
-#### DB scripts
+### DB scripts
 
 Partner Management Service DB Scripts to be run: [DB scripts](https://github.com/mosip/partner-management-services/tree/develop-pmp-revamp/db_scripts/mosip_pms)
 
-#### Keycloak Roles
+### Keycloak Roles
 
-`mosip-pms-client` needs to have below roles in keycloak:
+mosip-pms-client needs to have below roles in keycloak:
 
-* `CREATE_SHARE`\`
-* `DEVICE_PROVIDER`
-* `PARTNER`
-* `PARTNER_ADMIN`
-* `PMS_ADMIN`
-* `PMS_USER`
-* `PUBLISH_APIKEY_APPROVED_GENERAL`
-* `PUBLISH_APIKEY_UPDATED_GENERAL`
-* `PUBLISH_CA_CERTIFICATE_UPLOADED_GENERAL`
-* `PUBLISH_MISP_LICENSE_GENERATED_GENERAL`
-* `PUBLISH_MISP_LICENSE_UPDATED_GENERAL`
-* `PUBLISH_OIDC_CLIENT_CREATED_GENERAL`
-* `PUBLISH_OIDC_CLIENT_UPDATED_GENERAL`
-* `PUBLISH_PARTNER_UPDATED_GENERAL`
-* `PUBLISH_POLICY_UPDATED_GENERAL`
-* `REGISTRATION_PROCESSOR`
-* `SUBSCRIBE_CA_CERTIFICATE_UPLOADED_GENERAL`
-* `ZONAL_ADMIN`
-* `view-users (from realm-management roles)`
+* CREATE\_SHARE
+* DEVICE\_PROVIDER
+* PARTNER
+* PARTNER\_ADMIN
+* PMS\_ADMIN
+* PMS\_USER
+* PUBLISH\_APIKEY\_APPROVED\_GENERAL
+* PUBLISH\_APIKEY\_UPDATED\_GENERAL
+* PUBLISH\_CA\_CERTIFICATE\_UPLOADED\_GENERAL
+* PUBLISH\_MISP\_LICENSE\_GENERATED\_GENERAL
+* PUBLISH\_MISP\_LICENSE\_UPDATED\_GENERAL
+* PUBLISH\_OIDC\_CLIENT\_CREATED\_GENERAL
+* PUBLISH\_OIDC\_CLIENT\_UPDATED\_GENERAL
+* PUBLISH\_PARTNER\_UPDATED\_GENERAL
+* PUBLISH\_POLICY\_UPDATED\_GENERAL
+* REGISTRATION\_PROCESSOR
+* SUBSCRIBE\_CA\_CERTIFICATE\_UPLOADED\_GENERAL
+* ZONAL\_ADMIN
+* view-users (from realm-management roles)
+* view-realm (from realm-management roles)
+
+Note: To add realm-management roles, you need to run the [keycloak-init](https://github.com/mosip/partner-management-services/blob/release-1.3.x/deploy/keycloak/keycloak-init.sh) job
 
 #### **Config Changes:**
 
-Add below property to partner-management-default.properties file in mosip-config repository to Deploy PMS Revamp 1.3.0-DP.1 release in your env.
+\
+Add below property to partner-management-default.properties file in mosip-config repository to Deploy PMS Revamp 1.3.0-beta.1 release in your env.
 
 ```
 ## This property is used by kernel-authcodeflowproxy-api to check request is coming from allowed urls not.
-auth.allowed.urls=https://${mosip.pmp.host}/,https://${mosip.pmp.reactjs.ui.host}/
+auth.allowed.urls=https://${mosip.pmp.host}/
 ```
+
+#### Setup guide for PMS Revamp with different Keymanager versions
+
+This guide outlines the features available in PMS with different Keymanager versions. Features are enabled or disabled based on the specific Keymanager version.
+
+**Keymanager - v1.1.5**
+
+| **Features**                                | **Feature Availability**                                                                                                                                                                                                                                                                                                   | **Action Required**                                                                                                                                                                                                                     |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Download originally uploaded CA certificate | A new endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} has been introduced in Key Manager to download the original CA certificate. However, this endpoint is only available in the latest version of Key Manager. Therefore, this feature must be disabled in PMS to avoid failures or inconsistencies. | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.ca.signed.partner.certificate.available=false</p>      |
+| Download uploaded FTM Certificate           | A new endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} has been introduced in Key Manager to download the original CA certificate. However, this endpoint is only available in the latest version of Key Manager. Therefore, this feature must be disabled in PMS to avoid failures or inconsistencies. | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.ca.signed.partner.certificate.available=false</p>      |
+| Trust Certificates List                     | The endpoint /v1/keymanager/getCaCertificates was added in the latest version of Key Manager to get the list of trusted certificates. It is not available in v1.1.5, so this feature must be disabled in PMS to avoid failures.                                                                                            | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| Download Trust Certificate                  | The endpoint /v1/keymanager/getCACertificateTrustPath/{caCertId} was introduced in the latest version of Key Manager to download the trust certificate. Since it is not available in v1.1.5, this feature must be disabled in PMS to avoid failures.                                                                       | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| OIDC                                        | Since Esignet is not included in this version, the related feature should be disabled in PMS.                                                                                                                                                                                                                              | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.oidc.client.available=false</p>                        |
+| Email Templates                             | Email templates are not pre-loaded in Master Data Service. Global Admin must load the necessary templates manually as part of deployment process.                                                                                                                                                                          | To load the email templates manually, please refer to the steps [here](https://mosip.atlassian.net/wiki/x/JIDVYQ).                                                                                                                      |
+
+**Keymanager - v1.2.0.1**
+
+| **Features**                                | **Feature Availability**                                                                                                                                                                                                                                                                                                   | **Action Required**                                                                                                                                                                                                                     |
+| ------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Download originally uploaded CA certificate | A new endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} has been introduced in Key Manager to download the original CA certificate. However, this endpoint is only available in the latest version of Key Manager. Therefore, this feature has to disabled in PMS to avoid failures.                     | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.ca.signed.partner.certificate.available=false</p>      |
+| Download uploaded FTM Certificate           | A new endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} has been introduced in Key Manager to download the original CA certificate. However, this endpoint is only available in the latest version of Key Manager. Therefore, this feature must be disabled in PMS to avoid failures or inconsistencies. | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.ca.signed.partner.certificate.available=false</p>      |
+| Trust Certificates List                     | The endpoint /v1/keymanager/getCaCertificates was added in the latest version of Key Manager to get the list of trusted certificates. It is not available in v1.2.0.1, So this feature must be disabled in PMS to avoid failures or inconsistencies.                                                                       | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| Download Trust Certificate                  | The endpoint /v1/keymanager/getCACertificateTrustPath/{caCertId} was introduced in the latest version of Key Manager to download the trust certificate. Since it is not available in v1.2.0.1, this feature must be disabled in PMS to avoid failures or inconsistencies.                                                  | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| OIDC                                        | Esignet is available in this version, the related feature is enabled in PMS.                                                                                                                                                                                                                                               |                                                                                                                                                                                                                                         |
+| Email Templates                             | Email templates are not pre-loaded in Master Data Service. Global Admin must load the necessary templates manually as part of deployment process.                                                                                                                                                                          | To load the email templates manually, please refer to the steps [here](https://mosip.atlassian.net/wiki/x/JIDVYQ).                                                                                                                      |
+
+**Keymanager - v1.2.1.0**
+
+| **Features**                                | **Feature Availability**                                                                                                                                                                                                                                                  | **Action Required**                                                                                                                                                                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Download originally uploaded CA certificate | The endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} is available in keymanager v1.3.0-beta.2. So this feature is enabled in PMS.                                                                                                                      |                                                                                                                                                                                                                                         |
+| Download uploaded FTM Certificate           | The endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} is available in keymanager v1.3.0-beta.2. So this feature is enabled in PMS.                                                                                                                      |                                                                                                                                                                                                                                         |
+| Trust Certificates List                     | The endpoint /v1/keymanager/getCaCertificates was added in the latest version of Key Manager to get the list of trusted certificates. It is not available in v1.2.1.0, so this feature must be disabled in PMS to avoid failures or inconsistencies.                      | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| Download Trust Certificate                  | The endpoint /v1/keymanager/getCACertificateTrustPath/{caCertId} was introduced in the latest version of Key Manager to download the trust certificate. Since it is not available in v1.2.1.0, this feature must be disabled in PMS to avoid failures or inconsistencies. | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| OIDC                                        | Esignet is available in this version, the related feature is enabled in PMS.                                                                                                                                                                                              |                                                                                                                                                                                                                                         |
+| Email Templates                             | Email templates are not pre-loaded in Master Data Service. Global Admin must load the necessary templates manually as part of deployment process.                                                                                                                         | To load the email templates manually, please refer to the steps [here](https://mosip.atlassian.net/wiki/x/JIDVYQ).                                                                                                                      |
+
+**Keymanager - v1.3.0-beta.1**
+
+| **Features**                                | **Feature Availability**                                                                                                                                                                                                                                                                                | **Action Required**                                                                                                                                                                                                                     |
+| ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Download originally uploaded CA certificate | A new endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} has been introduced in Key Manager to download the original CA certificate. However, this endpoint is only available in the latest version of Key Manager. Therefore, this feature must be disabled in PMS to avoid failures. | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.ca.signed.partner.certificate.available=false</p>      |
+| Download uploaded FTM Certificate           | A new endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} has been introduced in Key Manager to download the original CA certificate. However, this endpoint is only available in the latest version of Key Manager. Therefore, this feature must be disabled in PMS to avoid failures. | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.ca.signed.partner.certificate.available=false</p>      |
+| Trust Certificates List                     | The endpoint /v1/keymanager/getCaCertificates was added in the latest version of Key Manager to get the list of trusted certificates. It is not available in v1.3.0-beta.1, so this feature must be disabled in PMS to avoid failures.                                                                  | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| Download Trust Certificate                  | The endpoint /v1/keymanager/getCACertificateTrustPath/{caCertId} was introduced in the latest version of Key Manager to download the trust certificate. Since it is not available in v1.3.0-beta.1, this feature must be disabled in PMS to avoid failures.                                             | <p>To disable this feature, add the following property to the partner-management-default.properties file in the <strong>MOSIP config</strong> during deployment.</p><p>mosip.pms.root.and.intermediate.certificates.available=false</p> |
+| OIDC                                        | Esignet is available in this version, the related feature is enabled in PMS.                                                                                                                                                                                                                            |                                                                                                                                                                                                                                         |
+| Email Templates                             | Email templates are not pre-loaded in Master Data Service. Global Admin must load the necessary templates manually as part of deployment process.                                                                                                                                                       | To load the email templates manually, please refer to the steps [here](https://mosip.atlassian.net/wiki/x/JIDVYQ).                                                                                                                      |
+
+**Keymanager - v1.3.0-beta.2**
+
+| **Features**                                | **Feature Availability**                                                                                                                             | **Action Required**                                                                                                |
+| ------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Download originally uploaded CA certificate | The endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} is available in keymanager v1.3.0-beta.2. So this feature is enabled in PMS. |                                                                                                                    |
+| Download uploaded FTM Certificate           | The endpoint /v1/keymanager/getPartnerSignedCertificate/{partnerCertId} is available in keymanager v1.3.0-beta.2. So this feature is enabled in PMS. |                                                                                                                    |
+| Trust Certificates List                     | The endpoint /v1/keymanager/getCaCertificates is available in keymanager v1.3.0-beta.2. So this feature is enabled in PMS.                           |                                                                                                                    |
+| Download Trust Certificate                  | The endpoint /v1/keymanager/getCACertificateTrustPath/{caCertId} is available in keymanager v1.3.0-beta.2. So this feature is enabled in PMS.        |                                                                                                                    |
+| OIDC                                        | Esignet is available in this version, the related feature is enabled in PMS.                                                                         |                                                                                                                    |
+| Email Templates                             | Email templates are not pre-loaded in Master Data Service. Global Admin must load the necessary templates manually as part of deployment process.    | To load the email templates manually, please refer to the steps [here](https://mosip.atlassian.net/wiki/x/JIDVYQ). |
 

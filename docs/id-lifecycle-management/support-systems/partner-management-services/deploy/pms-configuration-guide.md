@@ -1,6 +1,6 @@
 # PMS Configuration Guide
 
-### Overview
+#### Overview
 
 The following guide outlines some important properties that can be customized for a given installation. Please note that this list is not exhaustive but serves as a checklist for reviewing properties that are likely to differ from the default settings. For a complete list of properties, refer to the files listed below.
 
@@ -20,7 +20,7 @@ partner-management-default.properties
 This property is used by kernel-authcodeflowproxy-api to check request is coming from allowed urls not.
 
 ```
-auth.allowed.urls=https://${mosip.pmp.host}/,https://${mosip.pmp.reactjs.ui.host}/
+auth.allowed.urls=https://${mosip.pmp.host}/
 ```
 
 #### Key manager API calls
@@ -38,6 +38,8 @@ pmp.partner.original.certificate.get.rest.uri=${mosip.kernel.keymanager.url}/v1/
 pmp-keymanager.upload.other.domain.cert.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/uploadOtherDomainCertificate
 pmp.trust.certificates.post.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/getCaCertificates
 pmp.download.trust.certificates.get.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/getCACertificateTrustPath/{caCertId}
+pmp.encrypt.data.post.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/encrypt
+pmp.decrypt.data.post.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/decrypt
 ```
 
 #### Auth Adapter rest template authentication configs
@@ -73,6 +75,7 @@ mosip.iam.default.realm-id=mosip
 mosip.keycloak.admin.client.id=admin-cli
 mosip.keycloak.admin.user.id=admin
 mosip.keycloak.admin.secret.key=${keycloak.admin.password}
+mosip.iam.role-users-url=${keycloak.external.url}/auth/admin/realms/mosip/roles/{userRole}/users?max=-1
 ```
 
 #### Auth Services API calls
@@ -130,8 +133,6 @@ These properties are used to set the user inactivity idle time.
 * Inactivity Timer : Specifies the duration (in minutes) before the session is timed out due to inactivity.
 * Prompt Timer : Specifies the duration (in minutes) before the user is prompted about the impending session timeout.
 
-Copy
-
 ```
 mosip.pms.session.inactivity.timer=25
 mosip.pms.session.inactivity.prompt.timer=5
@@ -140,8 +141,6 @@ mosip.pms.session.inactivity.prompt.timer=5
 #### Axios Timeout
 
 This property is used to set the server request and response time(in minutes) for Axios.
-
-Copy
 
 ```
 mosip.pms.axios.timeout=3
@@ -154,11 +153,120 @@ These properties are used to set attributes for OIDC client creation and update.
 * Grant Types : Specifies the grant types used by the OIDC client.
 * Client Authentication Methods : Specifies the client authentication methods.
 
-Copy
-
 ```
 mosip.pms.oidc.clients.grantTypes=authorization_code 
 mosip.pms.oidc.clients.clientAuthMethods=private_key_jwt
+```
+
+#### Maximum allowed years for SBI Created and Expiry Date
+
+These properties are used to set maximum number of year to be allowed for SBI created date and expiry date.
+
+```
+mosip.pms.expiry.date.max.year=10
+mosip.pms.created.date.max.year=10
+```
+
+#### Item per page configuration
+
+This property is used to set the maximum number of items to be displayed per page in the pagination.
+
+```
+mosip.pms.pagination.items.per.page=8
+```
+
+#### Configurations for Email Notifications
+
+1. This property is used to set the interval (in seconds) at which notifications are automatically refreshed.
+
+```
+mosip.pms.auto.refresh.notifications=300
+```
+
+2. This property specifies the Keycloak URL used to retrieve all users assigned to a specific role within the mosiprealm.
+   * The {userRole} placeholder should be replaced with the role name.
+   * The max=-1 query parameter ensures that all users associated with the role are fetched without any pagination or limit.
+
+```
+mosip.iam.role-users-url=${keycloak.external.url}/auth/admin/realms/mosip/roles/{userRole}/users?max=-1
+```
+
+3. These properties are used to schedule the batch job that generates notifications. This job runs daily at midnight.
+
+```
+# This job will create notifications for Root / Intermediate certificate expiry
+mosip.pms.batch.job.root.intermediate.cert.expiry.cron.schedule=0 0 0 * * *
+# This job will create notifications for Partner certificate expiry
+mosip.pms.batch.job.partner.cert.expiry.cron.schedule=0 0 0 * * *
+# This job will create weekly notifications
+mosip.pms.batch.job.weekly.notifications.cron.schedule=0 0 0 * * 6
+```
+
+4. This properties is used to schedule the batch job that delete past notifications.
+
+```
+mosip.pms.batch.job.delete.past.notifications.cron.schedule=0 0 0 * * *
+```
+
+5. These properties define the configuration for automatic deletion of past notifications in the system.
+   * Specifies the number of days to retain past notifications. Notifications older than this period will be deleted by the scheduled deletion job.
+   * Enables or disables the scheduled job that performs the deletion of past notifications.
+
+```
+mosip.pms.batch.job.past.notifications.deletion.period=60
+mosip.pms.batch.job.enable.past.notifications.deletion=true
+```
+
+6. These properties specify the number of days before certificate expiry when notifications should be triggered.
+
+```
+mosip.pms.batch.job.root.intermediate.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.partner.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+```
+
+7. This property specifies the list of partner IDs for which certificate expiry notifications should be skipped. These IDs are excluded from the notification generation process.
+
+```
+mosip.pms.batch.job.skips.partner.ids=MOSIP.PROXY.SBI,mpartner-default-cert,mpartner-default-adjudication,mpartner-default-mobile,mpartner-default-print,mpartner-default-abis,mpartner-default-resident,mpartner-default-auth,mpartner-default-digitalcard,mpartner-default-esignet,
+```
+
+#### Templates for Email Notifications
+
+Specifies the template names used for sending email notifications. Each template corresponds to a different type of notification and its email subject line.
+
+```
+email.notification.partner.cert.expiry.template=PARTNER_CERT_EXPIRY_TEMPLATE
+email.notification.intermediate.cert.expiry.template=INTERMEDIATE_CERT_EXPIRY_TEMPLATE
+email.notification.root.cert.expiry.template=ROOT_CERT_EXPIRY_TEMPLATE
+email.notification.weekly.summary.template=WEEKLY_SUMMARY_TEMPLATE
+email.notification.partner.cert.expiry.subject.template=PARTNER_CERT_EXPIRY_SUBJECT
+email.notification.intermediate.cert.expiry.subject.template=INTERMEDIATE_CERT_EXPIRY_SUBJECT
+email.notification.root.cert.expiry.subject.template=ROOT_CERT_EXPIRY_SUBJECT
+email.notification.weekly.summary.subject.template=WEEKLY_SUMMARY_SUBJECT
+```
+
+#### Configuration for Data Encryption and Decryption
+
+Defines the configuration properties used for secure data encryption and decryption through the Key Manager service.
+
+```
+pmp.encrypt.data.post.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/encrypt
+pmp.decrypt.data.post.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/decrypt
+mosip.service.keymanager.crypto.appId=PMS
+mosip.service.keymanager.crypto.refId=PII-DATA
+```
+
+#### Legacy Support Configuration Flags
+
+These properties indicate the availability of specific endpoints and the OIDC client within the MOSIP platform. They are used to enable or disable certain features based on configurations.
+
+```
+# Indicates whether the ca signed partner certificate endpoint is available in MOSIP platform
+mosip.pms.ca.signed.partner.certificate.available=true
+# Indicates whether the OIDC client is available in MOSIP platform
+mosip.pms.oidc.client.available=true
+# Indicates whether the root and intermediate CA certificates are available in MOSIP platform
+mosip.pms.root.and.intermediate.certificates.available=true
 ```
 
 #### Partner Type Roles
@@ -190,13 +298,13 @@ mosip.role.pms.getalldevicedetails=PARTNER_ADMIN
 mosip.role.pms.gettrustcertificates=PARTNER_ADMIN
 mosip.role.pms.getdownloadtrustcertificates=PARTNER_ADMIN
 mosip.role.pms.getpartnersv3=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
+mosip.role.pms.getnotifications=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER
+mosip.role.pms.putnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
+mosip.role.pms.getnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
+mosip.role.pms.patchdismissnotification=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER
 -------- Policy Management Service ---------
 mosip.role.pms.getpolicygroups=AUTH_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER,ABIS_PARTNER,MANUAL_ADJUDICATION,PARTNER_ADMIN,POLICYMANAGER
 mosip.role.pms.getallpolicies=PARTNER_ADMIN,POLICYMANAGER
 mosip.role.pms.patchdeactivatepolicy=PARTNER_ADMIN,POLICYMANAGER
 mosip.role.pms.patchdeactivatepolicygroup=PARTNER_ADMIN,POLICYMANAGER
-mosip.pms.api.id.policy.groups.get=mosip.pms.policy.groups.get
-mosip.pms.api.id.policies.get=mosip.pms.policies.get
-mosip.pms.api.id.deactivate.policy.patch=mosip.pms.deactivate.policy.patch
-mosip.pms.api.id.deactivate.policy.group.patch=mosip.pms.deactivate.policy.group.patch
 ```
