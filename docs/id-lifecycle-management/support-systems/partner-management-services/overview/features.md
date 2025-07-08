@@ -144,7 +144,7 @@ Users receive timely notifications through both the PMS portal and email regardi
 
 * Notifications in the PMS portal older than **60 days** are **automatically deleted**.
 
-### **Audit Logging for Certificate Expiry Notifications**
+### Audit Logging for Certificate Expiry Notifications
 
 To enhance traceability, PMS now captures audit logs for all certificate expiry-related notifications, including those shown on the portal and sent via email. Notifications for Root CA, Intermediate CA, and Partner Certificates—as well as the Weekly Summary of partner certificates sent to Partner Admins—are tracked for both success and failure events. Each event is recorded in the audit.app\_audit\_log table with a unique event ID and reference details. The logs include metadata such as module name, notification ID, and type. The feature ensures greater transparency and accountability in certificate lifecycle communication.
 
