@@ -6,6 +6,10 @@ icon: book-open
 # Releases
 
 ## Latest Releases 🌟
+**Version**: Admin Services 1.2.12
+
+* **Date:** 7th July,2025
+* [Release Notes](1.2.1.2-admin-services.md)
 
 **Version**: Partner Management System Revamp 1.2.2.2 (Patch)
 
