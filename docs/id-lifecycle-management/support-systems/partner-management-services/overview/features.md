@@ -100,8 +100,6 @@ Features discussed here are provided only for Partner Type which is Authenticati
   * **FTM Chip details:** Add FTM details, and deactivate FTM details.
   * **FTM Chip Certificate:** Upload, Re-upload, or download certificate.
 
-
-
 ### Receive Notifications via PMS portal and email
 
 Users receive timely notifications through both the PMS portal and email regarding the upcoming expiry of certificates linked to the Partner Management System (PMS).
@@ -127,7 +125,7 @@ Users receive timely notifications through both the PMS portal and email regardi
 * **For Individual Certificate (Root CA/ Intermediate CA/ Partner Certificate) Expirations:**
   * 30 days before expiry
   * 15 days before expiry
-  * Daily reminders starting from 10 days before expiry up to the expiry date (i.e., from Day -10 to Day 0).
+  * Daily reminders starting from 10 days before expiry up to the expiry date (i.e., from Day - 10 to Day 0).
 * **For Weekly Summary Notifications (for Partner Admins)**
   * Sent every 7 days.
   * Lists all partner certificates expiring within the next 7 days.
@@ -146,16 +144,21 @@ Users receive timely notifications through both the PMS portal and email regardi
 
 ### Audit Logging for Certificate Expiry Notifications
 
-To enhance traceability, PMS now captures audit logs for all certificate expiry-related notifications, including those shown on the portal and sent via email. Notifications for Root CA, Intermediate CA, and Partner Certificates—as well as the Weekly Summary of partner certificates sent to Partner Admins—are tracked for both success and failure events. Each event is recorded in the audit.app\_audit\_log table with a unique event ID and reference details. The logs include metadata such as module name, notification ID, and type. The feature ensures greater transparency and accountability in certificate lifecycle communication.
+To enhance traceability, PMS now captures audit logs for all certificate expiry-related notifications, including those shown on the portal and sent via email.&#x20;
 
-## Browser Support:
+* Notifications for Root CA, Intermediate CA, and Partner Certificates—as well as the Weekly Summary of partner certificates sent to Partner Admins—are tracked for both success and failure events.&#x20;
+* Each event is recorded in the `audit.app_audit_log` table with a unique `event ID` and reference details. The logs include metadata such as `module name`, `notification ID`, and `type`.&#x20;
+
+The feature ensures greater transparency and accountability in certificate lifecycle communication.
+
+## Browser Support
 
 * Complete support on Chrome, Firefox, Edge, and Safari ensures a seamless user experience across these popular browsers.
 
-## Language Support:
+## Language Support
 
 * Currently supports English, French, and Arabic with plans to incorporate additional languages in future releases.
 
-## Compatibility:
+## Compatibility
 
 * Optimized for standard browser sizes (laptop/desktop/extra large screen) with responsive UI design for laptop/desktop views.
