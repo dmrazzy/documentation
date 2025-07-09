@@ -6,6 +6,30 @@ icon: book-open
 # Releases
 
 ## Latest Releases 🌟
+**Version**: ID ID Reository 1.2.2.2
+
+* **Date:** 7th July,2025
+* [Release Notes](1.2.0.2-pre-registration.md)
+
+**Version**: ID Authentication 1.2.1.1 - beta
+
+* **Date:** 7th July,2025
+* [Release Notes](1.2.1.1-beta-id-authentication.md)
+
+**Version**: Pre Registration 1.2.0.2
+
+* **Date:** 7th July,2025
+* [Release Notes](1.2.0.2-pre-registration.md)
+
+**Version**: Resident Services 1.2.1.2
+
+* **Date:** 7th July,2025
+* [Release Notes](1.2.1.2-resident-services.md)
+  
+**Version**: Admin Services 1.2.1.2
+
+* **Date:** 7th July,2025
+* [Release Notes](1.2.1.2-admin-services.md)
 
 **Version**: Partner Management System Revamp 1.2.2.2 (Patch)
 
