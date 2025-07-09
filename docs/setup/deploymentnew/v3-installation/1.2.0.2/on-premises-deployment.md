@@ -230,7 +230,7 @@ Once the rancher cluster is ready, we need ingress and storage class to be set f
 ### 3.a.[Nginx Ingress Controller](https://kubernetes.github.io/ingress-nginx/deploy/): used for ingress in rancher cluster.
 
 ```
-cd $K8_ROOT/mosip/on-prem
+cd $K8_ROOT/rancher/on-prem
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx
 helm repo update
 helm install \                                                                                                             
