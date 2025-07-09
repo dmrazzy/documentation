@@ -1,14 +1,12 @@
 # PMS Configuration Guide
 
-#### Overview
+## Overview
 
 The following guide outlines some important properties that can be customized for a given installation. Please note that this list is not exhaustive but serves as a checklist for reviewing properties that are likely to differ from the default settings. For a complete list of properties, refer to the files listed below.
 
 ### Configuration files
 
 Partner Management Services uses the following configuration files:
-
-Copy
 
 ```
 application-default.properties
@@ -17,7 +15,7 @@ partner-management-default.properties
 
 #### Auth allowed urls
 
-This property is used by kernel-authcodeflowproxy-api to check request is coming from allowed urls not.
+This property is used by `kernel-authcodeflowproxy-api` to check request is coming from allowed urls not.
 
 ```
 auth.allowed.urls=https://${mosip.pmp.host}/
@@ -60,7 +58,9 @@ mosip.iam.adapter.appid=${mosip.pmp.auth.appId}
 
 These configurations are used to create user in keycloak and map to a role.
 
+{% hint style="warning" %}
 Note : All partner types should be created as roles in keycloak.
+{% endhint %}
 
 ```
 mosip.iam.realm.operations.base-url = ${keycloak.internal.url}/auth/admin/realms/{realmId}
@@ -272,8 +272,6 @@ mosip.pms.root.and.intermediate.certificates.available=true
 #### Partner Type Roles
 
 These properties specify partner type roles that are used to grant access to various APIs in partner management service.
-
-Copy
 
 ```
 -------- Partner Management Service ---------
