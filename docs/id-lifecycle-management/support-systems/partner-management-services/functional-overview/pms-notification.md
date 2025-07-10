@@ -28,7 +28,7 @@ These notifications are accessible via the **Notification Bell icon** in the top
 
 * Clicking the bell icon opens a dropdown panel showing the **latest 4 notifications**.
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1.png" alt=""><figcaption><p></p></figcaption></figure>
 
 ![](media/media/pms-eug-notification-image1.png)
 
@@ -70,7 +70,7 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 ![](media/media/pms-eug-notification-image2.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image2.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image2.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * To filter the certificate results, click the **Filter** button and
   enter one or more of the following fields: Certificate ID, Issued By,
@@ -79,7 +79,7 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 ![](media/media/pms-eug-notification-image3.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image3.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image3.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 
@@ -87,7 +87,7 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 ![](media/media/pms-eug-notification-image4.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image4.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image4.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * To filter the certificate results, click the **Filter** button and
   enter one or more of the following fields: Certificate ID, Issued By,
@@ -96,7 +96,7 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 ![](media/media/pms-eug-notification-image5.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image5.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image5.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * **Dismiss** button to remove that specific notification (removes from
   both Notification panel and Notification list page)
@@ -108,7 +108,7 @@ to expire within a given week.
 
 ![](media/media/pms-eug-notification-image6.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image6.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image6.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * To view the specific Partner IDs associated with these expiring
   certificates, click the **'View Expiring Items'** button. This will
@@ -117,7 +117,7 @@ to expire within a given week.
 
 ![](media/media/pms-eug-notification-image7.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image7.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image7.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * To filter the weekly summary results, click the **Filter** button and
   enter one or more of the following fields: \'Notification Creation
@@ -126,7 +126,7 @@ to expire within a given week.
 
 ![](media/media/pms-eug-notification-image8.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image8.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image8.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * **Dismiss** button to remove that specific notification (removes from
   both Notification panel and Notification list page)
@@ -141,7 +141,7 @@ to expire within a given week.
 
 ![](media/media/pms-eug-notification-image9.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image9.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image9.png" alt=""><figcaption><p></p></figcaption></figure>
 
 ## Email Notifications:
 
@@ -157,14 +157,14 @@ template provided below.
 
 ![](media/media/pms-eug-notification-image10.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image10.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image10.png" alt=""><figcaption><p></p></figcaption></figure>
 
 
 ### Intermediate CA Certificate expiry email notification:
 
 ![](media/media/pms-eug-notification-image12.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image12.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image12.png" alt=""><figcaption><p></p></figcaption></figure>
 
 
 
@@ -172,7 +172,7 @@ template provided below.
 
 ![](media/media/pms-eug-notification-image14.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt=""><figcaption><p></p></figcaption></figure>
 
 
 
@@ -210,7 +210,7 @@ template provided below.
 
 ![](media/media/pms-eug-notification-image16.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image16.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image16.png" alt=""><figcaption><p></p></figcaption></figure>
 
 ### 3 Language Preference
 
@@ -238,7 +238,7 @@ These notifications are accessible to all partner types via the **Notification B
 
 ![](media/media/pms-eug-notification-image17.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image17.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image17.png" alt=""><figcaption><p></p></figcaption></figure>
 
 ## Navigating through the interface to view or act on the notifications
 
@@ -251,7 +251,7 @@ These notifications are accessible to all partner types via the **Notification B
 
 ![](media/media/pms-eug-notification-image18.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image18.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image18.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * Each notification appears as a row with:
 
@@ -275,7 +275,7 @@ These notifications are accessible to all partner types via the **Notification B
 
 ![](media/media/pms-eug-notification-image19.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image19.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image19.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * To filter the certificate results, click the **Filter** button and
   enter one or more of the following fields: Certificate ID, Issued By,
@@ -284,7 +284,7 @@ These notifications are accessible to all partner types via the **Notification B
 
 ![](media/media/pms-eug-notification-image20.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image20.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image20.png" alt=""><figcaption><p></p></figcaption></figure>
 
 * **Dismiss** button to remove that specific notification (removes from
   both Notification panel and Notification list page)
@@ -307,7 +307,7 @@ Partner certificates expiring within the next 30 days.
 
 ![](media/media/pms-eug-notification-image21.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image21.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image21.png" alt=""><figcaption><p></p></figcaption></figure>
 
 
 
@@ -339,7 +339,7 @@ Partner certificates expiring within the next 30 days.
 
 ![](media/media/pms-eug-notification-image23.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image23.png" alt=""><figcaption><p>Create Policy Group</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image23.png" alt=""><figcaption><p></p></figcaption></figure>
 
 ### 3. Language Preference
 
