@@ -4,12 +4,12 @@
 
 **Partner Admin** receives three types of notifications within the PMS Portal and via email:
 
-* **Root CA Certificate Expiration**
-* Triggered for certificates expiring within the next **30 days**.
-* **Intermediate CA Certificate Expiration**
-* Triggered for certificates expiring within the next **30 days**.
-* **Weekly Summary of Partner Certificate Expiration**
-* A summary of all **partner certificates expiring in the next 7 days**, sent weekly.
+1 **Root CA Certificate Expiration**
+  * Triggered for certificates expiring within the next **30 days**.
+2 **Intermediate CA Certificate Expiration**
+  * Triggered for certificates expiring within the next **30 days**.
+3 **Weekly Summary of Partner Certificate Expiration**
+  * A summary of all **partner certificates expiring in the next 7 days**, sent weekly.
 
 These notifications are accessible via the **Notification Bell icon** in the top-right corner of the PMS portal.
 
