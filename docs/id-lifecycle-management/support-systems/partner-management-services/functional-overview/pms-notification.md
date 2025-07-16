@@ -4,12 +4,17 @@
 
 **Partner Admin** receives three types of notifications within the PMS Portal and via email:
 
-1 **Root CA Certificate Expiration**
-  * Triggered for certificates expiring within the next **30 days**.
-2 **Intermediate CA Certificate Expiration**
-  * Triggered for certificates expiring within the next **30 days**.
-3 **Weekly Summary of Partner Certificate Expiration**
-  * A summary of all **partner certificates expiring in the next 7 days**, sent weekly.
+1\. **Root CA Certificate Expiration**
+
+* Triggered for certificates expiring within the next **30 days**.&#x20;
+
+2\. **Intermediate CA Certificate Expiration**
+
+* Triggered for certificates expiring within the next **30 days**.&#x20;
+
+3\. **Weekly Summary of Partner Certificate Expiration**
+
+* A summary of all **partner certificates expiring in the next 7 days**, sent weekly.
 
 These notifications are accessible via the **Notification Bell icon** in the top-right corner of the PMS portal.
 
@@ -132,7 +137,7 @@ These notifications are delivered weekly, and the email follows the template pro
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt="" width="188"><figcaption></figcaption></figure>
 
-### Some notes and important points about Notifications
+### Important Notes
 
 #### 1) Notification Schedule (PMS Portal & Email):
 
@@ -229,7 +234,9 @@ Email alerts are sent to the partner's registered email address for Partner cert
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image21.png" alt="" width="188"><figcaption></figcaption></figure>
 
-### Note:
+
+
+### Important Notes
 
 #### 1. Notification Schedule (PMS Portal & Email)
 
@@ -237,7 +244,7 @@ Email alerts are sent to the partner's registered email address for Partner cert
 * **Follow-up Notifications** are triggered at:
   * **15 days**
   * **Daily from 10 days before expiry until the certificate expires**
-* Notifications are triggered **regardless of whether the certificate is renewed**. &#x20;
+* Notifications are triggered **regardless of whether the certificate is renewed**.
 
 #### 2. Notification Refresh Behavior
 
