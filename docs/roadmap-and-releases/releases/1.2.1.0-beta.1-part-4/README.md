@@ -47,6 +47,6 @@ This patch release introduces a schema-level compatibility update across multipl
 | mosip_keymgr     | ca_cert_store  | Added column `ca_cert_type`   |
 
 ### **Documentation**
-- [Functional Test Report](to be linked)
+- [Functional Test Report](docs/roadmap-and-releases/releases/1.2.1.0-beta.1-part-4/test-report.md)
 
 
