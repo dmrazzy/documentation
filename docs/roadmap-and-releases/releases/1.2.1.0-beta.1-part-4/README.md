@@ -4,7 +4,7 @@
 
 **Release Type:** Beta Release  
 
-**Release Date:** Coming Soon  
+**Release Date:** 10th July,2025  
 
 ### **Overview**
 
@@ -33,10 +33,10 @@ This patch release introduces a schema-level compatibility update across multipl
 ### **Repository Released**
 | Repository           | Tag Released       |
 |----------------------|--------------------|
-| id-authentication    | v1.3.0-beta.2      |
-| admin-services       | v1.3.0-beta.2      |
-| registration-client  | v1.3.0-beta.2      |
-| keymanager           | v1.3.0-beta.3      |
+| id-authentication    | [v1.3.0-beta.2](https://github.com/mosip/id-authentication/tree/v1.3.0-beta.2)     |
+| admin-services       | [v1.3.0-beta.2](https://github.com/mosip/admin-services/tree/v1.3.0-beta.2)      |
+| registration-client  | [v1.3.0-beta.2](https://github.com/mosip/registration-client/tree/v1.3.0-beta.2)      |
+| keymanager           | [v1.3.0-beta.3](https://github.com/mosip/keymanager/tree/v1.3.0-beta.3)      |
 
 ### **DB Changes**
 | Database         | Table          | Change Description            |
@@ -47,6 +47,6 @@ This patch release introduces a schema-level compatibility update across multipl
 | mosip_keymgr     | ca_cert_store  | Added column `ca_cert_type`   |
 
 ### **Documentation**
-- [Functional Test Report](to be linked)
+- [Functional Test Report](docs/roadmap-and-releases/releases/1.2.1.0-beta.1-part-4/test-report.md)
 
 
