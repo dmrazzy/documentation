@@ -284,6 +284,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
+    * [PMS Revamp 1.3.0-beta.1](roadmap-and-releases/releases/pms-revamp-1.3.0-beta.1.md)
     * [1.2.2.2 ID Repository](roadmap-and-releases/releases/1.2.2.2-id-repository.md)
     * [1.2.1.1-beta ID Authentication](roadmap-and-releases/releases/1.2.1.1-beta-id-authentication.md)
     * [1.2.0.2 Pre Registration](roadmap-and-releases/releases/1.2.0.2-pre-registration.md)
