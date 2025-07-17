@@ -249,88 +249,112 @@ helm install \
 > * Command should result with list of all the pods, deployments etc in ingress nginx namespace.
 
 ### 3.b. Storage classes
-Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
-* Move to nfs directory in your personel computer.
-  ```
-  cd $K8_ROOT/mosip/nfs
-  ```
-* Create a copy of hosts.ini.sample as hosts.ini.
-  ```
-  cp hosts.ini.sample hosts.ini
-  ```
-* Update the NFS machine details in `hosts.ini` file.
-  > Note :
-  > * Add below mentioned details:
-  > * ansible_host : internal IP of NFS server. eg. 10.12.23.21
-  > * ansible_user : user to be used for installation, in this ref-impl we use Ubuntu user.
-  > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`
-  > ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
-* Make sure Kubeconfig file is set correctly to point to required Observation cluster.
-  ```
-  kubectl config view
-  ```
-  Note:
-  * Output should show the cluster name to confirm you are pointing to right kubernetes cluster.
-  * If not pinting to right K8 cluster change the kubeconfig to connect to right K8 cluster.
-* Enable firewall with required ports:
-  ```
-  ansible-playbook -i ./hosts.ini nfs-ports.yaml
-  ```
-* SSH to the nfs node:
-  ```
-  ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal ip of nfs server>
-  ```
-* Clone `k8s-infra` repo in nginx VM:
-  ```
-  git clone https://github.com/mosip/k8s-infra -b v1.2.0.1
-  ```
-* Move to the nfs directory:
-  ```
-  cd /home/ubuntu/k8s-infra/mosip/nfs/
-  ```
-* Execute script to install nfs server:
-  ```
-  sudo ./install-nfs-server.sh
-  ```
-  Note:
-  > * Script prompts for below mentioned user inputs:
-  > ```
-  > .....
-  > Please Enter Environment Name: <envName>
-  > .....
-  > .....
-  > .....
-  > [ Export the NFS Share Directory ] 
-  > exporting *:/srv/nfs/mosip/<envName>
-  > NFS Server Path: /srv/nfs/mosip/<envName>
-  > ```
-  > * envName: env name eg. dev/qa/uat...
-* Switch to your personel computer and excute below mentioned commands:
-  ```
-  cd $K8_ROOT/mosip/nfs/
 
-  ./install-nfs-client-provisioner.sh
-  ```
-  Note:
-  > * Script prompts for:
-  > * NFS Server: NFS server ip for persistence.
-  > * NFS Path : NFS path for storing the persisted data. eg. /srv/nfs/mosip/<env-name>
+Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
+
+*   Move to nfs directory in your personel computer.
+
+    ```
+    cd $K8_ROOT/mosip/nfs
+    ```
+*   Create a copy of hosts.ini.sample as hosts.ini.
+
+    ```
+    cp hosts.ini.sample hosts.ini
+    ```
+*   Update the NFS machine details in `hosts.ini` file.
+
+    > Note :
+    >
+    > * Add below mentioned details:
+    > * ansible\_host : internal IP of NFS server. eg. 10.12.23.21
+    > * ansible\_user : user to be used for installation, in this ref-impl we use Ubuntu user.
+    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem` ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
+*   Make sure Kubeconfig file is set correctly to point to required Observation cluster.
+
+    ```
+    kubectl config view
+    ```
+
+    Note:
+
+    * Output should show the cluster name to confirm you are pointing to right kubernetes cluster.
+    * If not pinting to right K8 cluster change the kubeconfig to connect to right K8 cluster.
+*   Enable firewall with required ports:
+
+    ```
+    ansible-playbook -i ./hosts.ini nfs-ports.yaml
+    ```
+*   SSH to the nfs node:
+
+    ```
+    ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal ip of nfs server>
+    ```
+*   Clone `k8s-infra` repo in nginx VM:
+
+    ```
+    git clone https://github.com/mosip/k8s-infra -b v1.2.0.1
+    ```
+*   Move to the nfs directory:
+
+    ```
+    cd /home/ubuntu/k8s-infra/mosip/nfs/
+    ```
+*   Execute script to install nfs server:
+
+    ```
+    sudo ./install-nfs-server.sh
+    ```
+
+    Note:
+
+    > * Script prompts for below mentioned user inputs:
+    >
+    > ```
+    > .....
+    > Please Enter Environment Name: <envName>
+    > .....
+    > .....
+    > .....
+    > [ Export the NFS Share Directory ] 
+    > exporting *:/srv/nfs/mosip/<envName>
+    > NFS Server Path: /srv/nfs/mosip/<envName>
+    > ```
+    >
+    > * envName: env name eg. dev/qa/uat...
+*   Switch to your personel computer and excute below mentioned commands:
+
+    ```
+    cd $K8_ROOT/mosip/nfs/
+
+    ./install-nfs-client-provisioner.sh
+    ```
+
+    Note:
+
+    > * Script prompts for:
+    > * NFS Server: NFS server ip for persistence.
+    > * NFS Path : NFS path for storing the persisted data. eg. /srv/nfs/mosip/
 * Post installation check:
-  * Check status of NFS Client Provisioner.
-    ```
-    kubectl -n nfs get deployment.apps/nfs-client-provisioner 
-    ```
-  * Check status of nfs-client storage class.
-    ```
-     kubectl get storageclass
-     NAME                 PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-     longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
-     nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
-    ```
-  * Set `nfs-client` storage class as default:
-    ```
-    kubectl patch storageclass nfs-client -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
-    ```
+  *   Check status of NFS Client Provisioner.
+
+      ```
+      kubectl -n nfs get deployment.apps/nfs-client-provisioner 
+      ```
+  *   Check status of nfs-client storage class.
+
+      ```
+       kubectl get storageclass
+       NAME                 PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+       longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
+       nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
+      ```
+  *   Set `nfs-client` storage class as default:
+
+      ```
+      kubectl patch storageclass nfs-client -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+      ```
+
 ## 4. Setting up nginx server for Observation K8s Cluster
 
 ### 4.a. SSL Certificate setup for TLS termination
@@ -370,24 +394,29 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
   * ```
     nano hosts.ini
     ```
-  * Add below mentioned lines with updated details of nginx server to the `hosts.ini` and save.
+  *   Add below mentioned lines with updated details of nginx server to the `hosts.ini` and save.
+
+      ```
+      [nginx]
+      node-nginx ansible_host=<internal ip> ansible_user=root ansible_ssh_private_key_file=<pvt .pem file>
+      ```
+  *   Execute below mentoned command to open required ports:
+
+      ```
+      ansible-playbook -i hosts.ini mosip/on-prem/nginx/nginx_ports.yaml
+      ```
+* Login to nginx server node.
+
+```
+ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
+```
+
+*   Clone [k8s-infra](https://github.com/mosip/k8s-infra)
+
     ```
-    [nginx]
-    node-nginx ansible_host=<internal ip> ansible_user=root ansible_ssh_private_key_file=<pvt .pem file>
+    cd $K8_ROOT/rancher/on-prem/nginx
+    sudo ./install.sh
     ```
-  * Execute below mentoned command to open required ports:
-    ```
-    ansible-playbook -i hosts.ini mosip/on-prem/nginx/nginx_ports.yaml
-    ```
-*  Login to nginx server node.
-  ```
-  ssh -i ~/.ssh/<pem to ssh> ubuntu@<nginx server ip>
-  ```
-* Clone [k8s-infra](https://github.com/mosip/k8s-infra)
-  ```
-  cd $K8_ROOT/rancher/on-prem/nginx
-  sudo ./install.sh
-  ```
 * Provide below mentioned inputs as and when promted
   * Rancher nginx ip : internal ip of the nginx server VM.
   * SSL cert path : path of the ssl certificate to be used for ssl termination.
@@ -401,117 +430,121 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
 ## 5. Observation K8's Cluster Apps Installation
 
 ### 5.a. Rancher UI
+
 Rancher provides full CRUD capability of creating and managing kubernetes cluster.
-* Install rancher using Helm, update `hostname` in `rancher-values.yaml` and run the following command to install.
-  ```
-  cd $K8_ROOT/rancher/rancher-ui
-  helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
-  helm repo update
-  helm install rancher rancher-latest/rancher \
-  --version 2.6.9 \
-  --namespace cattle-system \
-  --create-namespace \
-  -f rancher-values.yaml
-  ```
-* Login:
-  * Connect to the Wireguard. (in case using Windows via WSL, make sute to connect to wireguard server from windows instead of WSL).
-  * Open Rancher page.
-  * Get Bootstrap password using
-  ```
-  kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{ .data.bootstrapPassword|base64decode}}{{ "\n" }}'
-  ```
+
+*   Install rancher using Helm, update `hostname` in `rancher-values.yaml` and run the following command to install.
+
+    ```
+    cd $K8_ROOT/rancher/rancher-ui
+    helm repo add rancher-latest https://releases.rancher.com/server-charts/latest
+    helm repo update
+    helm install rancher rancher-latest/rancher \
+    --version 2.6.9 \
+    --namespace cattle-system \
+    --create-namespace \
+    -f rancher-values.yaml
+    ```
+*   Login:
+
+    * Connect to the Wireguard. (in case using Windows via WSL, make sute to connect to wireguard server from windows instead of WSL).
+    * Open Rancher page.
+    * Get Bootstrap password using
+
+    ```
+    kubectl get secret --namespace cattle-system bootstrap-secret -o go-template='{{ .data.bootstrapPassword|base64decode}}{{ "\n" }}'
+    ```
 
 > Note: Assign a password. IMPORTANT: makes sure this password is securely saved and retrievable by Admin.
 
 ### 5.b. Keycloak
 
-* Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
-  ```
-  cd $K8_ROOT/rancher/keycloak
-  ./install.sh <iam.host.name>
-  ```
-* Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps defined
-  ![keycloak-access](../../../../_images/keycloak-login.png).
+*   Keycloak is an OAuth 2.0 compliant Identity Access Management (IAM) system used to manage the access to Rancher for cluster controls.
+
+    ```
+    cd $K8_ROOT/rancher/keycloak
+    ./install.sh <iam.host.name>
+    ```
+* Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps defined ![keycloak-access](../../../../_images/keycloak-login.png).
 
 ### 5.c. Keycloak - Rancher UI Integration
 
 * Login as `admin` user in Keycloak and make sure `email` and `firstName` fields are populated for the admin user. These are required for Rancher authentication to work properly.
 * In Keycloak (in the `master` realm), create a new client with the following values:
-    * `Client ID`: `https://<your-rancher-host>/v1-saml/keycloak/saml/metadata`
-    * `Client Protocol`: `saml`
-    * `Root URL`: *(leave empty)*
-    * After saving, configure the client with:
-        * `Name`: `rancher`
-        * `Enabled`: `ON`
-        * `Login Theme`: `keycloak`
-        * `Sign Documents`: `ON`
-        * `Sign Assertions`: `ON`
-        * `Encrypt Assertions`: `OFF`
-        * `Client Signature Required`: `OFF`
-        * `Force POST Binding`: `OFF`
-        * `Front Channel Logout`: `OFF`
-        * `Force Name ID Format`: `OFF`
-        * `Name ID Format`: `username`
-        * `Valid Redirect URIs`: `https://<your-rancher-host>/v1-saml/keycloak/saml/acs`
-        * `IDP Initiated SSO URL Name`: `IdPSSOName`
-    * Save the client 
+  * `Client ID`: `https://<your-rancher-host>/v1-saml/keycloak/saml/metadata`
+  * `Client Protocol`: `saml`
+  * `Root URL`: _(leave empty)_
+  * After saving, configure the client with:
+    * `Name`: `rancher`
+    * `Enabled`: `ON`
+    * `Login Theme`: `keycloak`
+    * `Sign Documents`: `ON`
+    * `Sign Assertions`: `ON`
+    * `Encrypt Assertions`: `OFF`
+    * `Client Signature Required`: `OFF`
+    * `Force POST Binding`: `OFF`
+    * `Front Channel Logout`: `OFF`
+    * `Force Name ID Format`: `OFF`
+    * `Name ID Format`: `username`
+    * `Valid Redirect URIs`: `https://<your-rancher-host>/v1-saml/keycloak/saml/acs`
+    * `IDP Initiated SSO URL Name`: `IdPSSOName`
+  * Save the client
 * In the same client, go to the `Mappers` tab and create the following:
-    * **Mapper 1**:
-        * `Protocol`: `saml`
-        * `Name`: `username`
-        * `Mapper Type`: `User Property`
-        * `Property`: `username`
-        * `Friendly Name`: `username`
-        * `SAML Attribute Name`: `username`
-        * `SAML Attribute NameFormat`: `Basic`
-    * **Mapper 2**:
-        * `Protocol`: `saml`
-        * `Name`: `groups`
-        * `Mapper Type`: `Group List`
-        * `Group Attribute Name`: `member`
-        * `Friendly Name`: (Leave empty)
-        * `SAML Attribute NameFormat`: `Basic`
-        * `Single Group Attribute`: `ON`
-        * `Full Group Path`: `OFF`
-    * Click `Add Builtin` → select all → `Add Selected`
+  * **Mapper 1**:
+    * `Protocol`: `saml`
+    * `Name`: `username`
+    * `Mapper Type`: `User Property`
+    * `Property`: `username`
+    * `Friendly Name`: `username`
+    * `SAML Attribute Name`: `username`
+    * `SAML Attribute NameFormat`: `Basic`
+  * **Mapper 2**:
+    * `Protocol`: `saml`
+    * `Name`: `groups`
+    * `Mapper Type`: `Group List`
+    * `Group Attribute Name`: `member`
+    * `Friendly Name`: (Leave empty)
+    * `SAML Attribute NameFormat`: `Basic`
+    * `Single Group Attribute`: `ON`
+    * `Full Group Path`: `OFF`
+  * Click `Add Builtin` → select all → `Add Selected`
 * Download the Keycloak SAML descriptor XML file from:
-    * `https://<your-keycloak-host>/auth/realms/master/protocol/saml/descriptor`
-* Generate a self-signed SSL certificate and private key (if not already available):
-  ```bash
-  openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout myservice.key -out myservice.cert
+  * `https://<your-keycloak-host>/auth/realms/master/protocol/saml/descriptor`
+*   Generate a self-signed SSL certificate and private key (if not already available):
 
-* #### Rancher UI Configuration
+    ```bash
+    openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout myservice.key -out myservice.cert
+
+    ```
+*   **Rancher UI Configuration**
 
     * **In Rancher UI, go to :**
 
-   `Users & Authentication` → `Auth Providers` → `Keycloak (SAML)`
+    `Users & Authentication` → `Auth Providers` → `Keycloak (SAML)`
 
-    * **Configure the fields as follows :**
+    *   **Configure the fields as follows :**
 
-      `Display Name Field`: `givenName`
-  
-      `User Name Field`: `email` or `uid`
-  
-      `UID Field`: `username`
+        `Display Name Field`: `givenName`
 
-      `Groups Field`: `member`
+        `User Name Field`: `email` or `uid`
 
-      `Entity ID Field`: (Leave empty)
+        `UID Field`: `username`
 
-      `Rancher API Host`: `https://<your-rancher-host>`
+        `Groups Field`: `member`
 
-    *  **Upload the following files:**
+        `Entity ID Field`: (Leave empty)
 
-  `Private Key`: `myservice.key`
+        `Rancher API Host`: `https://<your-rancher-host>`
+    * **Upload the following files:**
 
-  `Certificate`: `myservice.cert`
+    `Private Key`: `myservice.key`
 
-  `SAML Metadata XML`: (from the Keycloak descriptor link)
+    `Certificate`: `myservice.cert`
+
+    `SAML Metadata XML`: (from the Keycloak descriptor link)
 
     * Click **Enable** to activate Keycloak authentication.
-
     * **After successful integration, Rancher users should be able to log in using their Keycloak**
-
 
 ### 5.d. RBAC for Rancher using Keycloak
 
@@ -672,93 +705,118 @@ Rancher provides full CRUD capability of creating and managing kubernetes cluste
   * `cd $K8_ROOT/mosip/on-prem/istio`
   * `./install.sh`
   * This will bring up all the Istio components and the Ingress Gateways.
-  * Check Ingress Gateway services:
-    * `kubectl get svc -n istio-system`
-    > Note:
-    > Response should contain service names as mentioned below. 
-    > * `istio-ingressgateway`: external facing istio service.
-    > * `istio-ingressgateway-internal`: internal facing istio service.
-    > * `istiod`: Istio daemon for replicating the changes to all envoy filters.
+  *   Check Ingress Gateway services:
 
-### 7.c.  Storage classes
+      * `kubectl get svc -n istio-system`
+
+      > Note: Response should contain service names as mentioned below.
+      >
+      > * `istio-ingressgateway`: external facing istio service.
+      > * `istio-ingressgateway-internal`: internal facing istio service.
+      > * `istiod`: Istio daemon for replicating the changes to all envoy filters.
+
+### 7.c. Storage classes
+
 Multiple storage classes options are available for onprem K8's cluster. In this reference deployment will continue to use NFS as a storage class.
-* Move to nfs directory in your personel computer.
-  ```
-  cd $K8_ROOT/mosip/nfs
-  ```
-* Create a copy of hosts.ini.sample as hosts.ini.
-  ```
-  cp hosts.ini.sample hosts.ini
-  ```
-* Update the NFS machine details in `hosts.ini` file.
-  > Note :
-  > * Add below mentioned details:
-  > * ansible_host : internal IP of NFS server. eg. 10.12.23.21
-  > * ansible_user : user to be used for installation, in this ref-impl we use Ubuntu user.
-  > * ansible_ssh_private_key_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`
-  > ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
-* Make sure Kubeconfig file is set correctly to point to required mosip cluster.
-  ```
-  kubectl config view
-  ```
-  Note:
-  * Output should show the cluster name to confirm you are pointing to right kubernetes cluster.
-  * If not pinting to right K8 cluster change the kubeconfig to connect to right K8 cluster.
-* Enable firewall with required ports:
-  ```
-  ansible-playbook -i ./hosts.ini nfs-ports.yaml
-  ```
-* SSH to the nfs node:
-  ```
-  ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal ip of nfs server>
-  ```
-* Clone `k8s-infra` repo in nginx VM:
-  ```
-  git clone https://github.com/mosip/k8s-infra -b v1.2.0.1
-  ```
-* Move to the nfs directory:
-  ```
-  cd /home/ubuntu/k8s-infra/mosip/nfs/
-  ```
-* Execute script to install nfs server:
-  ```
-  sudo ./install-nfs-server.sh
-  ```
-  Note:
-  > * Script prompts for below mentioned user inputs:
-  > ```
-  > .....
-  > Please Enter Environment Name: <envName>
-  > .....
-  > .....
-  > .....
-  > [ Export the NFS Share Directory ] 
-  > exporting *:/srv/nfs/mosip/<envName>
-  > NFS Server Path: /srv/nfs/mosip/<envName>
-  > ```
-  > * envName: env name eg. dev/qa/uat...
-* Switch to your personel computer and excute below mentioned commands:
-  ```
-  cd $K8_ROOT/mosip/nfs/
 
-  ./install-nfs-client-provisioner.sh
-  ```
-  Note:
-  > * Script prompts for:
-  > * NFS Server: NFS server ip for persistence.
-  > * NFS Path : NFS path for storing the persisted data. eg. /srv/nfs/mosip/<env-name>
+*   Move to nfs directory in your personel computer.
+
+    ```
+    cd $K8_ROOT/mosip/nfs
+    ```
+*   Create a copy of hosts.ini.sample as hosts.ini.
+
+    ```
+    cp hosts.ini.sample hosts.ini
+    ```
+*   Update the NFS machine details in `hosts.ini` file.
+
+    > Note :
+    >
+    > * Add below mentioned details:
+    > * ansible\_host : internal IP of NFS server. eg. 10.12.23.21
+    > * ansible\_user : user to be used for installation, in this ref-impl we use Ubuntu user.
+    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem` ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
+*   Make sure Kubeconfig file is set correctly to point to required mosip cluster.
+
+    ```
+    kubectl config view
+    ```
+
+    Note:
+
+    * Output should show the cluster name to confirm you are pointing to right kubernetes cluster.
+    * If not pinting to right K8 cluster change the kubeconfig to connect to right K8 cluster.
+*   Enable firewall with required ports:
+
+    ```
+    ansible-playbook -i ./hosts.ini nfs-ports.yaml
+    ```
+*   SSH to the nfs node:
+
+    ```
+    ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal ip of nfs server>
+    ```
+*   Clone `k8s-infra` repo in nginx VM:
+
+    ```
+    git clone https://github.com/mosip/k8s-infra -b v1.2.0.1
+    ```
+*   Move to the nfs directory:
+
+    ```
+    cd /home/ubuntu/k8s-infra/mosip/nfs/
+    ```
+*   Execute script to install nfs server:
+
+    ```
+    sudo ./install-nfs-server.sh
+    ```
+
+    Note:
+
+    > * Script prompts for below mentioned user inputs:
+    >
+    > ```
+    > .....
+    > Please Enter Environment Name: <envName>
+    > .....
+    > .....
+    > .....
+    > [ Export the NFS Share Directory ] 
+    > exporting *:/srv/nfs/mosip/<envName>
+    > NFS Server Path: /srv/nfs/mosip/<envName>
+    > ```
+    >
+    > * envName: env name eg. dev/qa/uat...
+*   Switch to your personel computer and excute below mentioned commands:
+
+    ```
+    cd $K8_ROOT/mosip/nfs/
+
+    ./install-nfs-client-provisioner.sh
+    ```
+
+    Note:
+
+    > * Script prompts for:
+    > * NFS Server: NFS server ip for persistence.
+    > * NFS Path : NFS path for storing the persisted data. eg. /srv/nfs/mosip/
 * Post installation check:
-  * Check status of NFS Client Provisioner.
-    ```
-    kubectl -n nfs get deployment.apps/nfs-client-provisioner 
-    ```
-  * Check status of nfs-client storage class.
-    ```
-     kubectl get storageclass
-     NAME                 PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
-     longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
-     nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
-    ```
+  *   Check status of NFS Client Provisioner.
+
+      ```
+      kubectl -n nfs get deployment.apps/nfs-client-provisioner 
+      ```
+  *   Check status of nfs-client storage class.
+
+      ```
+       kubectl get storageclass
+       NAME                 PROVISIONER                            RECLAIMPOLICY   VOLUMEBINDINGMODE   ALLOWVOLUMEEXPANSION   AGE
+       longhorn (default)   driver.longhorn.io                     Delete          Immediate           true                   57d
+       nfs-client           cluster.local/nfs-client-provisioner   Delete          Immediate           true                   40s
+      ```
+
 ## 8. Import MOSIP Cluster into Rancher UI
 
 * Login as admin in Rancher console
@@ -814,21 +872,24 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
   * ```
     nano hosts.ini
     ```
-  * Add below mentioned lines with updated details of nginx server to the `hosts.ini` and save.
-    ```
-    [nginx]
-    node-nginx ansible_host=<internal ip> ansible_user=root ansible_ssh_private_key_file=<pvt .pem file>
-    ```
-  * Execute below mentoned command to open required ports:
-    ```
-    ansible-playbook -i hosts.ini mosip/on-prem/nginx/nginx_ports.yaml
-    ```
+  *   Add below mentioned lines with updated details of nginx server to the `hosts.ini` and save.
+
+      ```
+      [nginx]
+      node-nginx ansible_host=<internal ip> ansible_user=root ansible_ssh_private_key_file=<pvt .pem file>
+      ```
+  *   Execute below mentoned command to open required ports:
+
+      ```
+      ansible-playbook -i hosts.ini mosip/on-prem/nginx/nginx_ports.yaml
+      ```
 * Login to the nginx server node.
-* Clone k8s-infra
-  ```
-  cd $K8_ROOT/mosip/on-prem/nginx
-  sudo ./install.sh
-  ```
+*   Clone k8s-infra
+
+    ```
+    cd $K8_ROOT/mosip/on-prem/nginx
+    sudo ./install.sh
+    ```
 * Provide below mentioned inputs as and when prompted
   * MOSIP nginx server internal ip
   * MOSIP nginx server public ip
@@ -859,12 +920,15 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
     curl https://api-internal.sandbox.xyz.net/httpbin/get?show_env=true
     ```
 
-## 10. Monitoring module deployment 
+## 10. Monitoring module deployment
+
 > Note :
+>
 > * Monitoring in the sandbox environment is optional and can be deployed if required.
 > * For production environments, alternative monitoring tools can be used.
 > * These steps can also be skipped in development environments if monitoring is not needed.
 > * Incase skipping execute below commands to install monitoring crd as the same is required by mosip services:
+>
 > ```
 > helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 > helm repo update
@@ -883,7 +947,9 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
 * Click on `Install`.
 
 ## 11. Alerting setup
+
 > Note :
+>
 > * Alerting in the sandbox environment is optional and can be deployed if required.
 > * For production environments, alternative alerting tools can be used.
 > * These steps can also be skipped in development environments if alerting is not needed.
@@ -927,7 +993,9 @@ cd $K8_ROOT/monitoring/alerting/
 * Alerting is installed.
 
 ## 12. Logging module setup and installation
+
 > Note :
+>
 > * Logging in the sandbox environment is optional and can be deployed if required.
 > * For production environments, alternative logging tools can be used.
 > * These steps can also be skipped in development environments if logging is not needed.
@@ -982,18 +1050,23 @@ cd $INFRA_ROOT/deployment/v3/external/all
 ```
 
 Click [here](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-external-dependencies) to check the detailed installation instructions of all the external components.
+
 > Note:
+>
 > * Connect to `mosip_pms` DB in postgres and execute the query to change `valid_to_date` for `mpolicy-default-mobile` in `pms.auth_policy` table.
 >   * Open the terminal.
->   * Use the psql command to connect to the PostgreSQL server. The general syntax is:
->     ```
->     psql -h <host> -p 5432 -U postgres -d mosip_pms
->     ```
->     * <host>: The server address (e.g., localhost or an IP address).
->     * Assuming other details remain same like port and user.
->     ```
->     UPDATE pms.auth_policy SET valid_to_date = valid_to_date + interval '1 year' WHERE name = 'mpolicy-default-mobile';
->     ```
+>   *   Use the psql command to connect to the PostgreSQL server. The general syntax is:
+>
+>       ```
+>       psql -h <host> -p 5432 -U postgres -d mosip_pms
+>       ```
+>
+>       * : The server address (e.g., localhost or an IP address).
+>       * Assuming other details remain same like port and user.
+>
+>       ```
+>       UPDATE pms.auth_policy SET valid_to_date = valid_to_date + interval '1 year' WHERE name = 'mpolicy-default-mobile';
+>       ```
 
 ## 14. MOSIP Modules Deployment
 
@@ -1003,107 +1076,131 @@ Now that all the Kubernetes cluster and external dependencies are already instal
 cd $INFRA_ROOT/deployment/v3/mosip/all
 ./install-all.sh
 ```
+
 > Note:
+>
 > * In case of failure on execution of `install-all.sh` follow [MOSIP Modules Deployment](https://docs.mosip.io/1.2.0/deploymentnew/v3-installation/mosip-modules-deployment) installation steps from the failure point.
 > * Installation for config-server and admin service is facing delay in this version hence need to execute below mentioned commands respectively for config-server and admin-service once the script fails.
 >   * For config server:
->     * Update `failureThreshold` for `startupProbe` to 60.
+>     *   Update `failureThreshold` for `startupProbe` to 60.
+>
+>         ```
+>         kubectl -n config-server edit deployment config-server 
+>         ```
+>   *   For admin service:
+>
+>       * Update `failureThreshold` for `startupProbe` to 60.
+>
 >       ```
->       kubectl -n config-server edit deployment config-server 
->       ```  
->   * For admin service:
->     * Update `failureThreshold` for `startupProbe` to 60.
->     ```
->     kubectl -n admin edit deployment admin-service 
->     ```  
->     * Once admin service is up and running re-execute `install.sh` script after commenting out below mentioned commands:
->     ```
->     #echo Installing Admin-Proxy into Masterdata and Keymanager.
->     #kubectl -n $NS apply -f admin-proxy.yaml
->     #echo Installing admin hotlist service.
->     #helm -n $NS install admin-hotlist mosip/admin-hotlist --version $CHART_VERSION
->     #echo Installing admin service. Will wait till service gets installed.
->     #helm -n $NS install admin-service mosip/admin-service --set istio.corsPolicy.allowOrigins\[0\].prefix=https://$ADMIN_HOST --wait --version $CHART_VERSION
->     ``` 
-
+>       kubectl -n admin edit deployment admin-service 
+>       ```
+>
+>       * Once admin service is up and running re-execute `install.sh` script after commenting out below mentioned commands:
+>
+>       ```
+>       #echo Installing Admin-Proxy into Masterdata and Keymanager.
+>       #kubectl -n $NS apply -f admin-proxy.yaml
+>       #echo Installing admin hotlist service.
+>       #helm -n $NS install admin-hotlist mosip/admin-hotlist --version $CHART_VERSION
+>       #echo Installing admin service. Will wait till service gets installed.
+>       #helm -n $NS install admin-service mosip/admin-service --set istio.corsPolicy.allowOrigins\[0\].prefix=https://$ADMIN_HOST --wait --version $CHART_VERSION
+>       ```
 
 ## 15. API Testrig
 
 MOSIP’s successfull deployment can be verified by comparing the results of api testrig with testrig benchmark.
-* Navigate to the Infra Root Directory:
-  ```
-  cd $INFRA_ROOT
-  ```
-* Clone the Functional Tests Repository
-  ```
-  git clone -b v1.3.3 https://github.com/mosip/mosip-functional-tests.git
-  ```
-* After cloned successfully try to install apitestrig
-  ```
-  cd $INFRA_ROOT/mosip-functional-tests/deploy/apitestrig
-  ```
-* Make script executable
-  ```
-  chmod +x copy_cm_func.sh
-  ```
-* Run the Installer Script
-  ```
-  ./install.sh
-  ```
-  > Note:
-  > * Script prompts for below mentioned inputs please provide as and when needed:
-  >   * Enter the time (hr) to run the cronjob every day (0–23): Specify the hour you want the cronjob to run (e.g., 6 for 6 AM)
-  >   * Do you have a public domain and valid SSL certificate? (Y/n):
-  >     * Y – If you have a public domain and valid SSL certificate
-  >     * n – If you do not have one (recommended only for development environments)
-  >   * Retention days to remove old reports (Default: 3): Press Enter to accept the default or specify another value (e.g., 5).
-  >   * Provide Slack Webhook URL to notify server issues on your Slack channel: (change the URL to your channel one)
-  >     ```
-  >     https://hooks.slack.com/services/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 
-  >     ```
-  >   * Is the eSignet service deployed? (yes/no):
-  >     * no – If eSignet is not deployed, related test cases will be skipped.
-  >   * Is values.yaml for the apitestrig chart set correctly as part of the prerequisites? (Y/n):
-        * Enter Y if this step is already completed.
-  >   * Do you have S3 details for storing API-Testrig reports? (Y/n):
-  >     * Enter Y to proceed with S3 configuration.
-  >     * S3 Host: eg. `http://minio.minio:9000`
-  >     * S3 Region:(Leave blank or enter your specific region, if applicable)
-  >     * S3 Access Key:admin
+
+*   Navigate to the Infra Root Directory:
+
+    ```
+    cd $INFRA_ROOT
+    ```
+*   Clone the Functional Tests Repository
+
+    ```
+    git clone -b v1.3.3 https://github.com/mosip/mosip-functional-tests.git
+    ```
+*   After cloned successfully try to install apitestrig
+
+    ```
+    cd $INFRA_ROOT/mosip-functional-tests/deploy/apitestrig
+    ```
+*   Make script executable
+
+    ```
+    chmod +x copy_cm_func.sh
+    ```
+*   Run the Installer Script
+
+    ```
+    ./install.sh
+    ```
+
+    > Note:
+    >
+    > * Script prompts for below mentioned inputs please provide as and when needed:
+    >   * Enter the time (hr) to run the cronjob every day (0–23): Specify the hour you want the cronjob to run (e.g., 6 for 6 AM)
+    >   * Do you have a public domain and valid SSL certificate? (Y/n):
+    >     * Y – If you have a public domain and valid SSL certificate
+    >     * n – If you do not have one (recommended only for development environments)
+    >   * Retention days to remove old reports (Default: 3): Press Enter to accept the default or specify another value (e.g., 5).
+    >   *   Provide Slack Webhook URL to notify server issues on your Slack channel: (change the URL to your channel one)
+    >
+    >       ```
+    >       https://hooks.slack.com/services/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 
+    >       ```
+    >   * Is the eSignet service deployed? (yes/no):
+    >     * no – If eSignet is not deployed, related test cases will be skipped.
+    >   * Is values.yaml for the apitestrig chart set correctly as part of the prerequisites? (Y/n): \* Enter Y if this step is already completed.
+    >   * Do you have S3 details for storing API-Testrig reports? (Y/n):
+    >     * Enter Y to proceed with S3 configuration.
+    >     * S3 Host: eg. `http://minio.minio:9000`
+    >     * S3 Region:(Leave blank or enter your specific region, if applicable)
+    >     * S3 Access Key:admin
 
 ## 16. DSL Rig
-  * Install Packetcreater
-     * Navigate to the packetcreator directory:
-       ```
-       cd $INFRA_ROOT/deployment/v3/testrig/packetcreator 
-       ```
-     * Run the installation script:
-       ```
-       ./install.sh
-       ```
-     * NFS server details provide the following inputs:
-       * NFS Host: <NFS server ip>
-       * NFS PEM File : <pem-to-ssh-nfs-server>
-       * User for SSH Login: ubuntu
-     * Select the Ingress Controller Type:
-       * 1. Ingress
-       * 2. Istio  (Choose 2)
-  * Install DSLrig
-     * Navigate to the dslrig directory:
-       ```
-       cd $INFRA_ROOT/deployment/v3/testrig/dslrig
-       ```
-  * Run the installation script:
-     ```
-     * ./install.sh
-     ```
-    > Note:
-    > Before running install.sh, please ensure the following is added in the Helm install command:
+
+* Install Packetcreater
+  *   Navigate to the packetcreator directory:
+
+      ```
+      cd $INFRA_ROOT/deployment/v3/testrig/packetcreator 
+      ```
+  *   Run the installation script:
+
+      ```
+      ./install.sh
+      ```
+  * NFS server details provide the following inputs:
+    * NFS Host:
+    * NFS PEM File :
+    * User for SSH Login: ubuntu
+  * Select the Ingress Controller Type:
+    *
+      1. Ingress
+    *
+      2. Istio (Choose 2)
+* Install DSLrig
+  *   Navigate to the dslrig directory:
+
+      ```
+      cd $INFRA_ROOT/deployment/v3/testrig/dslrig
+      ```
+*   Run the installation script:
+
+    ```
+    * ./install.sh
+    ```
+
+    > Note: Before running install.sh, please ensure the following is added in the Helm install command:
+    >
     > ```
     > --set dslorchestrator.configmaps.dslorchestrator.servicesNotDeployed="esignet" \
     > ```
+    >
     > After adding the above, the full Helm installation command should look like this:
-    >```
+    >
+    > ```
     > helm -n $NS install dslorchestrator mosip/dslorchestrator \
     >  --set crontime="0 $time * * *" \
     >  --version $CHART_VERSION \
@@ -1123,16 +1220,18 @@ MOSIP’s successfull deployment can be verified by comparing the results of api
     >  --set dslorchestrator.configmaps.dslorchestrator.servicesNotDeployed="esignet" \
     >  $ENABLE_INSECURE
     > ```
+    >
     > * When prompted, provide the following inputs:
-    >   * NFS Host: <nfs server ip>
-    >   * NFS PEM : <pem to ssh to nfs server>
+    >   * NFS Host:
+    >   * NFS PEM :
     >   * User for SSH Login:ubuntu
     >   * Cronjob Time (hour of the day, 0–23): (e.g., enter 6 for 6 AM)
     >   * Do you have a public domain and valid SSL certificate? (Y/n):
     >     * Y: If you have a valid public domain and SSL certificate
     >     * n: Use only in development environments
-    >   * Packet Utility Base URL:
-    >     ```
-    >     https://packetcreator.packetcreator:80/v1/packetcreator 
-    >     ```
+    >   *   Packet Utility Base URL:
+    >
+    >       ```
+    >       https://packetcreator.packetcreator:80/v1/packetcreator 
+    >       ```
     >   * Retention Days to Remove Old Reports (default is 3): (Press Enter to accept default or provide a custom value)
