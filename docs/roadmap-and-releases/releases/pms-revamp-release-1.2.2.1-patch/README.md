@@ -18,7 +18,7 @@ These updates improve backward compatibility and ensure smoother integration acr
 
 New configurations are now available for backward compatibility with different versions of MOSIP platform. Set these configurations as below:
 
-**For 1.1.5 Key Manager**:
+**For 1.1.5.5-P3 Key Manager**:
 
 ```
 pmp.partner.certificaticate.upload.rest.uri=${mosip.kernel.keymanager.url}/v1/keymanager/v2/uploadPartnerCertificate
