@@ -6,6 +6,12 @@ icon: book-open
 # Releases
 
 ## Latest Releases 🌟
+
+**Version**: Partner Management System Revamp 1.3.0-beta.1
+
+* Date: 24th July, 2025
+* [Release Notes ](pms-revamp-1.3.0-beta.1.md)
+
 **Version**: ID ID Reository 1.2.2.2
 
 * **Date:** 7th July,2025
@@ -25,7 +31,7 @@ icon: book-open
 
 * **Date:** 7th July,2025
 * [Release Notes](1.2.1.2-resident-services.md)
-  
+
 **Version**: Admin Services 1.2.1.2
 
 * **Date:** 7th July,2025
@@ -44,12 +50,12 @@ icon: book-open
 **Version**: **v1.2.2.1** - **Partner Management System Revamp (Patch)**
 
 * **Date**: 21st May, 2025
-* [Release Notes](pms-revamp-release-1.2.2.1-patch/)
+* [Release Notes](pms-revamp-release-1.2.2.1-patch)
 
-**Version:  v1.2.1.0 - Registration Processor & Mosip Config**
+**Version: v1.2.1.0 - Registration Processor & Mosip Config**
 
 * **Date:** 16th April, 2025
-* [Release Notes](v1.2.1.0-registration-processor/)
+* [Release Notes](v1.2.1.0-registration-processor)
 
 **Version: v0.11.0 - Android Registration Client**
 
@@ -57,7 +63,7 @@ icon: book-open
 * **Date:** 9th April, 2025
 * [Release Notes](https://docs.mosip.io/1.2.0/releases/android-registration-client-v0.11.0)
 
-**Version: API Test Commons Releases**&#x20;
+**Version: API Test Commons Releases**
 
 * **Date**: 27th March, 2025
 * [Release Notes](api-test-commons-releases/v1.3.2.md)
@@ -67,7 +73,7 @@ icon: book-open
 * **Date**: 18th March, 2025
 * [Release Notes](1.2.1.0-beta.1-part-3.md)
 
-**Version: v1.2.2.0 - Partner Management System Revamp**&#x20;
+**Version: v1.2.2.0 - Partner Management System Revamp**
 
 * **Date**: 10th March, 2025
 * [Release Notes](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/partner-management-system-1.2.2.0)
@@ -115,7 +121,7 @@ icon: book-open
 * Partner Management System v1.3.0-dp.1
 * Developer Preview Release1
 * Date: 3rd September, 2024
-* [Release Notes](partner-management-system-1.3.0-dp1/)
+* [Release Notes](partner-management-system-1.3.0-dp1)
 
 **Version:** **v1.2.2.0 (Mosip - Config)**
 
@@ -132,13 +138,13 @@ icon: book-open
 
 * **Support:** 0.10.0
 * **Date:** 14th June, 2024
-* [Release Notes](android-registration-client-v0.10.0/)
+* [Release Notes](android-registration-client-v0.10.0)
 
 **Version: 0.9.0 (Resident Services)**
 
 * **Support:** 0.9.0
 * **Date:** 30th May, 2024
-* [Release Notes](resident-services-0.9.0/)
+* [Release Notes](resident-services-0.9.0)
 
 ## Older Releases 📜
 
@@ -160,20 +166,20 @@ icon: book-open
 * Name: Patch on Asymmetric Amoeba
 * [![LTS](https://img.shields.io/badge/Support-Long%20Term%20Support-blue?style=plastic)](https://docs.mosip.io/1.2.0/releases/support-policy)
 * Date: 06th March, 2024
-* [Release Notes](release-notes-1.2.0.1/)
+* [Release Notes](release-notes-1.2.0.1)
 
 **Version: 0.9.0 (Android Registration Client)**
 
 * Support: Beta Release
 * Date: 26th February, 2024
-* [Release Notes](release-notes-android-reg-client-0.9.0/)
+* [Release Notes](release-notes-android-reg-client-0.9.0)
 
 **Version: 1.2.0.1 Beta 4**
 
 * Name: Beta release on Asymmetric Amoeba
 * [![LTS](https://img.shields.io/badge/Support-Long%20Term%20Support-blue?style=plastic)](https://docs.mosip.io/1.2.0/releases/support-policy)
 * Date: 12th January, 2024
-* [Release Notes](release-notes-1.2.0.1-b4/)
+* [Release Notes](release-notes-1.2.0.1-b4)
 
 **Version: vDP1 (Android Registration Client DP1)**
 
@@ -194,7 +200,7 @@ icon: book-open
 * Name: Beta release on Asymmetric Amoeba
 * [![LTS](https://img.shields.io/badge/Support-Long%20Term%20Support-blue?style=plastic)](https://docs.mosip.io/1.2.0/releases/support-policy)
 * Date: 14th April, 2023
-* [Release Notes](release-notes-1.2.0.1-b3/)
+* [Release Notes](release-notes-1.2.0.1-b3)
 
 **Version: 1.2.0.1 Beta 2**
 
@@ -208,7 +214,7 @@ icon: book-open
 * Name: Beta release on Asymmetric Amoeba
 * [![LTS](https://img.shields.io/badge/Support-Long%20Term%20Support-blue?style=plastic)](https://docs.mosip.io/1.2.0/releases/support-policy)
 * Date: 14th October, 2022
-* [Release Notes](release-notes-1.2.0.1-beta/)
+* [Release Notes](release-notes-1.2.0.1-beta)
 
 **Version: 1.2.0**
 
