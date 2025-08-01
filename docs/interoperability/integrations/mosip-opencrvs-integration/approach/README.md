@@ -69,7 +69,7 @@ For detailed technical specifications, API documentation, and schema definitions
 ## Other keys and certificates which are required for the integration
 
 1. eSignet integration - If eSignet is used for authentication, refer here for detailed info on the onboarding process and the key required for onboarding to eSignet - [Integrate with eSignet](https://docs.esignet.io/esignet-authentication/test/try-it-out/integrate-with-e-signet).
-2. Auth Partner Onboarding - (Certificates required Auth Partner Onboarding) - Refer to the [Partner Management Services - End User Guide](../../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#authentication-partner-workflow)
+2. Auth Partner Onboarding - (Certificates required Auth Partner Onboarding) - Refer to the [Partner Management Services - End User Guide](../../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#authentication-partner-workflow).
 
 <!-- 3. Cred partner onboarding - TBA - link - 3 - Varaniya -->
 
