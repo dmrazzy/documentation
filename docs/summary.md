@@ -251,7 +251,6 @@
         * [Technical Details](interoperability/integrations/mosip-crvs/approach/technical-details.md)
       * [Existing Integrations](interoperability/integrations/mosip-crvs/existing-integrations/README.md)
         * [OpenCRVS](interoperability/integrations/mosip-crvs/existing-integrations/opencrvs.md)
-    * [MOSIP - CRVS](interoperability/integrations/mosip-opencrvs-integration.md)
     * [MOSIP e-Manas](interoperability/integrations/mosip-emanas-integration.md)
     * [Digital Signature](interoperability/integrations/digital-signature.md)
     * [MOSIP Token Seeder](interoperability/integrations/mosip-token-seeder/README.md)
