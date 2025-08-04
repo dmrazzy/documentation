@@ -245,7 +245,7 @@
   * [Artifactory](setup/artifactory.md)
 * [Interoperability](interoperability/README.md)
   * [Integrations](interoperability/integrations/README.md)
-    * [MOSIP-CRVS](interoperability/integrations/mosip-crvs/README.md)
+    * [MOSIP - CRVS](interoperability/integrations/mosip-crvs/README.md)
       * [Scope](interoperability/integrations/mosip-crvs/scope.md)
       * [Approach](interoperability/integrations/mosip-crvs/approach/README.md)
         * [Technical Details](interoperability/integrations/mosip-crvs/approach/technical-details.md)
