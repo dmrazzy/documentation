@@ -346,33 +346,33 @@ In a scenario where the Operator has forgotten their password, this feature enab
 
 **Step #1**: Run Android Registration Client on your system to land on the Login page.
 
-![Forgot-1-20250708-101542.png](./media/arc-12-1.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Forgot-1-20250708-101542.png](../../../../.gitbook/assets/arc-12-1.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 **Step #2**: Click on Forgot Password option, You will then be redirected to the keycloak Login page.
 
-![Forgot-2-20250708-101615.png](./media/arc-12-2.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Forgot-2-20250708-101615.png](../../../../.gitbook/assets/arc-12-2.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 **Step #3**: Click on Forgot Password option on the Keycloak login page.
 
-![Forgot-3-20250708-101637.png](./media/arc-image3.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Forgot-3-20250708-101637.png](../../../../.gitbook/assets/arc-image3.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 
 **Step #4**: Enter your Keycloak Username and click on Submit.
 
-![Forgot-4-20250708-101656.png](./media/arc-12-4.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Forgot-4-20250708-101656.png](../../../../.gitbook/assets/arc-12-4.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 
 **Step #5**: You will then receive an email over registered email Id to reset the password. This email contains a link to set a new password.
 
-![image-20250713-162022.png](./media/arc-12-5.png){width="5.383332239720035in" height="3.024583333333333in"}
+![image-20250713-162022.png](../../../../.gitbook/assets/arc-12-5.png){width="5.383332239720035in" height="3.024583333333333in"}
 
 
 
@@ -381,7 +381,7 @@ In a scenario where the Operator has forgotten their password, this feature enab
 This password can now be used to log into Android Registration Client (when in online mode). In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
 
 
-![image-20250714-093500.png](./media/arc-12-6.png){width="5.383332239720035in" height="3.024583333333333in"}
+![image-20250714-093500.png](../../../../.gitbook/assets/arc-12-6.png){width="5.383332239720035in" height="3.024583333333333in"}
 
 
 
@@ -397,14 +397,14 @@ This feature enables the Operator to scan the QR code of the AID (Application ID
 
 **Step #2**: On the "Demographic Details" page, click on the scan button next to "Fetch Data" option. On clicking on the scan button, camera will open up.
 
-![AID QR-1-20250708-101932.png](./media/arc-12-7.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![AID QR-1-20250708-101932.png](../../../../.gitbook/assets/arc-12-7.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 
 **Step #3**: You can then scan the QR code generated during Applicantʼs pre-registration.
 
-![AID QR-2-20250708-102024.png](./media/arc-12-8.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![AID QR-2-20250708-102024.png](../../../../.gitbook/assets/arc-12-8.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -412,10 +412,10 @@ This feature enables the Operator to scan the QR code of the AID (Application ID
 
 The pre-filled data can also be edited based on the your (Operator) or Residentʼs preference.
 
-![AID QR-3-20250708-102034.png](./media/arc-12-9.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![AID QR-3-20250708-102034.png](../../../../.gitbook/assets/arc-12-9.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
-![AID QR 4-20250708-102057.png](./media/arc-12-10.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![AID QR 4-20250708-102057.png](../../../../.gitbook/assets/arc-12-10.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -432,29 +432,29 @@ In a scenario where a Resident has lost their UIN, they can go to a registration
 
 **Step #3**: You (Operator) will then have to select the Data Entry Language and the Preferred Language of Communication.
 
-![Lost-1-20250708-102153.png](./media/arc-12-11.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-1-20250708-102153.png](../../../../.gitbook/assets/arc-12-11.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 **Step** You can then ask and inform the Residents about the Consent and click on "Informed" button.
 
-![Lost-2-20250708-102204.png](./media/arc-12-12.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-2-20250708-102204.png](../../../../.gitbook/assets/arc-12-12.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 
 **Step** You can fill the demographic details of the Resident. This is an optional step.
 
-![Lost-3-20250708-102214.png](./media/arc-12-13.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-3-20250708-102214.png](../../../../.gitbook/assets/arc-12-13.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
 **Step** You will have to capture all the biometrics of the Resident. This is a mandatory step.
 
-![Lost-4-20250708-102223.png](./media/arc-12-14.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-4-20250708-102223.png](../../../../.gitbook/assets/arc-12-14.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
-![Lost-5-20250708-102409.png](./media/arc-12-15.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-5-20250708-102409.png](../../../../.gitbook/assets/arc-12-15.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -470,7 +470,7 @@ From the Preview page, you you (operator) have the the ability to navigate back 
 
 **Step #8**: On the Operator Authentication page, you (operator) are required to input your credentials (username and password) that were used during the login process.
 
-![Lost-7-20250708-102429.png](./media/arc-12-17.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-7-20250708-102429.png](../../../../.gitbook/assets/arc-12-17.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -484,7 +484,7 @@ From the Preview page, you you (operator) have the the ability to navigate back 
 - QR code for the Application ID
 - Option to go to the Homepage
 
-![Lost-8-20250708-102500.png](./media/arc-12-18.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Lost-8-20250708-102500.png](../../../../.gitbook/assets/arc-12-18.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -498,13 +498,13 @@ In a scenario where the Operator wishes to set a new password, they can set a ne
 
 **Step #2**: Click on the "Profile" Icon on the Home page
 
-![Screenshot_20240528-152836-20240528-100128.png](./media/arc-image19.png){width="2.8333333333333335in" height="4.745832239720035in"}
+![Screenshot_20240528-152836-20240528-100128.png](../../../../.gitbook/assets/arc-image19.png){width="2.8333333333333335in" height="4.745832239720035in"}
 
 
 
 **Step #3**: On the Profile page, click on the "Reset Password" option.
 
-![Reset-1-20250708-101403.png](./media/arc-12-20.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Reset-1-20250708-101403.png](../../../../.gitbook/assets/arc-12-20.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -515,7 +515,7 @@ In a scenario where the Operator wishes to set a new password, they can set a ne
 **Step #5**: You can then login using Keycloak credentials.
 
 
-![Reset-2-20250708-101428.png](./media/arc-12-21.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Reset-2-20250708-101428.png](../../../../.gitbook/assets/arc-12-21.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 
@@ -525,7 +525,7 @@ Once the password is reset, new password can be used to log into Android Registr
 
 Note: In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
 
-![Reset-3-20250708-101457.png](./media/arc-12-22.png){width="2.8333333333333335in" height="4.533332239720035in"}
+![Reset-3-20250708-101457.png](../../../../.gitbook/assets/arc-12-22.png){width="2.8333333333333335in" height="4.533332239720035in"}
 
 
 # Match SDK: 
