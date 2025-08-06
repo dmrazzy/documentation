@@ -336,7 +336,7 @@ d. Once all the biometrics are duly captured, the below acknowledgment message w
 
 <figure><img src="../../../../.gitbook/assets/Resident_Services.png" alt=""><figcaption><p>Resident Services</p></figcaption></figure>
 
-<!--
+
 
 
 # Forgot Password
@@ -346,33 +346,33 @@ In a scenario where the Operator has forgotten their password, this feature enab
 
 **Step #1**: Run Android Registration Client on your system to land on the Login page.
 
-![Forgot-1-20250708-101542.png](../../../../.gitbook/assets/arc-12-1.png)
+![](../../../../.gitbook/assets/arc-12-1.png)
 
 
 
 **Step #2**: Click on Forgot Password option, You will then be redirected to the keycloak Login page.
 
-![Forgot-2-20250708-101615.png](../../../../.gitbook/assets/arc-12-2.png)
+![](../../../../.gitbook/assets/arc-12-2.png)
 
 
 
 **Step #3**: Click on Forgot Password option on the Keycloak login page.
 
-![Forgot-3-20250708-101637.png](../../../../.gitbook/assets/arc-image3.png)
+![](../../../../.gitbook/assets/arc-image3.png)
 
 
 
 
 **Step #4**: Enter your Keycloak Username and click on Submit.
 
-![Forgot-4-20250708-101656.png](../../../../.gitbook/assets/arc-12-4.png)
+![](../../../../.gitbook/assets/arc-12-4.png)
 
 
 
 
 **Step #5**: You will then receive an email over registered email Id to reset the password. This email contains a link to set a new password.
 
-![image-20250713-162022.png](../../../../.gitbook/assets/arc-12-5.png)
+![](../../../../.gitbook/assets/arc-12-5.png)
 
 
 
@@ -397,14 +397,14 @@ This feature enables the Operator to scan the QR code of the AID (Application ID
 
 **Step #2**: On the "Demographic Details" page, click on the scan button next to "Fetch Data" option. On clicking on the scan button, camera will open up.
 
-![AID QR-1-20250708-101932.png](../../../../.gitbook/assets/arc-12-7.png)
+![](../../../../.gitbook/assets/arc-12-7.png)
 
 
 
 
 **Step #3**: You can then scan the QR code generated during Applicantʼs pre-registration.
 
-![AID QR-2-20250708-102024.png](../../../../.gitbook/assets/arc-12-8.png)
+![](../../../../.gitbook/assets/arc-12-8.png)
 
 
 
@@ -412,11 +412,10 @@ This feature enables the Operator to scan the QR code of the AID (Application ID
 
 The pre-filled data can also be edited based on the your (Operator) or Residentʼs preference.
 
-![AID QR-3-20250708-102034.png](../../../../.gitbook/assets/arc-12-9.png)
+![](../../../../.gitbook/assets/arc-12-9.png)
 
 
-![AID QR 4-20250708-102057.png](../../../../.gitbook/assets/arc-12-10.png)
-
+![](../../../../.gitbook/assets/arc-12-10.png)
 
 
 
@@ -432,29 +431,29 @@ In a scenario where a Resident has lost their UIN, they can go to a registration
 
 **Step #3**: You (Operator) will then have to select the Data Entry Language and the Preferred Language of Communication.
 
-![Lost-1-20250708-102153.png](../../../../.gitbook/assets/arc-12-11.png)
+![](../../../../.gitbook/assets/arc-12-11.png)
 
 
 **Step** You can then ask and inform the Residents about the Consent and click on "Informed" button.
 
-![Lost-2-20250708-102204.png](../../../../.gitbook/assets/arc-12-12.png)
+![](../../../../.gitbook/assets/arc-12-12.png)
 
 
 
 
 **Step** You can fill the demographic details of the Resident. This is an optional step.
 
-![Lost-3-20250708-102214.png](../../../../.gitbook/assets/arc-12-13.png)
+![](../../../../.gitbook/assets/arc-12-13.png)
 
 
 
 **Step** You will have to capture all the biometrics of the Resident. This is a mandatory step.
 
-![Lost-4-20250708-102223.png](../../../../.gitbook/assets/arc-12-14.png)
+![](../../../../.gitbook/assets/arc-12-14.png)
 
 
 
-![Lost-5-20250708-102409.png](../../../../.gitbook/assets/arc-12-15.png)
+![](../../../../.gitbook/assets/arc-12-15.png)
 
 
 
@@ -470,7 +469,7 @@ From the Preview page, you you (operator) have the the ability to navigate back 
 
 **Step #8**: On the Operator Authentication page, you (operator) are required to input your credentials (username and password) that were used during the login process.
 
-![Lost-7-20250708-102429.png](../../../../.gitbook/assets/arc-12-17.png)
+![](../../../../.gitbook/assets/arc-12-17.png)
 
 
 **Step #9**: Once that is done successfully, the packet is uploaded to the server and you (operator) will be redirected to the Acknowledgment screen. This screen includes the following information:
@@ -483,7 +482,7 @@ From the Preview page, you you (operator) have the the ability to navigate back 
 - QR code for the Application ID
 - Option to go to the Homepage
 
-![Lost-8-20250708-102500.png](../../../../.gitbook/assets/arc-12-18.png)
+![](../../../../.gitbook/assets/arc-12-18.png)
 
 
 
@@ -497,13 +496,13 @@ In a scenario where the Operator wishes to set a new password, they can set a ne
 
 **Step #2**: Click on the "Profile" Icon on the Home page
 
-![Screenshot_20240528-152836-20240528-100128.png](../../../../.gitbook/assets/arc-image19.png)
+![](../../../../.gitbook/assets/arc-image19.png)
 
 
 
 **Step #3**: On the Profile page, click on the "Reset Password" option.
 
-![Reset-1-20250708-101403.png](../../../../.gitbook/assets/arc-12-20.png)
+![](../../../../.gitbook/assets/arc-12-20.png)
 
 
 
@@ -514,7 +513,7 @@ In a scenario where the Operator wishes to set a new password, they can set a ne
 **Step #5**: You can then login using Keycloak credentials.
 
 
-![Reset-2-20250708-101428.png](../../../../.gitbook/assets/arc-12-21.png)
+![](../../../../.gitbook/assets/arc-12-21.png)
 
 
 **Step #6**: Once you have logged in, you will be taken to the Password section where you can set a New Password.
@@ -523,11 +522,9 @@ Once the password is reset, new password can be used to log into Android Registr
 
 Note: In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
 
-![Reset-3-20250708-101457.png](../../../../.gitbook/assets/arc-12-22.png){align="center"}
+![](../../../../.gitbook/assets/arc-12-22.png)
 
 
 # Match SDK: 
 
 In a scenario where the Operator is registering an Applicant, the Operator is supposed to capture the biometrics of the Applicant. If by mistake the Operator captures their own biometrics, the system will detect it, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating "Biometrics Matched With Operator Biometrics, Please Try Again" will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
-
--->
