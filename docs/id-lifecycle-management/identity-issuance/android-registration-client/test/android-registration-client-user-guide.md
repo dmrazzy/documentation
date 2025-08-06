@@ -336,7 +336,7 @@ d. Once all the biometrics are duly captured, the below acknowledgment message w
 
 <figure><img src="../../../../.gitbook/assets/Resident_Services.png" alt=""><figcaption><p>Resident Services</p></figcaption></figure>
 
-
+<!--
 
 
 # Forgot Password
@@ -530,3 +530,4 @@ Note: In offline mode, the User will still be able to login using the older pass
 
 In a scenario where the Operator is registering an Applicant, the Operator is supposed to capture the biometrics of the Applicant. If by mistake the Operator captures their own biometrics, the system will detect it, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating "Biometrics Matched With Operator Biometrics, Please Try Again" will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
 
+-->
