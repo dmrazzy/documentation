@@ -51,6 +51,11 @@ To begin the Registration process, the Operator is required to follow the steps 
 
 <div align="center"><figure><img src="../../../../.gitbook/assets/home_page.png" alt="" width="375"><figcaption><p>New registration</p></figcaption></figure></div>
 
+
+![New Registration](../../../../.gitbook/assets/home_page.png){align="center" width="375"}
+
+
+
 <figure><img src="../../../../.gitbook/assets/language-select-1.png" alt="" width="375"><figcaption><p>New registration</p></figcaption></figure>
 
 <figure><img src="../../../../.gitbook/assets/language-select-2.png" alt="" width="380"><figcaption><p>New registration</p></figcaption></figure>
@@ -330,3 +335,200 @@ d. Once all the biometrics are duly captured, the below acknowledgment message w
 **Step 7:** You have now successfully authenticated and logged into Resident Portal via eSignet using handles (email ID in this case).
 
 <figure><img src="../../../../.gitbook/assets/Resident_Services.png" alt=""><figcaption><p>Resident Services</p></figcaption></figure>
+
+
+
+
+# Forgot Password
+
+In a scenario where the Operator has forgotten their password, this feature enables the Operator to set a new password to be able to login using the new password and continue with registration tasks.
+
+
+**Step #1**: Run Android Registration Client on your system to land on the Login page.
+
+![Forgot-1-20250708-101542.png](./media/arc-12-1.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #2**: Click on Forgot Password option, You will then be redirected to the keycloak Login page.
+
+![Forgot-2-20250708-101615.png](./media/arc-12-2.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #3**: Click on Forgot Password option on the Keycloak login page.
+
+![Forgot-3-20250708-101637.png](./media/arc-image3.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+
+**Step #4**: Enter your Keycloak Username and click on Submit.
+
+![Forgot-4-20250708-101656.png](./media/arc-12-4.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+
+**Step #5**: You will then receive an email over registered email Id to reset the password. This email contains a link to set a new password.
+
+![image-20250713-162022.png](./media/arc-12-5.png){width="5.383332239720035in" height="3.024583333333333in"}
+
+
+
+
+**Step #6**: On clicking on the link to set a new password, you (Operator) will be taken to the keycloak page where you can enter the new password. On successfully entering the password twice, the password will be changed. 
+This password can now be used to log into Android Registration Client (when in online mode). In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
+
+
+![image-20250714-093500.png](./media/arc-12-6.png){width="5.383332239720035in" height="3.024583333333333in"}
+
+
+
+
+
+# AID QR code scan
+
+This feature enables the Operator to scan the QR code of the AID (Application ID) QR code generated during pre-registration. On successful scan, the Operator will be able to fetch the pre-registration data and pre-fill the registration form with the available data.
+
+
+**Step #1**: Log into Android Registration Client, start new registration to land onto the "Demographic Details" Page.
+
+
+**Step #2**: On the "Demographic Details" page, click on the scan button next to "Fetch Data" option. On clicking on the scan button, camera will open up.
+
+![AID QR-1-20250708-101932.png](./media/arc-12-7.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+
+**Step #3**: You can then scan the QR code generated during Applicantʼs pre-registration.
+
+![AID QR-2-20250708-102024.png](./media/arc-12-8.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #4**: On scanning, the Application ID field will be pre-filled with the AID. Along with that, other details, as filled during pre-registration, like Name, age, gender, documents etc. will also be auto filled.
+
+The pre-filled data can also be edited based on the your (Operator) or Residentʼs preference.
+
+![AID QR-3-20250708-102034.png](./media/arc-12-9.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+![AID QR 4-20250708-102057.png](./media/arc-12-10.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+
+# Lost UIN: 
+
+In a scenario where a Resident has lost their UIN, they can go to a registration center to retrieve their lost UIN. Below are the steps for the same:
+
+
+
+**Step #1**: You (Operator) have to Launch Android Registration Client and login using valid credentials.
+
+**Step #2**: Click on "Lost UIN" option on the home page.
+
+**Step #3**: You (Operator) will then have to select the Data Entry Language and the Preferred Language of Communication.
+
+![Lost-1-20250708-102153.png](./media/arc-12-11.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+**Step** You can then ask and inform the Residents about the Consent and click on "Informed" button.
+
+![Lost-2-20250708-102204.png](./media/arc-12-12.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+
+**Step** You can fill the demographic details of the Resident. This is an optional step.
+
+![Lost-3-20250708-102214.png](./media/arc-12-13.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step** You will have to capture all the biometrics of the Resident. This is a mandatory step.
+
+![Lost-4-20250708-102223.png](./media/arc-12-14.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+![Lost-5-20250708-102409.png](./media/arc-12-15.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #7**: Once you (Operator) have duly captured the biometrics of the Resident, you can then proceed by clicking on the **Continue** button, which will redirect you to the **Preview** page. The Preview page will display the following information:
+
+* Application ID
+* Timestamp of Registration
+* Demographic data collected (if any) Biometric data recorded
+
+From the Preview page, you you (operator) have the the ability to navigate back to previous screens in order to make any necessary adjustments to the entered or captured data. Once the you have verified the accuracy of the entered data, you can proceed by clicking on the **Continue** button, which will direct them to the Operator Authentication page.
+
+
+
+**Step #8**: On the Operator Authentication page, you (operator) are required to input your credentials (username and password) that were used during the login process.
+
+![Lost-7-20250708-102429.png](./media/arc-12-17.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #9**: Once that is done successfully, the packet is uploaded to the server and you (operator) will be redirected to the Acknowledgment screen. This screen includes the following information:
+
+- Application ID
+- Timestamp of Registration
+- Demographic data captured (if any)
+- Biometric data captured
+- Print option
+- QR code for the Application ID
+- Option to go to the Homepage
+
+![Lost-8-20250708-102500.png](./media/arc-12-18.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+
+# Reset password: 
+
+In a scenario where the Operator wishes to set a new password, they can set a new password using this feature post which they will be able to login using the new password and continue with registration tasks.
+
+
+**Step#1**: Launch Android Registration Client and login using valid credentials.
+
+**Step #2**: Click on the "Profile" Icon on the Home page
+
+![Screenshot_20240528-152836-20240528-100128.png](./media/arc-image19.png){width="2.8333333333333335in" height="4.745832239720035in"}
+
+
+
+**Step #3**: On the Profile page, click on the "Reset Password" option.
+
+![Reset-1-20250708-101403.png](./media/arc-12-20.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #4**: On clicking on the "Reset Password" option, You will be redirected to the Keycloak Login page.
+
+
+
+**Step #5**: You can then login using Keycloak credentials.
+
+
+![Reset-2-20250708-101428.png](./media/arc-12-21.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+
+**Step #6**: Once you have logged in, you will be taken to the Password section where you can set a New Password.
+
+Once the password is reset, new password can be used to log into Android Registration Client (when in online mode). 
+
+Note: In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
+
+![Reset-3-20250708-101457.png](./media/arc-12-22.png){width="2.8333333333333335in" height="4.533332239720035in"}
+
+
+# Match SDK: 
+
+In a scenario where the Operator is registering an Applicant, the Operator is supposed to capture the biometrics of the Applicant. If by mistake the Operator captures their own biometrics, the system will detect it, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating "Biometrics Matched With Operator Biometrics, Please Try Again" will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
+
