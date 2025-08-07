@@ -37,7 +37,7 @@ Login using OTPLogin using OTPThis user guide is designed to provide assistance 
 Upon successful login, the user will be directed to the Home page, which includes the following options:
 
 * New Registration
-* Operational Tasks&#x20;
+* Operational Tasks
 * Dashboard
 * Settings (Future scope)
 
@@ -50,7 +50,6 @@ To begin the Registration process, the Operator is required to follow the steps 
 3. Choose the language in which the notification will be sent to the resident. Click **Submit** to proceed.
 
 <div align="center"><figure><img src="../../../../.gitbook/assets/home_page.png" alt="" width="375"><figcaption><p>New registration</p></figcaption></figure></div>
-
 
 <figure><img src="../../../../.gitbook/assets/language-select-1.png" alt="" width="375"><figcaption><p>New registration</p></figcaption></figure>
 
@@ -219,8 +218,6 @@ a. On logging in for the first time, the Operator will be taken to the screen wh
 
 3.  **Steps to Onboard Operator’s Biometrics:**
 
-
-
     a. The user will be taken to the Biometrics Capture Homepage where he will be able to see all the below biometrics:
 
     1. Face capture
@@ -235,7 +232,7 @@ b. The user will then have to capture all the above-listed biometrics one by one
 c. Steps to capture the biometrics are given [**here**](android-registration-client-user-guide.md#face-photo-capture-process)**.**\
 d. Once all the biometrics are duly captured, the below acknowledgment message will be displayed on the screen.
 
-<figure><img src="../../../../.gitbook/assets/Acknowledgement.png" alt="" width="338"><figcaption><p>Acknowledgement  page</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Acknowledgement.png" alt="" width="338"><figcaption><p>Acknowledgement page</p></figcaption></figure>
 
 4. **Dashboard:** The Operator can access the dashboard where he can view the following:
    1. **Packets created:** This will show the total number of packets created from the time the Android Registration Client was installed.
@@ -288,9 +285,9 @@ a. The user will be taken to the Biometrics Capture Homepage where he will be ab
 
 <figure><img src="../../../../.gitbook/assets/update operator&#x27;s biometrics.png" alt="" width="375"><figcaption><p>Update operator's biometrics</p></figcaption></figure>
 
-b. The user will then have to capture all the above-listed biometrics one by one.&#x20;
+b. The user will then have to capture all the above-listed biometrics one by one.
 
-c. Steps to capture the biometrics are given [**here**](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide#face-photo-capture-process)**.**&#x20;
+c. Steps to capture the biometrics are given [**here**](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide#face-photo-capture-process)**.**
 
 d. Once all the biometrics are duly captured, the below acknowledgment message will be displayed on the screen.
 
@@ -324,7 +321,7 @@ d. Once all the biometrics are duly captured, the below acknowledgment message w
 
 <figure><img src="../../../../.gitbook/assets/select_deselect.png" alt=""><figcaption><p>Select/Deselect Claims</p></figcaption></figure>
 
-&#x20;And click on the “Allow” button.
+And click on the “Allow” button.
 
 <figure><img src="../../../../.gitbook/assets/Allow.png" alt=""><figcaption><p>Click Allow</p></figcaption></figure>
 
@@ -332,71 +329,47 @@ d. Once all the biometrics are duly captured, the below acknowledgment message w
 
 <figure><img src="../../../../.gitbook/assets/Resident_Services.png" alt=""><figcaption><p>Resident Services</p></figcaption></figure>
 
-
-
-
 ## Forgot Password
 
 In a scenario where the Operator has forgotten their password, this feature enables the Operator to set a new password to be able to login using the new password and continue with registration tasks.
-
 
 **Step 1**: Run Android Registration Client on your system to land on the Login page.
 
 ![](../../../../.gitbook/assets/arc-12-1.png)
 
-
-
 **Step 2**: Click on Forgot Password option, You will then be redirected to the keycloak Login page.
 
 ![](../../../../.gitbook/assets/arc-12-2.png)
-
-
 
 **Step 3**: Click on Forgot Password option on the Keycloak login page.
 
 ![](../../../../.gitbook/assets/arc-image3.png)
 
-
-
 **Step 4**: Enter your Keycloak Username and click on Submit.
 
 ![](../../../../.gitbook/assets/arc-12-4.png)
-
-
 
 **Step 5**: You will then receive an email over registered email Id to reset the password. This email contains a link to set a new password.
 
 ![](../../../../.gitbook/assets/arc-12-5.png)
 
-
-
-**Step 6**: On clicking on the link to set a new password, you (Operator) will be taken to the keycloak page where you can enter the new password. On successfully entering the password twice, the password will be changed. 
-This password can now be used to log into Android Registration Client (when in online mode). In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
-
+**Step 6**: On clicking on the link to set a new password, you (Operator) will be taken to the keycloak page where you can enter the new password. On successfully entering the password twice, the password will be changed. This password can now be used to log into Android Registration Client (when in online mode). In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
 
 ![](../../../../.gitbook/assets/arc-12-6.png)
-
-
 
 ## AID QR code scan
 
 This feature enables the Operator to scan the QR code of the AID (Application ID) QR code generated during pre-registration. On successful scan, the Operator will be able to fetch the pre-registration data and pre-fill the registration form with the available data.
 
-
 **Step 1**: Log into Android Registration Client, start new registration to land onto the "Demographic Details" Page.
-
 
 **Step 2**: On the "Demographic Details" page, click on the scan button next to "Fetch Data" option. On clicking on the scan button, camera will open up.
 
 ![](../../../../.gitbook/assets/arc-12-7.png)
 
-
-
 **Step 3**: You can then scan the QR code generated during Applicantʼs pre-registration.
 
 ![](../../../../.gitbook/assets/arc-12-8.png)
-
-
 
 **Step 4**: On scanning, the Application ID field will be pre-filled with the AID. Along with that, other details, as filled during pre-registration, like Name, age, gender, documents etc. will also be auto filled.
 
@@ -404,15 +377,11 @@ The pre-filled data can also be edited based on the your (Operator) or Resident�
 
 ![](../../../../.gitbook/assets/arc-12-9.png)
 
-
 ![](../../../../.gitbook/assets/arc-12-10.png)
 
-
-
-## Lost UIN: 
+## Lost UIN:
 
 In a scenario where a Resident has lost their UIN, they can go to a registration center to retrieve their lost UIN. Below are the steps for the same:
-
 
 **Step 1**: You (Operator) have to Launch Android Registration Client and login using valid credentials.
 
@@ -422,28 +391,19 @@ In a scenario where a Resident has lost their UIN, they can go to a registration
 
 ![](../../../../.gitbook/assets/arc-12-11.png)
 
-
 **Step 4** You can then ask and inform the Residents about the Consent and click on "Informed" button.
 
 ![](../../../../.gitbook/assets/arc-12-12.png)
-
-
 
 **Step 5** You can fill the demographic details of the Resident. This is an optional step.
 
 ![](../../../../.gitbook/assets/arc-12-13.png)
 
-
-
 **Step 6** You will have to capture all the biometrics of the Resident. This is a mandatory step.
 
 ![](../../../../.gitbook/assets/arc-12-14.png)
 
-
-
 ![](../../../../.gitbook/assets/arc-12-15.png)
-
-
 
 **Step 7**: Once you (Operator) have duly captured the biometrics of the Resident, you can then proceed by clicking on the **Continue** button, which will redirect you to the **Preview** page. The Preview page will display the following information:
 
@@ -451,31 +411,27 @@ In a scenario where a Resident has lost their UIN, they can go to a registration
 * Timestamp of Registration
 * Demographic data collected (if any) Biometric data recorded
 
-From the Preview page, you you (operator) have the the ability to navigate back to previous screens in order to make any necessary adjustments to the entered or captured data. Once the you have verified the accuracy of the entered data, you can proceed by clicking on the **Continue** button, which will direct them to the Operator Authentication page.
-
+From the Preview page, you (Operator) have the the ability to navigate back to previous screens in order to make any necessary adjustments to the entered or captured data. Once you have verified the accuracy of the entered data, you can proceed by clicking on the **Continue** button, which will direct them to the Operator Authentication page.
 
 **Step 8**: On the Operator Authentication page, you (operator) are required to input your credentials (username and password) that were used during the login process.
 
 ![](../../../../.gitbook/assets/arc-12-17.png)
 
-
 **Step 9**: Once that is done successfully, the packet is uploaded to the server and you (operator) will be redirected to the Acknowledgment screen. This screen includes the following information:
 
-- Application ID
-- Timestamp of Registration
-- Demographic data captured (if any)
-- Biometric data captured
-- Print option
-- QR code for the Application ID
-- Option to go to the Homepage
+* Application ID
+* Timestamp of Registration
+* Demographic data captured (if any)
+* Biometric data captured
+* Print option
+* QR code for the Application ID
+* Option to go to the Homepage
 
 ![](../../../../.gitbook/assets/arc-12-18.png)
 
+## Reset password:
 
-## Reset password: 
-
-In a scenario where the Operator wishes to set a new password, they can set a new password using this feature post which they will be able to login using the new password and continue with registration tasks.
-
+In a scenario where the you (Operator) wish to set a new password, you can set a new password using this feature post which you will be able to login using the new password and continue with registration tasks.
 
 **Step 1**: Launch Android Registration Client and login using valid credentials.
 
@@ -483,33 +439,21 @@ In a scenario where the Operator wishes to set a new password, they can set a ne
 
 ![](../../../../.gitbook/assets/arc-image19.png)
 
-
-
 **Step 3**: On the Profile page, click on the "Reset Password" option.
 
 ![](../../../../.gitbook/assets/arc-12-20.png)
 
-
-
 **Step 4**: On clicking on the "Reset Password" option, You will be redirected to the Keycloak Login page.
-
-
 
 **Step 5**: You can then login using Keycloak credentials.
 
-
 ![](../../../../.gitbook/assets/arc-12-21.png)
-
 
 **Step 6**: Once you have logged in, you will be taken to the Password section where you can set a New Password.
 
-Once the password is reset, new password can be used to log into Android Registration Client (when in online mode). 
+Once the password is reset, new password can be used to log into Android Registration Client (when in online mode).
 
-Note: In offline mode, the User will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
+Note: In offline mode, you will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
 
 ![](../../../../.gitbook/assets/arc-12-22.png)
 
-
-## Match SDK: 
-
-In a scenario where the Operator is registering an Applicant, the Operator is supposed to capture the biometrics of the Applicant. If by mistake the Operator captures their own biometrics, the system will detect it, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating "Biometrics Matched With Operator Biometrics, Please Try Again" will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
