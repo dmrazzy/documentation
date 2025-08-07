@@ -1,7 +1,3 @@
----
-hidden: true
----
-
 # Android Registration Client 0.12.0
 
 **Release Name**: Android Registration Client v0.12.0
