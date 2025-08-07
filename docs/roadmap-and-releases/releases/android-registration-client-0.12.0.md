@@ -12,9 +12,7 @@
 
 The Android Registration Client is a tablet application designed to provide a mobile version of the existing desktop [Registration Client](https://docs.mosip.io/1.2.0/modules/registration-client).  It has been developed to ensure accessibility on all Android devices and to meet the mobility needs of countries implementing MOSIP.
 
-Version 0.12.0 of the Android Registration Client is a beta release, featuring functionalities such as Forgot Password, AID QR code scan, Lost UIN, and Reset password.
-
-The new features included in this release are:
+Version 0.12.0 of the Android Registration Client is a beta release, featuring the following functionalities:
 
 * **Forgot Password**
 * **AID QR code scan**
@@ -43,4 +41,4 @@ To learn more about the available features, processes, and user interface, refer
 
 ### **Known Issues**
 
-To view the list of known issues, please refer [here](https://mosip.atlassian.net/issues/RCF-969?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20\(closed%2C%20Canceled\)%20and%20labels!%3DARC_Real_Device).
+To view the list of known issues, please refer [here](https://mosip.atlassian.net/issues/?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20%28closed%2C%20Canceled%29%20and%20labels%21%3DARC_Real_Device\&selectedIssue=RCF-1188).
