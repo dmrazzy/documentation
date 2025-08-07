@@ -23,9 +23,9 @@ Version 0.12.0 of the Android Registration Client is a beta release, featuring t
 
 ### **Repository Released**
 
-| **Repositories**            | **Tags Released** |
-| --------------------------- | ----------------- |
-| android-registration-client | **v0.12.0**       |
+| **Repositories**            | **Tags Released**                                                                |
+| --------------------------- | -------------------------------------------------------------------------------- |
+| android-registration-client | [**v0.12.0**](https://github.com/mosip/android-registration-client/tree/v0.12.0) |
 
 ### **Build and Deploy**
 
