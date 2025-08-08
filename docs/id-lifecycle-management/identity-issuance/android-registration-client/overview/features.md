@@ -1,16 +1,22 @@
 # Features
 
+
+## Android Registration Client
 Android Registration Client provides several essential features designed to enhance user convenience and system efficiency.
 
 It facilitates seamless user registration by offering an intuitive interface that supports quick data entry and ensures rigorous data validation to minimize errors. &#x20;
 
 Read through to know more about the key features of Android Registration:
 
-#### **1. Operator/ Supervisor Login (offline and online)** Operators can securely login using their credentials, whether in offline or online mode, to carry out various registration transactions. To enable offline login, the operator must have previously logged in and synchronized their data over a network.
+### 1. Operator/ Supervisor Login (offline and online)
 
-#### **2. Multi-language Support** The Android Registration Client supports multiple languages for content display and data entry.
+Operators can securely login using their credentials, whether in offline or online mode, to carry out various registration transactions. To enable offline login, the operator must have previously logged in and synchronized their data over a network.
 
-* **Display Language**\
+### 2. Multi-language Support
+
+The Android Registration Client supports multiple languages for content display and data entry.
+
+* **Display Language**
   Display Language refers to the language used for rendering UI elements such as labels and headings. With the Android Registration Client, Operators have the option to choose their preferred language for UI display. This language selection can be made on the login screen. Currently, the supported display languages include Arabic, French, and English.
 * New languages can be added by following the below steps:
 * Additional languages can be configured by adding localization files in the lib/l10n folder present in the root project directory("android\_registration\_client").
@@ -20,7 +26,7 @@ Read through to know more about the key features of Android Registration:
 
 * **Data Entry Language**: The Data Entry Language refers to the specific language utilized by the Operator while gathering data, which is then stored on the server in that selected language. During the registration process, the Operator can choose the language preference for the data collected, allowing applicants to provide information in their desired language. This language selection option becomes available upon initiating a new registration. The responsibility for managing the data entry language lies within the UI Spec, and any modifications or changes can be made through that specification.
 
-#### **3. Auto-Sync/ manual sync**
+### 3. Auto-Sync/ manual sync
 
 On launching the Android Registration Client and logging in for the first time, the system automatically syncs the following data:
 
@@ -29,7 +35,7 @@ On launching the Android Registration Client and logging in for the first time, 
 * **UserDetails sync**: userID, along with their status is synced. Only the user details belonging to machine mapped center will be synced.
 * **Certificate sync**: Certificates used to validate the server signatures, device CA certificates, and public key (specific to a center and machine, also called policy key) used to encrypt the registration packet will be synced.
 
-#### **4. New Registrations**
+### 4. New Registrations
 
 Operators can register a resident using the `New Registration` feature. The registration process can be customized through the Android Registration Client [UI specification](../develop/ui-spec-documentation.md). The required data for registering an applicant are as follows:
 
@@ -64,13 +70,13 @@ Biometrics exceptions: If the resident has a biometric exception (such as a miss
 * **Packet Upload**: Once the packet sync is completed, the system will proceed to upload the packet to the server when an internet connection is available. If there is no network access, the system will attempt to upload the packet as soon as connectivity is established.
 * **Acknowledgment section**: Following the completion of the new registration process, an acknowledgment receipt is generated. This receipt includes the AID(Application ID), captured demographic data in the selected language, a photograph of the resident, and a ranking of each finger from 1 to 10, with 1 representing the finger with the best quality. The receipt is designed to be easily printed.
 
-#### **5. Operator onboarding**
+### 5. Operator onboarding
 
 To log in to the Android Registration Client, the operator must complete the onboarding process. This functionality is available only during the first online login. The operator must onboard by capturing their fingerprints, thumbprints, iris, and face. Once these are captured, the operator can start registering residents and using other services.
 
-#### **6. Dashboard**
+### 6. Dashboard
 
-#### The Operator can access the dashboard where he can view the following:
+The Operator can access the dashboard where he can view the following:
 
 1. **Packets created:** This will show the total number of packets created from the time the Android Registration Client was installed.
 2. **Packets Synced:** This will show the total number of packets synced from the time the Android Registration Client was installed.
@@ -80,7 +86,7 @@ To log in to the Android Registration Client, the operator must complete the onb
    2. **Username:** This will show the list of usernames of the Users mapped to the device.
    3. **Status:** This will show the status of Users mapped to the device. This can take values such as onboarded, active, inactive, etc.
 
-#### **7. Supervisor's Approval**
+### 7. Supervisor's Approval
 
 Once the packet is created by the Operator, as an additional check, the Supervisor will have to go through each application to make sure the details filled are coherent. At this stage, the Supervisor can either Approve the Application or he can Reject it. If the Supervisor decides to reject it, they also will have to mandatorily mention the reason for rejection. Once the Application has been Approved or Rejected, the Supervisor will have to authenticate himself by entering his Username and Password. Once they have successfully authenticated, the Application will be removed from the “Supervisor’s Approval” section and will be moved to the “Manage Application” Section.
 
@@ -88,38 +94,38 @@ Once the packet is created by the Operator, as an additional check, the Supervis
 This feature will only be available for a users having “Supervisor” role.
 {% endhint %}
 
-#### **8. Manual Application upload/export**
+### 8. Manual Application upload/export
 
 Once the Application is either Approved or Rejected by the Supervisor, those packets can be uploaded to the server from the “Manage Application” section. If there is internet connectivity, the packet will be synced and uploaded to the server but in case of lack of internet connectivity, the User can also export the packet to their local device storage.
 
-#### **9. Update UIN**
+### 9. Update UIN
 
 In a scenario where the Resident wants to update their data, they can do so by letting the Operator know their UIN and the data that needs to be updated. Residents can update their demographic details, documents, and biometrics using this feature.
 
-#### **10. Logout**
+### 10. Logout
 
 Using this feature, once the user is done with their registration and other activities, they can logout. If no background tasks are running, the user will be immediately logged out. If there are tasks (like sync) running in the background, the user will be notified about the same. From here if the User wants to cancel the logout, the background activities will keep running whereas if the user chooses to logout, they will be logged out and the background activities will be terminated.
 
-#### **11. Update operator's biometrics**
+### 11. Update operator's biometrics
 
 In a scenario where the operator wants to update his biometric section from operational tasks to update.
 
-#### **12. Handles Feature**
+### 12. Handles Feature
 
 The Handles Feature is designed to streamline citizen registration and authentication. During registration, specific attributes such as email, phone number, or national ID can be designated as a handle. This handle serves as a unique identifier that can later be used for authentication for various services. Handles can also be used to update data in case of data discrepancies. By allowing flexible and secure identification, the feature enhances the accuracy and integrity of citizen records while simplifying user interactions with government systems.
 
-#### **13. Lost UIN**
+### 13. Lost UIN
 
 In a scenario where the Resident has forgotten their UIN, the Operator can use the “Retrieve Lost UIN” option to initiate a request by capturing the resident’s consent, optional demographic details, and mandatory biometrics. After verifying the data in the preview screen and authenticating themselves, the Operator can generate and upload the packet to the server, following which an acknowledgment receipt with the new Application ID (AID) will be shown.
 
-#### **14. Scan AID QR Code**
+### 14. Scan AID QR Code
 
 This feature allows Operators to scan a resident’s pre-registration AID QR code to auto-fill their demographic and document data during a new registration. After logging in and selecting “New Registration", the Operator chooses display and notification languages, captures consent, and proceeds to the demographic page. From here, they can scan the AID QR code or enter it manually. If the AID is valid, the system fetches the pre-filled demographic and document data. The Operator can then proceed to capture biometrics and complete registration. This works whether or not the pre-registration was done for the same center and zone, using on-demand fetch if needed. Alternate flows include continuing without scanning or by manually entering the AID.
 
-#### **15. Reset Password**
+### 15. Reset Password
 
 This feature allows Operators and Supervisors to reset their password using the “Reset Password” option available in the Profile section. On clicking the option, users are redirected to the Keycloak login page (this link is configurable) where they can update their password. After resetting the password, users can return to the ARC login page and sign in with the new password.
 
-#### **16. Forgot Password**
+### 16. Forgot Password
 
 If a Supervisor or Operator forgets their password, they can use the “Forgot Password” option available on the login screen. After entering their username, users will be redirected to the Keycloak login page (configurable link) where they can click the “Forgot Password” link. This triggers an email to the registered email ID with instructions to reset the password. Once the password is updated, users can return to the ARC login page and log in using their new password.
