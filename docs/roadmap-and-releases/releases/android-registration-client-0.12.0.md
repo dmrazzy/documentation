@@ -19,7 +19,6 @@ Version 0.12.0 of the Android Registration Client is a beta release, featuring t
 * [**Lost UIN**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-13.-lost-uin)
 * [**Reset password**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-15.-reset-password)
 
-
 **Note**: Compatible with[ MOSIP version 1.2.0](https://docs.mosip.io/1.2.0/releases/release-notes)
 
 ### **Repository Released**
