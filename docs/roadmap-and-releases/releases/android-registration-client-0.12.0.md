@@ -27,17 +27,21 @@ Version 0.12.0 of the Android Registration Client is a beta release, featuring t
 | --------------------------- | -------------------------------------------------------------------------------- |
 | android-registration-client | [**v0.12.0**](https://github.com/mosip/android-registration-client/tree/v0.12.0) |
 
-### **Build and Deploy**
+### **User Stories Released**
 
-To access the build and read through the deployment instructions, refer to the[ Developer Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-developer-guide).
+<table><thead><tr><th width="222.37713623046875">Feature</th><th>Description</th><th>Jira ID</th></tr></thead><tbody><tr><td>Forgot Password</td><td>If a Supervisor or Operator forgets their password, they can use the “Forgot Password” option on the login screen.</td><td><a href="https://mosip.atlassian.net/browse/RCF-69">RCF-69</a></td></tr><tr><td>AID QR code scan</td><td>This feature allows Operators to scan a resident’s pre-registration AID QR code to auto-fill their demographic and document data during a new registration.</td><td><a href="https://mosip.atlassian.net/browse/RCF-698">RCF-698</a></td></tr><tr><td>Lost UIN</td><td>In a scenario where the Resident has forgotten their UIN, the Operator can use the “Retrieve Lost UIN” option to initiate a request by capturing the resident’s consent, optional demographic details, and mandatory biometrics.</td><td><a href="https://mosip.atlassian.net/browse/RCF-457">RCF-457</a></td></tr><tr><td>Reset password</td><td>This feature allows Operators and Supervisors to reset their password using the “Reset Password” option in the Profile section.</td><td><a href="https://mosip.atlassian.net/browse/RCF-84">RCF-84</a></td></tr></tbody></table>
 
-### **Configurations**
+### **Documentation**
 
-For details related to Android Registration Client configurations, refer to the[ Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration).
+[Feature Documentation](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features)
 
-### **User Guide**
+[Developer Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-developer-guide)
 
-To learn more about the available features, processes, and user interface, refer[ Android Registration User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide) for further information.
+[UI Specification Documentation](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/develop/ui-spec-documentation)
+
+[Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration)
+
+[Android Registration User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide)
 
 ### **Known Issues**
 
