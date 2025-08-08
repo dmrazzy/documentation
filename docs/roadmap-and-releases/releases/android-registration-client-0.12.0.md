@@ -45,4 +45,4 @@ Version 0.12.0 of the Android Registration Client is a beta release, featuring t
 
 ### **Known Issues**
 
-To view the list of known issues, please refer [here](https://mosip.atlassian.net/issues/?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20%28closed%2C%20Canceled%29%20and%20labels%21%3DARC_Real_Device\&selectedIssue=RCF-1188).
+To view the list of known issues, please refer [here](https://mosip.atlassian.net/issues/?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20%28closed%2C%20Canceled%29%20and%20labels%21%3DARC_Real_Device).
