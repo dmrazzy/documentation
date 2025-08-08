@@ -14,10 +14,10 @@ The Android Registration Client is a tablet application designed to provide a mo
 
 Version 0.12.0 of the Android Registration Client is a beta release, featuring the following functionalities:
 
-* [**Forgot Password**](../../id-lifecycle-management/identity-issuance/android-registration-client/overview/features.md#16-forgot-password)
-* [**AID QR code scan**](../../id-lifecycle-management/identity-issuance/android-registration-client/overview/features.md#14-scan-aid-qr-code)
-* [**Lost UIN**](../../id-lifecycle-management/identity-issuance/android-registration-client/overview/features.md#13-lost-uin)
-* [**Reset password**](../../id-lifecycle-management/identity-issuance/android-registration-client/overview/features.md#15-reset-password)
+* [**Forgot Password**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-16.-forgot-password)
+* [**AID QR code scan**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-14.-scan-aid-qr-code)
+* [**Lost UIN**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-13.-lost-uin)
+* [**Reset password**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-15.-reset-password)
 
 
 **Note**: Compatible with[ MOSIP version 1.2.0](https://docs.mosip.io/1.2.0/releases/release-notes)
