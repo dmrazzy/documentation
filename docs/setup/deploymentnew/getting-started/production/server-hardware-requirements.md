@@ -79,7 +79,7 @@ The compute and storage estimates for the following components are not included:
 | Postgres                                                                             | Only storage estimated above.                                                                            |
 | Object store                                                                         | Only storage estimated above.                                                                            |
 | Bio SDK                                                                              |                                                                                                          |
-| [HSM](../../../../id-lifecycle-management/supporting-services/keymanager/hsm.md)     |                                                                                                          |
+| [HSM](../../../../id-lifecycle-management/supporting-components/keymanager/hsm.md)   |                                                                                                          |
 | [ABIS](../../../../id-lifecycle-management/supporting-components/biometrics/abis.md) |                                                                                                          |
 | Antvirus (AV)                                                                        | Default scanner (ClamAV) in included, however, if you integrate your AV, the same needs to be estimated. |
 | Load balancers                                                                       |                                                                                                          |

@@ -46,7 +46,7 @@ OTP Request Service is used by Authentication/e-KYC Partners to generate OTP for
 
 ## Key generation
 
-ID Authentication needs the below [keys](../../supporting-services/keymanager/keys.md) to be generated during the deployment for usage in Authentication Service.
+ID Authentication needs the below [keys](../../supporting-components/keymanager/keys.md) to be generated during the deployment for usage in Authentication Service.
 
 1. `IDA IDENTITY_CACHE`(K18) symmetric key to encrypt and decrypt the Zero-knowledge 10K random keys
 2. `IDA ROOT` master key(K15)), `IDA module` master key(K16), `IDA-SIGN` master key

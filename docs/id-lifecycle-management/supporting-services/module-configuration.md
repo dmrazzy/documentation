@@ -37,7 +37,7 @@ Refer to [Postgres DB configuration](../supporting-components/persistence/postgr
 
 ## HSM
 
-Refer to [HSM configuration](keymanager/hsm.md#configuration).
+Refer to [HSM configuration](../supporting-components/keymanager/hsm.md#configuration).
 
 ## Languages
 
