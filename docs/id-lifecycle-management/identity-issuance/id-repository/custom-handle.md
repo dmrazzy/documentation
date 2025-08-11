@@ -9,6 +9,8 @@ What if residents are given the flexibility to create their handle (username) an
 * Handles can include resident's phone number, e-mail ID, or any linked functional ID / sectoral ID.
 * The handle can also be a custom username created through the resident portal.
 
+**Note:** A recyclable ID, such as a mobile number, cannot be used as a handle. Handles must be unique and persistent to ensure reliable identification and authentication. Since mobile numbers and similar IDs can be reassigned or changed over time, they do not meet the criteria for a secure handle. Instead, handles should be chosen from identifiers that remain constant for the user, minimizing the risk of identity conflicts or unauthorized access.
+
 ## Overview
 
 Countries that have an established user base can now register users onto a relying portal using their distinctive identifiers referred to as handles. These handles are tailored to meet the specific requirements of each country, enabling users to easily access digital services and receive prompt benefits from both the government and private sector. This approach eliminates the need for users to remember a new or system generated IDs.
