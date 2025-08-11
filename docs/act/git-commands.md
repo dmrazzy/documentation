@@ -5,3 +5,4 @@
 
 # 2. Create PR from your fork to upstream
 `gh pr create --repo mosip/documentation --title "PR Title here" --body "PR body or description here"`
+
