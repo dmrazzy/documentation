@@ -10,7 +10,7 @@ icon: book-open
 **Version**: Android Registration Client v0.12.0
 
 * Date: 8th August, 2025
-* [Release Notes ](android-registration-client-0.12.0.md)
+* [Release Notes ](android-registration-client-0.12.0/)
 
 **Version**: Partner Management System Revamp 1.3.0-beta.1
 
