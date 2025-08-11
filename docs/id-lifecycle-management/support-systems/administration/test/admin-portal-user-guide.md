@@ -367,12 +367,12 @@ With the help of this feature, the Admin user can generate and manage the keys r
 ### GenerateMasterKey
 
 * The logged in user with `KEY_MAKER` role will have access to view and generate the master key in the Admin portal.
-* Using this option, the logged in user will be able to generate only the [Root](../../../supporting-services/keymanager/#Key-hierarchy) key and [Module](../../../supporting-services/keymanager/#Key-hierarchy) master key. To generate the key, the user has to select the Application ID from the options available in the dropdown, leave the Reference ID blank for the [Root](../../../supporting-services/keymanager/#Key-hierarchy) and [Module](../../../supporting-services/keymanager/#Key-hierarchy) master key, and provide other certificate attributes to be used at the time of generation of the certificate for the key.
+* Using this option, the logged in user will be able to generate only the [Root](../../../supporting-components/keymanager/#Key-hierarchy) key and [Module](../../../supporting-components/keymanager/#Key-hierarchy) master key. To generate the key, the user has to select the Application ID from the options available in the dropdown, leave the Reference ID blank for the [Root](../../../supporting-components/keymanager/#Key-hierarchy) and [Module](../../../supporting-components/keymanager/#Key-hierarchy) master key, and provide other certificate attributes to be used at the time of generation of the certificate for the key.
 * These certificate attributes in the portal are optional, if not provided, default values configured in the Key Manager service will be used.
-* For the Kernel signature key (which is considered the master key and stored in [HSM](../../../supporting-services/keymanager/hsm.md)), a Reference ID needs to be provided and the value has to be `SIGN`.
-* **The force** flag option is available in key generation. The logged in user can select the option value **True** to force the invalidation existing key and generate a new key in [Key Manager](../../../supporting-services/keymanager/) service.
+* For the Kernel signature key (which is considered the master key and stored in [HSM](../../../supporting-components/keymanager/hsm.md)), a Reference ID needs to be provided and the value has to be `SIGN`.
+* **The force** flag option is available in key generation. The logged in user can select the option value **True** to force the invalidation existing key and generate a new key in [Key Manager](../../../supporting-components/keymanager/) service.
 * The logged in user has to select the return object after the generation of the key.
-* The user can select either _Certificate_ or _CSR (Certificate Signing Request)_. The key will be generated only when the key is not available in [Key Manager](../../../supporting-services/keymanager/) service otherwise already generated key certificate will be returned for the generation request.
+* The user can select either _Certificate_ or _CSR (Certificate Signing Request)_. The key will be generated only when the key is not available in [Key Manager](../../../supporting-components/keymanager/) service otherwise already generated key certificate will be returned for the generation request.
 
 ![](../../../../.gitbook/assets/admin-generate-masterkey.png)
 
@@ -380,10 +380,10 @@ With the help of this feature, the Admin user can generate and manage the keys r
 
 * _CSR (certificate signing request)_ is required when there is a need to procure a valid certificate from a valid CA.
 * _GenerateCSR_ option can be used to request for a CSR and this option will be visible to all the users who log in to the Admin portal.
-* The logged in user can request for generation of CSR for any key generated in [Key Manager](../../../supporting-services/keymanager/) service.
+* The logged in user can request for generation of CSR for any key generated in [Key Manager](../../../supporting-components/keymanager/) service.
 * The user has to provide the Application ID and Reference ID to get a CSR.
 * A new key will be auto-generated in case the key does not exist and the already existing key has expired for the Module Encryption keys.
-* Whereas, for [Module](../../../supporting-services/keymanager/#Key-hierarchy) master key or [Root](../../../supporting-services/keymanager/#Key-hierarchy) key, a new key will not get auto-generated in case the key does not exist, but the new key will get auto generated if the key exists and has expired. The current valid key will always be used to generate a CSR.
+* Whereas, for [Module](../../../supporting-components/keymanager/#Key-hierarchy) master key or [Root](../../../supporting-components/keymanager/#Key-hierarchy) key, a new key will not get auto-generated in case the key does not exist, but the new key will get auto generated if the key exists and has expired. The current valid key will always be used to generate a CSR.
 
 ![](../../../../.gitbook/assets/admin-generate-csr.png)
 
@@ -393,21 +393,21 @@ With the help of this feature, the Admin user can generate and manage the keys r
 * The _GetCertificate_ option is visible to all the users who log in to the Admin portal.
 * The user has to provide the Application ID and Reference ID to get a certificate.
 * A new key will be auto generated in case the key does not exist and the already existing key has expired for Module encryption keys.
-* Whereas, for [Module](../../../supporting-services/keymanager/#Key-hierarchy) master key or [Root](../../../supporting-services/keymanager/#Key-hierarchy) key, a new key will not get auto-generated in case the key does not exist, but a new key will get auto-generated if the key exists and has expired. For the partner certificate, a new key will not be generated in the Key Manager service.
+* Whereas, for [Module](../../../supporting-components/keymanager/#Key-hierarchy) master key or [Root](../../../supporting-components/keymanager/#Key-hierarchy) key, a new key will not get auto-generated in case the key does not exist, but a new key will get auto-generated if the key exists and has expired. For the partner certificate, a new key will not be generated in the Key Manager service.
 * Only current valid certificates will be returned when the user requests a certificate.
 
 ![](../../../../.gitbook/assets/admin-get-certificate.png)
 
 ### UploadCertificate
 
-* The logged in user can use this option to update the certificate for all the keys generated in the [Key Manager service](../../../supporting-services/keymanager/).
-* This option is used in scenarios where a valid CA certificate has been procured for a key available in the [Key Manager service](../../../supporting-services/keymanager/).
+* The logged in user can use this option to update the certificate for all the keys generated in the [Key Manager service](../../../supporting-components/keymanager/).
+* This option is used in scenarios where a valid CA certificate has been procured for a key available in the [Key Manager service](../../../supporting-components/keymanager/).
 
 ![](../../../../.gitbook/assets/admin-upload-certificate.png)
 
 ### UploadOtherDomainCertificate
 
-* The logged in user can use this option to upload a partner certificate in [Key Manager service](../../../supporting-services/keymanager/).
+* The logged in user can use this option to upload a partner certificate in [Key Manager service](../../../supporting-components/keymanager/).
 * Partner certificates will be used in the Key Manager service to encrypt any sharable data using the partner certificate required in datashare from MOSIP to any partner.
 * Partner certificates can also be used in the Key Manager service for signature verification purposes.
 

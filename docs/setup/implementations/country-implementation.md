@@ -42,7 +42,7 @@ This is a guide to implement MOSIP for a country. It is advised that Government 
 
 ## Deployment
 
-1. [Certifcate/key generation](../../id-lifecycle-management/supporting-services/keymanager/keys.md)
+1. [Certifcate/key generation](../../id-lifecycle-management/supporting-components/keymanager/keys.md)
 2. [Deployment design](https://docs.mosip.io/1.2.0/deploymentnew/getting-started).
 3. Disaster recover set up
 4. Biometric thresholding

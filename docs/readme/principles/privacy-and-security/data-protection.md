@@ -2,7 +2,7 @@
 
 The security of user data is given the highest priority in MOSIP. Data is protected in flight and rest using strong cryptographic techniques. All operations on decrypted data are done in memory.
 
-Various flows with encryption are illustrated below. Refer to [Keys](../../../id-lifecycle-management/supporting-services/keymanager/keys.md) for all references of the type 'Kx' and 'KPx'.
+Various flows with encryption are illustrated below. Refer to [Keys](../../../id-lifecycle-management/supporting-components/keymanager/keys.md) for all references of the type 'Kx' and 'KPx'.
 
 ## Registration data flow
 

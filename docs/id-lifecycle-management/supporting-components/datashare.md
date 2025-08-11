@@ -19,7 +19,7 @@ The relationship of Datashare Service with other services is explained here. _NO
 2. Manual Adjudication Stage creates datashare for adjudication.
 3. Verification Stage creates datashare for verification.
 4. Datashare Service calls [Policy Manager Service](../support-systems/partner-management-services/#policy-management-service) to get the policy for creating shares.
-5. It calls the [Keymanager](../supporting-services/keymanager/) Service to encrypt data as per policy.
+5. It calls the [Keymanager](keymanager/) Service to encrypt data as per policy.
 6. Stores datashare inside [object store](persistence/object-store.md).
 7. Retrieves datashare from the object store when the datashare URL is called.
 8. External systems like [ABIS](biometrics/abis.md), Print System, Adjudication system etc. calls Datashare Service to get the datashare.
