@@ -12,7 +12,7 @@ UIN/ VID are system-generated unique identifiers provided to Residents. Resident
 
 Handles can be email ID or any linked functional ID/sectoral ID. Additionally, residents can also create a custom username through the resident portal.
 
-**Note:** A recyclable ID, such as a mobile number, cannot be used as a handle. Handles must be unique and persistent to ensure reliable identification and authentication. Since mobile numbers and similar IDs can be reassigned or changed over time, they do not meet the criteria for a secure handle. Instead, handles should be chosen from identifiers that remain constant for the user, minimizing the risk of identity conflicts or unauthorized access.
+**Note:** A recyclable ID, such as a mobile number, cannot be used as a handle. Handles must be unique and persistent to ensure reliable identification and authentication. Since mobile numbers and similar IDs can be reassigned or changed over time, they do not meet the criteria for a secure handle. Instead, handles should be chosen from identifiers that remain constant for the user, minimizing the risk of identity conflicts or unauthorized access..
 
 ## How does it work?
 
