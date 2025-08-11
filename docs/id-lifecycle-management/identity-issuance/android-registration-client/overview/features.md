@@ -112,7 +112,7 @@ In a scenario where the operator wants to update his biometric section from oper
 
 ### 12. Handles Feature
 
-The Handles Feature is designed to streamline citizen registration and authentication. During registration, specific attributes such as email or national ID can be designated as a handle. This handle serves as a unique identifier that can later be used for authentication for various services. Handles can also be used to update data in case of data discrepancies. By allowing flexible and secure identification, the feature enhances the accuracy and integrity of citizen records while simplifying user interactions with government systems.
+The Handles Feature is designed to streamline citizen registration and authentication. During registration, specific attributes such as email or national ID can be designated as a handle. This handle serves as a unique identifier that can later be used for authentication for various services. Handles can also be used to update data in case of data discrepancies. By allowing flexible and secure identification, the feature enhances the accuracy and integrity of citizen records while simplifying user interactions with government systems..
 
 ### 13. Lost UIN
 
