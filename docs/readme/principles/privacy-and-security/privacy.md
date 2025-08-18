@@ -23,7 +23,7 @@ By embedding this principle, MOSIP achieves:
 - 📉 Minimal data exposure across system components
 - 🔒 Robust protection against unauthorized access and misuse
 - 🛡️ Compliance with privacy principles like data minimization and purpose limitation
-- 🌐 Alignment with global data privacy standards (e.g., GDPR, DPDP Act)
+- 🌐 Alignment with standards and specifications. (refer [here](https://docs.mosip.io/1.2.0/readme/standards-and-specifications) to know more about the standards and specification)
 
 MOSIP achieves Functional Privacy through the following key mechanisms:
 
@@ -117,8 +117,8 @@ MOSIP integrates User Centricity through the following sub-elements:
 - User Control
   - **What it is**  -User Control means enabling individuals to manage how their identity data is collected, used, and shared within the system.
   - **Purpose**  -To empower users with autonomy over their data, preventing misuse or overreach by third parties.
-  - **How MOSIP implements it**  
-    - Users can update certain attributes (e.g., address) through designated update mechanisms.
+  - **How MOSIP implements it**
+    - Users can update certain attributes through designated update mechanisms. For example, if a user wishes to update their address, they can log in to the resident portal and make the change directly. If they require assistance, they may visit a registration center, where an operator will update the address on their behalf. Once the update is successful, the new information will be reflected in the user’s records.
     - Authentication requests disclose what data is being accessed, giving users the choice to proceed or decline.  
 
 - Consent
@@ -137,7 +137,8 @@ MOSIP integrates User Centricity through the following sub-elements:
     - Multilingual support in registration and authentication modules.
     - Simple, clear UI/UX design in client applications.
     - Offline capabilities for areas with low connectivity.
-    - Assisted user journeys for vulnerable individuals.  
+    - Assisted user journeys for vulnerable individuals.
+    - Incorporation of GenderMag principles to evaluate and improve usability across diverse cognitive styles and gender-inclusive perspectives  
 
 - Inclusion
   - **What it is**  -Inclusion ensures that the identity system accommodates all segments of society, including marginalized groups, persons with disabilities, and those in remote areas.
@@ -146,7 +147,9 @@ MOSIP integrates User Centricity through the following sub-elements:
     - Supports biometric exceptions for individuals unable to provide fingerprints.
     - Allows demographic-only registration when biometrics cannot be captured.
     - Provides accessibility features for people with disabilities.
-    - Designed for multilingual, multi-cultural, and resource-constrained environments.  
+    - Designed for multilingual, multi-cultural, and resource-constrained environments.
+
+   You can refer to this [link](https://docs.mosip.io/1.2.0/readme/principles/inclusion) to know more about how MOSIP Identity Platform supports inclusivity
 
 
 ### 4. Transparency
