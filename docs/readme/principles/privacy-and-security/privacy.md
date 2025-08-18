@@ -76,11 +76,12 @@ MOSIP implements its security framework through the following key sub-elements:
 - Data Security
   - **What it is**  -Data security ensures that all data handled by MOSIP—whether in storage or while processing—is safeguarded against unauthorized access, tampering, or breaches.
   - **Purpose**  -To prevent data leaks, ensure confidentiality and integrity, and protect user identities throughout their lifecycle.
-**How MOSIP implements it**  -MOSIP adopts a multi-layered security approach to protect sensitive data:
+  - **How MOSIP implements it**  -MOSIP adopts a multi-layered security approach to protect sensitive data:
     - **Encryption & Decryption** – Encryption is achieved using algorithms such as RSA, EC, and JWE.
     - **Hashing** – Sensitive elements like biometric templates are hashed with secure algorithms.
     - **HSM-backed Key Management** – Cryptographic keys are securely managed using Hardware Security Modules.
     - **Database Security** – Role-based permissions and audit trails monitor access.
+refer this [link](https://docs.mosip.io/1.2.0/readme/principles/privacy-and-security/data-protection) to know more about how MOSIP Identity Platform supports data security
 
 - Trusted Applications
   - **What it is**  -Trusted applications refer to MOSIP’s mechanism to ensure that only verified and authorized software can interact with core modules and services.
