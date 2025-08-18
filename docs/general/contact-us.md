@@ -1,2 +1,30 @@
+---
+description: Have a question or feedback? We are here for you!
+icon: comment-arrow-up-right
+---
+
 # Contact Us
 
+Reach out to us through the channel that best fits your purpose, as outlined below.
+
+**Community Forum**
+
+Join the conversation at [community.mosip.io](https://community.mosip.io) to ask questions, share ideas, and explore discussions about MOSIP and its solutions.
+
+***
+
+**Feedback**
+
+We truly value your input. Click the links below to share your feedback and help us make MOSIP better. Every suggestion counts in shaping our products and processes.
+
+* [MOSIP Identity Platform](https://forms.gle/7wQRtDFDKETkzT686)
+* [eSignet](https://forms.gle/mTjWXC9Dc2FPCmMSA)
+* [Inji](https://forms.gle/ycYEPRjN66a18Pk48)
+
+***
+
+**Other Queries**
+
+For anything more specific or direct, feel free to write to us at **info@mosip.io** — we’re happy to connect!
+
+***
