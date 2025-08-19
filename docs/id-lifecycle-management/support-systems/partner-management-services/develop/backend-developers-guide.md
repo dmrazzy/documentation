@@ -15,7 +15,7 @@ The documentation here will guide you through the prerequisites required for the
 
 Below is a list of tools required in Partner Management Services:
 
-1. JDK 11
+1. JDK 21
 2. Any IDE (like Eclipse, IntelliJ IDEA)
 3. Apache Maven (zip folder)
 4. pgAdmin
@@ -57,6 +57,15 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 6. After successful importing of all the projects, update each `project by right-clicking on Project → Maven → Update Project`.
 
 ### Environment setup
+
+#### For PMS revamp **1.2.2.0** and later <a href="#for-pms-revamp-1.2.2.0-and-later" id="for-pms-revamp-1.2.2.0-and-later"></a>
+
+The required external JAR (`kernel-auth-adapter`) is already included as a Maven dependency in the `pom.xml`.\
+You **do not** need to manually download or add this JAR to the project classpath.
+
+#### For PMS versions prior to **1.2.2.0** <a href="#for-pms-versions-prior-to-1.2.2.0" id="for-pms-versions-prior-to-1.2.2.0"></a>
+
+If you are using an older version of PMS (prior to 1.2.2.0), you will need to download the JARs manually from the repository and add them to your project
 
 * For the environment setup, you need an external JAR that is available [here](https://oss.sonatype.org/#nexus-search;gav~~kernel-auth-adapter~1.2.0-SNAPSHOT~~) with different versions. Download the below-mentioned JARs with appropriate latest/appropriate versions. You will need to input the appropriate artifact ID and version and other inputs. `kernel-auth-adapter.jar`
 * E.g.: You can download `kernel-auth-adapter.jar` and add to the `project Libraries → Classpath → Add External JARs → Select Downloaded JAR → Add → Apply` and Close).

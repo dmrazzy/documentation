@@ -1,6 +1,6 @@
 # Browsers Supported
 
-PMS Revamp Portal web application is currently compatible and certified with the following list of browsers as part of PMS 1.3.0.beta.1 release:
+PMS Revamp Portal web application is currently compatible and certified with the following list of browsers as part of PMS 1.3.0.beta.2 release:
 
 **Browser Versions - Desktop/Laptop**
 
