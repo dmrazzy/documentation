@@ -24,7 +24,7 @@ Refreshed new user experience to the Admin dashboard which now has structured th
 * The dashboard displays the cards for **Certificate Trust Store**, **Partners, Policies**, **Parter Policy-Linking**, **SBI-Device**, **FTM Chip,** and **Authentications Services**.
 * It also displays the pending requests count for Partner Policy-Linking, SBI-Device, and FTM Chip.
 
-<!-- Note: For devices that are orphaned without an associated SBI, the partner admin will only have the option to Reject. -->
+Note: For devices that are orphaned without an associated SBI, the partner admin will only have the option to Reject.
 
 
 #### Certificate Trust Store
@@ -61,14 +61,11 @@ Approve / Reject or View (List View and Details View)
 * Upload and Re-upload: Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
 * Download: Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
 
-<!-- >
 Note:
 
 * API Key gets auto deactivated after its expiry.
 
 * API Key expiration duration can be configured : Newly generated API keys should be set to 100 years of expiration duration by default, since the time of its creation. But an admin-level configuration (via config file) allows setting the API key expiration duration in days (such that it can accommodate months/years too). But please note that existing API keys (created before this feature) remains unaffected.
-
--->
 
 ### Partner Type Feature
 
@@ -103,7 +100,7 @@ Features discussed here are provided only for Partner Type which is Authenticati
   * **Deactivate:** Deactivate SBI or Deactivate mapped devices
   * **View** SBI and its associated devices
 
-<!-- Note: SBI gets auto deactivated along with its associated devices after SBI expiry. -->
+Note: SBI gets auto deactivated along with its associated devices after SBI expiry.
 
 #### The key features of FTM Chip Provider
 
