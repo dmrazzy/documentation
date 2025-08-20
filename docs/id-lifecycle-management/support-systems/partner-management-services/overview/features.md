@@ -24,6 +24,9 @@ Refreshed new user experience to the Admin dashboard which now has structured th
 * The dashboard displays the cards for **Certificate Trust Store**, **Partners, Policies**, **Parter Policy-Linking**, **SBI-Device**, **FTM Chip,** and **Authentications Services**.
 * It also displays the pending requests count for Partner Policy-Linking, SBI-Device, and FTM Chip.
 
+<!-- Note: For devices that are orphaned without an associated SBI, the partner admin will only have the option to Reject. -->
+
+
 #### Certificate Trust Store
 
 Upload, Download, or View (List View and Detailed view) of Root and Intermediate Certificates.
@@ -58,6 +61,15 @@ Approve / Reject or View (List View and Details View)
 * Upload and Re-upload: Easily upload or re-upload Certificate Authority (CA) signed Partner Certificate.
 * Download: Download CA signed Partner Certificate and corresponding MOSIP Signed Certificate.
 
+<!-- >
+Note:
+
+* API Key gets auto deactivated after its expiry.
+
+* API Key expiration duration can be configured : Newly generated API keys should be set to 100 years of expiration duration by default, since the time of its creation. But an admin-level configuration (via config file) allows setting the API key expiration duration in days (such that it can accommodate months/years too). But please note that existing API keys (created before this feature) remains unaffected.
+
+-->
+
 ### Partner Type Feature
 
 #### User Access Features
@@ -91,6 +103,8 @@ Features discussed here are provided only for Partner Type which is Authenticati
   * **Deactivate:** Deactivate SBI or Deactivate mapped devices
   * **View** SBI and its associated devices
 
+<!-- Note: SBI gets auto deactivated along with its associated devices after SBI expiry. -->
+
 #### The key features of FTM Chip Provider
 
 * **Partner Certificate**
@@ -102,7 +116,7 @@ Features discussed here are provided only for Partner Type which is Authenticati
 
 ### Receive Notifications via PMS portal and email
 
-Users receive timely notifications through both the PMS portal and email regarding the upcoming expiry of certificates linked to the Partner Management System (PMS).
+Users receive timely notifications through both the PMS portal and email regarding the upcoming expiry of certificates (Root/ Intermediate CA Certificate, Partner Certificate, FTM Chip Certificate), API Key and SBI linked to the Partner Management System (PMS).
 
 #### Notification Details
 
@@ -112,17 +126,20 @@ Users receive timely notifications through both the PMS portal and email regardi
 * **Recipients**
   * **Partner Admins**
     * Receive notifications about the expiry of all **Root / Intermediate CA certificates** (regardless of who uploaded them) which is set to expire in next 30 days.
-    * Receive a **weekly summary** listing partners whose partner certificates are expiring in the next 7 days.
+    * Receive a **weekly summary** listing partners whose partner certificates, FTM Chip Certificates, API Keys and SBIs are expiring in the next 7 days.
     * Receive individual notifications before the expiry of:
       * Root CA Certificates
       * Intermediate CA Certificates
   * **Partner Users**
     * Receive notifications for partner certificates they personally uploaded.
     * Notifications are specific to their uploaded partner certificates or corresponding MOSIP signed certificates expiring within the next 30 days.
+    FTM Chip Providers receive notifications for FTM Chip Certificates they have personally uploaded that are expiring within the next 30 days.
+  * Device Providers receive notifications for SBIs they have created that are expiring within the next 30 days.
+  * Authentication Partners receive notifications for API Keys they have generated that are expiring within the next 30 days.
 
 #### Notification Schedule
 
-* **For Individual Certificate (Root CA/ Intermediate CA/ Partner Certificate) Expirations:**
+* **For Individual Certificate (Root CA/ Intermediate CA/ Partner Certificate / FTM Chip Certificate, API Key and SBI) Expirations:**
   * 30 days before expiry
   * 15 days before expiry
   * Daily reminders starting from 10 days before expiry up to the expiry date (i.e., from Day - 10 to Day 0).
@@ -142,14 +159,11 @@ Users receive timely notifications through both the PMS portal and email regardi
 
 * Notifications in the PMS portal older than **60 days** are **automatically deleted**.
 
-### Audit Logging for Certificate Expiry Notifications
+### Audit Logging for Certificates, API Key, SBI Expiry Notifications
 
-To enhance traceability, PMS now captures audit logs for all certificate expiry-related notifications, including those shown on the portal and sent via email.&#x20;
+To enhance traceability, PMS now captures audit logs for all certificate expiry-related notifications, including those shown on the portal and sent via email. Notifications for Root CA, Intermediate CA, Partner, FTM Chip Certificates & API Keys, SBIs—as well as the Weekly Summary of partner certificates, FTM Chip Certificates, SBIs, API Keys sent to Partner Admins—are tracked for both success and failure events. Each event is recorded in the audit.app_audit_log table with a unique event ID and reference details. The logs include metadata such as module name, notification ID, and type. The feature ensures greater transparency and accountability in certificate lifecycle communication.
 
-* Notifications for Root CA, Intermediate CA, and Partner Certificates—as well as the Weekly Summary of partner certificates sent to Partner Admins—are tracked for both success and failure events.&#x20;
-* Each event is recorded in the `audit.app_audit_log` table with a unique `event ID` and reference details. The logs include metadata such as `module name`, `notification ID`, and `type`.&#x20;
-
-The feature ensures greater transparency and accountability in certificate lifecycle communication.
+In case of weekly summary notifications, audit logs are generated regardless of whether any partner-specific items—such as FTM Chip Certificates, SBI, Partner Certificates, or API Keys—are expiring (or not) in a given week. This includes logging events where no expiry notifications are triggered, ensuring consistent traceability for all weekly notification cycles, even if the system determines that there are no expiring items for the period.
 
 ## Browser Support
 
