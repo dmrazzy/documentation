@@ -16,25 +16,22 @@ _Note_: The code is written in React JS.
 
     Follow the steps below to build the source code on your system.
 
-    * Navigate to the pmp-reactjs-ui directory inside the cloned repository.
+    * Navigate to the `pmp-ui-v2` directory inside the cloned repository.
     * Run the command `npm run` build in that directory to build the code.
 *   **Build Docker image**
 
     Follow the steps below to build the docker image on your system.
 
     * `docker build -t name .` (replace name with the name of the image you want, "." signifies the current directory from where the docker file has to be read.)
-    * Example: `docker build -t pmp-revamp-ui .`
-
+    * Example: `docker build -t pmp-ui-v2 .`
 *   **Run the Docker image**
 
     Follow the steps to build docker image on your system.
 
     * `docker run –d –p 80:80 --name container-name image-name` (to run the docker image created with the previous step,`-d` signifies to run the container in detached mode, `-p` signifies the port mapping left side of the":" is the external port that will be exposed to the outside world and right side is the internal port of the container that is mapped with the external port. Replace `container-name` with the name of your choice for the container, replace `image-name` with the name of the image specified in the previous step)
-    * Example: `docker run -d -p 3000:3000--name nginx pmp-revamp-ui`
-
+    * Example: `docker run -d -p 3000:3000--name nginx pmp-ui-v2`
 * Now you can access the user interface over the internet via browser.
   * Example: `http://localhost:3000`
-
 
 #### For Local build
 
@@ -42,7 +39,7 @@ _Note_: The code is written in React JS.
 
     Follow the steps below to build the source code on your system.
 
-    * Navigate to the pmp-reactjs-ui directory inside the cloned repository. Then, run the following command in that directory:
+    * Navigate to the `pmp-ui-v2` directory inside the cloned repository. Then, run the following command in that directory:
       * `npm install`
       * `npm start`
 * Now, you can access the user interface via browser.

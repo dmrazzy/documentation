@@ -1,33 +1,31 @@
 # New Language Support
 
-
 ## Overview
 
 This guide provides step-by-step instructions for adding support for a new language in PMS application that uses react-i18next for internationalization. The i18n.js file is already configured to dynamically load language files based on the selected locale. Currently, the application supports English, French, and Arabic. For demonstration, we will add Spanish as an additional language.
 
 ## Repository
 
-The PMS React application source code is available at: [PMS Revamp UI Repository](https://github.com/mosip/partner-management-portal/tree/release-1.2.2.x/pmp-revamp-ui).
+The PMS React application source code is available at: [PMP Revamp UI Repository](https://github.com/mosip/partner-management-portal/tree/release-1.3.x).
 
 ## Adding a New Language
 
 #### Add a New Translation File
 
-Each language in the application is stored as a separate JSON file inside the /pmp-revamp-ui/public/i18n directory. To add Spanish (es), create a new translation file:
+Each language in the application is stored as a separate JSON file inside the /pmp-ui-v2/public/i18n directory. To add Spanish (es), create a new translation file:
 
-Open es.json and add the translations required, for example:
+```
+es.json
+```
+
+Open `es.json` and add the translations required, for example:
 
 ```json
 {
-
-"dashboard": {
-
-"welcomeMsg": "Bienvenido \{{firstName\}} \{{lastName\}}",
-
-"accountStatus": "Estado de la cuenta"
-
-}
-
+  "dashboard": {
+    "welcomeMsg": "Bienvenido {{firstName}} {{lastName}}",
+    "accountStatus": "Estado de la cuenta"
+  }
 }
 ```
 
@@ -45,20 +43,18 @@ We use Keycloak for authentication, and users select their preferred language du
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-nls-image1.png" alt=""><figcaption></figcaption></figure>
 
-
 3. **Add Spanish to Supported Locales**:
    * Ensure that "Internationalization" is enabled.
    * In the "Supported Locales" field, add es (for Spanish) to the list.
    * Click "Save" to apply changes.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-nls-image2.png" alt=""><figcaption></figcaption></figure>
-       
+
 4. **Verify Language Selection in Keycloak Login Page:**
    * Navigate to the Keycloak login page.
    * Ensure that Spanish appears as an option in the language selection dropdown.
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-nls-image3.png" alt=""><figcaption></figcaption></figure>
-
 
 #### Rebuild the Application
 
@@ -69,7 +65,7 @@ After adding the new language bundle, you must **rebuild the code** to ensure th
 1. Open a terminal or command prompt.
 2. Navigate to your React project directory:
 
-`cd partner-management-portal\pmp-revamp-ui`
+`cd partner-management-portal\pmp-ui-v2`
 
 3. Install dependencies (if not already installed):
 

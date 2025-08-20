@@ -184,8 +184,8 @@ mosip.pms.auto.refresh.notifications=300
 ```
 
 2. This property specifies the Keycloak URL used to retrieve all users assigned to a specific role within the mosiprealm.
-   * The {userRole} placeholder should be replaced with the role name.
-   * The max=-1 query parameter ensures that all users associated with the role are fetched without any pagination or limit.
+   * The `{userRole}` placeholder should be replaced with the role name.
+   * The `max=-1` query parameter ensures that all users associated with the role are fetched without any pagination or limit.
 
 ```
 mosip.iam.role-users-url=${keycloak.external.url}/auth/admin/realms/mosip/roles/{userRole}/users?max=-1
@@ -200,6 +200,12 @@ mosip.pms.batch.job.root.intermediate.cert.expiry.cron.schedule=0 0 0 * * *
 mosip.pms.batch.job.partner.cert.expiry.cron.schedule=0 0 0 * * *
 # This job will create weekly notifications
 mosip.pms.batch.job.weekly.notifications.cron.schedule=0 0 0 * * 6
+# This job will create notifications for FTM chip certificate expiry
+mosip.pms.batch.job.ftm.chip.expiry.notifications.cron.schedule=0 0 0 * * *
+# This job will create notifications for SBI expiry
+mosip.pms.batch.job.sbi.expiry.notifications.cron.schedule=0 0 0 * * *
+# This job will create notifications for API key expiry
+mosip.pms.batch.job.api.key.expiry.notifications.cron.schedule=0 0 0 * * *
 ```
 
 4. This properties is used to schedule the batch job that delete past notifications.
@@ -222,12 +228,25 @@ mosip.pms.batch.job.enable.past.notifications.deletion=true
 ```
 mosip.pms.batch.job.root.intermediate.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
 mosip.pms.batch.job.partner.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.ftm.chip.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.sbi.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.api.key.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
 ```
 
 7. This property specifies the list of partner IDs for which certificate expiry notifications should be skipped. These IDs are excluded from the notification generation process.
 
 ```
 mosip.pms.batch.job.skips.partner.ids=MOSIP.PROXY.SBI,mpartner-default-cert,mpartner-default-adjudication,mpartner-default-mobile,mpartner-default-print,mpartner-default-abis,mpartner-default-resident,mpartner-default-auth,mpartner-default-digitalcard,mpartner-default-esignet,
+```
+
+8. These properties is used to schedule the batch job that deactivate the expired SBI and API Key.
+
+```
+mosip.pms.batch.job.root.intermediate.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.partner.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.ftm.chip.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.sbi.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+mosip.pms.batch.job.api.key.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
 ```
 
 #### Templates for Email Notifications
@@ -239,10 +258,16 @@ email.notification.partner.cert.expiry.template=PARTNER_CERT_EXPIRY_TEMPLATE
 email.notification.intermediate.cert.expiry.template=INTERMEDIATE_CERT_EXPIRY_TEMPLATE
 email.notification.root.cert.expiry.template=ROOT_CERT_EXPIRY_TEMPLATE
 email.notification.weekly.summary.template=WEEKLY_SUMMARY_TEMPLATE
+email.notification.ftm.chip.cert.expiry.template=FTM_CHIP_CERT_EXPIRY_TEMPLATE
+email.notification.api.key.expiry.template=API_KEY_EXPIRY_TEMPLATE
+email.notification.sbi.expiry.template=SBI_EXPIRY_TEMPLATE
 email.notification.partner.cert.expiry.subject.template=PARTNER_CERT_EXPIRY_SUBJECT
 email.notification.intermediate.cert.expiry.subject.template=INTERMEDIATE_CERT_EXPIRY_SUBJECT
 email.notification.root.cert.expiry.subject.template=ROOT_CERT_EXPIRY_SUBJECT
 email.notification.weekly.summary.subject.template=WEEKLY_SUMMARY_SUBJECT
+email.notification.ftm.chip.cert.expiry.subject.template=FTM_CHIP_CERT_EXPIRY_SUBJECT
+email.notification.api.key.expiry.subject.template=API_KEY_EXPIRY_SUBJECT
+email.notification.sbi.expiry.subject.template=SBI_EXPIRY_SUBJECT
 ```
 
 #### Configuration for Data Encryption and Decryption
@@ -268,6 +293,36 @@ mosip.pms.oidc.client.available=true
 # Indicates whether the root and intermediate CA certificates are available in MOSIP platform
 mosip.pms.root.and.intermediate.certificates.available=true
 ```
+
+#### Regex Patterns
+
+These regular expressions are used to validate various IDs and inputs within the PMS.
+
+* **FTM ID** (Allows only digits (0–9), with a length between 1 to 36 characters.)
+
+```
+mosip.pms.ftm.id.regex=^[0-9]{1,36}$
+```
+
+* **Certificate ID** (Allows letters, digits, and hyphens (-), with a length between 1 to 36 characters.)
+
+```
+mosip.pms.certificate.id.regex=^[a-zA-Z0-9-]{1,36}$
+```
+
+* **OIDC Client ID** (Allows letters, digits, underscores (\_) and hyphens (-), with a length between 1 to 36 characters.)
+
+```
+mosip.pms.client.id.regex=^[a-zA-Z0-9_-]{1,100}$
+```
+
+* **Request Input Validation** (Accepts a wide range of readable characters, including Letters, Numbers, Spaces and Special characters: .,@#&()-'?\_!":;=\\)
+
+```
+mosip.pms.request.input.validation.regex=^[\\p{L}\\p{N}\\p{M}\\s.,@#&()\\-'?_!":;=\\\\]+$
+```
+
+
 
 #### Partner Type Roles
 
