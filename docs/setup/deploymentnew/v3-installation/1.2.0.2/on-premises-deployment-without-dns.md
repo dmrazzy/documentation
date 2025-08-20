@@ -420,7 +420,7 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
         ```
 
         openssl req -x509 -nodes -days $VALIDITY \
-         -newkey rsa:2048 -keyout /etc/ssl/certs/tls.key -out /etc/ssl/certs/tls.crt \
+         -newkey rsa:2048 -keyout /etc/ssl/private/tls.key -out /etc/ssl/certs/tls.crt \
          -subj "/C=$COUNTRY/ST=$STATE/L=$LOCATION/O=$ORG/OU=$ORG_UNIT/CN=$COMMON_NAME" \
          -addext "subjectAltName = DNS:rancher.xyz.net, DNS:*.xyz.net"
         ```
