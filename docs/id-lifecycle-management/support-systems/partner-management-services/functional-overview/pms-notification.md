@@ -14,7 +14,7 @@
 
 3\. **Weekly Summary of Partner Certificate Expiration**
 
-* A summary of all **partner certificates expiring in the next 7 days**, sent weekly.
+* A consolidated summary of all partner certificates, FTM Chip Certificates, API Keys, and SBIs scheduled to expire within the next 7 days, sent weekly..
 
 These notifications are accessible via the **Notification Bell icon** in the top-right corner of the PMS portal.
 
@@ -36,7 +36,7 @@ These notifications are accessible via the **Notification Bell icon** in the top
   * **Timestamp of notification creation** (Displayed in user's local system time based on browser settings)
   * **Description**:
     * \[Root / Intermediate CA Certificate]{.underline}: Includes **Certificate ID**, **partner domain name**, and the **certificate's expiry date**
-    * \[Weekly Summary of Partner expiring items]{.underline}: Includes number of Partner Certificates expiring in next 7 days of time.
+    * \[Weekly Summary of Partner expiring items]{.underline}: Includes number of Partner Certificates, FTM Chip Certificates, API Keys and SBIs expiring in next 7 days of time.
   * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 * Dismissing a notification is **user-specific** and does not impact other Partner Admins.
 
@@ -80,13 +80,14 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 **'Weekly Summary - Partner' tab**
 
-Each notification displays the total count of partner certificates set to expire within a given week.
+Each notification displays the total count of partner certificates, FTM Chip Certificates, API Keys, SBIsset to expire within a given week.
 
 ![](media/media/pms-eug-notification-image6.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image6.png" alt=""><figcaption></figcaption></figure>
 
-* To view the specific Partner IDs associated with these expiring certificates, click the **'View Expiring Items'** button. This will display a detailed list of all Partner IDs whose certificates are due to expire within the next 7 days.
+* To view the specific Partner IDs associated with each of the expiring items, click the ‘View Expiring Items’ button. This will display a detailed list of all Partner IDs and associated details whose certificates, API Keys, SBIs are due to expire within the next 7 days.
+* Each of the expiring items details within a given weekly summary notification is split into individual sub tabs for easy categorization and readability..
 
 ![](media/media/pms-eug-notification-image7.png)
 
@@ -99,6 +100,10 @@ Each notification displays the total count of partner certificates set to expire
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image8.png" alt=""><figcaption></figcaption></figure>
 
 * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
+
+{% hint style="info" %}
+Note: If there is no partner item expiring in a given week, the weekly summary notification will not be sent to the partner admin/ respective partner.
+{% endhint %}
 
 ## Which other places you receive the notifications?
 
@@ -131,11 +136,15 @@ These notifications are delivered weekly, and the email follows the template pro
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image12.png" alt="" width="188"><figcaption></figcaption></figure>
 
-#### Weekly Summary of Partner Certificate expiry email notification:
+#### Weekly Summary of Partner Certificate expiration email notification:
 
 ![](media/media/pms-eug-notification-image14.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt="" width="188"><figcaption></figcaption></figure>
+
+
+
+If one or more partner items are not due to expire in a given week’s summary, the email notification will include only the details of the items that are expiring.
 
 ### Important Notes
 
@@ -151,9 +160,9 @@ These notifications are delivered weekly, and the email follows the template pro
 * All Partner Admins receive the same notification, regardless of who uploaded the certificate.
 * **Newly added Partner Admins** start receiving notifications from the next scheduled batch job.
 
-**b) Weekly Summary of Partner Certificate expiration:**
+**b) Weekly Summary of Partner specific items expiration:**
 
-* A summary of all partner certificates expiring within the next 7 days is generated and sent once every week.
+* A summary of all partner certificates, FTM Chip Certificates, API Keys and SBIs expiring within the next 7 days is generated and sent once every week.
 
 #### 2) Notification Refresh Behavior
 
@@ -178,13 +187,45 @@ These notifications are delivered weekly, and the email follows the template pro
 
 ## Partner Notifications
 
-Every partner receives notifications for partner certificates they previously uploaded or corresponding MOSIP signed certificates which are due to expire within the next 30 days; both on the PMS Portal and via email.
+Every partner receives notifications for partner certificates they have uploaded, as well as the corresponding MOSIP-signed certificates which are due for expiry within the next 30 days, and is delivered both on the PMS Portal and via email.
 
-These notifications are accessible to all partner types via the **Notification Bell icon** in the top-right corner of the PMS portal.
+In addition, partner-type-specific notifications are generated for the following:
+
+* FTM Chip Certificates – for partner type: **FTM Chip Provider**
+* API Keys – for partner type: **Authentication Partner**
+* SBIs – for partner type: **Device Provider**
+
+Each of these notifications is triggered when the respective item is due to expire within the next 30 days, and is sent both on the PMS Portal and via email.
+
+These notifications are accessible to all applicable partner users via the **Notification Bell icon** in the top-right corner of the PMS portal.
 
 ![](media/media/pms-eug-notification-image17.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image17.png" alt=""><figcaption></figcaption></figure>
+
+
+
+/new/
+
+**FTM Chip Certificate Notification (FTM Chip Provider)**
+
+\<add the below image>
+
+
+
+**SBI Notification (Device Provider)**
+
+\<add the below image>
+
+
+
+**API Key Notification (Authentication Partner)**
+
+\<add the below image>
+
+
+
+
 
 ### Navigating through the interface to view or act on the notifications
 
@@ -197,11 +238,27 @@ These notifications are accessible to all partner types via the **Notification B
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image18.png" alt=""><figcaption></figcaption></figure>
 
-* Each notification appears as a row with:
+* Each Partner Certificate notification appears as a row with:
   * **Title**
   * **Timestamp of notification creation** (displayed in user's local system time based on browser settings)
   * **Description**: Includes **partner domain name**, and the **certificate's expiry date**
   * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
+* Each FTM Chip Certificate notification appears as a row with:
+  * **Title**
+  * **Timestamp of notification creation** (displayed in user’s local system time based on browser settings)
+  * **Description**: Includes **FTM ID**, and the **FTM Chip certificate’s expiry date**
+  * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
+* Each SBI notification appears as a row with:
+  * **Title**
+  * **Timestamp of notification creation** (displayed in user’s local system time based on browser settings)
+  * **Description**: Includes **SBI ID**, and the **SBI’s expiry date**
+  * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
+* Each API Key notification appears as a row with:
+  * **Title**
+  * **Timestamp of notification creation** (displayed in user’s local system time based on browser settings)
+  *   **Description**: Includes **API Key Name**, and the **API Key’s expiry date**
+
+      **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 
 ### View All Notifications
 
