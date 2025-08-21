@@ -1,51 +1,410 @@
+---
+description: Fuelling Integration, Innovation, and Impact
+cover: ../../.gitbook/assets/ban.jpg
+coverY: 0
+layout:
+  width: default
+  cover:
+    visible: true
+    size: full
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+---
+
 # MOSIP Create 2025
 
-### Themes
+### <mark style="color:green;background-color:green;">Overview</mark>
+
+MOSIP Create is MOSIP’s flagship global program that empowers organisations and solution providers to design and build impactful digital identity solutions.
+
+It is an online event, allowing you to participate from anywhere in the world.
+
+Leveraging MOSIP’s open-source ID platform and its various products, participants develop innovations using authentication, eKYC, and wallet-based solutions like the Inji Stack, addressing real-world use cases aligned with the UN Sustainable Development Goals.\
+\
+Supported by the MOSIP team from idea to demo, solutions gain global visibility through the MOSIP Marketplace and the opportunity to be showcased to government decision-makers from 30+ countries at the upcoming edition of MOSIP’s global event - MOSIP Connect 2026.
+
+### <mark style="color:green;background-color:green;">Who is MOSIP Create for?</mark>
+
+Focused on solution development, integration, and showcasing, this event is open to subject matter experts across organisations, both established and emerging.\
+
+
+<mark style="color:purple;">**Register Now**</mark> \<Link> to be a part of our work in empowering lives around the world, one unique ID at a time.
+
+Note: Participants are encouraged to leverage any of MOSIP's solutions, including the core identity platform and/or Inji stack, and/or eSignet.
+
+### <mark style="background-color:green;">Themes</mark>
 
 Informed by the UN’s Sustainable Development Goals, MOSIP Create’s themes invite solutions that address the on-ground needs of countries establishing their national digital infrastructures. We hope to find ready-for-adoption, robust projects that hold the key to unlocking wide-ranging impacts on the ground, in the lives of diverse communities around the world.
 
-Watch this space for more details on potential integration with the MOSIP platform, and the adoption process for your solutions.
+* <mark style="color:green;">**Digital ID for Service Access**</mark>**:** Improve the delivery of social services or benefits to citizens via digital identity and/or its solutions.\
+  \
+  From government scholarships to disaster and emergency relief, identity verification assures the timely delivery of services to the intended beneficiary. MOSIP’s foundational and scalable ID verification and authentication systems eliminate the challenges around multiple siloed systems. Your solution could be a part of enabling the timely generation of registries, ensuring support and relief to residents who need it.\
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/e3c953bTheme_1-eKYC.png?Expires=1754919207&#x26;Signature=PRahdT08PDYFZlY0-rq2IcviS1AE1d-NRHiCbVHVpzJCMGpudLKwfT0Xf1ToZg3fPXaN2XGXxyMHYIYX9ae10TnRJr~eFIFkTdRuB4lD4XyW~wCtQgNsq9hhaXQrxqlb8lEJSipjFsCgbTNSbORQ3dnyj-n-2TQIoprAbKozo3PoRwjMPJxad3lw1-8xLvJAhmaVWRUFNnRSXrLV~QLknAFokuThy5qAUOF1~ufRakLLF0N2nbLtO1Qg0S793YvV5UbIgBfDTGkiCgZKOaz2AcSiHRgrB9BqBGl0DPWyvoz8RmWV-khZSbFPgIMSvVQ4VqKYJr42TSAoB3QasqVqQA__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> eKYC for Inclusive Identity Verification
+* <mark style="color:green;">**eKYC for Inclusive Identity verification**</mark>: Develop or integrate secure eKYC solutions for global identity infrastructure.\
+  \
+  Smooth and secure Know Your Customer solutions are integral for today’s businesses. Given that most countries in the world today mandate eKYC and legally-verifiable identity, integrating your solution with eSignet ensures it will be compatible with local laws and regulations in MOSIP-adopting nations.\
 
-_Develop or integrate secure eKYC solutions for global identity infrastructure._
+* <mark style="color:green;">**Financial Inclusion through Digital Identity**</mark>: Leverage digital identity to expand universal access to financial services.\
+  \
+  Digital banking has brought the world to the cusp of bringing banks into individuals’ homes. MOSIP’s eSignet, Authentication API, and Inji stack have the potential to bring MOSIP-adopting countries closer to a place where all residents, without exception, have access to financial services, including banking, loans, and insurance. MOSIP envisions inclusive financial solutions, with both assisted and unassisted modes, with inclusion as a priority. Integrate with MOSIP to help make this dream a reality.\
 
-Smooth and secure Know Your Customer solutions are integral for today’s businesses. Given that most countries in the world today mandate eKYC and legally-verifiable identity, integrating your solution with eSignet ensures it will be compatible with local laws and regulations in MOSIP-adopting nations.
+* <mark style="color:green;">**Credential Facilitation for Empowerment**</mark>: Innovate solutions linked to digital identity and/or MOSIP’s credentialing solutions.\
+  \
+  It is still a very real challenge in the world today that several residents in a country are excluded from the formal economy as a result of reliance on paper-based credentials that cannot be digitally verified. Integrated compliant wallets, for e.g. MOSIP’s Inji stack, based on W3C verifiable credentials, are designed to close this gap, allowing the digitisation, storage, and easy sharing of digitally-verifiable credentials. Your solution could empower individuals to join and participate in the growing digital economy.
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/e813a52Theme_2-Financial_Inclusion.png?Expires=1754919207&#x26;Signature=C-7s0nMbCMdNlDMPzvgUCVl9DNP9js2XlAXElgOWVj23FyG3NYnIyoLLsIfOj~jq0n2QEY2OmZaiL-AxFMpfE5uiY5GEYGvSp-U931-U8rtfmmn3Q-JHp3NORJkRP1KBotGNpveaRiDFJBYXatRmwvAunuGmK1BU3KzW1g28JUEKs9nlP6LPOi7rlNzBZNUQbOl0zGRCJ~EPRZ~aqAW~FpF-2XG5C3UG-jLO-GWJHJTX8~GfIDqXTy54QmeCDYDozN4TWXqdreDRZ7q-NCyWW-lVlZRlZqMVxUjuJwQn3GNscZXuoQZ36jJxp-u~K34eFxiZSWsWpZXbqdu1AspopA__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Financial Inclusion through Digital Identity
+### <mark style="background-color:green;">Contribute to SDGs</mark>
 
-_Leverage digital identity to expand universal access to financial services._
+Each theme for MOSIP Create corresponds to, and aims to address, the [United Nations’ Sustainable Development Goals](https://sdgs.un.org/goals).
 
-Digital banking has brought the world to the cusp of bringing banks into individuals’ homes. MOSIP’s eSignet, Authentication API, and Inji stack have the potential to bring MOSIP-adopting countries closer to a place where all residents, without exception, have access to financial services, including banking, loans, and insurance. MOSIP envisions inclusive financial solutions, with both assisted and unassisted modes, with inclusion as a priority. Integrate with MOSIP to help make this dream a reality.
+Adherence to these SDGs in the ideation of your product is highly encouraged, and will contribute positively to your evaluation. Visit Evaluation Criteria \<Link> for more details.&#x20;
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/eb9a637Theme_3-Social_Delivery_Systems.png?Expires=1754919207&#x26;Signature=sb00ZAw8jtByBsElIp1w47ng0EtIh9al6xCqXo0jTMBK2dGGz9msakoxkS33-WIPHryHgfD3HUysM1KM~WjIAY9WgchHNRqqlrFSTmmeag2i2eGZT5y2afj~UsH5bBnKqqSg0h1GEtLeUQAv9AL-Wd3r4mI3YmBed-cQ47n0eqnKukZitGrxf01vB4v97RhQr56HwR5C0YKD-ZgV4MBnN~lADFk0NCE9eYP9ZageCar5irhyz1VCmqYdCQqMq-CD7KlTDSvdxB35yFHDGNy20pm~yXiu3taJvfTtQPjfjylOJD0LZ4HzytuAlY0Lv8jN~vCO3W-mM06CLwn7bJjTGg__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Emergency Relief Systems Enhancement
+### <mark style="background-color:green;">Prizes</mark>
 
-_Improve the delivery of social services or benefits via digital identity and/or its solutions._
+* <mark style="color:green;">**Top 6-8 Winning Solutions/Teams**</mark>**:**&#x20;
+  * <mark style="color:orange;">**Travel to MOSIP Connect 2026**</mark>\
+    Win a return flight ticket (one per team) to Morocco to attend MOSIP Connect 2026.\
 
-Every significant right and service for residents first requires rapid and efficient social benefits delivery systems. From government scholarships to disaster and emergency relief, identity verification assures the timely delivery of services to the intended beneficiary. MOSIP’s foundational and scalable ID verification and authentication systems eliminate the challenges around multiple siloed systems. Your solution could be a part of enabling the timely generation of registries, ensuring support and relief to residents who need it.
+  * <mark style="color:orange;">**Showcase at MOSIP Create Solution Discovery Space**</mark>\
+    Secure shared booth space in the MOSIP Create solution discovery area to present your solution to a global audience.\
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/f5d1355Theme_4-Credentials_Facilitating.png?Expires=1754919207&#x26;Signature=FnvipqZpfgcgre66sPE4Z~QltP769bjcHiNQMIHreGgbznpMUcaBPVL6BNj-3A8xUSJzXDuGN1GqTFbJr2PFYkIHKPkIX~rDxVDxV3xur389x6XVavtnG73LEjXTAEQXljCYwJsV5xU10A2RNFs27-fArImGBbC9anWSCrvQTkn5ZtmezZfKOm54r4kYlVW6ePFeXZQLTS3wznBlprQ2TPOIy99RfopscAEgZywnzlKUB0q8M6-lN5AuP6iUa981SotJuxXt6dscF4E665FbOIIoycaQeu1q6jhO8IOQZoIVPCGitxVmzDxNZsr8gHi5jXQWKowwX4LqSJYX0f1oGA__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Credential Facilitation for Empowerment
+  * <mark style="color:orange;">**Main Stage Spotlight**</mark>\
+    Get demo time on the MOSIP Connect main stage, showcasing your work to delegates, partners, and decision-makers from around the world.\
 
-_Innovate solutions linked to digital identity and/or MOSIP’s credentialing solutions_.
+* <mark style="color:green;">**All Completed Solution Submissions/Teams**</mark>: (As per the submission criteria defined here \<Link>)
+  * <mark style="color:orange;">**Concept Catalyst badge in MOSIP Marketplace**</mark>\
+    Earn the Concept Catalyst badge upon completing your solution, showcasing your innovation in the MOSIP Marketplace.\
 
-It is still a very real challenge in the world today that several residents in a country are excluded from the formal economy as a result of reliance on paper-based credentials that cannot be digitally verified. MOSIP’s Inji stack, based on W3C verifiable credentials, are designed to close this gap, allowing the digitisation, storage, and easy sharing of digitally-verifiable credentials. Your solution could empower individuals to join and participate in the growing digital economy.
+  * <mark style="color:orange;">**Display at MOSIP’s Experience Center and Marketplace**</mark>\
+    Have your solution video featured at MOSIP’s Experience Center at IIIT Bangalore and the MOSIP Marketplace. This exposure to delegates and partner countries can lead to valuable collaboration and growth opportunities.
+  * <mark style="color:orange;">**Awards & Recognition**</mark>\
+    Receive merit certificates and/or awards across various categories, celebrating your contribution and impact.
 
-### Prizes
+<mark style="color:purple;">**Note**</mark>: All decisions rest solely with the panelists/jury. The number of solutions selected may be higher or lower than indicated, based on the defined evaluation criteria. The decision of the panelists/jury will be final and binding.
 
-Main Prizes
+### <mark style="background-color:green;">Expert Jury for Evaluation</mark>
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/2179e48Prizes_Icon.png?Expires=1754919207&#x26;Signature=sRfs71cj-bbGgJ1NuHFgcQFmFfbL5x6Bv7q4uwJrkWmwy9CIo3hbY6K4OCeA3tC04-knmpreeAYXCCAD9U1h8RkuhNmcdVQHWVTkUJDlOP4vDUBmKUEz2WCCBsRZdm0aTzOEkavyYrTZ81wzqTFYzOD19rcHWnDzWF2M2xK6wmZPqElWydauCPLDYrbV9KNXHUb8yLQBCTXh3EA-6R8e7mGILU00AifrzlIuWH3K45TDebp6aeEXih5sG858CulsPcFY~YyHfoUuPldwFWEAKss49Vi10zVyGY3LDM7bgdn9CutkVTvh8WYnoDEP1NzmyAgazY3pW4~p9nirPnjiBg__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Showcase your Solution to a Global Audience at MOSIP Connect 2025
+Winners will be chosen by an esteemed external panel comprising:
 
-Selected team(s) will have the unique opportunity to present their solutions at MOSIP Connect 2025 in Manila, Philippines – a prestigious event with representatives from over 30 countries. This offers significant international visibility, recognition, and opportunities for further development in collaboration with MOSIP and its partners.
+* International technical experts
+* Renowned academic leaders
+* Practitioners from MOSIP partner countries
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/25110d5Prizes_Icon.png?Expires=1754919207&#x26;Signature=RxMaAkZ4k8beE94uwIqkzVjnJdNSJB1zx7x0brewE0BtR75UbOnxsIQZ8tOztjhLh22mv4S3WC1-WIcM0F8etLQ93N0IjnCmo4W~DK879tNk6GQg8eNQk4siF5MeMfG~YRamp6S1Oh7eM~c8tR-0U0qwA42SmoEfDz9CzkeOns4BNhmhTL4IUVgVcghAHun0SVZdCy7w3uUIyzydScr2dJvdLEBr1--Ewz-5GhChkclpQq7HeJK-o9w17xc2O0AqeDbjAPJwfzNLX6kxh7H3PAm1MYY0WVKqaW9peckaHwYUHC4uhlmP8MexjAuomWbL-rr3eTcf-afXZ5mc94iaLQ__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Display at MOSIP’s Experience Center and Marketplace
+### <mark style="background-color:green;">Timeline</mark>
 
-Winning team(s) will have their solutions featured at MOSIP’s Experience Center at IIIT Bangalore and the MOSIP Marketplace. This exposure to delegates and partner countries can lead to valuable collaboration and growth opportunities.
+|                            <kbd><mark style="color:$warning;background-color:purple;">**Milestone**<mark style="color:$warning;background-color:purple;"></kbd> |                                    <kbd><mark style="color:$warning;background-color:purple;">**Date**<mark style="color:$warning;background-color:purple;"></kbd> |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Event Launch & Opening of Registration                                                                                                                          | 01-Sep-2025                                                                                                                                                        |
+| Registration Closure                                                                                                                                            | 01-Oct-2025                                                                                                                                                        |
+| Kick-Off Webinar                                                                                                                                                | 06-Oct-2025                                                                                                                                                        |
+| Bi-Weekly AMA Sessions                                                                                                                                          | 15-Oct-2025 onwards                                                                                                                                                |
+| Solution Submission Closure                                                                                                                                     | 01-Dec-2025                                                                                                                                                        |
+| Evaluation: Panel-Level Demo                                                                                                                                    | Until 20-Dec-2025                                                                                                                                                  |
+| Winners Announcement                                                                                                                                            | <p>20-Dec-2025 to 24-Dec-2025 (All participants)<br>10-Feb-2026 (Official announcement)</p>                                                                        |
+| Preparation for Travel & Solution Showcase                                                                                                                      | 24-Dec-2025 onwards                                                                                                                                                |
+| Marketplace Listing                                                                                                                                             | Before Connect 2026 \| Continues..                                                                                                                                 |
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/28642d8Prizes_Icon.png?Expires=1754919208&#x26;Signature=cFWFtF7e7XK1XxUXB-kpQXd9LUrKA4oKWEt8F5U171jfgsH7QcOiRaLlDcCNAD76mdYPMG3-GuF2TMIQ0KiKggcI7C~E7KjdxmTq5B1m2GXnKmFDH0EkQEwWysVJ04mVpRWFNUAMz3VNjBUaNRwUtbWYkx7~d9wIupnLZU0uJg8r527Tu4GwnCRZhYviJW54PEJmW7KvFJxnNhMxq~wFoLePMoAQEj4hvGLggdhxqrlHc7mB2SyNPBi9e-YxfvBJ8rqeP4L3eaUq31bOc1THOT7n5cEEYZZcOg5N0A99hWw2xLDWvWRf~cBzUAZrQiS3vvek8YwC38sJFO-ITGeiOg__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Collaborate with International Organisations and Countries
+### <mark style="background-color:green;">Submission Criteria</mark>
 
-MOSIP will facilitate the engagement with global organisations and stakeholders, providing selected team(s) with opportunities for real-world implementation and collaboration with countries.
+Please follow the detailed submission format below to ensure your solution meets all the  requirements and standards:\
+\
+<mark style="color:red;">\*</mark>Mandatory&#x20;
 
-<img src="https://uc-s.hackerearth.com/he-s3-ap-south-1/media/sprint/mosip-create/6c66d16Prizes_Icon.png?Expires=1754919208&#x26;Signature=ve7xcyPZlQfrUW9hIlux9tX-K1RVp-L1jPpGUc~W749BEFaM~SE4zUeyAfiKc~4tPWTJvaEZ2WUO8j~lt91tyKmLMIQLsI0XHqU-5GrFSu-TbUJaVclGdaTPJowWmhzCcrCwC2e8fLWGabfrIzNzHQQ~j3BrGu0F-1kd4HrEdO0hIO1dTNpQlPb2fnBvOvG7Bc8iTjrKQXi9dm62r7a7Co1aoIS0iZU-a2-Pa1SaqAhZbkbdBfI67AJEwGqaBntqBQW5lfRr7X-9ho7m0sh5OtCOggG4tezFO1d8TAogNkH126RVH~~WlY1KiWv0EJqr31V-spK9OcomBk5ODjeUDg__&#x26;Key-Pair-Id=K3QY2UWZZ9RL0H" alt="" data-size="line"> Awards & Recognition
+|                               <kbd><mark style="color:$warning;background-color:purple;">**Artefact**<mark style="color:$warning;background-color:purple;"></kbd> |                           <kbd><mark style="color:$warning;background-color:purple;">**Description**<mark style="color:$warning;background-color:purple;"></kbd>                                                                                                                                                            |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <p>Solution Presentation or Slide Deck<mark style="color:red;">*</mark></p><p><br></p>                                                                            | <p>Teams must have a presentation that outlines the problem, solution, technology stack, target audience, and potential impact of the solution.</p><p>Used during the final pitch to the jury, this slide deck should convey the project's value proposition and key features. </p>                                         |
+| Video Demo<mark style="color:red;">\*</mark>                                                                                                                      | <p>A team can submit a short video (typically 2-5 minutes) that demonstrates the project in action.<br></p><p>The video can include live demos or screen recordings and should demonstrate the problem being addressed, depict the functioning of the solution, and highlight the main characteristics of the project. </p> |
+| Video for Marketplace Showcase<mark style="color:red;">\*</mark>                                                                                                  | <p>Teams must submit a 3-minute use case video for the MOSIP Marketplace, meeting the defined guidelines &#x3C;link> (or to be shared soon), intended to showcase the core integration.<br><br>This can include live demos or screen recordings, with a refined marketing version produced later for wider outreach.</p>    |
 
-Multiple top solutions will also receive merit certificates and awards in various categories. These accolades will be highlighted in the project's Git repository and featured on social media.
+### <mark style="background-color:green;">Solution Submission Process</mark>
+
+Please follow the guidelines below to submit your final deliverables for MOSIP Create.
+
+1. <mark style="color:green;">**Deliverables**</mark>\
+   Place the mandatory artefacts in a cloud storage repository, e.g., Google Drive.
+2. <mark style="color:green;">**Submit**</mark>\
+   Fill out the submission form \[here] with the following details and any other relevant information:
+   1. Team Name
+   2. Theme chosen
+   3. URLs (Google Drive, etc.)
+3. <mark style="color:green;">**Access**</mark>\
+   Ensure all links and files are accessible to MOSIP and have the necessary permissions.
+
+### <mark style="background-color:green;">Evaluation Criteria</mark>
+
+|               <kbd><mark style="color:$danger;background-color:purple;">**Criteria**<mark style="color:$danger;background-color:purple;"></kbd> |                   <kbd><mark style="color:$danger;background-color:purple;">**Weight**<mark style="color:$danger;background-color:purple;"></kbd> |            <kbd><mark style="color:$danger;background-color:purple;">**Description**<mark style="color:$danger;background-color:purple;"></kbd>                                                                                                                                                                                 |
+| ----------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Impact & Relevance**: Practical value and real-world application                                                                              | 25%                                                                                                                                               | Solutions will be assessed based on their potential to enhance people's lives, considering both the breadth and depth of their societal or economic impact.                                                                                                                                                                     |
+| **Integration with MOSIP Solutions**: Use of auth, eKYC, or wallet-based technologies                                                           | 25%                                                                                                                                               | This criterion evaluates how effectively the solution leverages MOSIP’s core capabilities, such as authentication, eKYC, and wallet-based technologies, to deliver value. It focuses on the depth of integration within the MOSIP ecosystem, and the potential to enable secure and inclusive digital identity-driven services. |
+| **Usability & Design**: User-friendliness and inclusiveness                                                                                     | 20%                                                                                                                                               | This criterion evaluates the solution's ability to meet the target group's needs while ensuring inclusiveness and accessibility, with a focus on its intuitiveness, user-friendliness, and aesthetic appeal.                                                                                                                    |
+| **Innovation**: Novelty and creativity of the idea                                                                                              | 15%                                                                                                                                               | This criterion evaluates the originality and creativity of the solution, focusing on its distinctiveness from existing approaches and its forward-thinking perspective.                                                                                                                                                         |
+| **Feasibility, Scalability & Interoperability**: Ease of implementation and potential to scale                                                  | 15%                                                                                                                                               | This criterion examines the practicality of implementing the solution in real-world scenarios, its scalability potential, and its adherence to open standards for compatibility, interoperability and integration with existing systems.                                                                                        |
+
+\
+<mark style="color:purple;">**Note**</mark>: We strongly encourage participants to submit new, innovative solutions aligned with the defined themes (\<link>).&#x20;
+
+### <mark style="background-color:green;">Resources</mark>
+
+Access all relevant MOSIP product resources in one place to help you understand the platform, explore integration options, and develop your solution effectively.\
+\
+1\. MOSIP Identity Platform\
+1.1. Product overview\
+1.2. Demo video\
+\
+2\. Inji\
+2.1. Inji Stack - Overview\
+\
+2.2. Inji Mobile Wallet\
+2.2.a. Product Overview\
+2.2.b Technical Overview\
+\
+2.3. Inji Web Wallet\
+2.3.a Product Overview\
+2.3.b Technical Overview\
+\
+2.4. Inji Certify\
+2.4.a Product Overview\
+2.4.b Technical Overview\
+\
+2.5. Inji Verify\
+2.5.a Product Overview\
+2.5.b Technical Overview\
+\
+3\. eSignet\
+3.1. Authentication\
+3.1.a Product Overview\
+3.1.b Technical Overview\
+\
+3.2 Signup\
+3.2.a Technical Overview
+
+### <mark style="background-color:green;">Rules</mark>
+
+* This is a team participation event. You can have 1-10 members in your team.
+* MOSIP Create 2025 has 4 broad themes. Your solution must align with one of these themes. While not mandatory, sticking to the suggested problem statements is encouraged.
+* You can submit your solution as many times as you want, and the last submission within the specified window will be considered for final evaluation.
+* You may utilise open-source libraries, datasets (e.g., Kaggle, Hugging Face), and freely available systems/services (e.g., Google Maps, Facebook Connect, Twitter feeds).
+* The intellectual property of your code belongs only to your team.&#x20;
+* Participants are requested to adhere to the official [Code of Conduct](https://docs.mosip.io/1.2.0/community/code-of-conduct), [IP Policy](https://www.mosip.io/ip_policy), and [Privacy Policy](https://www.mosip.io/privacy_policy) of MOSIP. The MOSIP team reserves the right to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+
+### <mark style="background-color:green;">Contact Us</mark>
+
+{% hint style="success" %}
+For quick questions, discussions, or general queries about the event, visit the[ Community Discussion Forum](https://community.mosip.io).
+
+For targeted solution-specific queries, email us at [create@mosip.io](mailto:create@mosip.io). We will respond directly or can arrange one-on-one ad-hoc discussions upon request.
+
+You can also join us live during AMA sessions as per the \[schedule here] \<link>.\
+Click to add it to your calendar.
+{% endhint %}
+
+{% hint style="success" %}
+For targeted solution-specific queries, email us at [create@mosip.io](mailto:create@mosip.io). We will respond directly or can arrange one-on-one ad-hoc discussions upon request.
+{% endhint %}
+
+{% hint style="success" %}
+You can also join us live during AMA sessions as per the \[schedule here] \<link>.\
+Click to add it to your calendar.
+{% endhint %}
+
+<details>
+
+<summary><mark style="background-color:green;">FAQs</mark></summary>
+
+#### <mark style="color:green;">Registration and Idea Submission</mark>
+
+1. Is there a registration fee? Do I need to pay any money to register for MOSIP Create?\
+   No, registration for MOSIP Create is free.
+2. Do I need to have any specific qualifications to be a participant for the event?\
+   No specific qualifications are required to participate in the event. Anyone with a solution for integration representing a registered organization is eligible to participate in MOSIP Create.
+3. How many people can a team consist of?\
+   There can be a maximum of 10 members per team.
+4. How do I add more people to my team, or register as an organisation?\
+   One participant can register on behalf of the entire team using the form link provided here \<link>.
+5. How and where do I submit my idea?\
+   You can describe the Idea briefly during registration.\
+
+
+#### <mark style="color:green;">Creating & Submitting Solutions</mark>
+
+6. How and where do I submit the deliverables?\
+   Please refer to the Submission Criteria here \<link> for details.
+7. Do we need to have the solution fully working?\
+   Yes, the solution must be implementable to be reviewed by the jury.
+8. Can one team register across multiple themes?\
+   Yes. Teams can submit solutions across multiple themes; however, each organisation may submit a maximum of three of their best solutions across all four themes.
+9. Does one have to be online and available for the entire duration of the event?\
+   No, one does not need to be logged in or be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it as per the submission process defined here\<link>.
+10. Will there be any training?\
+    Yes, participants will have access to training resources here \<link> and regular AMA sessions, including ad-hoc calls on request basis. Write to us at [create@mosip.io](mailto:create@mosip.io), and we can accommodate your ad-hoc requests to connect.
+11. Do I need to give a demo for the solution that I have built?\
+    Yes, providing a demo of your solution is mandatory.
+12. Are there any specific technologies or programming languages we must use?\
+    No specific technologies or programming languages are required; however, your solution must include at least one MOSIP touch point.
+13. Are we allowed to use third party components like open source libraries etc. to implement a solution - are there limitations on components?\
+    You may utilise open-source libraries, datasets and freely available systems/services.
+14. How is the environment? Will your environment support any language?\
+    MOSIP will provide a sandbox environment called MOSIP Collab Create, which supports English, French, and Arabic languages.\
+    \
+    <mark style="color:purple;">**Note**</mark>: All data in the sandbox environment will be securely deleted upon conclusion of the event.
+15. How do I submit my final deliverables/ artefacts?\
+    Follow the submission process outlined \[here] \<link> to share your final deliverables/artifacts for MOSIP Create.
+
+#### <mark style="color:green;">Results</mark>
+
+16. How do I know if my solution was shortlisted?\
+    Results will be communicated to participants via email from [create@mosip.io](mailto:create@mosip.io) or through the SPOC’s phone number provided in the registration form. In addition, a formal announcement of the winners will be made to the larger ecosystem and community at MOSIP Connect 2026, where winners will be formally acknowledged.
+17. Who will own the IP (Intellectual Property) Rights of the product/code that I have built?\
+    The developer/developers of the solution will have all rights and own the IP of the solution submitted.
+18. Will I be able to sell/commercialise my projects after the event?\
+    Yes, you will retain the rights to sell or commercialise your project after the event.
+19. Will MOSIP take care of the travel and accommodation arrangements for MOSIP Connect 2026?\
+    Yes. MOSIP will arrange travel and accommodation for one representative from each of the top six to eight winning teams.
+
+#### <mark style="color:green;">Communication</mark>
+
+20. What platforms will be used for communication and collaboration?\
+    Primary communication will be through the community forum at[ community.mosip.io](https://community.mosip.io) for general queries, email at [create@mosip.io](mailto:create@mosip.io) for solution-specific questions, and regular AMA sessions for live interactions.
+
+</details>
+
+#### <mark style="color:green;">Registration and Idea Submission</mark>
+
+1. Is there a registration fee? Do I need to pay any money to register for MOSIP Create?\
+   No, registration for MOSIP Create is free.
+2. Do I need to have any specific qualifications to be a participant in the event?\
+   No specific qualifications are required to participate in the event. Anyone with a solution for integration representing a registered organization is eligible to participate in MOSIP Create.
+3. How many people can a team consist of?\
+   There can be a maximum of 10 members per team.
+4. How do I add more people to my team, or register as an organisation?\
+   One participant can register on behalf of the entire team using the form link provided here \<link>.
+5. How and where do I submit my idea?\
+   You can describe the Idea briefly during registration.\
+
+
+#### <mark style="color:green;">Creating & Submitting Solutions</mark>
+
+6. How and where do I submit the deliverables?\
+   Please refer to the Submission Criteria here \<link> for details.
+7. Do we need to have the solution fully working?\
+   Yes, the solution must be implementable to be reviewed by the jury.
+8. Can one team register across multiple themes?\
+   Yes. Teams can submit solutions across multiple themes; however, each organisation may submit a maximum of three of their best solutions across all four themes.
+9. Does one have to be online and available for the entire duration of the event?\
+   No, one does not need to be logged in or be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it as per the submission process defined here\<link>.
+10. Will there be any training?\
+    Yes, participants will have access to training resources here \<link> and regular AMA sessions, including ad-hoc calls on a request basis. Write to us at [create@mosip.io](mailto:create@mosip.io), and we can accommodate your ad-hoc requests to connect.
+11. Do I need to give a demo for the solution that I have built?\
+    Yes, providing a demo of your solution is mandatory.
+12. Are there any specific technologies or programming languages we must use?\
+    No specific technologies or programming languages are required; however, your solution must include at least one MOSIP touch point.
+13. Are we allowed to use third-party components like open source libraries, etc., to implement a solution - are there limitations on components?\
+    You may utilise open-source libraries, datasets, and freely available systems/services.
+14. How is the environment? Will your environment support any language?\
+    MOSIP will provide a sandbox environment called MOSIP Collab Create, which supports English, French, and Arabic languages.\
+    \
+    <mark style="color:purple;">**Note**</mark>: All data in the sandbox environment will be securely deleted upon conclusion of the event.
+15. How do I submit my final deliverables/ artefacts?\
+    Follow the submission process outlined \[here] \<link> to share your final deliverables/artifacts for MOSIP Create.
+
+#### <mark style="color:green;">Results</mark>
+
+16. How do I know if my solution was shortlisted?\
+    Results will be communicated to participants via email from [create@mosip.io](mailto:create@mosip.io) or through the SPOC’s phone number provided in the registration form. In addition, a formal announcement of the winners will be made to the larger ecosystem and community at MOSIP Connect 2026, where winners will be formally acknowledged.
+17. Who will own the IP (Intellectual Property) Rights of the product/code that I have built?\
+    The developer/developers of the solution will have all rights and own the IP of the solution submitted.
+18. Will I be able to sell/commercialise my projects after the event?\
+    Yes, you will retain the rights to sell or commercialise your project after the event.
+19. Will MOSIP take care of the travel and accommodation arrangements for MOSIP Connect 2026?\
+    Yes. MOSIP will arrange travel and accommodation for one representative from each of the top six to eight winning teams.
+
+#### <mark style="color:green;">Communication</mark>
+
+20. What platforms will be used for communication and collaboration?\
+    Primary communication will be through the community forum at[ community.mosip.io](https://community.mosip.io) for general queries, email at [create@mosip.io](mailto:create@mosip.io) for solution-specific questions, and regular AMA sessions for live interactions.
+
+### <mark style="background-color:green;">Terms & Conditions</mark>
+
+#### <mark style="color:green;">MOSIP CREATE PRIVACY POLICY</mark>
+
+This Privacy Policy (“Policy”) contains information about the collection, use, storage, and processing of personal data collected in connection with your registration and participation in the competition, MOSIP Create.&#x20;
+
+MOSIP Create is organised by The International Institute of Information Technology, Bangalore (hereinafter referred to as “MOSIP”, “us”, “we”, “our”), which will be the controller of your personal data.&#x20;
+
+#### <mark style="color:orange;">Applicability</mark>&#x20;
+
+This Policy applies to all registrants, participants, judges, speakers, guests, and any other persons engaged with MOSIP Create (“you”, “your”).&#x20;
+
+Your protection and security are important to us. We have designed the event in a manner that only personal and other information required for your participation and our public display and promotion of the event(s) is collected.&#x20;
+
+#### <mark style="color:orange;">What data do we collect?</mark>&#x20;
+
+To organise and conduct MOSIP Create, we will collect the personal data related to you as described below:&#x20;
+
+* Information required for your registration, i.e., full name, email address, phone number, and username/ nickname.&#x20;
+* Team name and team participants’ information (in the event you apply as a group). You are responsible for procuring relevant consents from any participants that you sign up for MOSIP Create.&#x20;
+* Physical address or any address for receipt of physical delivery of awards or certificates.&#x20;
+* Your profession, designation, field of work, professional experience, organisation/ institution/ affiliated association, or company.&#x20;
+* Photographs and video recordings made through your participation in MOSIP Create.&#x20;
+* Additional information that can be provided through MOSIP Create, its related events, social media, or other types of interaction with us.&#x20;
+
+#### <mark style="color:orange;">Why do we collect your data?</mark> &#x20;
+
+MOSIP will use the personal data directly collected from you in accordance with the following purposes:&#x20;
+
+* In order to conduct, broadcast, deliberate upon, and otherwise organise MOSIP Create
+* In order to provide you with the resources necessary to participate in MOSIP Create, including any necessary materials or audio-video conferencing services; &#x20;
+* In order to provide you with any administrative or technical assistance;&#x20;
+* To communicate with you regarding MOSIP Create
+* Where we need to comply with a legal or regulatory obligation.&#x20;
+
+We will not use personal data for any other purpose than the above-stated purposes unless it is necessitated by laws and regulations. Where required under applicable law, we will procure your consent before any change in processing your personal data.&#x20;
+
+#### <mark style="color:orange;">How do we store your data?</mark>&#x20;
+
+Your personal data will be held in a secure environment by MOSIP. Access to your personal data is limited to those personnel of MOSIP that require it, and only for the purposes outlined above. MOSIP maintains appropriate technical and organisational measures to protect against unauthorised or unlawful processing of personal data and/or against accidental loss, alteration, disclosure or access, or accidental or unlawful destruction of or damage to personal data.&#x20;
+
+MOSIP will keep your personal data for a maximum period of 90 days after declaring the results of MOSIP Create. We will delete your personal data when it is no longer required for the purposes stated earlier.&#x20;
+
+#### <mark style="color:orange;">Do we disclose any information to outside parties?</mark>
+
+We do not sell, trade, or otherwise transfer to outside parties your personally identifiable information. This does not include trusted third parties who assist us in operating our site, conducting our business, or servicing you, so long as those parties agree to keep this information confidential. We may also release your information when we believe release is appropriate to comply with the law, enforce our site policies, or protect ours or others rights, property, or safety.&#x20;
+
+#### <mark style="color:orange;">How do we protect children’s data?</mark> &#x20;
+
+Another part of our priority is adding protection for children while using the internet. We encourage parents and guardians to observe, participate in, and/or monitor and guide their online activity. &#x20;
+
+MOSIP does not knowingly collect any Personal Identifiable Information from children under the age of 13. If you think that your child provided this kind of information on our website, we strongly encourage you to contact us immediately and we will do our best efforts to promptly remove such information from our records.&#x20;
+
+#### <mark style="color:orange;">What are your rights over the collected data?</mark>&#x20;
+
+You have certain rights regarding your personal data, subject to applicable laws. These include the following rights to:&#x20;
+
+* Access your personal data
+* Rectify the personal data that MOSIP holds about you
+* Erase your personal data;&#x20;
+* Object to MOSIP’s use of your personal data
+* If you believe that your personal data has been misused, leaked, or mishandled, you can file a complaint with the Data Protection Board
+
+If you would like to discuss or exercise such rights, please contact legal@mosip.io. However, please note that the applicable law may restrict your right to exercise some of the above-mentioned rights. We will contact you if we need additional information from you to honour your requests.&#x20;
+
+#### <mark style="color:orange;">Contact Information</mark>&#x20;
+
+{% hint style="success" %}
+For any questions regarding this Policy, please contact legal@mosip.io, who will respond to your inquiry without undue delay.&#x20;
+{% endhint %}
+
+#### <mark style="color:orange;">Updates</mark>&#x20;
+
+In case of any changes to this Policy, we will update it on this page.&#x20;
+
+This document is CC-BY-SA. It was last updated September 5th, 2024.
