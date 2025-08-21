@@ -1,13 +1,22 @@
 # MOSIP Create
 
-MOSIP Create is a flagship event and mentorship programme, initiated to support the development of innovative digital identity solutions from around the world. The initiative presents the opportunity to work closely with the makers of MOSIP and develop a solution that could be presented to an audience of government decision makers from 30 countries across the world at a global event in 2025!
+### <mark style="background-color:green;">What is MOSIP Create?</mark>
 
-Incubated at IIIT Bangalore, MOSIP is an open-source project building Digital Public Infrastructure for countries across the globe. The ID platform and its associated modules are currently in varying stages of adoption in 25 countries across the world and have successfully registered 118+ million residents onto MOSIP-based systems. Deeply committed to the development of open-source solutions and community engagement, MOSIP works with local experts to customise and adapt technology to suit a country’s requirements. These needs are often diverse and pose unique challenges, opening up endless potential for solutions.&#x20;
+MOSIP Create is MOSIP’s flagship global program that empowers organisations and solution providers to design and build impactful digital identity solutions.
 
-MOSIP Create invites participants to identify and address unique challenges and opportunities related to national digital infrastructure, and to integrate their solutions to address real-world use cases. Each of the proposed themes is developed in response to the **United Nations’ Sustainable Development Goals**, and participants are encouraged to create solutions that align with these globally accepted blueprints for equality and inclusion.
+It is an online event, allowing you to participate from anywhere in the world.
 
-**If you, as an individual or as a part of an organisation, are passionate about creating meaningful change through technology, we invite you to participate in MOSIP Create, develop ready-to-adopt digital identity solutions with the support of the MOSIP team, and stand a chance to present your solution to MOSIP-adopting countries!**
+Leveraging MOSIP’s open-source ID platform and its various products, participants develop innovations using authentication, eKYC, and wallet-based solutions like the Inji Stack, addressing real-world use cases aligned with the UN Sustainable Development Goals.\
+\
+Supported by the MOSIP team from idea to demo, solutions gain global visibility through the MOSIP Marketplace and the opportunity to be showcased to government decision-makers from 30+ countries at the upcoming edition of MOSIP’s global event - MOSIP Connect 2026.
 
-**Who is MOSIP Create for?**\
-Focused on solution development, integration, and showcasing, this event is open to subject matter experts, independent technology developers, and other organisations, both established and emerging.
+### <mark style="background-color:green;">Who is MOSIP Create for?</mark>
+
+Focused on solution development, integration, and showcasing, this event is open to subject matter experts across organisations, both established and emerging.
+
+
+
+On-going Editions Cards
+
+Archives Cards
 

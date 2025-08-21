@@ -23,23 +23,13 @@ layout:
 
 # MOSIP Create 2025
 
-### <mark style="background-color:green;">Overview</mark>
+### <mark style="background-color:green;">\<Add opening statement></mark>
 
-MOSIP Create is MOSIP’s flagship global program that empowers organisations and solution providers to design and build impactful digital identity solutions.
+<mark style="color:$primary;">**Register Now**</mark> \<Link> to be a part of our work in empowering lives around the world, one unique ID at a time.&#x20;
 
-It is an online event, allowing you to participate from anywhere in the world.
+Head here \<link> to know more about our Products and get started!
 
-Leveraging MOSIP’s open-source ID platform and its various products, participants develop innovations using authentication, eKYC, and wallet-based solutions like the Inji Stack, addressing real-world use cases aligned with the UN Sustainable Development Goals.\
-\
-Supported by the MOSIP team from idea to demo, solutions gain global visibility through the MOSIP Marketplace and the opportunity to be showcased to government decision-makers from 30+ countries at the upcoming edition of MOSIP’s global event - MOSIP Connect 2026.
-
-### <mark style="background-color:green;">Who is MOSIP Create for?</mark>
-
-Focused on solution development, integration, and showcasing, this event is open to subject matter experts across organisations, both established and emerging.
-
-<mark style="color:$primary;">**Register Now**</mark> \<Link> to be a part of our work in empowering lives around the world, one unique ID at a time.
-
-Note: Participants are encouraged to leverage any of MOSIP's solutions, including the core identity platform and/or Inji stack, and/or eSignet.
+**Note**: Participants are encouraged to leverage any of MOSIP's solutions, including the core identity platform and/or Inji stack, and/or eSignet.
 
 ### <mark style="background-color:green;">Themes</mark>
 
@@ -145,7 +135,27 @@ Please follow the guidelines below to submit your final deliverables for MOSIP C
 \
 <mark style="color:purple;">**Note**</mark>: We strongly encourage participants to submit new, innovative solutions aligned with the defined themes (\<link>).&#x20;
 
-### <mark style="background-color:green;">Resources</mark>
+### <mark style="background-color:green;">Rules</mark>
+
+* This is a team participation event. You can have 1-10 members in your team.
+* MOSIP Create 2025 has 4 broad themes. Your solution must align with one of these themes. While not mandatory, sticking to the suggested problem statements is encouraged.
+* You can submit your solution as many times as you want, and the last submission within the specified window will be considered for final evaluation.
+* You may utilise open-source libraries, datasets (e.g., Kaggle, Hugging Face), and freely available systems/services (e.g., Google Maps, Facebook Connect, Twitter feeds).
+* The intellectual property of your code belongs only to your team.&#x20;
+* Participants are requested to adhere to the official [Code of Conduct](https://docs.mosip.io/1.2.0/community/code-of-conduct), [IP Policy](https://www.mosip.io/ip_policy), and [Privacy Policy](https://www.mosip.io/privacy_policy) of MOSIP. The MOSIP team reserves the right to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+
+### <mark style="background-color:green;">Contact Us</mark>
+
+For quick questions, discussions, or general queries about the event, visit the[ Community Discussion Forum](https://community.mosip.io).
+
+For targeted solution-specific queries, email us at [create@mosip.io](mailto:create@mosip.io). We will respond directly or can arrange one-on-one ad-hoc discussions upon request.
+
+You can also join us live during AMA sessions as per the \[schedule here] \<link>.\
+Click to add it to your calendar.
+
+<details>
+
+<summary><mark style="background-color:green;">Knowledge Kit</mark></summary>
 
 Access all relevant MOSIP product resources in one place to help you understand the platform, explore integration options, and develop your solution effectively.\
 \
@@ -180,152 +190,11 @@ Access all relevant MOSIP product resources in one place to help you understand 
 3.2 Signup\
 3.2.a Technical Overview
 
-### <mark style="background-color:green;">Rules</mark>
-
-* This is a team participation event. You can have 1-10 members in your team.
-* MOSIP Create 2025 has 4 broad themes. Your solution must align with one of these themes. While not mandatory, sticking to the suggested problem statements is encouraged.
-* You can submit your solution as many times as you want, and the last submission within the specified window will be considered for final evaluation.
-* You may utilise open-source libraries, datasets (e.g., Kaggle, Hugging Face), and freely available systems/services (e.g., Google Maps, Facebook Connect, Twitter feeds).
-* The intellectual property of your code belongs only to your team.&#x20;
-* Participants are requested to adhere to the official [Code of Conduct](https://docs.mosip.io/1.2.0/community/code-of-conduct), [IP Policy](https://www.mosip.io/ip_policy), and [Privacy Policy](https://www.mosip.io/privacy_policy) of MOSIP. The MOSIP team reserves the right to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
-
-### <mark style="background-color:green;">Contact Us</mark>
-
-{% hint style="success" %}
-For quick questions, discussions, or general queries about the event, visit the[ Community Discussion Forum](https://community.mosip.io).
-
-For targeted solution-specific queries, email us at [create@mosip.io](mailto:create@mosip.io). We will respond directly or can arrange one-on-one ad-hoc discussions upon request.
-
-You can also join us live during AMA sessions as per the \[schedule here] \<link>.\
-Click to add it to your calendar.
-{% endhint %}
-
-{% hint style="success" %}
-For targeted solution-specific queries, email us at [create@mosip.io](mailto:create@mosip.io). We will respond directly or can arrange one-on-one ad-hoc discussions upon request.
-{% endhint %}
-
-{% hint style="success" %}
-You can also join us live during AMA sessions as per the \[schedule here] \<link>.\
-Click to add it to your calendar.
-{% endhint %}
+</details>
 
 <details>
 
-<summary><mark style="background-color:green;">FAQs</mark></summary>
-
-#### <mark style="color:green;">Registration and Idea Submission</mark>
-
-1. Is there a registration fee? Do I need to pay any money to register for MOSIP Create?\
-   No, registration for MOSIP Create is free.
-2. Do I need to have any specific qualifications to be a participant for the event?\
-   No specific qualifications are required to participate in the event. Anyone with a solution for integration representing a registered organization is eligible to participate in MOSIP Create.
-3. How many people can a team consist of?\
-   There can be a maximum of 10 members per team.
-4. How do I add more people to my team, or register as an organisation?\
-   One participant can register on behalf of the entire team using the form link provided here \<link>.
-5. How and where do I submit my idea?\
-   You can describe the Idea briefly during registration.\
-
-
-#### <mark style="color:green;">Creating & Submitting Solutions</mark>
-
-6. How and where do I submit the deliverables?\
-   Please refer to the Submission Criteria here \<link> for details.
-7. Do we need to have the solution fully working?\
-   Yes, the solution must be implementable to be reviewed by the jury.
-8. Can one team register across multiple themes?\
-   Yes. Teams can submit solutions across multiple themes; however, each organisation may submit a maximum of three of their best solutions across all four themes.
-9. Does one have to be online and available for the entire duration of the event?\
-   No, one does not need to be logged in or be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it as per the submission process defined here\<link>.
-10. Will there be any training?\
-    Yes, participants will have access to training resources here \<link> and regular AMA sessions, including ad-hoc calls on request basis. Write to us at [create@mosip.io](mailto:create@mosip.io), and we can accommodate your ad-hoc requests to connect.
-11. Do I need to give a demo for the solution that I have built?\
-    Yes, providing a demo of your solution is mandatory.
-12. Are there any specific technologies or programming languages we must use?\
-    No specific technologies or programming languages are required; however, your solution must include at least one MOSIP touch point.
-13. Are we allowed to use third party components like open source libraries etc. to implement a solution - are there limitations on components?\
-    You may utilise open-source libraries, datasets and freely available systems/services.
-14. How is the environment? Will your environment support any language?\
-    MOSIP will provide a sandbox environment called MOSIP Collab Create, which supports English, French, and Arabic languages.\
-    \
-    <mark style="color:purple;">**Note**</mark>: All data in the sandbox environment will be securely deleted upon conclusion of the event.
-15. How do I submit my final deliverables/ artefacts?\
-    Follow the submission process outlined \[here] \<link> to share your final deliverables/artifacts for MOSIP Create.
-
-#### <mark style="color:green;">Results</mark>
-
-16. How do I know if my solution was shortlisted?\
-    Results will be communicated to participants via email from [create@mosip.io](mailto:create@mosip.io) or through the SPOC’s phone number provided in the registration form. In addition, a formal announcement of the winners will be made to the larger ecosystem and community at MOSIP Connect 2026, where winners will be formally acknowledged.
-17. Who will own the IP (Intellectual Property) Rights of the product/code that I have built?\
-    The developer/developers of the solution will have all rights and own the IP of the solution submitted.
-18. Will I be able to sell/commercialise my projects after the event?\
-    Yes, you will retain the rights to sell or commercialise your project after the event.
-19. Will MOSIP take care of the travel and accommodation arrangements for MOSIP Connect 2026?\
-    Yes. MOSIP will arrange travel and accommodation for one representative from each of the top six to eight winning teams.
-
-#### <mark style="color:green;">Communication</mark>
-
-20. What platforms will be used for communication and collaboration?\
-    Primary communication will be through the community forum at[ community.mosip.io](https://community.mosip.io) for general queries, email at [create@mosip.io](mailto:create@mosip.io) for solution-specific questions, and regular AMA sessions for live interactions.
-
-</details>
-
-#### Registration and Idea Submission
-
-1. Is there a registration fee? Do I need to pay any money to register for MOSIP Create?\
-   No, registration for MOSIP Create is free.
-2. Do I need to have any specific qualifications to be a participant in the event?\
-   No specific qualifications are required to participate in the event. Anyone with a solution for integration representing a registered organization is eligible to participate in MOSIP Create.
-3. How many people can a team consist of?\
-   There can be a maximum of 10 members per team.
-4. How do I add more people to my team, or register as an organisation?\
-   One participant can register on behalf of the entire team using the form link provided here \<link>.
-5. How and where do I submit my idea?\
-   You can describe the Idea briefly during registration.\
-
-
-#### Creating & Submitting Solutions
-
-6. How and where do I submit the deliverables?\
-   Please refer to the Submission Criteria here \<link> for details.
-7. Do we need to have the solution fully working?\
-   Yes, the solution must be implementable to be reviewed by the jury.
-8. Can one team register across multiple themes?\
-   Yes. Teams can submit solutions across multiple themes; however, each organisation may submit a maximum of three of their best solutions across all four themes.
-9. Does one have to be online and available for the entire duration of the event?\
-   No, one does not need to be logged in or be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it as per the submission process defined here\<link>.
-10. Will there be any training?\
-    Yes, participants will have access to training resources here \<link> and regular AMA sessions, including ad-hoc calls on a request basis. Write to us at [create@mosip.io](mailto:create@mosip.io), and we can accommodate your ad-hoc requests to connect.
-11. Do I need to give a demo for the solution that I have built?\
-    Yes, providing a demo of your solution is mandatory.
-12. Are there any specific technologies or programming languages we must use?\
-    No specific technologies or programming languages are required; however, your solution must include at least one MOSIP touch point.
-13. Are we allowed to use third-party components like open source libraries, etc., to implement a solution - are there limitations on components?\
-    You may utilise open-source libraries, datasets, and freely available systems/services.
-14. How is the environment? Will your environment support any language?\
-    MOSIP will provide a sandbox environment called MOSIP Collab Create, which supports English, French, and Arabic languages.\
-    \
-    <mark style="color:purple;">**Note**</mark>: All data in the sandbox environment will be securely deleted upon conclusion of the event.
-15. How do I submit my final deliverables/ artefacts?\
-    Follow the submission process outlined \[here] \<link> to share your final deliverables/artifacts for MOSIP Create.
-
-#### Results
-
-16. How do I know if my solution was shortlisted?\
-    Results will be communicated to participants via email from [create@mosip.io](mailto:create@mosip.io) or through the SPOC’s phone number provided in the registration form. In addition, a formal announcement of the winners will be made to the larger ecosystem and community at MOSIP Connect 2026, where winners will be formally acknowledged.
-17. Who will own the IP (Intellectual Property) Rights of the product/code that I have built?\
-    The developer/developers of the solution will have all rights and own the IP of the solution submitted.
-18. Will I be able to sell/commercialise my projects after the event?\
-    Yes, you will retain the rights to sell or commercialise your project after the event.
-19. Will MOSIP take care of the travel and accommodation arrangements for MOSIP Connect 2026?\
-    Yes. MOSIP will arrange travel and accommodation for one representative from each of the top six to eight winning teams.
-
-#### Communication
-
-20. What platforms will be used for communication and collaboration?\
-    Primary communication will be through the community forum at[ community.mosip.io](https://community.mosip.io) for general queries, email at [create@mosip.io](mailto:create@mosip.io) for solution-specific questions, and regular AMA sessions for live interactions.
-
-### <mark style="background-color:green;">Terms & Conditions</mark>
+<summary><mark style="background-color:green;">Terms &#x26; Conditions</mark></summary>
 
 #### MOSIP CREATE PRIVACY POLICY
 
@@ -401,3 +270,68 @@ For any questions regarding this Policy, please contact legal@mosip.io, who will
 In case of any changes to this Policy, we will update it on this page.&#x20;
 
 This document is CC-BY-SA. It was last updated September 5th, 2024.
+
+</details>
+
+<details>
+
+<summary><mark style="background-color:green;">FAQs</mark></summary>
+
+#### <mark style="color:green;">Registration and Idea Submission</mark>
+
+1. Is there a registration fee? Do I need to pay any money to register for MOSIP Create?\
+   No, registration for MOSIP Create is free.
+2. Do I need to have any specific qualifications to be a participant for the event?\
+   No specific qualifications are required to participate in the event. Anyone with a solution for integration representing a registered organization is eligible to participate in MOSIP Create.
+3. How many people can a team consist of?\
+   There can be a maximum of 10 members per team.
+4. How do I add more people to my team, or register as an organisation?\
+   One participant can register on behalf of the entire team using the form link provided here \<link>.
+5. How and where do I submit my idea?\
+   You can describe the Idea briefly during registration.\
+
+
+#### <mark style="color:green;">Creating & Submitting Solutions</mark>
+
+6. How and where do I submit the deliverables?\
+   Please refer to the Submission Criteria here \<link> for details.
+7. Do we need to have the solution fully working?\
+   Yes, the solution must be implementable to be reviewed by the jury.
+8. Can one team register across multiple themes?\
+   Yes. Teams can submit solutions across multiple themes; however, each organisation may submit a maximum of three of their best solutions across all four themes.
+9. Does one have to be online and available for the entire duration of the event?\
+   No, one does not need to be logged in or be online for the entire duration. You can develop the application on your local system based on the given themes and then submit it as per the submission process defined here\<link>.
+10. Will there be any training?\
+    Yes, participants will have access to training resources here \<link> and regular AMA sessions, including ad-hoc calls on request basis. Write to us at [create@mosip.io](mailto:create@mosip.io), and we can accommodate your ad-hoc requests to connect.
+11. Do I need to give a demo for the solution that I have built?\
+    Yes, providing a demo of your solution is mandatory.
+12. Are there any specific technologies or programming languages we must use?\
+    No specific technologies or programming languages are required; however, your solution must include at least one MOSIP touch point.
+13. Are we allowed to use third party components like open source libraries etc. to implement a solution - are there limitations on components?\
+    You may utilise open-source libraries, datasets and freely available systems/services.
+14. How is the environment? Will your environment support any language?\
+    MOSIP will provide a sandbox environment called MOSIP Collab Create, which supports English, French, and Arabic languages.\
+    \
+    <mark style="color:purple;">**Note**</mark>: All data in the sandbox environment will be securely deleted upon conclusion of the event.
+15. How do I submit my final deliverables/ artefacts?\
+    Follow the submission process outlined \[here] \<link> to share your final deliverables/artifacts for MOSIP Create.
+
+#### <mark style="color:green;">Results</mark>
+
+16. How do I know if my solution was shortlisted?\
+    Results will be communicated to participants via email from [create@mosip.io](mailto:create@mosip.io) or through the SPOC’s phone number provided in the registration form. In addition, a formal announcement of the winners will be made to the larger ecosystem and community at MOSIP Connect 2026, where winners will be formally acknowledged.
+17. Who will own the IP (Intellectual Property) Rights of the product/code that I have built?\
+    The developer/developers of the solution will have all rights and own the IP of the solution submitted.
+18. Will I be able to sell/commercialise my projects after the event?\
+    Yes, you will retain the rights to sell or commercialise your project after the event.
+19. Will MOSIP take care of the travel and accommodation arrangements for MOSIP Connect 2026?\
+    Yes. MOSIP will arrange travel and accommodation for one representative from each of the top six to eight winning teams.
+
+#### <mark style="color:green;">Communication</mark>
+
+20. What platforms will be used for communication and collaboration?\
+    Primary communication will be through the community forum at[ community.mosip.io](https://community.mosip.io) for general queries, email at [create@mosip.io](mailto:create@mosip.io) for solution-specific questions, and regular AMA sessions for live interactions.
+
+</details>
+
+####
