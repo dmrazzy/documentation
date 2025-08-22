@@ -325,4 +325,4 @@ Email alerts are sent to the partner's registered email address for Partner cert
 #### 4. Notification Retention
 
 * Notifications from the past 60 days are retained and available on the PMS portal. Any notification older than 60 days is automatically deleted from the system.
-* If a **partner certificate is renewed before its expiry date**, alls subsequent notifications related to that certificate are automatically discontinued.
+* If a **partner certificate is renewed before its expiry date**, alls subsequent notifications related to that certificate are automatically discontinued..
