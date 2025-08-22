@@ -362,6 +362,7 @@
       * [Performance Test Report](roadmap-and-releases/releases/release-notes/performance-test-report.md)
       * [Security Test Report](roadmap-and-releases/releases/release-notes/security-test-report.md)
       * [Feature Health Report](roadmap-and-releases/releases/release-notes/feature-health-report.md)
+    * [Partner Management System Revamp 1.3.0-beta.2](roadmap-and-releases/releases/partner-management-system-revamp-1.3.0-beta.2.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
