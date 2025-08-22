@@ -82,18 +82,24 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 Each notification displays the total count of partner certificates, FTM Chip Certificates, API Keys, SBIsset to expire within a given week.
 
+<!-- Change screenshot -->
+
 ![](media/media/pms-eug-notification-image6.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image6.png" alt=""><figcaption></figcaption></figure>
 
 * To view the specific Partner IDs associated with each of the expiring items, click the ‘View Expiring Items’ button. This will display a detailed list of all Partner IDs and associated details whose certificates, API Keys, SBIs are due to expire within the next 7 days.
-* Each of the expiring items details within a given weekly summary notification is split into individual sub tabs for easy categorization and readability..
+* Each of the expiring items details within a given weekly summary notification is split into individual sub tabs for easy categorization and readability.
+
+<!-- Change screenshot -->
 
 ![](media/media/pms-eug-notification-image7.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image7.png" alt=""><figcaption></figcaption></figure>
 
 * To filter the weekly summary results, click the **Filter** button and enter one or more of the following fields: 'Notification Creation Date From' and 'Notification Creation Date To' to perform a targeted search.
+
+<!-- Change Screenshot -->
 
 ![](media/media/pms-eug-notification-image8.png)
 
@@ -140,8 +146,9 @@ These notifications are delivered weekly, and the email follows the template pro
 
 ![](media/media/pms-eug-notification-image14.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt="" width="188"><figcaption></figcaption></figure>
+<!-- Change Screenshot -->
 
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt="" width="188"><figcaption></figcaption></figure>
 
 
 If one or more partner items are not due to expire in a given week’s summary, the email notification will include only the details of the items that are expiring.
@@ -204,26 +211,21 @@ These notifications are accessible to all applicable partner users via the **Not
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image17.png" alt=""><figcaption></figcaption></figure>
 
 
-
-/new/
-
 **FTM Chip Certificate Notification (FTM Chip Provider)**
 
-\<add the below image>
+<figure><img src="../../../../.gitbook/assets/ftm-chip-certificate-notification-ftm-chip provider.png" alt=""><figcaption></figcaption></figure>
 
 
 
 **SBI Notification (Device Provider)**
 
-\<add the below image>
+<figure><img src="../../../../.gitbook/assets/sbi-notification-device-provider.png" alt=""><figcaption></figcaption></figure>
 
 
 
 **API Key Notification (Authentication Partner)**
 
-\<add the below image>
-
-
+<figure><img src="../../../../.gitbook/assets/api-key-notification-authentication-partner.png" alt=""><figcaption></figcaption></figure>
 
 
 
