@@ -134,11 +134,9 @@ The team at HireKarma has actively contributed to the community by developing mu
 
 **About HireKarma**: HireKarma is an India based software company that delivers innovative technology solutions to enterprises, educational institutions and government organizations.
 
-## Ooru Digital
+## [Ooru Digital](https://ooru.io/)
 
 <figure><img src="../.gitbook/assets/community-contributor-ooru.png" alt=""><figcaption></figcaption></figure>
-
-
 
 Ooru Digital has collaborated with MOSIP since 2024 and has been working closely towards strengthening the **Inji ecosystem.** The contributions are focussed on code contributions and feature testing.
 
