@@ -133,3 +133,22 @@ The Sunbird community has developed 20+ digital solutions (called “building bl
 The team at HireKarma has actively contributed to the community by developing multiple test automation suites for the MOSIP ID platform as well as the eSignet and Inji product lines.
 
 **About HireKarma**: HireKarma is an India based software company that delivers innovative technology solutions to enterprises, educational institutions and government organizations.
+
+## Ooru Digital
+
+<figure><img src="../.gitbook/assets/community-contributor-ooru.png" alt=""><figcaption></figcaption></figure>
+
+
+
+Ooru Digital has collaborated with MOSIP since 2024 and has been working closely towards strengthening the **Inji ecosystem.** The contributions are focussed on code contributions and feature testing.
+
+About Ooru: Ooru Digital Private Limited is a product based technology company dedicated to developing innovative and interoperable digital solutions across multiple sectors. With a strong commitment to Digital Public Goods (DPGs), Ooru aims to create impactful products that drive social transformation and sustainable growth.
+
+
+
+
+
+
+
+
+
