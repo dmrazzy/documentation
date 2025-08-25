@@ -136,7 +136,7 @@ The team at HireKarma has actively contributed to the community by developing mu
 
 ## [Ooru Digital](https://ooru.io/)
 
-<figure><img src="../.gitbook/assets/community-contributor-ooru.png" alt=""><figcaption></figcaption></figure>
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-ooru.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
 Ooru Digital has collaborated with MOSIP since 2024 and has been working closely towards strengthening the **Inji ecosystem.** The contributions are focussed on code contributions and feature testing.
 
