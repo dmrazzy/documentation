@@ -10,7 +10,7 @@
 
 **Point of Contact**: Resham Chugani ([resham@mosip.io](mailto:resham@mosip.io))
 
-**IANA Registration**: [IANA CWT Registry](https://www.iana.org/assignments/cwt/cwt.xhtml) (Search Key: 169)
+**IANA Registration**: [IANA CWT Registry](https://www.iana.org/assignments/cwt/cwt.xhtml) (Search for: 169)
 
 **Version:** 1.1.0
 
@@ -304,8 +304,6 @@ Since the claims conveyed in a CWT is used to make identity claim decisions, it 
 Syntactically, the signing and encryption operations for Nested CWTs may be applied in any order; however, if encryption is necessary, producers normally should sign the message and then encrypt the result (thus encrypting the signature). This prevents attacks in which the signature is stripped, leaving just an encrypted message, as well as providing privacy for the signer. Furthermore, signatures over encrypted text are not considered valid in many jurisdictions.
 
 ## 5. IANA Considerations:
-
-IANA is requested to register the revised specifications of claim 169 in "CBOR Web Token (CWT) Claims" registry [IANA CWT Claims](https://www.iana.org/assignments/cwt/cwt.xhtml).
 
 ### 5.1 Registry Content
 
