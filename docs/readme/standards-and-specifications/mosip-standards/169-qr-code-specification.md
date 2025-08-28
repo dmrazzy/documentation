@@ -286,7 +286,7 @@ Claim 169 represents a JSON Object that includes the below table as ID attribute
   * Encode the compressed CWT using Base45.
   * Use this encoded string to generate the final QR code.
 
-<figure><img src="../../../.gitbook/assets/QR_spec.PNG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../.gitbook/assets/QR_spec.PNG" alt="" width="375"><figcaption></figcaption></figure>
 
 ## 4. Security Considerations
 
