@@ -84,11 +84,11 @@ For more details on all the the open issues, please refer [here](https://mosip.a
 
 ## **Repositories Released**
 
-| Repository Released         | Version       |
-| --------------------------- | ------------- |
-| partner-management-services | v1.3.0-beta.2 |
-| partner-management-portal   | v1.3.0-beta.2 |
-| mosip-data                  | v1.3.0-beta.2 |
+| Repository Released         | Version                                                                                  |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| partner-management-services | [v1.3.0-beta.2](https://github.com/mosip/partner-management-services/tree/v1.3.0-beta.2) |
+| partner-management-portal   | [v1.3.0-beta.2](https://github.com/mosip/partner-management-portal/tree/v1.3.0-beta.2)   |
+| mosip-data                  | [v1.3.0-beta.2](https://github.com/mosip/mosip-data/tree/v1.3.0-beta.3)                  |
 
 ## Compatible Modules
 
