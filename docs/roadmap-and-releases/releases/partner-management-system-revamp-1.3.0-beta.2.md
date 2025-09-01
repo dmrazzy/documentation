@@ -4,7 +4,7 @@
 
 **Release Number**: v1.3.0-beta.2
 
-**Release Date**: Coming Soon
+**Release Date**: 29th August, 2025
 
 ## Overview
 

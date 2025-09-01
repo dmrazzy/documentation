@@ -7,6 +7,11 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version**: Partner Management System Revamp 1.3.0-beta.2
+
+* Date: 29th August, 2025
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.2.md)&#x20;
+
 **Version**: Android Registration Client v0.12.0
 
 * Date: 8th August, 2025
