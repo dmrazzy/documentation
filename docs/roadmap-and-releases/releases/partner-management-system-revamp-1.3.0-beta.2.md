@@ -122,4 +122,4 @@ The following table outlines the tested and certified compatibility of PMS 1.3.0
 * [UI Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide)
 * [Backend Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide)
 * [API Documentation](https://mosip.stoplight.io/docs/partner-management-portal-revamp)
-* [Test Report](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beta.2)
+* Test Report - Coming Up
