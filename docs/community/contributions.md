@@ -140,13 +140,13 @@ The team at HireKarma has actively contributed to the community by developing mu
 
 Ooru Digital has collaborated with MOSIP since 2024 and has been working closely towards strengthening the **Inji ecosystem.** The contributions are focussed on code contributions and feature testing.
 
-About Ooru: Ooru Digital Private Limited is a product based technology company dedicated to developing innovative and interoperable digital solutions across multiple sectors. With a strong commitment to Digital Public Goods (DPGs), Ooru aims to create impactful products that drive social transformation and sustainable growth.
+**About Ooru**: Ooru Digital Private Limited is a product based technology company dedicated to developing innovative and interoperable digital solutions across multiple sectors. With a strong commitment to Digital Public Goods (DPGs), Ooru aims to create impactful products that drive social transformation and sustainable growth.
 
 
+## [C4GT](https://codeforgovtech.in/)
 
+<div align="center"><figure><img src="../.gitbook/assets/community-contributor-c4gt.png" alt="" width="375"><figcaption></figcaption></figure></div>
 
+C4GT began collaborating with MOSIP in February 2025 and has since worked closely to strengthen the **Inji ecosystem**. C4GT's contributions include enhancements related to revocation, support for mDoc/mDL, and presentation during issuance. C4GT has provided code, feature improvements, and thorough testing, helping to drive innovation and ensure the reliability of Inji's digital solutions.
 
-
-
-
-
+**About C4GT**: C4GT enables development and long term maintenance of open-source products (DPGs and beyond), driving population-scale social impact by creating pathways and an ecosystem for young talent to contribute to these products through an active community. Through various efforts, it aims to encourage ongoing contributions and strengthen collaboration between DPG/DPI builders, adopters, and contributors (students or working professionals). The initiative works towards facilitating long-term collaboration and innovation within the fast evolving DPGs/DPI & Tech for Good ecosystem, enhancing the efficiency and quality of contributions, and aligning the incentives for both organizations and contributors. C4GT connects organizations to a network of more than 33,000 contributors, enabling them to engage with and leverage this community to drive high-quality contributions.
