@@ -60,4 +60,4 @@ Functional Test Report
 
 [Feature Documentation](https://docs.mosip.io/1.2.0/id-lifecycle-management)
 
-[Deployment](../../setup/deploymentnew/v3-installation/1.2.0.2/)
+[Deployment](../../../setup/deploymentnew/v3-installation/1.2.0.2/)
