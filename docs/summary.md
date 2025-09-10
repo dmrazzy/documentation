@@ -291,7 +291,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
-    * [DSL-V1.2.1.0](roadmap-and-releases/releases/dsl-v1.2.1.0.md)
+    * [DSL- 1.2.1.0](roadmap-and-releases/releases/dsl-v1.2.1.0.md)
     * [1.2.0.3](roadmap-and-releases/releases/1.2.0.3.md)
       * [Test Report](roadmap-and-releases/releases/1.2.0.3/test-report.md)
     * [Partner Management System Revamp 1.3.0-beta.2](roadmap-and-releases/releases/partner-management-system-revamp-1.3.0-beta.2.md)

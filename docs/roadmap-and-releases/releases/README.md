@@ -7,6 +7,16 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version**: DSL-V1.2.1.0
+
+* Date: 5th September, 2025
+* [Release Notes](1.2.0.3.md)&#x20;
+
+**Version**: 1.2.0.3
+
+* Date: 5th September, 2025
+* [Release Notes](1.2.0.3.md)&#x20;
+
 **Version**: Partner Management System Revamp 1.3.0-beta.2
 
 * Date: 29th August, 2025
