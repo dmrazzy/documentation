@@ -376,5 +376,3 @@
     * [Generating Demo Credentials](general/collab-getting-started-guide/generating-demo-credentials.md)
   * [MOSIP Documentation Style Guide](general/mosip-documentation-style-guide.md)
   * [Contact Us](general/contact-us.md)
-* [Modules](modules.md)
-* [Experiment](experiment.md)
