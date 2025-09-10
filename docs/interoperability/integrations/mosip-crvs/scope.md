@@ -222,7 +222,7 @@ The integration supports updates for the following fields:
 1. Name
 2. Date of Birth (DOB)
 3. Gender
-4. Address
+4. Parent's / Guardian's Name
 
 {% hint style="info" %}
 **Note:** Updates to biometrics or any other data beyond the fields listed above are not supported via CRVS. For such changes, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
