@@ -7,10 +7,10 @@ icon: book-open
 
 ## Latest Releases 🌟
 
-**Version**: DSL-V1.2.1.0
+**Version**: DSL- 1.2.1.0
 
 * Date: 5th September, 2025
-* [Release Notes](1.2.0.3.md)&#x20;
+* [Release Notes](dsl-v1.2.1.0.md)&#x20;
 
 **Version**: 1.2.0.3
 
