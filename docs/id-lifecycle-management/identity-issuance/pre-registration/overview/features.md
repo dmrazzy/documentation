@@ -124,7 +124,8 @@ The Pre-registration module is designed to streamline the identity registration 
 - **Independent Registration**: Residents can complete pre-registration on their own, using personal devices such as computers, tablets, or smartphones.
 - **Multi-language Interface**: Users can interact with the portal in their preferred language, supporting inclusivity and ease of use.
 
-<!-- (No content required here as per review. Section removed.) -->
+
+
 
 ### 1. Registration and Login
 Users can create accounts using email or mobile, verify their identity with OTPs (One-Time Passwords), and use CAPTCHA for security. Pre-registration includes multi-language support, user consent management, secure login with OTP, session management, and options for language selection during login. These features aim to provide a secure, user-friendly, and compliant onboarding and login experience.
