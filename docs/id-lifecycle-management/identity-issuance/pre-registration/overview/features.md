@@ -1,6 +1,10 @@
 # Features
 
+
+
 Content Coming Soon
+
+<!--
 
 ## Overview
 Pre-registration module enables a resident to:
@@ -101,17 +105,12 @@ Refer to [API Documentation](https://mosip.github.io/documentation/1.2.0/1.2.0.h
 
 [Github repo](https://github.com/mosip/pre-registration/tree/release-1.2.0).
 
----
+-->
 
 
 
 
-
-
-
-
-
-<!-
+<!--
 
 ## Overview
 
