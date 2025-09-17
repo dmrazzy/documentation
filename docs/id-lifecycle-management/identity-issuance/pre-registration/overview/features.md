@@ -2,32 +2,133 @@
 
 Content Coming Soon
 
-<!--
+## Overview
+Pre-registration module enables a resident to:
 
+* enter demographic data and upload supporting documents,
+* book an appointment for one or many users for registration by choosing a suitable registration center and a convenient time slot,
+* receive appointment notifications,
+* reschedule and cancel appointments.
+
+Once the resident completes the above process, their data is downloaded at the respective registration centers before their appointment, thus, saving enrollment time. The module supports multiple languages.
+
+MOSIP provides backend APIs for this module along with a reference implementation of [pre-registration portal](#pre-registration-portal).
+
+## Pre-registration process
+
+![Pre-Registration Process](../../../../.gitbook/assets/pre-reg-process.png)
+
+### Create an application
+
+* User provides consent
+* The user provides demographic information
+* User uploads supporting documents (Proof of Address, Birth certificate, etc.)
+* A pre-registration request ID known as [AID](../../../identity-management/identifiers.md#rid-aid) is generated and provided to the user.
+
+_Note_: The AID was formerly called PRID in the pre-registration context.
+
+### Book an appointment
+
+* The user selects a registration center based on postal code, geo-location, etc.
+* The available slots are displayed
+* An option to cancel and re-book the appointment is made available
+
+### Receiving acknowledgement notifications
+
+* An acknowledgment is sent via email/SMS
+* The user can print the acknowledgment containing AID and QR code.
+* This QR code can be scanned at the in-person registration centers.
+
+### Download of pre-registration data at registration centers
+
+* The user provides the AID/ QR code at the registration center.
+* The registration form gets pre-filled with the pre-registration data.
+
+## Pre-registration module
+
+The relationship of the pre-registration module with other services is explained here.&#x20;
+
+{% hint style="info" %}
+**NOTE:** The numbers do not signify a sequence of operations or control flow.
+{% endhint %}
+
+![](../../../../.gitbook/assets/pre-reg-entity.png)
+
+1. Fetch [ID Schema](../../../../id-schema) details with the help of Syncdata service.
+2. Fetch a new OTP for the user on the login page.
+3. Log all events.
+4. Pre-Registration interacts with Keycloak via [`kernel-auth-adapater`](https://github.com/mosip/mosip-openid-bridge/tree/release-1.2.0). The Pre-Reg module communicates with endpoints of other MOSIP modules. However, to access these endpoints, a token is required. This token is obtained from Keycloak.
+5. The database used by pre-reg.
+6. Generate a new AID for the application.
+7. Send OTP in the email/SMS to the user.
+8. Registration Processor uses reverse sync to mark the pre-reg application as consumed.
+9. Registration clients use the [Datasync service](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-datasync-service) to get the pre-reg application details for a given registration center, booking date, and AID.
+10. Request data from the MasterData service to get data for dropdowns, locations, consent forms etc.
+
+## Services
+
+Pre-registration module consists of the following services:
+
+* [Application](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-application-service)
+* [Booking](https://github.com/mosip/mosip-ref-impl/tree/release-1.2.0/pre-registration-booking-service)
+* [Batchjob](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-batchjob)
+* [Datasync](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-datasync-service)
+* [Captcha](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-captcha-service)
+
+For more details, refer to the [Pre-registration repo](https://github.com/pjoshi751/pre-registration/tree/develop).
+
+## Pre-registration portal
+
+MOSIP provides a **reference** implementation of the pre-registration portal that may be customized as per country needs. The sample implementation is available at the [reference implementation repository](https://github.com/mosip/mosip-ref-impl). For getting started with the pre-registration, refer to the [Pre-registration user guide](../test/pre-registration-user-guide.md)
+
+## Build and deploy
+
+To access the build and read through the deployment instructions, refer to the [Pre-registration repo](https://github.com/mosip/pre-registration/tree/release-1.2.0).
+
+## Configurations
+
+For details related to Pre-registration configurations, refer to [Pre-registration configuration](https://github.com/mosip/pre-registration/blob/release-1.2.0/docs/configuration.md).
+
+## Developer Guide
+
+To know more about the developer setup, read the [Pre-registration Developers Guide](https://docs.mosip.io/1.2.0/modules/pre-registration/pre-registration-developer-setup).
+
+## API
+
+Refer to [API Documentation](https://mosip.github.io/documentation/1.2.0/1.2.0.html).
+
+## Source code
+
+[Github repo](https://github.com/mosip/pre-registration/tree/release-1.2.0).
+
+---
+
+
+
+
+
+
+
+
+
+<!-
 
 ## Overview
 
 The Pre-registration module is designed to streamline the identity registration process by allowing residents to complete preliminary steps online before visiting registration centers. This reduces wait times, improves data accuracy, and enhances the overall user experience.
 
-The portal supports both **self-service** and **assisted** modes to accommodate different user scenarios and linguistic requirements.
-
 ## Core Features
 
 ### 1. Operation Modes
 
-The Pre-registration portal offers two primary modes to cater to diverse user needs and maximize accessibility:
-
 #### **Self-Service Mode**
 - **Independent Registration**: Residents can complete pre-registration on their own, using personal devices such as computers, tablets, or smartphones.
 - **Multi-language Interface**: Users can interact with the portal in their preferred language, supporting inclusivity and ease of use.
-- **24/7 Accessibility**: The portal is available at all times, allowing users to register at their convenience from any location with internet access.
 
-#### **Assisted Mode**
-- **Operator Assistance**: Trained operators guide residents through the registration process, ensuring support for those less familiar with technology.
-- **Dual-language Support**: Operators can use the portal in one language while capturing resident data in another, accommodating linguistic diversity.
-- **Accessibility Features**: Designed to assist users with disabilities or those requiring additional help, ensuring equitable access for all.
+<!-- (No content required here as per review. Section removed.) -->
 
-### 2. User Registration and Authentication
+### 1. Registration and Login
+Users can create accounts using email or mobile, verify their identity with OTPs (One-Time Passwords), and use CAPTCHA for security. Pre-registration includes multi-language support, user consent management, secure login with OTP, session management, and options for language selection during login. These features aim to provide a secure, user-friendly, and compliant onboarding and login experience.
 
 #### **Account Creation**
 - **Multi-channel Registration**: Create accounts using email or mobile number
@@ -40,9 +141,8 @@ The Pre-registration portal offers two primary modes to cater to diverse user ne
 - **OTP-based Authentication**: Login using mobile/email with OTP verification
 - **OTP Retry Mechanism**: Request new OTP if not received initially
 - **Session Management**: Secure session handling with configurable timeouts
-- **Language Selection**: Choose preferred language during login process
 
-### 3. Demographic Data Management
+### 2. Demographic Data Management
 
 #### **Language Configuration**
 - **Data Capture Language Selection**: Choose specific languages for data entry (separate from UI language)
@@ -93,14 +193,14 @@ The system provides clear status tracking with the following states:
 - **Cancelled**: Appointment has been cancelled by user
   - *User Action Required*: Re-book an appointment
 
-#### **Application Dashboard**
+#### Application Dashboard
 - **Chronological Sorting**: Applications sorted by creation date (newest first)
 - **Visual Status Indicators**: Clear status display for each application
 - **Bulk Operations**: Select multiple applicants for group actions
 - **Auto-cleanup**: Consumed appointments automatically removed from dashboard
 - **Persistent Storage**: Expired and cancelled applications retained for rebooking
 
-#### **Application Lifecycle Management**
+#### Application Lifecycle Management
 - **Create New Applications**: Generate multiple applications as needed
 - **Data Modification**: Edit demographic data and documents before appointment
 - **Application Preview**: Comprehensive review before final submission
@@ -108,7 +208,7 @@ The system provides clear status tracking with the following states:
 
 ### 6. Appointment Booking System
 
-#### **Registration Center Discovery**
+#### Registration Center Discovery
 - **Recommended Centers**: Automatic display based on demographic details (postal code)
 - **Location-based Search**: Find centers using geo-location ("Nearby" option)
 - **Search Functionality**: Find centers by name, address, or specific criteria
@@ -211,9 +311,6 @@ The system provides clear status tracking with the following states:
 #### **Configuration Management**
 - **UI Specifications**: JSON-based configuration for form fields and document categories
 - **Business Rules**: Flexible configuration for booking restrictions (e.g., 48-hour minimum)
-- **Location Hierarchy**: Configurable center recommendation based on postal codes
-- **Language Settings**: Configure mandatory and optional languages per country requirements
-- **Time Slot Configuration**: Administrative controls for appointment slot management
 
 #### **System Administration**
 - **User Management**: Administrative controls for user account management
@@ -227,74 +324,11 @@ The system provides clear status tracking with the following states:
 - **Performance Metrics**: System performance and user experience metrics
 - **Status Analytics**: Track application status distribution and completion rates
 
-### 13. Technical Features (Architecture and Integration)
 
-#### **Microservices Architecture**
-- **Application Service**: Core application management functionality
-- **Booking Service**: Appointment booking and management
-- **Datasync Service**: Data synchronization with registration centers
-- **Captcha Service**: Security verification and bot prevention
-- **Batchjob Service**: Background processing and maintenance tasks
-
-#### **Integration Capabilities**
-- **Master Data Integration**: Real-time data from Master Data service for locations and centers
-- **Registration Center Integration**: Bi-directional data synchronization
-- **API Gateway Integration**: Seamless integration with MOSIP ecosystem
-- **Third-party Integrations**: Extensible architecture for external system integration
-
-#### **Scalability and Performance**
-- **Load Balancing**: Support for high-availability deployments
-- **Caching**: Intelligent caching for improved performance
-- **Database Optimization**: Optimized data access patterns
-- **Resource Management**: Efficient resource utilization
-
-#### **Monitoring and Maintenance**
-- **Health Checks**: Comprehensive system health monitoring
-- **Performance Metrics**: Real-time performance tracking
-- **Error Handling**: Robust error handling and recovery mechanisms
-- **Backup and Recovery**: Data backup and disaster recovery capabilities
-
-## Key User Workflows
-
-### **Complete Registration Process**
-1. **Login/Account Creation**: OTP-based authentication with language selection
-2. **Language Configuration**: Select data capture languages (if multiple languages configured)
-3. **Consent Management**: Accept terms and conditions for data processing
-4. **Demographic Data Entry**: Fill personal information in selected languages
-5. **Document Upload**: Upload required documents with "Same As" option for family members
-6. **Application Preview**: Review and modify data before proceeding
-7. **Center Selection**: Choose registration center (recommended, nearby, or search)
-8. **Appointment Booking**: Select date and time slot
-9. **Acknowledgment**: Receive confirmation with QR code via multiple channels
-
-### **Application Management Workflow**
-- **Create Multiple Applications**: Add family members or multiple applicants
-- **Modify Applications**: Edit details before appointment booking
-- **Cancel/Reschedule**: Flexible appointment management with time restrictions
-- **Status Tracking**: Monitor progress through dashboard
-- **Discard/Delete**: Remove unwanted applications
-
-## Benefits
-
-### **For Residents**
-- **Convenience**: Complete pre-registration from home or any location
-- **Time Savings**: Reduced waiting time at registration centers
-- **Flexibility**: Schedule appointments at convenient times
-- **Transparency**: Real-time status tracking and notifications
-
-### **For Registration Centers**
-- **Efficiency**: Pre-filled forms reduce data entry time
-- **Capacity Planning**: Better resource allocation and queue management
-- **Data Quality**: Improved data accuracy through validation
-- **Reduced Workload**: Less manual data entry and verification
-
-### **For Administrators**
-- **Resource Optimization**: Better utilization of registration center resources
-- **Data Insights**: Comprehensive analytics and reporting
-- **Process Automation**: Automated workflows and notifications
-- **Scalability**: Flexible system that grows with demand
 
 The Pre-registration module serves as a crucial component in the MOSIP ecosystem, providing a user-friendly gateway to the identity registration process while maintaining high standards of security, privacy, and data integrity.
 
 
 -->
+
+
