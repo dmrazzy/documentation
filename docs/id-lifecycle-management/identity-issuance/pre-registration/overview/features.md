@@ -1,334 +1,167 @@
 # Features
 
-
-
-Content Coming Soon
-
-<!--
-
 ## Overview
-Pre-registration module enables a resident to:
-
-* enter demographic data and upload supporting documents,
-* book an appointment for one or many users for registration by choosing a suitable registration center and a convenient time slot,
-* receive appointment notifications,
-* reschedule and cancel appointments.
-
-Once the resident completes the above process, their data is downloaded at the respective registration centers before their appointment, thus, saving enrollment time. The module supports multiple languages.
-
-MOSIP provides backend APIs for this module along with a reference implementation of [pre-registration portal](#pre-registration-portal).
-
-## Pre-registration process
-
-![Pre-Registration Process](../../../../.gitbook/assets/pre-reg-process.png)
-
-### Create an application
-
-* User provides consent
-* The user provides demographic information
-* User uploads supporting documents (Proof of Address, Birth certificate, etc.)
-* A pre-registration request ID known as [AID](../../../identity-management/identifiers.md#rid-aid) is generated and provided to the user.
-
-_Note_: The AID was formerly called PRID in the pre-registration context.
-
-### Book an appointment
-
-* The user selects a registration center based on postal code, geo-location, etc.
-* The available slots are displayed
-* An option to cancel and re-book the appointment is made available
-
-### Receiving acknowledgement notifications
-
-* An acknowledgment is sent via email/SMS
-* The user can print the acknowledgment containing AID and QR code.
-* This QR code can be scanned at the in-person registration centers.
-
-### Download of pre-registration data at registration centers
-
-* The user provides the AID/ QR code at the registration center.
-* The registration form gets pre-filled with the pre-registration data.
-
-## Pre-registration module
-
-The relationship of the pre-registration module with other services is explained here.&#x20;
-
-{% hint style="info" %}
-**NOTE:** The numbers do not signify a sequence of operations or control flow.
-{% endhint %}
-
-![](../../../../.gitbook/assets/pre-reg-entity.png)
-
-1. Fetch [ID Schema](../../../../id-schema) details with the help of Syncdata service.
-2. Fetch a new OTP for the user on the login page.
-3. Log all events.
-4. Pre-Registration interacts with Keycloak via [`kernel-auth-adapater`](https://github.com/mosip/mosip-openid-bridge/tree/release-1.2.0). The Pre-Reg module communicates with endpoints of other MOSIP modules. However, to access these endpoints, a token is required. This token is obtained from Keycloak.
-5. The database used by pre-reg.
-6. Generate a new AID for the application.
-7. Send OTP in the email/SMS to the user.
-8. Registration Processor uses reverse sync to mark the pre-reg application as consumed.
-9. Registration clients use the [Datasync service](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-datasync-service) to get the pre-reg application details for a given registration center, booking date, and AID.
-10. Request data from the MasterData service to get data for dropdowns, locations, consent forms etc.
-
-## Services
-
-Pre-registration module consists of the following services:
-
-* [Application](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-application-service)
-* [Booking](https://github.com/mosip/mosip-ref-impl/tree/release-1.2.0/pre-registration-booking-service)
-* [Batchjob](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-batchjob)
-* [Datasync](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-datasync-service)
-* [Captcha](https://github.com/mosip/pre-registration/tree/release-1.2.0/pre-registration/pre-registration-captcha-service)
-
-For more details, refer to the [Pre-registration repo](https://github.com/pjoshi751/pre-registration/tree/develop).
-
-## Pre-registration portal
-
-MOSIP provides a **reference** implementation of the pre-registration portal that may be customized as per country needs. The sample implementation is available at the [reference implementation repository](https://github.com/mosip/mosip-ref-impl). For getting started with the pre-registration, refer to the [Pre-registration user guide](../test/pre-registration-user-guide.md)
-
-## Build and deploy
-
-To access the build and read through the deployment instructions, refer to the [Pre-registration repo](https://github.com/mosip/pre-registration/tree/release-1.2.0).
-
-## Configurations
-
-For details related to Pre-registration configurations, refer to [Pre-registration configuration](https://github.com/mosip/pre-registration/blob/release-1.2.0/docs/configuration.md).
-
-## Developer Guide
-
-To know more about the developer setup, read the [Pre-registration Developers Guide](https://docs.mosip.io/1.2.0/modules/pre-registration/pre-registration-developer-setup).
-
-## API
-
-Refer to [API Documentation](https://mosip.github.io/documentation/1.2.0/1.2.0.html).
-
-## Source code
-
-[Github repo](https://github.com/mosip/pre-registration/tree/release-1.2.0).
-
--->
-
-
-
-
-<!--
-
-## Overview
-
-The Pre-registration module is designed to streamline the identity registration process by allowing residents to complete preliminary steps online before visiting registration centers. This reduces wait times, improves data accuracy, and enhances the overall user experience.
+Pre-registration offers a comprehensive suite of capabilities that simplify and optimize the identity registration journey. By enabling residents to complete essential steps online—such as entering demographic details, uploading documents, and booking appointments—the module reduces wait times and improves data accuracy. Integrated verification mechanisms and secure data handling ensure both user convenience and system integrity. 
+These set of features collectively address challenges like manual data entry, appointment scheduling bottlenecks, and fragmented communication, resulting in a streamlined, secure, and user-friendly onboarding process for residents and efficient management for administrators.
 
 ## Core Features
 
-### 1. Operation Modes
+### 1. Login and Pre-Registration
+Residents can access the Pre-registration portal using login methods based on email or mobile number, ensuring flexibility and convenience for application creation.
 
-#### **Self-Service Mode**
-- **Independent Registration**: Residents can complete pre-registration on their own, using personal devices such as computers, tablets, or smartphones.
-- **Multi-language Interface**: Users can interact with the portal in their preferred language, supporting inclusivity and ease of use.
+#### Login
+Login allows residents to securely log in and initiate pre-registration for identity issuance using email or mobile number.
 
+- **Multi-channel Registration**: Create accounts using email or mobile number.
+- **OTP-based Verification**: Secure account verification via OTP sent to email or SMS, with retry options.
+- **CAPTCHA Security**: Prevents automated bot registrations.
 
+#### Pre-Registration
+Pre-registration enables residents to initiate identity applications online by entering details, uploading documents, and booking appointments before visiting registration centers.
 
+- **User Consent Management**: Explicit consent for data processing and acceptance of terms.
+- **Session Management**: Secure sessions with configurable timeout.
+- **Easy Application Creation**: The resident can navigate to the application creation page, enters the required details, reviews the information for accuracy, and submits the application.
+- **Document Upload**: Upload supporting documents (e.g., Proof of Address, Birth Certificate).
+- **Pre-registration ID Generation**: Each application is assigned a unique Application ID (AID), formerly known as PRID, for secure tracking and reference.  
+  The application creation process includes secure verification and document upload, with every application receiving a unique [AID](../../../identity-management/identifiers.md#rid-aid). This ensures reliable identification and status tracking throughout the pre-registration lifecycle.
+- **Multiple Applicant Support**: Register multiple family members or individuals in a single session.
+- **Add Applicant Functionality**: Easily add new applicants during the registration process.
 
-### 1. Registration and Login
-Users can create accounts using email or mobile, verify their identity with OTPs (One-Time Passwords), and use CAPTCHA for security. Pre-registration includes multi-language support, user consent management, secure login with OTP, session management, and options for language selection during login. These features aim to provide a secure, user-friendly, and compliant onboarding and login experience.
+#### Application Management and Status Tracking
+Manage and track pre-registration applications with a user-friendly dashboard, status indicators, and lifecycle controls.
 
-#### **Account Creation**
-- **Multi-channel Registration**: Create accounts using email or mobile number
-- **OTP-based Verification**: Secure account verification through SMS/email OTP
-- **CAPTCHA Security**: Bot prevention through CAPTCHA verification
-- **Multi-language Support**: Interface available in multiple languages as per country configuration
-- **User Consent Management**: Clear consent capture for data processing and terms acceptance
+**Application Status Management**
+Efficiently manage and track the status of pre-registration applications throughout their lifecycle. The system tracks each application's progress through distinct status.
 
-#### **Secure Login**
-- **OTP-based Authentication**: Login using mobile/email with OTP verification
-- **OTP Retry Mechanism**: Request new OTP if not received initially
-- **Session Management**: Secure session handling with configurable timeouts
-
-### 2. Demographic Data Management
-
-#### **Language Configuration**
-- **Data Capture Language Selection**: Choose specific languages for data entry (separate from UI language)
-- **Mandatory vs Optional Languages**: Support for countries with multiple mandatory and optional regional languages
-- **Multi-language Data Entry**: Enter and verify demographic details in multiple configured languages
-- **Language-specific Validation**: Validation rules adapted to each selected language
-
-#### **Personal Information Capture**
-- **Dynamic ID Schema Support**: Adapts to country-specific ID schema configurations
-- **Mandatory and Optional Fields**: Configurable field requirements based on local regulations (marked with *)
-- **Real-time Data Validation**: Instant validation of demographic information as users type
-- **Cross-language Verification**: Verify data accuracy across multiple selected languages
-
-#### **Family/Group Registration**
-- **Multiple Applicant Support**: Register multiple family members or individuals in a single session
-- **Add Applicant Functionality**: Seamless addition of new applicants during the process
-- **Relationship Mapping**: Define relationships between applicants
-- **Shared Document Upload**: Use common documents across multiple applications
-
-### 4. Document Management
-
-#### **Document Upload**
-- **Multiple Document Types**: Support for various document categories (Passport, Reference Identity Number, Proof of Address, Birth Certificate, etc.)
-- **Format Support**: Accept multiple file formats (PDF, JPEG, PNG)
-- **File Size Management**: Configurable file size limits with compression options
-- **Document Validation**: Basic validation for document format and size
-- **Browse and Select**: User-friendly file browser for document selection
-
-#### **Document Sharing and Reuse**
-- **"Same As" Functionality**: Family members can reuse the same Proof of Address document from existing applicants
-- **Document Preview**: Preview and verify uploaded documents before submission
-- **Document Status Tracking**: Track upload and validation status for each document
-- **Category-based Organization**: Organize documents by type and purpose
-
-### 5. Application Management and Status Tracking
-
-#### **Application Status Management**
-The system provides clear status tracking with the following states:
-
-- **Incomplete**: Only demographic details filled
-  - *User Action Required*: Upload documents and book an appointment
-- **Pending Appointment**: Demographic details and documents completed
-  - *User Action Required*: Book an appointment
-- **Booked**: Complete application with scheduled appointment
-  - *User Action Required*: Visit registration center on appointment date and time
-- **Expired**: Appointment date has passed
-  - *User Action Required*: Re-book an appointment
-- **Cancelled**: Appointment has been cancelled by user
-  - *User Action Required*: Re-book an appointment
-
-#### Application Dashboard
-- **Chronological Sorting**: Applications sorted by creation date (newest first)
-- **Visual Status Indicators**: Clear status display for each application
-- **Bulk Operations**: Select multiple applicants for group actions
-- **Auto-cleanup**: Consumed appointments automatically removed from dashboard
-- **Persistent Storage**: Expired and cancelled applications retained for rebooking
-
-#### Application Lifecycle Management
-- **Create New Applications**: Generate multiple applications as needed
-- **Data Modification**: Edit demographic data and documents before appointment
-- **Application Preview**: Comprehensive review before final submission
-- **Version Control**: Track changes and maintain data integrity
-
-### 6. Appointment Booking System
-
-#### Registration Center Discovery
-- **Recommended Centers**: Automatic display based on demographic details (postal code)
-- **Location-based Search**: Find centers using geo-location ("Nearby" option)
-- **Search Functionality**: Find centers by name, address, or specific criteria
-- **Center Information Display**: View center details, working hours, and available services
-- **Distance Calculation**: Show distance from user's location to registration centers
-- **Configurable Recommendations**: Customizable location hierarchy for center recommendations
-
-#### **Time Slot Management**
-- **Calendar Interface**: User-friendly calendar showing available dates with booking counts
-- **Time Categorization**: Slots organized by Morning and Afternoon sessions
-- **Real-time Availability**: Live display of available time slots
-- **Capacity Management**: Real-time availability based on center capacity
-- **Multi-applicant Booking**: Book appointments for multiple applicants simultaneously
-
-#### **Appointment Flexibility**
-- **Rescheduling**: Easy appointment date/time modification with 48-hour minimum notice (configurable)
-- **Cancellation**: Cancel appointments with automatic slot release for others
-- **Booking Confirmation**: Instant booking confirmation with unique appointment details
-- **Time Restrictions**: Configurable minimum time between booking and appointment
-
-### 7. Notification and Acknowledgment System
-
-#### **Multi-channel Notifications**
-- **Email Notifications**: Appointment confirmations, reminders, and updates
-- **SMS Alerts**: Critical updates and appointment reminders via SMS
-- **In-app Notifications**: Real-time notifications within the portal
-
-#### **Comprehensive Acknowledgment Features**
-- **Multiple Delivery Options**: 
-  - Print acknowledgment directly
-  - Download PDF version
-  - Email to specified addresses
-  - SMS to mobile numbers
-- **Additional Recipients**: Send acknowledgment to multiple contacts beyond the applicant
-- **Complete Information Package**: Includes name, pre-registration ID, age/DOB, contact details, center information, appointment date and time
-
-#### **Notification Types**
-- **Booking Confirmations**: Immediate confirmation upon successful booking
-- **Appointment Reminders**: Automated reminders before appointment dates
-- **Status Updates**: Notifications for application status changes
-- **Document Updates**: Alerts for document upload and validation status
-
-### 8. QR Code Generation and Management
-
-#### **QR Code Features**
-- **Unique QR Code**: Generate unique QR code for each application containing pre-registration ID
-- **Comprehensive Data Encoding**: QR code contains appointment and application information
-- **Registration Center Integration**: QR codes scannable at registration centers for quick data retrieval
-- **Printable Format**: Generate printable acknowledgment with embedded QR code
-- **Multi-format Support**: QR code available in print, digital, and shareable formats
+- **Incomplete**: Only demographic details are filled.
+  - *Action Required*: Upload documents and book an appointment.
+- **Pending Appointment**: Demographic details and documents are completed.
+  - *Action Required*: Book an appointment.
+- **Booked**: Application is complete with a scheduled appointment.
+  - *Action Required*: Visit the registration center on the appointment date and time.
+- **Expired**: Appointment date has passed.
+  - *Action Required*: Re-book an appointment.
+- **Cancelled**: Appointment has been cancelled by the user.
+  - *Action Required*: Re-book an appointment.
 
 
-### 9. Data Integration and Synchronization
+**Application Dashboard**
 
-#### **Registration Center Integration**
-- **Data Download**: Pre-registration data downloadable at registration centers
-- **Offline Support**: Support for offline data access at registration centers
-- **Data Pre-filling**: Auto-populate registration forms with pre-registration data
-- **Status Synchronization**: Bi-directional status updates between systems
+A centralized dashboard for residents to view, manage, and track all their pre-registration applications and statuses in one place.
 
-#### **Master Data Integration**
-- **Dynamic Dropdowns**: Real-time data from Master Data service for locations, centers
-- **Center Information**: Up-to-date registration center details and availability
-- **Holiday Management**: Integration with holiday calendar for slot availability
+- **Chronological Sorting**: Applications are sorted by creation date, with the newest first.
+- **Visual Status Indicators**: Each application displays a clear status.
+- **Bulk Operations**: Select multiple applicants for group actions.
+- **Persistent Storage**: Expired and cancelled applications remain visible for reference and re-booking.
 
-### 10. Advanced User Experience Features
+**Application Lifecycle Management**
 
-#### **Application Management Operations**
-- **Discard Applications**: Complete removal of unwanted applications
-- **Cancel Appointments**: Cancel appointments while preserving application data
-- **Modify Applications**: Edit demographic details and documents before appointments
-- **Bulk Selection**: Select multiple applicants for group operations
+Efficiently manage the entire lifecycle of pre-registration applications, from creation and modification to tracking and deletion.
 
-#### **Smart Recommendations**
-- **Automatic Center Suggestions**: Based on postal code and demographic data
-- **Intelligent Slot Management**: Show availability patterns and popular time slots
-- **User Preference Learning**: Adapt recommendations based on user behavior
-
-#### **Accessibility and Usability**
-- **Progressive Web App (PWA)**: Mobile-responsive design with app-like experience
-- **Accessibility Features**: WCAG compliance for users with disabilities
-- **Performance Optimization**: Improved load times and system responsiveness
-- **Cross-platform Compatibility**: Works across different devices and browsers
-
-### 11. Security and Privacy Features
-
-#### **Data Protection**
-- **Encryption**: End-to-end encryption for sensitive data
-- **Access Control**: Role-based access control for administrative functions
-- **Audit Logging**: Comprehensive audit trail for all user actions
-- **Data Retention**: Configurable data retention policies
-
-#### **Privacy Controls**
-- **Consent Management**: Granular consent controls for data usage
-- **Data Anonymization**: Options for data anonymization where applicable
-- **Right to Deletion**: Support for data deletion requests
-
-### 12. Administrative Features
-
-#### **Configuration Management**
-- **UI Specifications**: JSON-based configuration for form fields and document categories
-- **Business Rules**: Flexible configuration for booking restrictions (e.g., 48-hour minimum)
-
-#### **System Administration**
-- **User Management**: Administrative controls for user account management
-- **Center Management**: Tools for managing registration center information and capacity
-- **Slot Management**: Real-time monitoring and adjustment of appointment availability
-- **Workflow Configuration**: Customize application workflows and approval processes
-
-#### **Reporting and Analytics**
-- **Application Statistics**: Comprehensive reporting on application volumes and trends
-- **Center Utilization**: Reports on registration center usage and capacity
-- **Performance Metrics**: System performance and user experience metrics
-- **Status Analytics**: Track application status distribution and completion rates
+- **Create New Applications**: Generate multiple applications as needed.
+- **Data Modification**: Edit demographic data and documents before booking an appointment.
+- **Application Preview**: Residents can review all entered information—including demographic details and uploaded documents before final submission to ensure accuracy.
+- **Version Control**: Maintain a history of changes to application data, allowing users and administrators to track modifications and preserve data integrity throughout the application lifecycle.
+- **Delete Applications**: Permanently delete applications.
 
 
-
-The Pre-registration module serves as a crucial component in the MOSIP ecosystem, providing a user-friendly gateway to the identity registration process while maintaining high standards of security, privacy, and data integrity.
-
-
--->
+## 2. Appointment Booking
+The Appointment Booking allows users to select a registration center using criteria such as postal code or geo-location. Once a center is chosen, available time slots are displayed for scheduling. Users also have the flexibility to cancel or re-book appointments as needed.
 
 
+### Registration Center Discovery
+Discover and select registration centers using postal code, location-on-map, or search criteria for convenient appointment booking.
+
+- **Recommended Centers**: Automatically suggests centers based on demographic details (e.g., postal code).
+- **Location-based Search**: Find centers using geo-location with a "Nearby" option.
+- **Search Functionality**: Search centers by name, address, or other criteria.
+- **Center Information Display**: View details such as working hours and available services for each center.
+- **Distance Estimation**: Can display a map with nearby registration center indicators on it.
+
+### Time Slot Management
+Efficiently manage and book available time slots for identity registration appointments with real-time updates and capacity controls.
+
+- **Calendar Interface**: User-friendly calendar displays available dates and booking counts.
+- **Time Categorization**: Slots are organized by morning and afternoon sessions (configurable).
+- **Real-time Availability**: Live display of available time slots.
+- **Capacity Management**: Slot availability is managed based on center capacity.
+- **Multi-applicant Booking**: Book appointments for multiple applicants in a single session.
+
+### Appointment Flexibility
+Appointment Flexibility empowers users to easily reschedule or cancel appointments, ensuring adaptability to changing schedules.
+
+- **Rescheduling**: Modify appointment date/time easily, with a notice period which is configurable (e.g., 48 hours).
+- **Cancellation**: Cancel appointments and automatically release slots for others.
+- **Booking Confirmation**: Receive instant confirmation with unique appointment details.
+- **Time Restrictions**: Minimum time between booking and appointment is configurable.
+- **Booking or Re-Booking**: While booking or re-booking, only the current or future date and time is displayed.
+
+
+### 3. Notification and Acknowledgment System
+The Notification and Acknowledgment System ensures residents receive timely updates about their pre-registration status and appointments through email and SMS. Upon successful booking, users are provided with an acknowledgment that includes their AID and a QR code, which can be printed or presented digitally at registration centers for efficient processing.
+
+#### Multi-channel Notifications
+Stay informed with instant, multi-channel notifications and acknowledgments for every step of your pre-registration journey.
+
+- **Email Notifications**: Receive appointment confirmations, reminders, and updates via email.
+- **SMS Alerts**: Get critical updates and appointment reminders through SMS.
+
+#### Comprehensive Acknowledgment Features
+A single, unified system for delivering secure, real-time notifications and digital acknowledgments to residents throughout the pre-registration process.
+
+- **Multiple Delivery Options**:
+  - Print acknowledgment directly from the portal.
+  - Download acknowledgment as a PDF.
+  - Send acknowledgment via registered email.
+  - Send acknowledgment via SMS to the registered mobile numbers.
+- **Complete Information Package**: Acknowledgment includes AID and relevant application details.
+
+#### Notification Types
+The Notification and Acknowledgment System delivers timely updates and confirmations to residents throughout the pre-registration process via email and SMS.
+
+- **Booking Confirmations**: Immediate notification upon successful appointment booking, re-booking and cancellation.
+- **Status Updates**: Alerts for changes in application status.
+- **OTP Notifications**: OTPs for login.
+
+
+### 4. Registration Centers Data Integration and Synchronization
+
+At the registration center, residents present their AID or QR code, allowing staff to quickly retrieve and pre-fill registration forms with pre-registration data. This seamless integration streamlines the enrollment process and reduces manual data entry.
+
+#### Registration Center Integration
+Pre-registration integrates directly with the [Registration Client](../../../registration-management/registration-client/overview.md), allowing registration centers to securely access and download resident data for scheduled appointments. This streamlines registration and minimizes manual data entry.
+
+- **Data Download**: Registration centers can securely download pre-registration data for scheduled appointments.
+- **Offline Support**: Enables access to pre-registration data even when the registration center is offline.
+- **Data Pre-filling**: Automatically populates registration forms with resident data from pre-registration, reducing manual entry.
+
+#### Master Data Integration
+Integrates real-time master data to ensure accurate, up-to-date information for location selection, center details, and appointment scheduling.
+
+- **Dynamic Dropdowns**: Utilizes real-time data from the Master Data service to populate location and center selection fields.
+- **Center Information**: Provides up-to-date details on registration centers, including capacity and availability.
+- **Holiday Management**: Integrates with holiday calendars to manage appointment slot availability and prevent bookings on non-working days.
+
+## Security and Privacy Features
+The following section describes the security and privacy measures that protect resident data throughout the pre-registration process.
+
+### 1. Data Protection
+Pre-registration enables secure and efficient online identity onboarding.
+
+- **Encryption**: All PI data is protected with end-to-end encryption throughout the registration process.
+- **Audit Logging**: Every user action is recorded to provide a comprehensive audit trail for security and compliance.
+
+### 2. Privacy Controls
+Pre-registration ensures secure, privacy-focused handling of resident data with robust consent and anonymization controls.
+
+- **Consent Management**: Users provide granular consent for data usage, ensuring transparency and compliance.
+- **Data Anonymization**: Personal data is anonymized as per regulatory requirements, ensuring that sensitive information is masked or removed when not needed for processing. This protects resident privacy and supports compliance with data protection standards.
+- **Right to Deletion**: Residents can request deletion of their personal data in accordance with applicable privacy regulations.
+
+## Advanced User Experience Features
+
+### 1. Smart Recommendations
+- **Automatic Center Suggestions**: As mentioned above with [Registration Center Discovery](#registration-center-discovery), Pre-reg can also let a user find the recommended registration centers based on postal code and demographic information. This enhances user experience by eliminating the need to manually search in the portal for registration centers.
+- **Locate-On-Map**: Users can easily find the nearest registration centers on an interactive map.
+- **Safe Date Selection while Booking and Re-booking**: The system prevents users from selecting past dates during booking or re-booking, reducing manual errors.
