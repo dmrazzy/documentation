@@ -1,5 +1,9 @@
 # Features
 
+Content Coming Soon
+
+<!--
+
 ## Overview
 Pre-registration offers a comprehensive suite of capabilities that simplify and optimize the identity registration journey. By enabling residents to complete essential steps online—such as entering demographic details, uploading documents, and booking appointments—the module reduces wait times and improves data accuracy. Integrated verification mechanisms and secure data handling ensure both user convenience and system integrity. 
 These set of features collectively address challenges like manual data entry, appointment scheduling bottlenecks, and fragmented communication, resulting in a streamlined, secure, and user-friendly onboarding process for residents and efficient management for administrators.
@@ -130,7 +134,7 @@ The Notification and Acknowledgment System delivers timely updates and confirmat
 At the registration center, residents present their AID or QR code, allowing staff to quickly retrieve and pre-fill registration forms with pre-registration data. This seamless integration streamlines the enrollment process and reduces manual data entry.
 
 #### Registration Center Integration
-Pre-registration integrates directly with the [Registration Client](../../../registration-management/registration-client/overview.md), allowing registration centers to securely access and download resident data for scheduled appointments. This streamlines registration and minimizes manual data entry.
+Pre-registration integrates directly with the [Registration Client](../../../identity-issuance/registration-client/overview/README.md), allowing registration centers to securely access and download resident data for scheduled appointments. This streamlines registration and minimizes manual data entry.
 
 - **Data Download**: Registration centers can securely download pre-registration data for scheduled appointments.
 - **Offline Support**: Enables access to pre-registration data even when the registration center is offline.
@@ -165,3 +169,5 @@ Pre-registration ensures secure, privacy-focused handling of resident data with 
 - **Automatic Center Suggestions**: As mentioned above with [Registration Center Discovery](#registration-center-discovery), Pre-reg can also let a user find the recommended registration centers based on postal code and demographic information. This enhances user experience by eliminating the need to manually search in the portal for registration centers.
 - **Locate-On-Map**: Users can easily find the nearest registration centers on an interactive map.
 - **Safe Date Selection while Booking and Re-booking**: The system prevents users from selecting past dates during booking or re-booking, reducing manual errors.
+
+-->
