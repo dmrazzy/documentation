@@ -1,6 +1,5 @@
 # Features
 
-## Overview
 Pre-registration offers a comprehensive suite of capabilities that simplify and optimize the identity registration journey. By enabling residents to complete few essential steps online—such as entering demographic details and uploading documents to initiate pre-registration—the module reduces wait times and improves data accuracy. Integrated verification mechanisms and secure data handling ensure both user convenience and system integrity.
 These set of features collectively address challenges like manual data entry, appointment scheduling bottlenecks, and fragmented communication, resulting in a streamlined, secure, and user-friendly onboarding process for residents.
 
