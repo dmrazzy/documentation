@@ -131,3 +131,5 @@ Metrics include defect density, test coverage, execution coverage, tracking, and
 **Partner-Management-Portal**
 
 <figure><img src="../../../.gitbook/assets/pms-1.3.0-beta-2-sonar-report-pm-portal.png" alt=""><figcaption></figcaption></figure>
+
+For more on reports refer [here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beta.2).
