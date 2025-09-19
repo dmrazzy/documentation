@@ -60,7 +60,7 @@ icon: book-open
 **Version**: Partner Management System Revamp 1.2.2.2 (Patch)
 
 * **Date:** Coming Soon
-* [Release Notes](pms-revamp-v1.2.2.2.md)
+* [Release Notes](pms-revamp-v1.2.2.2/)
 
 **Version**: Registration v1.2.1.1 (Patch)
 
