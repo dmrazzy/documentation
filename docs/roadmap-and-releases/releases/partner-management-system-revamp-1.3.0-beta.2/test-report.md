@@ -1,211 +1,143 @@
 # Test Report
 
-
-
 ## Testing Scope
 
-The scope of testing is to verify fitment to the specification from the perspective of&#x20;
+The testing scope covers verification against specifications from the perspectives of:
 
-●      Functionality&#x20;
+- Functionality
+- Deployability
+- Configurability
+- Customizability
 
-●      Deployability&#x20;
+Verification is performed for both end users and System Integrators (SI), assessing configurability and extensibility to ensure readiness for multi-country deployments. As MOSIP is an “API First” platform, comprehensive automation testing for all MOSIP APIs is included, using an automation Test Rig.
 
-●      Configurability&#x20;
+Partner Management System Revamp testing scope includes:
 
-●      Customizability
-
-&#x20;
-
-Verification is performed not only from the end user perspective but also from the System Integrator (SI) point of view. Hence Configurability and Extensibility of the software is also assessed. This ensures the readiness of software for use in multiple countries. Since MOSIP is an “API First” product platform, Verification scope required comprehensive automation testing for all the MOSIP APIs. An automation Test Rig is created for the same.
-
-&#x20;
-
-The Partner Management System Revamp testing scope revolves around the following flows:
-
-&#x20;
-
-●      Features: Authentication Partner, Device Partner, FTM Partner, Partner Admin Certificate Trust Store, Partners, Policies, Partner-Policy Linking, SBI-Device, FTM Chip, Authentication Services, User Profile, User Dashboard, Root CA Certificate expiry notification, Intermediate certificate expiry notifications, Partner Certificate Notification expiry notification, API Key expiry, FTM Chip expiry, SBI ID expiry notifications, Weekly Summary notifications for Partner certificate expiry, API Key expiry, FTM Chip expiry, SBI ID.
-
-●      Multilingual (English/Arabic/French)
-
-●      Multi-browser testing: Using Edge, Firefox, and Chrome browsers (Windows/ Mac, Tablet, Extra-large screen)
-
-●      Regression Testing
-
-●      Integration Testing
+- Features: Authentication Partner, Device Partner, FTM Partner, Partner Admin Certificate Trust Store, Partners, Policies, Partner-Policy Linking, SBI-Device, FTM Chip, Authentication Services, User Profile, User Dashboard, Root CA Certificate expiry notification, Intermediate certificate expiry notifications, Partner Certificate Notification expiry notification, API Key expiry, FTM Chip expiry, SBI ID expiry notifications, Weekly Summary notifications for Partner certificate expiry, API Key expiry, FTM Chip expiry, SBI ID.
+- Multilingual support (English/Arabic/French)
+- Multi-browser testing: Edge, Firefox, Chrome (Windows/Mac, Tablet, Extra-large screen)
+- Regression Testing
+- Integration Testing
 
 ## Test Approach
 
-Persona based approach has been adopted to perform the IV\&V, by simulating test scenarios that resemble a real-time implementation.
+A persona-based approach is used for IV&V, simulating real-world scenarios. Personas represent user types and help determine relevant use cases. Testing addresses:
 
-&#x20;
+- Functionality
+- Deployability
+- Configurability
+- Customizability
 
-A Persona is a fictional character/user profile created to represent a user type that might use a product/or a service in a similar way. Persona based testing is a software testing technique that puts software testers in the customer's shoes, assesses their needs from the software and thereby determines use cases/scenarios that the customers will execute. The persona needs may be addressed through any of the following.
+Regression checks are performed using the “MOSIP Test Rig” automation suite, covering end-to-end test execution and reporting. Functional scenarios include packet creation, processing, UIN generation, and identity authentication via IDA. MOSIP Test Rig is open-source and can be enhanced by countries for SI validation. Persona classes include positive personas.
 
-&#x20;
+## Verified Configuration
 
-&#x20;
+Verification is performed on:
 
-●      Functionality&#x20;
+- Default configuration with verified settings for 3 languages (English/Arabic/French)
 
-●      Deployability&#x20;
+## Browser Compatibility Evaluations
 
-●      Configurability&#x20;
+**Desktop/Laptop:**
 
-●      Customizability
+| Sl.No | Browser  | Versions                      |
+|-------|----------|------------------------------|
+| 1     | Chrome   | Version 138.0.7204.185       |
+| 2     | Firefox  | Version 142.0                |
+| 3     | Edge     | Version 138.0.3351.121       |
+| 4     | Safari   | Version 18.6 (20621.3.11.11.3|
 
-&#x20;
+**Tablet:**
 
-The verification methods may differ based on how the need was addressed.
+| Sl.No | Browser  | Versions              |
+|-------|----------|----------------------|
+| 1     | Chrome   | Version 139.0.7258.62|
+| 2     | Firefox  | Version 141.0.3      |
+| 3     | Edge     | Version 139.0.3405.86|
 
-&#x20;
+**Extra-large screens:**
 
-For regression check, “MOSIP Test Rig” - an automation testing suite - which is indigenously designed and developed for supporting persona-based testing. MOSIP Test Rig covers the end-to-end test execution and reporting. The end-to-end functional test scenarios are written starting from creation of packet in registration center, processing the packet through the registration processor, generating UIN and authenticating identity using IDA through various permutation and combinations of cases being covered. MOSIP Test Rig will be an open-source artifact which can also be enhanced and used by countries to validate the SI deliveries before going live. Persona classes include positive personas.
+| Sl.No | Browser  | Versions                      |
+|-------|----------|------------------------------|
+| 1     | Chrome   | Version 138.0.7204.185       |
+| 2     | Firefox  | Version 142.0                |
+| 3     | Edge     | Version 138.0.3351.121       |
+| 4     | Safari   | Version 18.6 (20621.3.11.11.3)|
 
-&#x20;
+## Screen Sizes Used for UI Responsiveness Validation
 
-## Verified configuration
-
-Verification is performed on various configurations as mentioned below
-
-·      Default configuration with verified configuration for 3 Lang (English/Arabic/French)
-
-## Browser compatibility evaluations
-
-·      Browser versions tested on desktop/laptop
-
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Sl.No</td><td valign="top">Browser</td><td valign="top">Versions</td></tr><tr><td valign="top">1</td><td valign="top">Chrome</td><td valign="top">Version 138.0.7204.185</td></tr><tr><td valign="top">2</td><td valign="top">Firefox</td><td valign="top">Version 142.0</td></tr><tr><td valign="top">3</td><td valign="top">Edge</td><td valign="top">Version 138.0.3351.121</td></tr><tr><td valign="top">4</td><td valign="top">Safari</td><td valign="top">Version 18.6 (20621.3.11.11.3</td></tr></tbody></table>
-
-&#x20;
-
-·      Browser versions tested on tablet device
-
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Sl.No</td><td valign="top">Browser</td><td valign="top">Versions</td></tr><tr><td valign="top">1</td><td valign="top">Chrome</td><td valign="top">Version 139.0.7258.62</td></tr><tr><td valign="top">2</td><td valign="top">Firefox</td><td valign="top">Version 141.0.3</td></tr><tr><td valign="top">3</td><td valign="top">Edge</td><td valign="top">Version 139.0.3405.86</td></tr></tbody></table>
-
-&#x20;
-
-·      Browser versions tested on extra-large screens
-
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Sl.No</td><td valign="top">Browser</td><td valign="top">Versions</td></tr><tr><td valign="top">1</td><td valign="top">Chrome</td><td valign="top">Version 138.0.7204.185</td></tr><tr><td valign="top">2</td><td valign="top">Firefox</td><td valign="top">Version 142.0</td></tr><tr><td valign="top">3</td><td valign="top">Edge</td><td valign="top">Version 138.0.3351.121</td></tr><tr><td valign="top">4</td><td valign="top">Safari</td><td valign="top">Version 18.6 (20621.3.11.11.3)</td></tr></tbody></table>
-
-&#x20;
-
-## Screen sizes used for UI responsiveness validation
-
-Ø  Laptop/Desktop: 1920x1080
-
-Ø  Tablet: 1280X800
-
-Ø  Extra-large screens: 3840x2160
-
-Ø  Mac book: 2560 x 1664
-
-&#x20;
-
-&#x20;
+- Laptop/Desktop: 1920x1080
+- Tablet: 1280x800
+- Extra-large screens: 3840x2160
+- MacBook: 2560x1664
 
 ## Feature Health
 
-&#x20;
+## Test Execution Statistics
 
-## Test execution statistics
+### Functional Test Results by Modules
 
-### Functional test results by modules
+Functional testing was performed using black box methods based on specifications. Testing included GUI, system, end-to-end flows across languages and configurations, simulating multiple identity and UI schema configurations.
 
-Below are the test metrics by performing functional testing. The process followed was black box testing which based its test cases on the specifications of the software component under test. The functional test was performed in combination with individual module testing as well as integration testing. Test data were prepared in line with the user stories. Expected results were monitored by examining the user interface. The coverage includes GUI testing, System testing, End-To-End flows across multiple languages and configurations. The testing cycle included simulation of multiple identity schema and respective UI schema configurations.
+**Manual Verification (UI):**
 
-&#x20;
+| Total | Passed | Failed | Skipped (N/A) |
+|-------|--------|--------|--------------|
+| 5945  | 5890   | 32     | 23           |
 
-MANUAL VERIFICATION (UI):
+Test Rate: 99% with Pass Rate: 99%
 
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Total</td><td valign="top">Passed</td><td valign="top">Failed</td><td valign="top">Skipped (N/A)</td></tr><tr><td valign="top">5945</td><td valign="top">5890</td><td valign="top">32</td><td valign="top">23</td></tr><tr><td valign="top">Test Rate: 99% with Pass Rate: 99%</td><td valign="top"></td><td valign="top"></td><td valign="top"></td></tr></tbody></table>
+*Note: 23 test cases are descoped/not developed features.*
 
-Note: NA - 23 Test Cases which are descoped scenarios/not developed feature
+**Manual Verification (API):**
 
-&#x20;
+| Total | Passed | Failed | Skipped (N/A) |
+|-------|--------|--------|--------------|
+| 742   | 741    | 0      | 1            |
 
-&#x20;
+Test Rate: 99% with Pass Rate: 99%
 
-MANUAL VERIFICATION (API):
+*Note: 1 test case is descoped/not developed feature.*
 
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Total</td><td valign="top">Passed</td><td valign="top">Failed</td><td valign="top">Skipped (N/A)</td></tr><tr><td valign="top">742</td><td valign="top">741</td><td valign="top">0</td><td valign="top">1</td></tr><tr><td valign="top">Test Rate: 99% with Pass Rate: 99%</td><td valign="top"></td><td valign="top"></td><td valign="top"></td></tr></tbody></table>
+**API Test Rig:**
 
-&#x20;
+| Total | Passed | Failed | Skipped (N/A) | Ignored | Known Issues |
+|-------|--------|--------|--------------|---------|-------------|
+| 1068  | 1068   | 0      | 0            | 0       | 0           |
 
-Note: NA - 1 Test Cases which are descoped scenarios/not developed feature
+Test Rate: 100% with Pass Rate: 100%
 
-&#x20;
+*Note: API flows are tested via automation for both positive and negative scenarios; non-automated cases are tested manually.*
 
-&#x20;
+### Detailed Test Metrics
 
-API Test Rig:
+Metrics include defect density, test coverage, execution coverage, tracking, and efficiency:
 
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Total</td><td valign="top">Passed</td><td valign="top">Failed</td><td valign="top">Skipped (N/A)</td><td valign="top">Ignored</td><td valign="top">Known issues</td></tr><tr><td valign="top">1068</td><td valign="top">1068</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td><td valign="top">0</td></tr><tr><td valign="top">Test Rate: 100% with Pass Rate: 100%</td><td valign="top"></td><td valign="top"></td><td valign="top"></td><td valign="top"></td><td valign="top"></td></tr></tbody></table>
+- **Passed Test Cases Coverage:** (Passed tests / Total executed) x 100
+- **Failed Test Case Coverage:** (Failed tests / Total executed) x 100
 
-&#x20;
+### Tested Components
 
-Note- API flow is tested through automation for both positive and negative scenarios, while test cases that are not automated are tested manually.
+| Module/Repo                   | Compatible Version                              | Comments |
+|-------------------------------|-------------------------------------------------|----------|
+| partner-management-portal     | mosipqa/pmp-ui-v2:1.3.x                         |          |
+| partner-management-services   | mosipqa/partner-management-service:1.3.x        |          |
+| Policy Management service     | mosipqa/policy-management-service:1.3.x         |          |
+| Key-manager                   | mosipid/kernel-keymanager-service:1.3.0-beta.3  |          |
+| IDA Auth                      | mosipid/authentication-internal-service:1.2.1.0 |          |
+| Artifactory                   | mosipid/artifactory-server:1.2.0.2              |          |
+| eSignet                       | mosipid/esignet:1.4.1                           |          |
+| Notifier (Kernel)             | mosipid/kernel-notification-service:1.2.0.1     |          |
+| Audit manager                 | mosipid/kernel-auditmanager-service:1.2.0.1     |          |
+| ID Repro                      | mosipid/id-repository-identity-service:1.2.2.0  |          |
+| datashare                     | mosipid/data-share-service:1.2.0.1              |          |
+| Keycloak                      | 1.2.0.1                                         |          |
+| config-server                 | mosipqa/kernel-keymanager-service:1.3.x         |          |
+| Websub                        | mosipid/websub-service:1.2.0.1                  |          |
+| postgres                      | mosipid/artifactory-server:1.2.0.2              |          |
 
-&#x20;
+## Sonar Report
 
-### Detailed Test metrics
+- Partner-Management-Service
+- Partner-Management-Portal
 
-Below are the detailed test metrics by performing Manual/automation testing. The project metrics are derived from Defect density, Test coverage, Test execution coverage, test tracking and efficiency.
-
-The various metrics that assist in test tracking and efficiency are as follows:
-
-●     Passed Test Cases Coverage: It measures the percentage of passed test cases. (Number of passed tests / Total number of tests executed) x 100
-
-●     Failed Test Case Coverage: It measures the percentage of all failed test cases. (Number of failed tests / Total number of test cases executed) x 100
-
-&#x20;
-
-### Tested with components:
-
-&#x20;
-
-<table data-header-hidden><thead><tr><th valign="top"></th><th valign="top"></th><th valign="top"></th></tr></thead><tbody><tr><td valign="top">Module/Repo</td><td valign="top">Compatible Version</td><td valign="top">Comments</td></tr><tr><td valign="top">partner-management-portal</td><td valign="top">mosipqa/pmp-ui-v2:1.3.x</td><td valign="top"> </td></tr><tr><td valign="top">partner-management-services</td><td valign="top">mosipqa/partner-management-service:1.3.x</td><td valign="top"> </td></tr><tr><td valign="top">Policy Management service</td><td valign="top">mosipqa/policy-management-service:1.3.x</td><td valign="top"> </td></tr><tr><td valign="top">Key-manager</td><td valign="top">mosipid/kernel-keymanager-service:1.3.0-beta.3</td><td valign="top"> </td></tr><tr><td valign="top">IDA Auth</td><td valign="top">mosipid/authentication-internal-service:1.2.1.0</td><td valign="top"> </td></tr><tr><td valign="top">Artifactory</td><td valign="top">mosipid/artifactory-server:1.2.0.2</td><td valign="top"> </td></tr><tr><td valign="top">eSignet</td><td valign="top">mosipid/esignet:1.4.1</td><td valign="top"> </td></tr><tr><td valign="top">Notifier (Kernel)</td><td valign="top">mosipid/kernel-notification-service:1.2.0.1</td><td valign="top"> </td></tr><tr><td valign="top">Audit manager</td><td valign="top">mosipid/kernel-auditmanager-service:1.2.0.1</td><td valign="top"> </td></tr><tr><td valign="top">ID Repro</td><td valign="top">mosipid/id-repository-identity-service:1.2.2.0</td><td valign="top"> </td></tr><tr><td valign="top">datashare</td><td valign="top">mosipid/data-share-service:1.2.0.1</td><td valign="top"> </td></tr><tr><td valign="top">Keycloak</td><td valign="top">1.2.0.1</td><td valign="top"> </td></tr><tr><td valign="top">config-server</td><td valign="top">mosipqa/kernel-keymanager-service:1.3.x</td><td valign="top"> </td></tr><tr><td valign="top">Websub</td><td valign="top">mosipid/websub-service:1.2.0.1</td><td valign="top"> </td></tr><tr><td valign="top">postgres</td><td valign="top">mosipid/artifactory-server:1.2.0.2</td><td valign="top"> </td></tr></tbody></table>
-
-### &#x20;
-
-### &#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-### Sonar Report
-
-&#x20;
-
-·      Partner-Management-Service:
-
-&#x20;
-
-&#x20;
-
-&#x20;
-
-·       Partner-Management-Portal:
-
-&#x20;
