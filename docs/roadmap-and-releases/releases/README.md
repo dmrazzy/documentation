@@ -20,7 +20,7 @@ icon: book-open
 **Version**: Partner Management System Revamp 1.3.0-beta.2
 
 * Date: 29th August, 2025
-* [Release Notes](partner-management-system-revamp-1.3.0-beta.2.md)&#x20;
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.2/)&#x20;
 
 **Version**: Android Registration Client v0.12.0
 
@@ -60,7 +60,7 @@ icon: book-open
 **Version**: Partner Management System Revamp 1.2.2.2 (Patch)
 
 * **Date:** Coming Soon
-* [Release Notes](pms-revamp-v1.2.2.2/)
+* [Release Notes](pms-revamp-v1.2.2.2.md)
 
 **Version**: Registration v1.2.1.1 (Patch)
 
