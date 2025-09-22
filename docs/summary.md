@@ -317,6 +317,7 @@
     * [Android Registration Client v0.11.0](roadmap-and-releases/releases/android-registration-client-v0.11.0/README.md)
       * [Test Report](roadmap-and-releases/releases/android-registration-client-v0.11.0/test-report.md)
     * [API Test Commons Releases](roadmap-and-releases/releases/api-test-commons-releases/README.md)
+      * [v1.3.4](roadmap-and-releases/releases/api-test-commons-releases/v1.3.4.md)
       * [v1.3.3](roadmap-and-releases/releases/api-test-commons-releases/v1.3.3.md)
       * [v1.3.2](roadmap-and-releases/releases/api-test-commons-releases/v1.3.2.md)
       * [v1.3.1](roadmap-and-releases/releases/api-test-commons-releases/v1.3.1.md)
