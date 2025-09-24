@@ -2,14 +2,14 @@
 
 ## Overview
 
-This guide provides comprehensive guidelines for writing professional, user-centric features pages for MOSIP modules. Based on the collaborative refinement of the Pre-registration features page, these guidelines ensure consistency, clarity, and industry-standard quality across all MOSIP documentation.
+This guide provides comprehensive guidelines for writing professional, user-centric features pages for MOSIP modules. These guidelines ensure consistency, clarity, and industry-standard quality across all MOSIP documentation.
 
 ## Core Principles
 
 ### **1. User-Centric Approach**
 - **Lead with benefits**: Start with what users can achieve, not just what the system does
 - **Problem-solution mapping**: Each feature should address a specific user challenge
-- **Multi-stakeholder focus**: Consider residents, administrators, developers, and integration partners
+- **Multi-stakeholder focus**: Consider end users, administrators, developers, and integration partners
 
 ### **2. Progressive Information Architecture**
 - **Logical flow**: Organize features by user journey, not technical architecture
@@ -70,12 +70,12 @@ This guide provides comprehensive guidelines for writing professional, user-cent
 ### **Feature Naming Conventions**
 
 #### ** Good Examples:**
-- "Multi-channel Registration" (describes capability)
-- "Smart Appointment Booking" (benefit-focused)
+- "Multi-channel Data Collection" (describes capability)
+- "Smart Process Management" (benefit-focused)
 - "Real-time Status Tracking" (outcome-oriented)
 
 #### ** Avoid:**
-- "Registration Module" (too generic)
+- "Data Module" (too generic)
 - "API Integration" (too technical without context)
 - "Database Management" (system-focused, not user-focused)
 
@@ -83,19 +83,19 @@ This guide provides comprehensive guidelines for writing professional, user-cent
 
 #### **1. Lead with User Value**
 ```markdown
- Good: "Residents can complete registration prep from home, reducing center visit time by up to 70%"
- Avoid: "System provides online registration functionality"
+ Good: "Users can complete their process from home, reducing center visit time by up to 70%"
+ Avoid: "System provides online functionality"
 ```
 
 #### **2. Use Action-Oriented Language**
 ```markdown
- Good: "Streamline identity registration with online pre-enrollment"
- Avoid: "The system allows for identity registration to be done online"
+ Good: "Streamline identity processing with online enrollment"
+ Avoid: "The system allows for identity processing to be done online"
 ```
 
 #### **3. Provide Specific Benefits**
 ```markdown
- Good: "Real-time availability updates prevent booking conflicts"
+ Good: "Real-time availability updates prevent scheduling conflicts"
  Avoid: "System updates availability information"
 ```
 
@@ -136,7 +136,7 @@ This guide provides comprehensive guidelines for writing professional, user-cent
 
 ### **1. User Journey Organization**
 ```markdown
-Login → Data Entry → Document Upload → Booking → Confirmation → Center Visit
+Login → Data Entry → Document Upload → Processing → Confirmation → Completion
 ```
 
 ### **2. Stakeholder-Based Organization**
@@ -166,7 +166,7 @@ Login → Data Entry → Document Upload → Booking → Confirmation → Center
 ```markdown
 # Features (H1 - Page Title)
 ## Core Features (H2 - Major Sections)
-### 1. User Registration (H3 - Feature Groups)
+### 1. User Management (H3 - Feature Groups)
 #### Account Creation (H4 - Specific Features)
 ```
 
@@ -250,7 +250,7 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 - Emphasize compliance and audit capabilities
 - Highlight user control and consent management
 
-### **For Registration Modules:**
+### **For Processing Modules:**
 - Emphasize efficiency and user experience
 - Focus on workflow optimization
 - Highlight offline capabilities and data synchronization

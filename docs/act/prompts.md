@@ -15,4 +15,15 @@ We have also taken help from copilot which has kept it in line with similar to s
 The whole MOSIP documentation has such pages for several other modules but not written in a standard and consistent way
 Can you read through the docs and also how other software products have written their features page In their docs and Identify the merits this page now brings
 
+## Registration client features
+Read the guidelines we have put in features-writing-guidelines.md to write 'features' page
+MOSIP is foundational ID platform
+Registration Client is a MOSIP Module
+This is the overview or landing page for Registration Client
+This page also has features, although, mixed with whole content
+Extract the content which makes for the features content from 'Registration Client' Overview page, also attached here on Registration Client' Features page,  as per guideline set in features-writing-guidelines.md
+
+
+
+
 
