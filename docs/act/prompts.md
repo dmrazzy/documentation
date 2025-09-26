@@ -1,3 +1,12 @@
+
+#
+
+Many software organizations face the challenge of keeping documentation up-to-date with rapid CI/CD releases. Often, new features are only briefly mentioned in release notes, especially if they are technical, database, or code improvements that do not immediately impact the UI or user guides.
+
+How do leading organizations address this documentation gap? Where should technical features and improvements be documented for clarity and consistency?
+
+Suggest best practices and recommended locations within documentation to capture and detail such updates, drawing from examples in top software product documentation.
+
 ## Landing page of Pre-Registration Module
 
 MOSIP is foundational ID platform
