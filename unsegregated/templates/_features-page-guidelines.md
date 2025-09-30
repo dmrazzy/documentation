@@ -1,5 +1,4 @@
-# MOSIP Features Page Writing Guidelines
-
+# Features Page Writing Guidelines
 ## Overview
 
 This guide provides comprehensive guidelines for writing professional, user-centric features pages for MOSIP modules. These guidelines ensure consistency, clarity, and industry-standard quality across all MOSIP documentation.
