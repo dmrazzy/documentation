@@ -25,7 +25,7 @@ This guide provides comprehensive guidelines for writing professional, user-cent
 ### **Required Sections:**
 
 #### **1. Overview Section**
-```markdown
+
 # Features
 
 ## Overview
@@ -33,13 +33,11 @@ This guide provides comprehensive guidelines for writing professional, user-cent
 - Explain the module's purpose and value proposition
 - Address key challenges the module solves
 - Summarize the collective benefit of all features
-```
 
-#### **2. Core Features (Organized by User Journey)**
-```markdown
-## Core Features
+## Core Features (Organized by User Journey)
 
-### 1. [Primary User Journey Step]
+
+### [Primary User Journey Step]
 [Brief description of this step's purpose]
 
 #### [Specific Feature Name]
@@ -48,98 +46,87 @@ This guide provides comprehensive guidelines for writing professional, user-cent
 - **[Capability 1]**: Detailed description with user benefit
 - **[Capability 2]**: Detailed description with user benefit
 - **[Capability 3]**: Detailed description with user benefit
-```
 
-#### [Advanced Features]
-```markdown
-## Advanced Features
+
+## [Advanced Features]
 
 ### [Technical/Administrative Capabilities]
 [Features for power users, administrators, or technical implementers]
-```
 
-#### **Integration and Security (if applicable)**
-```markdown
+
+### Integration and Security (if applicable)
+
 ## [Integration/Security] Features
 [System-level capabilities, API integrations, security measures]
-```
+
 
 ## Writing Guidelines
 
-### **Feature Naming Conventions**
+### Feature Naming Conventions
 
-#### ** Good Examples:**
+#### Good Examples:
 - "Multi-channel Data Collection" (describes capability)
 - "Smart Process Management" (benefit-focused)
 - "Real-time Status Tracking" (outcome-oriented)
 
-#### ** Avoid:**
+#### Avoid:
 - "Data Module" (too generic)
 - "API Integration" (too technical without context)
 - "Database Management" (system-focused, not user-focused)
 
-### **Description Writing Rules**
+### Description Writing Rules
 
-#### **1. Lead with User Value**
-```markdown
+#### Lead with User Value
+
  Good: "Users can complete their process from home, reducing center visit time by up to 70%"
  Avoid: "System provides online functionality"
-```
 
-#### **2. Use Action-Oriented Language**
-```markdown
+
+#### Use Action-Oriented Language**
  Good: "Streamline identity processing with online enrollment"
  Avoid: "The system allows for identity processing to be done online"
-```
 
-#### **3. Provide Specific Benefits**
-```markdown
+#### Provide Specific Benefits
  Good: "Real-time availability updates prevent scheduling conflicts"
  Avoid: "System updates availability information"
-```
 
-### **Bullet Point Standards**
 
-#### **Format Pattern:**
-```markdown
-- **[Capability Name]**: [What it does] + [why it matters/benefit]
-```
+### Bullet Point Standards
 
-#### **Examples:**
-```markdown
-- **Multi-language Support**: Interface available in multiple languages, ensuring accessibility for diverse populations
-- **Offline Capability**: Continue operations without internet connectivity, maintaining service continuity
-- **Automatic Validation**: Real-time data validation prevents errors and improves data quality
-```
+#### Format Pattern:
+- [Capability Name]**: [What it does] + [why it matters/benefit]
+
+#### Examples:
+- Multi-language Support: Interface available in multiple languages, ensuring accessibility for diverse populations
+- Offline Capability: Continue operations without internet connectivity, maintaining service continuity
+- Automatic Validation: Real-time data validation prevents errors and improves data quality
 
 ## Cross-Reference Strategy
 
-### **Linking Guidelines**
+### Linking Guidelines
 
-#### **1. Link to User Guides**
-```markdown
-#### **[Feature Name]** → [See User Guide: [Section Name]](../path/to/user-guide.md#section-anchor)
-```
+#### Link to User Guides
 
-#### **2. Link to Technical Documentation**
-```markdown
-- **API Integration**: Connect with existing systems → [Integration Guide](../integration/api-guide.md)
-```
+#### [Feature Name] → [See User Guide: [Section Name]](../path/to/user-guide.md#section-anchor)
 
-#### **3. Internal Cross-References**
-```markdown
-- **Related Feature**: Works with [Feature Name](#feature-anchor) to provide complete workflow
-```
+#### Link to Technical Documentation
+
+- API Integration: Connect with existing systems → [Integration Guide](../integration/api-guide.md)
+
+#### Internal Cross-References
+
+- Related Feature: Works with [Feature Name](#feature-anchor) to provide complete workflow
+
 
 ## Content Organization Patterns
 
-### **1. User Journey Organization**
-```markdown
-Login → Data Entry → Document Upload → Processing → Confirmation → Completion
-```
+### User Journey Organization**
 
-### **2. Stakeholder-Based Organization**
-```markdown
+Login → Data Entry → Document Upload → Processing → Confirmation → Completion
+
+
+### Stakeholder-Based Organization**
+
 ## For End Users
 [User-facing features]
 
@@ -148,70 +135,69 @@ Login → Data Entry → Document Upload → Processing → Confirmation → Com
 
 ## For Developers
 [Integration and customization features]
-```
 
-### **3. Feature Category Organization**
-```markdown
-## Core Functionality
-## Advanced Capabilities
-## Security & Privacy
-## Integration Features
-## Administrative Tools
-```
+
+## Feature Category Organization**
+
+### Core Functionality
+### Advanced Capabilities
+### Security & Privacy
+### Integration Features
+### Administrative Tools
 
 ## Formatting Standards
 
-### **Heading Hierarchy**
-```markdown
-# Features (H1 - Page Title)
-## Core Features (H2 - Major Sections)
-### 1. User Management (H3 - Feature Groups)
+### Heading Hierarchy
+
+#### Features (H1 - Page Title)
+#### Core Features (H2 - Major Sections)
+#### User Management (H3 - Feature Groups)
 #### Account Creation (H4 - Specific Features)
-```
 
-### **Visual Elements**
 
-#### **Use Icons/Emojis Sparingly:**
-```markdown
+## Visual Elements
+
+### Do not use emojis in professional documentation
+
 ## Security Features (appropriate for major sections)
 - **Encryption**: End-to-end data protection (no emoji needed)
-```
 
-#### **Consistent Formatting:**
-```markdown
-- **Bold Feature Names**: Regular description text
-- *Italic for emphasis*: When highlighting important notes
+
+#### Consistent Formatting:
+
+- Bold Feature Names**: Regular description text
+- Italic for emphasis*: When highlighting important notes
 - `Code formatting`: For technical terms, IDs, or specific values
-```
 
-### **Status Indicators**
-```markdown
-- **Feature Name** → [Status link](user-guide.md): Description with action required
-```
+
+### Status Indicators
+
+- Feature Name → [Status link](user-guide.md): Description with action required
+
 
 ## Content Quality Checklist
 
-### **Before Publishing, Verify:**
+### Before Publishing, Verify
 
-#### **Content Completeness:**
+#### Content Completeness
 - [ ] Overview explains module purpose and value
 - [ ] All major features documented with benefits
 - [ ] Cross-references to implementation guides included
 - [ ] Technical and business features balanced
 
-#### **User Experience:**
+#### User Experience:
 - [ ] Features organized by user workflow
 - [ ] Each feature has clear benefit statement
 - [ ] Language is accessible to target audience
 - [ ] Multiple stakeholder needs addressed
 
-#### **Technical Accuracy:**
+#### Technical Accuracy
 - [ ] Feature descriptions match actual functionality
 - [ ] Links to user guides and APIs work correctly
 - [ ] Technical terms used consistently
 - [ ] Integration points clearly documented
 
-#### **Professional Standards:**
+#### Professional Standards
 - [ ] Consistent formatting throughout
 - [ ] Grammar and spelling verified
 - [ ] Industry-standard terminology used
@@ -219,32 +205,31 @@ Login → Data Entry → Document Upload → Processing → Confirmation → Com
 
 ## Advanced Techniques
 
-### **1. Benefit-First Writing**
-```markdown
+### Benefit-First Writing
+
 Instead of: "System provides OTP functionality"
 Write: "Secure two-factor authentication protects user accounts with one-time passwords"
-```
 
-### **2. Context-Rich Descriptions**
-```markdown
+
+### Context-Rich Descriptions
+
 Instead of: "Document upload feature"
 Write: "Upload multiple document types (PDF, JPEG, PNG) with automatic validation and family sharing options"
-```
 
-### **3. Integration Storytelling**
-```markdown
+
+### Integration Storytelling
+
 Instead of: "API integration available"
 Write: "Seamlessly integrate with existing systems through RESTful APIs, enabling organizations to embed functionality into their workflows"
-```
 
-### **4. Progressive Disclosure**
-```markdown
+
+### Progressive Disclosure
+
 Basic Feature → Detailed Capabilities → Technical Implementation → Advanced Configuration
-```
 
 ## Module-Specific Adaptations
 
-### **For Identity Management Modules:**
+### For Identity Management Modules:
 - Focus on security, privacy, and data protection
 - Emphasize compliance and audit capabilities
 - Highlight user control and consent management
@@ -266,19 +251,19 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 
 ## Review Process
 
-### **1. Self-Review Checklist**
+### Self-Review Checklist
 - Does each feature clearly state user benefits?
 - Are features organized logically?
 - Is the language accessible to the target audience?
 - Are all links functional and relevant?
 
-### **2. Peer Review Focus Areas**
+### Peer Review Focus Areas
 - Content accuracy and completeness
 - User experience and clarity
 - Consistency with other modules
 - Technical correctness
 
-### **3. User Testing Questions**
+### User Testing Questions
 - Can users quickly find relevant features?
 - Do feature descriptions match user expectations?
 - Are implementation steps clear and actionable?
@@ -286,13 +271,13 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 
 ## Maintenance Guidelines
 
-### **Regular Updates:**
+### Regular Updates
 - Review quarterly for accuracy
 - Update links and cross-references
 - Add new features as they're released
 - Refresh user benefit language
 
-### **Version Control:**
+### Version Control
 - Document major changes in commit messages
 - Maintain changelog for significant updates
 - Tag versions for release alignment
@@ -300,8 +285,8 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 
 ## Examples and Templates
 
-### **Feature Template:**
-```markdown
+### Feature Template
+
 #### [Feature Name] → [Optional User Guide Link]
 [One-sentence description of what users can accomplish]
 
@@ -310,9 +295,9 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 - **[Capability 3]**: [What it does] and [why it benefits users]
 ```
 
-### **Section Template:**
-```markdown
-### [Feature Group Number]. [Feature Group Name]
+### Section Template
+
+#### [Feature Group Number]. [Feature Group Name]
 [2-3 sentence description of this group's purpose and value]
 
 #### [First Feature in Group]
@@ -320,17 +305,16 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 
 #### [Second Feature in Group]
 [Feature content following template above]
-```
 
 ## Success Metrics
 
-### **Quality Indicators:**
+### Quality Indicators
 - Users can understand feature benefits in under 30 seconds
 - Implementation guidance is one click away
 - Content follows consistent structure across modules
 - Professional appearance matches industry standards
 
-### **User Experience Metrics:**
+### User Experience Metrics
 - Reduced time to find relevant features
 - Increased user guide engagement through cross-links
 - Higher user satisfaction with documentation clarity
@@ -338,27 +322,27 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 
 ## Reference Resources
 
-### **Industry Examples to Study:**
-- **Stripe Documentation**: API features and integration guides
-- **GitHub Features**: Developer-focused capability descriptions
-- **Atlassian Products**: Enterprise feature organization
-- **AWS Services**: Technical depth with business context
-- **Microsoft Azure**: Multi-stakeholder feature presentation
+### Industry Examples to Study
+- Stripe Documentation: API features and integration guides
+- GitHub Features: Developer-focused capability descriptions
+- Atlassian Products: Enterprise feature organization
+- AWS Services: Technical depth with business context
+- Microsoft Azure: Multi-stakeholder feature presentation
 
-### **Writing Resources:**
-- **Plain Language Guidelines**: [plainlanguage.gov](https://plainlanguage.gov)
-- **Technical Writing Best Practices**: Google Developer Documentation Style Guide
-- **Information Architecture**: Nielsen Norman Group guidelines
+### Writing Resources
+- Plain Language Guidelines: [plainlanguage.gov](https://plainlanguage.gov)
+- Technical Writing Best Practices: Google Developer Documentation Style Guide
+- Information Architecture: Nielsen Norman Group guidelines
 
 ## Tools and Resources
 
-### **Recommended Tools:**
-- **Markdown Editors**: Typora, Mark Text, or VS Code with Markdown extensions
-- **Link Checkers**: markdown-link-check for automated link validation
-- **Grammar Tools**: Grammarly or Hemingway Editor for clarity
-- **Accessibility Checkers**: WAVE or axe for accessibility compliance
+### Recommended Tools:
+- Markdown Editors: Typora, Mark Text, or VS Code with Markdown extensions
+- Link Checkers: markdown-link-check for automated link validation
+- Grammar Tools: Grammarly or Hemingway Editor for clarity
+- Accessibility Checkers: WAVE or axe for accessibility compliance
 
-### **Quality Assurance:**
+### Quality Assurance
 - **Readability**: Aim for Grade 8-10 reading level
 - **Scan-ability**: Use headings every 3-4 paragraphs
 - **Link Density**: 1-2 relevant links per major feature
@@ -368,13 +352,12 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 
 ## Getting Started
 
-1. **Choose your module** and review existing features documentation
-2. **Map user journeys** for your module's primary use cases
-3. **Apply this template** to organize and write feature content
-4. **Cross-reference** with user guides and technical documentation
-5. **Review and refine** using the quality checklist
-6. **Get feedback** from users and stakeholders
-7. **Iterate and improve** based on usage analytics and feedback
+1. Choose your module and review existing features documentation
+2. Map user journeys for your module's primary use cases
+3. Apply this template to organize and write feature content
+4. Cross-reference with user guides and technical documentation
+5. Review and refine using the quality checklist
+6. Get feedback from users and stakeholders
+7. Iterate and improve based on usage analytics and feedback
 
 This guideline ensures that all MOSIP modules maintain consistent, professional, and user-friendly features documentation that matches industry standards while serving the diverse needs of our global user base.
-

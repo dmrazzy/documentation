@@ -6,218 +6,231 @@ These features collectively address challenges like data security, offline opera
 
 ## Core Features
 
-### 1. User Authentication and Access Control
-Secure operator authentication and role-based access management ensure authorized personnel can perform registration activities with appropriate permissions.
+### 1. Operator Authentication and Access Management
+Secure operator authentication with role-based permissions ensures authorized personnel can perform registration activities efficiently while maintaining data security.
 
-#### Operator Login and Role Management
-Multi-level operator authentication with role-based permissions for secure registration center operations.
+#### Multi-Role Operator Access → [See User Guide: Who operates the Registration Client](../../../registration-client-user-guide.md#who-operates-the-registration-client)
+Professional operator management with distinct roles and capabilities for comprehensive registration center operations.
 
-- **Dual Operator Roles**: Support for Supervisor and Officer roles with distinct capabilities and permissions
-- **Secure Authentication**: Robust login system ensuring only authorized personnel can access the client
-- **Language Selection**: Operators can choose their preferred operation language on the login screen
-- **Session Management**: Secure session handling with appropriate timeout controls
+- **Supervisor Authority**: Complete registration oversight with exclusive packet approval/rejection rights, plus all officer capabilities
+- **Officer Operations**: Comprehensive registration tasks including onboarding, data synchronization, software upgrades, packet management, and correction processing
+- **Secure Authentication**: Robust login system with operator credential verification and session management
+- **Language Selection**: Operators choose their preferred interface language during login for optimal usability
 
-#### Role-Based Permissions
-Granular permission system that ensures operators can only perform activities within their authorized scope.
+#### Operator Onboarding and Biometric Update → [See User Guide: Update Operator Biometrics](../../../registration-client-user-guide.md#update-operator-biometrics)
+Self-service operator registration and biometric management for maintaining current operator credentials.
 
-- **Officer Capabilities**: Onboarding, data synchronization, software upgrades, packet export/upload, viewing re-registration packets, correction processing, and exception authentication
-- **Supervisor Authority**: All officer capabilities plus exclusive rights to approve or reject registrations
-- **Administrative Controls**: Secure oversight mechanisms for registration quality assurance
+- **Self-Service Onboarding**: Operators can register and update their biometric credentials anytime
+- **Biometric Credential Management**: Secure storage and validation of operator biometric data
+- **Flexible Updates**: Real-time operator biometric updates without system downtime
 
-### 2. Multi-Modal Data Capture
-Comprehensive data collection capabilities that capture complete resident identity information through multiple channels and formats.
+### 2. Multi-Language Data Capture and Processing
+Comprehensive language support ensuring accessibility and accuracy across diverse populations and operator preferences.
 
-#### Demographic Data Collection
-Flexible demographic information capture with multi-language support and validation mechanisms.
+#### Comprehensive Language Support → [See User Guide: Multiple language support](../../../registration-client-user-guide.md#multiple-language-support)
+Flexible multi-language interface and data collection supporting diverse populations and operator needs.
 
-- **Multi-language Input**: Support for data collection in multiple languages simultaneously during registration
-- **Configurable Language Selection**: Operators can choose from configured languages before starting registration processes
-- **Real-time Validation**: Instant validation of demographic data to ensure accuracy and completeness
-- **UI-Driven Forms**: Dynamic form generation based on configurable UI specifications
+- **Operator Interface Language**: Operators select their preferred language during login for optimal workflow efficiency
+- **Multi-Language Data Entry**: Simultaneous data capture in multiple configured languages during registration process
+- **Configurable Language Options**: Operators choose from pre-configured languages before starting registration processes
+- **Real-Time Language Switching**: Dynamic language selection without interrupting registration workflows
 
-#### Biometric Capture Integration
-Seamless integration with biometric devices for secure and accurate identity verification.
+### 3. Complete Registration Process Management
+End-to-end registration workflows supporting multiple registration types with comprehensive data capture and validation.
 
-- **SBI Compliance**: Integration with Secure Biometric Interface (SBI) for standardized biometric capture
-- **Multi-Device Support**: Connect with multiple biometric devices through port scanning (4501-4600 range)
-- **Device Auto-Discovery**: Automatic detection and connection to available biometric devices
-- **Quality Assessment**: Real-time biometric quality evaluation and feedback
+#### New Registration Processing → [See User Guide: New registration](../../../registration-client-user-guide.md#new-registration)
+Complete identity enrollment for first-time applicants with comprehensive data capture and validation.
 
-#### Document Management
-Comprehensive document capture and management for supporting identity proofs and verification.
+- **Consent Management**: Systematic consent capture for data storage and utilization compliance
+- **Demographic Data Entry**: Comprehensive resident detail capture including name, gender, date of birth, and address information
+- **Document Upload Support**: Multiple document type handling including proof of address, identity, and birth certificates
+- **Pre-Registration Integration**: Auto-population of demographic data and documents using pre-registration IDs
 
-- **Document Scanner Integration**: Direct connection with document scanners for proof capture
-- **Multi-Format Support**: Accept various document formats for identity verification
-- **Document Validation**: Automatic validation and quality checks for uploaded documents
-- **Secure Storage**: Encrypted document storage with tamper-proof mechanisms
+#### UIN Update Processing → [See User Guide: Update UIN](../../../registration-client-user-guide.md#update-uin)
+Streamlined process for residents to update their demographic or biometric information.
 
-### 3. Offline and Online Operations
-Robust operational capabilities that ensure continuous service delivery regardless of network connectivity.
+- **Selective Field Updates**: Residents choose specific fields requiring updates for efficient processing
+- **UIN-Based Authentication**: Secure identity verification using existing UIN credentials
+- **Comprehensive Update Support**: Support for both demographic and biometric data modifications
+- **Configurable Update Options**: Administrative control over available update fields and processes
 
-#### Offline Mode Capabilities
-Full-featured offline operations that maintain service continuity during network disruptions.
+#### Lost UIN Recovery → [See User Guide: Lost UIN](../../../registration-client-user-guide.md#lost-uin)
+Secure identity recovery process for residents who have lost their identity credentials or never received them.
 
-- **Complete Offline Registration**: Capture all resident data including demographics, biometrics, and documents without internet connectivity
-- **Local Data Storage**: Secure local storage using encrypted Derby database for offline operations
-- **Queue Management**: Intelligent queuing system for packets created during offline periods
-- **Automatic Sync**: Seamless synchronization when connectivity is restored
+- **Biometric-Based Recovery**: Mandatory biometric verification for secure identity recovery
+- **Contact Information Updates**: Update phone numbers and email addresses during recovery process
+- **Flexible Data Requirements**: Optional demographic data and document uploads for recovery cases
+- **Secure Notification Process**: Identity details sent to newly provided contact information upon successful recovery
 
-#### Online Integration and Synchronization
-Real-time data synchronization and integration with MOSIP's centralized services.
+#### Registration Correction Process → [See User Guide: Correction process](../../../registration-client-user-guide.md#correction-process)
+Systematic correction workflow for residents with pending UIN generation requiring data modifications.
 
-- **Master Data Sync**: Automatic synchronization of master data and configurations from central services
-- **Packet Upload**: Automated upload of completed registration packets to central processing
-- **Status Tracking**: Real-time tracking of packet processing status and updates
-- **Background Processing**: Continuous background synchronization without interrupting operations
+- **Request ID Integration**: Process corrections using provided RequestId for accurate case linking
+- **Comprehensive Correction Support**: Support for all registration data types including biometric corrections
+- **Guided Correction Workflow**: Step-by-step process ensuring accurate data correction and validation
 
-### 4. Registration Process Management
-Comprehensive registration workflow management supporting multiple registration types and processes.
+### 4. Advanced Biometric Capture and Management
+Professional biometric data collection with quality control, exception handling, and device integration.
 
-#### Registration Types and Workflows
-Support for diverse registration scenarios with configurable workflows for each process type.
+#### Quality-Controlled Biometric Capture → [See User Guide: Capture biometrics of a resident](../../../registration-client-user-guide.md#capture-biometrics-of-a-resident)
+Advanced biometric capture with quality thresholds and automated retry mechanisms.
 
-- **New Registration**: Complete identity enrollment for first-time applicants
-- **UIN Update**: Modification of existing identity information
-- **Lost UIN Recovery**: Process for replacing lost or damaged identity credentials
-- **Correction Processing**: Systematic correction of registration errors and data inconsistencies
-- **Re-registration Support**: Handle re-registration scenarios with data preservation
+- **Quality Threshold Management**: Configurable quality thresholds ensuring high-quality biometric data capture
+- **Automated Retry Logic**: Intelligent retry mechanisms for achieving optimal biometric quality
+- **Device Timeout Controls**: Configurable capture timeouts preventing prolonged capture sessions
+- **Multi-Modal Capture**: Support for fingerprint, iris, and face biometric capture based on country configuration
 
-#### Process Automation and Control
-Intelligent process automation that streamlines registration workflows while maintaining quality controls.
+#### Biometric Exception Handling → [See User Guide: Concept of biometric exception](../../../registration-client-user-guide.md#concept-of-biometric-exception)
+Comprehensive exception handling for residents with missing or defective biometric features.
 
-- **Automated Workflows**: Pre-configured process flows that guide operators through registration steps
-- **Exception Handling**: Sophisticated exception authentication and resolution mechanisms
-- **Approval Workflows**: Configurable approval processes with supervisor oversight
-- **Batch Processing**: Efficient batch operations for multiple registrations
+- **Exception Documentation**: Systematic marking and documentation of permanent or temporary biometric exceptions
+- **Proof of Exception Capture**: Specialized photography for documenting biometric exceptions
+- **Age-Based Capture Rules**: Automatic adjustment of biometric requirements based on applicant age (adult vs. infant)
+- **Flexible Exception Processing**: Support for both temporary and permanent biometric exceptions
+
+### 5. Offline Operations and Data Synchronization
+Robust offline capabilities ensuring continuous service delivery with intelligent data synchronization.
+
+#### Complete Offline Functionality → [See User Guide: Offline Operations](../../../registration-client-user-guide.md#offline-operations)
+Full registration capabilities without internet connectivity ensuring uninterrupted service delivery.
+
+- **Offline Registration Processing**: Complete registration workflows including demographics, biometrics, and documents without internet
+- **Local Data Storage**: Secure Derby database storage for offline registration data with encryption
+- **Intelligent Queue Management**: Automatic packet queuing during offline periods with seamless sync upon connectivity restoration
+- **Pre-Registration Offline Access**: Download and use pre-registration data locally during offline operations
+
+#### Automated Data Synchronization → [See User Guide: Synchronize Data](../../../registration-client-user-guide.md#synchronize-data)
+Comprehensive background synchronization keeping registration client current with server data.
+
+- **Configuration Sync**: Automatic synchronization of system properties, thresholds, and UI functionality settings
+- **Master Data Updates**: Real-time sync of dynamic fields, templates, locations, and authorization data
+- **Certificate Management**: Automated certificate updates including device CA certificates and encryption keys
+- **User and Packet Sync**: Synchronization of user details, registration packets, and processing status updates
+
+#### Pre-Registration Data Management → [See User Guide: Download Pre-Registration Data](../../../registration-client-user-guide.md#download-pre-registration-data)
+Efficient pre-registration data handling for improved user experience and reduced processing time.
+
+- **Batch Download Capability**: Download pre-registration data for entire center during online periods
+- **Encrypted Local Storage**: Secure local storage of pre-registration packets with automatic cleanup
+- **Cross-Center Access**: Access any pre-registration application regardless of originally booked center
+- **Automatic Data Cleanup**: Configurable deletion of stored pre-registration data after specified periods
+
+### 6. Packet Management and Upload Processing
+Comprehensive packet lifecycle management from creation to server upload with supervisor oversight.
+
+#### Intelligent Packet Upload → [See User Guide: Application upload](../../../registration-client-user-guide.md#application-upload)
+Automated packet upload system with supervisor review integration and comprehensive status tracking.
+
+- **Supervisor Review Integration**: Systematic packet approval/rejection workflow before server upload
+- **Batch Upload Processing**: Efficient batch processing of approved packets with automatic scheduling
+- **Comprehensive Status Tracking**: Real-time visibility into both client and server packet processing status
+- **Export Functionality**: Packet export capabilities for local backup and manual processing needs
+
+#### Background Upload Automation → [See User Guide: Background Tasks](../README.md#background-tasks)
+Intelligent background processing ensuring continuous packet synchronization with minimal operator intervention.
+
+- **Automatic Upload Scheduling**: Configurable scheduled uploads based on approval requirements and system load
+- **Metadata Synchronization**: Comprehensive packet metadata sync improving recovery capabilities
+- **Approval-Based Processing**: Intelligent upload logic based on supervisor approval requirements
+- **Auto-Upload Capability**: Full automation support for environments not requiring manual approval
+
+#### End-of-Day Management → [See User Guide: Pending Approval](../../../registration-client-user-guide.md#pending-approval)
+Systematic end-of-day processes ensuring complete packet review and processing.
+
+- **Supervisor Approval Workflow**: Comprehensive packet review and approval interface for supervisors
+- **Re-Registration Handling**: Dedicated management for packets requiring re-registration
+- **Authentication Integration**: Secure supervisor authentication for packet approval decisions
+- **Batch Approval Processing**: Efficient handling of multiple packets during end-of-day procedures
 
 ## Advanced Features
 
-### 1. Security and Data Protection
-Enterprise-level security measures that protect sensitive resident data throughout the registration lifecycle.
+### 1. System Administration and Maintenance
+Professional system management capabilities ensuring optimal performance and security.
 
-#### Encryption and Data Security
-Comprehensive encryption and security protocols that ensure data integrity and confidentiality.
+#### Software Update Management → [See User Guide: Check Updates](../../../registration-client-user-guide.md#check-updates)
+Automated software maintenance with version control and upgrade management.
 
-- **End-to-End Encryption**: Complete encryption of registration packets and sensitive data
-- **TPM Integration**: Hardware Security Module (TPM) integration for machine authentication and key management
-- **Cryptographic Signatures**: Digital signatures for packet integrity verification
-- **Secure Key Management**: Protected storage of encryption keys in `.mosipkeys` directory
+- **Automatic Update Detection**: Real-time checking for new client versions from upgrade servers
+- **Confirmation-Based Upgrades**: Operator-controlled upgrade process with confirmation prompts
+- **Online Requirement Management**: Intelligent online connectivity requirements for update processes
+- **Version Compatibility Checks**: Automatic validation of update compatibility before installation
 
-#### Data Integrity and Tamper Protection
-Advanced mechanisms that ensure data integrity and prevent unauthorized modifications.
+#### Center Remapping Support → [See User Guide: Center Remap Sync](../../../registration-client-user-guide.md#center-remap-sync)
+Comprehensive center transition management when machines are remapped between registration centers.
 
-- **Hash Verification**: Continuous hash checking for all stored files and configurations
-- **Tamper-Proof Packets**: Signed and encrypted ZIP packets that prevent unauthorized modifications
-- **Audit Trails**: Comprehensive logging of all operator actions and system events
-- **Secure Acknowledgments**: Encrypted and signed registration acknowledgments
+- **Pending Task Completion**: Systematic completion of all center-related pending activities
+- **Data Migration Management**: Secure deletion of former center data and full sync with new center
+- **Restart-Based Sync**: Complete system refresh ensuring clean transition to new center configuration
+- **Comprehensive Task Tracking**: Monitoring of packet approvals, uploads, confirmations, and deletions during transition
 
-### 2. System Integration and Interoperability
-Seamless integration capabilities that connect Registration Client with MOSIP's ecosystem and external systems.
+#### Dashboard and Reporting → [See User Guide: Dashboard](../../../registration-client-user-guide.md#dashboard)
+Comprehensive system monitoring and reporting for operational oversight.
 
-#### MOSIP Platform Integration
-Deep integration with MOSIP's core services for comprehensive identity management.
+- **Operator Activity Tracking**: Detailed operator performance and activity monitoring
+- **Packet Status Reporting**: Real-time visibility into packet processing status and statistics
+- **Sync Activity Monitoring**: Comprehensive tracking of synchronization activities and system health
+- **Customizable Dashboard**: HTML template-based dashboard customization for country-specific requirements
 
-- **Pre-registration Integration**: Direct import and processing of pre-registration data
-- **Registration Processor Connection**: Seamless packet submission to central processing services
-- **Master Data Services**: Real-time synchronization with central configuration and reference data
-- **Status Synchronization**: Bi-directional status updates between client and server
+### 2. Security and Data Protection
+Enterprise-level security measures protecting sensitive resident data throughout the registration lifecycle.
 
-#### External System Connectivity
-Flexible connectivity options for integration with external systems and devices.
+#### Hardware Security Integration → [See Overview: Data protection](../README.md#data-protection)
+Advanced hardware security using TPM for comprehensive data protection and system authentication.
 
-- **Upgrade Server Connection**: Automatic software updates and patch management
-- **Printer Integration**: Direct printing of acknowledgment receipts and documents
-- **Network Management**: Intelligent network handling for both online and offline scenarios
-- **API Accessibility**: Standardized APIs for custom integrations and extensions
+- **TPM-Based Machine Authentication**: Hardware security module providing machine identity and authentication
+- **Encrypted Database Protection**: Derby database encryption using TPM-secured boot passwords
+- **Packet Signing and Encryption**: Cryptographically signed and encrypted registration packets
+- **Key Management**: Secure storage of sensitive files and encryption keys using TPM protection
 
-### 3. Configuration and Customization
-Extensive customization capabilities that allow adaptation to country-specific requirements and workflows.
+#### Data Integrity Protection → [See Overview: UI Specifications](../README.md#ui-specifications-for-registration-tasks)
+Comprehensive data integrity mechanisms ensuring tamper-proof operations.
 
-#### UI Specification Management
-Dynamic user interface configuration that adapts to local requirements and processes.
+- **UI Specification Validation**: Hash-based verification of UI specification files preventing tampering
+- **Versioned Configuration Management**: Tamper-proof versioned UI specifications with integrity checking
+- **File Hash Verification**: Continuous validation of critical system files during operation
+- **Failure Protection**: Automatic system protection when tampering is detected
 
-- **JSON-Based UI Specs**: Flexible form creation using configurable JSON specifications
-- **Process-Specific Forms**: Dedicated UI specifications for each registration type (NEW/LOST/UPDATE/CORRECTION)
-- **Version Control**: Versioned UI specifications with automatic updates and rollback capabilities
-- **Tamper-Proof Loading**: Hash-verified UI specification loading to prevent unauthorized modifications
+#### Registration Packet Security → [See Overview: Data protection](../README.md#data-protection)
+Multi-layered security for registration packets ensuring data confidentiality and integrity.
 
-#### System Configuration
-Comprehensive configuration options that enable fine-tuning of system behavior and performance.
+- **End-to-End Encryption**: Complete encryption of registration packets from creation to processing
+- **Digital Signatures**: Cryptographic signatures ensuring packet authenticity and non-repudiation
+- **Secure Storage Management**: Configurable secure directories for packet and acknowledgment storage
+- **Pre-Registration Encryption**: TPM-encrypted storage for synced pre-registration data
 
-- **Scheduled Jobs Configuration**: Customizable background task scheduling and execution
-- **Batch Size Management**: Configurable batch processing parameters for optimal performance
-- **Approval Workflows**: Flexible approval process configuration based on organizational requirements
-- **Storage Management**: Configurable directories for packet storage and temporary files
+### 3. Device Integration and Connectivity
+Seamless integration with external devices and systems for comprehensive registration center operations.
 
-## Administrative Features
+#### Biometric Device Integration → [See Overview: Registration Client entity diagram](../README.md#registration-client-entity-diagram)
+Professional biometric device connectivity through standardized interfaces.
 
-### 1. Monitoring and Management
-Comprehensive monitoring tools that provide visibility into system performance and operational status.
+- **SBI Compliance**: Full integration with Secure Biometric Interface standards
+- **Port Range Scanning**: Automatic device discovery across configured port ranges (4501-4600)
+- **Multi-Device Support**: Simultaneous connection and management of multiple biometric devices
+- **Device Auto-Discovery**: Intelligent detection and connection to available biometric devices
 
-#### System Health Monitoring
-Real-time monitoring capabilities that ensure optimal system performance and early issue detection.
+#### Document Scanner Integration → [See Overview: Registration Client entity diagram](../README.md#registration-client-entity-diagram)
+Direct integration with document scanning devices for efficient document capture.
 
-- **Background Task Monitoring**: Continuous monitoring of synchronization and upload processes
-- **Database Health Checks**: Regular validation of local database integrity and performance
-- **Device Status Tracking**: Real-time monitoring of connected biometric devices and scanners
-- **Network Connectivity Status**: Continuous assessment of network connectivity and quality
+- **Direct Scanner Connectivity**: Seamless integration with document scanning hardware
+- **Multi-Format Support**: Support for various document formats and scanning requirements
+- **Quality Control**: Automatic document quality assessment and validation
+- **Batch Scanning Support**: Efficient processing of multiple documents during registration
 
-#### Operational Analytics
-Detailed operational insights that support decision-making and process optimization.
+#### Printer Integration → [See User Guide: Acknowledgement receipt and printing](../../../registration-client-user-guide.md#acknowledgement-receipt-and-printing)
+Professional printing capabilities for registration acknowledgments and receipts.
 
-- **Registration Statistics**: Comprehensive reporting on registration volumes and patterns
-- **Performance Metrics**: System performance indicators and bottleneck identification
-- **Error Tracking**: Detailed error logs and resolution tracking
-- **Audit Reports**: Complete audit trails for compliance and security purposes
+- **Print-Friendly Receipts**: Optimized acknowledgment receipt formatting for professional printing
+- **QR Code Generation**: Automatic QR code generation for registration IDs on acknowledgment receipts
+- **Multi-Language Printing**: Support for acknowledgment printing in selected languages
+- **Quality Ranking Display**: Biometric quality rankings (1-10) displayed on printed acknowledgments
 
-### 2. Maintenance and Updates
-Automated maintenance capabilities that ensure system reliability and security through seamless updates.
+## Implementation Guides
 
-#### Software Management
-Comprehensive software lifecycle management with automated updates and version control.
+Ready to implement Registration Client features? Here are your next steps:
 
-- **Automatic Updates**: Seamless software updates from the upgrade server
-- **Patch Management**: Automatic download and application of security patches
-- **Version Tracking**: Complete version history and rollback capabilities
-- **Dependency Management**: Automated management of third-party components and SDKs
-
-#### Data Management
-Efficient data lifecycle management that ensures optimal performance and compliance.
-
-- **Automated Cleanup**: Intelligent cleanup of temporary files and expired data
-- **Backup Management**: Automated backup processes for critical data and configurations
-- **Storage Optimization**: Dynamic storage management and space optimization
-- **Data Archival**: Systematic archival of completed registrations and historical data
-
-## Integration Features
-
-### 1. Pre-registration Integration
-Seamless integration with MOSIP's Pre-registration module for efficient data flow and reduced manual entry.
-
-#### Data Import and Processing
-Streamlined import and processing of pre-registration data to accelerate center operations.
-
-- **Pre-registration Data Sync**: Automatic synchronization of pre-registration applications
-- **Data Pre-filling**: Automatic population of registration forms with pre-registration data
-- **Document Verification**: Cross-verification of uploaded documents with pre-registration submissions
-- **Appointment Integration**: Seamless handling of scheduled appointments and walk-ins
-
-### 2. External Device Integration
-Comprehensive integration capabilities for various external devices and peripherals.
-
-#### Biometric Device Integration
-Standardized integration with biometric capture devices for accurate identity verification.
-
-- **SBI Compliance**: Full compliance with Secure Biometric Interface standards
-- **Multi-Vendor Support**: Support for biometric devices from multiple vendors
-- **Quality Assessment**: Real-time biometric quality evaluation and feedback
-- **Device Management**: Automatic device discovery and connection management
-
-#### Document and Printing Integration
-Integrated support for document scanning and printing operations.
-
-- **Scanner Integration**: Direct integration with document scanners for proof capture
-- **Receipt Printing**: Automatic printing of registration acknowledgments and receipts
-- **Multi-Format Support**: Support for various document and print formats
-- **Quality Control**: Automatic quality checks for scanned documents and printed receipts
-
+- **[Installation Guide](../deploy/registration-client-installation-guide.md)** - Complete setup and deployment instructions
+- **[Configuration Guide](../deploy/registration-client-configuration.md)** - Comprehensive configuration options and customization
+- **[User Guide](../../../registration-client-user-guide.md)** - Step-by-step operational instructions for all registration tasks
+- **[Operator Onboarding Guide](../deploy/operator-onboarding.md)** - Complete operator setup and biometric enrollment process
+- **[Developer Guide](../develop/registration-client-developers-guide.md)** - Technical implementation and customization guidance
