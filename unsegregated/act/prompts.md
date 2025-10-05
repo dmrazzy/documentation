@@ -1,5 +1,24 @@
 
-#
+
+## Registration client features
+
+* MOSIP is foundational ID platform
+* Registration Client is a MOSIP Module to register an applicant
+* You have to extract features content only from
+  * 'Registration Client' Overview page attached here -
+  * 'Registration Client' End User Guide attached here, i.e.
+  * 'Registration Client' Release notes
+
+* 'Registration Client' Overview page attached here has features put up in way you can call it a User's or Operatorer positive flow, we have to maintain this approach of putting up features in a positive flow, as it is more user centric and easy to understand
+
+* Do not makeup any feature which is not mentioned in the documentation and the files attached here
+Read the guidelines we have put in for features-writing-guidelines.md to write 'features' page
+
+* For Information Architecture and other guidelines refer to _features-writing-guidelines.md
+
+
+
+## Documentation Gap in Rapid CI/CD Releases
 
 Many software organizations face the challenge of keeping documentation up-to-date with rapid CI/CD releases. Often, new features are only briefly mentioned in release notes, especially if they are technical, database, or code improvements that do not immediately impact the UI or user guides.
 
@@ -23,14 +42,6 @@ This features page has gone under a comprehensive iterations of refinement to ma
 We have also taken help from copilot which has kept it in line with similar to standard software features page at par with other such top software product's feature's page
 The whole MOSIP documentation has such pages for several other modules but not written in a standard and consistent way
 Can you read through the docs and also how other software products have written their features page In their docs and Identify the merits this page now brings
-
-## Registration client features
-Read the guidelines we have put in features-writing-guidelines.md to write 'features' page
-MOSIP is foundational ID platform
-Registration Client is a MOSIP Module
-This is the overview or landing page for Registration Client
-This page also has features, although, mixed with whole content
-Extract the content which makes for the features content from 'Registration Client' Overview page, also attached here on Registration Client' Features page,  as per guideline set in features-writing-guidelines.md
 
 
 
