@@ -1,5 +1,9 @@
 # Features
 
+Coming Soon
+
+<!--
+
 The Registration Client provides a comprehensive, secure desktop application for capturing resident identity data at registration centers. This thick Java-based client enables operators to collect demographic and biometric information along with supporting documents in both online and offline modes. All captured data is cryptographically secured and packaged into registration packets for tamper-proof processing.
 
 These features collectively address challenges like data security, offline operations, multi-language support, and seamless integration with MOSIP's identity ecosystem, resulting in efficient, secure, and user-friendly identity registration operations.
@@ -234,3 +238,5 @@ Ready to implement Registration Client features? Here are your next steps:
 - **[User Guide](../../../registration-client-user-guide.md)** - Step-by-step operational instructions for all registration tasks
 - **[Operator Onboarding Guide](../deploy/operator-onboarding.md)** - Complete operator setup and biometric enrollment process
 - **[Developer Guide](../develop/registration-client-developers-guide.md)** - Technical implementation and customization guidance
+
+-->
