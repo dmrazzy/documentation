@@ -1,28 +1,4 @@
 
-
-Identity Issuance
-
-
-Features
-Identity Issuance
-Identity Verification
-Identity Management
-Support Systems
-Supporting Components
-Supporting Services
-
-
-
-
-
-
-
-
-
-
-
-
-
 ## Registration client features
 
 * MOSIP is foundational ID platform
