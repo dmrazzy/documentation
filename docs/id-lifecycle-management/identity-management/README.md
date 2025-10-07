@@ -12,5 +12,3 @@
 * **Identifiers**: Manages the generation, assignment, and lifecycle of unique identifiers for individuals within the MOSIP ecosystem.
 
 -->
-
-
