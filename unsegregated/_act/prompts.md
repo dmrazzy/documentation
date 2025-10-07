@@ -1,5 +1,4 @@
 
-
 ## Registration client features
 
 * MOSIP is foundational ID platform

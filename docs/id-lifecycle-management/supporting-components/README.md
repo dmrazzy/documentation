@@ -4,21 +4,21 @@
 
 The **Supporting Components** category includes essential modules that provide foundational services and utilities for the MOSIP platform. Below are the modules under this category:
 
-* **Biometrics**: Handles biometric data processing, including capture, storage, and matching of biometric identifiers such as fingerprints and facial images. [Overview Page](../biometrics/README.md)
+* [**Biometrics**](../biometrics/README.md): Handles biometric data processing, including capture, storage, and matching of biometric identifiers such as fingerprints and facial images. 
 
-* **Commons**: Provides shared libraries and utilities used across various MOSIP modules, promoting code reuse and consistency. [Overview Page](../commons/README.md)
+* [**Commons**](../commons/README.md): Provides shared libraries and utilities used across various MOSIP modules, promoting code reuse and consistency. 
 
-* **Keymanager**: Manages cryptographic keys and certificates, ensuring secure communication and data protection within the MOSIP ecosystem. [Overview Page](../keymanager/README.md)
+* [**Keymanager**](../keymanager/README.md): Manages cryptographic keys and certificates, ensuring secure communication and data protection within the MOSIP ecosystem. 
 
-* **Packet Manager**: Facilitates the packaging and distribution of software components, enabling efficient deployment and updates of MOSIP modules. [Overview Page](../packet-manager/README.md)
+* [**Packet Manager**](../packet-manager/README.md): Packet Manager securely manages registration packets by handling storage, encryption, validation, and API-based access. It operates both as a service and a library within the MOSIP platform. 
 
-* **Persistence**: Manages data storage and retrieval, providing a robust and scalable database layer for MOSIP applications. [Overview Page](../persistence/README.md)
+* [**Persistence**](../persistence/README.md): Manages data storage and retrieval, providing a robust and scalable database layer for MOSIP applications. 
 
-* **Quality Manager**: Oversees quality assurance processes, including testing and validation of MOSIP components to ensure reliability and performance. [Overview Page](../quality-manager/README.md)
+* [**Quality Manager**](../quality-manager/README.md): Oversees quality assurance processes, including testing and validation of MOSIP components to ensure reliability and performance. 
 
-* **Datashare**: Enables secure data sharing and interoperability between different MOSIP modules and external systems. [Overview Page](../datashare/README.md)
+* [**Datashare**](../datashare/README.md): Enables secure data sharing and interoperability between different MOSIP modules and external systems. 
 
-* **Keycloak**: Integrates with Keycloak for identity and access management, providing single sign-on (SSO) and user federation capabilities. [Overview Page](../keycloak/README.md)
+* [**Keycloak**](../keycloak/README.md): Integrates with Keycloak for identity and access management, providing single sign-on (SSO) and user federation capabilities. 
 
 
 Each module plays a vital role in ensuring the reliability, scalability, and maintainability of the overall MOSIP system.
