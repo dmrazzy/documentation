@@ -215,6 +215,7 @@
       * [Testrig](setup/deploymentnew/v3-installation/testrig.md)
       * [MOSIP External Dependencies](setup/deploymentnew/v3-installation/mosip-external-dependencies.md)
       * [MOSIP Modules Deployment](setup/deploymentnew/v3-installation/mosip-modules-deployment.md)
+      * [1.2.0.3](setup/deploymentnew/v3-installation/1.2.0.3.md)
   * [Implementations](setup/implementations/README.md)
     * [Implementations](setup/implementations/country-implementation.md)
     * [Reference Implementations](setup/implementations/reference-implementations.md)
