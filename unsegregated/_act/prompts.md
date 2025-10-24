@@ -1,3 +1,16 @@
+## Prompts
+
+
+## MOSIP Infra Release Documentation Tasks
+- Read docs/roadmap-and-releases/releases/0.1.0-beta-mosip-rapid-deployment-infrastructure.md
+- docs/roadmap-and-releases/releases/1.2.0.4.md
+- Read the readmes from https://github.com/mosip/infra/blob/release-0.1.0/README.md#github-actions-workflow-parameters-reference
+- Read the overview page guidelines from unsegregated/_templates/_overview-page-guideline.md also from unsegregated/_templates/_overview-page-template.md
+- Create an overview page for MOSIP Infra module following the guidelines mentioned in the above files and add the content in a markdown file
+
+
+
+
 
 ## Registration client features
 
