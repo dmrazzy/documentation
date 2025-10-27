@@ -1,7 +1,5 @@
 # Supporting Components
 
-<!--
-
 The **Supporting Components** category includes essential modules that provide foundational services and utilities for the MOSIP platform. Below are the modules under this category:
 
 * [**Biometrics**](../biometrics/README.md): Handles biometric data processing, including capture, storage, and matching of biometric identifiers such as fingerprints and facial images. 
@@ -22,5 +20,3 @@ The **Supporting Components** category includes essential modules that provide f
 
 
 Each module plays a vital role in ensuring the reliability, scalability, and maintainability of the overall MOSIP system.
-
--->
