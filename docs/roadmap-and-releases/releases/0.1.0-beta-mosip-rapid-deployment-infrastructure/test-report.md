@@ -1,4 +1,4 @@
-# QA Report
+# Test Report
 
 ## Testing Scope
 
@@ -183,3 +183,5 @@ Below are the test metrics by performing functional testing using mock MDS, mock
 | Master Data eng    | 945   | 907  | 0    | 0    | 15      | 23           |
 | Master Data french | 945   | 895  | 0    | 0    | 15      | 35           |
 | DSL                | 204   | 157  | 0    | 8    | 12      | 27           |
+
+Click[ here ](https://github.com/mosip/test-management/tree/master/Platform%20release/Rapid%20Deployment%20Testing-0.1.0-Beta)to view the detailed test report.
