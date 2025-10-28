@@ -137,6 +137,7 @@
         * [FTM Chip Provider](id-lifecycle-management/support-systems/partner-management-services/functional-overview/ftm-chip-provider.md)
         * [PMS Collab Guide](id-lifecycle-management/support-systems/partner-management-services/functional-overview/collab-pmp-guide.md)
         * [PMS Notification](id-lifecycle-management/support-systems/partner-management-services/functional-overview/pms-notification.md)
+        * [MISP Partner Onboarding](id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md)
       * [Deploy](id-lifecycle-management/support-systems/partner-management-services/deploy/README.md)
         * [PMS Configuration Guide](id-lifecycle-management/support-systems/partner-management-services/deploy/pms-configuration-guide.md)
         * [API changes with PMS Revamp](id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md)
