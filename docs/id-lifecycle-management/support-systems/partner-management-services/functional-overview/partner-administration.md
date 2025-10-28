@@ -23,7 +23,7 @@ Partner Admin can also assume the role of Policy Manager to:
 
 As a partner admin cum policy manager you can performs following:
 
-1. Create and manage Policy Group, Authentication Policy and Datashare Policy
+1. Create and manage Policy Group, Authentication Policy, Datashare Policy and MISP Policy
 
 {% hint style="info" %}
 **Note**:

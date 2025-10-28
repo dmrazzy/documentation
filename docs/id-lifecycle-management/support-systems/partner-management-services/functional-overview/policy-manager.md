@@ -38,9 +38,7 @@ This card is accessible for roles Partner Admin and Policy Manager.
 
 In UI- both PARTNER\_ADMIN and POLICYMANAGER roles should be granted for the card to appear in the dashboard.
 
-As a partner admin cum policy manager - creation and management of Policy Group, Authentication Policy, Datashare Policy is enabled within Policies card.
-
-
+As a partner admin cum policy manager - creation and management of Policy Group, Authentication Policy, Datashare Policy and MISP Policy are enabled within Policies card.
 
 {% hint style="info" %}
 **Note**:
@@ -58,13 +56,14 @@ After configuring the roles and if PMS portal is still logged in, make sure to l
 
 You can use the 'Policies' to create and manage Policy Group, Authentication Policy and Datashare (You should have privileges of both; Partner Admin and Policy Manager).
 
-The 'Policies' section is accessible to you only if both **Partner Admin** and **Policy Manager** roles are allocated to you and also the 'Policies' card will appears enabled on the the dashboard.
+The 'Policies' section is accessible to you only if both **Partner Admin**, **Policy Manager** and **MISP Policy** roles are allocated to you and also the 'Policies' card will appear enabled on the the dashboard.
 
-### Policies has following theree tabs:
+### Policies has following tabs:
 
 * Policy Group, (This tab is selected by default)
 * Authentication Policy,
 * Datashare Policy
+* MISP Policy
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image33.png" alt=""><figcaption></figcaption></figure>
 
@@ -85,7 +84,7 @@ Policy Group tab allows you to do following:
   * Details View
 * Create Authentication Policy (by mapping to an already created Policy Group)
 * Deactivate Authentication Policy
-* Clone Authentication Policy
+* Clone Authentication Policy - The download functionality of following certificates is possible only during following instances
 * Edit Authentication Policy (Which is in draft status)
 * Publish Authentication Policy (Which is in draft status so that the status changes to 'Activated')
 
@@ -94,11 +93,28 @@ Policy Group tab allows you to do following:
 * View Datashare Policy:
   * List view
   * Details view
-* Create Datashare Policy
+* Create Datashare Policy: By mapping to an already created Policy Group <!-- New Description -->
 * Deactivate Datashare Policy
 * Clone Datashare Policy
 * Edit Datashare Policy (Which is in draft status)
 * Publish Datashare Policy (Which is in draft status so that the status changes to 'Activated')
+
+**MISP Policy features** <!-- New Information -->
+
+a) Create MISP Policy by mapping to an already created Policy Group.
+
+b) Tabular view of previously created MISP Policy  along with the status
+
+c) View created MISP Policy details 
+
+d) Deactivate MISP Policy 
+
+e) Clone MISP Policy in different policy groups on clicking Clone option in action item of records in Tabular view screen 
+
+f) Edit MISP Policy which is in draft status.
+
+g) Publish MISP Policy which is in draft status so that the status changes to ‘Active’.
+
 
 ### Policy Group
 
@@ -170,10 +186,12 @@ c) In case of Draft policies associated to policy group:
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image42.png" alt=""><figcaption></figcaption></figure>
 
-#### Authentication Policy / Datashare Policy:
+#### Authentication Policy / Datashare Policy/ MISP Policy:
 
 * On clicking Authentication Policy tab, List of all previously created Authentication Policies are displayed.
 * On clicking Datashare Policy tab, List of all previously created Datashare Policies are displayed.
+* On clicking MISP Policy tab, List of all previously created MISP Policies are displayed. <!-- New Information -->
+* The steps and features are same for both Authentication, Datashare and MISP Policy. <!-- New Information -->
 
 {% hint style="info" %}
 **Note**:
