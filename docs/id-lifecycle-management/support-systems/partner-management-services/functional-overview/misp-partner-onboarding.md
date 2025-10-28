@@ -1,5 +1,9 @@
 # MISP Partner Onboarding
 
+Coming Soon
+
+<!--
+
 ### Overview
 
 This guide shows Partner Admins how to onboard a **MISP Partner** in PMS, manage their partner certificates, link a policy group, and generate/manage MISP License Keys from the PMS portal. Use this as the "how-to" that operators will follow on the live system.
@@ -211,3 +215,6 @@ Steps:
 > <img src="media/image28.png" alt="" data-size="original">
 
 2. Confirm and note the consequences (partner cannot request policies or generate license keys).
+
+
+-->
