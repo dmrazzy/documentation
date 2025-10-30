@@ -2,7 +2,7 @@
 
 Coming Soon
 
-<!--
+<!-
 
 ### Overview
 
@@ -12,20 +12,22 @@ This guide shows how Partner Admins can onboard a **MISP Partner** in PMS, manag
 
 1. You must be logged in with **Partner Admin** credentials (role: PARTNER ADMIN).
 2. Root and Intermediate CA certificates should already have been uploaded to the PMS **Certificate Trust Store** (these are required before uploading partner CA-signed certificates).
-3. Policy Manager must have created the required **Policy Group** and MISP policies (such that they can be selected later). See the Policy Group & MISP Policy creation docs- [Policy Manager](policy-manager#policies)
+3. Policy Manager must have created the required **Policy Group** and MISP policies (so they can be selected later). See the Policy Group & MISP Policy creation docs- [Policy Manager](policy-manager#policies)
+
+<!-- Change the links above -->
 
 
 ### Navigation where to start
 
 1. Log into the PMS portal with your Partner Admin account.
-2. Click on **Partners** card (from the left navigation panel or dashboard itself). You will be redirected to 'List of Partners' page (tabular view).
+2. From the left navigation panel or dashboard itself, click on **Partners** card. You will be redirected to 'List of Partners' page (tabular view).
 
 ![](../../../../.gitbook/assets/misp-image1.png)
 
 
-### Create a MISP Partner
+### Create a new MISP Partner
 
-1. On the Partners tabular screen, click **Create Partner** button placed on top-right (if partner records already exist) or positioned at the centre of the screen (if no records exist)
+1. On the _Partners_ tabular screen, click **Create Partner** button placed on top-right (if partner records already exist) or positioned at the centre of the screen (if no records exist)
 
 ![](../../../../.gitbook/assets/misp-image2.png)
 
@@ -70,9 +72,6 @@ Either you can upload the partner certificate soon after MISP partner creation a
 > **Note**:
 
 * If Root/Intermediate CA is missing, the system will reject the upload --- ensure CA certificates are uploaded first. [MOSIP Docs](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration#certificate-trust-store)
-
-
-
 
 
 
