@@ -7,6 +7,26 @@ icon: book-open
 
 ## Latest Releases 🌟
 
+**Version**: 1.2.0.4
+
+* Date: 27th October, 2025
+* [Release Notes](1.2.0.4.md)&#x20;
+
+**Version**: 0.1.0-beta.1 Infra
+
+* Date: 27th October, 2025
+* [Release Notes](0.1.0-beta-mosip-rapid-deployment-infrastructure.md)&#x20;
+
+**Version**: 1.2.1.3 Admin Services
+
+* Date: 5th September, 2025
+* [Release Notes](1.2.1.3-admin-services.md)&#x20;
+
+**Version**: 1.2.0.3 Pre Registration
+
+* Date: 5th September, 2025
+* [Release Notes](1.2.0.3-pre-registration.md)&#x20;
+
 **Version**: DSL- 1.2.1.0
 
 * Date: 5th September, 2025

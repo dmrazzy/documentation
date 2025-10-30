@@ -294,7 +294,7 @@
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
     * [1.2.0.4](roadmap-and-releases/releases/1.2.0.4.md)
-    * [0.1.0-beta Infra](roadmap-and-releases/releases/0.1.0-beta-mosip-rapid-deployment-infrastructure.md)
+    * [0.1.0-beta.1 Infra](roadmap-and-releases/releases/0.1.0-beta-mosip-rapid-deployment-infrastructure.md)
       * [Test Report](roadmap-and-releases/releases/0.1.0-beta-mosip-rapid-deployment-infrastructure/test-report.md)
     * [1.2.1.3 Admin Services](roadmap-and-releases/releases/1.2.1.3-admin-services.md)
     * [1.2.0.3 Pre Registration](roadmap-and-releases/releases/1.2.0.3-pre-registration.md)
