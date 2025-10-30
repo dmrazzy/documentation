@@ -1,5 +1,16 @@
 ## Prompts
 
+# MISP guide Improvements
+- Observe the guides in PMS
+- It always use second person subject, that is You
+- Also, the I had introduced Interface Overviews to acquaint users of the interface such that the initial first steps User should not have to mention how to navigate and user breadcrumb like arrow based navigation to reach the section on inteface
+- Do not remove any factual Information
+- Improve the steps as per screenshots as well as second person you as well as minimal initial navigation steps 
+
+
+
+
+
 
 ## MOSIP Infra Release Documentation Tasks
 - Read docs/roadmap-and-releases/releases/0.1.0-beta-mosip-rapid-deployment-infrastructure.md
