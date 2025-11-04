@@ -1,5 +1,17 @@
 ## Prompts
 
+# PMS Features
+- I want to create Features page based on The _feature-page.md template and the _features-page-guidelines.md attache here
+- Go through the existing PMS features page attached here
+- Also go through the _features-revised.md attached here for PMS 
+- Also go through the PMS End User Guide and the individual guide for partner admin, ftm chip provider etc attached here
+- Follow the features template and features guidelines attached and extyract informtion in separate markdown file as per the template
+
+
+
+
+
+
 # MISP guide Improvements
 - Observe the guides in PMS
 - It always use second person subject, that is You
