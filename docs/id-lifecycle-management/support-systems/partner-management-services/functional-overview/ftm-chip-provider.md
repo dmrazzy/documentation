@@ -26,26 +26,26 @@ As a process of Partner onboarding onto PMS after successful registration, Partn
 
 1. Go to **PMS Portal and login as Partner Admin**. Click on **Certificate Trust Store** in Admin dashboard
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image1.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6 (1).png" alt=""><figcaption></figcaption></figure>
 
 2. Within Root CA tab - click on **Upload Trust Certificate** button on the top-right of the screen.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image2.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Select the Partner Domain, (FTM)
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image13.png" alt=""><figcaption></figcaption></figure>
 
 4. Choose the **Root CA Certificate** to upload (only files with extensions as .cer or .pem).
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image4.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image4 (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image5.png" alt=""><figcaption></figcaption></figure>
 
 5. Click Submit and an appropriate success message appears.
 6. Similarly, Sub/Intermediate CA certificate should be uploaded by following the above steps (2-4) by navigating to **Upload Intermediate CA Certificate** button provided within Intermediate Root CA tab.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image3.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image13.png" alt=""><figcaption></figcaption></figure>
 
 #### What all activity can a Partner (FTM Chip Provider) perform?
 
@@ -68,7 +68,7 @@ To be able to access the services by PMS and to validate that the partner is fro
 
 3. **On successful registration**, you will be asked to read through '**Terms and Conditions**' and having carefully read through it you can agree and accept it.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image8 (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Validations**:
@@ -77,20 +77,18 @@ To be able to access the services by PMS and to validate that the partner is fro
 * A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMS will be informed while seeking user consent.
 {% endhint %}
 
-
-
 **Login:**
 
 * For existing partner users who are already registered in Partner Management System, they can login to the portal with their email, username and password.
 * On logging in you come to Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image8.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image9 (1).png" alt=""><figcaption></figcaption></figure>
 
 **Forgot Password:**
 
 * Partner user has an option to reset password , you can use it when you forget password or want to change password after a certain duration.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image10 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### CA Signed Partner Certificate Upload / Download or Re-Upload
 
@@ -114,8 +112,6 @@ Later when required a Partner can also 'Download Certificate' and 'Re-Upload Cer
 
 Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that the 'Partner Admin' should have already had uploaded the **Root CA** and **Intermediate CA** certificates.
 {% endhint %}
-
-
 
 ### Upload CA signed Certificate
 
@@ -249,15 +245,15 @@ To approve / reject an FTM Chip, admin clicks on 'FTM Chip' card in his homepage
 
 The admin navigates to 'List of FTM Chip details' page where list of all FTM Chip records submitted so far by different FTM Chip providers are displayed.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image35.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85 (1).png" alt=""><figcaption></figcaption></figure>
 
 On clicking the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image36.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86 (1).png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action- Approve / Reject and select the respective button.
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image37.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87 (1).png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
@@ -267,7 +263,7 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image38.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Manage Certificate for approved records
 

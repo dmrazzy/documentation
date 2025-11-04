@@ -16,7 +16,7 @@
 **Observation cluster** - This cluster is part of the observation plane and assists with administrative tasks. By design, this is kept independent from the actual cluster as a good security practice and to ensure clear segregation of roles and responsibilities. As a best practice, this cluster or its services should be internal and should never be exposed to the external world.
 
 * [Rancher](https://rancher.com/docs/rancher/v1.3/en/kubernetes/#rancher-ui) is used for managing the MOSIP cluster.
-* [Keycloak](https://www.keycloak.org/) in this cluster is used to manage user access and rights for the observation plane.&#x20;
+* [Keycloak](https://www.keycloak.org/) in this cluster is used to manage user access and rights for the observation plane.
 * It is recommended to configure log monitoring and network monitoring in this cluster.
 * In case you have an internal container registry, then it should run here.
 
@@ -27,9 +27,7 @@
 
 ## Architecture diagram
 
-
-
-<figure><img src="../../../../.gitbook/assets/deployment_architecture.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/deployment_architecture (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Deployment repos
 

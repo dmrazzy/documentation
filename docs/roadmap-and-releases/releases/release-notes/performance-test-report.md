@@ -178,13 +178,13 @@ Detailed Metrics for all 14 modules is available below:
 
 **CPU and Memory Utilization Graphs using Grafana**
 
-![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
+![](../../../release/1.2.0/performance-report/audit_manager_50_grafana_CPU_utilization.png)
 
-![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
+![](../../../release/1.2.0/performance-report/audit_manager_50_grafana_memory_utilization.png)
 
 **Application Response Time Graph from Kibana**
 
-![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
+![](../../../release/1.2.0/performance-report/audit_manager_50_kibana_api_response_time.png)
 
 **Dependent Application Response Time Graph from Kibana**
 

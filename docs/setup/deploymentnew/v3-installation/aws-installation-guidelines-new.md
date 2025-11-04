@@ -1,7 +1,7 @@
 # AWS Installation Guidelines
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 This version of the guide is currently under revision and enhancement. For any support, please reach out to us on [community.mosip.io](http://community.mosip.io/).
 {% endhint %}
@@ -137,7 +137,7 @@ A Wireguard bastion host (Wireguard server) provides secure private channel to a
 
 ### Architecture diagram
 
-![](../../../.gitbook/assets/deployment_architecture.png)
+![](<../../../.gitbook/assets/deployment_architecture (1).png>)
 
 **Setup Wirguard VM and wireguard bastion server:**
 

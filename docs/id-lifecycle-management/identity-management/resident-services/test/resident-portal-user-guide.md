@@ -396,7 +396,7 @@ They can also download the PDF version of the result displayed on the screen for
 
     a. Go to “Update My Data”
 
-<figure><img src="../../../../.gitbook/assets/37039ff3-3d53-4b41-b120-00886fba8bb6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
 
 b. Click on “Identity” tab
 
@@ -446,7 +446,7 @@ Note: The Resident can update the Proof of Identity document itself with no chan
 
 a. Go to “Update My Data”
 
-<figure><img src="../../../../.gitbook/assets/14.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
 
 b. Click on “Address” tab
 
@@ -488,7 +488,7 @@ j. Once the event is successful, a message will be displayed consisting of the E
 
 k. A bell icon and an email notification will be triggered using which the residents can view the status of the application.
 
-<figure><img src="../../../../.gitbook/assets/25.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/f (1).png" alt=""><figcaption></figcaption></figure>
 
 l. Once the update is successful, the card can be downloaded with new data by clicking on the particular notification.
 
@@ -502,7 +502,7 @@ Note: Additionally, the Resident can also update the Proof of Address document i
 
 a . Go to “Update My Data”.
 
-<figure><img src="../../../../.gitbook/assets/a.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
 
 b. Click on “Contact Data” tab.
 
@@ -522,7 +522,7 @@ e. Once the event is completed, a message will be displayed consisting of the Ev
 
 f. A bell icon and an email notification will be triggered using which the residents can view the status of the application.
 
-<figure><img src="../../../../.gitbook/assets/f.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/f (1).png" alt=""><figcaption></figcaption></figure>
 
 g. Once the update is successful, the card can be downloaded with new data by clicking on the particular notification.
 
@@ -532,13 +532,13 @@ g. Once the update is successful, the card can be downloaded with new data by cl
 
 a. Go to “Update My Data”
 
-<figure><img src="../../../../.gitbook/assets/aa.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
 
 b. Go to “Language Preference” tab
 
 <figure><img src="../../../../.gitbook/assets/h.png" alt=""><figcaption></figcaption></figure>
 
-c.  Click on the “New Notification Language” drop-down.
+c. Click on the “New Notification Language” drop-down.
 
 <figure><img src="../../../../.gitbook/assets/i.png" alt=""><figcaption></figcaption></figure>
 

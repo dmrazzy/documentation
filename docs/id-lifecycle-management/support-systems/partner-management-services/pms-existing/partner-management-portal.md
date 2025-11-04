@@ -80,7 +80,7 @@ _Note_: Once the policy is created, it will be in _Inactive_ state. You have to 
 1. Select the policy you want to activate or edit.
 2. From the Actions menu, select Activate/Edit.
 
-![](../../../../.gitbook/assets/pms-actionmenu-auth-policy.png)
+![](<../../../../.gitbook/assets/pms_activate_auth_policy (1).png>)
 
 ### Search or filter data
 
