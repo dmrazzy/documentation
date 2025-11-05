@@ -14,6 +14,8 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, partnerId, orgName, policyGroupName, policyName, clientName, status
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /oauth/client (POST)
 
 **Description:** This endpoint is used for creating OIDC Client.
@@ -33,6 +35,8 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /oauth/client/{client_id} (GET)
 
 **Description:** This endpoint retrieves the OIDC client details by client id
@@ -43,6 +47,8 @@ This document captures all the changes that have been made in the API endpoints 
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /oauth/client/{client_id} (PUT)
 
@@ -65,6 +71,9 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /devicedetail (GET)
 
 **Description:** This endpoint retrieves a list of all the Devices across all the Device Providers in PMS. It supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
@@ -75,6 +84,9 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, partnerId, orgName, deviceType, deviceSubType, status, make, model, sbiId, sbiVersion, deviceId
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /devicedetail (PUT)
 
 **Description:** Service to update Device Detail
@@ -84,6 +96,9 @@ This document captures all the changes that have been made in the API endpoints 
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /devicedetail (POST)
 
@@ -97,6 +112,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
+
 ## /devicedetail (PATCH)
 
 **Description:** Service to approve/reject Device Detail
@@ -106,6 +124,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /devicedetail/{deviceId} (PATCH)
 
@@ -117,6 +138,10 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: deviceId, status
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
+
 ## /devicedetail/{id}/approval (POST)
 
 **Description:** This endpoint is for the Partner Admin user to approve or reject a Device and activate the mapping between the Device and the SBI. It is configured for the role **PARTNER_ADMIN**
@@ -126,6 +151,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sbiId, partnerId, deviceId, status
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /devicedetail/deviceSubType/filtervalues (POST)
 
@@ -137,6 +165,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /devicedetail/deviceType/filtervalues (POST)
 
 **Description:** Service to filter Device Types
@@ -146,6 +176,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /devicedetail/deviceType/search (POST)
 
@@ -157,6 +190,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /devicedetail/filtervalues (POST)
 
 **Description:** Service to filter Device Detail
@@ -166,6 +202,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /devicedetail/search (POST)
 
@@ -177,6 +215,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /ftpchipdetail (GET)
 
 **Description:** This endpoint retrieves a list of all FTM Chip details created by all the FTM Providers associated with the logged in user. It is configured for the roles **FTM_PROVIDER** or **PARTNER_ADMIN**.
@@ -187,6 +228,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added an optional query parameter expiryPeriod
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /ftpchipdetail (PUT)
 
 **Description:** Service to update ftp chip detail
@@ -196,6 +240,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /ftpchipdetail (POST)
 
@@ -208,6 +255,12 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3**:
+
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
+
+
 ## /ftpchipdetail (PATCH)
 
 **Description:** Service to approve/reject ftp chip detail
@@ -217,6 +270,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /ftpchipdetail/{ftmId} (PATCH)
 
@@ -228,6 +284,10 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
+
 ## /ftpchipdetail/{ftmId}/certificate-data (GET)
 
 **Description:** This endpoint fetches both the CA signed certificate uploaded by the FTM Chip Provider and the MOSIP signed certificate generated by PMS. It is configured for the roles **FTM_PROVIDER** or **PARTNER_ADMIN**.
@@ -237,6 +297,11 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following field: ftmId
+
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 
 ## /ftpchipdetail/getPartnerCertificate/{ftpChipDetailId} (GET)
 
@@ -248,6 +313,10 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
+
 ## /ftpchipdetail/search (POST)
 
 **Description:** Service to search ftp chip details
@@ -258,6 +327,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /ftpchipdetail/uploadcertificate (POST)
 
@@ -274,6 +346,10 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
+
 ## /ftpchipdetail/v2 (GET)
 
 **Description:** This endpoint retrieves a list of all FTM Chip details created by all the FTM Providers. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
@@ -283,6 +359,10 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: ftmId, status
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 
 ## /admin-partners (GET)
 
@@ -298,6 +378,11 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, partnerId, partnerType, orgName, emailAddress, certificateUploadStatus, policyGroupName
 
+**Changes done in release 1.3.0-beta.3**:
+
+A new query parameter called status has been introduced, which allows sorting based on the partner's approval status. This parameter supports the following values: active deactivated inactive. 
+
+
 ## /admin-partners/{partnerId} (GET)
 
 **Description:** This endpoint retrieves all the details of the Partner based on Partner Id. It is configured for the role **PARTNER_ADMIN**.
@@ -307,6 +392,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following field: partnerId
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /partner-api-keys (GET)
 
@@ -321,6 +409,11 @@ This ensures that a device will always be created for a SBI and not without one.
 
 2. Also added input regex validation for the following fields: sortFieldName, sortType, partnerId, apiKeyLabel, orgName, status, policyName, policyGroupName
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
+
+
 ## /partner-api-keys/v2 (GET)
 
 **Description:** This endpoint retrieves a list of all the API keys created by the Auth Partners. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER_ADMIN** role, then it will fetch all the API keys created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER_ADMIN** role, then it will fetch all the API keys created by all the partners.
@@ -334,6 +427,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 2. Also added input regex validation for the following fields: sortFieldName, sortType, partnerId, apiKeyLabel, orgName, status, policyName, policyGroupName
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /partner-policy-requests (GET)
 
 **Description:** This endpoint fetches list of all the policy requests made by the partners. Also supports pagination, sorting, and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER_ADMIN** role, then it will fetch all the policy requests made by all the partners associated with the logged in user only.If the token used to access this endpoint, has **PARTNER_ADMIN** role, then it will fetch all the policy requests made by all the partners.
@@ -343,6 +439,10 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, partnerId, partnerComment, orgName, status, policyId, policyName, policyGroupName, partnerType
+
+**Changes done in release 1.3.0-beta.3**:
+A new optional query parameter partnerIdSearchType has been added to define the search type for partnerId. It is applicable only when partnerId is provided, with contains as the default value and equals as an allowed value.
+
 
 ## /partners (GET)
 
@@ -355,6 +455,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/{partnerId} (PATCH)
 
 **Description:** Service to activate/de-activate partner
@@ -366,6 +468,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/{partnerId}/apikey/{apikey} (GET)
 
 **Description:** Service to get policy for given API key
@@ -376,6 +480,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/{partnerId}/apikey/{apikey}/policies (PUT)
 
 **Description:** Service to update policies against to API key
@@ -385,6 +491,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /partners/{partnerId}/policy/{policyId}/apikey/status (PATCH)
 
@@ -399,6 +507,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/apikey (GET)
 
 **Description:** Service to get API key requests
@@ -408,6 +518,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /partners/apikey/{apikey} (GET)
 
@@ -419,6 +531,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/policy/{mappingkey} (PUT)
 
 **Description:** Service to approve/reject partner policy mapping
@@ -428,6 +542,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /partners/v2 (GET)
 
@@ -439,6 +555,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /trust-chain-certificates (GET)
 
 **Description:** This endpoint retrieves a list of all the Trust Certificates uploaded by the Partner Admin. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
@@ -448,6 +566,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, caCertificateType, certificateId, partnerDomain, issuedTo, issuedBy
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /trust-chain-certificates/{certificateId}/certificateFile (GET)
 
@@ -459,6 +579,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following field: certificateId
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners (POST)
 
 **Description:** partner self registration
@@ -468,6 +590,21 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3**:
+This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the POST /partners/v3 endpoint.
+
+## /partners/v3 (POST)
+This endpoint is used for partner self registration.
+Newly added in release-1.3.0-beta.3
+
+## /partners/exists (PUT)
+This endpoint checks whether a partner already exists in PMS by validating duplicates based on the provided email and partner ID, and returns a conflict if either is already registered.
+Newly added in release-1.3.0-beta.3
+
+## partners/{partnerId}/policy-group (POST)
+This endpoint is used to link a policy group to a MISP partner. It is configured for users with the PARTNER_ADMIN role.
+Newly added in release-1.3.0-beta.3
 
 ## /partners/{partnerId} (GET)
 
@@ -479,6 +616,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /partners/{partnerId} (PUT)
 
 **Description:** Service to update details of partner
@@ -489,6 +629,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /partners/{partnerId}/apikey/request (GET)
 
 **Description:** Service to get API key requests of partner
@@ -498,6 +641,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /partners/{partnerId}/certificate (GET)
 
@@ -512,6 +658,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/{partnerId}/certificate-data (GET)
 
 **Description:** This endpoint retrieves both the CA signed certificate uploaded by the partner and the MOSIP-signed certificate generated by PMS. It is configured for role any of the partner type or **PARTNER_ADMIN**.
@@ -521,6 +669,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following field: certificateId
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /partners/{partnerId}/contact/add (POST)
 
@@ -532,6 +683,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3**:
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
 ## /partners/{partnerId}/generate/apikey (PATCH)
 
 **Description:** To generate API Key for approved policies
@@ -541,6 +695,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3**:
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
 
 ## /partners/{partnerId}/policy/map (POST)
 
@@ -552,6 +709,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3**:
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
 ## /partners/{partnerId}/policygroup/{policygroupName} (PUT)
 
 **Description:** Service to update the policy group for partner
@@ -561,6 +721,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /partners/apikey/request/filtervalues (POST)
 
@@ -572,6 +734,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/apikey/request/search (POST)
 
 **Description:** Service to search API key requests
@@ -581,6 +745,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /partners/apikey/search (POST)
 
@@ -592,6 +759,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /partners/certificate/ca/upload (POST)
 
 **Description:** Service to upload ca certificate
@@ -601,6 +771,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /partners/certificate/upload (POST)
 
@@ -615,6 +787,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /partners/email/verify (PUT)
 
 **Description:** Service to verify partner email
@@ -624,6 +798,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## /partners/filtervalues (POST)
 
@@ -637,6 +814,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /partners/partner-certificates-details (GET)
 
 **Description:** This endpoint retrieves a list of all Partner Certicates uploaded by the logged in user
@@ -647,6 +827,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+
 ## /partners/partnerType/search (POST)
 
 **Description:** Service to search partner types
@@ -656,6 +839,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 
 ## partners/search (POST)
 
@@ -669,6 +855,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## partners/v2 (POST)
 
 **Description:** Registers partner details
@@ -678,6 +866,9 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3**:
+This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the POST /partners/v3 endpoint.
 
 ## partners/v2/{partnerId} (PUT)
 
@@ -689,6 +880,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## partners/v3 (GET)
 
 **Description:** This endpoint retrieves a list of Partners associated with the logged in user, based on the query parameters. It is configured for role any of the partner type or **PARTNER_ADMIN**.
@@ -699,6 +892,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: status, partnerType
 
+**Changes done in release 1.3.0-beta.3**:
+If partnerType is set to MISP_Partner, the endpoint fetches all MISP partners instead of only those linked to the user. Access is restricted to users with the PARTNER_ADMIN role in this case.
+
 ## /roles (GET)
 
 **Description:** Service to get required roles
@@ -708,6 +904,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /securebiometricinterface (GET)
 
@@ -722,6 +920,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 2. Included an optional query parameter expiryPeriod
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /securebiometricinterface (PUT)
 
 **Description:** Service to update SecureBiometricInterface
@@ -731,6 +931,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /securebiometricinterface (POST)
 
@@ -742,6 +944,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /securebiometricinterface (PATCH)
 
 **Description:** Service to approve/reject SecureBiometricInterface
@@ -751,6 +955,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /securebiometricinterface/{sbiId} (PATCH)
 
@@ -762,6 +968,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sbiId, status
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /securebiometricinterface/{sbiId}/devices (GET)
 
 **Description:** This endpoint fetches the list of Devices associated with a given SBI Id. It is configured for the roles **DEVICE_PROVIDER** or **PARTNER_ADMIN**.
@@ -771,6 +979,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following field: sbiId
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /securebiometricinterface/{sbiId}/devices (POST)
 
@@ -782,6 +992,9 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sbiId, id, make, model, deviceTypeCode, deviceSubTypeCode
 
+**Changes done in release 1.3.0-beta.3**:
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
 ## /securebiometricinterface/devicedetails/map (PUT)
 
 **Description:** Service to map device details with sbi
@@ -791,6 +1004,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /securebiometricinterface/devicedetails/map/remove (PUT)
 
@@ -802,6 +1017,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /securebiometricinterface/devicedetails/map/search (POST)
 
 **Description:** Service to search mapped device details and SecureBiometricInterface details
@@ -811,6 +1028,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /securebiometricinterface/filtervalues (POST)
 
@@ -822,6 +1041,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /securebiometricinterface/search (POST)
 
 **Description:** Service to search SecureBiometricInterface details
@@ -831,6 +1052,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /system-config (GET)
 
@@ -842,6 +1065,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /users (POST)
 
 **Description:** Service to register user
@@ -851,6 +1076,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /users/user-consent (GET)
 
@@ -862,6 +1089,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /users/user-consent (POST)
 
 **Description:** This endpoint saves the user's consent related to data captured by the PMS portal, which is requested only once after the user's first login. Once provided, the consent will not be asked again. It is configured for all Partner Type roles.
@@ -871,6 +1100,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /users/{userId}/notifications-seen-timestamp (GET)
 
@@ -882,6 +1113,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /users/{userId}/notifications-seen-timestamp (PUT)
 
 **Description:** This endpoint which will update the status and timestamp of when the notifications were last viewed by the user in the PMS portal.
@@ -891,6 +1124,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** Newly added in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /notifications (GET)
 
@@ -902,6 +1137,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: notificationStatus, notificationType, certificateId, expiryDate, issuedBy, issuedTo, partnerDomain, createdFromDate, createdToDate, ftmId, make, model, apiKeyName, policyName, sbiId, sbiVersion
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /notifications/{notificationId} (PATCH)
 
 **Description:** This endpoint will be used to handle the dismiss action by the user.
@@ -911,6 +1148,28 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** Newly added in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: notificationId, notificationStatus
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
+## /misp-licenses (GET)
+This endpoint retrieves all MISP license keys with support for pagination, sorting, and filtering. It is configured for users with the PARTNER_ADMIN role.
+Newly added in release-1.3.0-beta.3
+
+## /misp-licenses (POST)
+This endpoint generates a MISP license key for a specified MISP partner. It supports creating multiple license keys for the same partner, allows setting an expiry date, and includes the licenseKeyName field to distinguish between different keys. It is configured for users with the PARTNER_ADMIN role.
+Newly added in release-1.3.0-beta.3
+
+## /misp-licenses/{partnerId} GET
+This endpoint retrieves MISP license key details for a specified partner using the partnerId. It supports optional query parameters to filter or refine the results and is configured for users with the PARTNER_ADMIN role.
+Newly added in release-1.3.0-beta.3
+
+## /misp-licenses/{partnerId} (PUT)
+This endpoint re-generates a MISP license key for a specified partner using the partnerId. It allows setting a new expiry date and issues a new license key for the requested partner. It is configured for users with the PARTNER_ADMIN role.
+Newly added in release-1.3.0-beta.3
+
+## /misp-licenses/{partnerId} (PATCH)
+This endpoint deactivates the MISP license key for a specified partner using the partnerId. It is configured for users with the PARTNER_ADMIN role.
+Newly added in release-1.3.0-beta.3
 
 ---
 
@@ -926,6 +1185,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies (POST)
 
 **Description:** Service to create a new authentication, data sharing, or credential policy.
@@ -935,6 +1196,10 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3**:
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
 
 ## /policies/{policyId} (GET)
 
@@ -946,6 +1211,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies/{policyId} (PUT)
 
 **Description:** Service to update policy details
@@ -955,6 +1222,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /policies/{policyId} (PATCH)
 
@@ -966,6 +1235,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: policyId, status
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies/{policyId}/group/{policygroupId}/publish (POST)
 
 **Description:** Service to publish policy
@@ -975,6 +1246,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /policies/active/group/{groupName} (GET)
 
@@ -986,6 +1259,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies/group/{policygroupId} (GET)
 
 **Description:** Service to get policy group
@@ -995,6 +1270,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 ## /policies/group/{policyGroupId} (PATCH)
 
@@ -1006,6 +1283,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: policyGroupId, status
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies/group/new (POST)
 
 **Description:** Service to create a new policy group
@@ -1015,6 +1294,10 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
+
+**Changes done in release 1.3.0-beta.3**:
+Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+
 
 ## /policies/group/search (POST)
 
@@ -1026,6 +1309,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies/policy-groups (GET)
 
 **Description:** Service to retrieve details about all active Policy Groups
@@ -1036,6 +1321,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
+
 ## /policies/v2 (GET)
 
 **Description:** Service to retrieve the list of all Policies. It is configured for the **POLICYMANAGER** or **PARTNER_ADMIN** roles.
@@ -1045,6 +1332,8 @@ This ensures that a device will always be created for a SBI and not without one.
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, policyType, policyId, policyName, policyDescription, policyGroupName, status
+
+**Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 
 
