@@ -24,19 +24,19 @@ To learn more, refer to the video below!
 3. Create the first admin user in KeyCloak and assign the "GLOBAL\_ADMIN" role
 
 {% hint style="info" %}
-**Note:**  On the login of the first admin user, user zone mapping is handled automatically.
+**Note:** On the login of the first admin user, user zone mapping is handled automatically.
 {% endhint %}
 
 The above is done automatically as part of the [default sandbox installation](https://github.com/mosip/mosip-infra/tree/release-1.2.0/deployment/v3).
 
 ### Login
 
-![](../../../../.gitbook/assets/admin-login.png)
+![](../../../../_images/admin-login.png)
 
 1. Select the preferred language.
 2. Login with KeyCloak credentials.
 
-![](../../../../.gitbook/assets/admin-home.png)
+![](../../../../_images/admin-home.png)
 
 ### Actions
 
@@ -66,11 +66,11 @@ The above is done automatically as part of the [default sandbox installation](ht
 * This portal allows an Admin to view, create, edit, activate, deactivate and decommission registration centers.
 * An Admin can manage only centers under their [administrative zones](../#administrative-zones).
 
-![](../../../../.gitbook/assets/admin-view-center.png)
+![](../../../../_images/admin-view-center.png)
 
 The administrator can filter the list of registration centers based on parameters like _**Center name, Center type, Status, and Location code.**_
 
-![](../../../../.gitbook/assets/admin-view-center-filter.png)
+![](../../../../_images/admin-view-center-filter.png)
 
 * The system does not fetch the details of decommissioned registration centers but only active and inactive centers are displayed.
 * If the admin does not find a center, they can click the _Center not available in logged in language_ button. Clicking on this button displays the list of centers that are already created in other languages. On selecting a particular center, the information will be auto-populated in the Create page and be made available to the admin for modifications.
@@ -82,14 +82,14 @@ The administrator can filter the list of registration centers based on parameter
 * A center can only be mapped to the configured location hierarchy level.
 * While defining centers, an admin can also define the working days of the week for a center and any exceptional holidays that might be applicable for a particular center.
 
-![](../../../../.gitbook/assets/admin-create-center.png)
+![](../../../../_images/admin-create-center.png)
 
 ### Update center
 
 * An admin can update a center even after it has been created. The updates can include adding the details that were missed during the creation of the center or changing the details of a center as required.
 * To update, click the **Edit** option from the Actions menu against a center name.
 
-![](../../../../.gitbook/assets/admin-edit-center.png)
+![](../../../../_images/admin-edit-center.png)
 
 {% hint style="info" %}
 **Note-** Updates made to language specific fields updates data only for that language in the database while updates made to non-language dependent fields updates data against all the language entries for that center.
@@ -100,7 +100,7 @@ The administrator can filter the list of registration centers based on parameter
 * Select the **Deactivate/Decommission** option from the Actions menu against the center.
 * Activation/Deactivation/Decommission of a center in one language will be applied to the same center created in all the languages.
 
-![](../../../../.gitbook/assets/admin-deactivate-center.png)
+![](../../../../_images/admin-deactivate-center.png)
 
 To know more, refer [Activate/deactivate/decommission resources](../#Activate/deactivate/decommission-resources)
 
@@ -118,34 +118,34 @@ To know more, refer [Activate/deactivate/decommission resources](../#Activate/de
 * The data collected about Devices is used only for book keeping, i.e., the MOSIP system does not use this data for any validation.
 {% endhint %}
 
-![](../../../../.gitbook/assets/admin-view-device.png)
+![](../../../../_images/admin-view-device.png)
 
 The Admin can filter the list of Registration centers based on parameters like _Device Name, Mac Address, Serial Number, Status, Map Status, Device Type, and Device Spec ID_.
 
-![](../../../../.gitbook/assets/admin-view-device-filter.png)
+![](../../../../_images/admin-view-device-filter.png)
 
 ### Create devices
 
 A Device can be created with multiple attributes and be mapped to the Administrative Zone it belongs to.
 
-![](../../../../.gitbook/assets/admin-create-device.png)
+![](../../../../_images/admin-create-device.png)
 
 ### Update devices
 
 * An admin can update missing information or change device details even after it is created.
 * To update, click the **Edit** option from the Actions menu against a device.
 
-![](../../../../.gitbook/assets/admin-edit-device.png)
+![](../../../../_images/admin-edit-device.png)
 
 ### Activate/deactivate/decommission device
 
 Select the **Deactivate/Decommission** option from the Actions menu against the device.
 
-![](../../../../.gitbook/assets/admin-deactivate-device.png)
+![](../../../../_images/admin-deactivate-device.png)
 
 ### Map/un-map/re-map the device to a center
 
-![](../../../../.gitbook/assets/admin-map-device-center.png)
+![](../../../../_images/admin-map-device-center.png)
 
 * Admin portal allows an Admin to map/un-map each device to a center.
 * This mapping specifies as to which center the device will be used in.
@@ -163,25 +163,25 @@ Select the **Deactivate/Decommission** option from the Actions menu against the 
 **Note:** Machine entities are also language agnostic.
 {% endhint %}
 
-![](../../../../.gitbook/assets/admin-view-machine.png)
+![](../../../../_images/admin-view-machine.png)
 
 The administrator can filter the list of machines based on parameters like _Machine name, Mac address, Serial number, Status, and Machine type._
 
-![](../../../../.gitbook/assets/admin-view-machine-filter.PNG)
+![](../../../../_images/admin-view-machine-filter.PNG)
 
 ### Create machines
 
 * A machine can be created with attributes like _Machine ID, machine name, MAC address, serial number, machine spec ID, and administrative zone_ the machine belongs to.
 * A machine needs to be mapped to an administrative zone.
 
-![](../../../../.gitbook/assets/admin-create-machine.png)
+![](../../../../_images/admin-create-machine.png)
 
 ### Update machines
 
 * An admin can update missing details or make changes to machine details even after it is created.
 * To update, click the **Edit** option from the Actions menu against a machine.
 
-![](../../../../.gitbook/assets/admin-edit-machine.png)
+![](../../../../_images/admin-edit-machine.png)
 
 _Note_- Updates made to language specific fields update data only for that language in the database while updates made to non-language dependent fields updates data against all the language entries for that center.
 
@@ -189,7 +189,7 @@ _Note_- Updates made to language specific fields update data only for that langu
 
 An admin can deactivate or decommission a machine through the admin portal.
 
-![](../../../../.gitbook/assets/admin-deactivate-machine.png)
+![](../../../../_images/admin-deactivate-machine.png)
 
 ### Map/un-map/re-map machine to a center
 
@@ -210,13 +210,11 @@ An admin can deactivate or decommission a machine through the admin portal.
 * A user can only be mapped to a zone that belongs under the user’s Administrative Zone.
 * A user can later be unmapped from the zone in case a user needs to be moved to another zone. In such cases, the user will later need to be mapped to the new zone. The below image displays the list of users that are mapped to a zone.
 
-![](../../../../.gitbook/assets/admin-user-zone-list.png)
+![](../../../../_images/admin-user-zone-list.png)
 
 #### Map/Un-map/re-map user to a zone
 
-&#x20;
-
-<figure><img src="../../../../.gitbook/assets/admin-user-zone-mapping.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../_images/admin-user-zone-mapping.png" alt=""><figcaption></figcaption></figure>
 
 To map a user to a zone,
 
@@ -225,7 +223,7 @@ To map a user to a zone,
 3. Select the _User Name, and Administrative Zone_ from the dropdown.
 4. Click **Save**.
 
-![](../../../../.gitbook/assets/admin-user-zone-map.png)
+![](../../../../_images/admin-user-zone-map.png)
 
 To re-map a user to a zone,
 
@@ -245,11 +243,11 @@ To re-map a user to a zone,
 * A user can only be mapped to a center that belongs under the user’s Administrative Zone.
 * A user can later be unmapped from the Center in cases where a User needs to be moved to another Center. In such cases, the user will later need to be mapped to the new center. In case the user is required to be mapped to a Registration center outside the Administrative Zonal restriction, the Administrative Zone of the user must be changed.
 
-![](../../../../.gitbook/assets/admin-user-center-list.png)
+![](../../../../_images/admin-user-center-list.png)
 
 #### **Map/un-map/re-map user to a registration center**
 
-![](../../../../.gitbook/assets/admin-user-center-map.png)
+![](../../../../_images/admin-user-center-map.png)
 
 To map a user to a center,
 
@@ -266,7 +264,7 @@ To map a user to a center,
 
 Below is the image illustrating the same.
 
-![](../../../../.gitbook/assets/admin-masterdata-search-filter.png)
+![](../../../../_images/admin-masterdata-search-filter.png)
 
 ## Packet status (based on RID)
 
@@ -275,7 +273,7 @@ Below is the image illustrating the same.
 * The packet status will contain all the stages the packet has passed through along with the last stage the packet is in.
 * In case the packet has not been processed or is marked for _Re-Send/Re-Register_, the admin will be able to view specific comments indicating the reason for that particular status.
 
-![](../../../../.gitbook/assets/admin-packet-status.png)
+![](../../../../_images/admin-packet-status.png)
 
 #### Pause/Resume RID
 
@@ -294,7 +292,7 @@ Once processing of a packet is resumed, it will be removed from this list
 
 A few filters may be applied to retrieve the RID.
 
-![](../../../../.gitbook/assets/admin-retrieve-lost-rid.png)
+![](../../../../_images/admin-retrieve-lost-rid.png)
 
 _Note_: This feature is currently under development.
 
@@ -303,7 +301,7 @@ _Note_: This feature is currently under development.
 * Admin portal allows an Admin to manage the Masterdata applicable for a country.
 * These data include a list of Genders, a list of Holidays, Templates, Center Types, Machine Types, etc.
 
-![](../../../../.gitbook/assets/admin-master-data.png)
+![](../../../../_images/admin-master-data.png)
 
 To know more, refer to the [Masterdata guide](../masterdata-guide.md).
 
@@ -313,11 +311,11 @@ To know more, refer to the [Masterdata guide](../masterdata-guide.md).
 * The listing screen displays the uploaded data transaction information.
 * As the information inside .csv files may be huge, it would go through the batch job to process the information and store it in the tables. Also, it may take time to get a unique transaction ID against a particular action.
 
-![](../../../../.gitbook/assets/admin-list-bulk-upload.png)
+![](../../../../_images/admin-list-bulk-upload.png)
 
 #### Master Data
 
-![](../../../../.gitbook/assets/admin-upload-masterdata.png)
+![](../../../../_images/admin-upload-masterdata.png)
 
 To upload Master data using the Admin portal,
 
@@ -335,7 +333,7 @@ _Note:_ While editing CSV files, it is recommended to keep track of the Date for
 
 ### Packets
 
-![](../../../../.gitbook/assets/admin-packet-bulkupload.png)
+![](../../../../_images/admin-packet-bulkupload.png)
 
 To upload packets using the Admin portal,
 
@@ -374,7 +372,7 @@ With the help of this feature, the Admin user can generate and manage the keys r
 * The logged in user has to select the return object after the generation of the key.
 * The user can select either _Certificate_ or _CSR (Certificate Signing Request)_. The key will be generated only when the key is not available in [Key Manager](../../../supporting-components/keymanager/) service otherwise already generated key certificate will be returned for the generation request.
 
-![](../../../../.gitbook/assets/admin-generate-masterkey.png)
+![](../../../../_images/admin-generate-masterkey.png)
 
 ### GenerateCSR
 
@@ -385,7 +383,7 @@ With the help of this feature, the Admin user can generate and manage the keys r
 * A new key will be auto-generated in case the key does not exist and the already existing key has expired for the Module Encryption keys.
 * Whereas, for [Module](../../../supporting-components/keymanager/#Key-hierarchy) master key or [Root](../../../supporting-components/keymanager/#Key-hierarchy) key, a new key will not get auto-generated in case the key does not exist, but the new key will get auto generated if the key exists and has expired. The current valid key will always be used to generate a CSR.
 
-![](../../../../.gitbook/assets/admin-generate-csr.png)
+![](../../../../_images/admin-generate-csr.png)
 
 ### GetCertificate
 
@@ -396,14 +394,14 @@ With the help of this feature, the Admin user can generate and manage the keys r
 * Whereas, for [Module](../../../supporting-components/keymanager/#Key-hierarchy) master key or [Root](../../../supporting-components/keymanager/#Key-hierarchy) key, a new key will not get auto-generated in case the key does not exist, but a new key will get auto-generated if the key exists and has expired. For the partner certificate, a new key will not be generated in the Key Manager service.
 * Only current valid certificates will be returned when the user requests a certificate.
 
-![](../../../../.gitbook/assets/admin-get-certificate.png)
+![](../../../../_images/admin-get-certificate.png)
 
 ### UploadCertificate
 
 * The logged in user can use this option to update the certificate for all the keys generated in the [Key Manager service](../../../supporting-components/keymanager/).
 * This option is used in scenarios where a valid CA certificate has been procured for a key available in the [Key Manager service](../../../supporting-components/keymanager/).
 
-![](../../../../.gitbook/assets/admin-upload-certificate.png)
+![](../../../../_images/admin-upload-certificate.png)
 
 ### UploadOtherDomainCertificate
 
@@ -411,4 +409,4 @@ With the help of this feature, the Admin user can generate and manage the keys r
 * Partner certificates will be used in the Key Manager service to encrypt any sharable data using the partner certificate required in datashare from MOSIP to any partner.
 * Partner certificates can also be used in the Key Manager service for signature verification purposes.
 
-![](../../../../.gitbook/assets/admin-upload-anotherdomain-certificate.png)
+![](../../../../_images/admin-upload-anotherdomain-certificate.png)

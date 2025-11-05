@@ -17,7 +17,7 @@ ID Repository module consists of the following components:
 5. Credential Feeder
 6. Salt generator
 
-![](../../../.gitbook/assets/id-repository.png)
+![](../../../_images/id-repository.png)
 
 ## Identity service
 
@@ -26,7 +26,7 @@ ID Repository module consists of the following components:
 
 Identity service uses Biometric SDK (server) to extract templates from provided biometric data.
 
-![](../../../.gitbook/assets/identity-service.png)
+![](../../../_images/identity-service.png)
 
 Above is the entity relationship diagram illustrated for the Identity service. _NOTE:_ The numbers do not signify a sequence of operations or control flow. Arrows indicate the data flow.
 
@@ -47,10 +47,10 @@ Above is the entity relationship diagram illustrated for the Identity service. _
 
 VID Service provides functionality to create/update Virtual IDs mapped against a UIN. It also provides the facility to update the status of VID. VIDs are created based on the VID policy defined in the configuration.
 
-![](<../../../.gitbook/assets/VID-service (1).png>)
+![](../../../_images/VID-service.png)
 
 1. Key Manager encrypts/decrypts data.
-2. The credential request generator issues credentials for new/updated UIN data.&#x20;
+2. The credential request generator issues credentials for new/updated UIN data.
 3. All VID related data is stored in `mosip_idmap` DB.
 4. Partner management service retrieves online verification partners to issue credentials.
 5. Audit logs are logged into Audit Manager.
@@ -61,7 +61,7 @@ VID Service provides functionality to create/update Virtual IDs mapped against a
 
 ## Credential service
 
-![](../../../.gitbook/assets/credential-service.png)
+![](../../../_images/credential-service.png)
 
 1. Key Manager encrypts/decrypts data and also used to sign data.
 2. WebSub subscribes to get notifications related to credential status from IDA.
@@ -92,7 +92,7 @@ New credential types may be defined as per needs of a country.
 
 This service creates request for credential issuance.
 
-![](<../../../.gitbook/assets/credential-request-generator (1).png>)
+![](../../../_images/credential-request-generator.png)
 
 1. Key Manager encrypts/decrypts data.
 2. The Auth Adapter integrates with KeyCloak for authentication.

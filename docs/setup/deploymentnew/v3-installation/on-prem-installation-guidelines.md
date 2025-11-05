@@ -1,7 +1,7 @@
 # On-Prem Installation Guidelines
 
 {% hint style="warning" %}
-**Note**:&#x20;
+**Note**:
 
 This version of the guide is currently under revision and enhancement. For any support, please reach out to us on [community.mosip.io](http://community.mosip.io/).
 {% endhint %}
@@ -33,7 +33,7 @@ This version of the guide is currently under revision and enhancement. For any s
 
 ### Architecture
 
-![](<../../../.gitbook/assets/deployment_architecture (1).png>)
+![](../../../_images/deployment_architecture.png)
 
 ### Deployment repos
 

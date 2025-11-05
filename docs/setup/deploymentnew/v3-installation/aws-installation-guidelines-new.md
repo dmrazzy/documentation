@@ -137,7 +137,7 @@ A Wireguard bastion host (Wireguard server) provides secure private channel to a
 
 ### Architecture diagram
 
-![](<../../../.gitbook/assets/deployment_architecture (1).png>)
+![](../../../_images/deployment_architecture.png)
 
 **Setup Wirguard VM and wireguard bastion server:**
 

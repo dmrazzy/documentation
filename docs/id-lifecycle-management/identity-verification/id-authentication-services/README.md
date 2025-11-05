@@ -21,13 +21,13 @@ The services mentioned below are used by Authentication or e-KYC Partners.
 * Authentication Service: used to authenticate an individual's UIN/VID using one or more authentication types.
 * KYC Authentication Service: used to request e-KYC for an individual's UIN/VID using one or more authentication types.
 
-![](../../../.gitbook/assets/authentication-flow.png)
+![](../../../_images/authentication-flow.png)
 
 ## OTP Request Service
 
 OTP Request Service is used by Authentication/e-KYC Partners to generate OTP for an individual's UIN/VID. The generated OTP is stored in IDA DB for validation during OTP Authentication.
 
-![](../../../.gitbook/assets/otp-request-flow.png)
+![](../../../_images/otp-request-flow.png)
 
 ## Internal Services
 
@@ -60,7 +60,7 @@ Refer to the [repository](https://github.com/mosip/authentication-demo-ui/tree/r
 
 Below is the sample authentication demo UI image.
 
-![](../../../.gitbook/assets/sample-auth-demo-ui.png)
+![](../../../_images/sample-auth-demo-ui.png)
 
 ## Authentication Error Eventing
 

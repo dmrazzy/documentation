@@ -42,12 +42,12 @@ Follow the steps below to set up Admin Services on your local system:
 2. Unzip Apache Maven and move the unzipped folder in `C:\Program Files` and `settings.xml` to `conf` folder `C:\Program Files\apache-maven-3.8.4\conf`.
 3. Install Eclipse, open the `lombok.jar` file and wait for some time until it completes the scan for Eclipse IDE and then click `Install/ Update`.
 
-![](../../../../.gitbook/assets/lombok-configuration.png)
+![](../../../../_images/lombok-configuration.png)
 
 1. Check the Eclipse installation folder `C:\Users\userName\eclipse\jee-2021-12\eclipse` to see if the `lombok.jar` is added. By doing this, you don't have to add the dependency of `lombok` in your `pom.xml` file separately as it is auto-configured by Eclipse.
 2. Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-![](../../../../.gitbook/assets/installed-jre.png)
+![](../../../../_images/installed-jre.png)
 
 ## Code setup
 
@@ -61,13 +61,13 @@ For the code setup, clone [admin-services](https://github.com/mosip/admin-servic
 4. After building of a project, open Eclipse and select `Import Projects → Maven → Existing Maven Projects → Next → Browse to project directory → Finish`.
 5. After successful importing of project, update the project by right-click on `Project → Maven → Update Project`.
 
-![](../../../../.gitbook/assets/import-project.png)
+![](../../../../_images/import-project.png)
 
 ## Environment setup
 
 1. For the environment setup, you need an external JAR that is available [here](https://oss.sonatype.org/#nexus-search;gav~~kernel-auth-adapter~1.2.0-SNAPSHOT~~) with different versions. (E.g.: You can download `kernel-auth-adapter.jar` and add to project `Libraries → Classpath → Add External JARs → Select Downloaded JAR → Add → Apply and Close`).
 
-![](../../../../.gitbook/assets/add-external-library.png)
+![](../../../../_images/add-external-library.png)
 
 1. Clone [admin-services repository](https://github.com/mosip/admin-services).
 2. Any changes in the properties for Masterdata and Admin services should be done in `application-local1.properties` file.
@@ -101,10 +101,10 @@ The service should now be up and running.
 
 This environment is created for dev. Give the variable name as `url` and set both the values as `https://dev.mosip.net`.
 
-![](../../../../.gitbook/assets/dev-env-postman.png)
+![](../../../../_images/dev-env-postman.png)
 
 * In the similar way, create another environment for localhost as shown below.
 
 This environment is created for localhost. Give the variable name as `url` and set both the values as `http://localhost:8099`.
 
-![](../../../../.gitbook/assets/localhost-env-postman.png)
+![](../../../../_images/localhost-env-postman.png)

@@ -2,13 +2,13 @@
 
 In these times of digital transformation, most services are moving online globally. Personalized access to online services is enabled through the use of a trusted digital identity. **eSignet** aims to offer a simple yet powerful mechanism for end users to identify themselves in order to avail of online services and also share their profile information.
 
-&#x20;eSignet supports multiple modes of identity verification to promote inclusion and increase access, thus narrowing potential digital divides. It also provides an elegant and easy way for an existing trusted identity database to make the identity digital and provision identity verification and service access.
+eSignet supports multiple modes of identity verification to promote inclusion and increase access, thus narrowing potential digital divides. It also provides an elegant and easy way for an existing trusted identity database to make the identity digital and provision identity verification and service access.
 
 {% hint style="info" %}
 There is a need to support more verification methods to be inclusive. Current approaches do not address privacy concerns comprehensively. We are constantly looking at ways to bridge the digital divide with better privacy. Here is a short introduction to identity verification methods. Also, do check out [Inji](https://app.gitbook.com/o/-M1FyzBr-VmticWYm8QI/s/aY8BQ4hdzhSchZV814Ev/) to understand modern approaches to identity using verifiable credentials for decentralized verification.
 {% endhint %}
 
-![](../../../.gitbook/assets/e-signet-qr.jpg) ![](../../../.gitbook/assets/e-signet-bio.jpg)
+![](../../../_images/e-signet-qr.jpg) ![](../../../_images/e-signet-bio.jpg)
 
 **What can eSignet be used for?**
 

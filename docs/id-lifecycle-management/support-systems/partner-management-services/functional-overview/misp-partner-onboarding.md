@@ -4,10 +4,9 @@
 
 This guide shows how Partner Admins can **Onboard a MISP Partner in PMS**. Onboarding includes **Creating a MISP Partner**, **Managing MISP Partner's Partner Certificates**, **Linking a Policy Group**, and **Generating/Managing MISP License Keys** using **PMS portal**.
 
-
 ## What is MISP Partner?
-MISP stands for MOSIP Infrastructure Service Provider. It acts as a secure intermediary that facilitates communication between external partners (such as banks, telecoms, or government agencies) and the MOSIP system. The MISP ensures that requests made by these external partners are routed securely and efficiently to the appropriate services within MOSIP, such as the ID Authentication Service.
 
+MISP stands for MOSIP Infrastructure Service Provider. It acts as a secure intermediary that facilitates communication between external partners (such as banks, telecoms, or government agencies) and the MOSIP system. The MISP ensures that requests made by these external partners are routed securely and efficiently to the appropriate services within MOSIP, such as the ID Authentication Service.
 
 ## Who can 'Onboard a MISP Partner' and What you need to know?
 
@@ -124,9 +123,7 @@ Assign a Policy Group to the MISP Partner, Selecting a policy group ensures the 
 
 2. Click on 'Request Policy' button to request for a relevant policy within an already selected 'Policy Group' against the MISP partner ID.
 
-> <img src="../../../../.gitbook/assets/misp-image13.png" alt="" data-size="original">
->
-> <img src="../../../../.gitbook/assets/misp-image14.png" alt="" data-size="original">
+> <img src="../../../../.gitbook/assets/misp-image13.png" alt="" data-size="original"> <img src="../../../../.gitbook/assets/misp-image14.png" alt="" data-size="original">
 
 3. Approve the requests after requesting policy, by navigating to the 'Pending Approvals' tab and selecting 'Approve' from the action menu against each request. (View details to inspect the mapping and comments before acting).
 
@@ -144,9 +141,7 @@ You can generate the MISP License Key for a selected policy and partner. The lic
 
 1. Go to the **MISP Services** card (from dashboard) or navigate to **MISP Services → Generate MISP License Key**.
 
-> <img src="../../../../.gitbook/assets/misp-image16.png" alt="" data-size="original">
->
-> <img src="../../../../.gitbook/assets/misp-image17.png" alt="" data-size="original">
+> <img src="../../../../.gitbook/assets/misp-image16.png" alt="" data-size="original"> <img src="../../../../.gitbook/assets/misp-image17.png" alt="" data-size="original">
 
 2. On the **Generate MISP License Key** page:
    * Select **Partner ID** (Dropdown shows only MISP partners with uploaded certificates).

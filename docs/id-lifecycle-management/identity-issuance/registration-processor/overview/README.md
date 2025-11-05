@@ -4,11 +4,11 @@
 
 Registration Processor (Regproc) is a backend processing engine to enable ID Lifecycle management. The diagram below shows the Registration Processor along with the other modules that contribute to issuing a Unique Identification Number(UIN) for an individual. Internally, Regproc follows the [SEDA](https://en.wikipedia.org/wiki/Staged_event-driven_architecture) architecture where data flows via multiple stages till the UIN is issued.
 
-![](../../../../.gitbook/assets/reg-proc.png)
+![](../../../../_images/reg-proc.png)
 
 The relationship of Regproc with other services is explained here. _NOTE: The numbers do not signify a sequence of operations or control flow_
 
-1. Registration packets are uploaded by the  [Registration Client](../../registration-client/) to the [Packet Receiver](https://github.com/mosip/registration/tree/release-1.2.0/registration-processor/init/registration-processor-packet-receiver-stage).
+1. Registration packets are uploaded by the [Registration Client](../../registration-client/) to the [Packet Receiver](https://github.com/mosip/registration/tree/release-1.2.0/registration-processor/init/registration-processor-packet-receiver-stage).
 2. After packet validation is done Regproc notifies the pre-registration application using the datasync service.
 3. The quality of biometrics is checked using an external biometric SDK. This is done in Regproc's [Quality Classifier stage](https://github.com/mosip/registration/blob/release-1.2.0/registration-processor/pre-processor/registration-processor-quality-classifier-stage/README.md).
 4. Regproc shares biometric data with [ABIS](../../../supporting-components/biometrics/abis.md), Manual adjudication System, and Verification System. The policy for sharing this data is fetched from [PMS](../../../support-systems/partner-management-services/).

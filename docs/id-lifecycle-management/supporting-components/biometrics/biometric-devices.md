@@ -4,7 +4,7 @@
 
 Biometric devices capture individuals' biometric data (fingerprint, iris scan, photo) and send it to a registration client or authentication client (app). The functional architecture of the various entities involved is shown below.
 
-![](../../../.gitbook/assets/sdk.png)
+![](../../../_images/sdk.png)
 
 ## Device types
 
@@ -21,11 +21,11 @@ Biometric devices capture individuals' biometric data (fingerprint, iris scan, p
 
 ## Enrolment flow
 
-![](../../../.gitbook/assets/devices-enrolment.png)
+![](../../../_images/devices-enrolment.png)
 
 ## Authentication flow
 
-![](../../../.gitbook/assets/devices-authentication.png)
+![](../../../_images/devices-authentication.png)
 
 ## Compliance test kit
 

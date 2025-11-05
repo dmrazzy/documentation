@@ -15,7 +15,7 @@ MOSIP provides backend APIs for this module along with a reference implementatio
 
 ## Pre-registration process
 
-![Pre-Registration Process](../../../../.gitbook/assets/pre-reg-process.png)
+![Pre-Registration Process](../../../../_images/pre-reg-process.png)
 
 ### Create an application
 
@@ -45,13 +45,13 @@ _Note_: The AID was formerly called PRID in the pre-registration context.
 
 ## Pre-registration module
 
-The relationship of the pre-registration module with other services is explained here.&#x20;
+The relationship of the pre-registration module with other services is explained here.
 
 {% hint style="info" %}
 **NOTE:** The numbers do not signify a sequence of operations or control flow.
 {% endhint %}
 
-![](../../../../.gitbook/assets/pre-reg-entity.png)
+![](../../../../_images/pre-reg-entity.png)
 
 1. Fetch [ID Schema](../../../../id-schema/) details with the help of Syncdata service.
 2. Fetch a new OTP for the user on the login page.
@@ -100,4 +100,4 @@ Refer to [API Documentation](https://mosip.github.io/documentation/1.2.0/1.2.0.h
 
 [Github repo](https://github.com/mosip/pre-registration/tree/release-1.2.0).
 
----
+***

@@ -23,11 +23,11 @@ Below is a list of tools required in OpenID Bridge:
 2. Unzip Apache Maven and move `settings.xml` to "conf" folder `<apache maven unzip path>\conf`.
 3.  Install Eclipse, open the `lombok.jar` file and then click `Install/Update`.
 
-    ![](../../../.gitbook/assets/lombok-configuration.png)
+    ![](../../../_images/lombok-configuration.png)
 4. Check the Eclipse installation folder to see if the `lombok.jar` is added.
 5. Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-![](../../../.gitbook/assets/installed-jre.png)
+![](../../../_images/installed-jre.png)
 
 ### Source code setup
 
@@ -41,7 +41,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 4. After building, open Eclipse and select `Import Projects → Maven → Existing Maven Projects → Next → Browse to project directory → Finish`.
 5. After successful importing of project, update the project by right-click on `Project → Maven → Update Project`.
 
-![](../../../.gitbook/assets/import-project.png)
+![](../../../_images/import-project.png)
 
 ## Environment setup
 
@@ -58,7 +58,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 
 `java -jar -Dspring.profiles.active=native -Dspring.cloud.config.server.native.search-locations=file:{mosip-config-mt_folder_path}/config -Dspring.cloud.config.server.accept-empty=true -Dspring.cloud.config.server.git.force-pull=false -Dspring.cloud.config.server.git.cloneOnStart=false -Dspring.cloud.config.server.git.refreshRate=0 {jarName}` .
 
-4\. Run the server by opening the `config-server-start.bat` file. ![](../../../.gitbook/assets/run-server.png)
+4\. Run the server by opening the `config-server-start.bat` file. ![](../../../_images/run-server.png)
 
 5\. To verify the config-server, hit the below URL: `http://localhost:51000/config/{spring.profiles.active}/{spring.cloud.config.name}/{spring.cloud.config.label}` for instance `http://localhost:51000/config/kernel/env/master`
 
@@ -78,4 +78,4 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 6. Swagger-UI service can be accessed from `(https/http)://(<domain>/<host>:<port>)/<context-path>/swagger-ui/index.html?configUrl=<contect-path>/v3/api-docs/swagger-config` for instance `https://dev2.mosip.net/v1/auditmanager/swagger-ui/index.html?configUrl=/v1/auditmanager/v3/api-docs/swagger-config`.
 7. The API's can be tried using postman. URLs and Body structures can be found in Swagger or curl command can be copied and imported in Postman.
 
-![](../../../.gitbook/assets/postman-import-curl.png)
+![](../../../_images/postman-import-curl.png)

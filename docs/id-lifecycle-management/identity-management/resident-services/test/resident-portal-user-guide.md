@@ -34,43 +34,43 @@ Residents can use these services to view, update, change, manage or share their 
 
 1.  Resident accesses the Resident Portal dashboard page.
 
-    ![](../../../../.gitbook/assets/resident-dashboard.png)
+    ![](../../../../_images/resident-dashboard.png)
 2.  Resident clicks on `UIN Services`.
 
-    ![](../../../../.gitbook/assets/resident-loginpage1.png)
+    ![](../../../../_images/resident-loginpage1.png)
 
     The login screen appears and the resident can choose one of the options to log in.
 3.  To login with OTP authentication, the resident clicks on `Log in here> More ways to login > Login with OTP`.
 
-    ![](../../../../.gitbook/assets/resident-loginpage2.png)
+    ![](../../../../_images/resident-loginpage2.png)
 4.  Resident needs to enter valid VID in the `Enter Your VID` text field and check the box `I'm not a robot`.
 
-    ![](../../../../.gitbook/assets/resident-loginpage3new.png)
+    ![](../../../../_images/resident-loginpage3new.png)
 5.  Next, the resident clicks on the `Get OTP` button.
 
     * The resident receives the OTP on the registered phone number and email ID.
     * The resident needs to enter the valid OTP received within stipulated time and click the `Verify` button.
 
-    ![](../../../../.gitbook/assets/resident-loginpage4.png)
+    ![](../../../../_images/resident-loginpage4.png)
 6. The resident is then navigated to the Consent page. On this page, the **Essential** and **Voluntary** claims are displayed. Additionally, they will also have to allow access to their data in **Authorize Scope** section to avail various services. Based on the consent provided by the resident, the services will be made available for modification.
 
-![](../../../../.gitbook/assets/resident-consentpage1.png)
+![](../../../../_images/resident-consentpage1.png)
 
 7. The resident has the choice to select from the list of Voluntary claims while the Essential claims are mandatory.
 
-![](../../../../.gitbook/assets/resident-consentpage2.png)
+![](../../../../_images/resident-consentpage2.png)
 
 8.  The resident should now click the `Continue` button. The system navigates the resident to the UIN Services menu page from where they can avail various services.
 
     _**Note**_: **Consent page will be available only for first time login.**
 
-    ![](../../../../.gitbook/assets/resident-dashboard.png)
+    ![](../../../../_images/resident-dashboard.png)
 
 ### View My History
 
 The residents can view the history of all the transactions associated with their logged-in UIN/ VID. They can also view their details and if any unaccounted entry is found, a report can be raised against the same.
 
-![](../../../../.gitbook/assets/resident-viewmyhistory1.png)
+![](../../../../_images/resident-viewmyhistory1.png)
 
 The residents can perform the following:
 
@@ -116,9 +116,9 @@ Once the event is completed, a message is displayed containing the grievance tra
 
 Below are the images with different filters on this page.
 
-![](../../../../.gitbook/assets/resident-viewmyhistory2.png)
+![](../../../../_images/resident-viewmyhistory2.png)
 
-![](../../../../.gitbook/assets/resident-viewmyhistory3.png)
+![](../../../../_images/resident-viewmyhistory3.png)
 
 ### Manage My VID
 
@@ -132,19 +132,19 @@ The following types of VIDs can be seen based on the VID policy:
 
 _**Note**_: The resident can get to know about the features of a particular VID by hovering over the “i” symbol.
 
-![](../../../../.gitbook/assets/resident-managemyvid1.png)
+![](../../../../_images/resident-managemyvid1.png)
 
 The residents can perform the following:
 
 1. **Create a new VID** : The residents can click on the `Create` button against any of the VID type selected. They can click on `Yes` to proceed. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-managemyvid2.png)
+![](../../../../_images/resident-managemyvid2.png)
 
 2. **Revoke an existing VID**: The residents can click on the **Delete icon** to revoke an existing VID. They can click on `Yes` to proceed. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-manage-myvid-delete.png)
+![](../../../../_images/resident-manage-myvid-delete.png)
 
-![](../../../../.gitbook/assets/resident-managemyvid3.png)
+![](../../../../_images/resident-managemyvid3.png)
 
 3.  **Download a VID card**:
 
@@ -158,17 +158,17 @@ The residents can perform the following:
 
     e. The downloaded card will be a password protected PDF. The residents can view the downloaded VID card by entering the password combination displayed on the screen.
 
-![](../../../../.gitbook/assets/resident-manage-myvid5-download.png)
+![](../../../../_images/resident-manage-myvid5-download.png)
 
-![](../../../../.gitbook/assets/resident-managemyvid4.png)
+![](../../../../_images/resident-managemyvid4.png)
 
-![](../../../../.gitbook/assets/resident-managemyvid5.png)
+![](../../../../_images/resident-managemyvid5.png)
 
-![](../../../../.gitbook/assets/resident-manage-myvid-downloadvid.png)
+![](../../../../_images/resident-manage-myvid-downloadvid.png)
 
 4. **View VID number**: All the VID numbers will be masked by default. The residents can view the unmasked version of VID by clicking on eye icon next to the VID number.
 
-![](../../../../.gitbook/assets/resident-manage-myvid-eye.png)
+![](../../../../_images/resident-manage-myvid-eye.png)
 
 ### Secure My ID
 
@@ -185,15 +185,15 @@ The residents can perform the following,
 
 **View the current status of authentication types**: The **lock icon** on each card indicates the current status of the authentication type. E.g.: If the lock is open, the authentication type is unlocked which means the residents can authenticate themselves using that particular authentication type and vice versa.
 
-![](../../../../.gitbook/assets/resident-securemyid.png)
+![](../../../../_images/resident-securemyid.png)
 
 **Lock/ unlock the authentication types**: To lock/ unlock a particular authentication type, the residents can click on lock/ unlock button. Once the preferences of each authentication type is selected, the residents can click on `Submit` to save the changes and click `Yes` to proceed. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-securemyid1.png)
+![](../../../../_images/resident-securemyid1.png)
 
-![](../../../../.gitbook/assets/resident-securemyid2.png)
+![](../../../../_images/resident-securemyid2.png)
 
-![](../../../../.gitbook/assets/resident-securemyid3.png)
+![](../../../../_images/resident-securemyid3.png)
 
 ### Track My Requests
 
@@ -217,7 +217,7 @@ The resident can reach `Track My Requests` page by the following ways:
 2. By clicking the bell icon
 3. `UIN services > Track My Requests`
 
-![](../../../../.gitbook/assets/resident-trackmyrequest.PNG)
+![](../../../../_images/resident-trackmyrequest.PNG)
 
 _**Note**_:
 
@@ -242,9 +242,9 @@ These details can be previewed as and when the attributes are chosen.
 
 Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-getpersonalisedcard1.png)
+![](../../../../_images/resident-getpersonalisedcard1.png)
 
-![](../../../../.gitbook/assets/resident-getpersonalisedcard2.png)
+![](../../../../_images/resident-getpersonalisedcard2.png)
 
 ### Share My Data
 
@@ -271,11 +271,11 @@ Additionally, the residents have to:
 3. On clicking the `Share` button, the resident will have to provide consent to share their data with the external partner.
 4. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-sharemydata1.png)
+![](../../../../_images/resident-sharemydata1.png)
 
-![](../../../../.gitbook/assets/resident-sharemydata2.png)
+![](../../../../_images/resident-sharemydata2.png)
 
-![](../../../../.gitbook/assets/resident-sharemydata3.png)
+![](../../../../_images/resident-sharemydata3.png)
 
 ### Menu Bar
 
@@ -290,7 +290,7 @@ The Resident Portal menu bar contains the following:
    * Last login details
    * Logout option
 
-![](../../../../.gitbook/assets/resident-menubar.png)
+![](../../../../_images/resident-menubar.png)
 
 ## Book an Appointment
 
@@ -315,15 +315,15 @@ The residents can use this feature to verify their registered email ID or phone 
 
     c. **Email ID/ phone number does not exist**: If there is no email ID/ phone number linked to the UIN/VID, a message is displayed saying no email ID/ phone number was found associated to this UIN/VID.
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid.png)
+    ![](../../../../_images/resident-verifyphonenumber-emailid.png)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid1.png)
+    ![](../../../../_images/resident-verifyphonenumber-emailid1.png)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid2.png)
+    ![](../../../../_images/resident-verifyphonenumber-emailid2.png)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid3.png)
+    ![](../../../../_images/resident-verifyphonenumber-emailid3.png)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid4.png)
+    ![](../../../../_images/resident-verifyphonenumber-emailid4.png)
 
 ### Get My UIN
 
@@ -340,9 +340,9 @@ The residents can use this feature for one of the following:
 4. Resident enters the OTP received on the registered email ID/ phone number and clicks on `Submit`.
 5.  The default PDF of UIN card will be downloaded and a success message is seen stating that the UIN has been successfully downloaded.
 
-    ![](../../../../.gitbook/assets/resident-getmyuin.png)
+    ![](../../../../_images/resident-getmyuin.png)
 
-    ![](../../../../.gitbook/assets/resident-getmyuin1.png)
+    ![](../../../../_images/resident-getmyuin1.png)
 
 **Steps to check the status of the AID**:
 
@@ -354,7 +354,7 @@ The residents can use this feature for one of the following:
 4. Resident enters the OTP received on the registered email ID/ phone number and clicks on `Submit`.
 5.  The status of the AID will be shown.
 
-    ![](../../../../.gitbook/assets/resident-getmyuin2.png)
+    ![](../../../../_images/resident-getmyuin2.png)
 
 ## Get Information
 
@@ -362,7 +362,7 @@ The residents can use this feature for one of the following:
 
 Residents can view the list of supported documents in the PDF format and download the same. Also, some sample documents are available for reference.
 
-![](../../../../.gitbook/assets/resident-getinformation-supportingdocuments.png)
+![](../../../../_images/resident-getinformation-supportingdocuments.png)
 
 #### List of Registration Centers
 
@@ -370,11 +370,11 @@ Residents can search for Registration Centres on the basis of below two mechanis
 
 **Nearby centers**: The resident will be asked to allow permission for location access in order to enable the system to suggest the nearest Registration Centres.
 
-![](../../../../.gitbook/assets/resident-getinformation-registrationcentres1.png)
+![](../../../../_images/resident-getinformation-registrationcentres1.png)
 
 **Manually look for centers**: If the Resident wants to manually look for a center, they can do so by choosing a level in location hierarchy from the drop-down (e.g.: Region, Province, Postal Code) and entering the value against the same.
 
-![](../../../../.gitbook/assets/resident-getinformation-registrationcentres2.png)
+![](../../../../_images/resident-getinformation-registrationcentres2.png)
 
 They can also download the PDF version of the result displayed on the screen for reference.
 

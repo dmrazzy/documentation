@@ -39,16 +39,16 @@ The documentation here will guide you through the pre-requisites required for [P
 5. Import the project in Eclipse IDE and it starts updating Maven projects configuration, refreshing workspaces, project starts building (downloading sources, javadoc).
 6. Add downloaded `lombok.jar` to project, click on downloaded JAR and install specifying Eclipse IDE(eclipse.exe) location.
 
-![](../../../../.gitbook/assets/lombok-configuration.png)
+![](../../../../_images/lombok-configuration.png)
 
 7. Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-![](../../../../.gitbook/assets/installed-jre.png)
+![](../../../../_images/installed-jre.png)
 
 8. Add MOSIP Pre-registration specific JARs from [Maven central](https://repo1.maven.org/maven2/io/mosip/):
    * Adding JARs to Build Path: Right click on service -> Build Path -> Configure Build Path -> click on Classpath -> Add External JARs -> Add required JARs -> Apply and close.
 
-![](../../../../.gitbook/assets/add-external-library.png)
+![](../../../../_images/add-external-library.png)
 
 9. Add `auth-adapter`, `transliteration`, `ref-idobjectvalidator`, `virusscanner`, `lombok` JARs to `pre-registration-application-service`, `pre-registration-datasync-service` classpath.
 10. Add `auth-adapter`, `lombok` JARs to `pre-registration-core`, `pre-registration-batchjob`, `pre-registration-captcha-service`, `pre-registration-booking-service` classpath.

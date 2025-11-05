@@ -8,7 +8,7 @@ This includes keying material such as symmetric keys, asymmetric keys, certifica
 
 Key Manager interfaces with key store like [Hardware Security Module (HSM)](hsm.md) and [`mosip_keymgr` DB](https://github.com/mosip/keymanager/tree/release-1.2.0/db_scripts/mosip_keymgr).
 
-![](../../../.gitbook/assets/keymanager-hsm-integration.png)
+![](../../../_images/keymanager-hsm-integration.png)
 
 ## Encryption algorithms
 
@@ -23,7 +23,7 @@ Key Manager interfaces with key store like [Hardware Security Module (HSM)](hsm.
 | Module   | [HSM](hsm.md) | Root        | Signing, encryption of Base keys       | [K7](keys.md)   | Key Generator job or Admin Portal              | Automatic                  | 3 years                         |
 | Base     | Database      | Module      | Encryption of registration packet etc. | [K7.5](keys.md) | Automatic                                      | Automatic                  | 2 years                         |
 
-![](../../../.gitbook/assets/keymanager-chain-of-trust.png)
+![](../../../_images/keymanager-chain-of-trust.png)
 
 Root and Module keys reside in HSM while Base key pair reside in the DB encrypted by Module keys. All references (aliases) containing metadata of keys are present in [`mosip_keymgr/key_alias`](../../../db_scripts/mosip_keymgr/ddl/keymgr-key_alias.sql) table. The [`key_store`](../../../db_scripts/mosip_keymgr/ddl/keymgr-key_store.sql) table contains encrypted Base keys.
 
@@ -34,7 +34,7 @@ The keys are identified as tuple of `app_id` and `ref_id`.
 
 \* `SIGN`: _TBD_
 
-![](../../../.gitbook/assets/keymanager-db-example.png)
+![](../../../_images/keymanager-db-example.png)
 
 ## Key generation process
 
@@ -47,7 +47,7 @@ After the deployment, the initial set of pre-requisite keys has to be generated 
 
 Base keys are auto-generated (and updaded on expiry) - the administrator is not required to request for generation. The keys reside in the DB. A new key pair is generated if not found in the DB.
 
-![](../../../.gitbook/assets/keymanager-hsm-keygenerator.png)
+![](../../../_images/keymanager-hsm-keygenerator.png)
 
 ## Validity
 

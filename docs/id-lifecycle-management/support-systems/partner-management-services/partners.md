@@ -12,7 +12,7 @@ The MOSIP platform requires integration with several other systems. Typically, a
 
 The below diagram illustrates the **MOSIP Ecosystem**, highlighting how the MOSIP platform integrates with various components to provide a complete ID solution.
 
-![MOSIP Ecosystem](../../../.gitbook/assets/mosip-ecosystem.jpg)
+![MOSIP Ecosystem](../../../_images/mosip-ecosystem.jpg)
 
 ## Partner types
 
@@ -33,9 +33,9 @@ The below diagram illustrates the **MOSIP Ecosystem**, highlighting how the MOSI
 
 ## Partner Policies
 
-The MOSIP Partner Policy establishes a structured framework for collaboration between MOSIP adopters and their partners and defines the rules for data access and sharing.&#x20;
+The MOSIP Partner Policy establishes a structured framework for collaboration between MOSIP adopters and their partners and defines the rules for data access and sharing.
 
-It specifies which partners can access what information and the procedures for requesting it, for instance, a registered print provider automatically receives data via WebSub if designated under the print policy whereas an authentication partner must actively call the authentication system to retrieve data based on policy guidelines. If eKYC is permitted, the partner may receive additional personally identifiable information (PII).&#x20;
+It specifies which partners can access what information and the procedures for requesting it, for instance, a registered print provider automatically receives data via WebSub if designated under the print policy whereas an authentication partner must actively call the authentication system to retrieve data based on policy guidelines. If eKYC is permitted, the partner may receive additional personally identifiable information (PII).
 
 The policy ensures granular control over shared attributes allowing different partners to receive varying levels of information; one may access only a name while another may obtain both a name and a photograph. This structured approach enhances security, compliance, and flexibility.
 

@@ -26,7 +26,7 @@ A Partner Admin can create Policies that are required for Authentication and Cre
 
 ## Home page
 
-![](../../../../.gitbook/assets/pms-home-page.png)
+![](../../../../_images/pms-home-page.png)
 
 ## Policies
 
@@ -38,22 +38,22 @@ To create policies, policy groups should be defined. Policy groups can be consid
 * After successful login, on the left navigation pane, click on **Policy -> Policy Group**.
 * The existing policy groups are listed on the screen and the new ones can be created.
 
-![](../../../../.gitbook/assets/pms-policy-groups.png)
+![](../../../../_images/pms-policy-groups.png)
 
 **To create Policy groups**
 
 * Click Policy -> Policy Group -> +Create Policy Group
 * Enter the Policy group Name and Description and click **Save**.
 
-![](../../../../.gitbook/assets/pms-create-policy-groups.png)
+![](../../../../_images/pms-create-policy-groups.png)
 
 To search or filter any data pertaining to policy groups, use the filter menu.
 
-![](../../../../.gitbook/assets/pms-filter-policy-groups.png)
+![](../../../../_images/pms-filter-policy-groups.png)
 
 You can also change the status of policy group(Deactivate/Re-activate) or edit it using the Action menu as shown below.
 
-![](../../../../.gitbook/assets/pms-actionmenu-policy-groups.png)
+![](../../../../_images/pms-actionmenu-policy-groups.png)
 
 On successful creation of Policy groups, polices can be created under that group. MOSIP supports two types of policies, i.e., **Auth** policy and **Datashare** policy.
 
@@ -61,7 +61,7 @@ On successful creation of Policy groups, polices can be created under that group
 
 By default, on clicking Auth policy, the screen displays the list of existing auth [policies](../partners.md#partner-policies).
 
-![](../../../../.gitbook/assets/pms-auth-policy.png)
+![](../../../../_images/pms-auth-policy.png)
 
 ### Create an Auth policy
 
@@ -71,7 +71,7 @@ By default, on clicking Auth policy, the screen displays the list of existing au
 4. Add the Policies Data.
 5. Click **Save**.
 
-![](../../../../.gitbook/assets/pms-create-auth-policy.png)
+![](../../../../_images/pms-create-auth-policy.png)
 
 _Note_: Once the policy is created, it will be in _Inactive_ state. You have to activate it before using it for a partner.
 
@@ -86,15 +86,15 @@ _Note_: Once the policy is created, it will be in _Inactive_ state. You have to 
 
 1. Use the filter menu.
 
-![](../../../../.gitbook/assets/pms-filter-auth-policy.png)
+![](../../../../_images/pms-filter-auth-policy.png)
 
-![](../../../../.gitbook/assets/pms-filter-results-auth-policy.png)
+![](../../../../_images/pms-filter-results-auth-policy.png)
 
 ## Data Share Policy
 
 Data Share policy can be created/edited in the same way as the steps mentioned in the previous section on `Auth policy` by using Data Share Policy menu options.
 
-![](../../../../.gitbook/assets/pms-data-share-policy.png)
+![](../../../../_images/pms-data-share-policy.png)
 
 ## Partner
 

@@ -10,7 +10,7 @@ The ABIS system never learns about residents' identities. Any Personally Identif
 ABIS is used for 1:N deduplication. For 1:1 authentication, [Biometric SDK](biometric-sdk.md) is used. MOSIP does not recommend using an ABIS for 1:1 authentication.
 {% endhint %}
 
-![](../../../.gitbook/assets/abis.png)
+![](../../../_images/abis.png)
 
 ## MOSIP-ABIS interface
 
