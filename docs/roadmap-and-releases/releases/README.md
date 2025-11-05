@@ -5,52 +5,57 @@ icon: book-open
 
 # Releases
 
-## Latest Releases 🌟
+## Latest Releases
+
+**Version**: Partner Management System Revamp 1.3.0-beta.3
+
+* Date: Coming Soon
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.3.md)
 
 **Version**: 1.2.0.4
 
 * Date: 27th October, 2025
-* [Release Notes](1.2.0.4.md)&#x20;
+* [Release Notes](1.2.0.4.md)
 
 **Version**: 0.1.0-beta.1 Infra
 
 * Date: 27th October, 2025
-* [Release Notes](0.1.0-beta-mosip-rapid-deployment-infrastructure.md)&#x20;
+* [Release Notes](0.1.0-beta-mosip-rapid-deployment-infrastructure.md)
 
 **Version**: 1.2.1.3 Admin Services
 
 * Date: 5th September, 2025
-* [Release Notes](1.2.1.3-admin-services.md)&#x20;
+* [Release Notes](1.2.1.3-admin-services.md)
 
 **Version**: 1.2.0.3 Pre Registration
 
 * Date: 5th September, 2025
-* [Release Notes](1.2.0.3-pre-registration.md)&#x20;
+* [Release Notes](1.2.0.3-pre-registration.md)
 
 **Version**: DSL- 1.2.1.0
 
 * Date: 5th September, 2025
-* [Release Notes](dsl-v1.2.1.0.md)&#x20;
+* [Release Notes](dsl-v1.2.1.0.md)
 
 **Version**: 1.2.0.3
 
 * Date: 5th September, 2025
-* [Release Notes](1.2.0.3.md)&#x20;
+* [Release Notes](1.2.0.3.md)
 
 **Version**: Partner Management System Revamp 1.3.0-beta.2
 
 * Date: 29th August, 2025
-* [Release Notes](partner-management-system-revamp-1.3.0-beta.2/)&#x20;
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.2)
 
 **Version**: Android Registration Client v0.12.0
 
 * Date: 8th August, 2025
-* [Release Notes ](android-registration-client-0.12.0/)
+* [Release Notes](android-registration-client-0.12.0)
 
 **Version**: Partner Management System Revamp 1.3.0-beta.1
 
 * Date: 24th July, 2025
-* [Release Notes ](pms-revamp-1.3.0-beta.1.md)
+* [Release Notes](pms-revamp-1.3.0-beta.1.md)
 
 **Version**: ID ID Reository 1.2.2.2
 

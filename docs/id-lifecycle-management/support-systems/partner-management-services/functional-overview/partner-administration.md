@@ -1,4 +1,4 @@
-# Partner Administration
+# Partner Administrator
 
 ## Partner Admin & Policy Manager
 
@@ -12,7 +12,7 @@ Partner Admin supervises the overall partner and policy management functionaliti
 * Approve / Reject new entries created by different partners or deactivate partner related records
 
 {% hint style="info" %}
-**Note**:&#x20;
+**Note**:
 
 Partner Admin can also assume the role of Policy Manager to:
 
@@ -65,7 +65,7 @@ After registration you need to go to keycloak to enable roles.
 
 By following the above steps (1-4) in keycloak, the admin can also configure **Policy Manager** role to enable and manage **Policies** card as shown in the dashboard below:
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6 (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Note**:
@@ -74,7 +74,7 @@ If only 'Policy Manager' role is configured in keycloak, then the user will stil
 {% endhint %}
 
 {% hint style="success" %}
-**Important**:&#x20;
+**Important**:
 
 After configuring the roles and if PMS portal is still logged in, make sure to logout and login again for the roles to get updated.
 {% endhint %}
@@ -110,7 +110,7 @@ In Certificate Trust Store (List View), the user can view the list of '**Root CA
 
 Each active certificate record has two options in action menu - **View** and **Download** Certificate.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
 
 **View Root CA details**
 
@@ -122,7 +122,7 @@ On clicking View, the Root CA certificate detail can be viewed individually.
 
 To upload Root CA / Intermediate CA Certificate, click on 'Upload Trust Certificate'.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
 
 Admin is thus navigated to Upload Trust Certificate page.
 
@@ -132,19 +132,13 @@ Admin is thus navigated to Upload Trust Certificate page.
 Admin can upload Root CA / Intermediate CA certificate in the same page but should be in a sequential order ie. Root CA Certificate upload first and then Corresponding Intermediate CA certificate upload.
 {% endhint %}
 
-
-
 Select the partner domain (AUTH / DEVICE / FTM) **in the Upload section**. Partner Domain typically refers to the specific functional area for which the **Root or Intermediate CA certificate** is being uploaded.
 
 * AUTH: Select Partner domain as AUTH if **Root or Intermediate CA certificate** is being uploaded for Authentication Partner.
 * DEVICE: Select Partner domain as DEVICE if **Root or Intermediate CA certificate** is being uploaded for Device Provider.
 * FTM: Select Partner domain as FTM if **Root or Intermediate CA certificate** is being uploaded for FTM Chip Provider.
 
-
-
 {% hint style="info" %}
-
-
 **Note**:
 
 * Only .cer or .pem format certificates are allowed for upload
@@ -154,14 +148,10 @@ Select the partner domain (AUTH / DEVICE / FTM) **in the Upload section**. Partn
 {% endhint %}
 
 {% hint style="success" %}
-
-
 **Note for Root CA Certificate**:
 
 * Issued To and Issued By is the same - which means these are self signed certificates.
 {% endhint %}
-
-
 
 **Download Root CA**
 
@@ -224,8 +214,6 @@ To upload the Intermediate CA certificate, carry out the same steps of Root CA C
 * Sequence of Upload: Root CA Certificate (by Partner Admin)→ Intermediate CA Certificate (by Partner Admin) → CA signed Partner Certificate (by Partner)
 {% endhint %}
 
-
-
 **Downloading the Intermediate CA Certificate**
 
 Clicking on Download, downloads the entire certificate chain as .p7b file and a success message is displayed - 'Certificate Chain of Trust for the given Intermediate CA certificate is downloaded successfully'.
@@ -233,8 +221,6 @@ Clicking on Download, downloads the entire certificate chain as .p7b file and a 
 {% hint style="info" %}
 **Note:** For expired status, 'Download Certificate Chain' button will be disabled in View Root Certificate page / Tabular View page.
 {% endhint %}
-
-
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image19.png" alt=""><figcaption></figcaption></figure>
 
@@ -264,8 +250,6 @@ As a **Partner Admin** you can view the list of all partners who have enrolled t
 **Note:** Deactivate option appears disabled if the partner is already deactivated.
 {% endhint %}
 
-
-
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image26.png" alt=""><figcaption></figcaption></figure>
 
 **Viewing a Partner's details**
@@ -288,8 +272,6 @@ The download functionality of following certificates is possible only during fol
 * If Original Certificate / MOSIP Signed Certificate is expired then on clicking respective menu items in the button-dropdown an appropriate error message is displayed.
 {% endhint %}
 
-
-
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image28.png" alt=""><figcaption></figcaption></figure>
 
 On downloading the Original / MOSIP Signed certificate, a success message appears.
@@ -307,22 +289,20 @@ To deactivate a partner, click on Deactivate option in action menu. A popup wind
 After confirming deactivation, the respective record is greyed out in the tabular view. The action menu here appears enabled with only 'View' option after deactivation and Deactivate in action menu is disabled.
 
 {% hint style="info" %}
-**Note:**&#x20;
+**Note:**
 
-After deactivation, the View partners page will display the following&#x20;
+After deactivation, the View partners page will display the following
 
 1. 'Deactivated' status.
 2. Certificate section is greyed out with and download button is disabled.
 {% endhint %}
-
-
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image32.png" alt=""><figcaption></figcaption></figure>
 
 The deactivated partner will not be able to create or utilize any of the services in their PMS portal (For e.g. no new transactions will work such as creation of OIDC Client , API Key etc).
 
 {% hint style="warning" %}
-**Known Issue:**&#x20;
+**Known Issue:**
 
 Even after partner deactivation partner is able to access the existing transactions in their PMS portal such as following:
 
@@ -330,7 +310,6 @@ Even after partner deactivation partner is able to access the existing transacti
 2. Existing API keys are still operational for Authentication Partner.
 3. SBI / Devices / FTM - trust validation does not fail even after partner deactivation.
 {% endhint %}
-
 
 ## **SBI - Device:**
 
@@ -364,15 +343,15 @@ The 'SBI-Devices' has 2 Tabs namely **SBI and Device**. SBI tab view is selected
 
 Go to Dashboard → SBI-Device → List of SBIs to Approved or Reject.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67 (1).png" alt=""><figcaption></figcaption></figure>
 
 Select on Approve / Reject option from the given record and chooses appropriate action.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68 (1).png" alt=""><figcaption></figcaption></figure>
 
 On approval, the status changes to 'Approved' and on rejection, the status changes to 'Rejected'
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69 (1).png" alt=""><figcaption></figcaption></figure>
 
 You can click on View option in the action menu to view any individual records,
 
@@ -426,17 +405,17 @@ Click on view option in action menu or the row item itself (of any active device
 
 On clicking the action menu of the respective device record, an option 'Approve / Reject' is provided
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77 (1).png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78 (1).png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
 'Pending for Approval' status is displayed when the device request is pending with admin for approval and no action has been taken by admin yet.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79 (1).png" alt=""><figcaption></figcaption></figure>
 
 #### Deactivate Device
 
@@ -469,7 +448,7 @@ The List of FTM Chip details displays all FTM Chip details created by FTM Chip P
 
 You can navigate to view 'List of FTM Chip details' page where list of all FTM Chip records submitted so far by different FTM Chip providers.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### View Details of FTM Chip
 
@@ -481,11 +460,11 @@ To view FTM Chip details indivudally, click on View option in action menu
 
 Click on the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86 (1).png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87 (1).png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
@@ -493,9 +472,7 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 **Note**: 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
 {% endhint %}
 
-
-
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Download FTM Chip Certificate
 
