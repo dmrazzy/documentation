@@ -4,6 +4,11 @@
 
 This guide shows how Partner Admins can **Onboard a MISP Partner in PMS**. Onboarding includes **Creating a MISP Partner**, **Managing MISP Partner's Partner Certificates**, **Linking a Policy Group**, and **Generating/Managing MISP License Keys** using **PMS portal**.
 
+
+## What is MISP Partner?
+MISP stands for MOSIP Infrastructure Service Provider. It acts as a secure intermediary that facilitates communication between external partners (such as banks, telecoms, or government agencies) and the MOSIP system. The MISP ensures that requests made by these external partners are routed securely and efficiently to the appropriate services within MOSIP, such as the ID Authentication Service.
+
+
 ## Who can 'Onboard a MISP Partner' and What you need to know?
 
 Partner Admins with the appropriate credentials can onboard MISP Partners in PMS. Before starting, ensure CA certificates are uploaded and required policy groups are created.
