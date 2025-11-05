@@ -1,16 +1,5 @@
 # Features
 
-[Keshav
-Singh](https://mosip.atlassian.net/wiki/people/712020:89022ae0-b73b-4f19-a5dc-8cf7cf3c67a7?ref=confluence)*I
-reviewed the existing feature documentation at [[PMS Features \| MOSIP
-Docs]{.underline}](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/overview/features)
-and noticed several inconsistencies in the sequencing and structuring of
-the listed features. I've marked the sections with discrepancies in
-**red** for easier identification, along with the **newly added
-content** that aligns with the latest PMS version updates.*
-
-# Features
-
 The key features of the Authentication Partner and the Partner
 Management System are below.
 
@@ -18,52 +7,31 @@ Management System are below.
 
 ### Self-registration
 
-A Partner can self-register with much of the process automated with
-minimal manual intervention.
+A Partner can self-register with much of the process automated with minimal manual intervention.
 
 ### User Access
 
-·       Login: Existing Partner who has already registered can login to
-the portal with email / username and password.
+* **Login**: Existing Partner who has already registered can login to the portal with email / username and password.
 
-·       Retrieve Password / Forgot Password: Partner will have option to
-reset password using the Forget Password option.
+* **Retrieve Password / Forgot Password**: Partner will have option to reset password using the **Forget Password** option.
 
-**T & C / Consent-** Partner consent refers to voluntary and informed
-agreement provided by a partner user on behalf of the Partner
-Organisation, to a specific action or process where the users have a
-clear understanding of what they are consenting to. User consent is
-important to ensure data privacy, where it is compliant to obtain
-explicit consent from partners before collecting, processing, or sharing
-their personal/ organisation level data.
+**T & C / Consent-** Partner consent refers to voluntary and informed agreement provided by a partner user on behalf of the Partner Organisation, to a specific action or process where the users have a clear understanding of what they are consenting to. User consent is important to ensure data privacy, where it is compliant to obtain explicit consent from partners before collecting, processing, or sharing their personal/organisation level data.
 
-A detailed description explaining which of their personal and
-organisation data is used and for what purposes it will be used in PMP
-will be informed while seeking user consent.
+A detailed description explaining which of their personal and organisational data is used and for what purposes it will be used in PMP will be informed while seeking user consent.
 
 ### Interface / User Experience
 
-For its user part, the new interface of PMS has undergone a complete
-revamp not only in UI but also UX, restructured from the ground up.
+For its user part, the new interface of PMS has undergone a complete revamp not only in UI but also UX, restructured from the ground up.
 
-**Card view presentation** -- The "Partner User Dashboard" now offers a
-Card-based layout, providing a clean and intuitive overview of available
-services.\
-Each card includes a one-line description to help users quickly
-understand its purpose.
+**Card view presentation** -- The "Partner User Dashboard" now offers a Card-based layout, providing a clean and intuitive overview of available services. Each card includes a one-line description to help users quickly understand its purpose.
 
-**User Profile** -- The user can view their organization name and
-username on the top-right corner.\
-The dropdown menu provides access to "User Profile" and "Logout"
-options.
+**User Profile** -- The user can view their organization name and username on the top-right corner. The dropdown menu provides access to "User Profile" and "Logout" options.
 
 ## Partner Admin Features
 
 ### Admin Dashboard
 
-The Admin dashboard provides a structured and modern user experience,
-where each major functionality is represented as a card.\
-The dashboard includes the following cards:
+The Admin dashboard provides a structured and modern user experience, where each major functionality is represented as a card. The dashboard includes the following cards:
 
 - Certificate Trust Store
 
@@ -81,35 +49,27 @@ The dashboard includes the following cards:
 
 - **MISP Services**
 
-It also displays pending request counts for Partner Policy-Linking,
-SBI-Device, and FTM Chip.
+It also displays pending request counts for Partner Policy-Linking, SBI-Device, and FTM Chip.
 
 ### Certificate Trust Store
 
-Upload, download, or view (List and Detailed view) of Root and
-Intermediate Certificates.
+Upload, download, or view (List and Detailed view) of Root and Intermediate Certificates.
 
 ### Partners
 
 For self- registered partners:
 
-- Download (Original & MOSIP Signed Certificate), Deactivate Partner, or
-  View (List and Detailed View).
+- Download (Original & MOSIP Signed Certificate), Deactivate Partner, or View (List and Detailed View).
 
-For MISP Partners (onboarded by Partner Admin):\
-Partner Admins can now onboard and manage MISP Partners through the PMS
-portal.\
-This includes creation of MISP Partners, uploading CA-signed partner
-certificates and selecting policy groups
+For MISP Partners (onboarded by Partner Admin):
 
-The tabular view shows all partners, with MISP Partners having
-additional options such as:
+Partner Admins can now onboard and manage MISP Partners through the PMS portal. This includes creation of MISP Partners, uploading CA-signed partner certificates and selecting policy groups.
 
-- Upload / Re-Upload Partner Certificate - option enabled only for MISP
-  Partner
+The tabular view shows all partners, with MISP Partners having additional options such as:
 
-- Select Policy Group (if not assigned during creation) - option enabled
-  only for MISP Partner
+- Upload / Re-Upload Partner Certificate - option enabled only for MISP Partner
+
+- Select Policy Group (if not assigned during creation) - option enabled only for MISP Partner
 
 - View Partner Details
 
@@ -117,8 +77,7 @@ additional options such as:
 
 ### Policies
 
-This section enables creation and management of policy groups and
-individual policies.
+This section enables creation and management of policy groups and individual policies.
 
 - Create Policy Group
 
@@ -144,124 +103,101 @@ individual policies.
 
 Approve, Reject, or View (List and Detail Views).
 
-**Enhancements for MISP Partners:**\
-Partner Admins can now request and link MISP-specific policies once a
-policy group is assigned.\
-The Policy Linking tabular view displays all MISP Partner--Policy
-associations and allows quick approval or rejection.
+**Enhancements for MISP Partners:**
 
-### [Authentication Services]{.underline}
+Partner Admins can now request and link MISP-specific policies once a policy group is assigned. The Policy Linking tabular view displays all MISP Partner--Policy associations and allows quick approval or rejection.
 
-·       OIDC Client:
+### Authentication Services
 
-o   **Tabular View**
+* **OIDC Client**:
 
-o   **View** individual details
+  * **Tabular View**
 
-o   **Deactivate**
+  * **View** individual details
 
-·       API Key:
+  * **Deactivate**
 
-o   **Tabular View**
+  * **API Key**:
 
-o   **View** individual details
+    * **Tabular View**
 
-o   **Deactivate**
+    * **View** individual details
 
- 
+    * **Deactivate**
 
-### [SBI-Device]{.underline}
+### SBI-Device
 
- SBI:
+ **SBI:**
 
-·       **Approve/ Reject**
+  * **Approve/ Reject**
 
-·       **Tabular View**
+  * **Tabular View**
 
-·       **View** individual details
+  * **View** individual details
 
-·       **Deactivate** (if no active devices present)
+  * **Deactivate** (if no active devices present)
 
 Device:
 
-·       **Approve/ Reject**
+  *  **Approve/ Reject**
 
-·       **Tabular View**
+  * **Tabular View**
 
-·       **View** individual details
+  * **View** individual details
 
-·       **Deactivate**
+  * **Deactivate**
 
-Note: For devices that are orphaned without an associated SBI, the
-partner admin will only have the option to **Reject**.
 
- 
+> Note: For devices that are orphaned without an associated SBI, the partner admin will only have the option to **Reject**.
 
 ### [FTM Chip]{.underline}
 
-·       **Approve/ Reject**
+* **Approve/ Reject**
 
-·       **Tabular View**
+* **Tabular View**
 
-·       **View** individual details
+* **View** individual details
 
-·       **Deactivate**
+* **Deactivate**
 
 ### [The key features of MISP Partner:]{.underline}
 
-PMS now supports complete lifecycle management of MISP Partners,
-including their onboarding, certificate management, policy association,
-and MISP License Key management.
+PMS now supports complete lifecycle management of MISP Partners, including their onboarding, certificate management, policy association, and MISP License Key management.
 
 **MISP Partner Onboarding:**
 
-- Partner Admins can create new MISP Partners directly from the
-  "Partners" card.
+* Partner Admins can create new MISP Partners directly from the "Partners" card.
 
-- During creation, the Partner Admin must ensure Root and Intermediate
-  CA Certificates are already uploaded.
+* During creation, the Partner Admin must ensure Root and Intermediate CA Certificates are already uploaded.
 
-- Once created, a MISP Partner can upload or re-upload their CA-signed
-  partner certificate and link a Policy Group (one-time action).
+* Once created, a MISP Partner can upload or re-upload their CA-signed partner certificate and link a Policy Group (one-time action).
 
 **Policy Linking for MISP Partners:**
 
-- Once a Policy Group is assigned, Partner Admins can request, approve,
-  or reject MISP policy linkages.
+* Once a Policy Group is assigned, Partner Admins can request, approve, or reject MISP policy linkages.
 
-- The interface provides a clean tabular view showing all the partners
-  and the linked policy details.
+* The interface provides a clean tabular view showing all the partners and the linked policy details.
 
 **MISP Services:**
 
-- A dedicated "MISP Services" card enables management of MISP License
-  Keys.
+* A dedicated "MISP Services" card enables management of MISP License Keys.
 
-- Partner Admins can:
+* Partner Admins can:
 
-  - Generate a new MISP License Key (user is expected to enter the
+  * Generate a new MISP License Key (user is expected to enter the
     validity of the license key)
 
-  - Regenerate a license key with updated validity
+  * Regenerate a license key with updated validity
 
-  - View existing license keys and their details
+  * View existing license keys and their details
 
-  - Deactivate active license keys
+  * Deactivate active license keys
 
-This new capability allows Partner Admins to manage the full MISP
-Partner lifecycle within PMS
+This new capability allows Partner Admins to manage the full MISP Partner lifecycle within PMS
 
-**Note:** Selecting a Policy Group and linking policies is optional for
-a MISP Partner. However, it is highly recommended to complete these
-actions before generating a MISP License Key for the respective MISP
-Partner.
+**Note:** Selecting a Policy Group and linking policies is optional for a MISP Partner. However, it is highly recommended to complete these actions before generating a MISP License Key for the respective MISP Partner.
 
-**Note:** If multiple MISP license keys are generated for the same
-Partner ID, only the latest MISP license key will remain active in the
-ID Authentication (IDA) module. Older license keys will be overwritten.
-An instruction is provided to admin during MISP license key creation to
-exercise caution when creating multiple license keys for the same
-Partner.
+**Note:** If multiple MISP license keys are generated for the same Partner ID, only the latest MISP license key will remain active in the ID Authentication (IDA) module. Older license keys will be overwritten. An instruction is provided to admin during MISP license key creation to exercise caution when creating multiple license keys for the same Partner.
 
 **Note:** The MISP license key automatically deactivates post expiry
 
@@ -271,62 +207,53 @@ Partner.
 
 ### Partner Certificate: 
 
-- Upload and Re-upload Certificate Authority (CA)-signed Partner
-  Certificates easily.
+* Upload and Re-upload Certificate Authority (CA)-signed Partner Certificates easily.
 
-- Download CA-signed Partner Certificates and corresponding MOSIP-signed
-  Certificates.
+* Download CA-signed Partner Certificates and corresponding MOSIP-signed Certificates.
 
-Features here are provided only for partner type **Authentication
-Partner**.
+Features here are provided only for partner type **Authentication Partner**.
 
-- Policies: Request Policy, View, Select Policy Group
+* Policies: Request Policy, View, Select Policy Group
 
-- Enable Authentication mechanisms for approved policies
+* Enable Authentication mechanisms for approved policies
 
 **API Key:**
 
-- Generate API Key for approved policies
+* Generate API Key for approved policies
 
-- View API Key details in a tabular list
+* View API Key details in a tabular list
 
-- Deactivate API Keys as needed
+* Deactivate API Keys as needed
 
 **OIDC Client:**
 
-- Create, View, Edit, or Deactivate OIDC Clients
+* Create, View, Edit, or Deactivate OIDC Clients
 
-- Access details such as Client IDs and policy associations
+* Access details such as Client IDs and policy associations
 
 Note:
 
 1.  API Key gets auto deactivated after its expiry.
 
-2.  API Key expiration duration can be configured : Newly generated API
-    keys should be set to 100 years of expiration duration by default,
-    since the time of its creation. **But an** admin-level configuration
-    (via config file) allows setting the API key expiration duration in
-    days (such that it can accommodate months/years too). But please
-    note that existing API keys (created before this feature) remains
-    unaffected.
+2.  API Key expiration duration can be configured : Newly generated API keys should be set to 100 years of expiration duration by default, since the time of its creation. **But an** admin-level configuration (via config file) allows setting the API key expiration duration in days (such that it can accommodate months/years too). But please note that existing API keys (created before this feature) remains unaffected.
 
 #### The key features of Device Provider
 
 **Partner Certificate**
 
-- Upload and Re-upload CA-signed Partner Certificates
+* Upload and Re-upload CA-signed Partner Certificates
 
-- Download both CA-signed and MOSIP-signed Partner Certificates
+* Download both CA-signed and MOSIP-signed Partner Certificates
 
 **Device Provider Services**
 
-- SBI-Device creation (Add SBI, Add Devices associated with SBI)
+* SBI-Device creation (Add SBI, Add Devices associated with SBI)
 
-- Submit SBI/Device for Partner Admin approval
+* Submit SBI/Device for Partner Admin approval
 
-- Deactivate SBI or associated devices
+* Deactivate SBI or associated devices
 
-- View SBI and associated devices
+* View SBI and associated devices
 
 **Note:** SBI and its associated devices are auto-deactivated after SBI
 expiry.
@@ -335,103 +262,84 @@ expiry.
 
 **Partner Certificate**
 
-- Upload and Re-upload CA-signed Partner Certificates
+* Upload and Re-upload CA-signed Partner Certificates
 
-- Download both CA-signed and MOSIP-signed Partner Certificates
+* Download both CA-signed and MOSIP-signed Partner Certificates
 
 **FTM Chip Services**
 
-- Add, View and deactivate FTM details
+* Add, View and deactivate FTM details
 
-- Upload, Re-upload, or download FTM chip certificates
+* Upload, Re-upload, or download FTM chip certificates
 
 ## Receive Notifications via PMS portal and email
 
-Users receive timely notifications through both the PMS portal and email
-regarding the upcoming expiry of certificates (Root/ Intermediate CA
-Certificate, Partner Certificate, FTM Chip Certificate), API Key and SBI
-linked to the Partner Management System (PMS).
+Users receive timely notifications through both the PMS portal and email regarding the upcoming expiry of certificates (Root/ Intermediate CA Certificate, Partner Certificate, FTM Chip Certificate), API Key and SBI linked to the Partner Management System (PMS).
 
 #### Notification Details
 
-- **Notification Channels**
+* **Notification Channels**
 
-  - Email
+  * Email
 
-  - PMS Portal notifications
+  * PMS Portal notifications
 
-- **Recipients**
+* **Recipients**
 
-  - **Partner Admins**
+  * **Partner Admins**
 
-    - Receive notifications about the expiry of all **Root /
-      Intermediate CA certificates** (regardless of who uploaded them)
-      which is set to expire in next 30 days.
+    * Receive notifications about the expiry of all **Root / Intermediate CA certificates** (regardless of who uploaded them) which is set to expire in next 30 days.
 
-    - Receive a **weekly summary** listing partners whose partner
-      certificates, FTM Chip Certificates, API Keys and SBIs are
-      expiring in the next 7 days.
+    * Receive a **weekly summary** listing partners whose partner certificates, FTM Chip Certificates, API Keys and SBIs are expiring in the next 7 days.
 
-    - Receive individual notifications before the expiry of:
+    * Receive individual notifications before the expiry of:
 
-      - Root CA Certificates
+      * Root CA Certificates
 
-      - Intermediate CA Certificates
+      * Intermediate CA Certificates
 
-  - **Partner Users**
+  * **Partner Users**
 
-    - Receive notifications for partner certificates they personally
-      uploaded.
+    * Receive notifications for partner certificates they personally uploaded.
 
-    - Notifications are specific to their uploaded partner certificates
-      or corresponding MOSIP signed certificates expiring within the
-      next 30 days.
+    * Notifications are specific to their uploaded partner certificates or corresponding MOSIP signed certificates expiring within the next 30 days.
 
-  - FTM Chip Providers receive notifications for FTM Chip Certificates
-    they have personally uploaded that are expiring within the next 30
-    days.
+  * FTM Chip Providers receive notifications for FTM Chip Certificates they have personally uploaded that are expiring within the next 30 days.
 
-  - Device Providers receive notifications for SBIs they have created
-    that are expiring within the next 30 days.
+  * Device Providers receive notifications for SBIs they have created that are expiring within the next 30 days.
 
-  - Authentication Partners receive notifications for API Keys they have
-    generated that are expiring within the next 30 days.
+  * Authentication Partners receive notifications for API Keys they have generated that are expiring within the next 30 days.
 
 #### Notification Schedule
 
-- **For Individual Certificate (Root CA/ Intermediate CA/ Partner
-  Certificate / FTM Chip Certificate, API Key and SBI) Expirations:**
+* **For Individual Certificate (Root CA/ Intermediate CA/ Partner Certificate / FTM Chip Certificate, API Key and SBI) Expirations:**
 
-  - 30 days before expiry
+  * 30 days before expiry
 
-  - 15 days before expiry
+  * 15 days before expiry
 
-  - Daily reminders starting from 10 days before expiry up to the expiry
-    date (i.e., from Day - 10 to Day 0).
+  * Daily reminders starting from 10 days before expiry up to the expiry date (i.e., from Day - 10 to Day 0).
+* **For Weekly Summary Notifications (for Partner Admins)**
 
-- **For Weekly Summary Notifications (for Partner Admins)**
+  * Sent every 7 days.
 
-  - Sent every 7 days.
+  * Lists all partner certificates expiring within the next 7 days.
 
-  - Lists all partner certificates expiring within the next 7 days.
-
-  - The next weekly notification triggers only after another 7 days.
+  * The next weekly notification triggers only after another 7 days.
 
 #### Notification Language Handling
+* **Email Notifications**
 
-- **Email Notifications**
-
-  - Sent in the language selected by the user during registration
+  * Sent in the language selected by the user during registration
     (partner/partner admin).
 
-- **PMS Portal Notifications**
+* **PMS Portal Notifications**
 
-  - Displayed in the language selected at the time of login, regardless
+  * Displayed in the language selected at the time of login, regardless
     of the user's registration language preference.
 
 #### Notification Retention
-
-- Notifications in the PMS portal older than **60 days** are
+* Notifications in the PMS portal older than **60 days** are
   **automatically deleted**.
 
 ### Audit Logging for Certificates, API Key, SBI Expiry Notifications
@@ -462,7 +370,7 @@ experience across devices.
 
 ## Language Support
 
-·       Multi Language is supported but with the released code- only 3
+* Multi Language is supported but with the released code- only 3
 (Eng, Ara, Fra) languages resource bundles will be given.
 
 Note: The SI will have to add new Resource Bundles directly in UI code

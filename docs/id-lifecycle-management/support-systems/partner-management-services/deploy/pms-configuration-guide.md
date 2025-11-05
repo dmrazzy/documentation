@@ -239,14 +239,15 @@ mosip.pms.batch.job.api.key.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
 mosip.pms.batch.job.skips.partner.ids=MOSIP.PROXY.SBI,mpartner-default-cert,mpartner-default-adjudication,mpartner-default-mobile,mpartner-default-print,mpartner-default-abis,mpartner-default-resident,mpartner-default-auth,mpartner-default-digitalcard,mpartner-default-esignet,
 ```
 
-8. These properties is used to schedule the batch job that deactivate the expired SBI and API Key.
+8. These properties is used to schedule the batch job that deactivate the expired SBI, API Key and MISP license key.
 
 ```
-mosip.pms.batch.job.root.intermediate.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
-mosip.pms.batch.job.partner.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
-mosip.pms.batch.job.ftm.chip.cert.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
-mosip.pms.batch.job.sbi.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
-mosip.pms.batch.job.api.key.expiry.periods=30,15,10,9,8,7,6,5,4,3,2,1,0
+# This job will auto deactivate expired SBIs
+mosip.pms.batch.job.sbi.expiry.auto.deactivation.cron.schedule=0 0 0 * * *
+# This job will auto deactivate expired API keys
+mosip.pms.batch.job.api.key.expiry.auto.deactivation.cron.schedule=0 0 0 * * *
+# This job will auto deactivate expired MISP Licenses
+mosip.pms.batch.job.misp.license.expiry.auto.deactivation.cron.schedule=0 0 0 * * *
 ```
 
 #### Templates for Email Notifications
@@ -323,6 +324,26 @@ mosip.pms.request.input.validation.regex=^[\\p{L}\\p{N}\\p{M}\\s.,@#&()\\-'?_!":
 ```
 
 
+#### Unique ID generation retry configuration
+
+This property specifies the maximum attempts to generate a unique ID (for example, policies, API keys).
+
+If the generated ID already exists (a collision), the system retries until it finds a unique one or reaches this limit.
+When the maximum retries are reached, the process stops and reports failure.
+
+```
+# Maximum retries for unique ID generation to prevent infinite loops
+mosip.pms.id.generation.max.retries=100
+```
+
+#### Supported Languages Configuration
+
+This property lists the supported languages for creating a MISP partner.
+Each language uses its standard code (for example, eng for English, hin for Hindi).
+
+```
+mosip.pms.supported.notification.languages=eng,hin,ara,fra,tam,kan
+```
 
 #### Partner Type Roles
 
@@ -355,6 +376,12 @@ mosip.role.pms.getnotifications=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_
 mosip.role.pms.putnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
 mosip.role.pms.getnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
 mosip.role.pms.patchdismissnotification=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER
+mosip.role.pms.getallmisplicenses=PARTNER_ADMIN
+mosip.role.pms.postlinkpolicygrouptopartner=PARTNER_ADMIN
+mosip.role.pms.postgeneratemisplicense=PARTNER_ADMIN
+mosip.role.pms.getmisplicensedetails=PARTNER_ADMIN
+mosip.role.pms.patchdeactivatemisplicensekey=PARTNER_ADMIN
+mosip.role.pms.putregeneratemisplicensekey=PARTNER_ADMIN
 -------- Policy Management Service ---------
 mosip.role.pms.getpolicygroups=AUTH_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER,ABIS_PARTNER,MANUAL_ADJUDICATION,PARTNER_ADMIN,POLICYMANAGER
 mosip.role.pms.getallpolicies=PARTNER_ADMIN,POLICYMANAGER

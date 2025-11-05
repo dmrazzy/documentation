@@ -38,7 +38,7 @@ Partner Management Service DB Scripts to be run: [DB scripts](https://github.com
 #### **Config Changes**
 
 \
-Add below property to partner-management-default.properties file in mosip-config repository to Deploy PMS Revamp 1.3.0-beta.2 release in your env.
+Add below property to partner-management-default.properties file in mosip-config repository to Deploy PMS Revamp 1.3.0-beta.3 release in your env.
 
 ```
 ## This property is used by kernel-authcodeflowproxy-api to check request is coming from allowed urls not.
