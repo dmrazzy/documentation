@@ -112,7 +112,8 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+**Changes done in release 1.3.0-beta.3**: 
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 
 ## /devicedetail (PATCH)
@@ -257,9 +258,7 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.3**:
 
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
-
-
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 ## /ftpchipdetail (PATCH)
 
@@ -380,8 +379,7 @@ Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.re
 
 **Changes done in release 1.3.0-beta.3**:
 
-A new query parameter called status has been introduced, which allows sorting based on the partner's approval status. This parameter supports the following values: active deactivated inactive. 
-
+A new query parameter called `status` has been introduced, enabling filtering based on the partner's approval status. Supported values for this parameter are: `active`, `deactivated`, and `inactive`.
 
 ## /admin-partners/{partnerId} (GET)
 
@@ -441,8 +439,7 @@ A new query parameter called status has been introduced, which allows sorting ba
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, partnerId, partnerComment, orgName, status, policyId, policyName, policyGroupName, partnerType
 
 **Changes done in release 1.3.0-beta.3**:
-A new optional query parameter partnerIdSearchType has been added to define the search type for partnerId. It is applicable only when partnerId is provided, with contains as the default value and equals as an allowed value.
-
+A new optional query parameter `partnerIdSearchType` has been introduced to specify the search type for `partnerId`. This parameter is applicable only when `partnerId` is provided. Supported values are `contains` (default) and `equals`.
 
 ## /partners (GET)
 
@@ -592,7 +589,7 @@ A new optional query parameter partnerIdSearchType has been added to define the 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the POST /partners/v3 endpoint.
+This endpoint has been deprecated since release 1.3.0-beta.3 and replaced by the new POST `/partners/v3` endpoint.
 
 ## /partners/v3 (POST)
 This endpoint is used for partner self registration.
@@ -684,7 +681,7 @@ Newly added in release-1.3.0-beta.3
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 ## /partners/{partnerId}/generate/apikey (PATCH)
 
@@ -697,7 +694,7 @@ Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.re
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 ## /partners/{partnerId}/policy/map (POST)
 
@@ -710,7 +707,7 @@ Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.re
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 ## /partners/{partnerId}/policygroup/{policygroupName} (PUT)
 
@@ -868,7 +865,7 @@ Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.re
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the POST /partners/v3 endpoint.
+This endpoint has been deprecated since release 1.3.0-beta.3 and replaced by the new POST `/partners/v3` endpoint.
 
 ## partners/v2/{partnerId} (PUT)
 
@@ -893,7 +890,7 @@ This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: status, partnerType
 
 **Changes done in release 1.3.0-beta.3**:
-If partnerType is set to MISP_Partner, the endpoint fetches all MISP partners instead of only those linked to the user. Access is restricted to users with the PARTNER_ADMIN role in this case.
+If the `partnerType` query parameter is set to `MISP_Partner`, this endpoint returns all MISP partners in the system, regardless of user association. In this scenario, access is restricted to users with the `PARTNER_ADMIN` role.
 
 ## /roles (GET)
 
@@ -993,7 +990,7 @@ If partnerType is set to MISP_Partner, the endpoint fetches all MISP partners in
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sbiId, id, make, model, deviceTypeCode, deviceSubTypeCode
 
 **Changes done in release 1.3.0-beta.3**:
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 ## /securebiometricinterface/devicedetails/map (PUT)
 
@@ -1198,7 +1195,7 @@ Newly added in release-1.3.0-beta.3
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 
 ## /policies/{policyId} (GET)
@@ -1296,7 +1293,7 @@ Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.re
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
 **Changes done in release 1.3.0-beta.3**:
-Fixed the Random ID generator issue by adding the mosip.pms.id.generation.max.retries property to retry ID generation until it is unique in the database, preventing conflicts.(MOSIP-42232)
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
 
 
 ## /policies/group/search (POST)
