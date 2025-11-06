@@ -2,7 +2,7 @@
 
 ## Overview
 
-The key features of the Authentication Partner and the Partner Management System are discussed here below.
+The key features of the Authentication Partner and the Partner Management System are discussed here through sections.
 
 ### Ease of Use and Usability Enhancements
 
