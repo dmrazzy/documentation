@@ -1,9 +1,5 @@
 # Partner Management System Revamp 1.3.0-beta.3
 
-Coming Soon
-
-Note: Content below is under revision:
-
 **Release Name**: Partner Management System Revamp
 
 **Release Number**: 1.3.0-beta.3
@@ -12,24 +8,24 @@ Note: Content below is under revision:
 
 #### **Overview**
 
-We’re excited to announce the release of **PMS 1.3.0.beta3**, This brings **end-to-end support for** [**MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/overview/) within the PMS (Partner Management System). This release empowers Partner Admins to manage the complete MISP Partner lifecycle — from onboarding and certificate handling to policy association and license key management — all through a seamless and unified interface.
+We’re excited to announce the release of **PMS 1.3.0.beta3**, This brings **end-to-end support for** [**MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/overview/README.md) within the PMS (Partner Management System). This release empowers Partner Admins to manage the complete MISP Partner lifecycle — from onboarding and certificate handling to policy association and license key management — all through a seamless and unified interface.
 
 #### **Key Highlights**
 
 PMS now supports complete lifecycle management of **MISP Partners**, including their onboarding, certificate management, policy association, and MISP License Key management.
 
-**1.** [**MISP Partner Onboarding**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#onboarding-misp-partners)
+**1.** [**MISP Partner Onboarding**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#onboarding-misp-partners):
 
-* Partner admins can create new MISP Partners directly using the **Partners** card on PMS dashboard.
+* Partner admins can [**Create new MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#create-a-misp-partner) directly using the **Partners** card on PMS dashboard.
 * During creation, the 'Partner Admin' must ensure that the **Root and Intermediate CA Certificates** are already uploaded.
 * Once created, a 'MISP Partner' can upload or re-upload their **CA-signed partner certificate** and link a **Policy Group** (one-time action).
 
-**2.** [**Policy Linking for MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#select-policy-group-one-time-assignment)
+**2.** [**Policy Linking for MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#select-policy-group-one-time-assignment):
 
 * Once a Policy Group is assigned, Partner Admins can **request, approve, or reject** MISP policy linkages.
 * The interface provides a **tabular view** showing all partners and their linked policy details for easy management and tracking.
 
-**3.** [**MISP Services and License Key Management**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#generate-misp-license-key)
+**3.** [**MISP Services and License Key Management**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#generate-misp-license-key):
 
 * A dedicated **MISP Services** card enables comprehensive management of 'MISP License Keys.
 * Partner Admins can:
@@ -98,12 +94,12 @@ For code and implementation of Partner Management Portal (revamp) , refer [here]
 
 To get started with the user interface of Partner Management Portal, refer to the [Partner Management Portal End User Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/functional-overview).
 
-### Documentation
+### Learn More
 
-* Features
-* End User Guide on Notifications feature
-* [Technical Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/develop)
+* [Features](../../id-lifecycle-management/support-systems/partner-management-services/overview/features.md)
+* [End User Guide](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md)
+* [Technical Guide](../../id-lifecycle-management/support-systems/partner-management-services/develop/README.md)
 
 ### Test Report
 
-For details on the test results, refer [here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beta.2).
+For details on the test results, refer [here](../../roadmap-and-releases/releases/partner-management-system-revamp-1.3.0-beta.3.md).
