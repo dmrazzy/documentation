@@ -4,7 +4,7 @@
 
 **Release Number**: 1.3.0-beta.3
 
-**Release Date**: Coming Soon
+**Release Date**: 7th November, 2025
 
 #### **Overview**
 
@@ -17,26 +17,26 @@ PMS now supports complete lifecycle management of **MISP Partners**, including t
 1. **MISP Partner Onboarding**:
 Partner Admins can [**Onboard a MISP Partner**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#onboarding-misp-partners) from the dashboard by first creating a partner (after uploading Root and Intermediate CA certificates) and then uploading the CA-signed certificate & linking a Policy Group.
 
-* You can [**Create new MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#create-a-misp-partner) directly using the **Partners** card on PMS dashboard.
-* During creation, the 'Partner Admin' must ensure that the **Root and Intermediate CA Certificates** are already uploaded.
-* Once created, a 'MISP Partner' can upload or re-upload their **CA-signed partner certificate** and link a **Policy Group** (one-time action).
+  * You can [**Create new MISP Partners**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#create-a-misp-partner) directly using the **Partners** card on PMS dashboard.
+  * During creation, the 'Partner Admin' must ensure that the **Root and Intermediate CA Certificates** are already uploaded.
+  * Once created, a 'MISP Partner' can upload or re-upload their **CA-signed partner certificate** and link a **Policy Group** (one-time action).
 
 2. **Policy Linking for MISP Partners**:
 You can [**Manage MISP policy linkages**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#select-policy-group-one-time-assignment) (request, approve, reject) and view all linked policies in a single table for streamlined tracking.
 
-* Once a Policy Group is assigned, you can **request, approve, or reject** MISP policy linkages.
-* The interface provides a **tabular view** showing all partners and their linked policy details for easy management and tracking.
+  * Once a Policy Group is assigned, you can **request, approve, or reject** MISP policy linkages.
+  * The interface provides a **tabular view** showing all partners and their linked policy details for easy management and tracking.
 
 3. **MISP Services and License Key Management**:
 You can now [generate, regenerate, view, and deactivate MISP License Keys](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md#generate-misp-license-key) directly in PMS, enabling full lifecycle management from a dedicated MISP Services card.
 
-* A dedicated **MISP Services** card enables comprehensive management of 'MISP License Keys.
-* Partner Admins can:
-  * Generate a new MISP License Key (by specifying the validity period).
-  * Regenerate a license key with updated validity.
-  * View existing license keys and their details.
-  * Deactivate active license keys.
-* This new capability allows Partner Admins to **manage the complete MISP Partner lifecycle** directly within PMS.
+  * A dedicated **MISP Services** card enables comprehensive management of 'MISP License Keys.
+  * Partner Admins can:
+    * Generate a new MISP License Key (by specifying the validity period).
+    * Regenerate a license key with updated validity.
+    * View existing license keys and their details.
+    * Deactivate active license keys.
+  * This new capability allows Partner Admins to **manage the complete MISP Partner lifecycle** directly within PMS.
 
 {% hint style="success" %}
 **Note:**
@@ -45,7 +45,7 @@ You can now [generate, regenerate, view, and deactivate MISP License Keys](../..
 * The MISP license key **automatically deactivates when it expires**.
 {% endhint %}
 
-For a comprehensive and detailed description of all the features, refer to [Feature Documentation](../../id-lifecycle-management/support-systems/partner-management-services/overview/features.md).
+For a comprehensive and detailed description of all the features, refer to [Features Documentation](../../id-lifecycle-management/support-systems/partner-management-services/overview/features.md).
 
 #### **User Stories**
 
