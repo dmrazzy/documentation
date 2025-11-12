@@ -10,7 +10,7 @@ icon: book-open
 **Version**: Partner Management System Revamp 1.3.0-beta.3
 
 * Date: Coming Soon
-* [Release Notes](partner-management-system-revamp-1.3.0-beta.3.md)
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.3/)
 
 **Version**: 1.2.0.4
 
