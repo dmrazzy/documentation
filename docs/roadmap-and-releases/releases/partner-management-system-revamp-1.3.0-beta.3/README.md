@@ -94,4 +94,4 @@ The following table outlines the tested and certified compatibility of PMS 1.3.0
 
 ### Test Report
 
-For details on the test results, refer **here**.
+For details on the test results, refer [**here**](test-report.md).
