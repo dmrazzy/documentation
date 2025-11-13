@@ -8,7 +8,7 @@
 
 #### **Overview**
 
-We’re excited to announce the release of **PMS 1.3.0.beta3**, This brings **end-to-end support for** [**MISP Partners**](../../../id-lifecycle-management/support-systems/partner-management-services/overview/) within the PMS (Partner Management System). This release empowers Partner Admins to manage the complete MISP Partner lifecycle — from onboarding and certificate handling to policy association and license key management — all through a seamless and unified interface.
+We’re excited to announce the release of **PMS 1.3.0.beta3**, This brings **end-to-end support for** [**MISP Partners**](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/overview/features#the-key-features-of-misp-partner) within the PMS (Partner Management System). This release empowers Partner Admins to manage the complete MISP Partner lifecycle, from onboarding and certificate handling to policy association and license key management, all through a seamless and unified interface.
 
 #### **Key Highlights**
 
