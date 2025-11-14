@@ -377,7 +377,7 @@
       * [Performance Test Report](roadmap-and-releases/releases/release-notes/performance-test-report.md)
       * [Security Test Report](roadmap-and-releases/releases/release-notes/security-test-report.md)
       * [Feature Health Report](roadmap-and-releases/releases/release-notes/feature-health-report.md)
-    * [1.2.2.3 ID Repository & 1.2.1.1 ID Authentication](roadmap-and-releases/releases/1.2.2.3-id-repository-and-1.2.1.1-id-authentication.md)
+    * [1.2.2.4 ID Repository & 1.2.1.1 ID Authentication](roadmap-and-releases/releases/1.2.2.4-id-repository-and-1.2.1.1-id-authentication.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
