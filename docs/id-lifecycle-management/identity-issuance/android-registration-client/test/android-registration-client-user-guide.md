@@ -1,6 +1,6 @@
 # End User Guide
 
-Login using OTPLogin using OTPThis user guide is designed to provide assistance to Operators and Supervisors in successfully installing, running, and registering applicants to obtain their Unique Identification Numbers (UIN) on tablet devices.
+This user guide is designed to provide assistance to Operators and Supervisors in successfully installing, running, and registering applicants to obtain their Unique Identification Numbers (UIN) on tablet devices.
 
 ## Prerequisites
 
@@ -456,4 +456,3 @@ Once the password is reset, new password can be used to log into Android Registr
 Note: In offline mode, you will still be able to login using the older password until the system goes online and syncs atleast once after resetting the password.
 
 ![](../../../../.gitbook/assets/arc-12-22.png)
-
