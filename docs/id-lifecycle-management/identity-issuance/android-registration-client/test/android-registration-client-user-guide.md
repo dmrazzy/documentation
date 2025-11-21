@@ -457,3 +457,163 @@ Note: In offline mode, you will still be able to login using the older password 
 
 ![](../../../../.gitbook/assets/arc-12-22.png)
 
+## Auto Logout
+
+The Auto Logout feature enhances application security by automatically logging out users after a defined period of inactivity. This helps protect sensitive data and ensures that only authorised users maintain access to the Android Registration Client.
+
+**How it works:**
+
+The system continuously monitors user activity, such as touches or navigation events within the application. When inactivity exceeds a configurable threshold, the following sequence occurs:
+
+**Step 1:** A warning message will be displayed on the screen after the idle period, notifying the user of the impending automatic logout. The warning dialog shows a countdown timer indicating the remaining time before automatic logout occurs.
+
+<figure><img src="../../../../.gitbook/assets/arc-auto-logout-warning.png" alt="" width="375"><figcaption><p>Auto logout warning message with countdown timer</p></figcaption></figure>
+
+**Step 2:** During the warning period, the user has two options:
+   * Click the **"STAY LOGGED IN"** button to dismiss the warning and continue the session normally.
+   * Click the **"LOG OUT"** button to immediately log out of the application.
+
+**Step 3:** If the user remains inactive and does not interact with the warning dialog (by clicking either button) during the warning period, the application will automatically log them out.
+
+**Step 4:** Upon automatic logout, the feature securely clears all authentication states and session data, ensuring that no sensitive information remains accessible.
+
+**Note:** The inactivity threshold and warning period duration are configurable settings that can be adjusted based on security requirements and operational needs.
+
+## Biometrics Correction
+
+The Biometric Correction feature enables operators to update and correct the biometric information of applicants, ensuring accurate association with their Unique Identification Number (UIN). When a resident's biometric data does not meet the required threshold during the registration process, the system generates an Additional Info Request ID. This ID is sent to the resident via notification, allowing them to schedule an appointment and update their biometric information at a registration centre.
+
+**Step 1:** Create a packet with a lower biometric threshold.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-1.png" alt="" width="375"><figcaption><p>Create packet with lower biometric threshold</p></figcaption></figure>
+
+**Step 2:** You will receive a notification with additional Info request ID.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-2.png" alt="" width="375"><figcaption><p>Notification with additional Info request ID</p></figcaption></figure>
+
+**Step 3:** Select the biometric correction feature from Home page.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-3.png" alt="" width="375"><figcaption><p>Select biometric correction from Home page</p></figcaption></figure>
+
+**Step 4:** Add an additional request ID and give valid biometrics.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-4.png" alt="" width="375"><figcaption><p>Add request ID and capture biometrics</p></figcaption></figure>
+
+**Step 5:** Preview for the given details.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-5.png" alt="" width="375"><figcaption><p>Preview details</p></figcaption></figure>
+
+**Step 6:** Authenticate the operator.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-6.png" alt="" width="375"><figcaption><p>Operator authentication</p></figcaption></figure>
+
+**Step 7:** You will receive an acknowledgement of your application.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-7.png" alt="" width="375"><figcaption><p>Application acknowledgement</p></figcaption></figure>
+
+**Step 8:** Approve the packet from the pending approvals.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-8.png" alt="" width="375"><figcaption><p>Approve packet from pending approvals</p></figcaption></figure>
+
+**Step 9:** Upload the packet.
+
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-9.png" alt="" width="375"><figcaption><p>Upload packet</p></figcaption></figure>
+
+This is the process to create a biometric correction packet. After this, the data will be updated, and a UIN will be generated.
+
+## GPS Location
+
+This feature enables the Operator to automatically capture GPS location (latitude and longitude) when creating any packet through Android Registration Client. The GPS location is captured at the point of packet creation and attached as metadata to the packet, ensuring that the Operator's location is tracked for audit and verification purposes.
+
+**Step 1:** Log into Android Registration Client using your login credentials.
+
+**Step 2:** Start creating a packet for any of the following: New Registration, Lost UIN, Update UIN, or Applicant Correction.
+
+**Step 3:** When you initiate packet creation, the system will automatically capture your current GPS coordinates (latitude and longitude) from the device. If this is the first time accessing location, you will be prompted to grant location permission. You can choose between "Precise" or "Approximate" location accuracy and select the permission duration (While using the app, Only this time, or Don't allow). This happens in the background without any additional action required from you once permission is granted.
+
+<figure><img src="../../../../.gitbook/assets/arc-gps-location-permission.png" alt="" width="375"><figcaption><p>GPS location permission dialog</p></figcaption></figure>
+
+**Step 4:** The captured GPS location will be attached to the packet as metadata when you submit the packet. The metadata includes latitude, longitude, and timestamp of when the location was captured.
+
+{% hint style="info" %}
+**Note:** If the device's location services are disabled or GPS is unavailable, the system will log a warning but will not block packet creation. The packet will be created with a flag indicating "No GPS data available" in the metadata.
+{% endhint %}
+
+## Settings
+
+### Scheduled Jobs Settings
+
+The Manage Scheduled Jobs feature allows admin and supervisor users to view, manage, and trigger scheduled sync/batch jobs directly from the Scheduled Jobs Settings screen within the Android Registration Client.
+
+This feature provides visibility into system jobs (e.g., syncs, cleanup, updates) and enables supervisors to modify their scheduling configuration (cron expressions) on the local device.
+
+This feature is useful to provide a centralised interface for administrators to monitor, update, and manually trigger scheduled jobs to ensure smooth and timely system operations.
+
+The Scheduled Jobs Settings screen displays a list or grid of all configured jobs.
+
+Each job entry includes:
+
+* Job Name (e.g., Registration Packet Deletion Job)
+* Next Run Time (calculated from cron expression)
+* Last Run Time (from job execution logs)
+* Cron Expression (editable field for supervisors)
+* Manual Trigger Button (Run Now)
+
+Each job's schedule is defined using a CORN expression.
+
+**Steps to find the Scheduled jobs feature:**
+
+**Step 1:** Click the settings button on the home page.
+
+<figure><img src="../../../../.gitbook/assets/arc-settings-home.png" alt="" width="375"><figcaption><p>Settings button on home page</p></figcaption></figure>
+
+**Step 2:** It will redirect to the settings page as referred in the image below. The first tab is the scheduled job, here you can access.
+
+<figure><img src="../../../../.gitbook/assets/arc-scheduled-jobs-settings.png" alt="" width="375"><figcaption><p>Scheduled jobs settings page</p></figcaption></figure>
+
+### Global Config Settings
+
+This feature enables authorized users (Supervisors) to view and manage global configurations in a single Global Config Settings screen. The feature displays server values fetched from masterdata and allows supervisors to override these values locally on the device. Local configuration changes apply only to the current device and do not affect server-side configurations or other devices.
+
+**Step 1:** Log into Android Registration Client using your login credentials (Supervisor role).
+
+**Step 2:** From the home page, click on the **"Settings"** button. The Settings screen will display with various options.
+
+<figure><img src="../../../../.gitbook/assets/arc-settings-home.png" alt="" width="375"><figcaption><p>Settings button on home page</p></figcaption></figure>
+
+**Step 3:** On the Settings screen, click on the **"Global Configuration Settings"** tab. On clicking, the Global Config Settings page will open and display all configurations with their server values and local values.
+
+<figure><img src="../../../../.gitbook/assets/arc-global-config-settings.png" alt="" width="375"><figcaption><p>Global Config Settings page</p></figcaption></figure>
+
+**Step 4:** On the Global Config Settings page, you will see a table with three columns: Key, Server Value, and Local Value. The Server Value column shows the value set from the server (read-only). The Local Value column shows the current local value for that configuration key.
+
+For configurations listed in the permitted configuration keys list, you can edit the Local Value by clicking on the Local Value field and entering the new value.
+
+<figure><img src="../../../../.gitbook/assets/arc-global-config-edit.png" alt="" width="375"><figcaption><p>Edit Local Value</p></figcaption></figure>
+
+**Step 5:** Once you have made changes to one or more Local Values, click on the **"Submit"** button. On clicking Submit, a confirmation dialog will appear showing the number of configurations to be updated.
+
+<figure><img src="../../../../.gitbook/assets/arc-global-config-confirm.png" alt="" width="375"><figcaption><p>Confirmation dialog</p></figcaption></figure>
+
+**Step 6:** Click **"Confirm"** in the dialog to save the changes. The system will save the configuration changes, display a success message, and automatically restart the app to apply the changes.
+
+The updated Local Values will apply only to the current device where the Android Registration Client is running. The Server Value will remain unchanged and unaffected by local edits.
+
+### Device Settings
+
+This feature enables authorized users (Supervisors and Officers) to view and monitor all devices/peripherals connected to the Android Registration Client tablet. On opening the Device Settings page, the system will automatically scan for connected devices and display device information including device name, device ID, and connection status.
+
+**Step 1:** Log into Android Registration Client using your login credentials (Supervisor or Officer role).
+
+**Step 2:** From the home page, click on the **"Settings"** button. The Settings screen will display with various options.
+
+<figure><img src="../../../../.gitbook/assets/arc-settings-home.png" alt="" width="375"><figcaption><p>Settings button on home page</p></figcaption></figure>
+
+**Step 3:** On the Settings screen, click on the **"Device Settings"** tab. On clicking, the Device Settings page will open and automatically scan for connected devices.
+
+On scanning, the connected devices will be displayed in a grid layout. For each device, you will see the Device ID, Device Name, and Connection Status.
+
+If no devices are detected, you can click on the **"Scan Now"** button to manually trigger a device scan. The device list will refresh automatically based on scan results.
+
+<figure><img src="../../../../.gitbook/assets/arc-device-settings.png" alt="" width="375"><figcaption><p>Device Settings page with Scan Now button</p></figcaption></figure>
+

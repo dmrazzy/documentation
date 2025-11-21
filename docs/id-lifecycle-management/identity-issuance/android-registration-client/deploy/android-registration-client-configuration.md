@@ -207,3 +207,25 @@ mosip.registration.reset_password_url=${mosip.api.internal.url}/keycloak/auth/re
 {% hint style="info" %}
 **Note:** The placeholder **`“mosip.api.internal.url”`** should be defined in **`application-default.properties`**.
 {% endhint %}
+
+Time in Seconds for forced log-out of the operator, if the operator is idle for the specified duration
+
+`mosip.registration.idle_time=900`
+
+Time in Seconds to display the warning message pop-up to the operator, if the operator is idle for the specified duration
+
+`mosip.registration.refreshed_login_time=600`
+
+No. of days beyond appointment date to delete unconsumed pre-registration application data
+
+`mosip.registration.pre_reg_deletion_configured_days=1`
+
+## GPS Connection
+
+* Enable GPS for capturing the geo-location. If y, GPS device will be enabled. If n, GPS device will be disabled.
+
+`mosip.registration.gps_device_enable_flag=N`
+
+* The Distance Parameter for GPS Verification
+
+`mosip.registration.distance.from.machine.to.center=900000`
