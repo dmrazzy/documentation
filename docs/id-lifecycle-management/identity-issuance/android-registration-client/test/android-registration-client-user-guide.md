@@ -170,7 +170,7 @@ Upon successful verification of the credentials, the packet will be uploaded to 
 
 <figure><img src="../../../../.gitbook/assets/operators authentication.png" alt="" width="375"><figcaption><p>Authentication page</p></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/ackn1 (1).png" alt="" width="375"><figcaption><p>Acknowledgement page</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/ackn1 (1).png" alt="" width="375"><figcaption><p>Acknowledgment page</p></figcaption></figure>
 
 **Pending Approval:**
 
@@ -232,7 +232,7 @@ b. The user will then have to capture all the above-listed biometrics one by one
 c. Steps to capture the biometrics are given [**here**](android-registration-client-user-guide.md#face-photo-capture-process)**.**\
 d. Once all the biometrics are duly captured, the below acknowledgment message will be displayed on the screen.
 
-<figure><img src="../../../../.gitbook/assets/Acknowledgement.png" alt="" width="338"><figcaption><p>Acknowledgement page</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/Acknowledgement.png" alt="" width="338"><figcaption><p>Acknowledgment page</p></figcaption></figure>
 
 4. **Dashboard:** The Operator can access the dashboard where he can view the following:
    1. **Packets created:** This will show the total number of packets created from the time the Android Registration Client was installed.
@@ -459,7 +459,7 @@ Note: In offline mode, you will still be able to login using the older password 
 
 ## Auto Logout
 
-The Auto Logout feature enhances application security by automatically logging out users after a defined period of inactivity. This helps protect sensitive data and ensures that only authorised users maintain access to the Android Registration Client.
+The Auto Logout feature enhances application security by automatically logging out users after a defined period of inactivity. This helps protect sensitive data and ensures that only authorized users maintain access to the Android Registration Client.
 
 **How it works:**
 
@@ -470,8 +470,8 @@ The system continuously monitors user activity, such as touches or navigation ev
 <figure><img src="../../../../.gitbook/assets/arc-auto-logout-warning.png" alt="" width="375"><figcaption><p>Auto logout warning message with countdown timer</p></figcaption></figure>
 
 **Step 2:** During the warning period, the user has two options:
-   * Click the **"STAY LOGGED IN"** button to dismiss the warning and continue the session normally.
-   * Click the **"LOG OUT"** button to immediately log out of the application.
+* Click the **"STAY LOGGED IN"** button to dismiss the warning and continue the session normally.
+* Click the **"LOG OUT"** button to immediately log out of the application.
 
 **Step 3:** If the user remains inactive and does not interact with the warning dialog (by clicking either button) during the warning period, the application will automatically log them out.
 
@@ -507,9 +507,9 @@ The Biometric Correction feature enables operators to update and correct the bio
 
 <figure><img src="../../../../.gitbook/assets/arc-biometric-correction-6.png" alt="" width="375"><figcaption><p>Operator authentication</p></figcaption></figure>
 
-**Step 7:** You will receive an acknowledgement of your application.
+**Step 7:** You will receive an acknowledgment of your application.
 
-<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-7.png" alt="" width="375"><figcaption><p>Application acknowledgement</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/arc-biometric-correction-7.png" alt="" width="375"><figcaption><p>Application acknowledgment</p></figcaption></figure>
 
 **Step 8:** Approve the packet from the pending approvals.
 
