@@ -25,7 +25,7 @@ Key Manager interfaces with key store like [Hardware Security Module (HSM)](hsm.
 
 ![](../../../_images/keymanager-chain-of-trust.png)
 
-Root and Module keys reside in HSM while Base key pair reside in the DB encrypted by Module keys. All references (aliases) containing metadata of keys are present in [`mosip_keymgr/key_alias`](../../../db_scripts/mosip_keymgr/ddl/keymgr-key_alias.sql) table. The [`key_store`](../../../db_scripts/mosip_keymgr/ddl/keymgr-key_store.sql) table contains encrypted Base keys.
+Root and Module keys reside in HSM while Base key pair reside in the DB encrypted by Module keys. All references (aliases) containing metadata of keys are present in [`mosip_keymgr/key_alias`](https://github.com/mosip/keymanager/blob/v1.3.0-beta.4/db_scripts/mosip_keymgr/ddl/keymgr-key_alias.sql) table. The [`key_store`](https://github.com/mosip/keymanager/blob/v1.3.0-beta.4/db_scripts/mosip_keymgr/ddl/keymgr-key_alias.sql) table contains encrypted Base keys.
 
 The keys are identified as tuple of `app_id` and `ref_id`.
 

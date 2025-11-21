@@ -1,6 +1,6 @@
 # End User Guide
 
-Login using OTPLogin using OTPThis user guide is designed to provide assistance to Operators and Supervisors in successfully installing, running, and registering applicants to obtain their Unique Identification Numbers (UIN) on tablet devices.
+This user guide is designed to provide assistance to Operators and Supervisors in successfully installing, running, and registering applicants to obtain their Unique Identification Numbers (UIN) on tablet devices.
 
 ## Prerequisites
 
@@ -616,4 +616,3 @@ On scanning, the connected devices will be displayed in a grid layout. For each 
 If no devices are detected, you can click on the **"Scan Now"** button to manually trigger a device scan. The device list will refresh automatically based on scan results.
 
 <figure><img src="../../../../.gitbook/assets/arc-device-settings.png" alt="" width="375"><figcaption><p>Device Settings page with Scan Now button</p></figcaption></figure>
-

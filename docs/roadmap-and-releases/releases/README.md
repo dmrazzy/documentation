@@ -7,10 +7,15 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: v1.2.2.4 ID Repository & v1.2.1.2 ID Authentication
+
+* Date: 17th November, 2025
+* [Release Notes](1.2.2.4-id-repository-and-1.2.1.2-id-authentication.md)
+
 **Version**: Partner Management System Revamp 1.3.0-beta.3
 
-* Date: Coming Soon
-* [Release Notes](partner-management-system-revamp-1.3.0-beta.3/)
+* Date: 13th November, 2025
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.3)
 
 **Version**: 1.2.0.4
 
