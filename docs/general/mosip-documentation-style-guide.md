@@ -18,9 +18,9 @@ It is recommended to follow the guidelines mentioned below.
 4. File names should be as descriptive and meaningful as possible. It is better to avoid using any special characters (& # \* !) in the names.
 5. In general, ensure that the filenames match the main heading on the page. Example, name of this file is `mosip-documentation-sytle-guid.md`.
 
-![](../_images/filename-example1.png)
+![](../.gitbook/assets/filename-example1.png)
 
-![](../_images/filename-example2.png)
+![](../.gitbook/assets/filename-example2.png)
 
 ## How to write in a markdown file?
 
@@ -34,7 +34,7 @@ Markdown files are text files with `.md` extension.
 * For the "Overview" section, use double ## (use sentence case).
 * For the other topics, use double hash or triple hashes, based on the importance of a topic or sub-topic.
 
-![](../_images/headers.png)
+![](../.gitbook/assets/headers.png)
 
 ### Bold
 
@@ -88,7 +88,7 @@ Example: `![](_images/image-settings.png)`
 
 Below is an example of an diagram created using [draw.io](https://app.diagrams.net/) which is a free diagramming browser app.
 
-![Packer Manager](../_images/packet-manager.png)
+![Packer Manager](../.gitbook/assets/packet-manager.png)
 
 Recommended settings to generate a PNG file on draw.io:
 
@@ -97,7 +97,7 @@ Recommended settings to generate a PNG file on draw.io:
 3. Uncheck _**Transparent**_ option.
 4. Click **Export**.
 
-![](../_images/image-settings.png)
+![](../.gitbook/assets/image-settings.png)
 
 Another way to adjust the height and width of the image is by using the HTML tag:
 
@@ -166,11 +166,11 @@ To know more, refer [here](../id-lifecycle-management/identity-issuance/registra
 
     **Initial draft**
 
-    <img src="../_images/admin-content.png" alt="" data-size="original">
+    <img src="../.gitbook/assets/admin-content.png" alt="" data-size="original">
 
     **Final draft**
 
-    <img src="../_images/admin-content-updated.png" alt="" data-size="original">
+    <img src="../.gitbook/assets/admin-content-updated.png" alt="" data-size="original">
 11. **Spacing**: Avoid leaving unnecessary empty spaces between words or sentences. You may leave one line space between each paragraph or as needed incase of multiple paragraphs.
 12. Avoid using the terms like **blacklist, black list, black-list, whitelist**.
 

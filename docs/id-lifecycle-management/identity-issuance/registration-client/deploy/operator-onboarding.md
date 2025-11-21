@@ -33,14 +33,14 @@ Once the operator is registered:
 * The operator needs to ensure that the Registration Client machine is online.
 *   The operator will land into the below page and needs to click on **Get Onboarded**
 
-    <img src="../../../../_images/reg-client-user-onboard.png" alt="" data-size="original">
+    <img src="../../../../.gitbook/assets/reg-client-user-onboard.png" alt="" data-size="original">
 * The operator needs to provide their biometrics and click **Save**.
 * All the biometric modalities displayed in the Operator biometrics page must be captured before clicking on Save.
 *   Captured biometrics quality must be greater than or equal to the threshold displayed in the UI.
 
     _Note_- The threshold values are configurable and can be set as per the ID issuer.
 
-    <img src="../../../../_images/reg-client-biometric-page.png" alt="" data-size="original">
+    <img src="../../../../.gitbook/assets/reg-client-biometric-page.png" alt="" data-size="original">
 * After successful onboarding, the operator is automatically re-directed to the [registration client home page](../../../../broken-reference/).
 
 _Note_:
@@ -60,7 +60,7 @@ Summarizing, on-boarding of an operator is successful only if,
 
 ### Operator onboarding workflow
 
-![](../../../../_images/operator-onboarding.png)
+![](../../../../.gitbook/assets/operator-onboarding.png)
 
 1. Operator logs into Registration Client for the first time and is redirected to Onboarding screen. Here, they need to capture all their biometrics and then click SAVE button.
 2. Request from Registration Client goes to [Registration Processor](https://docs.mosip.io/1.2.0/modules/registration-processor) for operator authentication.

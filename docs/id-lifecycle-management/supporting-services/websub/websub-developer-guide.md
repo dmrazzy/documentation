@@ -14,7 +14,7 @@ Below is a list of tools required in WebSub:
 
 ### Software setup
 
-1. Download [Ballerina](https://ballerina.io/downloads/) and install it as per instructions. (Use `bal -v` to ensure installation and version). ![](../../../_images/websub-version-check.png)
+1. Download [Ballerina](https://ballerina.io/downloads/) and install it as per instructions. (Use `bal -v` to ensure installation and version). ![](../../../.gitbook/assets/websub-version-check.png)
 2. Download [Kafka](https://kafka.apache.org/downloads) and install it.
 
 ### Source code setup
@@ -30,7 +30,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 
 ## Environment setup
 
-1. Copy `websub-service.toml` and `websub-consolidator.toml` file from [mosip-config repository](https://github.com/mosip/mosip-config) to hub and consolidator folder respectively and rename both of them as `Config.toml`(case-sensitive). ![](../../../_images/websub-config-file-placement.png)
+1. Copy `websub-service.toml` and `websub-consolidator.toml` file from [mosip-config repository](https://github.com/mosip/mosip-config) to hub and consolidator folder respectively and rename both of them as `Config.toml`(case-sensitive). ![](../../../.gitbook/assets/websub-config-file-placement.png)
 2. Run Configure and run Kafka, update `KAFKA_BOOTSTRAP_NODE` in `Config.toml` to point to your Kafka.
 
 ## Initialization and utilization of module

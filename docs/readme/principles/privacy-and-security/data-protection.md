@@ -43,7 +43,7 @@ The below diagram represents a registration data flow system for biometric authe
 
 ## Datashare
 
-![Datashare Flow Diagram](../../../_images/cryptography-datashare.png)
+![Datashare Flow Diagram](../../../.gitbook/assets/cryptography-datashare.png)
 
 Data shared with all partners like ABIS, Print, Adjudication, IDA, etc. is encrypted using partners' public key. Note that IDA is also a partner, however, a special partner in the sense that data is additionally zero-knowledge encrypted before sending to IDA (see the section below).
 
@@ -78,7 +78,7 @@ The [ID Authentication](../../../id-lifecycle-management/identity-verification/i
 
 ## ID authentication flow
 
-![](../../../_images/cryptography-ida-flow.png)
+![](../../../.gitbook/assets/cryptography-ida-flow.png)
 
 1. L1 devices contain [FTM](../../../id-lifecycle-management/supporting-components/biometrics/ftm.md) to encrypt (DE1, K21) and sign (FK1) biometrics at the source and send them to the authentication client.
 2. The authentication client further encrypts the auth request with the IDA-PARTNER public key.

@@ -28,11 +28,11 @@ Follow the steps below to set up Resident Services on your local system:
 4. Install Eclipse.
 5.  Open the `lombok.jar` file and wait for some time until it completes the scan for Eclipse IDE and then click `Install/Update`. Specify the eclipse installation location if required by clicking the ‘Specify location…’ button. Then, click `Install/Update` the button to proceed.
 
-    ![](../../../../_images/lombok-configuration.png)
+    ![](../../../../.gitbook/assets/lombok-configuration.png)
 6. Check the Eclipse installation folder `C:\Users\userName\eclipse\jee-2021-12\eclipse` to see if `lombok.jar` is added. By doing this, you will not have to add the dependency of `lombok` in your `pom.xml` file separately as it is auto-configured by Eclipse.
 7.  Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-    ![](../../../../_images/installed-jre.png)
+    ![](../../../../.gitbook/assets/installed-jre.png)
 
 ## Code setup
 
@@ -45,7 +45,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 3. Run the command `mvn clean install -Dgpg.skip=true -DskipTests=true` to build the project and wait for the build to complete successfully.
 4.  After building a project, open Eclipse and select `Import Projects → Maven → Existing Maven Projects → Next → Browse to project directory → Finish`.
 
-    ![](../../../../_images/import-project.png)
+    ![](../../../../.gitbook/assets/import-project.png)
 5. After successful importing of the project, update the project by right-clicking on `Project → Maven → Update Project`.
 
 ## Environment setup
@@ -62,7 +62,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 
     E.g.: You can download `kernel-auth-adapter.jar` and add to the project `Libraries → Classpath → Add External JARs → Select Downloaded JAR → Add → Apply and Close`).
 
-    ![](../../../../_images/add-external-library.png)
+    ![](../../../../.gitbook/assets/add-external-library.png)
 2.  Clone [mosip-config repository](https://github.com/mosip/mosip-config).
 
     a. As Resident Services is using two properties files- `resident-default.properties` and `application-default.properties`. But for the local running of the application, you need to provide additional/overriding properties such as secrets, passwords, and properties passed by the environment which can be added to new files `application-dev-default.properties` (common properties for all modules) and `resident-dev-default.properties` (Resident service-specific properties).
@@ -97,13 +97,13 @@ For instance,
 
 5.  Run the server by opening the `config-server-start.bat` file.
 
-    ![](../../../../_images/resident-dev-img1.png)
+    ![](../../../../.gitbook/assets/resident-dev-img1.png)
 
 #### Configurations to be done in Eclipse
 
 1.  Open Eclipse and run the project for one time as a Java application, so that it will create a Java application which you can see in debug configurations, and then change its name. (e.g.: project name with the environment - "Resident-dev").
 
-    ![](../../../../_images/resident-dev-img2.jpg)
+    ![](../../../../.gitbook/assets/resident-dev-img2.jpg)
 2.  Open the Arguments tab and specify Application VM arguments: For example, for a development environment:
 
     ```
@@ -126,7 +126,7 @@ For instance,
     Dspring.cloud.config.name=application,resident,application-qa,resident-qa --illegal-access=permit
     ```
 
-    ![](../../../../_images/resident-dev-img3.png)
+    ![](../../../../.gitbook/assets/resident-dev-img3.png)
 3. Click `Apply` and then debug it (starts running). In the console, you can see a message like `Started ResidentBootApplication in 34.078 seconds (JVM running for 38.361)`.
 
 ### Resident services API
@@ -137,16 +137,16 @@ For instance,
 * Swagger is an interface description language for describing restful APIs expressed using JSON. You can access Swagger-UI of resident-services for the dev-environment from `https://api-internal.dev.mosip.net/resident/v1/swagger-ui.html` and localhost from `http://localhost:8099/resident/v1/swagger-ui.html`.
 * Download the JSON collection available below and import it to your postman. [Resident-Service-APIs.postman\_collection-latest.json](https://github.com/mosip/documentation/tree/1.2.0/docs/_files/resident-services-config-files).
 
-![](../../../../_images/resident-dev-img4.png)
+![](../../../../.gitbook/assets/resident-dev-img4.png)
 
 * Create an environment as shown in the image below.
 
 This environment is created for dev. Give the variable name as `url` and set both values as `https://api-internal.dev.mosip.net`.
 
-![](../../../../_images/resident-dev-img5.png)
+![](../../../../.gitbook/assets/resident-dev-img5.png)
 
 * Similarly, create another environment as shown below.
 
 This environment is created for localhost. Give the variable name as `url` and set both values as `http://localhost:8099`.
 
-![](../../../../_images/resident-dev-img6.jpg)
+![](../../../../.gitbook/assets/resident-dev-img6.jpg)

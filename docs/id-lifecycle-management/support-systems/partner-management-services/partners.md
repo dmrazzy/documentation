@@ -12,7 +12,7 @@ The MOSIP platform requires integration with several other systems. Typically, a
 
 The below diagram illustrates the **MOSIP Ecosystem**, highlighting how the MOSIP platform integrates with various components to provide a complete ID solution.
 
-![MOSIP Ecosystem](../../../_images/mosip-ecosystem.jpg)
+![MOSIP Ecosystem](../../../.gitbook/assets/mosip-ecosystem.jpg)
 
 ## Partner types
 

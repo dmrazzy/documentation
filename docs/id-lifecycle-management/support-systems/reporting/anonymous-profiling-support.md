@@ -43,7 +43,7 @@ _Note_: New DB tables are added for the anonymous profile because data in existi
 * This profile data is captured in `anonymous_profile` tables under the `mosip_prereg` `mosip_regprc` schemas.
 * We can configure the stage at which the anonymous profile data in the registration processor needs to be captured. This can be configured as a part of the **registration processor camel routes** in the `mosip-config` repository as shown below.
 
-![Registration processor camel routes configuration](../../../_images/camel-config.png)
+![Registration processor camel routes configuration](../../../.gitbook/assets/camel-config.png)
 
 **The profile will be available from version 1.2.0 and above.**
 
@@ -91,11 +91,11 @@ JSON structure of the registration profile is given below
 
 Below is the image for the Anonymous profile table created in the Pre-registration schema
 
-![Anonymous profile table created in Pre-registration schema](../../../_images/ap-prereg.png)
+![Anonymous profile table created in Pre-registration schema](../../../.gitbook/assets/ap-prereg.png)
 
 Below is the image for the Anonymous profile table created in the Registration processor schema
 
-![Anonymous profile table created in Registration processor schema](../../../_images/ap-regprc.png)
+![Anonymous profile table created in Registration processor schema](../../../.gitbook/assets/ap-regprc.png)
 
 ### Anonymous Identity issuance profile
 
@@ -155,7 +155,7 @@ JSON structure of the identity issuance profile is given below:
 
 Below is the image for the Anonymous profile table created in the ID repository schema
 
-![Anonymous profile table created in ID repository schema](../../../_images/ap-identity-issuance.png)
+![Anonymous profile table created in ID repository schema](../../../.gitbook/assets/ap-identity-issuance.png)
 
 ### Anonymous Authentication Profile
 
@@ -189,12 +189,12 @@ JSON structure of the Authentication profile is given below:
 
 Below is the image for the Anonymous profile table created in the IDA schema
 
-![Anonymous profile table created in IDA schema](../../../_images/ap-ida.png)
+![Anonymous profile table created in IDA schema](../../../.gitbook/assets/ap-ida.png)
 
 ## Generating dashboards from Anonymous profile data
 
 Reports and dashboards can be created using anonymous profile data. The [reporting framework](https://github.com/mosip/reporting/blob/release-1.2.0/README.md) used for the platform can be used to push this data into elastic search and dashboards can be configured using Kibana. A dashboard created using **ID Issuance Anonymous profile** data is available as a part of the reference implementation. The same is shown below.
 
-![](../../../_images/reports-id-issuance-1.png) ![](../../../_images/reports-id-issuance-2.png)
+![](../../../.gitbook/assets/reports-id-issuance-1.png) ![](../../../.gitbook/assets/reports-id-issuance-2.png)
 
 More details about reporting module and dashboards can be found [here](https://docs.mosip.io/1.2.0/modules/reporting).

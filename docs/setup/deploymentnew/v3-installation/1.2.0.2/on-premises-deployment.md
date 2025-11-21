@@ -22,7 +22,7 @@
     > * Add below mentioned details:
     >   * ansible\_host : public IP of Wireguard Bastion server. eg. 100.10.20.56
     >   * ansible\_user : user to be used for installation. In this ref-impl we use Ubuntu user.
-    >   * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`![hosts.ini](../../../../_images/wireguard-hosts-ini.png)
+    >   * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem`![hosts.ini](../../../../.gitbook/assets/wireguard-hosts-ini.png)
 
     * Execute ports.yml to enable ports on VM level using ufw:`ansible-playbook -i hosts.ini ports.yaml`
 
@@ -128,7 +128,7 @@
     > * Ensure you are inside `on-prem` directory as mentioned above.
     > * ansible\_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
     > * ansible\_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
-    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`![hosts.ini](../../../../_images/nodes-hosts-ini.png)
+    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`![hosts.ini](../../../../.gitbook/assets/nodes-hosts-ini.png)
 
     *   Update `vpc_ip` variable in `ports.yaml` with vpc CIDR ip to allow access only from machines inside same vpc.
 
@@ -269,7 +269,7 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
     > * Add below mentioned details:
     > * ansible\_host : internal IP of NFS server. eg. 10.12.23.21
     > * ansible\_user : user to be used for installation, in this ref-impl we use Ubuntu user.
-    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem` ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
+    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem` ![hosts.ini](../../../../.gitbook/assets/nfs-hosts-ini.png).
 *   Make sure Kubeconfig file is set correctly to point to required Observation cluster.
 
     ```
@@ -465,7 +465,7 @@ Rancher provides full CRUD capability of creating and managing kubernetes cluste
     cd $K8_ROOT/rancher/keycloak
     ./install.sh <iam.host.name>
     ```
-* Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps defined ![keycloak-access](../../../../_images/keycloak-login.png).
+* Post installation access the keycloak using `iam.mosip.net` and get the credentials as per the post installation steps defined ![keycloak-access](../../../../.gitbook/assets/keycloak-login.png).
 
 ### 5.c. Keycloak - Rancher UI Integration
 
@@ -590,7 +590,7 @@ Rancher provides full CRUD capability of creating and managing kubernetes cluste
       > * Ensure you are inside `on-prem` directory as mentioned above.
       > * ansible\_host : internal IP of nodes. eg. 100.10.20.56, 100.10.20.57 ...
       > * ansible\_user : user to be used for installation. In this ref-implementation we use Ubuntu user.
-      > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`![hosts.ini](../../../../_images/nodes-hosts-ini.png)
+      > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/nodes-ssh.pem`![hosts.ini](../../../../.gitbook/assets/nodes-hosts-ini.png)
   * `ansible-playbook -i hosts.ini env-check-setup.yaml`
   * This ansible checks if localhost mapping ia already present in `/etc/hosts` file in all cluster nodes, if not it adds the same.
 * Setup passwordless ssh into the cluster nodes via pem keys. (Ignore if VM’s are accessible via pem’s).
@@ -736,7 +736,7 @@ Multiple storage classes options are available for onprem K8's cluster. In this 
     > * Add below mentioned details:
     > * ansible\_host : internal IP of NFS server. eg. 10.12.23.21
     > * ansible\_user : user to be used for installation, in this ref-impl we use Ubuntu user.
-    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem` ![hosts.ini](../../../../_images/nfs-hosts-ini.png).
+    > * ansible\_ssh\_private\_key\_file : path to pem key for ssh to wireguard server. eg. `~/.ssh/wireguard-ssh.pem` ![hosts.ini](../../../../.gitbook/assets/nfs-hosts-ini.png).
 *   Make sure Kubeconfig file is set correctly to point to required mosip cluster.
 
     ```
@@ -1175,9 +1175,8 @@ MOSIP’s successfull deployment can be verified by comparing the results of api
     * NFS Host:
     * NFS PEM File :
     * User for SSH Login: ubuntu
-  * Select the Ingress Controller Type:
-    *
-      1. Ingress
+  * Select the Ingress Controller Type: \*
+    1. Ingress
     *
       2. Istio (Choose 2)
 * Install DSLrig

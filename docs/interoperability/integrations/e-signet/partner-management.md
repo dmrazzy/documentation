@@ -105,14 +105,14 @@ Below is a sample policy for a relying party who is interested in authentication
 
 ## Appendix - Create, Retrieve and Update OIDC Client APIs
 
-{% openapi src="../../../../api/partner-management-service-openapi.json" path="/oidc/client" method="post" %}
-[partner-management-service-openapi.json](../../../../api/partner-management-service-openapi.json)
+{% openapi src="../../../.gitbook/assets/partner-management-service-openapi (1).json" path="/oidc/client" method="post" %}
+[partner-management-service-openapi (1).json](<../../../.gitbook/assets/partner-management-service-openapi (1).json>)
 {% endopenapi %}
 
-{% openapi src="../../../../api/partner-management-service-openapi.json" path="/oidc/client/{client_id}" method="put" %}
-[partner-management-service-openapi.json](../../../../api/partner-management-service-openapi.json)
+{% openapi src="../../../.gitbook/assets/partner-management-service-openapi (1).json" path="/oidc/client/{client_id}" method="put" %}
+[partner-management-service-openapi (1).json](<../../../.gitbook/assets/partner-management-service-openapi (1).json>)
 {% endopenapi %}
 
-{% openapi src="../../../../api/partner-management-service-openapi.json" path="/oidc/client/{client_id}" method="get" %}
-[partner-management-service-openapi.json](../../../../api/partner-management-service-openapi.json)
+{% openapi src="../../../.gitbook/assets/partner-management-service-openapi (1).json" path="/oidc/client/{client_id}" method="get" %}
+[partner-management-service-openapi (1).json](<../../../.gitbook/assets/partner-management-service-openapi (1).json>)
 {% endopenapi %}

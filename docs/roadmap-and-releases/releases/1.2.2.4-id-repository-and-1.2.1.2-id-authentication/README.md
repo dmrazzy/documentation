@@ -26,15 +26,15 @@ Release of components ID Repository 1.2.2.4 and ID Authentication 1.2.1.2 is a p
 
 **Token Management Consistency**
 
-* **Fixed PSUT token generation** - Resolved token inconsistencies across [UIN](../../id-lifecycle-management/identity-management/identifiers.md#uin), [VID](../../id-lifecycle-management/identity-management/identifiers.md#vid), and [Handle](../../id-lifecycle-management/identity-issuance/id-repository/custom-handle.md#what-is-a-handle) identifiers, ensuring reliable authentication workflows.
+* **Fixed PSUT token generation** - Resolved token inconsistencies across [UIN](../../../id-lifecycle-management/identity-management/identifiers.md#uin), [VID](../../../id-lifecycle-management/identity-management/identifiers.md#vid), and [Handle](../../../id-lifecycle-management/identity-issuance/id-repository/custom-handle.md#what-is-a-handle) identifiers, ensuring reliable authentication workflows.
 
 ### **Infrastructure Security Enhancement**
 
 * **Migrated to Eclipse Temurin JRE base image** - Upgraded from end-of-support Docker images to maintain security compliance and long-term maintainability.
 
-Refer [here ](../../id-lifecycle-management/identity-issuance/id-repository/)to know more about features of ID Repository.
+Refer [here ](../../../id-lifecycle-management/identity-issuance/id-repository/)to know more about features of ID Repository.
 
-Click [here](../../id-lifecycle-management/identity-verification/id-authentication.md) to know more about features of ID Authentication.
+Click [here](../../../id-lifecycle-management/identity-verification/id-authentication.md) to know more about features of ID Authentication.
 
 {% hint style="warning" %}
 **Note:** As part of this release, we have updated the base Docker image because the previous version has reached end-of-support. Due to this change, country-specific customizations included in earlier images will **not** be available by default. System Integrators (SIs) will need to explicitly re-apply their custom code to the new Docker image to avoid any issues during deployment or runtime.
@@ -61,7 +61,7 @@ The following bugs have been fixed in this release:
 
 ## Documentation
 
-* [UIN, VID, and Handle identifiers](../../id-lifecycle-management/identity-management/identifiers.md#uin)
-* [ID Repository](../../id-lifecycle-management/identity-issuance/id-repository/)
-* [ID Authentication](../../id-lifecycle-management/identity-verification/id-authentication.md)
+* [UIN, VID, and Handle identifiers](../../../id-lifecycle-management/identity-management/identifiers.md#uin)
+* [ID Repository](../../../id-lifecycle-management/identity-issuance/id-repository/)
+* [ID Authentication](../../../id-lifecycle-management/identity-verification/id-authentication.md)
 * \[Test Report]

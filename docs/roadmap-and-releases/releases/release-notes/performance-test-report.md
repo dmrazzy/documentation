@@ -178,13 +178,13 @@ Detailed Metrics for all 14 modules is available below:
 
 **CPU and Memory Utilization Graphs using Grafana**
 
-![](../../../release/1.2.0/performance-report/audit_manager_50_grafana_CPU_utilization.png)
+![](../../../.gitbook/assets/audit_manager_50_grafana_CPU_utilization.png)
 
-![](../../../release/1.2.0/performance-report/audit_manager_50_grafana_memory_utilization.png)
+![](../../../.gitbook/assets/audit_manager_50_grafana_memory_utilization.png)
 
 **Application Response Time Graph from Kibana**
 
-![](../../../release/1.2.0/performance-report/audit_manager_50_kibana_api_response_time.png)
+![](../../../.gitbook/assets/audit_manager_50_kibana_api_response_time.png)
 
 **Dependent Application Response Time Graph from Kibana**
 
