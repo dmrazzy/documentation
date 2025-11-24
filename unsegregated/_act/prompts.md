@@ -1,5 +1,14 @@
 ## Prompts
 
+Registration Client UI Spec
+- Read through the Registration Client UI Spec attached here
+- Also read through Spec from https://docs.mosip.io/1.1.5/modules/registration-client/ui-specification-for-registration-client - this is more human readable format and contains details in tabular format as well as description on usage as to how to use the UI components
+- Create a prompt for generating Registration Client UI guide based on the above two documents
+
+
+
+
+
 # PMS Features
 - I want to create Features page based on The _feature-page.md template and the _features-page-guidelines.md attache here
 - Go through the existing PMS features page attached here
