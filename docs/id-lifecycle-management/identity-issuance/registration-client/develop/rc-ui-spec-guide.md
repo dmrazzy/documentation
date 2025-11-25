@@ -24,38 +24,6 @@ The Registration Client UI is **dynamically configured** using JSON specificatio
 - **Field**: Individual input elements with specific data types and validations
 - **Dynamic Rendering**: UI components are generated based on JSON specifications
 
-## UI Component Catalog
-
-### Control Types Reference
-
-| Control Type | Description | Data Input | Use Cases |
-|--------------|-------------|------------|-----------|
-| `textbox` | Single-line text input | String data | Names, addresses, ID numbers |
-| `fileupload` | File selection and upload | Document/image files | Certificates, photos, proof documents |
-| `dropdown` | Selection from predefined options | Selected value from list | Country, state, document type |
-| `checkbox` | Boolean selection | True/false | Consent acceptance, optional flags |
-| `button` | Action trigger or selection | Click event/selected option | Language selection, navigation |
-| `date` | Date picker with calendar | Date value | Date of birth, expiry dates |
-| `ageDate` | Age-based date validation | Date with age constraints | DOB with min/max age limits |
-| `html` | Custom HTML content display | Static/dynamic content | Terms & conditions, instructions |
-| `biometrics` | Biometric capture interface | Biometric data | Fingerprints, iris, face capture |
-
-### Field Types
-
-| Field Type | Purpose | Configuration |
-|------------|---------|---------------|
-| `default` | Standard form fields | Static configuration in UI spec |
-| `dynamic` | Runtime-configurable fields | Values loaded from master data |
-
-### Data Types
-
-| Type | Description | Examples |
-|------|-------------|----------|
-| `string` | Text data | Names, addresses, phone numbers |
-| `simpleType` | Basic data types | Numbers, booleans, simple strings |
-| `documentType` | Document uploads | Certificates, ID proofs, photos |
-| `biometricsType` | Biometric data | Fingerprints, iris scans, face images |
-
 ## Process & Task Configuration
 
 ### Process Specification Structure
@@ -82,15 +50,15 @@ The Registration Client UI is **dynamically configured** using JSON specificatio
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `id` | String | ✅ | Unique process identifier (NEW/UPDATE/LOST/CORRECTION) |
-| `order` | Number | ✅ | Display order on home screen |
-| `flow` | String | ✅ | Process flow type |
-| `label` | Object | ✅ | Multi-language process labels |
-| `screens` | Array | ✅ | Screen configurations for the process |
-| `caption` | Object | ❌ | Tooltip text for process |
-| `icon` | String | ❌ | Icon file name for process |
-| `isActive` | Boolean | ✅ | Enable/disable process |
-| `autoSelectedGroups` | Array | ❌ | Pre-selected field groups for UPDATE process |
+| `id` | String |  | Unique process identifier (NEW/UPDATE/LOST/CORRECTION) |
+| `order` | Number | Yes | Display order on home screen |
+| `flow` | String | Yes | Process flow type |
+| `label` | Object | Yes | Multi-language process labels |
+| `screens` | Array | Yes | Screen configurations for the process |
+| `caption` | Object | No | Tooltip text for process |
+| `icon` | String | No | Icon file name for process |
+| `isActive` | Boolean | Yes | Enable/disable process |
+| `autoSelectedGroups` | Array | No | Pre-selected field groups for UPDATE process |
 
 ### Supported Process Types
 
@@ -127,15 +95,15 @@ The Registration Client UI is **dynamically configured** using JSON specificatio
 
 | Parameter | Type | Required | Description |
 |-----------|------|----------|-------------|
-| `order` | Number | ✅ | Screen sequence in process |
-| `name` | String | ✅ | Unique screen identifier |
-| `label` | Object | ✅ | Multi-language screen titles |
-| `caption` | Object | ❌ | Screen description/tooltip |
-| `fields` | Array | ✅ | Field configurations |
-| `layoutTemplate` | String | ❌ | Custom layout template |
-| `preRegFetchRequired` | Boolean | ❌ | Enable pre-registration data fetch |
-| `additionalInfoRequestIdRequired` | Boolean | ❌ | Capture additional info request ID |
-| `active` | Boolean | ✅ | Show/hide screen |
+| `order` | Number | Yes | Screen sequence in process |
+| `name` | String | Yes | Unique screen identifier |
+| `label` | Object | Yes | Multi-language screen titles |
+| `caption` | Object | No | Screen description/tooltip |
+| `fields` | Array | Yes | Field configurations |
+| `layoutTemplate` | String | No | Custom layout template |
+| `preRegFetchRequired` | Boolean | No | Enable pre-registration data fetch |
+| `additionalInfoRequestIdRequired` | Boolean | No | Capture additional info request ID |
+| `active` | Boolean | Yes | Show/hide screen |
 
 ### Screen Types & Navigation
 
@@ -176,12 +144,43 @@ The Registration Client UI is **dynamically configured** using JSON specificatio
 
 | Parameter | Type | Required | Description | Example |
 |-----------|------|----------|-------------|---------|
-| `id` | String | ✅ | Unique field identifier matching ID Schema | `"fullName"` |
-| `inputRequired` | Boolean | ✅ | Whether UI input is needed | `true` |
-| `type` | String | ✅ | Data type from ID Schema | `"string"` |
-| `controlType` | String | ✅ | UI component type | `"textbox"` |
-| `label` | Object | ✅ | Multi-language field labels | `{"eng": "Full Name"}` |
-| `required` | Boolean | ✅ | Mandatory field flag | `true` |
+| `id` | String | Yes | Unique field identifier matching ID Schema | `"fullName"` |
+| `inputRequired` | Boolean | Yes | Whether UI input is needed | `true` |
+| `type` | String | Yes | Data type from ID Schema | `"string"` |
+| `controlType` | String | Yes | UI component type | `"textbox"` |
+| `label` | Object | Yes | Multi-language field labels | `{"eng": "Full Name"}` |
+| `required` | Boolean | Yes | Mandatory field flag | `true` |
+
+### Control Types Reference
+
+| Control Type | Description | Data Input | Use Cases |
+|--------------|-------------|------------|-----------|
+| `textbox` | Single-line text input | String data | Names, addresses, ID numbers |
+| `fileupload` | File selection and upload | Document/image files | Certificates, photos, proof documents |
+| `dropdown` | Selection from predefined options | Selected value from list | Country, state, document type |
+| `checkbox` | Boolean selection | True/false | Consent acceptance, optional flags |
+| `button` | Action trigger or selection | Click event/selected option | Language selection, navigation |
+| `date` | Date picker with calendar | Date value | Date of birth, expiry dates |
+| `ageDate` | Age-based date validation | Date with age constraints | DOB with min/max age limits |
+| `html` | Custom HTML content display | Static/dynamic content | Terms & conditions, instructions |
+| `biometrics` | Biometric capture interface | Biometric data | Fingerprints, iris, face capture |
+
+### Field Types
+
+| Field Type | Purpose | Configuration |
+|------------|---------|---------------|
+| `default` | Standard form fields | Static configuration in UI spec |
+| `dynamic` | Runtime-configurable fields | Values loaded from master data |
+
+### Data Types
+
+| Type | Description | Examples |
+|------|-------------|----------|
+| `string` | Text data | Names, addresses, phone numbers |
+| `simpleType` | Basic data types | Numbers, booleans, simple strings |
+| `documentType` | Document uploads | Certificates, ID proofs, photos |
+| `biometricsType` | Biometric data | Fingerprints, iris scans, face images |
+
 
 ### Advanced Field Parameters
 
@@ -320,14 +319,14 @@ flowchart TD
 
 ### 1. Field Configuration
 
-#### ✅ Do's
+#### Do's
 - **Use descriptive field IDs** that match ID Schema exactly
 - **Provide comprehensive labels** in all supported languages
 - **Set appropriate field categories** (`pvt`, `evidence`, `kyc`)
 - **Configure proper validation** for data integrity
 - **Use alignment groups** for logical field grouping
 
-#### ❌ Don'ts
+#### Don'ts
 - Don't use generic field IDs like `field1`, `field2`
 - Don't skip validation for critical fields
 - Don't ignore multi-language requirements
@@ -335,7 +334,7 @@ flowchart TD
 
 ### 2. Screen Design
 
-#### ✅ Recommended Patterns
+#### Recommended Patterns
 ```json
 // Logical screen progression
 {
@@ -349,7 +348,7 @@ flowchart TD
 }
 ```
 
-#### ✅ Field Grouping Example
+#### Field Grouping Example
 ```json
 // Horizontal alignment for related fields
 {
@@ -364,7 +363,7 @@ flowchart TD
 
 ### 3. Process Configuration
 
-#### ✅ Process Naming Convention
+#### Process Naming Convention
 - Use **UPPERCASE** for process IDs
 - Use **descriptive icons** for visual identification
 - Set **logical order** for home screen display
@@ -372,7 +371,7 @@ flowchart TD
 
 ### 4. Conditional Logic
 
-#### ✅ Visibility Expression Example
+#### Visibility Expression Example
 ```json
 {
     "visible": {
@@ -382,7 +381,7 @@ flowchart TD
 }
 ```
 
-#### ✅ Required Field Logic
+#### Required Field Logic
 ```json
 {
     "requiredOn": [
