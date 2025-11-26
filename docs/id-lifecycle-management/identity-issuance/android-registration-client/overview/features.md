@@ -128,4 +128,28 @@ This feature allows Operators and Supervisors to reset their password using the 
 
 ### 16. Forgot Password
 
-If a Supervisor or Operator forgets their password, they can use the “Forgot Password” option available on the login screen. After entering their username, users will be redirected to the Keycloak login page (configurable link) where they can click the “Forgot Password” link. This triggers an email to the registered email ID with instructions to reset the password. Once the password is updated, users can return to the ARC login page and log in using their new password.
+If a Supervisor or Operator forgets their password, they can use the "Forgot Password" option available on the login screen. After entering their username, users will be redirected to the Keycloak login page (configurable link) where they can click the "Forgot Password" link. This triggers an email to the registered email ID with instructions to reset the password. Once the password is updated, users can return to the ARC login page and log in using their new password.
+
+### 17. Auto Logout
+
+The Auto Logout feature enhances application security by automatically logging out users after a defined period of inactivity. The system monitors user activity, and when inactivity exceeds a configurable threshold, a warning message appears with a countdown timer. Users can choose to stay logged in or log out immediately. If the user remains inactive during the warning period, the application automatically logs them out and securely clears all authentication states and session data.
+
+### 18. GPS Location
+
+This feature enables the Operator to automatically capture GPS location (latitude and longitude) when creating any packet through Android Registration Client. The GPS location is captured at the point of packet creation and attached as metadata to the packet, ensuring that the Operator's location is tracked for audit and verification purposes. If the device's location services are disabled or GPS is unavailable, the system will log a warning but will not block packet creation.
+
+### 19. Biometrics Correction
+
+The Biometric Correction feature enables operators to update and correct the biometric information of applicants, ensuring accurate association with their Unique Identification Number (UIN). When a resident's biometric data does not meet the required threshold during the registration process, the system generates an Additional Info Request ID. This ID is sent to the resident via notification, allowing them to schedule an appointment and update their biometric information at a registration centre.
+
+### 20. Scheduled Jobs Settings
+
+The Manage Scheduled Jobs feature allows admin and supervisor users to view, manage, and trigger scheduled sync/batch jobs directly from the Scheduled Jobs Settings screen. This feature provides visibility into system jobs (e.g., syncs, cleanup, updates) and enables supervisors to modify their scheduling configuration (cron expressions) on the local device. Each job entry displays the Job Name, Next Run Time, Last Run Time, Cron Expression (editable), and a Manual Trigger Button (Run Now).
+
+### 21. Global Config Settings
+
+This feature enables authorized users (Supervisors) to view and manage global configurations in a single Global Config Settings screen. The feature displays server values fetched from masterdata and allows supervisors to override these values locally on the device. Local configuration changes apply only to the current device and do not affect server-side configurations or other devices. Supervisors can edit Local Values for permitted configuration keys and submit changes, which will automatically restart the app to apply the updates.
+
+### 22. Device Settings
+
+This feature enables authorized users (Supervisors and Officers) to view and monitor all devices/peripherals connected to the Android Registration Client tablet. On opening the Device Settings page, the system will automatically scan for connected devices and display device information including device name, device ID, and connection status. If no devices are detected, users can click on the "Scan Now" button to manually trigger a device scan.
