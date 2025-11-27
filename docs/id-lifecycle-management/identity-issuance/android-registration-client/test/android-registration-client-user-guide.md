@@ -465,7 +465,7 @@ The Auto Logout feature enhances application security by automatically logging o
 
 The system continuously monitors user activity, such as touches or navigation events within the application. When inactivity exceeds a configurable threshold, the following sequence occurs:
 
-**Step 1:** A warning message will be displayed on the screen after the idle period, notifying the user of the impending automatic logout. The warning dialog shows a countdown timer indicating the remaining time before automatic logout occurs.
+**Step 1:** A warning message is displayed on the screen after the idle period, notifying the user of the impending automatic logout. The warning dialog shows a countdown timer indicating the remaining time before automatic logout occurs.
 
 <figure><img src="../../../../.gitbook/assets/arc-auto-logout-warning.png" alt="" width="375"><figcaption><p>Auto logout warning message with countdown timer</p></figcaption></figure>
 
@@ -473,7 +473,7 @@ The system continuously monitors user activity, such as touches or navigation ev
 * Click the **"STAY LOGGED IN"** button to dismiss the warning and continue the session normally.
 * Click the **"LOG OUT"** button to immediately log out of the application.
 
-**Step 3:** If the user remains inactive and does not interact with the warning dialog (by clicking either button) during the warning period, the application will automatically log them out.
+**Step 3:** If the user remains inactive and does not interact with the warning dialog (by clicking either button) during the warning period, the application automatically logs them out.
 
 **Step 4:** Upon automatic logout, the feature securely clears all authentication states and session data, ensuring that no sensitive information remains accessible.
 
@@ -487,7 +487,7 @@ The Biometric Correction feature enables operators to update and correct the bio
 
 <figure><img src="../../../../.gitbook/assets/arc-biometric-correction-1.png" alt="" width="375"><figcaption><p>Create packet with lower biometric threshold</p></figcaption></figure>
 
-**Step 2:** You will receive a notification with additional Info request ID.
+**Step 2:** You receive a notification with additional Info request ID.
 
 <figure><img src="../../../../.gitbook/assets/arc-biometric-correction-2.png" alt="" width="375"><figcaption><p>Notification with additional Info request ID</p></figcaption></figure>
 
@@ -521,6 +521,7 @@ The Biometric Correction feature enables operators to update and correct the bio
 
 This is the process to create a biometric correction packet. After this, the data will be updated, and a UIN will be generated.
 
+
 ## GPS Location
 
 This feature enables the Operator to automatically capture GPS location (latitude and longitude) when creating any packet through Android Registration Client. The GPS location is captured at the point of packet creation and attached as metadata to the packet, ensuring that the Operator's location is tracked for audit and verification purposes.
@@ -538,6 +539,7 @@ This feature enables the Operator to automatically capture GPS location (latitud
 {% hint style="info" %}
 **Note:** If the device's location services are disabled or GPS is unavailable, the system will log a warning but will not block packet creation. The packet will be created with a flag indicating "No GPS data available" in the metadata.
 {% endhint %}
+
 
 ## Settings
 
@@ -559,7 +561,7 @@ Each job entry includes:
 * Cron Expression (editable field for supervisors)
 * Manual Trigger Button (Run Now)
 
-Each job's schedule is defined using a CORN expression.
+Each job's schedule is defined using a CRON expression.
 
 **Steps to find the Scheduled jobs feature:**
 
@@ -570,6 +572,7 @@ Each job's schedule is defined using a CORN expression.
 **Step 2:** It will redirect to the settings page as referred in the image below. The first tab is the scheduled job, here you can access.
 
 <figure><img src="../../../../.gitbook/assets/arc-scheduled-jobs-settings.png" alt="" width="375"><figcaption><p>Scheduled jobs settings page</p></figcaption></figure>
+
 
 ### Global Config Settings
 

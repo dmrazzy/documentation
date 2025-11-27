@@ -22,12 +22,12 @@ mosip.ida.handle-types.regex={ '@email' : '.*@email$', '@phonenumber' : '.*@phon
 mosip.identity.fieldid.handle-postfix.mapping={'email':'@email', 'phone':'@phonenumber'}
 ```
 
-#### Configuration files
+## Configuration files
 
 * `application-default.properties`
 * `registration-default.properties`
 
-#### SBI related configurations
+## SBI related configurations
 
 Timeouts in milliseconds are set during any HTTP calls to SBI.
 
@@ -64,7 +64,7 @@ mosip.iris_authentication.quality_score=30
 mosip.face_authentication.quality_score=30 
 ```
 
-#### Batch Size
+## Batch Size
 
 Jobs like RID sync, packet upload, and status sync are carried out in batches, several registration records are to be executed in a batch on every trigger.
 
@@ -74,13 +74,13 @@ mosip.registration.packet_upload_batch_size=5
 mosip.registration.status_sync_batch_size=5 
 ```
 
-#### Scheduled Jobs
+## Scheduled Jobs
 
 Default CRON expression for scheduling the Jobs.
 
 `mosip.registration.sync_jobs_restart_freq=0 0 */11 ? * *`
 
-#### Other Configurations
+## Other Configurations
 
 *   Enables/disables reviewer authentication on any biometric exception during registration
 
@@ -107,7 +107,7 @@ Default CRON expression for scheduling the Jobs.
 
     `mosip.registration.job api name as in sync_job_def table.frequency=value in days`
 
-#### Date formats
+## Date formats
 
 *   Date format to be displayed on acknowledgment slip, default value - dd/MM/yyyy hh:mm a
 
@@ -116,7 +116,7 @@ Default CRON expression for scheduling the Jobs.
 
     `mosip.registration.dashboard_date_format`
 
-#### Supporting properties for 1.1.5.x server compatibility
+## Supporting properties for 1.1.5.x server compatibility
 
 Due to the absence of UI specifications in the 1.1.5.x versions, the android regclient addresses backward compatibility by migrating the schema of these versions to the LTS UI Spec structure.
 
@@ -150,7 +150,7 @@ The above property defines the list of bio-attributes that are allowed for scann
 
 The above property defines the default applicantTypeCode. In LTS, we have applicanttype.mvel script to fetch the documents according to age, gender, and some other attributes. Based on the applicant details, the script returns an applicantTypeCode which can be any value from “000” to “014”, and respective documents will be fetched from `master.applicant_valid_document table`. Since we do not have this script defined in 1.1.5.x to handle this, we have added a default `applicantTypeCode`.
 
-#### Templates
+## Templates
 
 Ensure that the preview and acknowledge templates are present in the `template table` of `mosip_master` database with the following type code:
 
@@ -158,7 +158,7 @@ Ensure that the preview and acknowledge templates are present in the `template t
 
 `reg-android-ack-template-part`
 
-#### Logout <a href="#logout-.1" id="logout-.1"></a>
+## Logout
 
 Logout from ARC will check for any running background tasks in the background. Ask the user if the user still wants to logout from the application.
 
@@ -166,7 +166,7 @@ Logout from ARC will check for any running background tasks in the background. A
 * If no jobs are running in the background, the user will simply log out and navigate to the login screen.
 * No configuration changes are required to log out of ARC.
 
-#### Pre-Registration download
+## Pre-Registration download
 
 Before fetching any Pre-Registration application on the registration page, clear all previously captured data.
 
@@ -182,17 +182,17 @@ Pre-registration applications fetch period, No. of days before the appointment d
 mosip.registration.pre_reg_no_of_days_limit=7
 ```
 
-#### Resetting Password in Android registration Client
+## Resetting Password in Android registration Client
 
 The Android Registration Client supports two types of password management:
 
-##### Forgot Password
+### Forgot Password
 
 - Available on the **Password Login** screen.
 - Used when the operator has forgotten their password.
 - Clicking **Forgot Password** redirects to a configurable Keycloak URL.
 
-##### Reset Password
+### Reset Password
 
 - Available on the **Profile screen**.
 - Used by a logged-in operator to change their existing password.
@@ -216,7 +216,7 @@ Time in Seconds to display the warning message pop-up to the operator, if the op
 
 `mosip.registration.refreshed_login_time=600`
 
-No. of days beyond appointment date to delete unconsumed pre-registration application data
+Number of days beyond appointment date to delete unconsumed pre-registration application data
 
 `mosip.registration.pre_reg_deletion_configured_days=1`
 
