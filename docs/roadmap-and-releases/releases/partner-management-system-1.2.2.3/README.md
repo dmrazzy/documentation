@@ -1,7 +1,5 @@
 # Partner Management System 1.2.2.3
 
-## Release : 1.2.2.3
-
 **Release Name**: Partner Management System&#x20;
 
 **Release Number**: 1.2.2.3
@@ -32,10 +30,10 @@ This release builds upon PMS v1.2.2.2 and delivers improvements that enhance sta
 
 ### Repositories Released <a href="#repositories-released" id="repositories-released"></a>
 
-| **Repository Released**     | **Version** |
-| --------------------------- | ----------- |
-| partner-management-services | v1.2.2.3    |
-| partner-management-portal   | v1.2.2.3    |
+| **Repository Released**     | **Version**                                                                    |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| partner-management-services | [v1.2.2.3](https://github.com/mosip/partner-management-services/tree/v1.2.2.3) |
+| partner-management-portal   | [v1.2.2.3](https://github.com/mosip/partner-management-portal/tree/v1.2.2.3)   |
 
 ### Compatible Modules <a href="#compatible-modules" id="compatible-modules"></a>
 
