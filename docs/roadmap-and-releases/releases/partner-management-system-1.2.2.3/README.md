@@ -6,7 +6,7 @@
 
 **Release Number**: 1.2.2.3
 
-**Release Date**: Coming Soon!
+**Release Date**: 27th Nov 2025
 
 ### **Overview** <a href="#overview" id="overview"></a>
 
@@ -63,4 +63,4 @@ This release builds upon PMS v1.2.2.2 and delivers improvements that enhance sta
 * [UI Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/ui-developers-guide)
 * [Backend Developer’s Guide](https://docs.mosip.io/1.2.0/modules/partner-management-services/pms-revamp/technical-overview/backend-developers-guide)
 * [API Documentation](https://mosip.stoplight.io/docs/partner-management-portal-revamp)
-* QA Report
+* [QA Report](test-report.md)
