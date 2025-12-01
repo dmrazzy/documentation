@@ -146,3 +146,12 @@ This feature enables authorized users (Supervisors) to view and manage global co
 ### 22. Device Settings
 
 This feature enables authorized users (Supervisors and Officers) to view and monitor all devices/peripherals connected to the Android Registration Client tablet. On opening the Device Settings page, the system will automatically scan for connected devices and display device information including device name, device ID, and connection status. If no devices are detected, users can click on the "Scan Now" button to manually trigger a device scan.
+
+### 23. Responsive Landscape Orientation Support
+
+The Android Registration Client now fully supports landscape orientation across key screens and workflows. This enhancement ensures a seamless and responsive experience when devices are used horizontally particularly useful for tablets, rugged field devices, and setups where landscape mode improves visibility, usability, or ergonomics. UI components dynamically adjust to maintain clarity, readability, and smooth navigation, offering operators greater flexibility in diverse registration environments.
+
+### 24. Adaptive Small Screen (Phone) Experience
+
+We’ve optimised the Android Registration Client for smaller screens to ensure a clean, intuitive, and efficient experience on mobile phones. Layouts, forms, and action buttons are now adaptive, automatically adjusting to the constraints of smaller displays without compromising functionality. This enhancement enables field officers and mobile registration teams to operate the client comfortably on compact devices, ensuring consistent performance across a wider range of Android form factors.
+

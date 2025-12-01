@@ -7,6 +7,11 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: Android Registration Client v1.0.0
+
+* Date: 1st December, 2025
+* [Release Notes](android-registration-client-v1.0.0/)
+
 **Version**: v1.2.2.4 ID Repository & v1.2.1.2 ID Authentication
 
 * Date: 17th November, 2025
