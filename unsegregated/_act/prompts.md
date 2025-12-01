@@ -1,6 +1,39 @@
 ## Prompts
 
-Registration Client UI Spec
+
+Android Registration Client GA Release v1.0.0
+- Here is the release notes for Android Registration Client GA Release v1.0.0
+- This is typical one and minimum one shared by the Product Owner
+- However I want to improve this one as this is GA -General Availability and Major release
+- Here is the PR raised - https://github.com/mosip/documentation/pull/1014 , learn from this PR as well - as it contains route for you to learn what all changed
+- Also on this page only the JIRA links for Features Delivered, Bug Fixes and Improvements and Known issues are also provided, The provided JIRA tickets are open JIRA tickets and publically visioble, Go through each and learn what all changed
+- Also refer to the the Documentation for Android Registration Client which happened over last 2 weeks and PR I already shared with you which is https://github.com/mosip/documentation/pull/1014
+- Now help me improve following, Also provide links to the documentation that happened recently finding it from the PR I shared with you (https://github.com/mosip/documentation/pull/1014) which should be very specific to the features:
+1.  **GPS Tracking:** Tracks the location where a registration packet is
+    created and measures its distance from the device's mapped
+    registration center.
+
+2.  **Applicant Biometric Correction:** Allows issuing a temporary ID
+    when biometric capture fails, enabling the applicant to return for
+    recapture before an AID is generated.
+
+3.  **Settings:** Provides access to device details, scheduled job
+    configurations, and global/local configuration settings within the
+    ARC.
+
+4.  **Support for Landscape Mode:** Allows the Android Registration
+    Client to function seamlessly in landscape orientation.
+
+5.  **Support for Phone Screens:** Optimizes the Android Registration
+    Client for effective use on smaller mobile screens.
+
+6.  **Auto Logout:** Automatically logs out the user after a
+    configurable period of inactivity for security.
+
+
+
+
+# Registration Client UI Spec
 - Read through the Registration Client UI Spec attached here
 - Also read through Spec from https://docs.mosip.io/1.1.5/modules/registration-client/ui-specification-for-registration-client - this is more human readable format and contains details in tabular format as well as description on usage as to how to use the UI components
 - Create a prompt for generating Registration Client UI guide based on the above two documents
