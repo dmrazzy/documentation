@@ -1,10 +1,10 @@
 # Features
 
-
 ## Android Registration Client
+
 Android Registration Client provides several essential features designed to enhance user convenience and system efficiency.
 
-It facilitates seamless user registration by offering an intuitive interface that supports quick data entry and ensures rigorous data validation to minimize errors. &#x20;
+It facilitates seamless user registration by offering an intuitive interface that supports quick data entry and ensures rigorous data validation to minimize errors.
 
 Read through to know more about the key features of Android Registration:
 
@@ -16,13 +16,12 @@ Operators can securely login using their credentials, whether in offline or onli
 
 The Android Registration Client supports multiple languages for content display and data entry.
 
-* **Display Language**
-  Display Language refers to the language used for rendering UI elements such as labels and headings. With the Android Registration Client, Operators have the option to choose their preferred language for UI display. This language selection can be made on the login screen. Currently, the supported display languages include Arabic, French, and English.
+* **Display Language** Display Language refers to the language used for rendering UI elements such as labels and headings. With the Android Registration Client, Operators have the option to choose their preferred language for UI display. This language selection can be made on the login screen. Currently, the supported display languages include Arabic, French, and English.
 * New languages can be added by following the below steps:
 * Additional languages can be configured by adding localization files in the lib/l10n folder present in the root project directory("android\_registration\_client").
 * The languages that are rendered on the UI will be based on the country configuration (after master data sync). The default display language is English. Other languages will be available in the UI after the master data sync.
 
-&#x20;      To know more, refer to [Flutter doc-Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-localization/internationalization).
+To know more, refer to [Flutter doc-Internationalizing Flutter apps](https://docs.flutter.dev/ui/accessibility-and-localization/internationalization).
 
 * **Data Entry Language**: The Data Entry Language refers to the specific language utilized by the Operator while gathering data, which is then stored on the server in that selected language. During the registration process, the Operator can choose the language preference for the data collected, allowing applicants to provide information in their desired language. This language selection option becomes available upon initiating a new registration. The responsibility for managing the data entry language lies within the UI Spec, and any modifications or changes can be made through that specification.
 
@@ -61,14 +60,8 @@ Biometrics exceptions: If the resident has a biometric exception (such as a miss
 
 * **Preview section**: The Operator can review the data entered by the applicant, including demographic information, uploaded documents, and captured biometrics. This preview allows the Operator to ensure the accuracy of the entered data. If any mistakes are found, the Operator can easily go back to the corresponding section and make the necessary corrections. If the data is correct, the Operator can proceed to the next step, which is to authenticate themselves.
 * **Operator authentication**: Once both the Operator and applicant have confirmed that the data is accurately filled, the Operator is required to authenticate themselves using their credentials. After a successful authentication, the data packets are created and only then the sync and upload operations can be performed.
-* **Packet sync**: After the applicant's registration form has been completed and the Operator has authenticated themselves, a packet sync must be performed. This can be done either manually or as a background job(auto sync and upload of packets). Packet sync ensures that the packet is prepared for uploading and the status of the uploaded packet is synchronized with the server.
-* **Packet Upload**: Once the packet sync is completed, the system will proceed to upload the packet to the server when an internet connection is available. If there is no network access, the system will attempt to upload the packet as soon as connectivity is established.
 * **Acknowledgment section**: Following the completion of the new registration process, an acknowledgment receipt is generated. This receipt includes the AID(Application ID), captured demographic data in the selected language, a photograph of the resident, and a ranking of each finger from 1 to 10, with 1 representing the finger with the best quality. The receipt is designed to be easily printed.
-* **Preview section**: The Operator can review the data entered by the applicant, including demographic information, uploaded documents, and captured biometrics. This preview allows the Operator to ensure the accuracy of the entered data. If any mistakes are found, the Operator can easily go back to the corresponding section and make the necessary corrections. If the data is correct, the Operator can proceed to the next step, which is to authenticate themselves.
-* **Operator authentication**: Once both the Operator and applicant have confirmed that the data is accurately filled, the Operator is required to authenticate themselves using their credentials. After a successful authentication, the data packets are created and only then the sync and upload operations can be performed.
-* **Packet sync**: After the applicant's registration form has been completed and the Operator has authenticated themselves, a packet sync must be performed. This can be done either manually or as a background job(auto sync and upload of packets). Packet sync ensures that the packet is prepared for uploading and the status of the uploaded packet is synchronized with the server.
-* **Packet Upload**: Once the packet sync is completed, the system will proceed to upload the packet to the server when an internet connection is available. If there is no network access, the system will attempt to upload the packet as soon as connectivity is established.
-* **Acknowledgment section**: Following the completion of the new registration process, an acknowledgment receipt is generated. This receipt includes the AID(Application ID), captured demographic data in the selected language, a photograph of the resident, and a ranking of each finger from 1 to 10, with 1 representing the finger with the best quality. The receipt is designed to be easily printed.
+* **Packet sync and upload**: After the applicant's registration form has been completed and the Operator has authenticated themselves, a packet sync must be performed. This can be done either manually or as a background job(auto sync and upload of packets). Packet sync ensures that the packet is prepared for uploading and the status of the uploaded packet is synchronized with the server. Once the packet sync is completed, the system will proceed to upload the packet to the server when an internet connection is available. If there is no network access, the system will attempt to upload the packet as soon as connectivity is established.
 
 ### 5. Operator onboarding
 
