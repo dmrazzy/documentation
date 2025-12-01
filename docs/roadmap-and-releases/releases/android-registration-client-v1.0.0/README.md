@@ -1,26 +1,30 @@
 # Android Registration Client v1.0.0
 
-## ARC Release Notes
+Content - In-Progress
 
-### Release Summary
-- Name: Android Registration Client v1.0.0
-- Version: 1.0.0
-- Release Date: 4 Sep 2024
-- Support: Beta
-- MOSIP Compatibility: 1.2.0
+- **Name**: Android Registration Client v1.0.0
+- **Version**: 1.0.0
+- **Release Date**: 4 Sep 2024
+- **Support**: Beta
+- **MOSIP Compatibility**: 1.2.0
 
-### Overview
+## Overview
 The Android Registration Client is a tablet application offering a mobile version of the desktop Registration Client, enabling use across Android devices for field mobility.
 
-### Included Features
+## Features and Major Highlights
 - Operator Onboarding: Self-onboarding of operators.
 - Update Operator Onboarding: Update operator biometrics.
 - Dashboard: View packet creation/upload statistics, mapped users, and their status.
 - (Includes prior DP1 and 0.9.0 features.)
 
-### Repository & Tag
+### Repository Released
 - Repository: android-registration-client
 - Tag: v1.0.0
+
+### Known Issues
+Refer to the Known Issues list. [Link Placeholder]
+
+## Documentation
 
 ### Build and Deploy
 Refer to the Developer Guide. [Link Placeholder]
@@ -31,5 +35,4 @@ Refer to the Configuration Guide. [Link Placeholder]
 ### User Guide
 Refer to the Android Registration User Guide. [Link Placeholder]
 
-### Known Issues
-Refer to the Known Issues list. [Link Placeholder]
+
