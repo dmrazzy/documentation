@@ -8,11 +8,11 @@
 
 **Release Date**: 1st December, 2025
 
-## **Overview**
+### **Overview**
 
 The Android Registration Client is a tablet-based application that delivers a mobile-friendly version of the traditional desktop [Registration Client](https://docs.mosip.io/1.2.0/modules/registration-client). It is designed to work across all Android devices and supports the mobility requirements of countries adopting MOSIP.
 
-## Features and Major Highlights
+### Features and Major Highlights
 
 **Version 1.0.0** of the Android Registration Client is the GA release, covering features listed below:
 
@@ -29,7 +29,7 @@ The Android Registration Client is a tablet-based application that delivers a mo
 
 ### **Repository Released**
 
-<table><thead><tr><th width="324.0625">Repositories</th><th>Tags Released</th></tr></thead><tbody><tr><td>android-registration-client</td><td><a href="https://github.com/mosip/android-registration-client/tree/1.0.0">v1.0.0</a></td></tr><tr><td>admin-services</td><td><a href="https://github.com/mosip/admin-services/releases/tag/v1.2.1.4">v1.2.1.4</a></td></tr></tbody></table>
+<table><thead><tr><th width="324.0625">Repositories</th><th>Tags Released</th></tr></thead><tbody><tr><td>android-registration-client</td><td><a href="https://github.com/mosip/android-registration-client/tree/v1.0.0">v1.0.0</a></td></tr><tr><td>admin-services</td><td><a href="https://github.com/mosip/admin-services/tree/v1.2.1.4">v1.2.1.4</a></td></tr></tbody></table>
 
 ### User Stories Released
 
@@ -41,7 +41,7 @@ Below is the list of bug fixes as part of the 1.0.0 release, To get the complete
 
 <table><thead><tr><th width="177.3046875">JIRA</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1272">RCF-1272</a></td><td>The database migration should support a seamless schema upgrade.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1266">RCF-1266</a></td><td>In the "Scheduled Jobs Settings" screen of ARC, the page cannot be scrolled.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1262">RCF-1262</a></td><td>In ARC, packets created with PRIDs are not being processed.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1260">RCF-1260</a></td><td>In ARC, the "Authenticate" button on the authentication page is not clickable for exception packets.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1258">RCF-1258</a></td><td>In ARC, the "Global Config Settings" heading is not displayed on the global configuration page.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1246">RCF-1246</a></td><td>ARC requires license compliance updates.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1237">RCF-1237</a> </td><td>ARC does not mandate operator permissions.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1236">RCF-1236</a></td><td>ARC contains an issue involving the use of setAccessible(true).</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1224">RCF-1224</a></td><td>In ARC, when a user logs in with an operator role, they are unable to start the ARC and encounter various error messages.</td></tr></tbody></table>
 
-## **Documentation**
+### **Documentation**
 
 [Feature Documentation](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features)
 
