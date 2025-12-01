@@ -1,5 +1,7 @@
 # Android Registration Client v1.0.0
 
+**Release Name**: Android Registration Client v1.0.0
+
 **Release version**: 1.0.0
 
 **Support**: GA Release
@@ -29,9 +31,9 @@ The Android Registration Client is a tablet-based application that delivers a mo
 
 <table><thead><tr><th width="324.0625">Repositories</th><th>Tags Released</th></tr></thead><tbody><tr><td>android-registration-client</td><td>v1.0.0</td></tr></tbody></table>
 
-### Stories
+### User Stories Released
 
-<table><thead><tr><th width="198.28125">JIRA</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1281">RCF-1281</a></td><td>Performance and Stability Testing of Android Registration Client Closed.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1185">RCF-1185</a></td><td>As an Operator, when I create any packet, my GPS location should also be sent as meta data.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1126">RCF-1126</a> </td><td>Security Testing</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-784">RCF-784</a></td><td>As an Operator/ Supervisor, my system should auto logout from ARC if it is idle for a long period of time.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-502">RCF-502</a></td><td>As an Operator, I should be able to correct the Applicant's Biometric.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-472">RCF-472</a></td><td>As an Operator, I should be able to run Android Registration Client on small screen like phone screen.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-471">RCF-471</a> </td><td>As an Operator, I should be able to run Android Registration Client in landscape mode.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-93">RCF-93</a></td><td>As an Operator, I should be able to access Device Settings.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-92">RCF-92</a></td><td>As an Operator, I should be able to access Global Config Settings.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-91">RCF-91</a> </td><td>As an Operator, I should be able to access Scheduled Jobs Settings.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-40">RCF-40</a> </td><td>As an Operator, I should be able to access Settings.</td></tr></tbody></table>
+<table><thead><tr><th width="177.69921875">JIRA</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1281">RCF-1281</a></td><td>Performance and Stability Testing of Android Registration Client Closed.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1185">RCF-1185</a></td><td>As an Operator, when I create any packet, my GPS location should also be sent as meta data.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-1126">RCF-1126</a> </td><td>Security Testing</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-784">RCF-784</a></td><td>As an Operator/ Supervisor, my system should auto logout from ARC if it is idle for a long period of time.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-502">RCF-502</a></td><td>As an Operator, I should be able to correct the Applicant's Biometric.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-472">RCF-472</a></td><td>As an Operator, I should be able to run Android Registration Client on small screen like phone screen.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-471">RCF-471</a> </td><td>As an Operator, I should be able to run Android Registration Client in landscape mode.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-93">RCF-93</a></td><td>As an Operator, I should be able to access Device Settings.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-92">RCF-92</a></td><td>As an Operator, I should be able to access Global Config Settings.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-91">RCF-91</a> </td><td>As an Operator, I should be able to access Scheduled Jobs Settings.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/RCF-40">RCF-40</a> </td><td>As an Operator, I should be able to access Settings.</td></tr></tbody></table>
 
 ## **Bugs Fixed**
 
@@ -50,3 +52,7 @@ Below is the list of bug fixes as part of the 1.0.0 release, To get the complete
 [Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration)
 
 [Android Registration User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide)
+
+### **Known Issues** <a href="#known-issues" id="known-issues"></a>
+
+To view the list of known issues, please refer [here](https://mosip.atlassian.net/issues/?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20%28closed%2C%20Canceled%29%20and%20labels%21%3DARC_Real_Device).
