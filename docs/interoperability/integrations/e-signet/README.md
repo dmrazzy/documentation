@@ -8,7 +8,7 @@ eSignet supports multiple modes of identity verification to promote inclusion an
 There is a need to support more verification methods to be inclusive. Current approaches do not address privacy concerns comprehensively. We are constantly looking at ways to bridge the digital divide with better privacy. Here is a short introduction to identity verification methods. Also, do check out [Inji](https://app.gitbook.com/o/-M1FyzBr-VmticWYm8QI/s/aY8BQ4hdzhSchZV814Ev/) to understand modern approaches to identity using verifiable credentials for decentralized verification.
 {% endhint %}
 
-![](../../../.gitbook/assets/e-signet-qr.jpg) ![](../../../.gitbook/assets/e-signet-bio.jpg)
+![](/broken/files/NXUvPK79aZfZ5T0hblae) ![](/broken/files/JplhiP0p0LYwOTU10UC4)
 
 **What can eSignet be used for?**
 

@@ -21,11 +21,11 @@ This guide enables the Foundational Trust providers to use the PMP portal effect
   * Address, e-mail, phone number
   * Username and password
 
-![](../../../../.gitbook/assets/ftm-partner-self-register1.PNG) ![](../../../../.gitbook/assets/ftm-partner-self-register2.PNG)
+![](/broken/files/rOG0BW9CU3vmiUeXBlrQ) ![](/broken/files/mPdyOKIoeoT2UnUpIjOf)
 
 To view the details entered, click **Home** to see the dashboard.
 
-![](../../../../.gitbook/assets/ftm-partner-home-page.PNG)
+![](/broken/files/w4ytjRUEt3KZylW6Xzq7)
 
 ### Upload of Certificates
 
@@ -46,13 +46,13 @@ Similarly, the Partner certificates can be added by the Partner admin or partner
 
 The certificate can be uploaded by clicking **Home-> Upload Certificate -> Upload**.
 
-![](../../../../.gitbook/assets/ftm-partner-cert-upload.PNG)
+![](/broken/files/XbuTs1PDL6grGZqreAEf)
 
-![](../../../../.gitbook/assets/ftm-partner-cert-upload-success.PNG)
+![](/broken/files/lPn5cS7Dc5IVP2nkIDSg)
 
 The certificate can be viewed by clicking **Home-> View Certificate ->View**.
 
-![](../../../../.gitbook/assets/ftm-partner-view-cert.PNG)
+![](/broken/files/2cDMWtYM08InYhPLCevx)
 
 ### FTM Details
 
@@ -64,11 +64,11 @@ The partner can create FTM details by,
 2. Fill up the information like Partner Name, Make and Model.
 3. Clicking Save.
 
-![](../../../../.gitbook/assets/ftm-partner-makemodel-view.PNG)
+![](/broken/files/AU1wdUPzKz1ASOwJqQAW)
 
-![](../../../../.gitbook/assets/ftm-partner-create-make-model.PNG)
+![](/broken/files/BM4hdXW71G6dS89rtvpq)
 
-![](../../../../.gitbook/assets/ftm-partner-create-makemodel-success.PNG)
+![](/broken/files/NYDvDzooLqcZ5wwODLQV)
 
 #### FTM Certificate Upload
 
@@ -78,20 +78,20 @@ The partner can upload FTM certificates by,
 2. Entering the Partner Domain as FTM and choosing the certificate file.
 3. Clicking Upload.
 
-![](../../../../.gitbook/assets/ftm-partner-chip-sub-menu.PNG)
+![](/broken/files/gki1Jdm2MSh88KeggAcY)
 
-![](../../../../.gitbook/assets/ftm-partner-cert-upload.PNG)
+![](/broken/files/XbuTs1PDL6grGZqreAEf)
 
 #### Approval or rejection of the certificate
 
 The Partner Admin can choose to approve or reject the FTM certificate uploaded. Below illustrates the workflow:
 
-![](../../../../.gitbook/assets/partner-admin-ftm-details-view-page.PNG)
+![](/broken/files/zxA2A1XSsNbwfHgmJvdy)
 
-![](../../../../.gitbook/assets/partner-admin-ftm-details-actions.PNG)
+![](/broken/files/Q24MFCUq9UiaOrKKrP0s)
 
-![](../../../../.gitbook/assets/partner-admin-ftm-details-approve-action.PNG)
+![](/broken/files/k0yenw8T7D7P8XYTq2Vb)
 
 Finally, you can see the FTM activated.
 
-![](../../../../.gitbook/assets/ftm-active.png)
+![](/broken/files/lBT4kenzhuPeWU6eqohW)

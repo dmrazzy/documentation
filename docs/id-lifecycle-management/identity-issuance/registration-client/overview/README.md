@@ -22,7 +22,7 @@ To know more about the onboarding process of an operator, refer to [Operator onb
 
 ## Registration Client entity diagram
 
-![](../../../../.gitbook/assets/reg-client.drawio.png)
+![](/broken/files/Rh6alEbQ7FA0jgxwDLTJ)
 
 The relationship of the Registration Client with other services is explained here. _NOTE_: The numbers do not signify a sequence of operations or control flow.
 
@@ -36,7 +36,7 @@ The relationship of the Registration Client with other services is explained her
 
 The image below shows the setup of the Registration Client Host machine.
 
-![](../../../../.gitbook/assets/reg-client-host-machine.png)
+![](/broken/files/sXl0sH02uPmrKrcldQCc)
 
 1. Registration Client comprises JavaFX UI, Registration-services libraries, and any third-party biometric-SDK.
 2. SBI is allowed to run on loopback IP and should listen on any port within the 4501-4600 range. More than one SBI can run on the host machine. Registration Client scans the allowed port range to identify the available SBI.

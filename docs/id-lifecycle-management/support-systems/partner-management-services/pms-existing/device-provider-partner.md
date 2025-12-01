@@ -23,11 +23,11 @@ This guide enables the Device provider partner to use the partner portal effecti
   * Address, e-mail, phone number
   * Username and password
 
-![](../../../../.gitbook/assets/device-partner-self-register1.PNG) ![](../../../../.gitbook/assets/device-partner-self-register2.PNG)
+![](/broken/files/jcgfc4O0h885IXF3bLJk) ![](/broken/files/JTeNanj6WnxXlh577VOg)
 
 To view the details entered, click **Home** to see the dashboard.
 
-![](../../../../.gitbook/assets/device-partner-home-page.PNG)
+![](/broken/files/5ArD7VHtG2chSjW5OHX3)
 
 ### Upload of Certificates
 
@@ -48,13 +48,13 @@ Similarly, the Partner certificates can be added by the Partner admin/ partner.
 
 The certificate can be uploaded by clicking **Home-> Upload Certificate -> Upload**.
 
-![](../../../../.gitbook/assets/device-partner-upload-cert.PNG)
+![](/broken/files/QtokU2tOZ2htc9zDhhCb)
 
-![](../../../../.gitbook/assets/device-partner-cert-upload-success.PNG)
+![](/broken/files/hCgfc3MlEFdHcbuU2Kkn)
 
 The certificate can be viewed by clicking **Home-> View Certificate ->View**.
 
-![](../../../../.gitbook/assets/device-partner-view-cert-page.PNG)
+![](/broken/files/rNg7O4oJZhV9JusfV6I7)
 
 ## Device make and model
 
@@ -69,21 +69,21 @@ The partner can add devices to the portal. To do so,
    * Make and Model
 3. Click **Save**.
 
-![](../../../../.gitbook/assets/device-make-model-defaultpage.PNG)
+![](/broken/files/IgLsWDHL8PsnP1Kpud9q)
 
-![](../../../../.gitbook/assets/device-make-model-create1.PNG)
+![](/broken/files/i1UpJNnyq7BmUd9u1IL4)
 
-![](../../../../.gitbook/assets/device-make-model-create-success.PNG)
+![](/broken/files/9549Rna3czOvnFWQGeZB)
 
 ### Approval/ Rejection of Device details
 
 The Partner Admin can choose to approve/reject the device details entered by the partner.
 
-![](../../../../.gitbook/assets/partner-admin-device-details-view-page.PNG)
+![](/broken/files/uOIUFXVHBPmY1ZpDzpLR)
 
-![](../../../../.gitbook/assets/partner-admin-device-details-actions.PNG)
+![](/broken/files/eB8511uxetyu3g5IcR94)
 
-![](../../../../.gitbook/assets/partner-admin-device-details-approve-action.PNG)
+![](/broken/files/LOEm2nXQqrqXYdOpC9Cz)
 
 ## SBI (Secure Biometric Interface)
 
@@ -91,30 +91,30 @@ The Partner Admin can choose to approve/reject the device details entered by the
 
 The Partner can create SBI by filling in the required details.
 
-![](../../../../.gitbook/assets/device-sbi-create-page.PNG)
+![](/broken/files/mX6nWi10wepZRlZPQ7Wa)
 
-![](../../../../.gitbook/assets/device-sbi-create-2-page.PNG)
+![](/broken/files/GoLlVxl8GrcGAHF0lxUi)
 
-![](../../../../.gitbook/assets/device-sbi-create-success-page.PNG)
+![](/broken/files/Jc60n8Me2P1EEE5tPWmf)
 
 ### Approval/Rejection of SBI
 
 The Partner Admin can choose to approve/reject the SBI details entered by the partner.
 
-![](../../../../.gitbook/assets/partner-admin-sbi-details-view-page.PNG)
+![](/broken/files/jBAnFnfZDycL7RejU9jb)
 
-![](../../../../.gitbook/assets/partner-admin-sbi-details-actions.PNG)
+![](/broken/files/IGynT2t85QzyXdxpJCyS)
 
-![](../../../../.gitbook/assets/partner-admin-sbi-details-approve-action.PNG)
+![](/broken/files/wz6URdYcZ531nU1J2pWo)
 
 ## Mapping Device make and model with SBI
 
 The partner can map the device with an SBI.
 
-![](../../../../.gitbook/assets/device-make-model-sbi-mapping-menu.PNG)
+![](/broken/files/qDLs1g8L1k67MX77Hd0n)
 
-![](../../../../.gitbook/assets/device-make-model-sbi-mapping-page.PNG)
+![](/broken/files/njmFvBW8r0QZhv3QUNdf)
 
-![](../../../../.gitbook/assets/device-make-model-sbi-mapping-success-page.PNG)
+![](/broken/files/NzQYZSOqc8TNWDlKRI16)
 
-![](../../../../.gitbook/assets/device-make-model-sbi-mapping-success.PNG)
+![](/broken/files/scbfLBP73ZcbbUCqRtlk)

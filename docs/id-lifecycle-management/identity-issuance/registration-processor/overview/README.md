@@ -4,7 +4,7 @@
 
 Registration Processor (Regproc) is a backend processing engine to enable ID Lifecycle management. The diagram below shows the Registration Processor along with the other modules that contribute to issuing a Unique Identification Number(UIN) for an individual. Internally, Regproc follows the [SEDA](https://en.wikipedia.org/wiki/Staged_event-driven_architecture) architecture where data flows via multiple stages till the UIN is issued.
 
-![](../../../../.gitbook/assets/reg-proc.png)
+![](/broken/files/q8twRjRfk5jwPfy2Q7gc)
 
 The relationship of Regproc with other services is explained here. _NOTE: The numbers do not signify a sequence of operations or control flow_
 

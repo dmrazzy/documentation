@@ -4,7 +4,7 @@
 
 A Wireguard bastion host (Wireguard server) provides secure private channel to access MOSIP cluster. The host restrics public access, and enables access to only those clients who have their public key listed in Wireguard server. Wireguard listens on UDP port51820.
 
-![](../../../../.gitbook/assets/wireguard-bastion.jpg)
+![](/broken/files/hqPGkHySQkMTUMKvfiPT)
 
 ## Server installation
 

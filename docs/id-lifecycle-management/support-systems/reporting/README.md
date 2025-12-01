@@ -12,31 +12,31 @@ The following dashboards are configured on [Kibana](https://www.elastic.co/kiban
 
 ### Pre-registration
 
-![](../../../.gitbook/assets/reports-preregistration-1.png) ![](../../../.gitbook/assets/reports-preregistration-2.png)
+![](/broken/files/5SKjduFYihmZaRKiBrxT) ![](/broken/files/0IBk4w8QR41SwUuSi16X)
 
 ### Pre-registration operations
 
-![](../../../.gitbook/assets/reports-preregistration-operations-1.png) ![](../../../.gitbook/assets/reports-preregistration-operations-2.png)
+![](/broken/files/6x16kJmuHOYNtu6jFQIm) ![](/broken/files/CnQ8iQVnP7INvjAsrCYb)
 
 ### Registration
 
-![](../../../.gitbook/assets/reports-registration-1.png) ![](../../../.gitbook/assets/reports-registration-2.png)
+![](/broken/files/lECGC1k4XJD7APLFig7w) ![](/broken/files/pxBpmX6AUmkXAYcx6hP4)
 
 ### Authentication
 
-![](../../../.gitbook/assets/reports-authentication.png)
+![](/broken/files/4kfswyF9BtFBnRGU84Rq)
 
 ### Registration profile
 
-![](../../../.gitbook/assets/reports-registration-profile-1.png) ![](../../../.gitbook/assets/reports-registration-profile-2.png)
+![](/broken/files/iiTRooEE02NuE9ws0Ios) ![](/broken/files/ahUOyEDBaMbvMWG7p10M)
 
 ### ID issuance profile
 
-![](../../../.gitbook/assets/reports-id-issuance-1.png) ![](../../../.gitbook/assets/reports-id-issuance-2.png)
+![](/broken/files/m5rRqZRhNYJAHDXai342) ![](/broken/files/GotsIjVO4Dq5dUj2es4G)
 
 ### Overall trend
 
-![](../../../.gitbook/assets/reports-combined-dashboard.png)
+![](/broken/files/tlfGmuq0HVuGp99Krhnk)
 
 ## How to customize?
 

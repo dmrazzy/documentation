@@ -83,7 +83,7 @@ The diagram illustrates **MOSIP’s Key Offerings** in **ID Lifecycle Management
 
 These offerings enable secure, scalable, and modular identity management and authentication solutions.
 
-![](../.gitbook/assets/mosip-offerings.jpg)
+![](/broken/files/exrLiDzUU7Sy4BgVhdn2)
 
 ### Building a National ID System Using MOSIP
 
@@ -91,4 +91,4 @@ Countries can leverage MOSIP as the base identity platform and configure, custom
 
 The image below depicts how MOSIP provides the base layer to build a national ID platform.
 
-![](../.gitbook/assets/layers.png)
+![](/broken/files/wDd1OWco5jmnDvin4Qfc)

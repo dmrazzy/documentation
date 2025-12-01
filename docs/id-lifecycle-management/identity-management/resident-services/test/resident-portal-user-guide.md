@@ -34,43 +34,43 @@ Residents can use these services to view, update, change, manage or share their 
 
 1.  Resident accesses the Resident Portal dashboard page.
 
-    ![](../../../../.gitbook/assets/resident-dashboard.png)
+    ![](/broken/files/a60voMe3rX6SqiGOFHGR)
 2.  Resident clicks on `UIN Services`.
 
-    ![](../../../../.gitbook/assets/resident-loginpage1.png)
+    ![](/broken/files/y4odx0UDQRA8zXvI7ZcE)
 
     The login screen appears and the resident can choose one of the options to log in.
 3.  To login with OTP authentication, the resident clicks on `Log in here> More ways to login > Login with OTP`.
 
-    ![](../../../../.gitbook/assets/resident-loginpage2.png)
+    ![](/broken/files/CFZPLRZfh58X8yfyJriC)
 4.  Resident needs to enter valid VID in the `Enter Your VID` text field and check the box `I'm not a robot`.
 
-    ![](../../../../.gitbook/assets/resident-loginpage3new.png)
+    ![](/broken/files/HojV2rr09B7JBJ56wWIb)
 5.  Next, the resident clicks on the `Get OTP` button.
 
     * The resident receives the OTP on the registered phone number and email ID.
     * The resident needs to enter the valid OTP received within stipulated time and click the `Verify` button.
 
-    ![](../../../../.gitbook/assets/resident-loginpage4.png)
+    ![](/broken/files/l0Ds91Ow1fS3tTzsIIBb)
 6. The resident is then navigated to the Consent page. On this page, the **Essential** and **Voluntary** claims are displayed. Additionally, they will also have to allow access to their data in **Authorize Scope** section to avail various services. Based on the consent provided by the resident, the services will be made available for modification.
 
-![](../../../../.gitbook/assets/resident-consentpage1.png)
+![](/broken/files/5l276WS2DyctSBugLsu4)
 
 7. The resident has the choice to select from the list of Voluntary claims while the Essential claims are mandatory.
 
-![](../../../../.gitbook/assets/resident-consentpage2.png)
+![](/broken/files/m6wLhHnvRdRQjNUOK2mj)
 
 8.  The resident should now click the `Continue` button. The system navigates the resident to the UIN Services menu page from where they can avail various services.
 
     _**Note**_: **Consent page will be available only for first time login.**
 
-    ![](../../../../.gitbook/assets/resident-dashboard.png)
+    ![](/broken/files/a60voMe3rX6SqiGOFHGR)
 
 ### View My History
 
 The residents can view the history of all the transactions associated with their logged-in UIN/ VID. They can also view their details and if any unaccounted entry is found, a report can be raised against the same.
 
-![](../../../../.gitbook/assets/resident-viewmyhistory1.png)
+![](/broken/files/1fzY6RcZsYsnTj1IbNVX)
 
 The residents can perform the following:
 
@@ -116,9 +116,9 @@ Once the event is completed, a message is displayed containing the grievance tra
 
 Below are the images with different filters on this page.
 
-![](../../../../.gitbook/assets/resident-viewmyhistory2.png)
+![](/broken/files/X1xtuXCp27IFuhMM44OL)
 
-![](../../../../.gitbook/assets/resident-viewmyhistory3.png)
+![](/broken/files/OgFOQPYBTqqiexPu6dys)
 
 ### Manage My VID
 
@@ -132,19 +132,19 @@ The following types of VIDs can be seen based on the VID policy:
 
 _**Note**_: The resident can get to know about the features of a particular VID by hovering over the “i” symbol.
 
-![](../../../../.gitbook/assets/resident-managemyvid1.png)
+![](/broken/files/2PlpYTTTfFdJmqDCmNSp)
 
 The residents can perform the following:
 
 1. **Create a new VID** : The residents can click on the `Create` button against any of the VID type selected. They can click on `Yes` to proceed. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-managemyvid2.png)
+![](/broken/files/1y1xuezYIBCmrqGBmOsR)
 
 2. **Revoke an existing VID**: The residents can click on the **Delete icon** to revoke an existing VID. They can click on `Yes` to proceed. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-manage-myvid-delete.png)
+![](/broken/files/OotEAt0kcUJpb5tOpN0C)
 
-![](../../../../.gitbook/assets/resident-managemyvid3.png)
+![](/broken/files/sQYK4WWLZj7YFbTlVN0c)
 
 3.  **Download a VID card**:
 
@@ -158,17 +158,17 @@ The residents can perform the following:
 
     e. The downloaded card will be a password protected PDF. The residents can view the downloaded VID card by entering the password combination displayed on the screen.
 
-![](../../../../.gitbook/assets/resident-manage-myvid5-download.png)
+![](/broken/files/x46CVVGlXjKN3OkCk0Kz)
 
-![](../../../../.gitbook/assets/resident-managemyvid4.png)
+![](/broken/files/1zSOvSDW87sBmJewfftD)
 
-![](../../../../.gitbook/assets/resident-managemyvid5.png)
+![](/broken/files/KaImflqbbpNtRFijlMu2)
 
-![](../../../../.gitbook/assets/resident-manage-myvid-downloadvid.png)
+![](/broken/files/CS38Mk0AO0E6yrIOUqNk)
 
 4. **View VID number**: All the VID numbers will be masked by default. The residents can view the unmasked version of VID by clicking on eye icon next to the VID number.
 
-![](../../../../.gitbook/assets/resident-manage-myvid-eye.png)
+![](/broken/files/iomXZV8OD9VVNQ1aTO9m)
 
 ### Secure My ID
 
@@ -185,15 +185,15 @@ The residents can perform the following,
 
 **View the current status of authentication types**: The **lock icon** on each card indicates the current status of the authentication type. E.g.: If the lock is open, the authentication type is unlocked which means the residents can authenticate themselves using that particular authentication type and vice versa.
 
-![](../../../../.gitbook/assets/resident-securemyid.png)
+![](/broken/files/fhuVRYMaLWtuHnj1H9sK)
 
 **Lock/ unlock the authentication types**: To lock/ unlock a particular authentication type, the residents can click on lock/ unlock button. Once the preferences of each authentication type is selected, the residents can click on `Submit` to save the changes and click `Yes` to proceed. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-securemyid1.png)
+![](/broken/files/RJZaBrWiZAWJ7oLZmHOK)
 
-![](../../../../.gitbook/assets/resident-securemyid2.png)
+![](/broken/files/74GzGTxoQ9O4uwMiMF3b)
 
-![](../../../../.gitbook/assets/resident-securemyid3.png)
+![](/broken/files/DWbndaW6f5fdG9OoT9e1)
 
 ### Track My Requests
 
@@ -217,7 +217,7 @@ The resident can reach `Track My Requests` page by the following ways:
 2. By clicking the bell icon
 3. `UIN services > Track My Requests`
 
-![](../../../../.gitbook/assets/resident-trackmyrequest.PNG)
+![](/broken/files/n66H7dAK45AwAel89eLN)
 
 _**Note**_:
 
@@ -242,9 +242,9 @@ These details can be previewed as and when the attributes are chosen.
 
 Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-getpersonalisedcard1.png)
+![](/broken/files/ebl3Kfm9n4ljh8py5cz4)
 
-![](../../../../.gitbook/assets/resident-getpersonalisedcard2.png)
+![](/broken/files/DX55yV3i8RxZyboRr65G)
 
 ### Share My Data
 
@@ -271,11 +271,11 @@ Additionally, the residents have to:
 3. On clicking the `Share` button, the resident will have to provide consent to share their data with the external partner.
 4. Once the event is completed, a message is displayed containing the Event ID along with a link to track the service.
 
-![](../../../../.gitbook/assets/resident-sharemydata1.png)
+![](/broken/files/jsQxiqGdzy3I3IPNcmBd)
 
-![](../../../../.gitbook/assets/resident-sharemydata2.png)
+![](/broken/files/h5LUlFj0Z1V9pEOaaFmu)
 
-![](../../../../.gitbook/assets/resident-sharemydata3.png)
+![](/broken/files/pJsxNQXlrO1LIY7WjbRC)
 
 ### Menu Bar
 
@@ -290,7 +290,7 @@ The Resident Portal menu bar contains the following:
    * Last login details
    * Logout option
 
-![](../../../../.gitbook/assets/resident-menubar.png)
+![](/broken/files/fWV8a6JuiKlVi2kCyauz)
 
 ## Book an Appointment
 
@@ -315,15 +315,15 @@ The residents can use this feature to verify their registered email ID or phone 
 
     c. **Email ID/ phone number does not exist**: If there is no email ID/ phone number linked to the UIN/VID, a message is displayed saying no email ID/ phone number was found associated to this UIN/VID.
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid.png)
+    ![](/broken/files/IMmKfCnZ1N8ofvZbZvIJ)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid1.png)
+    ![](/broken/files/CRoz6Y16O2Q1eJNQhRO1)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid2.png)
+    ![](/broken/files/g4TgOybIjfi7S00Ur07K)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid3.png)
+    ![](/broken/files/69byOkBGwEVFSZWufa6Z)
 
-    ![](../../../../.gitbook/assets/resident-verifyphonenumber-emailid4.png)
+    ![](/broken/files/kThs4oJyjfghIRFiie0u)
 
 ### Get My UIN
 
@@ -340,9 +340,9 @@ The residents can use this feature for one of the following:
 4. Resident enters the OTP received on the registered email ID/ phone number and clicks on `Submit`.
 5.  The default PDF of UIN card will be downloaded and a success message is seen stating that the UIN has been successfully downloaded.
 
-    ![](../../../../.gitbook/assets/resident-getmyuin.png)
+    ![](/broken/files/aa8xgxsHauVEC6mWtOgR)
 
-    ![](../../../../.gitbook/assets/resident-getmyuin1.png)
+    ![](/broken/files/JwBu3eggLan4ODcQi6CM)
 
 **Steps to check the status of the AID**:
 
@@ -354,7 +354,7 @@ The residents can use this feature for one of the following:
 4. Resident enters the OTP received on the registered email ID/ phone number and clicks on `Submit`.
 5.  The status of the AID will be shown.
 
-    ![](../../../../.gitbook/assets/resident-getmyuin2.png)
+    ![](/broken/files/IO0Bsk1SsKipcSBqTdrK)
 
 ## Get Information
 
@@ -362,7 +362,7 @@ The residents can use this feature for one of the following:
 
 Residents can view the list of supported documents in the PDF format and download the same. Also, some sample documents are available for reference.
 
-![](../../../../.gitbook/assets/resident-getinformation-supportingdocuments.png)
+![](/broken/files/B5bFInseVDIQexfKfwv5)
 
 #### List of Registration Centers
 
@@ -370,11 +370,11 @@ Residents can search for Registration Centres on the basis of below two mechanis
 
 **Nearby centers**: The resident will be asked to allow permission for location access in order to enable the system to suggest the nearest Registration Centres.
 
-![](../../../../.gitbook/assets/resident-getinformation-registrationcentres1.png)
+![](/broken/files/DdmzNKMradKiSlEFte3R)
 
 **Manually look for centers**: If the Resident wants to manually look for a center, they can do so by choosing a level in location hierarchy from the drop-down (e.g.: Region, Province, Postal Code) and entering the value against the same.
 
-![](../../../../.gitbook/assets/resident-getinformation-registrationcentres2.png)
+![](/broken/files/YdY1LYbmQHXWRYpfmyWk)
 
 They can also download the PDF version of the result displayed on the screen for reference.
 
@@ -396,7 +396,7 @@ They can also download the PDF version of the result displayed on the screen for
 
     a. Go to “Update My Data”
 
-<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/luaDNfRqoQ63q0ZvtJup" alt=""><figcaption></figcaption></figure>
 
 b. Click on “Identity” tab
 
@@ -446,7 +446,7 @@ Note: The Resident can update the Proof of Identity document itself with no chan
 
 a. Go to “Update My Data”
 
-<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/luaDNfRqoQ63q0ZvtJup" alt=""><figcaption></figcaption></figure>
 
 b. Click on “Address” tab
 
@@ -488,7 +488,7 @@ j. Once the event is successful, a message will be displayed consisting of the E
 
 k. A bell icon and an email notification will be triggered using which the residents can view the status of the application.
 
-<figure><img src="../../../../.gitbook/assets/f (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/wznnp6sXWmN0LL8dmVq6" alt=""><figcaption></figcaption></figure>
 
 l. Once the update is successful, the card can be downloaded with new data by clicking on the particular notification.
 
@@ -502,7 +502,7 @@ Note: Additionally, the Resident can also update the Proof of Address document i
 
 a . Go to “Update My Data”.
 
-<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/luaDNfRqoQ63q0ZvtJup" alt=""><figcaption></figcaption></figure>
 
 b. Click on “Contact Data” tab.
 
@@ -522,7 +522,7 @@ e. Once the event is completed, a message will be displayed consisting of the Ev
 
 f. A bell icon and an email notification will be triggered using which the residents can view the status of the application.
 
-<figure><img src="../../../../.gitbook/assets/f (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/wznnp6sXWmN0LL8dmVq6" alt=""><figcaption></figcaption></figure>
 
 g. Once the update is successful, the card can be downloaded with new data by clicking on the particular notification.
 
@@ -532,7 +532,7 @@ g. Once the update is successful, the card can be downloaded with new data by cl
 
 a. Go to “Update My Data”
 
-<figure><img src="../../../../.gitbook/assets/a (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/luaDNfRqoQ63q0ZvtJup" alt=""><figcaption></figcaption></figure>
 
 b. Go to “Language Preference” tab
 

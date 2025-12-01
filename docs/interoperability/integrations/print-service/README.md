@@ -14,7 +14,7 @@ MOSIP has introduced the Print Service as a reference implementation to print th
 
 Below is an entity relationship diagram highlighting the relationship of Print Service with other modules.
 
-![](../../../.gitbook/assets/print-service-white.jpg)
+![](/broken/files/WSqy0pSeVbn82HrpAemp)
 
 1. Receives events from [WebSub](https://docs.mosip.io/1.2.0/modules/websub).
 2. Fetches [templates](https://github.com/mosip/print/blob/release-1.2.0.1/docs/configuration.md#template) from Masterdata.
@@ -46,7 +46,7 @@ To know more about the different configurations, steps for build and deployment,
 
 The diagram below depicts the technical architecture of the solution.
 
-![](../../../.gitbook/assets/print-service-architecture.png)
+![](/broken/files/C6S3BmctC7DIRz7uWpqS)
 
 **Print Stage** : This s a stage on the MOSIP server that requests the credential request generator to generate a credential for a given print partner or partners based on a custom-built logic. For example, the custom logic may be to route the print request to a a specific regional print partner.
 
@@ -194,7 +194,7 @@ Print partners may trigger credential issuance through either of the below chann
 
 Below is a simple diagram illustrating the flow.
 
-![](../../../.gitbook/assets/print-service-integration.png)
+![](/broken/files/eCQNQ0GCwrY3EO04lNI6)
 
 ### Guidelines and Assumptions
 

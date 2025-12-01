@@ -7,7 +7,7 @@ icon: file-certificate
 
 The documentation is licensed under a Creative Commons Attribution 4.0 International License.
 
-<div align="center"><img src="../.gitbook/assets/by.svg" alt="CC license Image"></div>
+<div align="center"><img src="/broken/files/xCeIM9b9rjGL2PJrLfHj" alt="CC license Image"></div>
 
 All MOSIP's [core](https://github.com/mosip) repositories are licensed under the terms of [Mozilla Public License 2.0](https://github.com/mosip/commons/blob/master/LICENSE).
 

@@ -8,7 +8,7 @@ WebSub provides a common mechanism for communication between publishers of any k
 
 In MOSIP, WebSub is used to share data with services and partners. [Kafka](https://kafka.apache.org/) message broker has been used to implement the WebSub APIs. Message brokers are a natural fit for the implementation of WebSub hubs as they serve a similar purpose.
 
-![](../../../.gitbook/assets/websub.png)
+![](/broken/files/hOIUexMmhRhabgeNxaNe)
 
 The relationship of WebSub with other services is explained here. _NOTE: The numbers do not signify sequence of operations or control flow._
 

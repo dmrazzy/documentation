@@ -222,7 +222,7 @@ These notifications are accessible to all applicable partner users via the **Not
 
 ![](media/media/pms-eug-notification-image18.png)
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="/broken/files/iJoIqRvqGY48MLDxX2lw" alt=""><figcaption></figcaption></figure>
 
 * Each Partner Certificate notification appears as a row with:
   * **Title**

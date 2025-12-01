@@ -23,13 +23,13 @@ Below is a list of tools required for auditing:
 
 2\. Unzip Apache Maven and move `settings.xml` to the "conf" folder `<apache maven unzip path>\conf`.
 
-3\. Install Eclipse, open the `lombok.jar` file, and click `Install/Update`. ![](../../../.gitbook/assets/lombok-configuration.png)
+3\. Install Eclipse, open the `lombok.jar` file, and click `Install/Update`. ![](/broken/files/5fJLX5CC6ovM6CHMphDE)
 
 4\. Check the Eclipse installation folder to see if the `lombok.jar` is added.
 
 5\. Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-![](../../../.gitbook/assets/installed-jre.png)
+![](/broken/files/2uKzCG0i7f0HOAbSIojO)
 
 ### Source code setup
 
@@ -43,13 +43,13 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 4. After building, open Eclipse and select `Import Projects → Maven → Existing Maven Projects → Next → Browse to project directory → Finish`.
 5. After successfully importing of project, update the project by right-clicking on `Project → Maven → Update Project`.
 
-![](../../../.gitbook/assets/import-project.png)
+![](/broken/files/D3RIv6MtLMutmJaTJYAJ)
 
 ## Environment setup
 
 1\. Download [Auth adapter](https://oss.sonatype.org/#nexus-search;gav~~kernel-auth-adapter~1.2.0-SNAPSHOT~~) and add to project `Libraries → Classpath → Add External JARs → Select Downloaded JAR → Add → Apply and Close`.
 
-![](../../../.gitbook/assets/add-external-library.png)
+![](/broken/files/f7jdZbSZxF2dZ7fT0pYr)
 
 2\. Clone [mosip-config repository](https://github.com/mosip/mosip-config).
 
@@ -67,7 +67,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 
 6\. Run the server by opening the `config-server-start.bat` file.
 
-![](../../../.gitbook/assets/run-server.png)
+![](/broken/files/8KxMJTv67HMayTYqHW5Y)
 
 7\. To verify the config-server, hit the below URL:
 
@@ -120,4 +120,4 @@ curl -X 'POST' \
 }'
 ```
 
-![](../../../.gitbook/assets/postman-import-curl.png)
+![](/broken/files/n0apuBAku76KtefrzyPO)

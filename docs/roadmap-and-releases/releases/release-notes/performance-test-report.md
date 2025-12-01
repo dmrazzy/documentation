@@ -174,7 +174,7 @@ Detailed Metrics for all 14 modules is available below:
 
 **Response Time Percentile Graph using Jmeter**
 
-![](<../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001 (1).png>)
+![](/broken/files/N2Z85vUTqVRSBbVsEse8)
 
 **CPU and Memory Utilization Graphs using Grafana**
 

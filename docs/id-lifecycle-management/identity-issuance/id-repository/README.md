@@ -17,7 +17,7 @@ ID Repository module consists of the following components:
 5. Credential Feeder
 6. Salt generator
 
-![](../../../.gitbook/assets/id-repository.png)
+![](/broken/files/3hL3czY5HXgMTTL36nwX)
 
 ## Identity service
 
@@ -26,7 +26,7 @@ ID Repository module consists of the following components:
 
 Identity service uses Biometric SDK (server) to extract templates from provided biometric data.
 
-![](../../../.gitbook/assets/identity-service.png)
+![](/broken/files/iJX9O0EVzDiBtUCWJQ13)
 
 Above is the entity relationship diagram illustrated for the Identity service. _NOTE:_ The numbers do not signify a sequence of operations or control flow. Arrows indicate the data flow.
 
@@ -47,7 +47,7 @@ Above is the entity relationship diagram illustrated for the Identity service. _
 
 VID Service provides functionality to create/update Virtual IDs mapped against a UIN. It also provides the facility to update the status of VID. VIDs are created based on the VID policy defined in the configuration.
 
-![](../../../.gitbook/assets/VID-service.png)
+![](/broken/files/KMj63xJeDS07D50vemfU)
 
 1. Key Manager encrypts/decrypts data.
 2. The credential request generator issues credentials for new/updated UIN data.
@@ -61,7 +61,7 @@ VID Service provides functionality to create/update Virtual IDs mapped against a
 
 ## Credential service
 
-![](../../../.gitbook/assets/credential-service.png)
+![](/broken/files/1ZHM55LFTXx1cYwSwSuc)
 
 1. Key Manager encrypts/decrypts data and also used to sign data.
 2. WebSub subscribes to get notifications related to credential status from IDA.
@@ -92,7 +92,7 @@ New credential types may be defined as per needs of a country.
 
 This service creates request for credential issuance.
 
-![](../../../.gitbook/assets/credential-request-generator.png)
+![](/broken/files/NYSkOmgSx4XASshJpVRf)
 
 1. Key Manager encrypts/decrypts data.
 2. The Auth Adapter integrates with KeyCloak for authentication.

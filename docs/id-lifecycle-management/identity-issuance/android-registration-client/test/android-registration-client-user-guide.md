@@ -170,8 +170,6 @@ Upon successful verification of the credentials, the packet will be uploaded to 
 
 <figure><img src="../../../../.gitbook/assets/operators authentication.png" alt="" width="375"><figcaption><p>Authentication page</p></figcaption></figure>
 
-<figure><img src="../../../../.gitbook/assets/ackn1 (1).png" alt="" width="375"><figcaption><p>Acknowledgment page</p></figcaption></figure>
-
 **Pending Approval:**
 
 Upon successful verification of the credentials, the acknowledgment will be displayed, and the Application will be moved to the “Pending Approval” section. This feature will only be available for the User who has a Supervisor’s role assigned to him.
@@ -226,7 +224,7 @@ a. On logging in for the first time, the Operator will be taken to the screen wh
     4. Right-hand finger capture
     5. Thumb capture
 
-<figure><img src="../../../../.gitbook/assets/image-20240612-074118.png" alt="" width="375"><figcaption><p>Operator's biometrics</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/onboard-operator-biometric-temp.png" alt="Onboard Operator" width="375"><figcaption></figcaption></figure>
 
 b. The user will then have to capture all the above-listed biometrics one by one.\
 c. Steps to capture the biometrics are given [**here**](android-registration-client-user-guide.md#face-photo-capture-process)**.**\
@@ -283,7 +281,9 @@ a. The user will be taken to the Biometrics Capture Homepage where he will be ab
 4. Right-hand finger capture
 5. Thumb capture
 
-<figure><img src="../../../../.gitbook/assets/update operator&#x27;s biometrics.png" alt="" width="375"><figcaption><p>Update operator's biometrics</p></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/update-operator-biometric-temp.png" alt="" width="375"><figcaption></figcaption></figure>
+
+
 
 b. The user will then have to capture all the above-listed biometrics one by one.
 
@@ -470,6 +470,7 @@ The system continuously monitors user activity, such as touches or navigation ev
 <figure><img src="../../../../.gitbook/assets/arc-auto-logout-warning.png" alt="" width="375"><figcaption><p>Auto logout warning message with countdown timer</p></figcaption></figure>
 
 **Step 2:** During the warning period, the user has two options:
+
 * Click the **"STAY LOGGED IN"** button to dismiss the warning and continue the session normally.
 * Click the **"LOG OUT"** button to immediately log out of the application.
 
@@ -521,7 +522,6 @@ The Biometric Correction feature enables operators to update and correct the bio
 
 This is the process to create a biometric correction packet. After this, the data will be updated, and a UIN will be generated.
 
-
 ## GPS Location
 
 This feature enables the Operator to automatically capture GPS location (latitude and longitude) when creating any packet through Android Registration Client. The GPS location is captured at the point of packet creation and attached as metadata to the packet, ensuring that the Operator's location is tracked for audit and verification purposes.
@@ -539,7 +539,6 @@ This feature enables the Operator to automatically capture GPS location (latitud
 {% hint style="info" %}
 **Note:** If the device's location services are disabled or GPS is unavailable, the system will log a warning but will not block packet creation. The packet will be created with a flag indicating "No GPS data available" in the metadata.
 {% endhint %}
-
 
 ## Settings
 
@@ -572,7 +571,6 @@ Each job's schedule is defined using a CRON expression.
 **Step 2:** It will redirect to the settings page as referred in the image below. The first tab is the scheduled job, here you can access.
 
 <figure><img src="../../../../.gitbook/assets/arc-scheduled-jobs-settings.png" alt="" width="375"><figcaption><p>Scheduled jobs settings page</p></figcaption></figure>
-
 
 ### Global Config Settings
 
