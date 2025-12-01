@@ -19,8 +19,8 @@ The Android Registration Client is a tablet-based application that delivers a mo
 1. [**GPS Tracking**:](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-18.-gps-location) Tracks the location where a registration packet is created and measures its distance from the device's mapped registration center.
 2. [**Applicant Biometric Correction**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-19.-biometrics-correction): Allows issuing a temporary ID when biometric capture fails, enabling the applicant to return for recapture before an AID is generated.
 3. [**Settings**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-20.-scheduled-jobs-settings): Provides access to device details, scheduled job configurations, and global/local configuration settings within the ARC.
-4. **Support for Landscape Mode:** Allows the Android Registration Client to function seamlessly in landscape orientation.
-5. **Support for Phone Screens:** Optimizes the Android Registration Client for effective use on smaller mobile screens.
+4. [**Support for Landscape Mode**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-23.-responsive-landscape-orientation-support)**:** Allows the Android Registration Client to function seamlessly in landscape orientation.
+5. [**Support for Phone Screens**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-24.-adaptive-small-screen-phone-experience)**:** Optimizes the Android Registration Client for effective use on smaller mobile screens.
 6. [**Auto Logout**](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/android-registration-client/overview/features#id-17.-auto-logout): Automatically logs out the user after a configurable period of inactivity for security.
 
 {% hint style="success" %}
