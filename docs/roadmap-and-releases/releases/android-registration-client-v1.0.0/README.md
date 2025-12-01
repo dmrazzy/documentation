@@ -29,7 +29,7 @@ The Android Registration Client is a tablet-based application that delivers a mo
 
 ### **Repository Released**
 
-<table><thead><tr><th width="324.0625">Repositories</th><th>Tags Released</th></tr></thead><tbody><tr><td>android-registration-client</td><td>v1.0.0</td></tr></tbody></table>
+<table><thead><tr><th width="324.0625">Repositories</th><th>Tags Released</th></tr></thead><tbody><tr><td>android-registration-client</td><td><a href="https://github.com/mosip/android-registration-client/tree/1.0.0">v1.0.0</a></td></tr><tr><td>admin-services</td><td><a href="https://github.com/mosip/admin-services/releases/tag/v1.2.1.4">v1.2.1.4</a></td></tr></tbody></table>
 
 ### User Stories Released
 
