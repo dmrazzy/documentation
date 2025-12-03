@@ -297,6 +297,11 @@ An update request is considered a duplicate under the following conditions:
 
 While adults may experience life events (e.g., marriage, divorce) that require updates to their name or address, **such demographic updates should be handled directly through the National ID system**, not via CRVS. Since adult records already have biometrics linked to their National ID, any changes must follow the official National ID update process. Individuals should therefore visit the National ID department to initiate these updates.
 
+#### Rationale
+
+1. Biometric authentication is the most secure and reliable way to verify an individual, reducing the risk of incorrect or fraudulent updates being made on behalf of someone else.
+2. The MOSIP National ID is a foundational, connected identity system used by multiple downstream services for authentication. Even a small demographic error (e.g., name change) can disrupt access to essential services. Ensuring updates occur through a biometric-authenticated channel protects the integrity of the ID and safeguards citizens’ interests.
+
 #### **Integration Limitations** <a href="#integration-limitations" id="integration-limitations"></a>
 
 Although the integration scope includes scenarios for birth, death, and updates, there are still some cases where limitations exist. While some of these limitations have been outlined above as part of the scope, this section will cover all current limitations of the integration.
