@@ -46,21 +46,31 @@ Claim 169 represents a JSON Object that includes the below table as ID attribute
 
 <details>
 
-<summary><mark style="color:blue;">Note on Standard CWT Metadata</mark></summary>
+<summary><mark style="color:blue;">Note on Standard CWT Attributes</mark></summary>
 
-The attributes listed below are **already included as part of the standard CWT (CBOR Web Token) metadata in the payload** and therefore **do not need to be separately specified within Claim 169**. Implementers should refer to the standard CWT definitions for format and usage.
+The attributes listed below are already included as part of the standard CWT (CBOR Web Token) metadata in the payload and therefore do not need to be separately specified within Claim 169. Implementers should refer to the standard CWT definitions for format and usage.
 
-**Included Attributes (Standard CWT Fields):**
+**Included Attributes:**
 
-* < 1 > **Issuer (iss)** — _Identifier of the entity issuing the credential_
-* < 2 > **Subject (sub)** — _Identifier of the subject of the credential_
-* < 4 > **Expiration Time (exp)** — _Timestamp indicating when the credential expires_
-* < 5 > **Not Before (nbf)** — _Timestamp before which the credential must not be accepted_
-* < 6 > **Issued At (iat)** — _Timestamp indicating when the credential was issued_
+* <mark style="color:orange;">Attribute #1</mark> - **Issuer (iss)** — _Identifier of the entity issuing the credential (text string)_
+* <mark style="color:orange;">Attribute #2</mark> - **Subject (sub)** — _Identifier of the subject of the credential (text string)_
+* <mark style="color:orange;">Attribute #4</mark> - **Expiration Time (exp)** — _Timestamp indicating when the credential expires (integer or floating-point number)_
+* <mark style="color:orange;">Attribute #5</mark> - **Not Before (nbf)** — _Timestamp before which the credential must not be accepted (integer or floating-point number)_
+* <mark style="color:orange;">Attribute #6</mark> - **Issued At (iat)** — _Timestamp indicating when the credential was issued (integer or floating-point number)_
 
 These fields are inherently part of the CWT structure and must be interpreted according to the standard specification.
 
 For details, refer to the [IANA CWT registry here](https://www.iana.org/assignments/cwt/cwt.xhtml).
+
+</details>
+
+<details>
+
+<summary><mark style="color:blue;">Guidelines</mark></summary>
+
+* The reserved numeric ranges defined above are designated for **global interoperability** and should be used consistently across implementations.
+* **Unassigned numbers** may be utilized within **closed ecosystems**, provided both the issuer and the consumer mutually agree that such usage is **not intended for global interoperability**.
+* To propose **new globally consumable attributes** for inclusion within the interoperable assigned range, entities are encouraged to contact the **Claim 169 Working Group** using the [contact details provided below](169-qr-code-specification.md#id-7.-authors).
 
 </details>
 
@@ -107,12 +117,6 @@ For details, refer to the [IANA CWT registry here](https://www.iana.org/assignme
 | --------- | ----------- |
 | `0`       | WAV         |
 | `1`       | MP3         |
-
-### Guidelines:
-
-* The reserved numeric ranges defined above are designated for **global interoperability** and should be used consistently across implementations.
-* **Unassigned numbers** may be utilized within **closed ecosystems**, provided both the issuer and the consumer mutually agree that such usage is **not intended for global interoperability**.
-* To propose **new globally consumable attributes** for inclusion within the interoperable assigned range, entities are encouraged to contact the **Claim 169 Working Group** using the [contact details provided below](169-qr-code-specification.md#id-7.-authors).
 
 ### 3.2 CBOR Map Structure Example
 
