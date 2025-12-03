@@ -36,13 +36,29 @@ Claim 169 represents a JSON Object that includes the below table as ID attribute
 
 ### 3.1 CBOR Map Structure Overview
 
-**Note**:&#x20;
+**Note**:
 
 * All the fields here are optional.
 * The issuer of **IDClaim169** is expected to host the **JWKS** file at the standard **.well-known** URL. This allows relying parties to verify the signature of the issued IDClaim169.
 * Please ensure to review the [Guidelines ](169-qr-code-specification.md#guidelines)stated below.
 
 <table><thead><tr><th width="155">Attribute</th><th width="169">Type</th><th width="193">Attribute Name</th><th>Description</th></tr></thead><tbody><tr><td><code>1</code></td><td><code>tstr</code></td><td>ID</td><td>Unique ID to indicate the PII data</td></tr><tr><td><code>2</code></td><td><code>tstr</code></td><td>Version</td><td>Version of the ID data</td></tr><tr><td><code>3</code></td><td><code>tstr</code></td><td>Language</td><td>Language used in other attributes: Use the three-letter <a href="https://en.wikipedia.org/wiki/ISO_639-3">ISO 639-3</a> language code</td></tr><tr><td><code>4</code></td><td><code>tstr</code></td><td>Full Name</td><td>Full name of the person</td></tr><tr><td><code>5</code></td><td><code>tstr</code></td><td>First Name</td><td>First name of the person</td></tr><tr><td><code>6</code></td><td><code>tstr</code></td><td>Middle Name</td><td>Middle name of the person</td></tr><tr><td><code>7</code></td><td><code>tstr</code></td><td>Last Name</td><td>Last name of the person</td></tr><tr><td><code>8</code></td><td><code>tstr</code></td><td>Date of Birth</td><td>Date of birth in YYYYMMDD format</td></tr><tr><td><code>9</code></td><td><code>int</code></td><td>Gender</td><td>Gender with the following values <code>1</code> - Male, <code>2</code> - Female, <code>3</code> - Others</td></tr><tr><td><code>10</code></td><td><code>tstr</code></td><td>Address</td><td>Address of the person, separator character <code>\n</code></td></tr><tr><td><code>11</code></td><td><code>tstr</code></td><td>Email ID</td><td>Email id of the person</td></tr><tr><td><code>12</code></td><td><code>tstr</code></td><td>Phone Number</td><td>Contact number of the person: Use <a href="https://en.wikipedia.org/wiki/E.123">E.123</a> international notation</td></tr><tr><td><code>13</code></td><td><code>tstr</code></td><td>Nationality</td><td>Nationality of the person:<br>Use the two-letter <a href="https://en.wikipedia.org/wiki/ISO_3166-2">ISO 3166-2</a> country code</td></tr><tr><td><code>14</code></td><td><code>int</code></td><td>Marital Status</td><td>Marital status - Can contain the following values <code>1</code> - Unmarried, <code>2</code> - Married, <code>3</code> - Divorced</td></tr><tr><td><code>15</code></td><td><code>tstr</code></td><td>Guardian</td><td>Name/id of the entity playing the role of a guardian, such as a mother, father, spouse, sister, legal guardian etc.</td></tr><tr><td><code>16</code></td><td><code>tstr</code></td><td>Binary Image</td><td>Binary image of the person's photograph</td></tr><tr><td><code>17</code></td><td><code>int</code></td><td>Binary Image Format</td><td>Binary image format. Can contain the following values <code>1</code> - JPEG, <code>2</code> - JPEG2, <code>3</code> - AVIF, <code>4</code> - WEBP</td></tr><tr><td><code>18</code></td><td><code>[int]</code></td><td>Best Quality Fingers</td><td>An unsigned 8-bit number encoding the hand position of the finger. It must be in the range 0-10, where 0 represents "Unknown", 1-5 represents right thumb to little finger, and 6-10 represents left thumb to little finger in sequence</td></tr><tr><td><code>19.. 49</code></td><td></td><td>Unassigned</td><td>For future - For Demographic Data attributes</td></tr><tr><td><code>50</code></td><td><code>[Biometrics]</code></td><td>Right Thumb</td><td>Person's Right Thumb biometrics</td></tr><tr><td><code>51</code></td><td><code>[Biometrics]</code></td><td>Right Pointer Finger</td><td>Person's Right Pointer Finger biometrics</td></tr><tr><td><code>52</code></td><td><code>[Biometrics]</code></td><td>Right Middle Finger</td><td>Person's Right Middle Finger biometrics</td></tr><tr><td><code>53</code></td><td><code>[Biometrics]</code></td><td>Right Ring Finger</td><td>Person's Right Ring Finger biometrics</td></tr><tr><td><code>54</code></td><td><code>[Biometrics]</code></td><td>Right Little Finger</td><td>Person's Right Little Finger biometrics</td></tr><tr><td><code>55</code></td><td><code>[Biometrics]</code></td><td>Left Thumb</td><td>Person's Left Thumb biometrics</td></tr><tr><td><code>56</code></td><td><code>[Biometrics]</code></td><td>Left Pointer Finger</td><td>Person's Left Pointer Finger biometrics</td></tr><tr><td><code>57</code></td><td><code>[Biometrics]</code></td><td>Left Middle Finger</td><td>Person's Left Middle Finger biometrics</td></tr><tr><td><code>58</code></td><td><code>[Biometrics]</code></td><td>Left Ring Finger</td><td>Person's Left Ring Finger biometrics</td></tr><tr><td><code>59</code></td><td><code>[Biometrics]</code></td><td>Left Little Finger</td><td>Person's Left Little Finger biometrics</td></tr><tr><td><code>60</code></td><td><code>[Biometrics]</code></td><td>Right Iris</td><td>Person's Right Iris biometrics</td></tr><tr><td><code>61</code></td><td><code>[Biometrics]</code></td><td>Left Iris</td><td>Person's Left Iris biometrics</td></tr><tr><td><code>62</code></td><td><code>[Biometrics]</code></td><td>Face</td><td>Person's Face biometrics</td></tr><tr><td><code>63</code></td><td><code>[Biometrics]</code></td><td>Right Palm Print</td><td>Person's Right Palm Print biometrics</td></tr><tr><td><code>64</code></td><td><code>[Biometrics]</code></td><td>Left Palm Print</td><td>Person's Left Palm Print biometrics</td></tr><tr><td><code>65</code></td><td><code>[Biometrics]</code></td><td>Voice</td><td>Person's Voice biometrics</td></tr><tr><td><code>66.. 74</code></td><td></td><td>Unassigned</td><td>For future - For Biometrics Data attributes</td></tr><tr><td><code>75.. 99</code></td><td></td><td>Unassigned</td><td>For future - For any other data</td></tr></tbody></table>
+
+> #### <mark style="color:blue;">Note on Standard CWT Metadata</mark>
+>
+> The attributes listed below are **already included as part of the standard CWT (CBOR Web Token) metadata in the payload** and therefore **do not need to be separately specified within Claim 169**. Implementers should refer to the standard CWT definitions for format and usage.
+>
+> **Included Attributes (Standard CWT Fields):**
+>
+> * < 1 > **Issuer (iss)** — _Identifier of the entity issuing the credential_
+> * < 2 > **Subject (sub)** — _Identifier of the subject of the credential_
+> * < 4 > **Expiration Time (exp)** — _Timestamp indicating when the credential expires_
+> * < 5 > **Not Before (nbf)** — _Timestamp before which the credential must not be accepted_
+> * < 6 > **Issued At (iat)** — _Timestamp indicating when the credential was issued_
+>
+> These fields are inherently part of the CWT structure and must be interpreted according to the standard specification.
+>
+> For details, refer to the [IANA CWT registry here](https://www.iana.org/assignments/cwt/cwt.xhtml).
 
 #### Biometrics
 
@@ -302,7 +318,7 @@ TODO:
 1. Current map structure is in plain text and its not the recommended way to handle privacy. Adoption of SD-JWT or equivalent can be considered.
 2. CWT MUST be signed, create a COSE\_Sign/COSE\_Sign1 object using the Message as the COSE\_Sign/COSE\_Sign1 Payload; all steps specified in [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) for creating a COSE\_Sign/COSE\_Sign1 object MUST be followed.
 3. If the CWT is a COSE\_Encrypt/COSE\_Encrypt0 object,create a COSE\_Encrypt/COSE\_Encrypt0 using the Message as the plaintext for the COSE\_Encrypt/COSE\_Encrypt0 object; all steps specified in [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) for creating a COSE\_Encrypt/COSE\_Encrypt0 object MUST be followed.
-4. To verify the claims the CWT is a COSE\_Sign/COSE\_Sign1, follow the steps specified in Section 4 of [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) ("Signing Objects") for validating a COSE\_Sign/COSE\_Sign1 object. Let the Message be the COSE\_Sign/COSE\_Sign1 payload. Once signature is valid we SHOULD validate the public key against a preconfigured key. In case encrypted Else, if the CWT is a COSE\_Encrypt/COSE\_Encrypt0 object, follow the steps specified in Section 5 of \[RFC8152] ("Encryption Objects") for validating a COSE\_Encrypt/COSE\_Encrypt0 object. Let the Message be the resulting plaintext.&#x20;
+4. To verify the claims the CWT is a COSE\_Sign/COSE\_Sign1, follow the steps specified in Section 4 of [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) ("Signing Objects") for validating a COSE\_Sign/COSE\_Sign1 object. Let the Message be the COSE\_Sign/COSE\_Sign1 payload. Once signature is valid we SHOULD validate the public key against a preconfigured key. In case encrypted Else, if the CWT is a COSE\_Encrypt/COSE\_Encrypt0 object, follow the steps specified in Section 5 of \[RFC8152] ("Encryption Objects") for validating a COSE\_Encrypt/COSE\_Encrypt0 object. Let the Message be the resulting plaintext.
 
 The security of the CWT relies upon on the protections offered by COSE. Unless the claims in a CWT are protected, an adversary can modify, add, or remove claims.
 
@@ -323,7 +339,7 @@ Specification Document(s): [Section 3](169-qr-code-specification.md#semantics), 
 
 ## 6. Acknowledgments
 
-This work is the result of the dedicated efforts of contributors who recognize the critical importance of interoperability and a consistent QR code specification. The revised version has been shaped significantly by the input of our working group committee, comprising members from the following organizations: GetGroup, PWC and Tech 5.&#x20;
+This work is the result of the dedicated efforts of contributors who recognize the critical importance of interoperability and a consistent QR code specification. The revised version has been shaped significantly by the input of our working group committee, comprising members from the following organizations: GetGroup, PWC and Tech 5.
 
 We extend our gratitude to the committee members for their invaluable time and insights throughout the evaluation phase.
 
@@ -331,7 +347,7 @@ We extend our gratitude to the committee members for their invaluable time and i
 
 GetGroup: Aiman Tarek
 
-PWC: Chaitanya Giri&#x20;
+PWC: Chaitanya Giri
 
 Tech 5: Bejoy Ak, Nelson Branco, Rahul Parthe
 
@@ -348,4 +364,3 @@ Rounak Nayak ([rounak@ooru.io](mailto:rounak@ooru.io))
 Sasikumar G ([sasi@duck.com](mailto:sasi@duck.com))
 
 Sreenadh S ([sreeavtar@gmail.com](mailto:sreeavtar@gmail.com))
-
