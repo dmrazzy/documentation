@@ -12,11 +12,11 @@ This integration currently supports the following use cases:
    1. [Birth registration is initiated by the CRVS system](scope.md#id-1.1-birth-registration-initiated-by-crvs-system)
    2. [Duplicate and/or repeated infant birth registration requests initiated by the CRVS system](scope.md#id-1.2-duplicate-and-or-repeated-infant-birth-registration-requests-initiated-by-crvs)
    3. [Failure handling](scope.md#id-1.3-failure-handling)
-2. [Death registration ](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
+2. [Death registration](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-2.-death-registration)
    1. [New death registration initiated by CRVS](scope.md#id-2.1-new-death-registration-initiated-by-crvs)
    2. [Duplicate and/or repeated requests for death registration](scope.md#id-2.2-duplicate-and-or-repeated-requests-for-death-registration)
    3. [Failure handling](scope.md#id-2.3-failure-handling)
-3. [Demographic data update](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)&#x20;
+3. [Demographic data update](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs-integration/scope#id-3.-demographic-data-update-initiated-by-crvs-system)
    1. [Infant demo data update request initiated by CRVS](scope.md#id-3.1-infant-demo-data-update-request-initiated-by-crvs)
    2. [Duplicate and/or repeated infant demo data update requests](scope.md#id-3.2-duplicate-and-or-repeated-infant-demo-data-update-requests)
    3. [Adult demo data update request initiated by CRVS](scope.md#id-3.3-adult-demo-data-update-request-initiated-by-crvs-system)
@@ -97,7 +97,7 @@ Upon successful processing:
 
 Duplicate and/or repeated requests may arise under the following conditions:
 
-1. **Repeated Requests- Same RID Used In Multiple Requests:**&#x20;
+1. **Repeated Requests- Same RID Used In Multiple Requests:**
    1. When multiple requests are made using the same RID (Request ID) for the birth registration of the same infant (with the same or different data).
    2. Currently, the request will be processed even if the same RID is used in multiple requests.
    3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
@@ -222,7 +222,10 @@ The integration supports updates for the following fields:
 1. Name
 2. Date of Birth (DOB)
 3. Gender
-4. Parent's / Guardian's Name
+
+{% hint style="info" %}
+**Note:** While demographic updates for infants are generally supported, if the child already has biometrics linked to a National ID, such updates must be performed through the National ID system (MOSIP) and not via CRVS.
+{% endhint %}
 
 {% hint style="info" %}
 **Note:** Updates to biometrics or any other data beyond the fields listed above are not supported via CRVS. For such changes, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
@@ -254,7 +257,6 @@ Steps and required information are provided below:
    1. Name
    2. Date of Birth (DOB)
    3. Gender
-   4. Address
 2. **Informant Information** (Extendable as per country needs):
    1. eSignet User Info Token
 
@@ -293,7 +295,7 @@ An update request is considered a duplicate under the following conditions:
 
 #### **3.3** **Adult Demo Data Update Request Initiated by CRVS System**
 
-While adults may experience life events (e.g., marriage or divorce) that require updates to name or address, MOSIP does not support adult demographic data updates via CRVS. For such requests, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
+While adults may experience life events (e.g., marriage, divorce) that require updates to their name or address, **such demographic updates should be handled directly through the National ID system**, not via CRVS. Since adult records already have biometrics linked to their National ID, any changes must follow the official National ID update process. Individuals should therefore visit the National ID department to initiate these updates.
 
 #### **Integration Limitations** <a href="#integration-limitations" id="integration-limitations"></a>
 
@@ -301,15 +303,17 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 1. **No Support for New Adult Birth Registrations**:\
    MOSIP does not support new adult birth registrations when the request comes from CRVS.
-2. **Integration for Birth and Death Registrations**:\
+2. **No Support for Demographic Updates When Biometrics Are Already Linked to a National ID:**\
+   MOSIP will not support demographic updates from CRVS for individuals whose biometrics are already linked to a National ID. For such updates, individuals are expected to visit the National ID registration centre (MOSIP).
+3. **Integration for Birth and Death Registrations**:\
    The integration works seamlessly for birth and death registrations. However, updates to demographic data are still a work in progress.
-3. **Duplicate Request Rejection**:\
+4. **Duplicate Request Rejection**:\
    Since the CRVS system is considered the source of truth, MOSIP currently does not reject duplicate birth/death registration requests received from the CRVS system. This can result in multiple UINs for the same infant or an update of the death flag for the same deceased. Deduplication is expected to be handled by CRVS.
-4. **No Support for Rejected Packets, Status Updates, and Reason**\
+5. **No Support for Rejected Packets, Status Updates, and Reason**\
    If a request fails due to validation issues in MOSIP, there is currently no mechanism to send detailed rejection reasons back to CRVS.
-5. **No support for Offline Integration**:\
+6. **No support for Offline Integration**:\
    This integration works only when online connectivity is available. Offline (no-connectivity) support is under development.
-6. **Use of VID/UIN for Death Registration**:\
+7. **Use of VID/UIN for Death Registration**:\
    Only VID or UIN can be used to register a death. Currently, MOSIP does not support death updates with any other identifier.
 
 While these are the currently supported scenarios, additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
