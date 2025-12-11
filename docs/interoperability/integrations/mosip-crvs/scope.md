@@ -1,10 +1,10 @@
 # Scope
 
-#### **Overview** <a href="#overview" id="overview"></a>
+### **Overview** <a href="#overview" id="overview"></a>
 
 This section defines the scope of integration between Civil Registration and Vital Statistics (CRVS) systems and Modular Open-Source Identity Platform (MOSIP). The integration supports a comprehensive set of use cases, including birth and death registrations, demographic updates, and other vital events such as marriage and divorce.
 
-#### **Use Cases Supported Through CRVS-MOSIP Integration** <a href="#use-cases-supported-through-crvs-mosip-integration" id="use-cases-supported-through-crvs-mosip-integration"></a>
+### **Use Cases Supported Through CRVS-MOSIP Integration** <a href="#use-cases-supported-through-crvs-mosip-integration" id="use-cases-supported-through-crvs-mosip-integration"></a>
 
 This integration currently supports the following use cases:
 
@@ -25,7 +25,7 @@ This integration currently supports the following use cases:
 **Note**: These are the currently supported scenarios. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
 {% endhint %}
 
-#### **1. Birth Registration:** <a href="#id-1.-birth-registration" id="id-1.-birth-registration"></a>
+### **1. Birth Registration:** <a href="#id-1.-birth-registration" id="id-1.-birth-registration"></a>
 
 #### **1.1 Birth Registration Initiated by CRVS System**
 
@@ -69,7 +69,7 @@ Steps and required information are provided below:
 1. Introducers' VID/UIN
 2. eSignet User Info Token
 
-**Step 2: Packet Creation**
+#### **Step 2: Packet Creation**
 
 CRVS creates a registration packet by calling the **Packet Manager API**, using:
 
@@ -80,12 +80,13 @@ CRVS creates a registration packet by calling the **Packet Manager API**, using:
 
 The packet is stored in the **Object Store** for further processing.
 
-**Step 3: Workflow Trigger & Notification**
+#### **Step 3: Workflow Trigger & Notification**
 
 1. CRVS calls the **Trigger API** to initiate the processing workflow.
 2. Once the packet reaches a "Completed" state, MOSIP publishes an event to a **WebSub topic**, notifying subscribers.
 
-**Step 4: Identity Credential Sharing**\
+#### **Step 4: Identity Credential Sharing**&#x20;
+
 Upon successful processing:
 
 1. The newborn’s demographic data is updated in MOSIP.
@@ -122,7 +123,7 @@ Duplicate and/or repeated requests may arise under the following conditions:
    2. MOSIP will publish a **failure event** to the **WebSub topic**, detailing the rejection reason.
    3. CRVS must subscribe to the WebSub topic to receive and act on such notifications.
 
-#### 2. Death Registration <a href="#id-2.-death-registration" id="id-2.-death-registration"></a>
+### 2. Death Registration <a href="#id-2.-death-registration" id="id-2.-death-registration"></a>
 
 #### **2.1 New Death Registration Initiated by CRVS:**
 
@@ -130,7 +131,7 @@ When a death (infant or adult) is registered in the CRVS system, the information
 
 This integrated approach to ID lifecycle management supports the accuracy of records within the national ID system, enabling secure and uninterrupted access to essential services throughout an individual's life.
 
-**Approach**
+#### **Approach**
 
 A death registration request is initiated by the CRVS system based on the informant reporting the deceased. For MOSIP, the informant must be a registered user with a valid national ID. This ID is authenticated using eSignet. During the death registration, MOSIP marks the individual as deceased using a status flag, without deactivating the ID. The date of death declaration is recorded in the system.
 
@@ -149,7 +150,7 @@ It is up to each country to determine which fields should be included in the ID 
 
 Steps and required information are provided below:
 
-**Step 1: Registration Initiation & Authentication:**
+#### **Step 1: Registration Initiation & Authentication:**
 
 1. The informant visits the CRVS Registration Centre.
 2. Provides necessary details.
@@ -166,7 +167,7 @@ Steps and required information are provided below:
    1. Informant's UIN/VID
    2. eSignet User Info Token
 
-**Step 2: Packet Creation:**
+#### **Step 2: Packet Creation:**
 
 1. CRVS sends a request to the Packet Manager API.
 2. Includes access token, client ID, ID schema version, and RID.
@@ -215,20 +216,57 @@ Steps and required information are provided below:
 
 #### 3. Demographic Data Update Initiated by CRVS System <a href="#id-3.-demographic-data-update-initiated-by-crvs-system" id="id-3.-demographic-data-update-initiated-by-crvs-system"></a>
 
-Demographic data updates may be required due to life events such as marriage, divorce, changes in guardianship (in cases of adoption into a family), or corrections to previously submitted data. Regardless of the specific scenario, such cases follow the standard update flow. This integration between the CRVS system and MOSIP enables CRVS to submit demographic update requests to MOSIP on behalf of individuals when these life events occur.\
-\
-The integration supports updates for the following fields:
+Demographic updates may be required throughout an individual’s lifecycle due to various life events or corrections. These updates can originate from different authoritative sources, including CRVS, depending on country policy.
 
-1. Name
-2. Date of Birth (DOB)
-3. Gender
+In the MOSIP–CRVS integration context, demographic updates received from CRVS fall into **two broad categories**, based on whether biometric data is linked to the individual’s ID:
+
+**1. IDs not having biometrics linked  (Infant or Pre-Biometric Stage)**
+
+These are typically records created at birth registration, where no biometrics are captured.\
+Demographic details for such individuals may need updates due to:
+
+* Corrections in the birth record (name, DOB, gender, etc.)
+* Changes arising from adoption or guardianship
+* Amendments identified by CRVS during vital event updates
+
+**2. IDs having Biometric Linkages (Adults or Individuals Enrolled With Biometrics)**
+
+Once an individual has completed biometric enrolment, the identity becomes anchored to irreproducible biometric traits.\
+Demographic updates at this stage carry higher identity-related risks and may involve legal implications.
+
+Updates may be needed for:
+
+* Marriage-related name changes
+* Divorce or separation-related updates
+* Gender changes as legally recognized
+* Corrections to previously entered data
+* Changes in parent/guardian details after legal processes
+
+Even though CRVS may identify or certify these life events, **biometric re-authentication** becomes essential to ensure that the correct individual is tied to the update request.
+
+Country policy may decide whether:
+
+* CRVS submits these updates directly to MOSIP **after authentication via eSignet**, or
+* Individuals must visit a MOSIP Registration Center for updates.
+
+MOSIP technically supports both models, but the choice must align with country legal and operational policy.&#x20;
+
+#### **Supported Demographic Fields for Update**
+
+The following fields are commonly updated as part of life events or corrections:
+
+* **Name**
+* **Date of Birth (DOB)**
+* **Gender**
 
 {% hint style="info" %}
-**Note:** While demographic updates for infants are generally supported, if the child already has biometrics linked to a National ID, such updates must be performed through the National ID system (MOSIP) and not via CRVS.
+**Important Note:**\
+This list is suggestive **and not restrictive**.\
+Countries can configure **any demographic attributes** they wish to expose for update through CRVS–MOSIP integration, based on local laws, governance, and operational requirements.
 {% endhint %}
 
 {% hint style="info" %}
-**Note:** Updates to biometrics or any other data beyond the fields listed above are not supported via CRVS. For such changes, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
+**Note:** Updates to biometrics of the individuals beyond the demographic fields are not supported via CRVS. For such changes, individuals must visit the National ID department and initiate the request directly through the National ID system (MOSIP).
 {% endhint %}
 
 **High-Level Workflow:**
@@ -237,7 +275,7 @@ The integration supports updates for the following fields:
 
 The various scenarios for demographic data updates are outlined below, along with the basic workflow and the expected behavior from MOSIP in each case.
 
-#### **3.1 Infant Demo Data Update Request Initiated by CRVS**
+#### **3.1** CRVS-Initiated Demographic Updates for Individuals Without Biometric Records
 
 This includes scenarios such as:
 
@@ -246,10 +284,11 @@ This includes scenarios such as:
 
 Steps and required information are provided below:
 
-1. **Step 1: Update Request Initiation & Authentication**
-   1. The parent, guardian, or introducer visits the CRVS registration centre and provides updated demographic details.
-   2. CRVS authenticates the individual's identity using their national ID via eSignet.
-   3. Upon successful authentication, the request is sent to MOSIP along with the eSignet user info token.
+#### **Step 1: Update Request Initiation & Authentication**
+
+1. The parent, guardian, or introducer visits the CRVS registration centre and provides updated demographic details.
+2. CRVS authenticates the individual's identity using their national ID via eSignet.
+3. Upon successful authentication, the request is sent to MOSIP along with the eSignet user info token.
 
 **Required Information for MOSIP to Process the Request:**
 
@@ -260,17 +299,17 @@ Steps and required information are provided below:
 2. **Informant Information** (Extendable as per country needs):
    1. eSignet User Info Token
 
-**Step 2: Packet Creation**
+#### **Step 2: Packet Creation**
 
 1. CRVS creates a registration packet by calling the Packet Manager API with an access token, client ID, ID schema version, and RID.
 2. The packet is stored in the Object Store.
 
-**Step 3: Workflow Trigger:**
+#### **Step 3: Workflow Trigger:**
 
 1. CRVS triggers processing by calling the "trigger" API with the access token.
 2. This ensures the update packet is processed within MOSIP.
 
-**Step 4: Update & Notification:**
+#### **Step 4: Update & Notification:**
 
 1. Once approved, the demo data is updated in MOSIP.
 2. Notifications are sent to the registered email and phone number.
@@ -293,7 +332,7 @@ An update request is considered a duplicate under the following conditions:
    1. When MOSIP receives multiple update requests for the same infant with different RIDs, whether the demographic data fields contain the same values or have been modified, each request is treated as a new submission.
    2. Currently, the request will be processed, and data will be updated based on the latest request.
 
-#### **3.3** **Adult Demo Data Update Request Initiated by CRVS System**
+#### **3.3** CRVS-Initiated Demographic Data Update for IDs With Biometric Linkage
 
 While adults may experience life events (e.g., marriage, divorce) that require updates to their name or address, **such demographic updates should be handled directly through the National ID system**, not via CRVS. Since adult records already have biometrics linked to their National ID, any changes must follow the official National ID update process. Individuals should therefore visit the National ID department to initiate these updates.
 
@@ -302,7 +341,7 @@ While adults may experience life events (e.g., marriage, divorce) that require u
 1. Biometric authentication is the most secure and reliable way to verify an individual, reducing the risk of incorrect or fraudulent updates being made on behalf of someone else.
 2. The MOSIP National ID is a foundational, connected identity system used by multiple downstream services for authentication. Even a small demographic error (e.g., name change) can disrupt access to essential services. Ensuring updates occur through a biometric-authenticated channel protects the integrity of the ID and safeguards citizens’ interests.
 
-#### **Integration Limitations** <a href="#integration-limitations" id="integration-limitations"></a>
+### **Integration Limitations** <a href="#integration-limitations" id="integration-limitations"></a>
 
 Although the integration scope includes scenarios for birth, death, and updates, there are still some cases where limitations exist. While some of these limitations have been outlined above as part of the scope, this section will cover all current limitations of the integration.
 
@@ -317,9 +356,9 @@ Although the integration scope includes scenarios for birth, death, and updates,
 5. **No Support for Rejected Packets, Status Updates, and Reason**\
    If a request fails due to validation issues in MOSIP, there is currently no mechanism to send detailed rejection reasons back to CRVS.
 6. **No support for Offline Integration**:\
-   This integration works only when online connectivity is available. Offline (no-connectivity) support is under development.
-7. **Use of VID/UIN for Death Registration**:\
-   Only VID or UIN can be used to register a death. Currently, MOSIP does not support death updates with any other identifier.
+   This integration works only when online connectivity is available as eSignet authentication is a necessary step before a request is submitted to CRVS. Offline (no-connectivity) support is under development.
+7. **Use of VID/UIN for Death Registration and Demo Data Updates**:\
+   Only VID or UIN can be used to register a death or submit requests for the demo data updates. Currently, MOSIP does not support death updates with any other identifier.
 
 While these are the currently supported scenarios, additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
 
