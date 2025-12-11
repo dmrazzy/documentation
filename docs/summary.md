@@ -294,6 +294,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
+    * [Versioning Policy](roadmap-and-releases/releases/versioning-policy.md)
     * [Android Registration Client v1.0.0](roadmap-and-releases/releases/android-registration-client-v1.0.0/README.md)
       * [Test Report](roadmap-and-releases/releases/android-registration-client-v1.0.0/test-report.md)
     * [1.2.2.4 ID Repository & 1.2.1.2 ID Authentication](roadmap-and-releases/releases/1.2.2.4-id-repository-and-1.2.1.2-id-authentication/README.md)
