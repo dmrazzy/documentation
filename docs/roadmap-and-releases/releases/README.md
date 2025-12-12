@@ -5,6 +5,8 @@ icon: book-open
 
 # Releases
 
+**“You can refer to** [_**Release Naming Convention**_](versioning-policy.md) _**t**_**o better understand how our releases are named and to help you navigate them with ease.”**
+
 ## Latest Releases
 
 **Version**: Android Registration Client v1.0.0
