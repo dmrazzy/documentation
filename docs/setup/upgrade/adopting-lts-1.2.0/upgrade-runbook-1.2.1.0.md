@@ -33,48 +33,48 @@ Following these procedures ensures a smooth transition from version 1.2.0.1 to 1
   * Notification to be provided to all the users on the downtime.
 * Uninstall all MOSIP services using `delete.sh` or individual helm delete command.
   * Secrets and configmaps used from external services need to be backed up. (e.g. postgres, minio, hsm etc).
-  * Take backup of secrets and configmaps available in config-server and other namespace.
+  * Take backup of secrets and configmaps available in **config-server** and other **namespace**.
   * Delete scripts should be run from individual [helm repo](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/mosip).
 * Take backup of the required services (as listed below) for any restore:
   * Postgress
     * [Refer](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/postgres#db-export)
       * Make sure to backup all the schema along with roles , users and password.
   * [SoftHSM](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/hsm/softhsm#backup-softhsm) (this applies only to sandbox or testing environment upgrades and must not be used in production. For RealHSM, the upgrade process should be guided by the HSM administrator or the vendor.)
-  * \[minio]\((https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio)
+  * [minio](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio)
 
-### Upgrade External Services
 
-**Order of Upgrade is as mentioned below:**
+
+### **Upgrade Sequence**
 
 {% hint style="danger" %}
 **Important**: Follow this sequence strictly.
 {% endhint %}
 
-* Step 1: Upgrade of External Services
+* **Step 1**: **Upgrade of External Services**
   * Postgres server Upgrade
   * Minio Upgrade.
   * ActiveMQ Upgrade: delete and redeploy
-* Step 2: Adding additional definitions to keycloak
-* Step 3: DB schema Upgrade.
-* Step 4: Config Migrator Run.
-* Step 5: Skip redeployment of certain MOSIP services/batch jobs
+* **Step 2**: Adding additional definitions to **keycloak**
+* **Step 3**: DB schema Upgrade
+* **Step 4**: Config Migrator Run
+* **Step 5**: Skip redeployment of certain MOSIP services/batch jobs
 * **Step 6: Deployment of additional artifcatory instance**
-* Step 7: Deploy MOSIP services using relevant helm charts.
-* Step 8: Post-upgrade verification.
+* Step 7: Deploy MOSIP services using relevant helm charts
+* Step 8: Post-upgrade verification
 
 Follow the detailed instructions provided for each steps to complete the upgrade process as below:
 
 ### Step 1: Upgrade of External Services
 
 {% hint style="success" %}
-* Platform v1.2.1.0 tested and certified with Postgres 16. It should also work with both Postgres 15 as there is no intentional breaking changes. If you are skipping this then, recommended to test completely before moving the changes to production.
+* Platform v1.2.1.0 is tested and certified with Postgres 16. It should also work with both Postgres 15 as there is no intentional breaking changes. If you are skipping this then, recommended to test completely before moving the changes to production.
 * Decision of upgrading postgres from existing version to latest version is fairly dependent on the SI and DBA’s advice.
 * As part of our ref-impl v1.2.0.1 we were using postgres 15 and we upgrade to postgres 16 as part of v1.2.1.0.
 {% endhint %}
 
 #### **Upgrade postgres 15 to postgres 16**
 
-* Refer the provided commands below for installing postgres 16
+* Refer to the provided commands below for installing postgres 16
   * Installation & Checks
   * ```
     sudo apt update
@@ -137,9 +137,12 @@ If an upgrade is planned, refer to the official documentation recommended by the
     sudo systemctl status postgresql@16-main
     sudo pg_lsclusters
     ```
-* **Minio Upgrade**
-* Platform v1.2.1.0 tested and certified with minio version RELEASE.2025-02-28T09-55-16Z. It should also work with both minio version RELEASE.2022-02-07T08-17-33Z as there is no intentional breaking changes. If you are skipping this then, recommended to test completely before moving the changes to production.
-* As part of our ref-impl v1.2.0.1 to v1.2.1.0, we are upgrading as mentioned below in for LTS version.
+
+#### **Minio Upgrade**
+
+{% hint style="success" %}
+* Platform v1.2.1.0 is tested and certified with minio version RELEASE.2025-02-28T09-55-16Z. It should also work with both minio version RELEASE.2022-02-07T08-17-33Z as there is no intentional breaking changes. If you are skipping this, then, it is recommended to test it completely before moving the changes to production.
+* As part of our ref-impl v1.2.0.1 to v1.2.1.0, we are upgrading as mentioned below for LTS version.
   * v1.2.0.1
     * **Chart** 10.1.6 **→ Image** 2022.2.7-debian-10-r0\
       👉 MinIO server version: RELEASE.2022-02-07T08-17-33Z
@@ -148,45 +151,50 @@ If an upgrade is planned, refer to the official documentation recommended by the
       👉 MinIO server version: RELEASE.2025-02-28T09-55-16Z
 * In v1.2.1.0 ref-impl deployment and upgrade bitnami chart version 15.0.6 is considered.
 * We are proposing export and import way for upgrading but completely Implementers choice under Minio Admin supervision.
+{% endhint %}
 
 [https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/external/object-store/minio/README.md#backup-and-restore-minio](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/external/object-store/minio/README.md#backup-and-restore-minio)
 
 Backup the older minio and restore the same to newer one deployed using helm chart following above mentioned document.
 
-* **ActiveMQ Upgrade :**
-* If possible clear all the mesages in Active MQ queues.
-* Else the same packets will be reprocessed whenever reprocessor stage picks up the same.
+#### **ActiveMQ Upgrade**
+
+{% hint style="success" %}
+* If possible clear all the messages in Active MQ queues.
+* Else, the same packets will be reprocessed whenever reprocessor stage picks up the same.
 * As part of java upgrade on MOSIP services side some slowness was observed on older activeMQ hence we upgraded to latest one compatible with java 17 and above.
 * Upgrade details:
   * Older version : apache-artemis-2.16.0
   * New version : apache-artemis-2.39.0
+{% endhint %}
+
 * Uninstall the existing ActiveMQ using the existing delete [script](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/external/activemq/delete.sh) from v1.2.0.1 tag.
 * Install latest ActiveMQ using [install](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/external/activemq/install.sh) script from v1.2.1.0 tag.
 
 ### **Step 2: Adding additional definitions to keycloak**
 
 {% hint style="success" %}
-Keycloak init takes care of adding all the relevant client , roles, client scopes required as part of 1.2.1.0.
+Keycloak init takes care of adding all the relevant client, roles, client scopes required as part of 1.2.1.0.
 {% endhint %}
 
 * First delete the existing keycloak-init job using helm:
   * ```
     helm -n keycloak delete keycloak-init 
     ```
-* Deploy and run latest ‘keycloak-init’ job by following the [document](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/iam) to add new set of clients, roles, mappers and client scopes
+* Deploy and run latest `keycloak-init` job by following the [document](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/iam) to add new set of clients, roles, mappers and client scopes.
 
 ### **Step 3: MOSIP Specific Database upgrades**
 
-* Please follow the [Instruction](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/README.md#db-upgrade) for DB Upgrade from 1.2.0.1 to 1.2.1.0.
+* Follow the [Instruction](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/README.md#db-upgrade) for DB Upgrade from 1.2.0.1 to 1.2.1.0.
 
 {% hint style="success" %}
-- Ensure that upgrade.csv is updated with all schema-related upgrade versions. The list of databases and their upgrade versions, in the defined sequence, is available [here](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/upgrade.csv).
+- Ensure that `upgrade.csv` is updated with all schema-related upgrade versions. The list of databases and their upgrade versions, in the defined sequence, is available [here](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/upgrade.csv).
 - DB Upgrade scripts are available in **db\_upgrade\_scripts** directory of respective repos for respective modules.
-- In case of your customisations please go through the db upgrade scripts once to avoid any conflicts and upgrade post goes by following this [document](https://github.com/mosip/postgres-init/tree/release-1.3.x/postgres-upgrade)
+- In case of your customisations please go through the db upgrade scripts once to avoid any conflicts and upgrade post goes by following this [document](https://github.com/mosip/postgres-init/tree/release-1.3.x/postgres-upgrade).
 {% endhint %}
 
-* In case of upgrading the production, after all the DB’s are upgraded successfully, check for the new db user “otpuser” created and update the password for the same to strong password and update the secrets in config-server secrets.
-* In case of sandbox or testing environment , update the password for “otpuser” as “**db-dbuser-password”** in postgres namespace as pre configured.
+* In case of upgrading the production, after all the DB’s are upgraded successfully, check for the new db user `otpuser` created and update the password for the same to strong password and update the secrets in config-server secrets.
+* In case of sandbox or testing environment , update the password for `otpuser` as `db-dbuser-password` in postgres namespace as pre configured.
 
 ### **Step 4: Config Migrator Run**
 
@@ -216,8 +224,8 @@ Keycloak init takes care of adding all the relevant client , roles, client scope
       ```
       mosip.pms.esignet.claims-mapping-file-url=${spring_config_url_env}/application/${active_profile_env}/${spring_config_label_env}/identity-mapping.json
       ```
-* Please create a new branch from the latest config branch to compare with the older version. When the migrator updates the latest-config directory, we can diff the changes and raise a pull request for the new branch. The migrator changes will be captured in the new branch, while latest-config remains unchanged for reference.
-* Placeholders have been introduced in certain .properties files. Please do not remove them; instead, use them and provide the required values through the ConfigMap. These placeholders are intended to support easier configurability.
+* Create a new branch from the latest config branch to compare with the older version. When the migrator updates the latest-config directory, we can diff the changes and raise a pull request for the new branch. The migrator changes will be captured in the new branch, while latest-config remains unchanged for reference.
+* Placeholders have been introduced in certain `.properties` files. Please do not remove them; instead, use them and provide the required values through the ConfigMap. These placeholders are intended to support easier configurability.
 {% endhint %}
 
 * Follow the [steps](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/utils/prop_migrator) to migrate the configurations.
@@ -231,8 +239,8 @@ Keycloak init takes care of adding all the relevant client , roles, client scope
 ### **Step 5: Skip redeployment of certain MOSIP services/batch jobs**
 
 * Add the pmp-revamp host to the global configmap manually.
-  * @Mohan E to detail out one liner command for the same.
-* Do not run these services during redeployment: @Mohan E to add the places in install scripts which SI’s will comment to make this possible.
+  * <mark style="color:red;">@Mohan E to detail out one liner command for the same.</mark>
+* Do not run these services during redeployment: <mark style="color:red;">@Mohan E to add the places in install scripts which SI’s will comment to make this possible</mark>.
   * **kernel keygen job**
   * **masterdata-loader**
   * **regproc-reprocessor**
@@ -245,16 +253,16 @@ Keycloak init takes care of adding all the relevant client , roles, client scope
 ### **Step 6: Deployment of additional artifcatory instance**
 
 * We will need two Instances of artifactory as part of ref-impl v1.2.0.1 to v1.2.1.0 upgrade to support both JAVA11 and JAVA 21 components.
-  * **For regclient v1.2.0.2 (JAVA 11 component):**
-    * As the **regclient** is not getting upgraded suggested to use **v1.2.0.2**, hence will continue to use artifactory-1.2.0.1 from helm chart to support older regclient-downloader.
-    * Need this to be redeployed in new namespace to avoid changes in most of the install scripts. (new namespace : **artifactory-1202**)
-    * Update the namespace in install script from v1.2.0.2 for artifactory. [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/artifactory/install.sh)
-    * Execute the install script to install the same in artifactory-1202 namespace.
-    * Delete reg-client-downloader if not deleted yet [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/regclient/delete.sh)
-    * Re-deploy reg-client downloader following [link](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/mosip/regclient)
-  * **Other one for rest of the services which needs the dependent artifacts from upgraded artifactory-1.3.0**. (JAVA 21 components)
-    * Delete the older artifactory in case still runnning from artifactory namespace following [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/artifactory/delete.sh)
-    * Install the newer artifactory followng [link](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/artifactory/install.sh)
+* **For regclient v1.2.0.2 (JAVA 11 component):**
+  * As the **regclient** is not getting upgraded suggested to use **v1.2.0.2**, hence will continue to use artifactory-1.2.0.1 from helm chart to support older regclient-downloader.
+  * Need this to be redeployed in new namespace to avoid changes in most of the install scripts. (new namespace : **artifactory-1202**)
+  * Update the namespace in install script from v1.2.0.2 for artifactory. [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/artifactory/install.sh)
+  * Execute the install script to install the same in artifactory-1202 namespace.
+  * Delete reg-client-downloader if not deleted yet. [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/regclient/delete.sh)
+  * Re-deploy reg-client downloader following. [link](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/mosip/regclient)
+* **Other one for rest of the services which needs the dependent artifacts from upgraded artifactory-1.3.0**. (JAVA 21 components)
+  * Delete the older artifactory in case still runnning from artifactory namespace following. [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/artifactory/delete.sh)
+  * Install the newer artifactory followng. [link](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/artifactory/install.sh)
 
 ### **Steps 7: Deploy all the MOSIP application services from v1.2.1.0 of mosip-infra**
 
