@@ -1,14 +1,15 @@
 # Upgrade Runbook 1.2.1.0
 
-## 1. Overview
+## Overview
 
 MOSIP version 1.2.1.0 (Platform version) has been released with significant improvements, including a Java version upgrade, performance optimizations, and critical bug fixes. This runbook provides comprehensive guidance for migrating your existing MOSIP implementation from version 1.2.0.1 to 1.2.1.0 (Platform version).
 
-## 2. Intended Audience
+## Intended Audience
 
-This runbook is designed for countries, system integrators, and organizations currently running MOSIP version 1.2.0.1 who wish to upgrade to the latest version of the MOSIP Identity Platform i.e [1.2.1.0.](link)
+This runbook is designed for countries, system integrators, and organizations currently running MOSIP version 1.2.0.1 who wish to upgrade to the latest version of the MOSIP Identity Platform i.e [1.2.1.0.](link/)
 
-## 3. What This Guide Covers
+## What This Guide Covers
+
 This document provides step-by-step instructions to help you:
 
 * Prepare your environment for the upgrade
@@ -21,45 +22,17 @@ Following these procedures ensures a smooth transition from version 1.2.0.1 to 1
 
 ## Pre-Upgrade Checklist
 
-<!-- The points below should be made important note -->
-
-* Base version of MOSIP platform should be 1.2.0.1. If the base version is older than 1.2.0.1 (For example MOSIP version 1.1.5.5 is installed), Please make sure to migrate to 1.2.0.1 by following guidance mentioned in [this run book](https://docs.mosip.io/1.2.0/setup/upgrade/adopting-lts-1.2.0/upgrade-runbook). You can refer to [MOSIP Versioning Principle](link) to understand how does platform versioning and repository versioning works and follow different schemes.
+* Base version of MOSIP platform should be 1.2.0.1. If the base version is older than 1.2.0.1 (For example MOSIP version 1.1.5.5 is installed), Please make sure to migrate to 1.2.0.1 by following guidance mentioned in [this run book](https://docs.mosip.io/1.2.0/setup/upgrade/adopting-lts-1.2.0/upgrade-runbook). You can refer to [MOSIP Versioning Principle](link/) to understand how does platform versioning and repository versioning works and follow different schemes.
 * In case of customizations, the customized code must be updated and merged with the upgraded platform code. Refer to this [runbook](https://docs.mosip.io/1.2.0/setup/upgrade/java-21-migration-guide) as a guide for migrating from Java 11 to Java 21.
 
 ## Upgrade Procedure
 
-<!-- Extract good points from here 
-
-Use the steps below to execute a controlled, in-place upgrade from MOSIP 1.2.0.1 to 1.2.1.0 with minimal disruption. Read the entire procedure once, rehearse in a lower environment, and keep a tested rollback ready.
-
-Before you start:
-- Confirm base version is 1.2.0.1 and backups (DB, object store, HSM, configs) are verified.
-- Secure a maintenance window and change approval; have SI/DBA/DevOps on standby.
-- Ensure access to Kubernetes, Helm, Keycloak, Postgres, MinIO, ActiveMQ, and relevant repos at release-1.2.1.x.
-- Freeze non-upgrade changes (infra and configs) during the window.
-
-How to execute:
-- Follow the steps in the exact order provided; do not parallelize unless explicitly stated.
-- After each step, run the step’s validations; proceed only on success.
-- Log every action: timestamp, operator, command/script version, and key outputs.
-- On any failure, stop immediately, collect diagnostics, and either remediate or roll back to the last safe point.
-
-Scope and expectations:
-- The procedure covers platform components and reference infrastructure only; customizations must be validated by the SI.
-- Expect downtime for core MOSIP services; external service upgrades may extend the window.
-- Finalize with post-upgrade verification and sign-off before reopening the environment.
-
--->
-
-
-
-
-## 1. Environment Preparation
+### Environment Preparation
 
 * Switch environment to maintenance mode (If applicable).
   * Notification to be provided to all the users on the downtime.
 * Uninstall all MOSIP services using `delete.sh` or individual helm delete command.
-  * Secrets and configmaps used from external services need to be backed up. (e.g. postgres, minio, hsm etc). <!-- Detail it etc is not acceptable -->
+  * Secrets and configmaps used from external services need to be backed up. (e.g. postgres, minio, hsm etc).
   * Take backup of secrets and configmaps available in config-server and other namespace.
   * Delete scripts should be run from individual [helm repo](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/mosip).
 * Take backup of the required services (as listed below) for any restore:
@@ -67,13 +40,15 @@ Scope and expectations:
     * [Refer](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/postgres#db-export)
       * Make sure to backup all the schema along with roles , users and password.
   * [SoftHSM](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/hsm/softhsm#backup-softhsm) (this applies only to sandbox or testing environment upgrades and must not be used in production. For RealHSM, the upgrade process should be guided by the HSM administrator or the vendor.)
-  * [minio]((https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio)
+  * \[minio]\((https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio)
 
-## 2. Upgrade External Services
+### Upgrade External Services
 
 **Order of Upgrade is as mentioned below:**
 
-> Important: Follow this sequence strictly:
+{% hint style="danger" %}
+**Important**: Follow this sequence strictly.
+{% endhint %}
 
 * Step 1: Upgrade of External Services
   * Postgres server Upgrade
@@ -91,22 +66,26 @@ Follow the detailed instructions provided for each steps to complete the upgrade
 
 ### Step 1: Upgrade of External Services
 
+{% hint style="success" %}
 * Platform v1.2.1.0 tested and certified with Postgres 16. It should also work with both Postgres 15 as there is no intentional breaking changes. If you are skipping this then, recommended to test completely before moving the changes to production.
 * Decision of upgrading postgres from existing version to latest version is fairly dependent on the SI and DBA’s advice.
 * As part of our ref-impl v1.2.0.1 we were using postgres 15 and we upgrade to postgres 16 as part of v1.2.1.0.
-* **Upgrade postgres 15 to postgres 16**:
-  * Refer the provided commands below for installing postgres 16
-    * Installation & Checks
-    * ```
-      sudo apt update
-      sudo apt install postgresql-16 postgresql-contrib-16
-      sudo pg_lsclusters
-      psql --version
-      dpkg -l | grep postgresql
-      sudo pg_lsclusters
-      sudo systemctl status postgresql
-      sudo pg_lsclusters​
-      ```
+{% endhint %}
+
+#### **Upgrade postgres 15 to postgres 16**
+
+* Refer the provided commands below for installing postgres 16
+  * Installation & Checks
+  * ```
+    sudo apt update
+    sudo apt install postgresql-16 postgresql-contrib-16
+    sudo pg_lsclusters
+    psql --version
+    dpkg -l | grep postgresql
+    sudo pg_lsclusters
+    sudo systemctl status postgresql
+    sudo pg_lsclusters​
+    ```
 
 If an upgrade is planned, refer to the official documentation recommended by the SI/DBA. The following steps are applicable only to the sandbox/testing environment:
 
@@ -184,37 +163,44 @@ Backup the older minio and restore the same to newer one deployed using helm cha
 * Uninstall the existing ActiveMQ using the existing delete [script](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/external/activemq/delete.sh) from v1.2.0.1 tag.
 * Install latest ActiveMQ using [install](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/external/activemq/install.sh) script from v1.2.1.0 tag.
 
-**Step 2: Adding additional definitions to keycloak**
+### **Step 2: Adding additional definitions to keycloak**
 
-* Keycloak init takes care of adding all the relevant client , roles, client scopes required as part of 1.2.1.0.
+{% hint style="success" %}
+Keycloak init takes care of adding all the relevant client , roles, client scopes required as part of 1.2.1.0.
+{% endhint %}
+
 * First delete the existing keycloak-init job using helm:
   * ```
     helm -n keycloak delete keycloak-init 
     ```
 * Deploy and run latest ‘keycloak-init’ job by following the [document](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/iam) to add new set of clients, roles, mappers and client scopes
 
-**Step 3: MOSIP Specific Database upgrades:**
+### **Step 3: MOSIP Specific Database upgrades**
 
 * Please follow the [Instruction](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/README.md#db-upgrade) for DB Upgrade from 1.2.0.1 to 1.2.1.0.
-* Ensure that upgrade.csv is updated with all schema-related upgrade versions. The list of databases and their upgrade versions, in the defined sequence, is available [here](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/upgrade.csv).
-* DB Upgrade scripts are available in **db\_upgrade\_scripts** directory of respective repos for respective modules.
-* In case of your customisations please go through the db upgrade scripts once to avoid any conflicts and upgrade post goes by following this [document](https://github.com/mosip/postgres-init/tree/release-1.3.x/postgres-upgrade)
+
+{% hint style="success" %}
+- Ensure that upgrade.csv is updated with all schema-related upgrade versions. The list of databases and their upgrade versions, in the defined sequence, is available [here](https://github.com/mosip/postgres-init/blob/release-1.3.x/deploy/postgres/upgrade.csv).
+- DB Upgrade scripts are available in **db\_upgrade\_scripts** directory of respective repos for respective modules.
+- In case of your customisations please go through the db upgrade scripts once to avoid any conflicts and upgrade post goes by following this [document](https://github.com/mosip/postgres-init/tree/release-1.3.x/postgres-upgrade)
+{% endhint %}
+
 * In case of upgrading the production, after all the DB’s are upgraded successfully, check for the new db user “otpuser” created and update the password for the same to strong password and update the secrets in config-server secrets.
 * In case of sandbox or testing environment , update the password for “otpuser” as “**db-dbuser-password”** in postgres namespace as pre configured.
 
-**Step 4: Config Migrator Run**
+### **Step 4: Config Migrator Run**
 
+{% hint style="success" %}
 * Prop\_migrator as mentioned in detailed steps only takes care of **\*.properties** files.
 * Knowledge base used for prop\_migrator is as per MOSIP’s upgrade from v1.2.0.1 to v1.2.1.0.
 * Customization’s related changes needs to be adjudicated and processed from **manual\_adjudication.csv** part of output of prop\_migrator.
-* During the upgrade, review and compare all below mentioned files between versions v1.2.0.1 and v1.2.1.0, and incorporate only the necessary changes identified during the review.
-  *
-    * \*.json
-    * \*.mvel
-    * \*.jsonld
-    * \*.xsd
-    * \*.toml
-    * \*.xml
+* During the upgrade, review and compare all below mentioned files between versions v1.2.0.1 and v1.2.1.0, and incorporate only the necessary changes identified during the review. \*
+  * \*.json
+  * \*.mvel
+  * \*.jsonld
+  * \*.xsd
+  * \*.toml
+  * \*.xml
   * In **websub-service.toml**, the **MESSAGE\_DELIVERY\_TIMEOUT** value has been updated to **60.0** to allow additional time before the WebSub delivery timeout occurs. Update this value as needed based on your deployment requirements.
   * The default value of **mosip.regproc.landing.zone.type** is **ObjectStore**; you may continue using your existing configuration, but if you choose to switch this value to **ObjectStore**, ensure that all required packets in the **DMZServer** filesystem are migrated to the corresponding **ObjectStore** location before making the change. Migration of packets from **DMZServer** to **ObjectStore** is not in scope of this ref-impl upgrade document.
 * Since the config server doesn't trim whitespaces, if any issue arises due to whitespace in a property, review the file and remove the unnecessary spaces.
@@ -232,12 +218,17 @@ Backup the older minio and restore the same to newer one deployed using helm cha
       ```
 * Please create a new branch from the latest config branch to compare with the older version. When the migrator updates the latest-config directory, we can diff the changes and raise a pull request for the new branch. The migrator changes will be captured in the new branch, while latest-config remains unchanged for reference.
 * Placeholders have been introduced in certain .properties files. Please do not remove them; instead, use them and provide the required values through the ConfigMap. These placeholders are intended to support easier configurability.
-* Follow the [steps](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/utils/prop_migrator) to migrate the configurations.
-* After the config migrator is executed against the knowledge base the latest-config directory will contain the updated configuration files which needs to be checked in to the current mosip-config branch.
-* Please go through diff once before commiting to make sure parameters are handled properly.
-* Once completed follow the above mentioned notes and commit changes to the current branch so that the same can be used against upgraded codebase.
+{% endhint %}
 
-**Step 5: Skip redeployment of certain MOSIP services/batch jobs**
+* Follow the [steps](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/utils/prop_migrator) to migrate the configurations.
+
+{% hint style="success" %}
+- After the config migrator is executed against the knowledge base the latest-config directory will contain the updated configuration files which needs to be checked in to the current mosip-config branch.
+- Please go through diff once before commiting to make sure parameters are handled properly.
+- Once completed follow the above mentioned notes and commit changes to the current branch so that the same can be used against upgraded codebase.
+{% endhint %}
+
+### **Step 5: Skip redeployment of certain MOSIP services/batch jobs**
 
 * Add the pmp-revamp host to the global configmap manually.
   * @Mohan E to detail out one liner command for the same.
@@ -251,7 +242,7 @@ Backup the older minio and restore the same to newer one deployed using helm cha
   * **onboarder**
   * **conf-secrets**
 
-**Step 6: Deployment of additional artifcatory instance**
+### **Step 6: Deployment of additional artifcatory instance**
 
 * We will need two Instances of artifactory as part of ref-impl v1.2.0.1 to v1.2.1.0 upgrade to support both JAVA11 and JAVA 21 components.
   * **For regclient v1.2.0.2 (JAVA 11 component):**
@@ -265,8 +256,9 @@ Backup the older minio and restore the same to newer one deployed using helm cha
     * Delete the older artifactory in case still runnning from artifactory namespace following [link](https://github.com/mosip/mosip-infra/blob/v1.2.0.2/deployment/v3/mosip/artifactory/delete.sh)
     * Install the newer artifactory followng [link](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/artifactory/install.sh)
 
-**Steps 7: Deploy all the MOSIP application services from v1.2.1.0 of mosip-infra**
+### **Steps 7: Deploy all the MOSIP application services from v1.2.1.0 of mosip-infra**
 
+{% hint style="success" %}
 * Artifactory version 1.3.0 is deployed correctly in artifactory namespace for all service except registration-client and eSignet
 * Below will be the sequence in which the MOSIP services needs redeployment :
   * Config server
@@ -290,34 +282,41 @@ Backup the older minio and restore the same to newer one deployed using helm cha
   * mosip-file-server
   * resident services
   * registration client
+{% endhint %}
+
 * Deployment scripts are available [here](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/mosip).
 
-**Step 8: Post-Upgrade Verification.**
+### **Step 8: Post-Upgrade Verification**
 
-* **Functional Checks**
-  * Schema Validation
-    * All tables created/updated per upgrade scripts.
-    * Constraints valid.
-    * Indexes valid.
-    * Materialized views refreshed (if present).
-  * Functional Validation
-    * IDA Authentication API
-    * Identity retrieval API
-    * Credential issuance & revoke.\[VS1] \[VS2]
-    * Admin UI functionality.
-* **System Health**
-  * Service logs
-  * Kafka consumer lags
-  * DB performance
-  * CPU/memory profile
-  * Scheduled jobs verification
-* **Integration Testing**
-  * Partner flows
-  * MDS/Devices
-  * Third-party identity provider (if any)
+#### **Functional Checks**
+
+* Schema Validation
+  * All tables created/updated per upgrade scripts.
+  * Constraints valid.
+  * Indexes valid.
+  * Materialized views refreshed (if present).
+* Functional Validation
+  * IDA Authentication API
+  * Identity retrieval API
+  * Credential issuance & revoke.\[VS1] \[VS2]
+  * Admin UI functionality.
+
+#### **System Health**
+
+* Service logs
+* Kafka consumer lags
+* DB performance
+* CPU/memory profile
+* Scheduled jobs verification
+
+#### **Integration Testing**
+
+* Partner flows
+* MDS/Devices
+* Third-party identity provider (if any)
 * Api-testrig deployment : [https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/testrig](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/testrig)
 
-## Rollback Strategy (db rollback, respective config rollback, services redeploy with older charts).
+## Rollback Strategy (db rollback, respective config rollback, services redeploy with older charts)
 
 Rollback is **schema-specific** and must be done using:
 
