@@ -1,17 +1,14 @@
 # Upgrade Runbook 1.2.1.0
 
-Introduction
-
-#### **1. Overview**
+## 1. Overview
 
 MOSIP version 1.2.1.0 (Platform version) has been released with significant improvements, including a Java version upgrade, performance optimizations, and critical bug fixes. This runbook provides comprehensive guidance for migrating your existing MOSIP implementation from version 1.2.0.1 to 1.2.1.0 (Platform version).
 
-#### **2. Intended Audience**
+## 2. Intended Audience
 
-This runbook is designed for countries, system integrators, and organizations currently running MOSIP version 1.2.0.1 who wish to upgrade to the latest version of the MOSIP Identity Platform i.e 12.1.0.
+This runbook is designed for countries, system integrators, and organizations currently running MOSIP version 1.2.0.1 who wish to upgrade to the latest version of the MOSIP Identity Platform i.e [1.2.1.0.](link)
 
-#### **3. What This Guide Covers**
-
+## 3. What This Guide Covers
 This document provides step-by-step instructions to help you:
 
 * Prepare your environment for the upgrade
@@ -20,44 +17,68 @@ This document provides step-by-step instructions to help you:
 * Upgrade dependencies
 * Deploy upgraded MOSIP components safely and efficiently
 
-Following these procedures will ensure a smooth transition from version 1.2.0.1 to 1.2.1.0 with minimal disruption to your operations.
+Following these procedures ensures a smooth transition from version 1.2.0.1 to 1.2.1.0 with minimal disruption to your operations.
 
 ## Pre-Upgrade Checklist
 
-* Base version of MOSIP platform should be 1.2.0.1. If the base version is older than 1.2.0.1 (For example MOSIP version 1.1.5.5 is installed), Please make sure to migrate to 1.2.0.1 by following guidance mentioned in [this run book](https://docs.mosip.io/1.2.0/setup/upgrade/adopting-lts-1.2.0/upgrade-runbook). (Platform versioning and repository versioning follow different schemes. You can refer to this link \<Link on the versioning of release to be included> for more details)
+<!-- The points below should be made important note -->
+
+* Base version of MOSIP platform should be 1.2.0.1. If the base version is older than 1.2.0.1 (For example MOSIP version 1.1.5.5 is installed), Please make sure to migrate to 1.2.0.1 by following guidance mentioned in [this run book](https://docs.mosip.io/1.2.0/setup/upgrade/adopting-lts-1.2.0/upgrade-runbook). You can refer to [MOSIP Versioning Principle](link) to understand how does platform versioning and repository versioning works and follow different schemes.
 * In case of customizations, the customized code must be updated and merged with the upgraded platform code. Refer to this [runbook](https://docs.mosip.io/1.2.0/setup/upgrade/java-21-migration-guide) as a guide for migrating from Java 11 to Java 21.
 
-## **Upgrade Procedure**
+## Upgrade Procedure
 
-This section is the operational heart of the runbook.
+<!-- Extract good points from here 
 
-#### **1. Environment Preparation**
+Use the steps below to execute a controlled, in-place upgrade from MOSIP 1.2.0.1 to 1.2.1.0 with minimal disruption. Read the entire procedure once, rehearse in a lower environment, and keep a tested rollback ready.
 
-* Switch environment to maintenance mode (if applicable)
+Before you start:
+- Confirm base version is 1.2.0.1 and backups (DB, object store, HSM, configs) are verified.
+- Secure a maintenance window and change approval; have SI/DBA/DevOps on standby.
+- Ensure access to Kubernetes, Helm, Keycloak, Postgres, MinIO, ActiveMQ, and relevant repos at release-1.2.1.x.
+- Freeze non-upgrade changes (infra and configs) during the window.
+
+How to execute:
+- Follow the steps in the exact order provided; do not parallelize unless explicitly stated.
+- After each step, run the step’s validations; proceed only on success.
+- Log every action: timestamp, operator, command/script version, and key outputs.
+- On any failure, stop immediately, collect diagnostics, and either remediate or roll back to the last safe point.
+
+Scope and expectations:
+- The procedure covers platform components and reference infrastructure only; customizations must be validated by the SI.
+- Expect downtime for core MOSIP services; external service upgrades may extend the window.
+- Finalize with post-upgrade verification and sign-off before reopening the environment.
+
+-->
+
+
+
+
+## 1. Environment Preparation
+
+* Switch environment to maintenance mode (If applicable).
   * Notification to be provided to all the users on the downtime.
-* Uninstall all MOSIP services using delete.sh or individual helm delete command.
-  * Secrets and configmaps used from external services need to be backed up . (e.g. postgres, minio, hsm etc).
+* Uninstall all MOSIP services using `delete.sh` or individual helm delete command.
+  * Secrets and configmaps used from external services need to be backed up. (e.g. postgres, minio, hsm etc). <!-- Detail it etc is not acceptable -->
   * Take backup of secrets and configmaps available in config-server and other namespace.
-  * Delete scripts should be ran from individual helm repo refer [https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/mosip](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/mosip) .
-* Backup should be taken for the below required services for any restore
+  * Delete scripts should be run from individual [helm repo](https://github.com/mosip/mosip-infra/tree/v1.2.0.2/deployment/v3/mosip).
+* Take backup of the required services (as listed below) for any restore:
   * Postgress
-    * Refer: [https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/postgres#db-export](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/postgres#db-export)
-    * Make sure to backup all the schema along with roles , users and password.
-  * SoftHSM (this applies only to sandbox or testing environment upgrades and must not be used in production. For RealHSM, the upgrade process should be guided by the HSM administrator or the vendor.)
-    * Refer: [https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/hsm/softhsm#backup-softhsm](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/hsm/softhsm#backup-softhsm)
-  * minio
-    * Refer: [https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio)
+    * [Refer](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/postgres#db-export)
+      * Make sure to backup all the schema along with roles , users and password.
+  * [SoftHSM](https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/hsm/softhsm#backup-softhsm) (this applies only to sandbox or testing environment upgrades and must not be used in production. For RealHSM, the upgrade process should be guided by the HSM administrator or the vendor.)
+  * [minio]((https://github.com/mosip/mosip-infra/tree/release-1.2.1.x/deployment/v3/external/object-store/minio)
 
-#### **2. Upgrade External Services**
+## 2. Upgrade External Services
 
 **Order of Upgrade is as mentioned below:**
 
-Follow this sequence strictly:
+> Important: Follow this sequence strictly:
 
 * Step 1: Upgrade of External Services
   * Postgres server Upgrade
   * Minio Upgrade.
-  * ActiveMQ Upgrade : delete and redeploy
+  * ActiveMQ Upgrade: delete and redeploy
 * Step 2: Adding additional definitions to keycloak
 * Step 3: DB schema Upgrade.
 * Step 4: Config Migrator Run.
@@ -66,9 +87,9 @@ Follow this sequence strictly:
 * Step 7: Deploy MOSIP services using relevant helm charts.
 * Step 8: Post-upgrade verification.
 
-Please follow the detailed instructions provided for each steps to complete the upgrade process as below:
+Follow the detailed instructions provided for each steps to complete the upgrade process as below:
 
-**Step 1: Upgrade of External Services**
+### Step 1: Upgrade of External Services
 
 * Platform v1.2.1.0 tested and certified with Postgres 16. It should also work with both Postgres 15 as there is no intentional breaking changes. If you are skipping this then, recommended to test completely before moving the changes to production.
 * Decision of upgrading postgres from existing version to latest version is fairly dependent on the SI and DBA’s advice.
