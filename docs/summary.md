@@ -18,6 +18,7 @@
   * [Standards & Specifications](readme/standards-and-specifications/README.md)
     * [MOSIP Standards](readme/standards-and-specifications/mosip-standards/README.md)
       * [169 - QR Code Specifications](readme/standards-and-specifications/mosip-standards/169-qr-code-specification.md)
+      * [169 - QR Code Specifications 1.1.0](readme/standards-and-specifications/mosip-standards/169-qr-code-specification-1.md)
       * [169 - QR Code Specifications 1.0.0](readme/standards-and-specifications/mosip-standards/169-qr-code-specifications-1.0.0.md)
   * [Inji](readme/inji.md)
   * [eSignet](readme/esignet.md)
