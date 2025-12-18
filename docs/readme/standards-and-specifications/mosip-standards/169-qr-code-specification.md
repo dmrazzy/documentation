@@ -321,12 +321,13 @@ The status of the credential, when represented using CWT, is outside the scope o
 
 ## 4. Security Considerations
 
-TODO:
-
-1. Current map structure is in plain text and its not the recommended way to handle privacy. Adoption of SD-JWT or equivalent can be considered.
+1. The current MAP structure is in plain text and is equivalent to having a physical card with printed details. Additionally, the QR code is digitally signed, providing trust and preventing tampering or the insertion of fake information. Please ensure that you do not include any data elements that are not permissible under your country’s legal and regulatory requirements.
 2. CWT MUST be signed, create a COSE\_Sign/COSE\_Sign1 object using the Message as the COSE\_Sign/COSE\_Sign1 Payload; all steps specified in [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) for creating a COSE\_Sign/COSE\_Sign1 object MUST be followed.
 3. If the CWT is a COSE\_Encrypt/COSE\_Encrypt0 object,create a COSE\_Encrypt/COSE\_Encrypt0 using the Message as the plaintext for the COSE\_Encrypt/COSE\_Encrypt0 object; all steps specified in [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) for creating a COSE\_Encrypt/COSE\_Encrypt0 object MUST be followed.
-4. To verify the claims the CWT is a COSE\_Sign/COSE\_Sign1, follow the steps specified in Section 4 of [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) ("Signing Objects") for validating a COSE\_Sign/COSE\_Sign1 object. Let the Message be the COSE\_Sign/COSE\_Sign1 payload. Once signature is valid we SHOULD validate the public key against a preconfigured key. In case encrypted Else, if the CWT is a COSE\_Encrypt/COSE\_Encrypt0 object, follow the steps specified in Section 5 of \[RFC8152] ("Encryption Objects") for validating a COSE\_Encrypt/COSE\_Encrypt0 object. Let the Message be the resulting plaintext.
+   1. It is recommended that sensitive information, such as biometrics, be encrypted.
+   2. If you choose to encrypt the payload, please ensure that key sharing for decryption is handled separately, outside the scope of this specification. There are multiple key-sharing mechanisms that can be followed, and the choice remains to be outside of this specification. As an example, you could potentially follow the approach of the TOTP mobile authenticators.&#x20;
+   3. A cached key may be used to enable offline encrypted QR code reading, where applicable.
+4. To verify the claims the CWT is a COSE\_Sign/COSE\_Sign1. Follow the steps specified in Section 4 of [RFC8152](https://www.rfc-editor.org/rfc/rfc8152) ("Signing Objects") for validating a COSE\_Sign/COSE\_Sign1 object. Let the Message be the COSE\_Sign/COSE\_Sign1 payload. Once signature is valid we SHOULD validate the public key against a preconfigured key. In case encrypted Else, if the CWT is a COSE\_Encrypt/COSE\_Encrypt0 object, follow the steps specified in Section 5 of \[[RFC8152](https://www.rfc-editor.org/rfc/rfc8152)] ("Encryption Objects") for validating a COSE\_Encrypt/COSE\_Encrypt0 object. Let the Message be the resulting plaintext.
 
 The security of the CWT relies upon on the protections offered by COSE. Unless the claims in a CWT are protected, an adversary can modify, add, or remove claims.
 
