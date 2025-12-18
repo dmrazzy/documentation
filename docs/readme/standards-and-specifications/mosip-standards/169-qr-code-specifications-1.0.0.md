@@ -12,7 +12,7 @@
 
 **IANA Registration**: [IANA CWT Registry](https://www.iana.org/assignments/cwt/cwt.xhtml) (Search Key: 169)
 
-**Version:** 1.0.0
+**Version:** 1.0.0 <[Refer to the latest version here](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-3.1-cbor-map-structure-overview)>
 
 ### 1. Introduction
 
@@ -28,7 +28,7 @@ For instance, in a cross-border scenario, remote areas often face significant in
 
 **Please note:** The trust layers required to sync the country's key are beyond the scope of this document. We assume the app scanning the QR code already has the country's key to verify.
 
-To tackle the aforementioned challenge, we propose a **standard CBOR-based QR Code** that involves embedding a low-resolution **image** of the person with a minimal demographic dataset within the QR code. This QR code would be **digitally signed** by the ID authorities (Issuer) and then printed on a physical card. Subsequently, the signed data within the QR code can be utilized for **facial** **authentication**. This approach also helps enhance **interoperability**. \
+To tackle the aforementioned challenge, we propose a **standard CBOR-based QR Code** that involves embedding a low-resolution **image** of the person with a minimal demographic dataset within the QR code. This QR code would be **digitally signed** by the ID authorities (Issuer) and then printed on a physical card. Subsequently, the signed data within the QR code can be utilized for **facial** **authentication**. This approach also helps enhance **interoperability**.\
 \
 Note: It is essential to recognize that QR codes have limitations regarding size. We suggest leveraging CBOR Web Token (CWT) with ED25519/ECC keys to generate a smaller signature and more condensed data.
 
@@ -38,7 +38,7 @@ Claim 169 represents a JSON Object that includes the following ID attributes, as
 
 #### 3.1 CBOR Map Structure Overview
 
-**Note**:&#x20;
+**Note**:
 
 * All the fields here are optional.
 * The issuer of **IDClaim169** is expected to host the **JWKS** file at the standard **.well-known** URL. This allows relying parties to verify the signature of the issued IDClaim169.

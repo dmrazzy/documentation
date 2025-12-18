@@ -22,7 +22,7 @@ description: <v1.2.0 Draft - WIP>
 
 This document specifies an enhanced version of the generic data structure and encoding mechanism for storing the Identity Data of a registered person using any ID platform, along with the corresponding transport encoding mechanism in a machine-readable optical format (QR).
 
-This enhanced version is the outcome of the **revival of the Claim 169 Working Group in September 2025**, which undertook a collaborative effort to refine and extend the specification. As part of the detailed discussions and brainstorming sessions within the working group, **additional attributes (19–23)** were introduced to strengthen applicability, usability, and interoperability across diverse identity ecosystems, along with certain updates on [guidelines](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#guidelines), [standard CWT attributes](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-standard-cwt-attributes), [credential status](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-status-of-credential) and [security considerations](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-4.-security-considerations).
+This enhanced version is the outcome of the **revival of the Claim 169 Working Group in September 2025**, which undertook a collaborative effort to refine and extend the specification. As part of the detailed discussions and brainstorming sessions within the working group, **additional attributes (19–23)** were introduced to strengthen applicability, usability, and interoperability across diverse identity ecosystems, along with certain updates on [guidelines](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#guidelines), [standard CWT attributes](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-standard-cwt-attributes), [credential status](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-status-of-credential) and [security considerations](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-4.-security-considerations). For details, refer to the section titled, "What Changed" below.
 
 Further details on the evolution of these changes and detailed discussions can be found under the section titled "Iteration 2" [here](https://mosip.atlassian.net/wiki/external/OWExMjBhYzQ3Mjk1NGZlOWExMWEzODA2YzVjYjExNmQ).
 
@@ -395,3 +395,20 @@ Rounak Nayak ([rounak@ooru.io](mailto:rounak@ooru.io))
 Sasikumar G ([sasi@duck.com](mailto:sasi@duck.com))
 
 Sreenadh S ([sreeavtar@gmail.com](mailto:sreeavtar@gmail.com))
+
+### 8. What Changed
+
+*   **Addition of new attributes (19–23)**&#x20;
+
+    * \#19: Full Name
+    * \#20: Language
+    * \#21: Location Code
+    * \#22: Legal Status
+    * \#23: Country of Issuance
+
+    Refer to the [table above](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-3.1-cbor-map-structure-overview) for details.
+* **Inclusion of/updates to the following sections:**
+  * [Guidelines](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#guidelines)
+  * [Standard CWT attributes](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-standard-cwt-attributes)
+  * [Credential status](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-status-of-credential)&#x20;
+  * [Security considerations](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-4.-security-considerations)
