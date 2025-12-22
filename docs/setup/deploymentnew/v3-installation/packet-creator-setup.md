@@ -1,26 +1,32 @@
 # Packet Creator Setup
 
-Packet Creator - Setup & Run Guide\
-**Purpose:** Step-by-step instructions to set up, build and run the MOSIP Packet Creator (used by DSL automation). This document assumes you are using the mosip-automation-tests repository and will produce a runnable JAR for the packet creator.
+#### Overview
 
-**Prerequisites**
+Packet Creator Setup Guide is a step-by-step instructions to set up, build and run the MOSIP Packet Creator (used by DSL automation). This document assumes you are using the <mark style="color:red;">mosip-automation-tests</mark> repository and will produce a <mark style="color:red;">runnable</mark> JAR for the packet creator.
+
+### **Prerequisites**
 
 * Git installed and configured (SSH or HTTPS access to the repository).
-* Java (compatible version) installed. (Project historically used Java 11 and above; confirm your environment.)
+* Java (compatible version) installed. (Project historically used Java 11 and above; confirm your environment).
 * Maven installed (for building projects): mvn on PATH.
 * Optional: An editor (VS Code / IntelliJ) and basic command-line familiarity.
 
-**Note:** As part of MOSIP Packet Creator setup, you may need to generate a private key for your machine. Example expected filename: api-internal.cellbox1.mosip.net.88947.reg.key. Place the generated key in the private key folder inside the mosip-packet-creator project (document this step for the machine you're using).
+{% hint style="info" %}
+**Note:** As part of MOSIP Packet Creator setup, you may need to generate a private key for your machine.&#x20;
 
-**Repository & Paths**
+**Example**: expected filename: api-internal.cellbox1.mosip.net.88947.reg.key.&#x20;
 
-**Repository (root):** [https://github.com/mosip/mosip-automation-tests.git](https://github.com/mosip/mosip-automation-tests.git)
+Place the generated key in the private key folder inside the mosip-packet-creator project (document this step for the machine you're using).
+{% endhint %}
 
-**Packet Creator resources folder (contains centralized folder):** mosip-packet-creator/src/main/resources/dockersupport/centralized/mosip-packet-creator
+## **Repository & Paths**
 
-Inside that path you will see a centralized folder. You should copy/replace the centralized folder into the target environment where you will run the packet creator jar.
+* **Repository (root):** [https://github.com/mosip/mosip-automation-tests.git](https://github.com/mosip/mosip-automation-tests.git)
+* **Packet Creator resources folder (contains centralized folder):** mosip-packet-creator/src/main/resources/dockersupport/centralized/mosip-packet-creator (Inside this path you see a centralized folder. You should copy/replace the centralized folder into the target environment where you have to run the packet creator jar).
 
-**High-level Steps**
+
+
+### **High-level Steps**
 
 1. Clone the repository.
 2. Build data-provider module (if applicable) first.
@@ -33,11 +39,11 @@ Inside that path you will see a centralized folder. You should copy/replace the 
 7. Execute the startup script to run the packet creator locally.
 8. Verify the service is up using Swagger UI: [http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/](http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/)
 
-Guidelines to Setup
 
-1. **Clone repository**
 
-**As a first step, clone this repository to your local machine/system** to obtain the Packet Creator source code and required resources.
+## Guidelines to Setup
+
+1. **Clone repository: As a first step, clone this repository to your local machine/system** to obtain the Packet Creator source code and required resources.
 
 [https://github.com/mosip/mosip-automation-tests.git](https://github.com/mosip/mosip-automation-tests.git)
 
@@ -55,44 +61,34 @@ Some setups require building the Packet Creator service locally before running i
 mvn -DskipTests clean install
 ```
 
-or to build a specific module, from the repo root:
+Or to build a specific module, from the repo root:
 
 ```
 cd mosip-packet-creator
 mvn -DskipTests clean install
 ```
 
-Use -DskipTests to speed up local builds. Remove if you want tests to run.
+Use `DskipTests` to speed up local builds. Remove if you want tests to run.
 
 3. **Locate generated JAR**
 
-After build, the packet creator JAR will appear in:
-
-```
-mosip-packet-creator/target/
-```
-
-Look for a file with a name like: mosip-packet-creator-\<version>.jar.
+* After build, the packet creator JAR will appear on the directory patha as `mosip-packet-creator/target/`
+* Look for a file with a name like: `mosip-packet-creator-<version>.jar`.
 
 4. **Prepare centralized folder**
 
-From the repo path:
-
-mosip-packet-creator/src/main/resources/dockersupport/centralized/mosip-packet-creator
-
-Copy the entire centralized folder to the folder where you'll run the packet creator. For example, create a directory on your machine:
-
-Ensure the startup script (.bat or .sh) refers to the JAR using a **relative path**, for example:
-
-./mosip-packet-creator.jar
-
-Place the centralized content inside that folder (so the folder structure expected by the bat script and JAR is preserved).
+* From the repo path: mosip-packet-creator/src/main/resources/dockersupport/centralized/mosip-packet-creator
+* Copy the entire centralized folder to the folder where you'll run the packet creator. For example, create a directory on your machine:
+* Ensure the startup script (.bat or .sh) refers to the JAR using a **relative path**, for example: `./mosip-packet-creator.jar`.
+* Place the centralized content inside that folder (so the folder structure expected by the bat script and JAR is preserved).
 
 5. **Place the JAR and .bat file**
 
-Inside your run folder (example above), place the newly built JAR (from target) and the .bat file provided in the repository. The bat file typically contains the command to run the JAR with required JVM args and configuration paths.
+* Inside your run folder (example above), place the newly built JAR (from target) and the .bat file provided in the repository. The bat file typically contains the command to run the JAR with required JVM args and configuration paths.
 
+{% hint style="danger" %}
 **Important:** If the repo includes sample .bat scripts, open the .bat and edit any hard-coded paths.
+{% endhint %}
 
 6. **Edit the .bat (example placeholders)**
 
@@ -108,7 +104,7 @@ set CONFIG_DIR=./centralized
 java -jar "%JAR_PATH%" --spring.config.location=%CONFIG_DIR%\application.yml
 ```
 
-Edit JAR\_PATH and CONFIG\_DIR to point to the correct locations on your machine.
+Edit `JAR_PATH and CONFIG_DIR` to point to the correct locations on your machine.
 
 7. **Run packet creator**
 
@@ -116,54 +112,45 @@ Double-click the edited .bat or run it from a command prompt. Watch the console 
 
 8. **Verify using Swagger**
 
-Open the browser and go to:
-
-[http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/](http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/)
-
-You should see the Packet Creator Swagger UI; if so, the service is up.
+* Open the browser and go to [http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/](http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/)
+* You should see the Packet Creator Swagger UI; if so, the service is up.
 
 **Generating Private Key (machine-specific)**
 
-If your setup requires a machine-specific private key, follow the internal [MOSIP instructions](https://docs.mosip.io/1.2.0/id-lifecycle-management/supporting-components/keymanager/keys#device-specific-keys) to generate it. Example filename pattern used historically:
+* If your setup requires a machine-specific private key, follow the internal [MOSIP instructions](https://docs.mosip.io/1.2.0/id-lifecycle-management/supporting-components/keymanager/keys#device-specific-keys) to generate it.&#x20;
+  * Example filename pattern used historically: `api-internal.<machine-hostname>.reg.key`
+* Place this key in the private key folder inside the `mosip-packet-creator` project before running the service. Document the exact private-key generation command or tool that your infra uses and store keys securely.
 
-api-internal.\<machine-hostname>.reg.key
+## Create packet
 
-Place this key in the private key folder inside the mosip-packet-creator project before running the service. Document the exact private-key generation command or tool that your infra uses and store keys securely.
+### **Server context file**
 
-### Create packet
+Before creating packets, we must initialize a **server context file** in Packet Creator, This is done by calling the **Create Server Context** API: `POST /v1/packetcreator/context/server/{contextKey}`
 
-#### Step 1 : **Server context file**
+The API stores all the properties you send in the request body into a context file named with the contextKey.
 
-Before creating packets, we must initialize a **server context file** in Packet Creator.\
-This is done by calling the **Create Server Context** API:
-
-POST /v1/packetcreator/context/server/{contextKey}
-
-The API stores all the properties you send in the request body into a context file named with the contextKey.\
 The same contextKey must be used in all other Packet Creator APIs.
 
-***
 
-2. **Endpoint Details**
+
+### **Endpoint Details**
 
 Use the below endpoint to initialize the server context, which is a mandatory prerequisite for creating a packet in Packet Creator.
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/context/server/{contextKey}](http://localhost:8080/v1/packetcreator/context/server/%7BcontextKey%7D)
-* **Path parameter:**
-  * contextKey – Any string. This will be the filename of the context (for example, released-context, uat-context).
-
-***
-
+* **URL (example):** [http://localhost:8080/v1/packetcreator/context/server/{contextKey}](http://localhost:8080/v1/packetcreator/context/server/%7BcontextKey%7D)
+* **Path parameter:** contextKey – Any string. This will be the filename of the context (for example, released-context, uat-context).
 * **Request Body**
   * **Content-Type:** application/json
-  * **Description:**\
-    JSON object containing all environment-specific and packet-specific properties.
+  * **Description:** JSON object containing all environment-specific and packet-specific properties.
 
-> **Create the request body by providing the required properties based on your environment and packet requirements. This request initializes the server context, which is required before creating a packet.**
+{% hint style="info" %}
+**Tips:**&#x20;
 
-* **Example request body:**
+Create the request body by providing the required properties based on your environment and packet requirements. This request initializes the server context, which is required before creating a packet.
+{% endhint %}
+
+#### **Example request body**
 
 ```
 {
@@ -309,11 +296,11 @@ Use the below endpoint to initialize the server context, which is a mandatory pr
 }
 ```
 
+{% hint style="info" %}
 **Note:** For a new environment, copy this JSON and update the values as per that environment.
+{% endhint %}
 
-***
-
-4. **Important Fields to Configure per Environment (optional)**
+#### **Important Fields to Configure per Environment (optional)**
 
 When preparing the request body for a new environment:
 
@@ -344,47 +331,38 @@ When preparing the request body for a new environment:
   * All mosip.test.persona.\*datapath and mountPath, mosip.test.temp etc.\
     → Ensure these paths exist in the Packet Creator container / filesystem.
 
-***
 
-5. **Steps to Create Context Using Swagger UI**
-6. Open Swagger UI for Packet Creator, e.g.\
-   [http://localhost:8080/v1/packetcreator/swagger-ui/index.html](http://localhost:8080/v1/packetcreator/swagger-ui/index.html)
-7. Expand **POST /context/server/{contextKey} – Initialize the server context**.
-8. In the **contextKey** field, enter a name for this environment\
-   (for example released-context, uat-context, local-context).
-9. In the **Request body** section:
+
+#### **Steps to Create Context Using Swagger UI**
+
+1. Open Swagger UI for Packet Creator, e.g. [http://localhost:8080/v1/packetcreator/swagger-ui/index.html](http://localhost:8080/v1/packetcreator/swagger-ui/index.html)
+2. Expand **POST /context/server/{contextKey} – Initialize the server context**.
+3. In the **contextKey** field, enter a name for this environment (for example released-context, uat-context, local-context).
+4. In the **Request body** section:
    * Select application/json.
    * Paste the JSON body (updated for the current environment).
-10. Click **Execute**.
-11. On success, Packet Creator creates a context file with the name {contextKey} and stores all these properties.
-12. Use the same contextKey in all subsequent packet creation APIs.
-
-***
+5. Click **Execute**.
+6. On success, Packet Creator creates a context file with the name `{contextKey}` and stores all these properties.
+7. Use the same contextKey in all subsequent packet creation APIs.
 
 &#x20;
 
-#### Step 2 : Generate Persona (Resident) Data
+## Generate Persona (Resident) Data
 
-&#x20;
+After creating the **server context**, the next step is to generate **persona (resident) data**. This API creates demographic + biometric data and returns the **path to a JSON file** containing that data.
 
-After creating the **server context**, the next step is to generate **persona (resident) data**.\
-This API creates demographic + biometric data and returns the **path to a JSON file** containing that data.
-
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/persona/generate/{contextKey}](http://localhost:8080/v1/packetcreator/persona/generate/%7BcontextKey%7D)
-* **Path parameter:**
-  * contextKey – Use the **same contextKey** that you used while creating the server context.
+* **URL (example):** [http://localhost:8080/v1/packetcreator/persona/generate/{contextKey}](http://localhost:8080/v1/packetcreator/persona/generate/%7BcontextKey%7D)
+* **Path parameter:** contextKey – Use the **same contextKey** that you used while creating the server context.
 
-**2 Request Body**
+#### **Request Body**
 
 * **Content-Type:** application/json
-* **Description:**\
-  Specifies what type of resident data should be generated (age group, which biometrics are present, etc.).
+* **Description:** Specifies what type of resident data should be generated (age group, which biometrics are present, etc.).
 
-**Example request body**
+#### **Example request body**
 
 ```
 {
@@ -400,7 +378,7 @@ This API creates demographic + biometric data and returns the **path to a JSON f
 }
 ```
 
-**Field description (PR\_ResidentAttribute)**
+#### **Field description (PR\_ResidentAttribute)**
 
 * "Iris": "true"
   * true → Iris biometric will be generated.
@@ -421,9 +399,7 @@ This API creates demographic + biometric data and returns the **path to a JSON f
 
 You can adjust these values based on the scenario you want to test (for example, minor with only fingerprint and no iris).
 
-***
-
-**3 Response**
+#### **Response**
 
 * On success, the API returns a JSON response that includes the **file path** of the generated resident data JSON.
 * That JSON file contains:
@@ -432,18 +408,18 @@ You can adjust these values based on the scenario you want to test (for example,
 
 This JSON file path will be used in the **next step** of packet creation (while generating the registration packet).
 
-***
 
-#### Step 3 : Create Packet Template <br>
+
+## Create Packet Template
 
 Once the resident persona JSON is generated, the next step is to create a **packet template**.\
 This template will later be used to generate and upload the final registration packet.
 
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/packet/template/{process}/{qualityScore}/{genarateValidCbeff}/{contextKey}](http://localhost:8080/v1/packetcreator/packet/template/%7Bprocess%7D/%7BqualityScore%7D/%7BgenarateValidCbeff%7D/%7BcontextKey%7D)**2 Path Parameters**
+* **URL (example):** [http://localhost:8080/v1/packetcreator/packet/template/{process}/{qualityScore}/{genarateValidCbeff}/{contextKey}](http://localhost:8080/v1/packetcreator/packet/template/%7Bprocess%7D/%7BqualityScore%7D/%7BgenarateValidCbeff%7D/%7BcontextKey%7D)**2**
+* &#x20;**Path Parameters:**
 
 1. **process** (string – required)\
    Type of registration process. Typical values:
@@ -460,20 +436,17 @@ This template will later be used to generate and upload the final registration p
 4. **contextKey** (string – required)\
    Use the **same contextKey** that you created in **Step 1 (Create Server Context)**.
 
-***
-
-**3 Request Body**
+#### **Request Body**
 
 * **Content-Type:** application/json
-* **Description:**\
-  List of persona JSON files that should be used to create the packet template.
+* **Description:** List of persona JSON files that should be used to create the packet template.
 
 You can either:
 
 * Use the **persona JSON path** returned from **Generate Resident Data** API, or
 * Use the path of any existing persona file that already contains demographic + biometric data.
 
-**Example request body**
+#### **Example request body**
 
 ```
 {
@@ -487,36 +460,27 @@ You can either:
   Each entry is the full path of a persona JSON file.\
   (The example above uses the file path returned by the previous _Generate Resident Data_ call.)
 
-***
-
-**4 Response**
+#### **Response**
 
 On success, the API returns a response containing the **packet template path**.\
 This path points to the generated template that will be used in the **next step** to actually create and upload the registration packet.
 
-***
-
-#### Step 4 : Create Packet <br>
+## Create Packet
 
 After generating the **packet template**, the next step is to create the actual **registration packet (ZIP)**.
 
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/packetcreator/{contextKey}](http://localhost:8080/v1/packetcreator/packetcreator/%7BcontextKey%7D)
-
-**2 Path Parameter**
-
+* **URL (example):** [http://localhost:8080/v1/packetcreator/packetcreator/{contextKey}](http://localhost:8080/v1/packetcreator/packetcreator/%7BcontextKey%7D)
+* **Path Parameter**&#x20;
 * contextKey – Same context key used in all previous steps (server context, persona, template).
 
-***
-
-**3 Request Body**
+#### **Request Body**
 
 * **Content-Type:** application/json
 
-**Example**
+#### **Example**
 
 ```
 {
@@ -527,7 +491,7 @@ After generating the **packet template**, the next step is to create the actual 
 }
 ```
 
-**Field description**
+#### **Field description**
 
 * "process": "NEW"
   * Registration process type. Should match what you used while creating the packet template.
@@ -544,43 +508,33 @@ After generating the **packet template**, the next step is to create the actual 
 * "source": "REGISTRATION\_CLIENT"
   * Source of packet creation. For standard registration packets, use REGISTRATION\_CLIENT.
 
-***
+#### **Response**
 
-**4 Response**
+* On success, the API returns the **created packet path**, which points to the final ZIP file.&#x20;
+* Example: `/tmp/pktcreator2394404641898443616/10272102581008020251121060057-10272_10258-20251121060057.zip`
+* This ZIP file is the registration packet that can be synced/uploaded to MOSIP (next steps: packet sync / upload APIs).
 
-On success, the API returns the **created packet path**, which points to the final ZIP file.\
-Example:
-
-/tmp/pktcreator2394404641898443616/10272102581008020251121060057-10272\_10258-20251121060057.zip
-
-This ZIP file is the registration packet that can be synced/uploaded to MOSIP (next steps: packet sync / upload APIs).
-
-***
-
-#### Step 5 : Sync RID from Packet
-
-&#x20;
+## Sync RID from Packet
 
 After the packet ZIP is created, we need to **sync the packet to MOSIP** and obtain the **RID (Registration ID)**.\
 This is done using the ridsync API.
 
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/ridsync/{contextKey}](http://localhost:8080/v1/packetcreator/ridsync/%7BcontextKey%7D)
+* **URL (example):** [http://localhost:8080/v1/packetcreator/ridsync/{contextKey}](http://localhost:8080/v1/packetcreator/ridsync/%7BcontextKey%7D)
 
-**2 Path Parameter**
+#### **Path Parameter**
 
 * contextKey – Same context key used in all previous steps.
 
 ***
 
-**3 Request Body**
+#### **Request Body**
 
 * **Content-Type:** application/json
 
-**Example**
+#### **Example**
 
 ```
 {
@@ -594,7 +548,7 @@ This is done using the ridsync API.
 }
 ```
 
-**Field description**
+#### **Field description**
 
 * "process": "NEW"
   * Same process value used earlier (NEW, UPDATE, LOST, etc.).
@@ -615,28 +569,23 @@ This is done using the ridsync API.
 
 ***
 
-**4 Response**
+#### **Response**
 
 * On success, the API returns the **RID (Registration ID)** generated for the packet.
 * This RID can then be used in downstream flows (registration processing, status check, resident portal, etc.).
 
-#### Step 6 : Sync RID from the ZIP Packet
-
-&#x20;
+## Sync RID from the ZIP Packet
 
 After the packet ZIP is generated, call this API to **upload/sync the packet** and get the **RID (Registration ID)**.
 
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/ridsync/{contextKey}](http://localhost:8080/v1/packetcreator/ridsync/%7BcontextKey%7D)
+* **URL (example):** [http://localhost:8080/v1/packetcreator/ridsync/{contextKey}](http://localhost:8080/v1/packetcreator/ridsync/%7BcontextKey%7D)
 * **Path parameter:**
   * contextKey – Same context key used in all previous steps.
 
-***
-
-**2 Request Body**
+#### **Request Body**
 
 * **Content-Type:** application/json
 
@@ -652,7 +601,7 @@ After the packet ZIP is generated, call this API to **upload/sync the packet** a
 }
 ```
 
-**Fields**
+#### **Fields**
 
 * "process" – Registration process (NEW, UPDATE, LOST, etc.).
 * "containerPath" – Full path of the **packet ZIP file** created in the **Create Packet** step.
@@ -664,37 +613,28 @@ After the packet ZIP is generated, call this API to **upload/sync the packet** a
 
 ***
 
-**3 Response**
+#### **Response**
 
 On success, the API returns the **RID (Registration ID)** generated for this packet.\
 Use this RID for all downstream registration status and processing flows.
 
-&#x20;
-
-#### Step 7 : Packet Sync (Upload Packet to MOSIP)
-
-&#x20;
+## Packet Sync (Upload Packet to MOSIP)
 
 After generating the packet ZIP and obtaining the RID, the next step is to **upload / sync the packet** into MOSIP Packet Receiver.\
 This is done using the **packetSync** API.
 
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** POST
-* **URL (example):**\
-  [http://localhost:8080/v1/packetcreator/packetsync/{contextKey}](http://localhost:8080/v1/packetcreator/packetsync/%7BcontextKey%7D)
+* **URL (example):** [http://localhost:8080/v1/packetcreator/packetsync/{contextKey}](http://localhost:8080/v1/packetcreator/packetsync/%7BcontextKey%7D)
+* **Path Parameter**&#x20;
+  * contextKey – same context key used throughout all earlier steps.
 
-**2 Path Parameter**
-
-* contextKey – same context key used throughout all earlier steps.
-
-***
-
-**3 Request Body**
+#### **Request Body**
 
 * **Content-Type:** application/json
 
-**Example Request**
+#### **Example Request**
 
 ```
 {
@@ -704,15 +644,13 @@ This is done using the **packetSync** API.
 }
 ```
 
-**Field Details**
+#### **Field Details**
 
 * "personaFilePath"
   * This must contain the **path to the final packet ZIP file** (created in Step 4).
   * The value must be inside an array (list), even if only one ZIP is being uploaded.
 
-***
-
-**4 Expected Response**
+#### **Expected Response**
 
 A successful sync returns a status message like:
 
@@ -730,30 +668,22 @@ Packet upload was successful\
 Packet has been received by MOSIP Packet Receiver\
 Packet is now eligible for processing by Registration Processor pipeline
 
-***
-
-#### Step 8 : Check RID Status
-
-&#x20;
+## Check RID Status
 
 After syncing the packet, use this API to check whether the **RID is processed successfully** or if there is any issue with the packet.
 
-**1 Endpoint**
+#### **Endpoint**
 
 * **Method:** GET
 * **URL (example):**\
   [http://localhost:8080/v1/packetcreator/resident/status/{rid}/{contextKey}](http://localhost:8080/v1/packetcreator/resident/status/%7Brid%7D/%7BcontextKey%7D)
-
-**2 Path Parameters**
-
-* rid – RID returned by the **ridsync** API.
-* contextKey – Same context key used for all previous steps.
+* **Path Parameters**
+  * rid – RID returned by the **ridsync** API.
+  * contextKey – Same context key used for all previous steps.
 
 No request body is required.
 
-***
-
-**3 Response**
+#### **Response**
 
 On success (HTTP 200), the API returns the **current status of the RID**, for example:
 
@@ -773,52 +703,35 @@ Possible values for "status" (examples):
   For example you may see messages like:\
   "message": "Packet failed – re-register required".
 
-&#x20;
-
-***
-
-#### Step 9 : Get UIN from RID <br>
+## Get UIN from RID
 
 This API is used to fetch the **UIN** generated for a successfully processed RID.
 
-**Endpoint**
+#### **Endpoint**
 
-**Method:** GET\
-**URL:**
+* **Method:** GET
+* **URL:** /resident/uin/{rid}/{contextKey}
+* **Parameters (Path)**
 
-/resident/uin/{rid}/{contextKey}
-
-**Parameters (Path)**
-
-| **Name**   | **Description**                         |
+| Name       | Description                             |
 | ---------- | --------------------------------------- |
 | rid        | The RID you received after packet sync  |
 | contextKey | Same context key used in previous steps |
 
-**Request Details**
+#### **Request Details**
 
 * **No request body required**
 * Only pass RID and contextKey in the URL
 
-**Example Call**
+#### **Example Call**
 
 GET /resident/uin/10272102581008020251121060057/releasedContext
 
-**Response Format**
+#### **Response Format**
 
-The response will directly return the **UIN number only**, for example:
-
-2062157103
-
-&#x20;
-
-&#x20;
-
-***
+The response will directly return the **UIN number only**, for example: 2062157103
 
 ### Closure Notes – Packet Creation and Processing Flow
-
-### &#x20;
 
 You have now successfully completed the full end-to-end lifecycle of MOSIP Packet Creation using Packet Creator:
 
@@ -833,7 +746,9 @@ You have now successfully completed the full end-to-end lifecycle of MOSIP Packe
 ✔ RID processing status checked\
 ✔ UIN retrieved
 
-***
+
+
+
 
 **Important Reminders & Best Practices**
 
@@ -846,8 +761,6 @@ If a different contextKey is used, APIs will not find:
 * packet zip
 * RID history
 
-***
-
 **2. Machine, Center and Users must be mapped**
 
 Packet processing will fail if:
@@ -856,8 +769,6 @@ Packet processing will fail if:
 * centerId not linked
 * user not mapped to center
 * supervisor not mapped
-
-***
 
 **3. Environment-specific fields must be updated**
 
@@ -869,8 +780,6 @@ Especially:
 * Keycloak usernames
 * machineId and centerId
 
-***
-
 **4. Biometrics rules affect packet acceptance**
 
 Examples:
@@ -879,21 +788,13 @@ Examples:
 * Low quality score → validation failure
 * Age + gender combinations must be valid
 
-***
-
 **5. Common processing outcomes**
 
-| **Result**        | **Meaning**                              |
-| ----------------- | ---------------------------------------- |
-| **PROCESSED**     | Packet is valid and completed            |
-| **UIN generated** | Registration successful                  |
-| **RE-REGISTER**   | Failure – resident must re-enroll        |
-| **FAILED**        | Data, checksum, schema, or mapping issue |
-| **IN-PROGRESS**   | Wait and retry later                     |
+<table><thead><tr><th width="262.0859375">Result</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>PROCESSED</strong></td><td>Packet is valid and completed</td></tr><tr><td><strong>UIN generated</strong></td><td>Registration successful</td></tr><tr><td><strong>RE-REGISTER</strong></td><td>Failure – resident must re-enroll</td></tr><tr><td><strong>FAILED</strong></td><td>Data, checksum, schema, or mapping issue</td></tr><tr><td><strong>IN-PROGRESS</strong></td><td>Wait and retry later</td></tr></tbody></table>
 
-***
 
-**Recommended Validation Before Using Packet**
+
+#### **Recommended Validation Before Using Packet**
 
 * Try New Registration packet with below scenarios:
   * Try one Adult with Full biometrics
@@ -904,23 +805,21 @@ Examples:
 * Try one Lost UIN packet
 * Try one biometric correction packet
 
-***
+## **Troubleshooting Quick Guide**
 
-**🛠 Troubleshooting Quick Guide**
-
-**If packet fails at sync stage**
+### **If packet fails at sync stage**
 
 check containerPath\
 check ZIP exists\
 check permissions
 
-**If packet fails processing**
+### **If packet fails processing**
 
 verify machine–center mapping\
 verify schema version\
 verify biometrics flags
 
-**If UIN not generated**
+### **If UIN not generated**
 
 check RID status first\
 wait if still processing
