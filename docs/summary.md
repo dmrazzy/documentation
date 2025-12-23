@@ -205,7 +205,6 @@
         * [Server Hardware Requirements](setup/deploymentnew/getting-started/production/server-hardware-requirements.md)
         * [Production Hardening Guide](setup/deploymentnew/getting-started/production/production-hardening-guide.md)
         * [Administration Using Rancher](setup/deploymentnew/getting-started/production/rancher.md)
-      * [Server Hardware Requirement - Remove](setup/deploymentnew/getting-started/server-hardware-requirement-remove.md)
     * [V3 installation](setup/deploymentnew/v3-installation/README.md)
       * [1.2.0.3](setup/deploymentnew/v3-installation/1.2.0.3.md)
       * [1.2.0.2](setup/deploymentnew/v3-installation/1.2.0.2/README.md)
