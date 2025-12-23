@@ -33,7 +33,7 @@ This version of the guide is currently under revision and enhancement. For any s
 
 ### Architecture
 
-![](/broken/files/sppqi0VOyr4ETFT4KN8n)
+![](../../../.gitbook/assets/deployment_architecture.png)
 
 ### Deployment repos
 

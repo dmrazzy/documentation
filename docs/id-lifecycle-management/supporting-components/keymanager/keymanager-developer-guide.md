@@ -23,13 +23,13 @@ Below is a list of tools required in Key Manager:
 
 2\. Unzip Apache Maven and move `settings.xml` to "conf" folder `<apache maven unzip path>\conf`.
 
-3\. Install Eclipse, open the `lombok.jar` file and then click `Install/Update`. ![](/broken/files/5fJLX5CC6ovM6CHMphDE)
+3\. Install Eclipse, open the `lombok.jar` file and then click `Install/Update`. ![](../../../.gitbook/assets/lombok-configuration.png)
 
 4\. Check the Eclipse installation folder to see if the `lombok.jar` is added.
 
 5\. Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-![](/broken/files/2uKzCG0i7f0HOAbSIojO)
+![](../../../.gitbook/assets/installed-jre.png)
 
 ### Source code setup
 
@@ -43,13 +43,13 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 4. After building, open Eclipse and select `Import Projects → Maven → Existing Maven Projects → Next → Browse to project directory → Finish`.
 5. After successful importing of project, update the project by right-click on `Project → Maven → Update Project`.
 
-![](/broken/files/D3RIv6MtLMutmJaTJYAJ)
+![](../../../.gitbook/assets/import-project.png)
 
 ## Environment setup
 
 1. Download [Auth adapter](https://oss.sonatype.org/#nexus-search;gav~~kernel-auth-adapter~1.2.0-SNAPSHOT~~) and add to project `Libraries → Classpath → Add External JARs → Select Downloaded JAR → Add → Apply and Close`.
 
-![](/broken/files/f7jdZbSZxF2dZ7fT0pYr)
+![](../../../.gitbook/assets/add-external-library.png)
 
 1. Clone [mosip-config repository](https://github.com/mosip/mosip-config).
 2. Refer [KeyManager-DB-deploy](https://github.com/mosip/keymanager/blob/release-1.2.0/db_scripts/README.md) to deploy local DB.
@@ -72,7 +72,7 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 1. Download [kernel-config-server.jar](https://oss.sonatype.org/#nexus-search;gav~~kernel-config-server~1.2.0-SNAPSHOT~~). For Windows, download [config-server-start.bat](../../../_files/commons/config-server-start.bat), Linux users can run `java -jar -Dspring.profiles.active=native -Dspring.cloud.config.server.native.search-locations=file:{mosip-config-mt_folder_path}/config -Dspring.cloud.config.server.accept-empty=true -Dspring.cloud.config.server.git.force-pull=false -Dspring.cloud.config.server.git.cloneOnStart=false -Dspring.cloud.config.server.git.refreshRate=0 {jarName}` .
 2.  Run the server by opening the `config-server-start.bat` file.
 
-    ![](/broken/files/8KxMJTv67HMayTYqHW5Y)
+    ![](../../../.gitbook/assets/run-server.png)
 3. To verify the config-server, hit the below URL:
 
 `http://localhost:51000/config/{spring.profiles.active}/{spring.cloud.config.name}/{spring.cloud.config.label}` for instance `http://localhost:51000/config/kernel/env/master`.
@@ -93,4 +93,4 @@ For the code setup, clone the repository and follow the guidelines mentioned in 
 6. Swagger-UI service can be accessed from `(https/http)://(<domain>/<host>:<port>)/<context-path>/swagger-ui/index.html?configUrl=<contect-path>/v3/api-docs/swagger-config` for instance `https://dev2.mosip.net/v1/auditmanager/swagger-ui/index.html?configUrl=/v1/keymanager/v3/api-docs/swagger-config`.
 7. The API's can be tried using Postman. URLs and Body structures can be found in swagger or curl command can be copied and imported in Postman.
 
-![](/broken/files/n0apuBAku76KtefrzyPO)
+![](../../../.gitbook/assets/postman-import-curl.png)

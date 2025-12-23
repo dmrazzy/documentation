@@ -4,7 +4,7 @@
 
 This guide describes the various functions provided in the Home page of the reference UI implementation of the registration client.
 
-![](/broken/files/e5zjZckYu13zX03JijjE)
+![](../../../../.gitbook/assets/reg-client-orig.png)
 
 ## Menu bar
 
@@ -19,7 +19,7 @@ The Registration Client menu bar displays the following:
 * [Settings icon](../deploy/registration-client-settings-page.md)
 * Breadcrumbs (User Guide/Reset Password/Logout)
 
-![](/broken/files/eT0mD925QmYIMsBEcr4d)
+![](../../../../.gitbook/assets/reg-client-menu.png)
 
 ## Operational tasks
 
@@ -50,7 +50,7 @@ Using this option, the operators can onboard themselves anytime.
 
 For more details, refer [Operator Onboarding Guide](https://docs.mosip.io/1.2.0/modules/registration-client/operator-onboarding).
 
-![](/broken/files/T40vRO7nROVJkpSyKUEy)
+![](../../../../.gitbook/assets/reg-client-biometric-page.png)
 
 ### Application upload
 
@@ -114,7 +114,7 @@ The operator can initiate any task from amongst- New registrations, Update UIN, 
 
 An operator can initiate the process of registering a new applicant in the MOSIP ecosystem by filling the new registration form with the resident.
 
-![](/broken/files/JOVvrwon7du8Zak05bfs)
+![](../../../../.gitbook/assets/reg-client-new-registration.png)
 
 Below are few of the processes that needs to be completed for a new registration.
 
@@ -141,7 +141,7 @@ What is the difference between an adult' and an infant' biometric capture?
 
 When a resident visits the registration center to update their demographic or biometric details, the operator captures the updated data as provided by the resident in the registration client. The resident needs to give their UIN and also select the field(s) that needs an update. The image below gives an idea of the update UIN process Flow in the registration client.
 
-![](/broken/files/9GBFGKQ1PP9nW1EgDwcM)
+![](../../../../.gitbook/assets/reg-client-update-uin.png)
 
 {% hint style="info" %}
 _The UIN update feature is configurable by the adopters. The Admin can turn ON or OFF, the UIN update feature using the configuration._
@@ -156,7 +156,7 @@ There are two situations where a Lost UIN flow is used. I am listing here the si
 
 The registrant visits the registration centre to retrieve the same. The operator then captures the biometrics and the demographic details of the individual and processes a request to retrieve the lost UIN. As biometrics play a crucial role in identifying a person's identity, it is mandated to provide the biometrics as a part of the Lost UIN flow. Other details like demographic data, and uploading documents are optional.
 
-![](/broken/files/8OkQCONB2yHacELwJTq3)
+![](../../../../.gitbook/assets/reg-client-lost-uin.png)
 
 * As a part of Lost UIN flow, the contact details like the phone number/ e-mail address of the UIN holder can also be **updated** and stored in the ID Repository based on the value provided for the property `uingenerator.lost.packet.allowed.update.fields` which is specified in the Registration Processor properties.
 * If the value already exists for the above mentioned property and once the lost UIN is found, details of the identity of the individual are sent to the newly provided phone number/ e-mail address.
@@ -167,7 +167,7 @@ The registrant visits the registration centre to retrieve the same. The operator
 
 For a resident whose UIN is yet not generated, they can get a request intimation to re-provide their details with a RequestId. The same _AddtionalInfo RequestId_ must be provided to the operator during the correction flow.
 
-![](/broken/files/vhxNGm4SjBEkykkgIADF)
+![](../../../../.gitbook/assets/reg-client-biometric-correction.png)
 
 _Note_- The above mentioned Registration tasks are completely configurable through UI Specs<>
 
@@ -176,7 +176,7 @@ _Note_- The above mentioned Registration tasks are completely configurable throu
 * The operator can preview the data filled and navigate back to the respective tabs in case of corrections.
 * Once the resident and the operator are satisfied with the data being captured, the operator can proceed to the Authenticate tab and provide his valid credentials to mark the complete of the registration task.
 
-![](/broken/files/WEiVD2ms1nsKMJqOiyiw)
+![](../../../../.gitbook/assets/reg-client-preview.png)
 
 ### Acknowledgement receipt and printing
 
@@ -184,7 +184,7 @@ Once the registration process (new registration, UIN update or lost UIN, correct
 
 The image below is that of a sample acknowledgement receipt.
 
-![](/broken/files/SUc3QDPAQgw6Tn28eCRE)
+![](../../../../.gitbook/assets/re-client-acknowledgement.png)
 
 ## End-of-day processes
 
@@ -208,7 +208,7 @@ All the registrations which are being marked with the RE-REGISTER status is list
 
 On clicking Dashboard, the Registration client dashboard HTML template is rendered. Default dashboard displays information about the operator, Packets and the Sync Activities.
 
-![](/broken/files/tPN2FoYi53NBBq017xp2)
+![](../../../../.gitbook/assets/reg-client-dashboard.png)
 
 ### News and updates
 

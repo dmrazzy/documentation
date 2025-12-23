@@ -75,7 +75,7 @@ For each request received and processed, the data is held in MTS. Whilst the dat
 
 ## Design
 
-![](/broken/files/8fkHjtQ2brgG6dlcKnZx)
+![](../../../.gitbook/assets/mosip-token-seeder-block-diagram.png)
 
 ### Authtoken API
 

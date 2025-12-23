@@ -10,4 +10,4 @@ Below is the demonstration of the same.
 
 ## MOSIP e-Manas Integration Architecture
 
-![](/broken/files/7YASCX7ybrkGpA2hEt6x)
+![](../../.gitbook/assets/mosip-eManas-int-arch.png)

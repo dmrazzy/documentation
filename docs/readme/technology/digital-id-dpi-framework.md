@@ -7,7 +7,7 @@ icon: lightbulb-gear
 
 This reference blueprint provides a comprehensive vision for designing and implementing a Digital ID-led DPI infrastructure. It outlines how foundational identity systems can be leveraged alongside key DPI components, enabling various use cases across both the public and private sectors. The blueprint is structured in layers of technology, governance, and service delivery, ensuring scalability, inclusivity, and compliance with legal frameworks.
 
-<figure><img src="/broken/files/4Zk1GMAE6Ge6vXuKGoya" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/Functional_Architecture (1).png" alt=""><figcaption></figcaption></figure>
 
 Below is an explanation of its core components and their roles within the ecosystem.
 

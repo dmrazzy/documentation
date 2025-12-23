@@ -15,7 +15,7 @@ Provides various partner services like onboarding partners and providing partner
 
 The diagram below illustrates the relationship of this service to other MOSIP services.
 
-![](/broken/files/Whxw6GdCxbhtoSn4wAwQ)
+![](../../../../.gitbook/assets/pms.png)
 
 1. Certificates of partner are uploaded to [Key Manager](../../../supporting-components/keymanager/) as part of onboarding.
 2. Registration processor fetches ABIS datashare policy from PMS.
@@ -29,7 +29,7 @@ The diagram below illustrates the relationship of this service to other MOSIP se
 
 This service manages partner policies.
 
-![](/broken/files/4pUkuWaPLX0toGJi9qWz)
+![](../../../../.gitbook/assets/policymanager.png)
 
 1. Audit logs are logged into Auditmanager.
 2. All policies are stored stored in `mosip_pms` DB.

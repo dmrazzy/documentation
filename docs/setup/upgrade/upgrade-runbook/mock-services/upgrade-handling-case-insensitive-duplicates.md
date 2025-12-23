@@ -25,22 +25,22 @@ Follow these steps:
 1. Login in to the [admin portal](https://docs.mosip.io/1.2.0/modules/administration/admin-portal-user-guide) with a user having `ZONAL_ADMIN` role.
 2.  On the left pane, click on `Resources` in the side-menu.
 
-    ![](/broken/files/Uuh7y4MeHixtpiTocYBM)
+    ![](../../../../.gitbook/assets/upgrade-hcid1.jpg)
 3.  Select `User Center Mapping` under Resources in the side-menu.
 
-    ![](/broken/files/uch9DLMgXJiugwG1OoTH)
+    ![](../../../../.gitbook/assets/upgrade-hcid2.jpg)
 4.  Click **Filter** on the `User Center Mapping` page.
 
-    ![](/broken/files/dT7VB7ttdK51hRLXg7rF)
+    ![](../../../../.gitbook/assets/upgrade-hcid3.jpg)
 5.  Enter the `user_id` that was retrieved from the database and copied into the text file. After entering the `user_id`, click on the **Apply** button.
 
-    ![](/broken/files/HnbKdcHOsM72ZNn2KPiS)
+    ![](../../../../.gitbook/assets/upgrade-hcid4.jpg)
 
     * Now, on the `User Center Mapping` page, case insensitive duplicates of `user_id` would be displayed.
     * Based on the Center, choose the entry that can be deactivated/deleted.
     * Now click on the ellipsis of the selected entry.
 
-    ![](/broken/files/bt0wEznSdpgqCawJUsxf)
+    ![](../../../../.gitbook/assets/upgrade-hcid5.jpg)
 6.  Select the appropriate action (Delete/ Deactivate) on that entry.
 
-    ![](/broken/files/KY3zMHP6t7701TBT4HVN)
+    ![](../../../../.gitbook/assets/upgrade-hcid6.jpg)

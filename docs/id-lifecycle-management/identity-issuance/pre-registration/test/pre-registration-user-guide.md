@@ -27,7 +27,7 @@ To create an application, the resident/operator can follow the steps below:
 
 ### Login/create a user account
 
-![Pre-registration login page](/broken/files/d211tzOdvTtEwMjItFyl)
+![Pre-registration login page](../../../../.gitbook/assets/pre-reg-login.png)
 
 1. Open the browser and visit the pre-registration portal.
 2. Select the **language** of your preference from the dropdown.
@@ -44,7 +44,7 @@ To create an application, the resident/operator can follow the steps below:
 
 #### Step 1: Select the language for providing data
 
-![](/broken/files/HIng5u1OEW9y1zhdmHTb)
+![](../../../../.gitbook/assets/pre-reg-language-selection.png)
 
 1. Once the OTP is verified, you will see a pop-up for selecting the languages for data entry.
 2. Select the languages and click **Submit**.
@@ -58,7 +58,7 @@ To create an application, the resident/operator can follow the steps below:
 
 #### Step 2: Provide consent
 
-![](/broken/files/WKd2VbdaydeIsP9oQsdD)
+![](../../../../.gitbook/assets/pre-reg-consent.png)
 
 1. On the Demographic details page, read the **Terms and Conditions** and select the check box to agree. This agreement is to provide consent for the storage and processing of your personal information.
 2. Click **Accept** and proceed.
@@ -69,7 +69,7 @@ To create an application, the resident/operator can follow the steps below:
 
 #### Step 3: Enter Demographic details
 
-![](/broken/files/WEGovtXnLimmdfh5AQVr)
+![](../../../../.gitbook/assets/pre-reg-demo.png)
 
 1. Enter your demographic details, which include Name, Age/DOB, Gender, Residential Status, Address, Mobile Number, Email ID, etc.
 2. You can also change or verify your demographic details in the other selected language.
@@ -81,7 +81,7 @@ _Note_: The mandatory fields/labels have a `*` mark. Field and button labels, er
 
 #### Step 4: Upload documents
 
-![](/broken/files/hl7FOxQuCsQsyfodjNk5)
+![](../../../../.gitbook/assets/upload-docs.png)
 
 1. Select the document (e.g. Passport, Reference Identity Number, etc.) from the document drop-down list.
 2. Click **Browse** to locate the scanned document on your machine.
@@ -93,7 +93,7 @@ _Note_: The mandatory fields/labels have a `*` mark. Field and button labels, er
 
 #### Step 5: Preview data
 
-![](/broken/files/k0ZKxZkoB4pkh1aaTtEL)
+![](../../../../.gitbook/assets/pre-reg-review.png)
 
 1. To change the demographic details (Name, Age, etc.), click **modify** at the top-right corner adjacent to the Demographic details section.
 2. To modify the uploaded documents, click **modify** at the bottom-right corner adjacent to the Documents Uploaded section and make changes.
@@ -106,7 +106,7 @@ On Your Applications page, click **Create New Application** to generate a new ap
 
 ### Viewing applications
 
-![Dashboard](/broken/files/TFwBKdMAwzKqujDHJjyf)
+![Dashboard](../../../../.gitbook/assets/pre-reg-application-status.jpg)
 
 Once the application is created, there could be multiple statuses depending on the data filled by the user/resident or the actions performed by them. The user can view all the pre-registration applications created by them in the Dashboard. The different statuses with a brief explanation are mentioned below:
 
@@ -126,7 +126,7 @@ Once the application is created, there could be multiple statuses depending on t
 
 #### Choose a registration center
 
-![](/broken/files/ZZmGr7zAk88hifslZZtm)
+![](../../../../.gitbook/assets/pre-reg-recommended-center.png)
 
 * The recommended registration centers are automatically displayed based on your demographic details (Postal Code)
 * On the Book Appointment page, you can find a registration center through the three options as follows:
@@ -148,11 +148,11 @@ _**Note**_: The default display of registration centers will be based on the Pos
 * On the confirmation pop-up, click **Confirm**.
 * Click **OK**.
 
-![](/broken/files/yZEgQxLbxClqbZqLhJEr)
+![](../../../../.gitbook/assets/pre-reg-appointment-booking.png)
 
 ### Receive appointment acknowledgement
 
-![](/broken/files/2NTUvvOjKfBd339QTZgu)
+![](../../../../.gitbook/assets/pre-reg-acknowledgement.png)
 
 * After successful completion of the Pre-registration application, you will receive an acknowledgment on the registered phone number (SMS) or email address as per details provided in the demographic form.
 * The acknowledgment contains the following information: name, pre-registration ID, age/DOB, mobile number, email ID and registration center details, appointment date, and appointment time)

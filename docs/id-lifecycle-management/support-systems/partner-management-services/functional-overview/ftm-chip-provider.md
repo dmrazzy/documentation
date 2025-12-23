@@ -26,11 +26,11 @@ As a process of Partner onboarding onto PMS after successful registration, Partn
 
 1. Go to **PMS Portal and login as Partner Admin**. Click on **Certificate Trust Store** in Admin dashboard
 
-<figure><img src="/broken/files/rIcSWEZ7ckQItVUmBcjG" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6 (1).png" alt=""><figcaption></figcaption></figure>
 
 2. Within Root CA tab - click on **Upload Trust Certificate** button on the top-right of the screen.
 
-<figure><img src="/broken/files/aKbiPK7vz2ET1gJJ5tHg" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
 
 3. Select the Partner Domain, (FTM)
 
@@ -38,7 +38,7 @@ As a process of Partner onboarding onto PMS after successful registration, Partn
 
 4. Choose the **Root CA Certificate** to upload (only files with extensions as .cer or .pem).
 
-<figure><img src="/broken/files/0jYGgQCfQQSazeYHUORe" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image4 (1).png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../../.gitbook/assets/temp-ftm-chip-provider-image5.png" alt=""><figcaption></figcaption></figure>
 
@@ -68,7 +68,7 @@ To be able to access the services by PMS and to validate that the partner is fro
 
 3. **On successful registration**, you will be asked to read through '**Terms and Conditions**' and having carefully read through it you can agree and accept it.
 
-<figure><img src="/broken/files/3F5S37wyoPKMr5wpvEbD" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image8 (1).png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Validations**:
@@ -82,13 +82,13 @@ To be able to access the services by PMS and to validate that the partner is fro
 * For existing partner users who are already registered in Partner Management System, they can login to the portal with their email, username and password.
 * On logging in you come to Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
 
-<figure><img src="/broken/files/W43IVQJETOWaJ2VfPLH1" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image9 (1).png" alt=""><figcaption></figcaption></figure>
 
 **Forgot Password:**
 
 * Partner user has an option to reset password , you can use it when you forget password or want to change password after a certain duration.
 
-<figure><img src="/broken/files/JrwdM3IIALEHybCW0j8a" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image10 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### CA Signed Partner Certificate Upload / Download or Re-Upload
 
@@ -245,15 +245,15 @@ To approve / reject an FTM Chip, admin clicks on 'FTM Chip' card in his homepage
 
 The admin navigates to 'List of FTM Chip details' page where list of all FTM Chip records submitted so far by different FTM Chip providers are displayed.
 
-<figure><img src="/broken/files/sCIDEIYDVtNoADiKgMCT" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85 (1).png" alt=""><figcaption></figcaption></figure>
 
 On clicking the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided.
 
-<figure><img src="/broken/files/AYkJmtpXaWYjximDGD9z" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86 (1).png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action- Approve / Reject and select the respective button.
 
-<figure><img src="/broken/files/8L8LsjTVqkDZbrOsRBAl" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87 (1).png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
@@ -263,7 +263,7 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
 {% endhint %}
 
-<figure><img src="/broken/files/B7Z51fbWhUSQW3lhB4UV" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88 (1).png" alt=""><figcaption></figcaption></figure>
 
 ### Manage Certificate for approved records
 

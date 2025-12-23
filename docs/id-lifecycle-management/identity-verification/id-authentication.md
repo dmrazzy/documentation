@@ -12,7 +12,7 @@ Read more about eSignet and its capabilities [here](https://docs.esignet.io/).\
 \
 The typical authentication flow is illustrated below:
 
-![Authentication Process](/broken/files/khQA3rA2pe4sIGNbHlvB)
+![Authentication Process](../../.gitbook/assets/ida-process.png)
 
 ## Authentication types
 

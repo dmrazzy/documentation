@@ -10,7 +10,7 @@ The BioSDK diagram illustrates how MOSIP integrates biometric devices for regist
 
 For registration, signed biometrics are sent to the MOSIP backend, where the BioSDK ensures data quality, ABIS handles deduplication, and ID Auth manages 1:1 matching. During authentication, encrypted biometrics are verified via the authentication app. Device management, including registration, deregistration, and key rotation, is handled by the Device Management Server.
 
-![Biometric Data Flow](/broken/files/bwhNSN0Q8NsmzSjeF9XF)
+![Biometric Data Flow](../../../.gitbook/assets/sdk.png)
 
 #### Applications
 

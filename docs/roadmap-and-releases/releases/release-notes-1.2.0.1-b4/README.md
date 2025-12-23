@@ -14,7 +14,7 @@ The MOSIP **1.2.0.1 Beta4** release marks an upgrade from version 1.1.5.x to 1.2
 
 Additionally, this release incorporates enhancements to the existing features in [Mock Services](../../../id-lifecycle-management/supporting-services/mock-services.md), aiming to enhance the user experience. For a comprehensive summary of the modifications, refer [here](https://mosip.atlassian.net/issues/?jql=labels%20%3D%20%22mock-V1.2.0.1-B4%22).
 
-To know more about the upgrades, refer [Upgrade Runbook](../../../setup/upgrade/adopting-lts-1.2.0/upgrade-runbook/).
+To know more about the upgrades, refer [Upgrade Runbook](../../../setup/upgrade/upgrade-runbook/).
 
 ## Repository Released
 

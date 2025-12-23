@@ -13,7 +13,7 @@ Data is encrypted before sharing it with partners. Learn more about [datashare e
 
 The relationship of Datashare Service with other services is explained here. _NOTE: The numbers do not signify the sequence of operations or control flow. Arrows indicate the data flow._
 
-![](/broken/files/Prq0uaDtKaVCVquoNa0A)
+![](../../.gitbook/assets/datashare.png)
 
 1. ABIS Handler Stage creates datashare for ABIS.
 2. Manual Adjudication Stage creates datashare for adjudication.

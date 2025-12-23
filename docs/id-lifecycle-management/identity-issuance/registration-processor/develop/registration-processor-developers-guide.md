@@ -27,13 +27,13 @@ Follow the steps below to set up Registration Processor on your local system:
 
 3\. Install Eclipse, open the `lombok.jar` file and wait for some time until it completes the scan for Eclipse IDE and then click `Install/Update`.
 
-![](/broken/files/5fJLX5CC6ovM6CHMphDE)
+![](../../../../.gitbook/assets/lombok-configuration.png)
 
 4\. Check the Eclipse installation folder `C:\Users\userName\eclipse\jee-2021-12\eclipse` to see if the `lombok.jar` is added. By doing this, you don't have to add the dependency of `lombok` in your `pom.xml` file separately as it is auto-configured by Eclipse.
 
 5\. Configure the JDK (Standard VM) with your Eclipse by traversing through `Preferences → Java → Installed JREs`.
 
-![](/broken/files/2uKzCG0i7f0HOAbSIojO)
+![](../../../../.gitbook/assets/installed-jre.png)
 
 ## Code setup
 
@@ -47,13 +47,13 @@ For the code setup, clone the [registration](https://github.com/mosip/registrati
 4. After building of a project, open Eclipse and select `Import Projects → Maven → Existing Maven Projects → Next → Browse to project directory → Finish`.
 5. After successful importing of project, update the project by right-click on `Project → Maven → Update Project`.
 
-![](/broken/files/D3RIv6MtLMutmJaTJYAJ)
+![](../../../../.gitbook/assets/import-project.png)
 
 ## Environment setup
 
 1\. For the environment setup, you need an external JAR that is available [here](https://oss.sonatype.org/#nexus-search;gav~~kernel-auth-adapter~1.2.0-SNAPSHOT~~) with different versions. (E.g.: You can download `kernel-auth-adapter.jar` and add to project `Libraries → Classpath → Add External JARs → Select Downloaded JAR → Add → Apply and Close`).
 
-![](/broken/files/f7jdZbSZxF2dZ7fT0pYr)
+![](../../../../.gitbook/assets/add-external-library.png)
 
 2\. Clone [mosip-config repository](https://github.com/mosip/mosip-config).
 
@@ -71,7 +71,7 @@ Example:
 
 7\. Run the server by opening the `config-server-start.bat` file.
 
-![](/broken/files/8KxMJTv67HMayTYqHW5Y)
+![](../../../../.gitbook/assets/run-server.png)
 
 The server should now be up and running.
 

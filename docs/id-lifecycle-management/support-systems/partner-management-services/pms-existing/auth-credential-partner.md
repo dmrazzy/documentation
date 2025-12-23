@@ -22,11 +22,11 @@ Below is the workflow that includes the registration process for an Auth or Cred
   * Address, e-mail, phone number
   * Username and password
 
-![](/broken/files/uUq7jMmSZ8Rp3cB11pNv)
+![](../../../../.gitbook/assets/auth-partner-self-register.PNG)
 
 To view the details entered, click **Home** to see the dashboard.
 
-![](/broken/files/udmQnAZIpJXmPxC2uBqg)
+![](../../../../.gitbook/assets/auth-partner-map-policy-page.PNG)
 
 ### Policy Group mapping
 
@@ -35,7 +35,7 @@ On successful registration, the partner can see their username displayed on the 
 1. Partner selects the relevant Policy Group from **Map Policy Group** dropdown.
 2. Clicks **Save**.
 
-![](/broken/files/2gNNvUdFgjgCMAmxyra4)
+![](../../../../.gitbook/assets/auth-partner-dashboard.PNG)
 
 ### Upload of Certificates
 
@@ -48,23 +48,23 @@ The Partner admin needs to upload the CA certificate to enable the partner for u
 3. Chooses the certificate to upload (only files with extensions as .cer or .pem).
 4. Clicks **Upload**.
 
-![](/broken/files/l2wcs3fZAYr92k7S8pbE)
+![](../../../../.gitbook/assets/ca-cert-data-upload.PNG)
 
 ![](../../../../_images/ca-cert-data-success.PNG)
 
 The uploaded certificates can be viewed by clicking on `View Certificates-> View`.
 
-![](/broken/files/aGpPXsF82VzMwML5U2jg)
+![](../../../../.gitbook/assets/auth-partner-view-cert.PNG)
 
 #### Partner Certificate upload
 
 Similarly, the Partner certificates can be added by the Partner admin/ partner.
 
-![](/broken/files/e3eAGzO05Pu1ZdN5xRGn)
+![](../../../../.gitbook/assets/auth-partner-upload-cert-page1.PNG)
 
-![](/broken/files/pMxgHoj5ccsY8BSvklrV)
+![](../../../../.gitbook/assets/auth-partner-upload-cert-page2.PNG)
 
-![](/broken/files/zmiWKcVcqdHOfr3xe3yB)
+![](../../../../.gitbook/assets/auth-partner-upload-cert-success.PNG)
 
 ### Mapping policy to policy group
 
@@ -75,16 +75,16 @@ Once the certificates are uploaded,
 3. Selects the Auth Policy Name from the dropdown.
 4. Enters a value for the Request Details (unique value) and clicks **Save**.
 
-![](/broken/files/xyBBiZWJi5FG0v736fEW)
+![](../../../../.gitbook/assets/auth-partner-policy-mapping-default-page.PNG)
 
-![](/broken/files/DC4lxz3r8SZc9eCj4xkO)
+![](../../../../.gitbook/assets/auth-partner-policy-mapping-data.PNG)
 
 * Once this is done, you will see a message saying `Policy mapping grequest submitted successfully`.
 * Also, the status is displayed as "In progress" and this means that the partner cannot generate the API key until the request is approved by the Partner admin.
 
-![](/broken/files/X0JEPKg8NLE9q4J5T5cd)
+![](../../../../.gitbook/assets/auth-partner-policy-mapping-request-success.PNG)
 
-![](/broken/files/f8kjw9NbEbvQPuzCkji2)
+![](../../../../.gitbook/assets/auth-partner-policy-mapping-page-view.PNG)
 
 ### Approval/ Rejection of partner policy mapping
 
@@ -95,15 +95,15 @@ Once the Partner Policy Mapping request is raised by the partner, the Partner ad
 3. From the action menu against the policy mapping, selects **Manage Policy**.
 4. Clicks **Approve**.
 
-![](/broken/files/b5Cmatz10dUC5gZcIDkf)
+![](../../../../.gitbook/assets/partner-admin-policy-mappings-view-policy.PNG)
 
-![](/broken/files/aXAS3wvC8FlzSIqeyuwp)
+![](../../../../.gitbook/assets/partner-admin-policy-mappings-manage-policy.PNG)
 
-![](/broken/files/BxvzUBJZK3UQwhq1fjo5)
+![](../../../../.gitbook/assets/partner-admin-policy-mappings-approve.PNG)
 
 Once the request is approved, the partner can view the status being updated to `Approved` instead of `InProgress`.
 
-![](/broken/files/svMy0l6GbyE28tuBVg0X)
+![](../../../../.gitbook/assets/auth-partner-policy-mapping-data-approved.PNG)
 
 ### Generating the API Key
 
@@ -116,12 +116,12 @@ Partner logins after the Partner Policy Mapping is approved by the Partner admin
 
 The API key is generated and can be used by the partner.
 
-![](/broken/files/vInnBYkSojNj00m7d6op)
+![](../../../../.gitbook/assets/auth-partner-generate-apikey-option.PNG)
 
-![](/broken/files/1RnBP4W5qLA2tgVZrtlF)
+![](../../../../.gitbook/assets/auth-partner-generate-apikey-page.PNG)
 
-![](/broken/files/ZIKfUtFYU56AFXU2ioz4)
+![](../../../../.gitbook/assets/auth-partner-genearted-apikeys-page.PNG)
 
-![](/broken/files/cqJgJjokrBsOSE3Wi7Vq)
+![](../../../../.gitbook/assets/auth-partner-generate-apikey-success.PNG)
 
 The partner can also deactivate a particular API Key by clicking on the cross-mark (X) next to it. Please note, once deactivated, it cannot be activated again. You may need to generate a new API key as per requirement.

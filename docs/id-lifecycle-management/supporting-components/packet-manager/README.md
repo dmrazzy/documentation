@@ -11,7 +11,7 @@ Packet Manager performs the following functions:
 
 Packet Manager runs as a service and is also available as a library.
 
-![](/broken/files/kGjFIGNgSfsDvo46OZQv)
+![](../../../.gitbook/assets/packet-manager.png)
 
 The relationship of the Packet Manager with other services is explained here.
 

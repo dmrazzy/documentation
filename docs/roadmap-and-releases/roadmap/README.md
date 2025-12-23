@@ -35,6 +35,6 @@ MOSIP's principles underpin the design and development of the roadmap. The year-
 
 Below is an illustration of some of the key features and principles upon which the MOSIP solution has been envisioned.
 
-![](/broken/files/ImJJ2c7R2jmYBsRkVIhA)
+![](../../.gitbook/assets/roadmap-img2.png)
 
 While we embark on the journey outlined in our roadmap, we at MOSIP encourage you to participate in building a digital ID infrastructure that empowers individuals and organizations to securely and effectively access a wide range of services while safeguarding privacy and data integrity. Connect with us on the [Community](https://community.mosip.io/) to contribute your expertise and ideas, making a meaningful impact on the development of a robust and inclusive digital ID ecosystem that benefits everyone.
