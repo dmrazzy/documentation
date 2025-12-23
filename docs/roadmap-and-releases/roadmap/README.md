@@ -16,6 +16,7 @@ The year-wise roadmap details how these principles will be applied and advanced 
 
 Head below to navigate through our year-wise roadmap that provides a strategic overview of the journey ahead and highlights the key milestones & objectives for each year!
 
+* [Roadmap 2026](roadmap-2026.md)
 * [Roadmap 2025](https://docs.mosip.io/1.2.0/roadmap/roadmap-2025)
 * [Roadmap 2024](roadmap-2024-2025.md)
 * [Roadmap 2023](roadmap-2023-2024.md)
