@@ -113,7 +113,7 @@ All resource estimates will automatically adjust according to the data entered.
 
 
 
-
+<!--
 
 Old Content Below:
 
@@ -210,3 +210,5 @@ The compute and storage estimates for the following components are not included:
 {% hint style="warning" %}
 DR would significantly increase compute and storage requirements. It is expected that System Integrator works out the appropriate DR strategy and arrives at an estimate.
 {% endhint %}
+
+-->
