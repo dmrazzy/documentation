@@ -6,7 +6,7 @@ MOSIP version 1.2.1.0 (Platform version) has been released with significant impr
 
 ## Intended Audience
 
-This runbook is designed for countries, system integrators, and organizations currently running MOSIP version 1.2.0.1 who wish to upgrade to the latest version of the MOSIP Identity Platform i.e [1.2.1.0.](link/)
+This runbook is designed for countries, system integrators, and organizations currently running MOSIP version 1.2.0.1 who wish to upgrade to the latest version of the MOSIP Identity Platform i.e [1.2.1.0.](../adopting-lts-1.2.0/link/)
 
 ## What This Guide Covers
 
@@ -22,7 +22,7 @@ Following these procedures ensures a smooth transition from version 1.2.0.1 to 1
 
 ## Pre-Upgrade Checklist
 
-* Base version of MOSIP platform should be 1.2.0.1. If the base version is older than 1.2.0.1 (For example MOSIP version 1.1.5.5 is installed), Please make sure to migrate to 1.2.0.1 by following guidance mentioned in [this run book](https://docs.mosip.io/1.2.0/setup/upgrade/adopting-lts-1.2.0/upgrade-runbook). You can refer to [MOSIP Versioning Principle](link/) to understand how does platform versioning and repository versioning works and follow different schemes.
+* Base version of MOSIP platform should be 1.2.0.1. If the base version is older than 1.2.0.1 (For example MOSIP version 1.1.5.5 is installed), Please make sure to migrate to 1.2.0.1 by following guidance mentioned in [this run book](https://docs.mosip.io/1.2.0/setup/upgrade/adopting-lts-1.2.0/upgrade-runbook). You can refer to [MOSIP Versioning Principle](../adopting-lts-1.2.0/link/) to understand how does platform versioning and repository versioning works and follow different schemes.
 * In case of customizations, the customized code must be updated and merged with the upgraded platform code. Refer to this [runbook](https://docs.mosip.io/1.2.0/setup/upgrade/java-21-migration-guide) as a guide for migrating from Java 11 to Java 21.
 
 ## Upgrade Procedure
@@ -238,17 +238,27 @@ Keycloak init takes care of adding all the relevant client, roles, client scopes
 
 ### **Step 5: Skip redeployment of certain MOSIP services/batch jobs**
 
-* Add the pmp-revamp host to the global configmap manually.
-  * <mark style="color:red;">@Mohan E to detail out one liner command for the same.</mark>
-* Do not run these services during redeployment: <mark style="color:red;">@Mohan E to add the places in install scripts which SI’s will comment to make this possible</mark>.
-  * **kernel keygen job**
-  * **masterdata-loader**
-  * **regproc-reprocessor**
-  * **regproc saltgen job**
-  * **idrepo saltgen job**
-  * **ida keygen job**
-  * **onboarder**
-  * **conf-secrets**
+*   Add the pmp-revamp host to the global configmap manually.
+
+    * Add the pmp-revamp host to the global configmap manually.\
+      \* To add/update the pmp-revamp host in the **global ConfigMap,** Use the below command:
+
+    ```
+    kubectl patch configmap global -n default \
+      --type merge \
+      -p '{"data":{"mosip-pmp-revamp-ui-host":"pmp-revamp.<sandbox.xyz.net>"}}'
+    ```
+
+    Note: Please replace \`<[sandbox.xyz.net](http://sandbox.xyz.net)>\` with correct hostname.
+* Do not run these services during redeployment:
+  * **kernel keygen job - Comment out the helm command that installs kernel keygen from this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/keymanager/install.sh)
+  * **masterdata-loader - No need to run this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/masterdata-loader/install.sh)
+  * **regproc-reprocessor - Comment out the helm command that installs** **regproc-reprocessor** **from this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/regproc/install.sh)**.**
+  * **regproc saltgen job - Comment out the helm command that installs** **regproc saltgen** **from this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/regproc/install.sh)**.**
+  * **idrepo saltgen job - Comment out the helm command that installs** **idrepo saltgen** **from this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/idrepo/install.sh)**.**
+  * **ida keygen job - Comment out the helm command that installs** **regproc-reprocessor** **from this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/idrepo/install.sh)**.**
+  * **onboarder - No need to run this** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/partner-onboarder/install.sh)**.**
+  * **conf-secrets - No need to run** [**script**](https://github.com/mosip/mosip-infra/blob/release-1.2.1.x/deployment/v3/mosip/conf-secrets/install.sh)**.**
 
 ### **Step 6: Deployment of additional artifcatory instance**
 

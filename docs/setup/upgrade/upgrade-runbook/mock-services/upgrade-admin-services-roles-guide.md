@@ -52,3 +52,10 @@ For a user having `MASTERDATA_ADMIN` role:
 * If a MASTERDATA \_ADMIN user is performing Packet Bulk Upload then REGISTRATION\_ADMIN role need to be added to that user.
 
 **Note**: A few new permissions were added to MASTERDATA\_ADMIN and KEY\_MAKER roles, please refer to the above role matrix table and if there is any inconsistency in the accessibility or roles of existing user, please reassign the roles to the user accordingly.
+
+\---
+
+* Generate CSR - GLOBAL\_ADMIN,ZONAL\_ADMIN,KEY\_MAKER
+* Upload Certificate - GLOBAL\_ADMIN,ZONAL\_ADMIN,KEY\_MAKER
+* postgeneratecsr=GLOBAL\_ADMIN,ZONAL\_ADMIN,KEY\_MAKER
+* Upload other domain certificate - GLOBAL\_ADMIN,ZONAL\_ADMIN,KEY\_MAKER

@@ -130,7 +130,5 @@ Below are a few key bugs marked as known issues for this release. Please click [
 ### Documentation
 
 * [Feature Documentation](https://docs.mosip.io/1.2.0/)
-* Functional test report
-* Performance Report
-* Security Report
-* Sonar scan Report
+* [QA Reports](test-report.md)
+

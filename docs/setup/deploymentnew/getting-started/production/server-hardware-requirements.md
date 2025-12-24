@@ -1,10 +1,6 @@
 # Server Hardware Requirements
 
-
-
-
-
-### **Overview**
+## **Overview**
 
 This document provides a step-by-step guide for using the Resource Calculator to estimate the required server hardware for a country’s MOSIP deployment. The calculator delivers a high-level overview of the hardware components needed to support MOSIP services across Registration and Authentication.
 
@@ -16,7 +12,7 @@ This document provides a step-by-step guide for using the Resource Calculator to
 
 A typical MOSIP deployment includes the following components:
 
-* <mark style="color:red;">ID Lifecycle Management</mark>
+* ID Lifecycle Management (Issuance, Verification and Management modules/components)
 * Pre-Registration
 * Registration
 * ID Authentication
@@ -90,7 +86,9 @@ Performance testing is measured using the following metrics:
 
 ### **Accessing the Calculator**
 
-Use the link provided in the <mark style="color:red;">main document</mark> to access the Resource Calculator.
+Refer to the link below to download and access the **Resource Calculator**.
+
+{% file src="../../../../.gitbook/assets/resource-calculator-platform-release-1.3.x.xlsx" %}
 
 The calculator provides two primary outputs:
 

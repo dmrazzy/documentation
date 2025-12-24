@@ -1,10 +1,10 @@
 # Packet Creator Setup
 
-#### Overview
+## Overview
 
-Packet Creator Setup Guide is a step-by-step instructions to set up, build and run the MOSIP Packet Creator (used by DSL automation). This document assumes you are using the <mark style="color:red;">mosip-automation-tests</mark> repository and will produce a <mark style="color:red;">runnable</mark> JAR for the packet creator.
+Packet Creator Setup Guide is a step-by-step instructions to set up, build and run the MOSIP Packet Creator (used by DSL automation). This document assumes you are using the mosip-automation-tests repository and will produce a executable JAR for the packet creator.
 
-### **Prerequisites**
+## **Prerequisites**
 
 * Git installed and configured (SSH or HTTPS access to the repository).
 * Java (compatible version) installed. (Project historically used Java 11 and above; confirm your environment).
@@ -24,8 +24,6 @@ Place the generated key in the private key folder inside the mosip-packet-creato
 * **Repository (root):** [https://github.com/mosip/mosip-automation-tests.git](https://github.com/mosip/mosip-automation-tests.git)
 * **Packet Creator resources folder (contains centralized folder):** mosip-packet-creator/src/main/resources/dockersupport/centralized/mosip-packet-creator (Inside this path you see a centralized folder. You should copy/replace the centralized folder into the target environment where you have to run the packet creator jar).
 
-
-
 ### **High-level Steps**
 
 1. Clone the repository.
@@ -38,8 +36,6 @@ Place the generated key in the private key folder inside the mosip-packet-creato
    * Use .sh for **Linux/macOS**
 7. Execute the startup script to run the packet creator locally.
 8. Verify the service is up using Swagger UI: [http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/](http://localhost:8080/v1/packetcreator/swagger-ui/index.html#/)
-
-
 
 ## Guidelines to Setup
 
@@ -130,8 +126,6 @@ Before creating packets, we must initialize a **server context file** in Packet 
 The API stores all the properties you send in the request body into a context file named with the contextKey.
 
 The same contextKey must be used in all other Packet Creator APIs.
-
-
 
 ### **Endpoint Details**
 
@@ -331,8 +325,6 @@ When preparing the request body for a new environment:
   * All mosip.test.persona.\*datapath and mountPath, mosip.test.temp etc.\
     → Ensure these paths exist in the Packet Creator container / filesystem.
 
-
-
 #### **Steps to Create Context Using Swagger UI**
 
 1. Open Swagger UI for Packet Creator, e.g. [http://localhost:8080/v1/packetcreator/swagger-ui/index.html](http://localhost:8080/v1/packetcreator/swagger-ui/index.html)
@@ -344,8 +336,6 @@ When preparing the request body for a new environment:
 5. Click **Execute**.
 6. On success, Packet Creator creates a context file with the name `{contextKey}` and stores all these properties.
 7. Use the same contextKey in all subsequent packet creation APIs.
-
-&#x20;
 
 ## Generate Persona (Resident) Data
 
@@ -407,8 +397,6 @@ You can adjust these values based on the scenario you want to test (for example,
   * Biometric data (face, iris, fingerprint) as per the flags in the request.
 
 This JSON file path will be used in the **next step** of packet creation (while generating the registration packet).
-
-
 
 ## Create Packet Template
 
@@ -528,8 +516,6 @@ This is done using the ridsync API.
 
 * contextKey – Same context key used in all previous steps.
 
-***
-
 #### **Request Body**
 
 * **Content-Type:** application/json
@@ -566,8 +552,6 @@ This is done using the ridsync API.
   * Approval status from supervisor. Typical values: "APPROVED" / "REJECTED".
 * "supervisorComment"
   * Any comment from supervisor (optional text).
-
-***
 
 #### **Response**
 
@@ -610,8 +594,6 @@ After the packet ZIP is generated, call this API to **upload/sync the packet** a
 * "email" – Operator email.
 * "supervisorStatus" – e.g. "APPROVED" or "REJECTED".
 * "supervisorComment" – Any approval comment.
-
-***
 
 #### **Response**
 
@@ -746,10 +728,6 @@ You have now successfully completed the full end-to-end lifecycle of MOSIP Packe
 ✔ RID processing status checked\
 ✔ UIN retrieved
 
-
-
-
-
 **Important Reminders & Best Practices**
 
 **1. Same contextKey must be used throughout**
@@ -791,8 +769,6 @@ Examples:
 **5. Common processing outcomes**
 
 <table><thead><tr><th width="262.0859375">Result</th><th>Meaning</th></tr></thead><tbody><tr><td><strong>PROCESSED</strong></td><td>Packet is valid and completed</td></tr><tr><td><strong>UIN generated</strong></td><td>Registration successful</td></tr><tr><td><strong>RE-REGISTER</strong></td><td>Failure – resident must re-enroll</td></tr><tr><td><strong>FAILED</strong></td><td>Data, checksum, schema, or mapping issue</td></tr><tr><td><strong>IN-PROGRESS</strong></td><td>Wait and retry later</td></tr></tbody></table>
-
-
 
 #### **Recommended Validation Before Using Packet**
 

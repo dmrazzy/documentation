@@ -187,3 +187,5 @@ It outlines the strategy used to ensure a comprehensive evaluation.
 
 &#x20;
 
+For all of it and details on reports refer to the link [**here**](https://github.com/mosip/test-management/tree/master/Platform%20release/Platform%201.2.1.0%20GA%20Release%20Reports).
+
