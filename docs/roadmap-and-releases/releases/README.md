@@ -5,9 +5,19 @@ icon: book-open
 
 # Releases
 
-**“You can refer to** [_**Release Naming Convention**_](versioning-policy.md) _**t**_**o better understand how our releases are named and to help you navigate them with ease.”**
+" **You can refer to** [**Release Naming Convention**](versioning-policy.md) _**t**_**o better understand how our releases are named and to help you navigate them with ease.**”
 
 ## Latest Releases
+
+**Version**: v1.2.1.0
+
+* Date: Coming Soon
+* [Release Notes](v1.2.1.0/)
+
+**Version**: V1.3.0-DSL
+
+* Date: 24th December, 2025
+* [Release Notes](v1.3.0-dsl.md)
 
 **Version**: Android Registration Client v1.0.0
 
