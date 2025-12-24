@@ -70,19 +70,19 @@ Performance data load has been populated before the run to ensure realistic resu
 
 #### **Workload Model**
 
-| **Scenario Name**                                                       | **Module Name**        | **API Endpoint**                                                  | **SLA (ms)** | **Weightage/Load Distribution** | **Users** | **Throughput (TPS)** | **Target Volume** |
-| ----------------------------------------------------------------------- | ---------------------- | ----------------------------------------------------------------- | ------------ | ------------------------------- | --------- | -------------------- | ----------------- |
-| Sync And Upload New Registration Packet                                 | Registration processor | registrationprocessor/v1/registrationstatus/syncV2                | 1000         | 90%                             | 20        | 22.5                 | 7,29,000          |
-| registrationprocessor/v1/packetreceiver/registrationpackets             | 1000                   | 7,29,000                                                          |              |                                 |           |                      |                   |
-| Sync Data From Server                                                   | Sync Data              | v1/syncdata/authenticate/useridpwd                                | 1000         | 5%                              | 8         | 1.25                 | 40,500            |
-| v1/syncdata/tpm/publickey/verify                                        | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| v1/syncdata/getCertificate?applicationId=${appId}\&referenceId=${refId} | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| v1/syncdata/userdetails?keyindex=${keyIndex}                            | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| v1/syncdata/clientsettings?keyindex=${keyIndex}                         | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| v1/syncdata/configs/${keyIndex}                                         | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| v1/syncdata/latestidschema?schemaVersion=${schemaVersion}               | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| v1/syncdata/getcacertificates                                           | 1000                   | 40,500                                                            |              |                                 |           |                      |                   |
-| Get Transaction Details From Reg Id                                     | Registration processor | /registrationprocessor/v1/registrationtransaction/search/${regId} | 1000         | 5%                              | 2         | 1.25                 | 40,500            |
+| **Scenario Name**                       | **Module Name**        | **API Endpoint**                                                        | **SLA (ms)** | **Weightage/Load Distribution** | **Users** | **Throughput (TPS)** | **Target Volume** |
+| --------------------------------------- | ---------------------- | ----------------------------------------------------------------------- | ------------ | ------------------------------- | --------- | -------------------- | ----------------- |
+| Sync And Upload New Registration Packet | Registration processor | registrationprocessor/v1/registrationstatus/syncV2                      | 1000         | 90%                             | 20        | 22.5                 | 7,29,000          |
+|                                         |                        | registrationprocessor/v1/packetreceiver/registrationpackets             | 1000         |                                 |           |                      | 7,29,000          |
+| Sync Data From Server                   | Sync Data              | v1/syncdata/authenticate/useridpwd                                      | 1000         | 5%                              | 8         | 1.25                 | 40,500            |
+|                                         |                        | v1/syncdata/tpm/publickey/verify                                        | 1000         |                                 |           |                      | 40,500            |
+|                                         |                        | v1/syncdata/getCertificate?applicationId=${appId}\&referenceId=${refId} | 1000         |                                 |           |                      | 40,500            |
+|                                         |                        | v1/syncdata/userdetails?keyindex=${keyIndex}                            | 1000         |                                 |           |                      | 40,500            |
+|                                         |                        | v1/syncdata/clientsettings?keyindex=${keyIndex}                         | 1000         |                                 |           |                      | 40,500            |
+|                                         |                        | v1/syncdata/configs/${keyIndex}                                         | 1000         |                                 |           |                      | 40,500            |
+|                                         |                        | v1/syncdata/latestidschema?schemaVersion=${schemaVersion}               | 1000         |                                 |           |                      | 40,500            |
+|                                         |                        | v1/syncdata/getcacertificates                                           | 1000         |                                 |           |                      | 40,500            |
+| Get Transaction Details From Reg Id     | Registration processor | /registrationprocessor/v1/registrationtransaction/search/${regId}       | 1000         | 5%                              | 2         | 1.25                 | 40,500            |
 
 ## **Test Result**
 
@@ -98,21 +98,21 @@ Performance data load has been populated before the run to ensure realistic resu
 
 The 95<sup>th</sup> Line will be considered the primary Response Time metric while comparing with SLA.
 
-| Scenario Name                               | Transaction Name                                                        | API Endpoint                                                      | 25 TPS & 30 VUsers |          |         |        |        |      |
-| ------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------- | ------------------ | -------- | ------- | ------ | ------ | ---- |
-| Date: 2025/12/12 (9 Hours)                  |                                                                         |                                                                   |                    |          |         |        |        |      |
-| # Samples                                   | Min (ms)                                                                | Average (ms)                                                      | 95% Line(ms)       | Max (ms) | Error % |        |        |      |
-| S01 Sync and Upload New Registration Packet | S01 T01 Sync Registration Packet Endpoint                               | registrationprocessor/v1/registrationstatus/syncV2                | 7,31,342           | 99.0     | 139.0   | 196.0  | 1155.0 | 0.1% |
-| S01 T02 Upload Registration Packet Endpoint | registrationprocessor/v1/packetreceiver/registrationpackets             | 7,31,330                                                          | 46.0               | 74.0     | 90.0    | 1139.0 | 0.0%   |      |
-| S02 Sync Data from Server                   | S02 T01 Auth Token Details Encrypted Based on Machine Key Endpoint      | v1/syncdata/authenticate/useridpwd                                | 39,358             | 60.0     | 76.9    | 93.0   | 201.0  | 0.0% |
-| S02 T02 Public Key Verify Endpoint          | v1/syncdata/tpm/publickey/verify                                        | 39,357                                                            | 24.0               | 34.5     | 43.0    | 129.0  | 0.0%   |      |
-| S02 T03 Certificate Endpoint                | v1/syncdata/getCertificate?applicationId=${appId}\&referenceId=${refId} | 39,357                                                            | 24.0               | 37.8     | 48.0    | 107.0  | 0.0%   |      |
-| S02 T04 User Details Endpoint               | v1/syncdata/userdetails?keyindex=${keyIndex}                            | 39,356                                                            | 50.0               | 66.3     | 80.0    | 200.0  | 0.0%   |      |
-| S02 T05 Client Settings Endpoint            | v1/syncdata/clientsettings?keyindex=${keyIndex}                         | 39,356                                                            | 173.0              | 263.3    | 320.0   | 1006.0 | 0.0%   |      |
-| S02 T06 Get Configs Endpoint                | v1/syncdata/configs/${keyIndex}                                         | 39,356                                                            | 75.0               | 249.2    | 467.0   | 3057.0 | 0.0%   |      |
-| S02 T07 Get LatestId Schema Endpoint        | v1/syncdata/latestidschema?schemaVersion=${schemaVersion}               | 39,355                                                            | 31.0               | 46.6     | 58.0    | 233.0  | 0.0%   |      |
-| S02 T08 Get CaCertificates Endpoint         | v1/syncdata/getcacertificates                                           | 39,354                                                            | 518.0              | 613.0    | 688.0   | 1148.0 | 0.0%   |      |
-| S03 Get Transaction Details From Reg Id     | S03 T01 Get Transaction Details From Reg Id Endpoint                    | /registrationprocessor/v1/registrationtransaction/search/${regId} | 65,068             | 21.0     | 31.5    | 40.0   | 1042.0 | 0.0% |
+| Scenario Name                               | Transaction Name                                                   | API Endpoint                                                            | 25 TPS & 30 VUsers |          |              |              |          |         |
+| ------------------------------------------- | ------------------------------------------------------------------ | ----------------------------------------------------------------------- | ------------------ | -------- | ------------ | ------------ | -------- | ------- |
+| Date: 2025/12/12 (9 Hours)                  |                                                                    |                                                                         |                    |          |              |              |          |         |
+|                                             |                                                                    |                                                                         | # Samples          | Min (ms) | Average (ms) | 95% Line(ms) | Max (ms) | Error % |
+| S01 Sync and Upload New Registration Packet | S01 T01 Sync Registration Packet Endpoint                          | registrationprocessor/v1/registrationstatus/syncV2                      | 7,31,342           | 99.0     | 139.0        | 196.0        | 1155.0   | 0.1%    |
+| S01 T02 Upload Registration Packet Endpoint | registrationprocessor/v1/packetreceiver/registrationpackets        | 7,31,330                                                                | 46.0               | 74.0     | 90.0         | 1139.0       | 0.0%     |         |
+| S02 Sync Data from Server                   | S02 T01 Auth Token Details Encrypted Based on Machine Key Endpoint | v1/syncdata/authenticate/useridpwd                                      | 39,358             | 60.0     | 76.9         | 93.0         | 201.0    | 0.0%    |
+|                                             | S02 T02 Public Key Verify Endpoint                                 | v1/syncdata/tpm/publickey/verify                                        | 39,357             | 24.0     | 34.5         | 43.0         | 129.0    | 0.0%    |
+|                                             | S02 T03 Certificate Endpoint                                       | v1/syncdata/getCertificate?applicationId=${appId}\&referenceId=${refId} | 39,357             | 24.0     | 37.8         | 48.0         | 107.0    | 0.0%    |
+|                                             | S02 T04 User Details Endpoint                                      | v1/syncdata/userdetails?keyindex=${keyIndex}                            | 39,356             | 50.0     | 66.3         | 80.0         | 200.0    | 0.0%    |
+|                                             | S02 T05 Client Settings Endpoint                                   | v1/syncdata/clientsettings?keyindex=${keyIndex}                         | 39,356             | 173.0    | 263.3        | 320.0        | 1006.0   | 0.0%    |
+|                                             | S02 T06 Get Configs Endpoint                                       | v1/syncdata/configs/${keyIndex}                                         | 39,356             | 75.0     | 249.2        | 467.0        | 3057.0   | 0.0%    |
+|                                             | S02 T07 Get LatestId Schema Endpoint                               | v1/syncdata/latestidschema?schemaVersion=${schemaVersion}               | 39,355             | 31.0     | 46.6         | 58.0         | 233.0    | 0.0%    |
+|                                             | S02 T08 Get CaCertificates Endpoint                                | v1/syncdata/getcacertificates                                           | 39,354             | 518.0    | 613.0        | 688.0        | 1148.0   | 0.0%    |
+| S03 Get Transaction Details From Reg Id     | S03 T01 Get Transaction Details From Reg Id Endpoint               | /registrationprocessor/v1/registrationtransaction/search/${regId}       | 65,068             | 21.0     | 31.5         | 40.0         | 1042.0   | 0.0%    |
 
 #### **High Level Observations:**
 
@@ -162,19 +162,19 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 Following configuration was used for the performance test.
 
-| **NameSpace**                          | **Deployment**                           | **Resources** | **Java Option** | **No.of Pods** |      |      |      |   |
-| -------------------------------------- | ---------------------------------------- | ------------- | --------------- | -------------- | ---- | ---- | ---- | - |
-| <p><strong>Limits</strong></p><p> </p> | <p><strong>Requests</strong></p><p> </p> | **Min**       | **Max**         |                |      |      |      |   |
-| **CPU(m)**                             | **Memory(Mi)**                           | **CPU(m)**    | **Memory(Mi)**  |                |      |      |      |   |
-| REGPROC                                | REGPROC-GROUP1                           | 1000          | 1000            | 1000           | 1000 | 500  | 500  | 2 |
-| REGPROC                                | REGPROC-STATUS                           | 700           | 1500            | 700            | 1500 | 950  | 950  | 2 |
-| REGPROC                                | REGPROC-TRANS                            | 1000          | 5000            | 1000           | 5000 | 3750 | 3750 | 2 |
-| KERNEL                                 | SYNCDATA                                 | 2000          | 2500            | 2000           | 2500 | 1750 | 1750 | 3 |
-| KEYMANAGER                             | KEYMANAGER                               | 2000          | 6000            | 2000           | 6000 | 4250 | 4250 | 4 |
-| KERNEL                                 | MASTERDATA                               | 500           | 2250            | 500            | 2250 | 1500 | 1500 | 2 |
-| KERNEL                                 | AUDITMANAGER                             | 2000          | 5000            | 2000           | 5000 | 3250 | 3250 | 2 |
-| KERNEL                                 | AUTHMANAGER                              | 1000          | 5000            | 1000           | 5000 | 3150 | 3150 | 3 |
-| kafka                                  | kafka                                    | 2000          | 5000            | 2000           | 5000 |      |      | 5 |
+| **NameSpace**                          | **Deployment**                           |            |                | **Resources** |                | **Java Option** |         | **No.of Pods** |
+| -------------------------------------- | ---------------------------------------- | ---------- | -------------- | ------------- | -------------- | --------------- | ------- | -------------- |
+| <p><strong>Limits</strong></p><p> </p> | <p><strong>Requests</strong></p><p> </p> |            |                |               |                | **Min**         | **Max** |                |
+|                                        |                                          | **CPU(m)** | **Memory(Mi)** | **CPU(m)**    | **Memory(Mi)** |                 |         |                |
+| REGPROC                                | REGPROC-GROUP1                           | 1000       | 1000           | 1000          | 1000           | 500             | 500     | 2              |
+| REGPROC                                | REGPROC-STATUS                           | 700        | 1500           | 700           | 1500           | 950             | 950     | 2              |
+| REGPROC                                | REGPROC-TRANS                            | 1000       | 5000           | 1000          | 5000           | 3750            | 3750    | 2              |
+| KERNEL                                 | SYNCDATA                                 | 2000       | 2500           | 2000          | 2500           | 1750            | 1750    | 3              |
+| KEYMANAGER                             | KEYMANAGER                               | 2000       | 6000           | 2000          | 6000           | 4250            | 4250    | 4              |
+| KERNEL                                 | MASTERDATA                               | 500        | 2250           | 500           | 2250           | 1500            | 1500    | 2              |
+| KERNEL                                 | AUDITMANAGER                             | 2000       | 5000           | 2000          | 5000           | 3250            | 3250    | 2              |
+| KERNEL                                 | AUTHMANAGER                              | 1000       | 5000           | 1000          | 5000           | 3150            | 3150    | 3              |
+| kafka                                  | kafka                                    | 2000       | 5000           | 2000          | 5000           |                 |         | 5              |
 
 ## **Performance Analysis**
 

@@ -69,13 +69,13 @@ Performance data load has been populated before the run to ensure realistic resu
 
 #### **Workload Model**
 
-| **Scenario Name**                                                     | **Module Name** | **API Endpoint**                                                      | **SLA (ms)** | <p><strong>Weightage/</strong></p><p><strong>Load Distribution</strong></p> | **Users**          | **Throughput (TPS)** | **Target Volume**        |
-| --------------------------------------------------------------------- | --------------- | --------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------- | ------------------ | -------------------- | ------------------------ |
-| Authentication with OTP                                               | IDA             |  idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} |  1000        | <p> </p><p> 40%</p>                                                         | <p> </p><p> 21</p> | <p> </p><p> 20</p>   | <p> </p><p> 7,20,000</p> |
-| idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} |  1000           | 7,20,000                                                              |              |                                                                             |                    |                      |                          |
-| Authentication with Biometrics                                        | IDA             | idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} | 1000         | 25%                                                                         | 14                 | 12.5                 | 4,50,000                 |
-| Authentication with Demographics                                      | IDA             | idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} | 1000         | 15%                                                                         | 9                  | 7.5                  | 2,70,000                 |
-| Ekyc with Biometrics                                                  | IDA             | idauthentication/v1/kyc/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}  | 1000         | 20%                                                                         | 11                 | 10                   | 3,60,000                 |
+| **Scenario Name**                | **Module Name** | **API Endpoint**                                                      | **SLA (ms)** | <p><strong>Weightage/</strong></p><p><strong>Load Distribution</strong></p> | **Users**          | **Throughput (TPS)** | **Target Volume**        |
+| -------------------------------- | --------------- | --------------------------------------------------------------------- | ------------ | --------------------------------------------------------------------------- | ------------------ | -------------------- | ------------------------ |
+| Authentication with OTP          | IDA             |  idauthentication/v1/otp/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} |  1000        | <p> </p><p> 40%</p>                                                         | <p> </p><p> 21</p> | <p> </p><p> 20</p>   | <p> </p><p> 7,20,000</p> |
+|                                  |                 | idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} | 1000         |                                                                             |                    |                      | 7,20,000                 |
+| Authentication with Biometrics   | IDA             | idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} | 1000         | 25%                                                                         | 14                 | 12.5                 | 4,50,000                 |
+| Authentication with Demographics | IDA             | idauthentication/v1/auth/${mispLicenseKey}/${rpPartnerId}/${rpApiKey} | 1000         | 15%                                                                         | 9                  | 7.5                  | 2,70,000                 |
+| Ekyc with Biometrics             | IDA             | idauthentication/v1/kyc/${mispLicenseKey}/${rpPartnerId}/${rpApiKey}  | 1000         | 20%                                                                         | 11                 | 10                   | 3,60,000                 |
 
 ## **Test Result**
 
@@ -96,7 +96,7 @@ Performance data load has been populated before the run to ensure realistic resu
 | Date: 2025/12/12 (10 Hours)              |                                                   |                            |                  |                                                      |                                                          |                                                              |                                                         |             |
 |                                          |                                                   |                            | **# Samples**    | <p><strong>Min</strong><br><strong>(ms)</strong></p> | <p><strong>Average</strong><br><strong>(ms)</strong></p> | <p><strong>95% Line</strong></p><p><strong>(ms)</strong></p> | <p><strong>Max</strong></p><p><strong>(ms)</strong></p> | **Error %** |
 | S01 T01 Authentication with OTP          | S01 T01 Authentication with OTP Endpoint          |  idauthentication/v1/otp/  | 7,19,832         | 37.0                                                 | 87.1                                                     | 120.0                                                        | 2910.0                                                  | 1.4%        |
-| S01 T02 Send OTP Endpoint                | ${mispLicenseKey}/                                |                            | 7,19,855         | 24.0                                                 | 143.0                                                    | 224.0                                                        | 3448.0                                                  | 1.4%        |
+|                                          | S01 T02 Send OTP Endpoint                         | ${mispLicenseKey}/         | 7,19,855         | 24.0                                                 | 143.0                                                    | 224.0                                                        | 3448.0                                                  | 1.4%        |
 | S02 T01 Authentication with Biometrics   | S02 T01 Authentication with Biometrics Endpoint   | ${rpPartnerId}/${rpApiKey} | 4,68,075         | 74.0                                                 | 175.3                                                    | 217.0                                                        | 4344.0                                                  | 0.7%        |
 | S03 T01 Authentication with Demographics | S03 T01 Authentication with Demographics Endpoint | idauthentication/v1/auth/$ | 2,87,945         | 38.0                                                 | 81.1                                                     | 112.0                                                        | 3291.0                                                  | 0.5%        |
 | S04 T01 Ekyc with Biometrics             | S04 T01 Ekyc with Biometrics Endpoint             | {mispLicenseKey}/          | 3,59,781         | 76.0                                                 | 197.1                                                    | 245.0                                                        | 5183.0                                                  | 0.7%        |
@@ -155,42 +155,42 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 Following configuration was used for the performance test.
 
-| **IDA Performance Run Preparation services** |                      |               |                |                 |                |      |      |   |
-| -------------------------------------------- | -------------------- | ------------- | -------------- | --------------- | -------------- | ---- | ---- | - |
-| **NameSpace**                                | **Deployment**       | **Resources** |                | **Java Option** | **No.of Pods** |      |      |   |
-|                                              |                      | **Limits**    | **Requests**   | **Min**         | **Max**        |      |      |   |
-|                                              |                      | **CPU(m)**    | **Memory(Mi)** | **CPU(m)**      | **Memory(Mi)** |      |      |   |
-| IDA                                          | IDA-AUTH             | 2000          | 5000           | 2000            | 5000           | 3000 | 3000 | 1 |
-| IDA                                          | IDA-INTERNAL         | 500           | 6000           | 500             | 6000           | 2250 | 2250 |   |
-| IDA                                          | IDA-OTP              | 500           | 4000           | 500             | 4000           | 3250 | 3250 | 1 |
-| WEBSUB                                       | WEBSUB-CONSOOLIDATOR | 200           | 1500           | 200             | 1500           | 750  | 750  | 1 |
-| WEBSUB                                       | WEBSUB               | 2000          | 6000           | 2000            | 6000           | 5250 | 5250 | 1 |
-| biosdk                                       | biosdk-service       | 1500          | 4000           | 1500            | 4000           | 3250 | 3250 | 1 |
-| kafka                                        | kafka                | 2000          | 5000           | 2000            | 5000           |      |      | 5 |
-| KEYMANAGER                                   | KEYMANAGER           | 2000          | 6000           | 2000            | 6000           | 4250 | 4250 | 4 |
-| KERNEL                                       | NOTIFIER             | 1500          | 5000           | 1500            | 5000           | 1250 | 1250 | 3 |
-| KERNEL                                       | OTPMANAGER           | 500           | 3100           | 500             | 3100           | 800  | 800  | 3 |
-| KERNEL                                       | AUDITMANAGER         | 2000          | 5000           | 2000            | 5000           | 3250 | 3250 | 2 |
-| IDREPO                                       | CREDENTIAL           | 600           | 3800           | 600             | 3800           | 3050 | 3050 | 3 |
-| IDREPO                                       | CREDENTIALREQUEST    | 1000          | 8000           | 1000            | 8000           | 2900 | 2900 | 3 |
-| IDREPO                                       | IDENTITY             | 2000          | 10000          | 2000            | 10000          | 3850 | 3850 | 4 |
-| IDREPO                                       | VID                  | 600           | 5001           | 600             | 5001           | 2250 | 2250 | 3 |
+| **IDA Performance Run Preparation services** |                      |               |                |              |                |                 |         |                |
+| -------------------------------------------- | -------------------- | ------------- | -------------- | ------------ | -------------- | --------------- | ------- | -------------- |
+| **NameSpace**                                | **Deployment**       | **Resources** |                |              |                | **Java Option** |         | **No.of Pods** |
+|                                              |                      | **Limits**    |                | **Requests** |                | **Min**         | **Max** |                |
+|                                              |                      | **CPU(m)**    | **Memory(Mi)** | **CPU(m)**   | **Memory(Mi)** |                 |         |                |
+| IDA                                          | IDA-AUTH             | 2000          | 5000           | 2000         | 5000           | 3000            | 3000    | 1              |
+| IDA                                          | IDA-INTERNAL         | 500           | 6000           | 500          | 6000           | 2250            | 2250    |                |
+| IDA                                          | IDA-OTP              | 500           | 4000           | 500          | 4000           | 3250            | 3250    | 1              |
+| WEBSUB                                       | WEBSUB-CONSOOLIDATOR | 200           | 1500           | 200          | 1500           | 750             | 750     | 1              |
+| WEBSUB                                       | WEBSUB               | 2000          | 6000           | 2000         | 6000           | 5250            | 5250    | 1              |
+| biosdk                                       | biosdk-service       | 1500          | 4000           | 1500         | 4000           | 3250            | 3250    | 1              |
+| kafka                                        | kafka                | 2000          | 5000           | 2000         | 5000           |                 |         | 5              |
+| KEYMANAGER                                   | KEYMANAGER           | 2000          | 6000           | 2000         | 6000           | 4250            | 4250    | 4              |
+| KERNEL                                       | NOTIFIER             | 1500          | 5000           | 1500         | 5000           | 1250            | 1250    | 3              |
+| KERNEL                                       | OTPMANAGER           | 500           | 3100           | 500          | 3100           | 800             | 800     | 3              |
+| KERNEL                                       | AUDITMANAGER         | 2000          | 5000           | 2000         | 5000           | 3250            | 3250    | 2              |
+| IDREPO                                       | CREDENTIAL           | 600           | 3800           | 600          | 3800           | 3050            | 3050    | 3              |
+| IDREPO                                       | CREDENTIALREQUEST    | 1000          | 8000           | 1000         | 8000           | 2900            | 2900    | 3              |
+| IDREPO                                       | IDENTITY             | 2000          | 10000          | 2000         | 10000          | 3850            | 3850    | 4              |
+| IDREPO                                       | VID                  | 600           | 5001           | 600          | 5001           | 2250            | 2250    | 3              |
 
 &#x20;
 
 &#x20;
 
-| **IDA Performance Run Required services** |                |            |                |                 |                |      |      |   |
-| ----------------------------------------- | -------------- | ---------- | -------------- | --------------- | -------------- | ---- | ---- | - |
-| **NameSpace**                             | **Deployment** |            | **Resources**  | **Java Option** | **No.of Pods** |      |      |   |
-| **Limits**                                | **Requests**   | **Min**    | **Max**        |                 |                |      |      |   |
-| **CPU(m)**                                | **Memory(Mi)** | **CPU(m)** | **Memory(Mi)** |                 |                |      |      |   |
-| IDA                                       | IDA-AUTH       | 2000       | 5000           | 2000            | 5000           | 3000 | 3000 | 4 |
-| IDA                                       | IDA-OTP        | 1000       | 4000           | 500             | 4000           | 3250 | 3250 | 2 |
-| biosdk                                    | biosdk-service | 1500       | 4000           | 1500            | 4000           | 3250 | 3250 | 3 |
-| KERNEL                                    | NOTIFIER       | 1500       | 5000           | 1500            | 5000           | 1250 | 1250 | 3 |
-| KERNEL                                    | OTPMANAGER     | 500        | 3100           | 500             | 3100           | 800  | 800  | 3 |
-| KERNEL                                    | AUDITMANAGER   | 2000       | 5000           | 2000            | 5000           | 3250 | 3250 | 2 |
+| **IDA Performance Run Required services** |                |              |                |              |                |                 |         |                |
+| ----------------------------------------- | -------------- | ------------ | -------------- | ------------ | -------------- | --------------- | ------- | -------------- |
+| **NameSpace**                             | **Deployment** |              | **Resources**  |              |                | **Java Option** |         | **No.of Pods** |
+|                                           |                |  **Limits**  |                | **Requests** |                | **Min**         | **Max** |                |
+|                                           |                | **CPU(m)**   | **Memory(Mi)** | **CPU(m)**   | **Memory(Mi)** |                 |         |                |
+| IDA                                       | IDA-AUTH       | 2000         | 5000           | 2000         | 5000           | 3000            | 3000    | 4              |
+| IDA                                       | IDA-OTP        | 1000         | 4000           | 500          | 4000           | 3250            | 3250    | 2              |
+| biosdk                                    | biosdk-service | 1500         | 4000           | 1500         | 4000           | 3250            | 3250    | 3              |
+| KERNEL                                    | NOTIFIER       | 1500         | 5000           | 1500         | 5000           | 1250            | 1250    | 3              |
+| KERNEL                                    | OTPMANAGER     | 500          | 3100           | 500          | 3100           | 800             | 800     | 3              |
+| KERNEL                                    | AUDITMANAGER   | 2000         | 5000           | 2000         | 5000           | 3250            | 3250    | 2              |
 
 &#x20;
 
