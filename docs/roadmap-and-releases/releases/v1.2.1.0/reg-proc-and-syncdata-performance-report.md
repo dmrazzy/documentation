@@ -8,7 +8,7 @@ This report will cover only APIs for Registration Packet Upload & Sync Data from
 
 This Performance Report provides a comprehensive analysis of the system’s responsiveness, reliability, and scalability for Registration client sync. It captures key performance metrics such as latency, throughput, resource utilization and memory consumption. This report is designed to help stakeholders understand how MOSIP v1.2.1.0 performs in real-world scenarios, its potential bottlenecks and recommendation for improvements.
 
-**For additional details on functional enhancements, refer to**: [Release Notes 1.2.1.0](https://mosip.atlassian.net/wiki/spaces/ENGG/pages/2285699531)
+**For additional details on functional enhancements, refer to**: [Release Notes 1.2.1.0](./)
 
 ## **Summary**
 
@@ -124,7 +124,7 @@ The 95<sup>th</sup> Line will be considered the primary Response Time metric whi
 
 #### **Response Time over Time**
 
-&#x20;  &#x20;
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-response-time-over-time.png" alt=""><figcaption></figcaption></figure>
 
 #### &#x20;**Observations:**
 
@@ -136,7 +136,23 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 **REGPROC**
 
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-regproc-a.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-regproc-b.png" alt=""><figcaption></figcaption></figure>
+
+
+
 **KERNEL**&#x20;
+
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-kernel-1.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-kernel-2.png" alt=""><figcaption></figcaption></figure>
+
+
 
 **Observations:**
 
@@ -146,7 +162,23 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 **KEYMANAGER**&#x20;
 
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-keymanager-1.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-kernelmanager-2.png" alt=""><figcaption></figcaption></figure>
+
+
+
 **Kafka**&#x20;
+
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-kafka-1.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/1210-regproc-syncdata-tr-kafka-2.png" alt=""><figcaption></figcaption></figure>
+
+
 
 **Observations:**
 
@@ -156,7 +188,7 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 ### **Resource Calculator**
 
-**(Link To MOSIP Doc)**
+Find the '**Resource Calculator**' here on this [**page**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md).
 
 ### **Resource level configuration**
 

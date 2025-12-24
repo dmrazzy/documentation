@@ -130,8 +130,11 @@ Below are a few key bugs marked as known issues for this release. Please click [
 ### Learn More
 
 * [Feature Documentation](https://docs.mosip.io/1.2.0/)
-* [QA Reports](test-report/)
-* **Documents published/revised during the release**:
+* **QA Reports**:
+  * [QA Report](test-report.md)
+  * [IDA Performance Report](ida-performance-report.md)
+  * [Reg Proc and SyncData Performance Report](reg-proc-and-syncdata-performance-report.md)
+* **Documents published/revised with the release**:
   * [Versioning Policy](../versioning-policy.md)
   * [Upgrade Runbook](../../../setup/upgrade/upgrade-runbook-1.2.1.0.md)
   * [Hardware Requirements](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md)

@@ -8,7 +8,7 @@ This report will cover only ID Authentication.
 
 This Performance Report provides a comprehensive analysis of the system’s responsiveness, reliability, and scalability for above mentioned use case. It captures key performance metrics such as latency, throughput, resource utilization and memory consumption. This report is designed to help stakeholders understand how MOSIP v1.2.1.0 performs in real-world scenarios, its potential bottlenecks and recommendation for improvements.
 
-**For additional details on functional enhancements, refer to**: [Release Notes 1.2.1.0](https://mosip.atlassian.net/wiki/spaces/ENGG/pages/2285699531)
+**For additional details on functional enhancements, refer to**: [Release Notes 1.2.1.0](./)
 
 ## **Summary**
 
@@ -112,7 +112,7 @@ Performance data load has been populated before the run to ensure realistic resu
 
 #### **Response Time over Time**
 
-**\[Image]**
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-response-time.png" alt=""><figcaption></figcaption></figure>
 
 
 
@@ -129,17 +129,31 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 **IDA**&#x20;
 
-**\[Image]**
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-ida-1.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-ida-2.png" alt=""><figcaption></figcaption></figure>
 
 
 
 **BIOSDK**&#x20;
 
-**\[Image]**
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-biosdk-1.png" alt=""><figcaption></figcaption></figure>
+
+
+
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-biosdk-2.png" alt=""><figcaption></figcaption></figure>
+
+
 
 **KERNEL**&#x20;
 
-**\[Image]**
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-kernel-1.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../.gitbook/assets/1210-ida-tr-kernel-2.png" alt=""><figcaption></figcaption></figure>
+
+
 
 **Observations:**
 
@@ -149,7 +163,7 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 ### **Resource Calculator**
 
-**(Link To MOSIP Doc)**
+Find the '**Resource Calculator**' here on this [**page**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md).
 
 ### **Resource level configuration**
 
