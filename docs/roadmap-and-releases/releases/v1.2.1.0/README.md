@@ -130,10 +130,10 @@ Below are a few key bugs marked as known issues for this release. Please click [
 ### Learn More
 
 * [Feature Documentation](https://docs.mosip.io/1.2.0/)
-* [QA Reports](test-report.md)
+* [QA Reports](test-report/)
 * **Documents published/revised during the release**:
   * [Versioning Policy](../versioning-policy.md)
-  * [Upgrade Runbook](../../../setup/upgrade/upgrade-runbook/upgrade-runbook-1.2.1.0.md)
+  * [Upgrade Runbook](../../../setup/upgrade/upgrade-runbook-1.2.1.0.md)
   * [Hardware Requirements](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md)
   * [Adapting Changes in Administration Roles](../../../setup/upgrade/upgrade-runbook/mock-services/upgrade-admin-services-roles-guide.md)
   * [Packet Creator Setup ](../../../id-lifecycle-management/supporting-components/quality-manager/test-automation/packet-creator-setup.md)
