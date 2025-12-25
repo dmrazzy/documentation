@@ -35,64 +35,49 @@ Below are a few key bugs addressed in this release. Please click [here](https://
 
 ### Repositories Released
 
-| Repositories                | Tags |
-| --------------------------- | ---- |
-| admin-ui                    |      |
-| artifactory-ref-impl        |      |
-| admin-services              |      |
-| audit-manager               |      |
-| biosdk-client               |      |
-| commons                     |      |
-| id-authentication           |      |
-| id-repository               |      |
-| otp-manager                 |      |
-| packet-manager              |      |
-| demosdk                     |      |
-| durian                      |      |
-| keymanager                  |      |
-| mosip-config                |      |
-| admin-ui                    |      |
-| captcha                     |      |
-| commons                     |      |
-| registration                |      |
-| digital-credential-plugin   |      |
-| digital-card-service        |      |
-| khazana                     |      |
-| mosip-openid-bridge         |      |
-| mosip-ref-impl              |      |
-| otp manager                 |      |
-| packet-manager              |      |
-| print                       |      |
-| resident-services           |      |
-| websub                      |      |
-| commons                     |      |
-| mosip-data                  |      |
-| reporting                   |      |
-| data-archive                |      |
-| k8s-infra                   |      |
-| keycloak                    |      |
-| mosip-file-server           |      |
-| mosip-helm                  |      |
-| mosip-infra                 |      |
-| postgres-init               |      |
-| tusd-server                 |      |
-| audit-manager               |      |
-| bio-utils                   |      |
-| biosdk-client               |      |
-| biosdk-services             |      |
-| converters                  |      |
-| demosdk                     |      |
-| id-repository               |      |
-| mosip-mock-services         |      |
-| nfiq                        |      |
-| mosip-onboarding            |      |
-| migration-utility           |      |
-| pre-registration            |      |
-| partner-management-services |      |
-| pre-registration-ui         |      |
-| mosip-functional-tests      |      |
-| id-authentication           |      |
-| keymanager                  |      |
+| Repositories         | Tags                                                                |
+| -------------------- | ------------------------------------------------------------------- |
+| admin-ui             | [v1.3.0](https://github.com/mosip/admin-ui/tree/v1.3.0)             |
+| artifactory-ref-impl | [v1.3.0](https://github.com/mosip/artifactory-ref-impl/tree/v1.3.0) |
+| admin-services       | [v1.3.0](https://github.com/mosip/admin-services/tree/v1.3.0)       |
+| audit-manager        | [v1.3.0](https://github.com/mosip/audit-manager/tree/v1.3.0)        |
+| biosdk-client        | [v1.3.0](https://github.com/mosip/biosdk-client/tree/v1.3.0)        |
+| commons              | [v1.3.0](https://github.com/mosip/commons/tree/v1.3.0)              |
+| id-authentication    | [v1.3.0](https://github.com/mosip/id-authentication/tree/v1.3.0)    |
+| id-repository        | [v1.3.0](https://github.com/mosip/id-repository/tree/v1.3.0)        |
+| otp-manager          | [v1.3.0](https://github.com/mosip/otp-manager/tree/v1.3.0)          |
+| packet-manager       | [v1.3.0](https://github.com/mosip/packet-manager/tree/v1.3.0)       |
+| demosdk              | [v1.3.0](https://github.com/mosip/demosdk/tree/v1.3.0)              |
+| durian               | [v1.3.0](https://github.com/mosip/durian/tree/v1.3.0)               |
+| keymanager           | [v1.3.0](https://github.com/mosip/keymanager/tree/v1.3.0)           |
+| mosip-config         | [v1.3.0](https://github.com/mosip/mosip-config/tree/v1.3.0)         |
+| admin-ui             | [v1.3.0](https://github.com/mosip/admin-ui/tree/v1.3.0)             |
+| captcha              | [v1.3.0](https://github.com/mosip/captcha/tree/v0.1.0)              |
+| registration         | [v1.3.0](https://github.com/mosip/registration/tree/v1.3.0)         |
+| digital-card-service | [v1.3.0](https://github.com/mosip/digital-card-service/tree/v1.3.0) |
+| khazana              | [v1.3.0](https://github.com/mosip/khazana/tree/v1.3.0)              |
+| mosip-openid-bridge  | [v1.3.0](https://github.com/mosip/mosip-openid-bridge/tree/v1.3.0)  |
+| mosip-ref-impl       | [v1.3.0](https://github.com/mosip/mosip-ref-impl/tree/v1.3.0)       |
+| print                | [v1.3.0](https://github.com/mosip/print/tree/v1.3.0)                |
+| resident-services    | [v1.3.0](https://github.com/mosip/resident-services/tree/v1.3.0)    |
+| websub               | [v1.3.0](https://github.com/mosip/websub/tree/v1.3.0)               |
+| mosip-data           | [v1.3.0](https://github.com/mosip/mosip-data/tree/v1.3.0)           |
+| k8s-infra            | [v1.2.1.1](https://github.com/mosip/k8s-infra/tree/v1.2.1.1)        |
+| keycloak             | [v1.3.0](https://github.com/mosip/keycloak/tree/v1.3.0)             |
+| mosip-file-server    | [v1.3.0](https://github.com/mosip/mosip-file-server/tree/v1.3.0)    |
+| mosip-helm           | [v1.3.0](https://github.com/mosip/mosip-helm/tree/v1.3.0)           |
+| mosip-infra          |                                                                     |
+| postgres-init        | [v1.3.0](https://github.com/mosip/postgres-init/tree/v1.3.0)        |
+| bio-utils            | [v1.3.0](https://github.com/mosip/bio-utils/tree/v1.3.0)            |
+| biosdk-client        | [v1.3.0](https://github.com/mosip/biosdk-client/tree/v1.3.0)        |
+| biosdk-services      | [v1.3.0](https://github.com/mosip/biosdk-services/tree/v1.3.0)      |
+| converters           | [v1.3.0](https://github.com/mosip/converters/tree/v1.3.0)           |
+| demosdk              | [v1.3.0](https://github.com/mosip/demosdk/tree/v1.3.0)              |
+| id-repository        | [v1.3.0](https://github.com/mosip/id-repository/tree/v1.3.0)        |
+| mosip-mock-services  | [v1.3.0](https://github.com/mosip/mosip-mock-services/tree/v1.3.0)  |
+| nfiq                 | [v0.1.0](https://github.com/mosip/nfiq/tree/v0.1.0)                 |
+| pre-registration     | [v1.3.0](https://github.com/mosip/pre-registration/tree/v1.3.0)     |
+| pre-registration-ui  | [v1.3.0](https://github.com/mosip/pre-registration-ui/tree/v1.3.0)  |
 
 ### Known Issues
 
