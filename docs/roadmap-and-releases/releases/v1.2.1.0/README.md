@@ -135,7 +135,7 @@ Below are a few key bugs marked as known issues for this release. Please click [
   * [Upgrade Runbook 1.2.1.0](../../../setup/upgrade/upgrade-runbook-1.2.1.0.md)
   * [Hardware Requirements](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md)
   * [Adapting Changes in Administration Roles](../../../setup/upgrade/upgrade-runbook/mock-services/upgrade-admin-services-roles-guide.md)
-* **QA Reports**:
+* **Reports**:
   * [QA Report](test-report.md)
   * [IDA Performance Report](ida-performance-report.md)
   * [Reg Proc and SyncData Performance Report](reg-proc-and-syncdata-performance-report.md)
