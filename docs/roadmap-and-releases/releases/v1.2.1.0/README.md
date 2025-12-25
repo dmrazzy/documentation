@@ -87,12 +87,13 @@ Below are a few key bugs marked as known issues for this release. Please click [
 
 ### Compatibility Matrix
 
-| Module                     | Version  |
-| -------------------------- | -------- |
-| Partner Management Service | v1.2.2.2 |
-| eSignet                    | v1.4.1   |
-| Resident Portal - UI       | v0.9.0   |
-| Registration Client        | v1.2.0.2 |
+| Module                     | Version                                                                        |
+| -------------------------- | ------------------------------------------------------------------------------ |
+| Partner Management Service | [v1.2.2.2](https://github.com/mosip/partner-management-services/tree/v1.2.2.2) |
+| eSignet                    | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                         |
+| Resident Portal - UI       | [v0.9.0](https://github.com/mosip/resident-ui/releases/tag/v0.9.0)             |
+| Registration Client        | [v1.2.0.2](https://github.com/mosip/registration-client/tree/v1.2.0.2)         |
+| mosip-automation-tests     | [v1.3.0](https://github.com/mosip/mosip-automation-tests/tree/release-1.3.x)   |
 
 ## Dependency Matrix
 
