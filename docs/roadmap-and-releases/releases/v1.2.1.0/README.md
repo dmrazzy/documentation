@@ -66,7 +66,7 @@ Below are a few key bugs addressed in this release. Please click [here](https://
 | keycloak             | [v1.3.0](https://github.com/mosip/keycloak/tree/v1.3.0)             |
 | mosip-file-server    | [v1.3.0](https://github.com/mosip/mosip-file-server/tree/v1.3.0)    |
 | mosip-helm           | [v1.3.0](https://github.com/mosip/mosip-helm/tree/v1.3.0)           |
-| mosip-infra          |                                                                     |
+| mosip-infra          | [v1.2.1.0](https://github.com/mosip/mosip-infra/tree/v1.2.1.0)      |
 | postgres-init        | [v1.3.0](https://github.com/mosip/postgres-init/tree/v1.3.0)        |
 | bio-utils            | [v1.3.0](https://github.com/mosip/bio-utils/tree/v1.3.0)            |
 | biosdk-client        | [v1.3.0](https://github.com/mosip/biosdk-client/tree/v1.3.0)        |
