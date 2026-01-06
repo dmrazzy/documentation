@@ -4,7 +4,7 @@
 
 **Release Type:** Major Release
 
-**Release Date:** 26th January, 2025
+**Release Date:** 26th December, 2025
 
 ### **Overview**
 
