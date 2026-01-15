@@ -384,7 +384,7 @@ Specification Document(s): Section 3, Section 4
 
 ### 6. Acknowledgments
 
-This work is the result of the dedicated efforts of contributors who recognize the critical importance of interoperability and a consistent QR code specification. The revised version has been shaped significantly by the input of our working group committee, comprising members from the following organizations: GetGroup, PWC, Tech 5, UNHCR, Ooru, GIZ.
+This work is the result of the dedicated efforts of contributors who recognize the critical importance of interoperability and a consistent QR code specification. The revised version has been shaped significantly by the input of our working group committee, comprising members from the following organizations: GetGroup, PWC, Tech 5, UNHCR, Ooru, GIZ, OpenSPP.
 
 We extend our gratitude to the committee members for their invaluable time and insights throughout the evaluation phase.
 
@@ -396,8 +396,9 @@ Tech 5: Bejoy Ak, Nelson Branco, Rahul Parthe\
 UNHCR: Norbert Trosien, Samantha Eisenhauer, Sam Jefferies\
 Ooru: Rounak Nayak, Priyank Trivdei\
 GIZ: Anita Mittal, Aisha Merhebi\
+OpenSPP: Jeremi Joslin\
 \
-MOSIP: Harini Sampathkumar, Janardhan BS, Mahammed Taheer, Mayura Deshmukh, Pragya Kumari, Preeti Hongal, Ramesh Narayanan, Reeba Thomas, Resham Chugani, Sanchi Singh, Sasikumar Ganesan, Sivanand Lanka, Sreenadh S, Swati Goel, Varaniya Selvaraja, Vishwanath V
+MOSIP: Janardhan BS, Mahammed Taheer, Mayura Deshmukh, Pragya Kumari, Preeti Hongal, Ramesh Narayanan, Reeba Thomas, Resham Chugani, Sanchi Singh, Sasikumar Ganesan, Sivanand Lanka, Swati Goel, Varaniya Selvaraja, Vishwanath V
 
 ### 7. Authors
 
@@ -405,11 +406,7 @@ Mahammed Taheer ([mohd.taheer@gmail.com](mailto:mohd.taheer@gmail.com))
 
 Resham Chugani ([resham@mosip.io](mailto:resham@mosip.io))
 
-Rounak Nayak ([rounak@ooru.io](mailto:rounak@ooru.io))
-
-Sasikumar G ([sasi@duck.com](mailto:sasi@duck.com))
-
-Sreenadh S ([sreeavtar@gmail.com](mailto:sreeavtar@gmail.com))
+Sasikumar G ([sasi@](mailto:sasi@duck.com)mosip.io)
 
 ### 8. What Changed
 
