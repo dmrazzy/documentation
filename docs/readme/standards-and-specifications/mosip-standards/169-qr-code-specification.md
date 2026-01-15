@@ -122,6 +122,21 @@ These fields are inherently part of the CWT structure and must be interpreted ac
 | `5`       | `int`          | Not Before (nbf)      | Timestamp before which the credential must not be accepted |
 | `6`       | `int`          | Issued At (iat)       | Timestamp indicating when the credential was issued        |
 
+#### <mark style="color:blue;">**Note on Standard COSE Attributes**</mark>
+
+The attributes listed below are already defined as part of the standard COSE structure, and may be present in either the protected or unprotected COSE headers. As such, they do not need to be separately specified within Claim 169.
+
+Implementers MUST refer to the standard COSE specifications for the correct format, semantics, and usage of these fields. These attributes are inherently part of the COSE structure and must be interpreted in accordance with the relevant standards. For details, refer to the [IANA COSE registry here](https://www.iana.org/assignments/cose/cose.xhtml). The issuer may choose whether to include any of these attributes for purposes such as **public key discovery**, taking into account practical constraints such as QR code size limitations.
+
+**Included Attributes:**
+
+| Attribute | Attribute Type  | Attribute Name | Description                             |
+| --------- | --------------- | -------------- | --------------------------------------- |
+| `32`      | `COSE_X509`     | x4bag          | An unordered list of X.509 certificates |
+| `33`      | `COSE_X509`     | x5chain        | An ordered chain of X.509 certificates  |
+| `34`      | `COSE_CertHash` | x5t            | Hash of an X.509 certificate            |
+| `35`      | `uri`           | x5u            | URI pointing to an X.509 certificate    |
+
 #### <mark style="color:blue;">**Note on Status of Credential**</mark>
 
 The status of the credential, when represented using CWT, is outside the scope of the Claim 169 CBOR structure. This specification does not define or constrain how credential status should be encoded or managed within a CWT. Issuers may determine the status handling mechanism independently, using the IETF-recommended CWT conventions, or any other standards-compliant method appropriate for their ecosystem. No specific guidance or constraints on CWT handling are prescribed by this specification.
@@ -410,5 +425,6 @@ Sreenadh S ([sreeavtar@gmail.com](mailto:sreeavtar@gmail.com))
 * **Inclusion of/updates to the following sections:**
   * [Guidelines](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#guidelines)
   * [Standard CWT attributes](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-standard-cwt-attributes)
+  * Standard COSE attributes
   * [Credential status](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#note-on-status-of-credential)&#x20;
   * [Security considerations](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-4.-security-considerations)
