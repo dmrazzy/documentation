@@ -9,6 +9,11 @@ icon: book-open
 
 ## Latest Releases
 
+**Version: 1.3.6 - API Test Commons**
+
+* Dat&#x65;**:** Coming Soon
+* [Release Notes](api-test-commons-releases/v1.3.6.md)
+
 **Version**: v1.2.1.0
 
 * Date: Coming Soon
