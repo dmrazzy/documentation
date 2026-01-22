@@ -1,28 +1,3 @@
-# MOSIP-CRVS Documentation - Improvement
-
-Refer to the attached document for detailed steps on improving the MOSIP-CRVS integration documentation.
-I have to make MOSIP-CRVS Integration content lucid and comprehensive and do away with ambiguity.
-I hosted a google meet cal with the SME and Product owner Rachik to get clarity on the existing content and what needs to be improved.
-Here is the attached transcript of the meeting for reference
-Also here is the note taken from the transcript which the google meet transcriber automatically took from the meeting.
-Having gone through this enlist the key points that needs to be said upfront which removed ambiguity.
-
-
-
-
----
-You know that the MOSIP-CRVS documentation is already here
-However the feedback from the stakeholder says the https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-crvs is ambiguaos and not comprehensive enough
-Although the other parts which is technical details as well as API etc may be fine 
-Therefore, we met and discussed this with Rachik and here is the transcript in the attached file
-Also consider the docs/interoperability/integrations/mosip-crvs/existing-integrations/_raw-transcript-note.md file which has some notes extracted
-Can you identify the key points from this transcript which needs to be said upfront in the documentation to remove ambiguity and make it more comprehensive
-
----
-
-
-
-
 Integrating a Civil Registration and Vital Statistics (CRVS) system with a Foundational Identity (ID) system is a critical task in Digital Public Infrastructure (DPI). There is no single "API doc" because these systems vary by country, but there are several **authoritative technical frameworks and integration guides** used by global experts.
 
 Here are the most important integration documents and models you should refer to:
@@ -79,4 +54,3 @@ UNICEF’s recent guidance focuses on the "Right to Legal Identity." It provides
 If you are designing an integration, I recommend starting with the **OpenCRVS documentation** because it contains the most granular technical details (APIs, webhooks, and data schemas).
 
 **Would you like me to find a specific API schema or a list of "Best Practices for Data Sharing" between these two systems?**
-
