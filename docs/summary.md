@@ -297,6 +297,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
+    * [ID Authentication 1.2.1.3 and Resident 1.2.1.3](roadmap-and-releases/releases/id-authentication-1.2.1.3-and-resident-1.2.1.3.md)
     * [v1.2.1.0](roadmap-and-releases/releases/v1.2.1.0/README.md)
       * [Test Report](roadmap-and-releases/releases/v1.2.1.0/test-report.md)
       * [IDA Performance Report](roadmap-and-releases/releases/v1.2.1.0/ida-performance-report.md)
