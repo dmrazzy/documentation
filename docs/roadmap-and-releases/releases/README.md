@@ -5,9 +5,14 @@ icon: book-open
 
 # Releases
 
-" **You can refer to** [**Release Naming Convention**](versioning-policy.md) _**t**_**o better understand how our releases are named and to help you navigate them with ease.**”
+"**You can refer to** [**Release Naming Convention**](versioning-policy.md) _**t**_**o better understand how our releases are named and to help you navigate them with ease**”.
 
 ## Latest Releases
+
+**Version:** ID Authentication 1.2.1.3 and Resident 1.2.1.3
+
+* Date: Coming Soon
+* [Release Notes](id-authentication-1.2.1.3-and-resident-1.2.1.3.md)
 
 **Version: 1.3.6 - API Test Commons**
 
