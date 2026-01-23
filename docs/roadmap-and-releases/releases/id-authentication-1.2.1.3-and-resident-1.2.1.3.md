@@ -4,7 +4,7 @@
 
 **Release Type:** Patch Release
 
-**Release Date:** Coming Soon
+**Release Date:** 22nd January, 2026
 
 ### Overview
 
@@ -29,12 +29,12 @@ This patch delivers targeted fixes and improvements to the automation scripts us
 
 ### Repositories Released
 
-| Repository        | Tags Released |
-| ----------------- | ------------- |
-| id-authentication | v1.2.1.3      |
-| resident          | v1.2.1.3      |
+| Repository        | Tags Released                                                        |
+| ----------------- | -------------------------------------------------------------------- |
+| id-authentication | [v1.2.1.3](https://github.com/mosip/id-authentication/tree/v1.2.1.3) |
+| resident          | [v1.2.1.3](https://github.com/mosip/resident-services/tree/v1.2.1.3) |
 
 ## Documentation
 
-* [ID Authentication Services](../../id-lifecycle-management/identity-verification/id-authentication-services/README.md)
-* [Resident Services](../../id-lifecycle-management/identity-management/resident-services/overview/README.md)
+* [ID Authentication Services](../../id-lifecycle-management/identity-verification/id-authentication-services/)
+* [Resident Services](../../id-lifecycle-management/identity-management/resident-services/overview/)

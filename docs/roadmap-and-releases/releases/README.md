@@ -9,14 +9,19 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: Infra
+
+* Date: 22nd January, 2026
+* [Release Notes](0.1.0-infra.md)
+
 **Version:** ID Authentication 1.2.1.3 and Resident 1.2.1.3
 
-* Date: Coming Soon
+* Date: 22nd January, 2026
 * [Release Notes](id-authentication-1.2.1.3-and-resident-1.2.1.3.md)
 
 **Version: 1.3.6 - API Test Commons**
 
-* Dat&#x65;**:** Coming Soon
+* Dat&#x65;**:** 22nd January, 2026
 * [Release Notes](api-test-commons-releases/v1.3.6.md)
 
 **Version**: v1.2.1.0
