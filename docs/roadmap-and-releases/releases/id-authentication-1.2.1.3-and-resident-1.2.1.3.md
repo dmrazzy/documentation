@@ -33,3 +33,8 @@ This patch delivers targeted fixes and improvements to the automation scripts us
 | ----------------- | ------------- |
 | id-authentication | v1.2.1.3      |
 | resident          | v1.2.1.3      |
+
+## Documentation
+
+* [ID Authentication Services](../../id-lifecycle-management/identity-verification/id-authentication-services/README.md)
+* [Resident Services](../../id-lifecycle-management/identity-management/resident-services/overview/README.md)

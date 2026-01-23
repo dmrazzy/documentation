@@ -6,6 +6,8 @@
 
 ---
 
+This has missing content added.
+
 ## Table of Contents
 
 1. [Introduction & Context](#1-introduction--context)
@@ -30,7 +32,30 @@
 
 ## 1.1 Purpose & Audience
 
-<!-- Missing Content - Add it -->
+### Purpose
+
+This document provides comprehensive technical guidance for integrating Civil Registration and Vital Statistics (CRVS) systems with the MOSIP platform. It covers architecture, APIs, workflows, security, and operational procedures required to establish a secure, scalable integration that enables automated identity lifecycle management from birth to death.
+
+### Target Audience
+
+This guide is intended for:
+
+- **System Integrators & Developers**: Responsible for implementing the technical integration between CRVS and MOSIP systems
+- **Technical Architects**: Designing the integration architecture and making technology decisions
+- **CRVS Application Developers**: Building or customizing CRVS applications to integrate with MOSIP
+- **MOSIP Administrators**: Configuring and managing MOSIP for CRVS integration
+- **Project Managers**: Understanding scope, timelines, and dependencies
+- **Security Teams**: Implementing authentication, authorization, and compliance requirements
+
+### Prerequisites
+
+Readers should have:
+
+- Working knowledge of MOSIP platform and its core modules
+- Understanding of RESTful APIs and JSON data formats
+- Familiarity with OAuth2 authentication and Keycloak
+- Basic understanding of CRVS workflows and vital event registration
+- Experience with integration design patterns and event-driven architectures
 
 
 ## 1.2 Integration Value Proposition
@@ -47,11 +72,102 @@ This synergy allows for the seamless management of an individual's identity acro
 
 ## 1.3 Document Navigation Guide
 
-<!-- Missing Content - Add it -->
+### How to Use This Document
+
+This guide follows a progressive disclosure structure, organized from conceptual understanding to detailed implementation.
+
+**Reading Paths:**
+
+1. **Quick Start Path** (For experienced MOSIP developers):
+   - Section 1.2: Value Proposition
+   - Section 2.3: Supported Use Cases
+   - Section 4: Integration Workflows
+   - Section 6: API Reference
+   - Section 7: Security Setup
+
+2. **Comprehensive Path** (For new integrators):
+   - Read sections 1-4 for context and principles
+   - Study sections 5-7 for technical architecture and security
+   - Follow sections 11-12 for setup and testing
+   - Reference sections 6, 14, 15 as needed
+
+3. **Architecture Path** (For architects and decision-makers):
+   - Sections 1-3: Context and principles
+   - Section 5: Technical Architecture
+   - Section 9: Error Handling
+   - Section 11.3: Performance & Scalability
+
+4. **Operations Path** (For administrators):
+   - Section 7: Security & Authentication
+   - Section 11: Operational Considerations
+   - Section 14: Troubleshooting
+
+### Document Conventions
+
+- **Bold text**: Important terms, UI elements, or emphasis
+- `Code formatting`: API endpoints, field names, technical values
+- > **Note**: Additional information or clarifications
+- ⚠️ **Warning**: Critical information about limitations or risks
+- ✅ **Best Practice**: Recommended approaches
+
+### Cross-References
+
+- Links in blue navigate to related sections within this document
+- External links direct to MOSIP documentation or specifications
+- See Section 15.2 for related MOSIP documentation
 
 ## 1.4 Terminology & Glossary
 
-<!-- Missing Content - Add it -->
+### CRVS Terms
+
+| **Term** | **Definition** |
+|---------|---------------|
+| **CRVS** | Civil Registration and Vital Statistics - System for recording vital events (birth, death, marriage, divorce) |
+| **CRA** | Civil Registration Authority - Government body responsible for vital event registration |
+| **Informant** | Person reporting a vital event (birth, death) to civil authorities |
+| **Vital Event** | Key life occurrence requiring official registration (birth, death, marriage, divorce) |
+| **Birth Certificate** | Official document issued by CRVS confirming birth registration |
+| **Death Certificate** | Official document issued by CRVS confirming death registration |
+
+### MOSIP Terms
+
+| **Term** | **Definition** |
+|---------|---------------|
+| **UIN** | Unique Identification Number - Permanent identifier assigned to individuals |
+| **VID** | Virtual ID - Temporary, revocable identifier linked to UIN for privacy protection |
+| **AID/RID** | Application ID / Registration ID - Unique identifier for tracking registration packets |
+| **Packet** | Data structure containing demographic/biometric information for identity registration |
+| **eSignet** | MOSIP's authentication service for identity verification |
+| **Introducer** | Registered individual with valid UIN who vouches for someone without biometrics (e.g., parent for infant) |
+| **PSUT** | Print Secure UIN Token - Secure token for printing eUIN cards without exposing actual UIN |
+| **WebSub** | Publish-subscribe protocol for real-time event notifications |
+| **ID Schema** | JSON schema defining structure and validation rules for identity data |
+| **Object Store** | Storage system for registration packets and documents |
+| **Registration Processor** | MOSIP module that validates and processes registration packets |
+| **Packet Manager** | MOSIP module that creates and manages registration packets |
+
+### Integration-Specific Terms
+
+| **Term** | **Definition** |
+|---------|---------------|
+| **Source of Truth** | System considered authoritative for specific data (CRVS for vital events) |
+| **Deduplication** | Process of identifying and preventing duplicate identity records |
+| **Credential Sharing** | Secure transmission of UIN/VID/PSUT token from MOSIP to CRVS |
+| **Partner Policy** | Configuration defining data sharing rules between MOSIP and partners |
+| **Centre ID** | Unique identifier for registration centers in MOSIP |
+| **Machine ID** | Unique identifier for devices used in registration process |
+| **Officer ID** | Unique identifier for registration officers in MOSIP |
+| **Camel Route** | Workflow definition for packet processing in MOSIP |
+
+### Status and Lifecycle Terms
+
+| **Term** | **Definition** |
+|---------|---------------|
+| **Infant** | Individual aged 0-5 years (configurable) without biometric enrollment |
+| **Minor** | Individual below legal age of majority (country-specific) |
+| **Adult** | Individual above configured age threshold with biometric enrollment |
+| **Deceased Flag** | Status indicator marking an identity as deceased (UIN remains active) |
+| **Packet Status** | Processing state of registration packet (Received, Processing, Completed, Rejected) |
 
 
 
@@ -63,11 +179,145 @@ This synergy allows for the seamless management of an individual's identity acro
 
 <div align="right"><figure><img src="../../../.gitbook/assets/CRVS (1).png" alt=""><figcaption><p>Birth and Death Registration</p></figcaption></figure></div>
 
-<!-- Missing Content - Add it --> (Needs detailed ecosystem explanation)
+The MOSIP-CRVS integration creates a unified identity ecosystem where vital event registration in CRVS automatically triggers identity lifecycle management in MOSIP. This integration bridges two critical government systems:
+
+### System Components
+
+**CRVS System:**
+- **Frontend**: Registration portals for CRA officers to capture vital event data
+- **Backend**: Business logic for vital event validation and certificate issuance
+- **Database**: Repository of birth, death, and other vital event records
+- **Certificate Generation**: Module for producing official birth/death certificates
+
+**MOSIP Platform:**
+- **Partner Management**: Onboards and manages CRVS as trusted partner
+- **Packet Manager**: Creates registration packets from CRVS data
+- **Registration Processor**: Validates and processes packets through workflows
+- **Identity Repository**: Stores demographic and biometric identity data
+- **eSignet**: Authenticates informants/introducers
+- **WebSub Hub**: Publishes real-time notifications to CRVS
+- **Credential Service**: Generates and shares UIN/VID/PSUT tokens
+
+### Data Flow
+
+1. **Birth/Death Event Occurs** → Informant reports to CRA
+2. **CRVS Captures Data** → Officer validates and enters information
+3. **Authentication** → eSignet verifies informant/introducer identity
+4. **Packet Creation** → CRVS calls Packet Manager API with event data
+5. **Workflow Trigger** → CRVS initiates processing via Trigger API
+6. **Validation & Processing** → Registration Processor validates packet
+7. **Identity Update** → MOSIP creates UIN (birth) or updates status (death)
+8. **Credential Sharing** → WebSub notifies CRVS of completion
+9. **Certificate Issuance** → CRVS issues certificate with UIN reference
+
+### Integration Touchpoints
+
+**Synchronous APIs:**
+- Create Packet API (CRVS → MOSIP)
+- Trigger API (CRVS → MOSIP)
+- Authentication API (CRVS → eSignet)
+
+**Asynchronous Events:**
+- Credential Issuance Notification (MOSIP → CRVS via WebSub)
+- Packet Status Updates (MOSIP → CRVS via WebSub)
+
+**Configuration Interfaces:**
+- Partner Management Portal (onboarding)
+- Admin Portal (centre/machine setup)
+- Keycloak Admin Console (OAuth2 clients)
+
+### System Boundaries
+
+**CRVS Responsibilities:**
+- Vital event data collection and validation
+- Deduplication before sending to MOSIP
+- eSignet authentication integration
+- WebSub subscription and notification handling
+- Certificate generation and issuance
+
+**MOSIP Responsibilities:**
+- Identity data validation and storage
+- UIN generation and lifecycle management
+- Credential generation and secure sharing
+- Technical validation and processing
+- Notification publishing via WebSub
+
+**Shared Responsibilities:**
+- Field mapping agreement
+- Security and encryption standards
+- Error handling and reconciliation
+- Performance monitoring
 
 ## 2.2 Integration Scope & Boundaries
 
-<!-- Missing Content - Add it --> (Needs clear scope boundaries statement)
+### What's Included in This Integration
+
+This integration covers the **bidirectional exchange of identity and vital event data** between CRVS and MOSIP systems:
+
+**✅ In Scope:**
+
+1. **Birth Registration Flow**
+   - Infant birth registration (0-5 years, configurable)
+   - UIN generation and issuance
+   - Credential sharing via WebSub
+   - Introducer authentication via eSignet
+
+2. **Death Registration Flow**
+   - Death event reporting using UIN/VID
+   - Identity status update (deceased flag)
+   - Informant authentication via eSignet
+   - Status notification to CRVS
+
+3. **Demographic Update Flow** (Limited)
+   - Infant demographic updates (pre-biometric)
+   - Adult demographic updates (limited scenarios)
+
+4. **Technical Integration**
+   - OAuth2 authentication for API access
+   - WebSub notifications for events
+   - Packet creation and processing APIs
+   - Error handling and status tracking
+
+### Integration Depth
+
+**MOSIP consumes from CRVS:**
+- Vital event data (birth/death)
+- Demographic information
+- eSignet authentication tokens
+- Introducer/Informant identifiers
+
+**CRVS consumes from MOSIP:**
+- UIN/VID/PSUT tokens
+- Identity credentials
+- Packet processing status
+- Error notifications
+
+### System Boundaries
+
+**CRVS Retains:**
+- Vital event record management
+- Certificate generation and printing
+- Vital statistics reporting
+- Historical vital event data
+- Marriage/divorce registration (not integrated)
+
+**MOSIP Retains:**
+- Identity data storage and lifecycle
+- Biometric enrollment and deduplication
+- Authentication services
+- Credential management
+- Adult registration workflows
+
+### Out-of-Scope Elements
+
+**Not Included:**
+- Marriage registration integration
+- Divorce registration integration
+- CRVS statistical reporting to MOSIP
+- Biometric capture from CRVS centers
+- Direct database synchronization
+- Offline/disconnected mode integration
+- Bulk migration of historical data
 
 ## 2.3 Supported Use Cases
 
@@ -120,7 +370,72 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 ## 2.5 System Roles & Responsibilities
 
-<!-- Missing Content - Add it -->
+### CRVS System Responsibilities
+
+| **Area** | **Responsibility** |
+|---------|-------------------|
+| **Data Collection** | Capture vital event data from informants/applicants |
+| **Data Validation** | Validate completeness and accuracy before sending to MOSIP |
+| **Deduplication** | Prevent duplicate registrations for same vital event |
+| **Authentication** | Integrate eSignet for informant/introducer authentication |
+| **API Integration** | Call MOSIP APIs (Create Packet, Trigger) with proper authentication |
+| **Notification Handling** | Subscribe to WebSub and process credential/status notifications |
+| **Certificate Issuance** | Generate and issue birth/death certificates |
+| **Error Management** | Handle API errors and retry failed requests |
+| **Audit Trail** | Maintain logs of all MOSIP interactions |
+| **Data Security** | Secure transmission and storage of identity data |
+
+### MOSIP Platform Responsibilities
+
+| **Area** | **Responsibility** |
+|---------|-------------------|
+| **Packet Validation** | Validate structure, schema, and mandatory fields |
+| **Identity Processing** | Process registration packets through workflows |
+| **UIN Generation** | Generate unique identifiers for new births |
+| **Status Management** | Update deceased status for death registrations |
+| **Credential Generation** | Create UIN/VID/PSUT tokens |
+| **Notification Publishing** | Publish events to WebSub for credential/status updates |
+| **Authentication** | Validate eSignet tokens for audit purposes |
+| **Technical Validation** | Enforce schema compliance and data integrity |
+| **Error Reporting** | Send validation errors via WebSub notifications |
+| **Partner Management** | Manage CRVS as trusted partner with appropriate policies |
+
+### Shared Responsibilities
+
+| **Area** | **CRVS Contribution** | **MOSIP Contribution** |
+|---------|----------------------|------------------------|
+| **Field Mapping** | Define CRVS field names and formats | Define ID schema structure |
+| **Error Handling** | Implement retry logic | Provide detailed error codes |
+| **Security** | Secure OAuth2 client credentials | Issue and validate access tokens |
+| **Monitoring** | Monitor API response times | Monitor packet processing times |
+| **Reconciliation** | Track pending requests | Publish status updates |
+| **Testing** | Provide test data and scenarios | Provide sandbox environment |
+
+### Role-Based Access Control
+
+**CRVS Operator:**
+- Access CRVS portal
+- Capture vital event data
+- Initiate authentication flows
+- Cannot directly access MOSIP APIs
+
+**CRVS System (OAuth2 Client):**
+- Call Packet Manager API
+- Call Trigger API
+- Receive WebSub notifications
+- Cannot access admin functions
+
+**MOSIP Administrator:**
+- Configure partner policies
+- Create centres/machines/officers
+- Monitor integration health
+- Cannot access CRVS data directly
+
+**System Integrator:**
+- Configure OAuth2 clients
+- Set up WebSub subscriptions
+- Map fields between systems
+- Test end-to-end flows
 
 
 ---
@@ -144,7 +459,121 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 ## 3.3 Identity Lifecycle Management
 
-<!-- Missing Content - Add it -->
+### Identity Lifecycle Stages
+
+The CRVS-MOSIP integration manages identity through distinct lifecycle stages:
+
+```
+Birth → Infant (0-5 yrs) → Minor (5-18 yrs) → Adult (18+ yrs) → Deceased
+```
+
+### Stage 1: Birth & Initial Registration
+
+**Trigger**: Birth event reported to CRVS
+
+**Process**:
+1. CRVS captures newborn demographic data
+2. Parent/introducer authenticated via eSignet
+3. MOSIP creates identity record without biometrics
+4. UIN generated and stored
+5. PSUT token shared with CRVS
+6. Birth certificate issued with UIN reference
+
+**Identity State**:
+- UIN: Active
+- Biometric: Not collected
+- Authentication: Via introducer
+- Credential: PSUT token available
+
+### Stage 2: Infant Updates (0-5 years)
+
+**Trigger**: Demographic changes (name correction, address update)
+
+**Process**:
+1. CRVS submits update request
+2. MOSIP validates and updates demographic data
+3. UIN remains same
+4. Updated credential shared if needed
+
+**Identity State**:
+- UIN: Active (unchanged)
+- Biometric: Still not collected
+- Updates: Allowed for all demographic fields
+
+### Stage 3: Minor Enrollment (5-18 years)
+
+**Trigger**: Individual reaches configured age threshold
+
+**Process** (Outside CRVS integration):
+1. Individual visits MOSIP enrollment center
+2. Biometrics collected
+3. Existing UIN linked to biometrics
+4. Deduplication performed
+5. Full identity activation
+
+**Identity State**:
+- UIN: Active (same as birth-issued)
+- Biometric: Enrolled
+- Authentication: Biometric-based
+- Updates: Require in-person verification
+
+### Stage 4: Adult Identity Management
+
+**Trigger**: Demographic updates needed
+
+**Process**:
+- **Via CRVS** (Limited): Only specific fields, requires eSignet authentication
+- **Via MOSIP** (Preferred): Individual visits center for biometric-verified updates
+
+**Identity State**:
+- UIN: Active
+- Biometric: On file
+- Updates: Restricted for CRVS, full access via MOSIP centers
+
+### Stage 5: Death Registration
+
+**Trigger**: Death event reported to CRVS
+
+**Process**:
+1. Informant reports death with UIN/VID
+2. Informant authenticated via eSignet
+3. MOSIP updates deceased flag
+4. Death date recorded
+5. UIN remains active (not deactivated)
+6. Status notification sent to CRVS
+7. Death certificate issued
+
+**Identity State**:
+- UIN: Active (technically)
+- Deceased Flag: Set to "Y"
+- Death Date: Recorded
+- Authentication: Blocked
+- Transactions: Prevented
+
+### Lifecycle Transition Rules
+
+| **Transition** | **Triggered By** | **CRVS Involvement** | **MOSIP Action** |
+|---------------|------------------|---------------------|------------------|
+| No Identity → Infant | Birth registration | Initiates request | Creates UIN |
+| Infant → Minor | Age threshold | No involvement | Biometric enrollment |
+| Minor → Adult | Age threshold | No involvement | Status update |
+| Active → Deceased | Death registration | Initiates request | Sets deceased flag |
+| Infant → Deceased | Death registration | Initiates request | Sets deceased flag |
+
+### Data Persistence
+
+**Throughout Lifecycle:**
+- UIN: Permanent, never changes
+- Demographic data: Updated as needed
+- Biometric data: Added once, updated rarely
+- Transaction history: Maintained for audit
+- Deceased status: Permanent once set
+
+**After Death:**
+- Identity data: Retained for legal/historical purposes
+- UIN: Not reused
+- Credentials: Invalidated
+- Records: Archived per retention policy
 
 ## 3.4 De-duplication Strategy
 
@@ -177,7 +606,130 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 ## 4.1 High-Level Integration Flow
 
-<!-- Missing Content - Add it -->
+### Overview
+
+The MOSIP-CRVS integration follows a **request-response-notification pattern** where CRVS initiates requests, MOSIP processes them, and both systems exchange status updates.
+
+### Integration Flow Diagram
+
+```
+┌─────────┐                    ┌──────────┐                  ┌─────────┐
+│  CRVS   │                    │ eSignet  │                  │  MOSIP  │
+│ System  │                    │          │                  │Platform │
+└────┬────┘                    └─────┬────┘                  └────┬────┘
+     │                               │                            │
+     │ 1. Authenticate Informant     │                            │
+     ├──────────────────────────────>│                            │
+     │<─────────────────────────────┤                            │
+     │   Auth Token                  │                            │
+     │                               │                            │
+     │ 2. Create Packet API                                       │
+     ├───────────────────────────────────────────────────────────>│
+     │   (with auth token, demographic data)                      │
+     │<───────────────────────────────────────────────────────────┤
+     │   Packet ID                                                │
+     │                                                            │
+     │ 3. Trigger API                                             │
+     ├───────────────────────────────────────────────────────────>│
+     │   (Packet ID)                                              │
+     │<───────────────────────────────────────────────────────────┤
+     │   Workflow Triggered                                       │
+     │                                                            │
+     │                               │         4. Processing      │
+     │                               │         (Validation,       │
+     │                               │          UIN Gen, etc.)    │
+     │                                                            │
+     │ 5. WebSub Notification (Credential Issued)                 │
+     │<───────────────────────────────────────────────────────────┤
+     │   UIN/VID/PSUT Token                                       │
+     │                                                            │
+     │ 6. Issue Certificate                                       │
+     │   (with UIN reference)                                     │
+     │                                                            │
+```
+
+### Step-by-Step Flow
+
+**Phase 1: Pre-Request (CRVS)**
+1. Informant visits CRVS center and provides vital event details
+2. CRVS officer validates and enters data into CRVS system
+3. CRVS performs internal deduplication check
+4. System validates mandatory fields and data formats
+
+**Phase 2: Authentication (eSignet)**
+5. CRVS redirects to eSignet for informant/introducer authentication
+6. User completes authentication (OTP, biometric, etc.)
+7. eSignet returns authentication token to CRVS
+8. CRVS includes token in MOSIP request
+
+**Phase 3: Packet Creation (MOSIP)**
+9. CRVS calls Create Packet API with:
+   - OAuth2 access token (for CRVS client)
+   - eSignet user info token (for informant)
+   - Demographic data per ID schema
+   - Centre/Machine/Officer IDs
+10. MOSIP Packet Manager validates request structure
+11. Packet created and stored in Object Store
+12. Packet ID (AID) returned to CRVS
+
+**Phase 4: Workflow Trigger (MOSIP)**
+13. CRVS calls Trigger API with Packet ID
+14. Registration Processor picks up packet
+15. Packet routed through Camel workflow based on source/process
+16. Async processing begins
+
+**Phase 5: Processing (MOSIP)**
+17. Schema validation against ID schema
+18. Mandatory field validation
+19. eSignet token validation
+20. Deduplication check (internal MOSIP)
+21. For birth: UIN generation
+22. For death: Status update
+23. Identity data stored in repository
+
+**Phase 6: Credential Generation (MOSIP)**
+24. Credential service generates UIN/VID/PSUT token
+25. Policy determines what to share with CRVS
+26. Credential data prepared for notification
+
+**Phase 7: Notification (WebSub)**
+27. MOSIP publishes event to WebSub hub
+28. WebSub delivers notification to subscribed CRVS endpoint
+29. CRVS receives and acknowledges notification
+30. CRVS extracts credential data (UIN/PSUT)
+
+**Phase 8: Certificate Issuance (CRVS)**
+31. CRVS generates birth/death certificate
+32. Certificate includes UIN reference
+33. Certificate issued to informant/applicant
+34. CRVS updates internal records
+
+### Error Handling Flow
+
+```
+Error Occurs → MOSIP logs error → WebSub notification sent →
+CRVS receives error → CRVS retries (if transient) or
+CRVS alerts operator (if validation error)
+```
+
+### Key Integration Points
+
+1. **Synchronous APIs**: Immediate request-response
+   - OAuth2 token endpoint
+   - Create Packet API
+   - Trigger API
+   - eSignet authentication
+
+2. **Asynchronous Notifications**: Event-driven updates
+   - Credential issuance via WebSub
+   - Status updates via WebSub
+   - Error notifications via WebSub
+
+3. **Configuration Touchpoints**: Setup and management
+   - Partner onboarding
+   - Policy configuration
+   - OAuth2 client setup
+   - WebSub subscription
 
 ## 4.2 Birth Registration & UIN Issuance
 
