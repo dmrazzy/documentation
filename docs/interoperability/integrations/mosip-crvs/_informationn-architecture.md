@@ -1,8 +1,8 @@
 # MOSIP-CRVS Integration Guide — Information Architecture
 
-**Document Version**: 2.0  
+**Document Version**: 1.0  
 **Date**: 22 January 2026  
-**Status**: Refined IA based on SME inputs, gap analysis, and OpenCRVS benchmarking  
+**Status**: Refined Information Architecture based on 'gap-analysis by Keshav', SME inputs, and OpenCRVS benchmarking reference. 
 **Audience**: Integration architects, CRVS implementers, technical writers, MOSIP system integrators
 
 ---
