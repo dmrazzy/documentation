@@ -360,4 +360,4 @@ Basic Feature → Detailed Capabilities → Technical Implementation → Advance
 6. Get feedback from users and stakeholders
 7. Iterate and improve based on usage analytics and feedback
 
-This guideline ensures that all MOSIP modules maintain consistent, professional, and user-friendly features documentation that matches industry standards while serving the diverse needs of our global user base.
+This guideline ensures that all software modules maintain consistent, professional, and user-friendly features documentation that matches industry standards while serving the diverse needs of our global user base.
