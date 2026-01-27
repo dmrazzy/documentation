@@ -1,7 +1,3 @@
----
-description: <v1.2.0 Draft - WIP>
----
-
 # 169 - QR Code Specifications
 
 ### CBOR Identity Data in QR Code
@@ -15,8 +11,6 @@ description: <v1.2.0 Draft - WIP>
 **Point of Contact**: Resham Chugani ([resham@mosip.io](mailto:resham@mosip.io))
 
 **IANA Registration**: [IANA CWT Registry](https://www.iana.org/assignments/cwt/cwt.xhtml) (Search for: 169)
-
-<mark style="color:blue;">**Version: 1.2.0 \<Draft-WIP> (As a result of the revived/ongoing Claim 169 Working Group effort)**</mark>
 
 ### 1. Introduction
 
