@@ -1,5 +1,15 @@
 # Rare Scenarios
 
+### What does 'Rare-Scenarios' include and mean
+
+Rare Scenarios describe how a CRVS and MOSIP systems drives following flows:
+
+* **Fraudulent Birth Registration - Deactivation**
+* **Reactivation of National ID**
+* **Reversal of Deceased Flag (Fraud Death or Mistaken Death Entry)**
+
+
+
 ### Handling Rare Scenarios in MOSIP–CRVS Integration
 
 #### Background
@@ -50,6 +60,15 @@ This scenario is highly sensitive because:
 * Deceased flags directly affect pensions, insurance, property transfers, and legal identity status.
 * Incorrect deceased tagging can lead to complete service denial.
 * Reversing this flag must be handled with caution and full traceability.
+
+
+
+***
+
+### Learn More
+
+* [Core Integration Principles](../../integration-overview-and-context/core-integration-principles.md)
+* [Integration Boundaries, Limitations and Implications](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md)
 
 
 

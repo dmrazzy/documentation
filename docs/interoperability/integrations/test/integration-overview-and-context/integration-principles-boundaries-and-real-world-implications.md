@@ -1,4 +1,4 @@
-# Integration Principles, Boundaries and Real-World Implications
+# Integration Boundaries, Limitation and Real-World Implications
 
 ### Overview
 
@@ -396,5 +396,10 @@ When you encounter a limitation or boundary in subsequent sections, refer back t
 
 
 
+***
 
+### Learn More
+
+* [Core Integration Principles](core-integration-principles.md)
+* [Integration Boundaries, Limitations and Implications](integration-principles-boundaries-and-real-world-implications.md)
 

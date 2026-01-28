@@ -4,6 +4,14 @@
 
 Birth registration occurs when parents/informants notify vital events to the concerned civil registration authority (CRA). This process is initiated from the CRVS system after the CRA has completed identity proofing and provided informant authentication. Following this, a request is submitted to MOSIP for the registration of an infant's birth.
 
+A high-level workflow diagram for this process is provided below.
+
+**High-Level Workflow:**
+
+<figure><img src="../../../../../.gitbook/assets/Infant_birth_registration.png" alt=""><figcaption><p>Infant Birth Registration</p></figcaption></figure>
+
+Steps and required information are provided below:
+
 #### What Does MOSIP Do?
 
 When MOSIP receives a registration request, it validates the received packet, processes the request, and stores the identity information. A UIN is generated and added to the identity repository.

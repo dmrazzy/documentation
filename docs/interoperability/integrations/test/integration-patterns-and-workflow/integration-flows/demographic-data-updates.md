@@ -4,6 +4,10 @@
 
 Demographic updates can occur when there are changes to an individual's personal information (e.g., name change, address update). This is more common for infants (pre-biometric stage) but can also apply to adults in specific cases.
 
+**High-Level Workflow:**
+
+<figure><img src="../../../../../.gitbook/assets/Infant_Demo _Data_Update.png" alt=""><figcaption><p>Infant Demo Data Update</p></figcaption></figure>
+
 #### What Does MOSIP Do?
 
 MOSIP receives the update request from CRVS, validates the request, and updates the demographic information in the identity repository. For infants (without biometrics), the update is straightforward. For adults (with biometric records), updates are more restricted.

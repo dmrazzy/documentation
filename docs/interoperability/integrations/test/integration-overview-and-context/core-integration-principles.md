@@ -46,3 +46,12 @@
 
 1. If a country deploys multiple CRVS systems, each system will be treated as a separate partner for MOSIP. This allows for independent management and integration with each CRVS system.
 2. Credentials generated/update messages from MOSIP will be sent to all the configured credential partners subscribed to the websub as per policy. It is the responsibility of the country and CRVS systems to manage the sharing of information across multiple CRVS systems.
+
+
+
+***
+
+### Learn More
+
+* [Core Integration Principles](core-integration-principles.md)
+* [Integration Boundaries, Limitations and Implications](integration-principles-boundaries-and-real-world-implications.md)

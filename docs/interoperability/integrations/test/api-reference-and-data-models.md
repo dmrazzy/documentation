@@ -122,18 +122,18 @@ The AID format mentioned above is the recommendation to be followed, but not man
 13. `province`: Province of residence.
 14. Additional fields can be added based on country requirements and ID schema.
 
-**Additional Fields for Rare Scenarios (Section 4.6):**
+**Additional Fields for** [**Rare Scenarios**](integration-patterns-and-workflow/rare-scenarios/)**:**
 
 These fields must be added to the ID schema to support fraud detection, reactivation, and death reversal workflows:
 
-**For Fraud Birth / Deactivation Requests (4.6.1 & 4.6.2):**
+**For** [**Fraud Birth**](integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md) **/ Deactivation Requests:**
 
 1. `fraud_birth` or `Fraud_Birth`: Boolean field (`True` for deactivation, `False` for reactivation)
 2. `fraud_birth_reason` or `Deactivation_reason`: String describing the reason for deactivation/reactivation
 3. `date_of_initial_registration`: Date of the original birth registration
 4. `National_ID`: UIN of the individual
 
-**For Death Reversal Requests (4.6.3):**
+**For** [**Death Reversal Requests**](integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md) **:**
 
 1. `Declared_as_Deceased`: String field (`Y` = deceased, `N` = reversal)
 2. `Deceased_Declaration_Date`: Original date of death declaration
@@ -227,4 +227,11 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 
 ### 6.6 Data Validation Rules
 
+
+
 ***
+
+### Learn More
+
+* [Schema Configuration](operational-considerations.md)
+

@@ -4,6 +4,12 @@
 
 Death registration is initiated by the next of kin or an informant through the CRVS system. The registrar collects necessary details and submits a death registration request to MOSIP.
 
+**High-Level Workflow:**
+
+<figure><img src="../../../../../.gitbook/assets/death_registration.png" alt=""><figcaption><p>Death Registration</p></figcaption></figure>
+
+Steps and required information are provided below:
+
 #### What Does MOSIP Do?
 
 MOSIP receives the death registration request (including the UIN/VID of the deceased), validates the request, and updates the identity status to mark the individual as deceased. The UIN itself is NOT deactivated; instead, a "deceased" flag is set.
