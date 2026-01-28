@@ -10,12 +10,14 @@ Error Scenarios and Handling:
 4. **eSignet Authentication Failures** – Authentication token not generated; request cannot proceed.
 5. **Network/Connectivity Issues** – Retry mechanisms should be implemented by CRVS.
 
-### 9.2 Retry Mechanisms
 
-### 9.3 Reconciliation Strategies
 
-### 9.4 Failed Packet Management
 
-### 9.5 Logging & Monitoring
+### Retry Mechanisms
 
-***
+### Reconciliation Strategies
+
+### Failed Packet Management
+
+### Logging & Monitoring
+

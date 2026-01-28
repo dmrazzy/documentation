@@ -217,16 +217,17 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 }
 ```
 
-### 6.2 Request/Response Schemas
 
-### 6.3 Data Exchange Format
 
-### 6.4 Field Mapping (CRVS ↔ MOSIP)
+### Request/Response Schemas
 
-### 6.5 Mandatory vs Optional Fields
+### Data Exchange Format
 
-### 6.6 Data Validation Rules
+### Field Mapping (CRVS ↔ MOSIP)
 
+### Mandatory vs Optional Fields
+
+### Data Validation Rules
 
 
 ***

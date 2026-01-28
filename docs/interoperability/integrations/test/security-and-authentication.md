@@ -122,10 +122,13 @@ eSignet is MOSIP's authentication service that enables secure identity verificat
 4. CRVS receives token and includes it in MOSIP request
 5. MOSIP validates token for audit and authorization
 
-### 7.2 Partner Certificate Management
 
-### 7.3 API Security (TLS, Encryption)
 
-### 7.4 Access Control & Authorization
 
-### 7.5 Audit & Compliance Requirements
+### Partner Certificate Management
+
+### API Security (TLS, Encryption)
+
+### Access Control & Authorization
+
+### Audit & Compliance Requirements

@@ -1,10 +1,11 @@
 # Integration Boundaries, Limitation and Real-World Implications
 
-### Overview
+## Overview
 
+Integration does not mean merger, it's a bridge between the two systems and that's why each system maintains its core responsibilities. 
 This section explains the philosophical foundation behind the technical boundaries, limitations, and design decisions documented throughout this guide. While MOSIP's technical capabilities could support various integration patterns, not all technically feasible approaches are recommended or appropriate.
 
-#### Foundational ID vs. Civil Registration: Two Different Systems
+### Foundational ID vs. Civil Registration: Two Different Systems
 
 MOSIP (Foundational ID) and CRVS (Civil Registration and Vital Statistics) are complementary but fundamentally distinct systems with different mandates, authorities, and operational models.
 
@@ -35,7 +36,7 @@ Integration does not mean merger. Each system maintains its core responsibilitie
 
 **Integration Bridges, Not Merges**: When a birth is registered in CRVS, integration enables automatic identity enrollment in MOSIP. But CRVS remains responsible for verifying the birth occurred, while MOSIP ensures the infant receives a unique identity credential.
 
-#### Technical Possibility ≠ Recommended Practice
+### Technical Possibility ≠ Recommended Practice
 
 MOSIP's API architecture could technically support automatic processing of nearly any request from CRVS, including immediate identity deactivation, unlimited reversals, or unrestricted demographic updates. However, **technical capability must be tempered with operational wisdom**.
 
@@ -64,7 +65,7 @@ Every integration point is evaluated against:
 
 This guide's boundaries reflect these evaluations. Where risks are high (fraud detection, identity reversals, death flag changes), we route to manual verification rather than automatic processing.
 
-#### Country & Cultural Variations in CRVS Implementation
+### Country & Cultural Variations in CRVS Implementation
 
 CRVS systems are not uniform globally. Implementation varies significantly based on legal frameworks, governance models, administrative capacity, and cultural contexts.
 
@@ -121,7 +122,7 @@ This guide provides **principled boundaries with country-specific configurabilit
 * Field requirements align with local legal frameworks
 * But core principles (manual verification for high-risk actions, one-time policies, audit trails) remain consistent
 
-#### Real-World Consequences Framework
+### Real-World Consequences Framework
 
 Behind every technical boundary in this guide is protection against real-world harm. Understanding these consequences helps implementers make informed customization decisions and advocacy within their organizations.
 
@@ -234,7 +235,8 @@ Behind every technical boundary in this guide is protection against real-world h
 * Time windows balance correction with stability
 * Offline escalation preserves judicial review rights
 
-#### Guiding Principles for Integration Boundaries
+
+### Guiding Principles for Integration Boundaries
 
 These principles inform every design decision in this guide:
 
@@ -346,7 +348,7 @@ These principles inform every design decision in this guide:
 
 **Country Variation**: Offline channels include courts, ombudsman offices, National ID appeals boards, ministerial review—varies by country.
 
-#### How to Read This Document
+### How to Read This Document
 
 Different readers have different needs. This guide is structured to support multiple pathways:
 
@@ -397,12 +399,86 @@ When you encounter a limitation or boundary in subsequent sections, refer back t
 ***
 
 
+## System Roles & Responsibilities
+| **Area** | **Responsibility** |
+|---------|-------------------|
+| **Data Collection** | Capture vital event data from informants/applicants |
+| **Data Validation** | Validate completeness and accuracy before sending to MOSIP |
+| **Deduplication** | Prevent duplicate registrations for same vital event |
+| **Authentication** | Integrate eSignet for informant/introducer authentication |
+| **API Integration** | Call MOSIP APIs (Create Packet, Trigger) with proper authentication |
+| **Notification Handling** | Subscribe to WebSub and process credential/status notifications |
+| **Certificate Issuance** | Generate and issue birth/death certificates |
+| **Error Management** | Handle API errors and retry failed requests |
+| **Audit Trail** | Maintain logs of all MOSIP interactions |
+| **Data Security** | Secure transmission and storage of identity data |
 
-### What's NOT in Scope (Out-of-Scope)
+## MOSIP Platform Responsibilities
 
-#### Integration Limitations
+| **Area** | **Responsibility** |
+|---------|-------------------|
+| **Packet Validation** | Validate structure, schema, and mandatory fields |
+| **Identity Processing** | Process registration packets through workflows |
+| **UIN Generation** | Generate unique identifiers for new births |
+| **Status Management** | Update deceased status for death registrations |
+| **Credential Generation** | Create UIN/VID/PSUT tokens |
+| **Notification Publishing** | Publish events to WebSub for credential/status updates |
+| **Authentication** | Validate eSignet tokens for audit purposes |
+| **Technical Validation** | Enforce schema compliance and data integrity |
+| **Error Reporting** | Send validation errors via WebSub notifications |
+| **Partner Management** | Manage CRVS as trusted partner with appropriate policies |
 
-The limitations listed below are not arbitrary technical constraints. Each reflects careful consideration of real-world implications documented in Section 1.5 (Integration Boundaries: Principles & Real-World Implications). These boundaries protect individuals, maintain system integrity, and align with the distinct operational models of Foundational ID and Civil Registration systems.
+## Shared Responsibilities
+
+| **Area** | **CRVS Contribution** | **MOSIP Contribution** |
+|---------|----------------------|------------------------|
+| **Field Mapping** | Define CRVS field names and formats | Define ID schema structure |
+| **Error Handling** | Implement retry logic | Provide detailed error codes |
+| **Security** | Secure OAuth2 client credentials | Issue and validate access tokens |
+| **Monitoring** | Monitor API response times | Monitor packet processing times |
+| **Reconciliation** | Track pending requests | Publish status updates |
+| **Testing** | Provide test data and scenarios | Provide sandbox environment |
+
+## Role-Based Access Control
+
+**CRVS Operator:**
+- Access CRVS portal
+- Capture vital event data
+- Initiate authentication flows
+- Cannot directly access MOSIP APIs
+
+**CRVS System (OAuth2 Client):**
+- Call Packet Manager API
+- Call Trigger API
+- Receive WebSub notifications
+- Cannot access admin functions
+
+**MOSIP Administrator:**
+- Configure partner policies
+- Create centres/machines/officers
+- Monitor integration health
+- Cannot access CRVS data directly
+
+**System Integrator:**
+- Configure OAuth2 clients
+- Set up WebSub subscriptions
+- Map fields between systems
+- Test end-to-end flows
+
+
+
+
+
+
+
+
+<!-- 
+
+To be analysed and then to be absorbed anywhere else above
+
+# Integration Limitations
+
+The limitations listed below are not arbitrary technical constraints. Each reflects careful consideration of real-world implications documented in Section [Integration Boundries & Real-World Implications](link). These boundaries protect individuals, maintain system integrity, and align with the distinct operational models of Foundational ID and Civil Registration systems.
 
 Although the integration scope includes scenarios for birth, death, and updates, there are still some cases where limitations exist.
 
@@ -412,23 +488,11 @@ Although the integration scope includes scenarios for birth, death, and updates,
 4. **Duplicate Request Rejection**: Since the CRVS system is considered the source of truth, MOSIP currently does not reject duplicate birth/death registration requests received from the CRVS system. This can result in multiple UINs for the same infant or an update of the death flag for the same deceased. Deduplication is expected to be handled by CRVS. **Exception**: For rare scenarios (fraud detection, identity reversals) covered in Section 4.6, MOSIP enforces one-time request policies and routes cases to manual verification rather than automatic processing.
 5. **No Support for Rejected Packets, Status Updates, and Reason**: If a request fails due to validation issues in MOSIP, there is currently no mechanism to send detailed rejection reasons back to CRVS.
 6. **No Automatic Deactivation or Reactivation**: While CRVS can submit fraud reports or reactivation requests (Section 4.6), MOSIP does not automatically deactivate or reactivate National IDs. All such requests are routed to manual verification queues where authorized country authorities make final decisions.
-7. **No Automatic Deactivation or Reactivation**: While CRVS can submit fraud reports or reactivation requests (Section 4.6), MOSIP does not automatically deactivate or reactivate National IDs. All such requests are routed to manual verification queues where authorized country authorities make final decisions.
-8. **No support for Offline Integration**: This integration works only when online connectivity is available as eSignet authentication is a necessary step before a request is submitted to CRVS.
-9. **Use of VID/UIN for Death Registration and Demo Data Updates**: Only VID or UIN can be used to register a death or submit requests for the demo data updates. Currently, MOSIP does not support death updates with any other identifier.
-10. **Time-Bound Rare Scenario Requests**: Fraud detection and reversal requests (Section 4.6) are only accepted within configurable time windows from the initial registration/declaration date. Requests outside these windows are automatically rejected and must follow offline grievance channels.
+7. **No support for Offline Integration**: This integration works only when online connectivity is available as eSignet authentication is a necessary step before a request is submitted to CRVS.
+8. **Use of VID/UIN for Death Registration and Demo Data Updates**: Only VID or UIN can be used to register a death or submit requests for the demo data updates. Currently, MOSIP does not support death updates with any other identifier.
+9. **Time-Bound Rare Scenario Requests**: Fraud detection and reversal requests (Section 4.6) are only accepted within configurable time windows from the initial registration/declaration date. Requests outside these windows are automatically rejected and must follow offline grievance channels.
 
-### System Roles & Responsibilities
-
-
-
-
-
-
-
-
-
-
-
+-->
 
 
 ***
