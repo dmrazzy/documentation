@@ -1,6 +1,28 @@
 # Integration Patterns & Workflow
 
-### High-Level Integration Flow
+
+
+
+
+
+### [Integration Patterns & Workflow](interoperability/integrations/test/integration-patterns-and-workflow/README.md)
+
+Detailed workflows for testing standard and exceptional integration scenarios.
+
+#### [Integration Flows](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/README.md)
+
+* [Birth Registration & UIN Issuance](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/birth-registration-and-uin-issuance.md)
+* [Death Registration & Identity Status Update](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/death-registration-and-identity-status-update.md)
+* [Demographic Data Updates](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/demographic-data-updates.md)
+
+#### [Rare Scenarios](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/README.md)
+
+* [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md)
+* [Reactivation of Deactivated National ID](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md)
+* [Fraud Death Case - Reversal of the Death Flag](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md)
+
+> **Note**: These are the currently supported scenarios. The rare scenarios (4.6.x) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
+
 
 
 
