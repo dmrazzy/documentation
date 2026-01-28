@@ -88,12 +88,20 @@ Performance testing is measured using the following metrics:
 
 Refer to the link below to download and access the **Resource Calculator**.
 
+#### Calculator for Release Version(s) - 1.2.1.0 and 1.2.1.X
+
 {% file src="../../../../.gitbook/assets/resource-calculator-platform-release-1.3.0.xlsx" %}
 
 The calculator provides two primary outputs:
 
 1. **Total Resources Required**
 2. **Total Time Required to Complete Registrations**
+
+#### Calculator for Release Version(s) 1.2.0.1 and Earlier
+
+{% file src="../../../../.gitbook/assets/ida-resource-calculator.xlsx" %}
+
+{% file src="../../../../.gitbook/assets/pre-reg-resource-calculator-v2.xlsx" %}
 
 ### **Calculator Structure**
 
