@@ -1,43 +1,18 @@
 # Integration Overview and Context
 
-### Purpose, Audience and Integration Value Proposition
 
-MOSIP can integrate with CRVS (Civil Registration and Vital Statistics) systems to create a unified digital identity ecosystem that spans an individual's entire life cycle.
+## Overview
 
-**Civil Registration and Vital Statistics (CRVS)** systems are essential for documenting key life events such as births, deaths, marriages, and divorces. These systems provide individuals with legal recognition and play a vital role in ensuring access to rights and services. Additionally, CRVS systems generate important demographic data that supports effective policy-making, governance, and resource planning.
+This section establishes the foundation for understanding MOSIP-CRVS integration. It covers:
 
-**MOSIP** is an open-source, modular identity platform designed for scalability, interoperability, and compliance with global standards. It allows countries to customize identity systems tailored to their governance needs. To learn more about MOSIP, click [here](https://docs.mosip.io/1.2.0/id-lifecycle-management).
+- **Core Integration Principles**: The fundamental architectural and operational principles that guide how MOSIP and CRVS systems interact, including system roles, data flow patterns, and coordination mechanisms.
+- **Integration Boundaries & Real-World Implications**: The rationale behind integration scope decisions, explaining why certain limitations exist and how they protect individual rights, maintain system integrity, and respect the distinct mandates of Foundational ID and Civil Registration systems.
 
-This synergy allows for the seamless management of an individual's identity across life events, starting from birth registration, through education and employment, to end-of-life verification.
 
-> Note: When these systems operate in isolation, it leads to administrative inefficiencies, fragmented data, and challenges in service access.
 
-### Supported Use Cases
 
-**Must read**: Refer to 'What is in scope of integration (integration-depth) and what is kept from integration, and why!
 
-#### Use Cases Supported Through CRVS-MOSIP Integration
 
-This integration currently supports the following use cases:
-
-1. Birth registration
-   1. Birth registration is initiated by the CRVS system
-   2. Duplicate and/or repeated infant birth registration requests
-   3. Handling failures
-2. Death registration
-   1. New death registration initiated by CRVS
-   2. Duplicate and/or repeated requests for death registration
-   3. Handling failures
-3. Demographic data update
-   1. Infant demo data update request initiated by CRVS
-   2. Duplicate and/or repeated infant demo data update requests
-   3. Adult demo data update request initiated by CRVS
-4. Rare scenarios requiring manual verification
-   1. Fraudulent birth registration - National ID deactivation
-   2. Reactivation of deactivated National ID
-   3. Death flag reversal (fraud death case)
-
-> **Note**: These are the currently supported scenarios. The rare scenarios (4.6.x) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
 
 ### What's NOT in Scope (Out-of-Scope)
 
