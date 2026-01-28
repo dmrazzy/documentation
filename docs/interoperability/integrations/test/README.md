@@ -12,26 +12,26 @@ This synergy allows for the seamless management of an individual's identity acro
 
 > Note: When these systems operate in isolation, it leads to administrative inefficiencies, fragmented data, and challenges in service access.
 
-### Documentation Structure
+### How to navigate through MOSIP - CRVS Integration Document
 
-#### [Integration Overview and Context](interoperability/integrations/test/integration-overview-and-context/)
+#### Integration Overview and Context
 
 Understand the foundational principles and real-world context of MOSIP-CRVS integration.
 
 * [Core Integration Principles](interoperability/integrations/test/integration-overview-and-context/core-integration-principles.md) - Key architectural and design principles
 * [Integration Principles, Boundaries and Real-World Implications](interoperability/integrations/test/integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md) - Practical boundaries and use case scenarios
 
-#### [Integration Patterns & Workflow](interoperability/integrations/test/integration-patterns-and-workflow/)
+#### Integration Patterns & Workflow
 
 Detailed workflows for testing standard and exceptional integration scenarios.
 
-[**Integration Flows**](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/)
+**Integration Flows**
 
 * [Birth Registration & UIN Issuance](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/birth-registration-and-uin-issuance.md)
 * [Death Registration & Identity Status Update](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/death-registration-and-identity-status-update.md)
 * [Demographic Data Updates](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/demographic-data-updates.md)
 
-[**Rare Scenarios**](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/)
+**Rare Scenarios**
 
 * [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md)
 * [Reactivation of Deactivated National ID](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md)

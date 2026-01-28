@@ -233,5 +233,5 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 
 ### Learn More
 
-* [Schema Configuration](operational-considerations.md)
+* [Schema Configuration](configurations-and-operations/operational-considerations.md)
 

@@ -1,14 +1,14 @@
 # Integration Patterns & Workflow
 
-Detailed workflows for testing standard and exceptional integration scenarios.
+Detailed workflows for standard and exceptional integration scenarios.
 
-#### [Integration Flows](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/)
+#### Integration Flows
 
 * [Birth Registration & UIN Issuance](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/birth-registration-and-uin-issuance.md)
 * [Death Registration & Identity Status Update](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/death-registration-and-identity-status-update.md)
 * [Demographic Data Updates](interoperability/integrations/test/integration-patterns-and-workflow/integration-flows/demographic-data-updates.md)
 
-#### [Rare Scenarios](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/)
+#### Rare Scenarios
 
 * [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md)
 * [Reactivation of Deactivated National ID](interoperability/integrations/test/integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md)

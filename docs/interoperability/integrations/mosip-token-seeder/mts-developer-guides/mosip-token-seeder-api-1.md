@@ -8,23 +8,19 @@ Refer [API documentation](https://mosip.stoplight.io/docs/mosip-token-seeder/bra
 
 ### CSV format
 
-{% file src="../../../.gitbook/assets/sample_input.csv" %}
-
 When using above format, you may not need any mapping configuration. But in case you change any column name in the csv, please do provide the same in the mapping configuration.
-
-{% file src="../../../.gitbook/assets/sample_output.csv" %}
 
 Output might have mix of successful and failed records except for the case where whole of the input throws error. If successful, the record would be having the token placed against the vid. And if there is error processing a record, the same is updated against the vid and the [error code](mosip-token-seeder-api-1.md#failure-details) and description is mentioned along.
 
 ## Status messages
 
-#### `submitted`&#x20;
+#### `submitted`
 
 `submitted` is the first status immediately after you have placed a authtoken request.
 
 #### `invalid`
 
-If in case there is basic validation error such that the request could not be processed, the request in marked as `invalid`.&#x20;
+If in case there is basic validation error such that the request could not be processed, the request in marked as `invalid`.
 
 #### `submitted_with_errors`
 
@@ -44,17 +40,15 @@ When the request is processed but every record in the request has some or other 
 
 #### _Delay in status update_
 
-In case there is a prior request placed with considerably higher number of records, and you have placed subsequent request submitted even before getting output for your earlier request, the system might take a while to update the status of your newer request. It might be still in the `submitted` state until the system finds a window to start processing. &#x20;
-
-
+In case there is a prior request placed with considerably higher number of records, and you have placed subsequent request submitted even before getting output for your earlier request, the system might take a while to update the status of your newer request. It might be still in the `submitted` state until the system finds a window to start processing.
 
 ## Callback
 
 Call back functionality enables MTS api to submit the output to a specified URI. Callback might also need authorization on most occasions. MTS currently supports following authorization types.
 
-#### Bearer Token &#x20;
+#### Bearer Token
 
-If the caller can supply a token while calling the MTS api, it can be configured in the `authStaticBearer` attribute of `callbackProperties` section.&#x20;
+If the caller can supply a token while calling the MTS api, it can be configured in the `authStaticBearer` attribute of `callbackProperties` section.
 
 ```
 "authStaticBearer": {
@@ -78,7 +72,7 @@ The functionality is added to support the OpenG2P use case where in OpenG2P odoo
 
 #### OAuth
 
-[OAuth ](https://oauth.net/2/)protocol is also supported in MTS callback functionality. This helps numerous systems which implements OAuth specification to integrate with MTS seamlessly. Below are the configurations available to setup OAuth based callback.&#x20;
+[OAuth ](https://oauth.net/2/)protocol is also supported in MTS callback functionality. This helps numerous systems which implements OAuth specification to integrate with MTS seamlessly. Below are the configurations available to setup OAuth based callback.
 
 ```
 "authOauth": {
@@ -137,7 +131,7 @@ The functionality is added to support the OpenG2P use case where in OpenG2P odoo
 |               |                                                                     |
 
 There are cases where MTS might successfully pass on the request but IDA generates error based on the its implementation scenario. MTS will log such error directly to the output json/csv/file.\
-In any case there are uncaught errors thrown by IDA, MTS will output the same as unknown error (ATS-REQ-100).&#x20;
+In any case there are uncaught errors thrown by IDA, MTS will output the same as unknown error (ATS-REQ-100).
 
 ## Mapping config
 
@@ -163,9 +157,9 @@ Except for name and full address, the majority of the fields in authdata are dir
 
 ## Output format
 
-With the output formatting capability, MTS can give you the result exactly the way in which you would want it ready for your further processing of data. The output format string to be supplied follows the [jq format](https://stedolan.github.io/jq/).  In case the output format is not supplied, the default output will be generated which will be the same as the previous versions. The below section details on an example case for output formatting.&#x20;
+With the output formatting capability, MTS can give you the result exactly the way in which you would want it ready for your further processing of data. The output format string to be supplied follows the [jq format](https://stedolan.github.io/jq/). In case the output format is not supplied, the default output will be generated which will be the same as the previous versions. The below section details on an example case for output formatting.
 
-#### Sample authdata Input for MTS&#x20;
+#### Sample authdata Input for MTS
 
 ```
 {
@@ -194,7 +188,8 @@ With the output formatting capability, MTS can give you the result exactly the w
     \"authToken\": .output.token,
     \"authTokenStatus\": .output.status,
     \"authTokenError\": (.output.errorCode + \"::\" + .output.errorMessage),
-}"</code></pre>
+}"
+</code></pre>
 
 #### Authtoken output
 
@@ -208,9 +203,10 @@ With the output formatting capability, MTS can give you the result exactly the w
 <strong>    "authToken": "2944061782623593820388819382121346429",
 </strong>    "authTokenStatus": "error",
     "authTokenError": ""   
-}</code></pre>
+}
+</code></pre>
 
-**`input`**keyword in the output format string is used to represent the data you input into MTS as authdata parameter. **`output`** keyword is used to identify that you intend to pick the data from the default auth request result. Please find below a sample for the default auth request output. &#x20;
+\*\*`input`\*\*keyword in the output format string is used to represent the data you input into MTS as authdata parameter. **`output`** keyword is used to identify that you intend to pick the data from the default auth request result. Please find below a sample for the default auth request output.
 
 ```
 {

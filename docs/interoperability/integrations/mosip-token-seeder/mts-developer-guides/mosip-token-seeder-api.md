@@ -8,23 +8,19 @@ Refer [API documentation](https://mosip.stoplight.io/docs/mosip-token-seeder/bra
 
 ### CSV format
 
-{% file src="../../../.gitbook/assets/sample_input.csv" %}
-
 When using above format, you may not need any mapping configuration. But in case you change any column name in the csv, please do provide the same in the mapping configuration.
-
-{% file src="../../../.gitbook/assets/sample_output.csv" %}
 
 Output might have mix of successful and failed records except for the case where whole of the input throws error. If successful, the record would be having the token placed against the vid. And if there is error processing a record, the same is updated against the vid and the [error code](mosip-token-seeder-api.md#failure-details) and description is mentioned along.
 
 ## Status messages
 
-#### `submitted`&#x20;
+#### `submitted`
 
 `submitted` is the first status immediately after you have placed a authtoken request.
 
 #### `invalid`
 
-If in case there is basic validation error such that the request could not be processed, the request in marked as `invalid`.&#x20;
+If in case there is basic validation error such that the request could not be processed, the request in marked as `invalid`.
 
 #### `submitted_with_errors`
 
@@ -44,7 +40,7 @@ When the request is processed but every record in the request has some or other 
 
 #### _Delay in status update_
 
-In case there is a prior request placed with considerably higher number of records, and you have placed  subsequent request submitted even before getting output for your earlier request, the system might take a while to update the status of your newer request. It might be still in the `submitted` state until the system finds a window to start processing. &#x20;
+In case there is a prior request placed with considerably higher number of records, and you have placed subsequent request submitted even before getting output for your earlier request, the system might take a while to update the status of your newer request. It might be still in the `submitted` state until the system finds a window to start processing.
 
 ## Error codes
 
@@ -78,7 +74,7 @@ In case there is a prior request placed with considerably higher number of recor
 | AUT\_BAS\_001 | Not Able to process auth request                              |
 
 There are cases where MTS might successfully pass on the request but IDA generates error based on the its implementation scenario. MTS will log such error directly to the output json/csv/file.\
-In any case there are uncaught errors thrown by IDA, MTS will output the same as unknown error (ATS-REQ-100).&#x20;
+In any case there are uncaught errors thrown by IDA, MTS will output the same as unknown error (ATS-REQ-100).
 
 ## Mapping config
 
@@ -101,8 +97,6 @@ The names on the left side of the mapping config denotes the original expected n
 ```
 
 Except for name and full address, the majority of the fields in authdata are direct mapping. MTS expects that there can be exceptions for name and full address for which the mapping is configured as a string array. For example, if the calling application or program stores the address fields in separate variables or columns like addressline1, addressline2, street, area, or zipcode; the same can be supplied directly as authdata with mapping supplied as a list of variable or column names as in the calling program.
-
-
 
 ## Field formats
 
