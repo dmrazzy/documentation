@@ -1,7 +1,7 @@
 # MOSIP-CRVS Integration Guide
 
 **Document Version**: 1.0  
-**Last Updated**: 22 January 2026  
+**Last Updated**: 27 January 2026  
 **Status**: Reorganized per Information Architecture v2.0
 
 ---
@@ -9,9 +9,19 @@
 ## Table of Contents
 
 1. [Introduction & Context](#1-introduction--context)
+   - 1.5 [Integration Boundaries: Principles & Real-World Implications](#15-integration-boundaries-principles--real-world-implications)
 2. [Integration Overview](#2-integration-overview)
 3. [Core Integration Principles](#3-core-integration-principles)
 4. [Integration Patterns & Workflows](#4-integration-patterns--workflows)
+   - 4.1 [High-Level Integration Flow](#41-high-level-integration-flow)
+   - 4.2 [Birth Registration & UIN Issuance](#42-birth-registration--uin-issuance)
+   - 4.3 [Death Registration & Identity Status Update](#43-death-registration--identity-status-update)
+   - 4.4 [Demographic Data Updates](#44-demographic-data-updates)
+   - 4.5 [Sequence Diagrams & Decision Trees](#45-sequence-diagrams--decision-trees)
+   - 4.6 [Handling Rare Scenarios](#46-handling-rare-scenarios-in-mosipcrvs-integration)
+     - 4.6.1 [Fraudulent Birth Registrations - National ID Deactivation](#461-fraudulent-birth-registrations---national-id-deactivation-request-from-crvs)
+     - 4.6.2 [Reactivation of Deactivated National ID](#462-reactivation-of-deactivated-national-id)
+     - 4.6.3 [Fraud Death Case - Reversal of the Death Flag](#463-fraud-death-case---reversal-of-the-death-flag)
 5. [Technical Architecture](#5-technical-architecture)
 6. [API Reference & Data Models](#6-api-reference--data-models)
 7. [Security & Authentication](#7-security--authentication)
@@ -53,7 +63,368 @@ This synergy allows for the seamless management of an individual's identity acro
 
 <!-- Missing Content - Add it -->
 
+## 1.5 Integration Boundaries: Principles & Real-World Implications
 
+This section explains the philosophical foundation behind the technical boundaries, limitations, and design decisions documented throughout this guide. While MOSIP's technical capabilities could support various integration patterns, not all technically feasible approaches are recommended or appropriate.
+
+### 1.5.1 Foundational ID vs. Civil Registration: Two Different Systems
+
+MOSIP (Foundational ID) and CRVS (Civil Registration and Vital Statistics) are complementary but fundamentally distinct systems with different mandates, authorities, and operational models.
+
+**CRVS Systems**:
+- **Primary Mandate**: Legal recognition and registration of vital events (births, deaths, marriages, divorces)
+- **Authority**: Empowered by civil registration laws to issue legally binding certificates
+- **Data Ownership**: Authoritative source for vital event data
+- **Operational Model**: Decentralized or centralized registration offices, often aligned with administrative boundaries
+- **Focus**: Documenting life events as they occur; generating demographic statistics
+
+**MOSIP (Foundational ID)**:
+- **Primary Mandate**: Establish and verify unique digital identity for individuals
+- **Authority**: Identity verification, biometric deduplication, credential management
+- **Data Ownership**: Authoritative source for identity credentials and biometric data
+- **Operational Model**: Centralized identity platform with distributed enrollment
+- **Focus**: Preventing duplicate identities; enabling authentication for services
+
+**Why This Distinction Matters**:
+
+Integration does not mean merger. Each system maintains its core responsibilities:
+- CRVS verifies vital events happened and issues certificates
+- MOSIP verifies individuals are unique and issues identity credentials
+- CRVS performs document verification and deduplication at the event level
+- MOSIP performs biometric deduplication at the identity level
+
+**Integration Bridges, Not Merges**: When a birth is registered in CRVS, integration enables automatic identity enrollment in MOSIP. But CRVS remains responsible for verifying the birth occurred, while MOSIP ensures the infant receives a unique identity credential.
+
+### 1.5.2 Technical Possibility ≠ Recommended Practice
+
+MOSIP's API architecture could technically support automatic processing of nearly any request from CRVS, including immediate identity deactivation, unlimited reversals, or unrestricted demographic updates. However, **technical capability must be tempered with operational wisdom**.
+
+**The Engineering Trap**:
+
+Just because a feature can be built doesn't mean it should be deployed. Consider:
+
+1. **Automatic Deactivation Example**: 
+   - **Technically possible**: CRVS sends fraud report → MOSIP instantly deactivates National ID
+   - **Why we don't**: Infants lack biometric verification; wrongful deactivation causes immediate service denial; errors are irreversible without manual intervention
+   - **What we do instead**: Flag for manual verification by country authorities (Section 4.6.1)
+
+2. **Unlimited Reversal Example**:
+   - **Technically possible**: Allow CRVS to toggle deceased flags repeatedly
+   - **Why we don't**: Creates endless loops; destabilizes downstream services (banking, pensions); enables system gaming
+   - **What we do instead**: One reversal per person with mandatory manual verification (Section 4.6.3)
+
+**Risk-Based Integration Design**:
+
+Every integration point is evaluated against:
+- **Fraud potential**: Can bad actors abuse this?
+- **Error impact**: What happens if data is wrong?
+- **Reversibility**: Can mistakes be corrected without harm?
+- **Legal implications**: Who is liable if something goes wrong?
+- **Downstream effects**: How does this affect banking, benefits, healthcare?
+
+This guide's boundaries reflect these evaluations. Where risks are high (fraud detection, identity reversals, death flag changes), we route to manual verification rather than automatic processing.
+
+### 1.5.3 Country & Cultural Variations in CRVS Implementation
+
+CRVS systems are not uniform globally. Implementation varies significantly based on legal frameworks, governance models, administrative capacity, and cultural contexts.
+
+**Governance Model Variations**:
+
+1. **Centralized CRVS**: Single national system with uniform processes
+   - Easier integration with consistent data formats
+   - Centralized authority for policy decisions
+   - Examples: Small island nations, highly digitized countries
+
+2. **Decentralized CRVS**: Regional/provincial systems with varying practices
+   - Multiple CRVS partners requiring separate integration
+   - Inconsistent data quality and timeliness
+   - Requires flexible partner management (Section 3.6)
+
+3. **Hybrid Models**: National framework with local implementation
+   - Balance between standardization and local autonomy
+   - Most common model globally
+
+**Operational Context Variations**:
+
+1. **Urban vs. Rural Registration**:
+   - Urban: Timely registration, digital infrastructure, trained staff
+   - Rural: Delayed registration, paper-based, limited connectivity
+   - Integration must accommodate delayed birth registrations while managing time windows for fraud claims
+
+2. **Post-Conflict & Fragile State Contexts**:
+   - Missing records, displaced populations, mistaken death reports
+   - Longer time windows needed for death reversals (1-2 years vs. 30-60 days for birth fraud)
+   - Higher potential for administrative errors requiring correction mechanisms
+
+3. **Administrative Capacity**:
+   - High capacity: Manual verification queues processed efficiently
+   - Low capacity: Manual reviews become bottlenecks; offline escalation becomes essential
+   - Integration must provide configurable time windows and escalation paths
+
+**Cultural Sensitivities**:
+
+1. **Death Reporting Practices**:
+   - Some cultures have extended mourning periods before formal registration
+   - Informant roles vary (next of kin vs. community elders vs. religious authorities)
+   - Integration timing must respect cultural practices while maintaining data integrity
+
+2. **Family Structure & Informant Concepts**:
+   - Nuclear vs. extended family structures affect "parent" definition
+   - Guardian/introducer roles vary culturally
+   - eSignet authentication requirements must be configurable for local context
+
+3. **Legal Traditions**:
+   - Common law: Precedent-based, flexible interpretation
+   - Civil law: Code-based, prescriptive rules
+   - Affects manual verification processes, evidence requirements, and dispute resolution
+
+**Why Configurability Matters**:
+
+This guide provides **principled boundaries with country-specific configurability**:
+- Time windows (30-60 days, 1-2 years) are configurable based on country context
+- Manual verification procedures adapt to administrative capacity
+- Field requirements align with local legal frameworks
+- But core principles (manual verification for high-risk actions, one-time policies, audit trails) remain consistent
+
+### 1.5.4 Real-World Consequences Framework
+
+Behind every technical boundary in this guide is protection against real-world harm. Understanding these consequences helps implementers make informed customization decisions and advocacy within their organizations.
+
+#### Identity Fraud & Systemic Abuse
+
+**Fraudulent Birth Certificates**:
+- **Scenario**: Bad actor obtains fraudulent birth certificate from CRVS, uses it to enroll infant identity in MOSIP
+- **Consequence**: Ghost identity used for benefit fraud, document fraud, or child trafficking
+- **Protection**: Time-bounded fraud claims (Section 4.6.1) allow correction while preventing endless challenges
+
+**Pension & Benefit Fraud**:
+- **Scenario**: Individual reported deceased continues collecting pension via National ID authentication
+- **Consequence**: Financial losses, system credibility erosion, genuine beneficiary denial
+- **Protection**: Death flag integration (Section 4.3) enables service providers to restrict access
+
+**Multiple Identity Gaming**:
+- **Scenario**: Individual obtains multiple birth registrations with different RIDs to receive multiple UINs
+- **Consequence**: Duplicate identities for fraud, terrorism, organized crime
+- **Protection**: CRVS performs deduplication before MOSIP submission; MOSIP's internal deduplication provides backstop (Section 3.4)
+
+#### Service Denial & Human Rights Impacts
+
+**Wrongful Deceased Flags**:
+- **Scenario**: Administrative error or fraud death report marks living person as deceased
+- **Consequence**: 
+  - Banking accounts frozen
+  - Healthcare benefits suspended
+  - Pension payments stopped
+  - Authentication failures for essential services
+  - Legal limbo requiring court intervention
+- **Protection**: Manual verification for death reversals (Section 4.6.3); one reversal allowed to correct genuine errors
+
+**Incorrect Identity Deactivation**:
+- **Scenario**: Fraudulent fraud claim leads to National ID deactivation
+- **Consequence**:
+  - Complete loss of access to digital services
+  - Employment termination requiring National ID
+  - Education enrollment blocked
+  - Legal disputes requiring extensive documentation
+- **Protection**: Manual verification prevents automatic deactivation (Section 4.6.1); one-time reactivation for genuine errors (Section 4.6.2)
+
+**Demographic Update Failures**:
+- **Scenario**: Adult's legitimate name change rejected because biometrics already linked
+- **Consequence**: Legal name vs. identity mismatch causing service access issues
+- **Protection**: Clear limitation documented (Section 2.4) requiring in-person MOSIP enrollment; protects against CRVS-based demographic fraud for adults
+
+#### Downstream System Disruption
+
+**Banking & Financial Services**:
+- Deceased flags trigger account freezes, loan payment blocks, beneficiary transfers
+- Incorrect flags cause immediate financial disruption
+- Repeated activation/deactivation cycles destabilize integration
+
+**Government Benefits & Pensions**:
+- Identity status directly gates benefit eligibility
+- False positives deny rightful benefits
+- False negatives enable fraud
+
+**Healthcare & Insurance**:
+- Identity verification gates emergency care access
+- Deceased flags trigger insurance payouts
+- Errors have life-or-death implications
+
+**Authentication Services**:
+- National ID used for authentication across government and private sector
+- Status changes propagate through all integrated services
+- System instability cascades
+
+**Protection Through Design**:
+- One-time request policies prevent repeated toggling (Sections 4.6.1, 4.6.2, 4.6.3)
+- Manual verification provides stability
+- Audit trails enable forensic investigation if issues occur
+
+#### Legal & Compliance Liabilities
+
+**Government Liability**:
+- Wrongful deactivation: Compensation claims, legal challenges
+- Fraud enablement: Liability for fraudulent identities issued
+- Data protection: GDPR/privacy law violations if PII mishandled
+
+**Operational Liability**:
+- Implementing agencies responsible for integration failures
+- System integrators liable for defects causing harm
+- Audit requirements for public fund expenditure
+
+**Individual Rights**:
+- Right to identity (legal recognition)
+- Right to services (healthcare, education)
+- Right to appeal and correction
+- Due process in identity lifecycle changes
+
+**Protection Through Design**:
+- Manual verification preserves due process
+- Audit trails enable compliance verification
+- Time windows balance correction with stability
+- Offline escalation preserves judicial review rights
+
+### 1.5.5 Guiding Principles for Integration Boundaries
+
+These principles inform every design decision in this guide:
+
+#### Principle 1: Manual Verification for High-Stakes Lifecycle Events
+
+**Rationale**: Identity deactivation, reactivation, and death flag reversals are irreversible actions with severe consequences. Human judgment and legal oversight are essential.
+
+**Application**:
+- Fraud detection → Manual verification (Section 4.6.1)
+- Reactivation requests → Manual verification (Section 4.6.2)
+- Death reversals → Manual verification (Section 4.6.3)
+
+**Why Not Automate?**:
+- Infants lack biometric verification
+- Fraud claims may be malicious
+- Administrative errors happen
+- Legal disputes require evidence review
+- Downstream impacts are severe
+
+**Country Variation**: Countries configure review procedures, approval authorities, and evidence requirements based on legal frameworks and administrative capacity.
+
+#### Principle 2: Time-Bounded Requests
+
+**Rationale**: Unlimited time windows enable endless challenges, destabilize systems, and prevent closure. But overly restrictive windows deny legitimate corrections.
+
+**Application**:
+- Birth fraud claims: 30-60 days from initial registration (Section 4.6.1)
+- Death reversals: 1-2 years from death declaration (Section 4.6.3)
+- Outside windows: Offline grievance/judicial channels
+
+**Why Time Bounds?**:
+- Balance correction opportunity with system stability
+- Reflect typical error detection timelines
+- Force escalation for complex/disputed cases
+- Prevent weaponization of integration
+
+**Country Variation**: Windows are configurable based on:
+- CRVS registration timelines (urban vs. rural)
+- Administrative capacity for timely error detection
+- Post-conflict contexts requiring longer windows
+- Legal frameworks for dispute resolution
+
+#### Principle 3: Clear Source of Truth Responsibilities
+
+**Rationale**: When two systems integrate, data ownership and decision authority must be crystal clear to prevent conflicts and maintain accountability.
+
+**Application**:
+- **CRVS owns**: Vital event data, document verification, event-level deduplication
+- **MOSIP owns**: Biometric data, identity-level deduplication, credential management
+- **Shared**: Integration metadata, audit trails
+
+**Why This Matters**:
+- MOSIP trusts CRVS-verified vital events (Section 3.1)
+- CRVS receives MOSIP-issued credentials (Sections 4.2, 4.3)
+- Disputes about data accuracy escalate to owning system
+- Legal liability aligns with data ownership
+
+**Country Variation**: Multi-CRVS environments require clear partner designation (Section 3.6).
+
+#### Principle 4: One-Time Request Policies
+
+**Rationale**: Unlimited repeated requests enable gaming, create operational burden, and destabilize downstream systems.
+
+**Application**:
+- One fraud flag per UIN until verification completes (Section 4.6.1)
+- One reactivation per deactivated UIN (Section 4.6.2)
+- One death reversal per person; re-reversals offline only (Section 4.6.3)
+
+**Why One-Time?**:
+- Prevents endless activation/deactivation loops
+- Forces escalation to higher authority for complex cases
+- Maintains downstream service stability
+- Signals serious processing (not routine)
+
+**What Happens After?**:
+- Further requests rejected
+- Citizen/CRVS directed to National ID authority
+- Offline processes (courts, ombudsman) handle disputes
+
+**Country Variation**: Offline escalation channels vary by legal system and governance model.
+
+#### Principle 5: Offline Escalation Channels
+
+**Rationale**: Not every scenario belongs in automated integration. Some require judicial review, legal interpretation, or high-level policy decisions.
+
+**Application**:
+- Requests outside time windows → Offline (Sections 4.6.1, 4.6.3)
+- Repeated reversals → Offline (Section 4.6.3)
+- Disputed identity status → Offline
+- Complex fraud investigations → Offline
+
+**Why Preserve Offline?**:
+- Some decisions require judicial authority
+- Edge cases need human judgment
+- Legal precedent established through courts
+- Automation increases risk in rare scenarios
+
+**Country Variation**: Offline channels include courts, ombudsman offices, National ID appeals boards, ministerial review—varies by country.
+
+### 1.5.6 How to Read This Document
+
+Different readers have different needs. This guide is structured to support multiple pathways:
+
+**For Solution Architects**:
+- Start here (Section 1.5) for philosophical foundation
+- Focus on system boundaries and trust models (Sections 2, 3)
+- Understand technical architecture (Section 5)
+- Review policy configuration options (Section 10)
+
+**For Developers**:
+- Understand "why" (this section) before implementing "how"
+- Follow integration workflows (Section 4)
+- Implement API specifications (Section 6)
+- Reference code examples (Section 13)
+
+**For Policy Makers & Government Officials**:
+- Read integration value proposition (Section 1.2)
+- Understand principles and real-world consequences (this section)
+- Focus on rare scenarios requiring manual verification (Section 4.6)
+- Review operational considerations (Section 11)
+
+**For System Integrators**:
+- Understand full context (Sections 1, 2, 3)
+- Implement standard workflows (Sections 4.2, 4.3, 4.4)
+- Configure for country context (Sections 10, 11)
+- Test thoroughly (Section 12)
+
+**For CRVS Implementers**:
+- Understand MOSIP's role vs. CRVS's role (Sections 1.5.1, 3)
+- Review supported use cases (Section 2.3)
+- Understand limitations (Section 2.4)
+- Plan for edge cases (Section 4.6)
+
+**Key Principle**: The boundaries documented in this guide are not arbitrary technical constraints. They reflect:
+- Real-world consequences for individuals
+- Legal and ethical considerations
+- Operational wisdom from foundational ID implementations globally
+- Country-specific variation while maintaining core safety principles
+
+When you encounter a limitation or boundary in subsequent sections, refer back to this section to understand its protective intent.
 
 ---
 
@@ -76,6 +447,7 @@ Integration can be done for following scenarios:
 - Birth Registration and UIN Issuance
 - Death Registration and Identity Update
 - Demographic Updates (e.g., Name Change, Address Update)
+- Rare Scenarios (Fraud Detection, Identity Reversals)
 
 Must read: [Refer to 'What is in scope of integration (integration-depth) and what is kept from integration, and why!](link)
 
@@ -95,12 +467,18 @@ This integration currently supports the following use cases:
   1. Infant demo data update request initiated by CRVS
   2. Duplicate and/or repeated infant demo data update requests
   3. Adult demo data update request initiated by CRVS
+4. [Rare scenarios requiring manual verification](#46-handling-rare-scenarios-in-mosipcrvs-integration)
+  1. [Fraudulent birth registration - National ID deactivation](#461-fraudulent-birth-registrations---national-id-deactivation-request-from-crvs)
+  2. [Reactivation of deactivated National ID](#462-reactivation-of-deactivated-national-id)
+  3. [Death flag reversal (fraud death case)](#463-fraud-death-case---reversal-of-the-death-flag)
 
-> **Note**: These are the currently supported scenarios. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
+> **Note**: These are the currently supported scenarios. The rare scenarios (4.6.x) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
 
 ## 2.4 What's NOT in Scope (Out-of-Scope)
 
 ### Integration Limitations
+
+The limitations listed below are not arbitrary technical constraints. Each reflects careful consideration of real-world implications documented in [Section 1.5 (Integration Boundaries: Principles & Real-World Implications)](#15-integration-boundaries-principles--real-world-implications). These boundaries protect individuals, maintain system integrity, and align with the distinct operational models of Foundational ID and Civil Registration systems.
 
 Although the integration scope includes scenarios for birth, death, and updates, there are still some cases where limitations exist.
 
@@ -110,13 +488,19 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 3. **Integration for Birth and Death Registrations**: The integration works seamlessly for birth and death registrations. However, updates to demographic data are still a work in progress.
 
-4. **Duplicate Request Rejection**: Since the CRVS system is considered the source of truth, MOSIP currently does not reject duplicate birth/death registration requests received from the CRVS system. This can result in multiple UINs for the same infant or an update of the death flag for the same deceased. Deduplication is expected to be handled by CRVS.
+4. **Duplicate Request Rejection**: Since the CRVS system is considered the source of truth, MOSIP currently does not reject duplicate birth/death registration requests received from the CRVS system. This can result in multiple UINs for the same infant or an update of the death flag for the same deceased. Deduplication is expected to be handled by CRVS. **Exception**: For rare scenarios (fraud detection, identity reversals) covered in Section 4.6, MOSIP enforces one-time request policies and routes cases to manual verification rather than automatic processing.
 
 5. **No Support for Rejected Packets, Status Updates, and Reason**: If a request fails due to validation issues in MOSIP, there is currently no mechanism to send detailed rejection reasons back to CRVS.
 
-6. **No support for Offline Integration**: This integration works only when online connectivity is available as eSignet authentication is a necessary step before a request is submitted to CRVS.
+6. **No Automatic Deactivation or Reactivation**: While CRVS can submit fraud reports or reactivation requests (Section 4.6), MOSIP does not automatically deactivate or reactivate National IDs. All such requests are routed to manual verification queues where authorized country authorities make final decisions.
 
-7. **Use of VID/UIN for Death Registration and Demo Data Updates**: Only VID or UIN can be used to register a death or submit requests for the demo data updates. Currently, MOSIP does not support death updates with any other identifier.
+6. **No Automatic Deactivation or Reactivation**: While CRVS can submit fraud reports or reactivation requests (Section 4.6), MOSIP does not automatically deactivate or reactivate National IDs. All such requests are routed to manual verification queues where authorized country authorities make final decisions.
+
+7. **No support for Offline Integration**: This integration works only when online connectivity is available as eSignet authentication is a necessary step before a request is submitted to CRVS.
+
+8. **Use of VID/UIN for Death Registration and Demo Data Updates**: Only VID or UIN can be used to register a death or submit requests for the demo data updates. Currently, MOSIP does not support death updates with any other identifier.
+
+9. **Time-Bound Rare Scenario Requests**: Fraud detection and reversal requests (Section 4.6) are only accepted within configurable time windows from the initial registration/declaration date. Requests outside these windows are automatically rejected and must follow offline grievance channels.
 
 ## 2.5 System Roles & Responsibilities
 
@@ -133,6 +517,8 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 **Assumption:** This approach assumes that the CRVS system is recognized as the authoritative source of vital event data and is legally authorized to issue official birth and death certificates in accordance with the laws of the country.
 
+> **See [Section 1.5.1](#151-foundational-id-vs-civil-registration-two-different-systems)** for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
+
 ## 3.2 Trust & Data Verification Model
 
 ### Data Verification and Trust
@@ -141,6 +527,7 @@ Although the integration scope includes scenarios for birth, death, and updates,
 2. Data transmitted from CRVS to MOSIP will undergo thorough data/document verification and deduplication before any request is initiated for MOSIP to process.
 3. MOSIP will trust all information provided by CRVS and honor the received requests. MOSIP will ensure that the technical and logical validations are all in place for packet processing.
 4. The integration should define the mandatory attributes to be exchanged between the two systems. It is crucial to agree upon these attributes to ensure consistent and accurate data exchange.
+5. **Exception for Rare Scenarios**: For sensitive cases such as fraud detection (Section 4.6.1), identity reactivation (Section 4.6.2), and death flag reversals (Section 4.6.3), MOSIP does not automatically process requests. Instead, these are routed to manual verification queues where authorized country authorities review evidence and make final decisions. This ensures legal compliance and prevents misuse while maintaining the trust relationship with CRVS.
 
 ## 3.3 Identity Lifecycle Management
 
@@ -149,6 +536,8 @@ Although the integration scope includes scenarios for birth, death, and updates,
 ## 3.4 De-duplication Strategy
 
 > **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, duplicate and repeated request scenarios are not currently handled for rejection by MOSIP.
+
+**Exception for Rare Scenarios**: For fraud detection, reactivation, and death reversal requests (Section 4.6), MOSIP enforces a **one-time request policy** per National ID. If a fraud flag or reversal request is already in progress or has been previously processed, subsequent duplicate requests are automatically rejected. This prevents repeated requests from creating endless loops and maintains system integrity.
 
 ## 3.5 Authentication & Authorization Model
 
@@ -409,6 +798,602 @@ MOSIP sends a status update notification via WebSub confirming the successful de
 
 <!-- Missing Content - Add it --> (Add detailed sequence diagrams for each workflow)
 
+
+## 4.6 Handling Rare Scenarios in MOSIP–CRVS Integration
+
+
+### Background
+
+MOSIP already supports standard integration workflows with Civil Registration and Vital Statistics (CRVS) systems for birth registration and death registration. These are well-established, high-volume processes that operate smoothly in production environments.
+
+During implementation, CRVS has requested MOSIP to extend the integration to a set of rare scenarios. These scenarios are infrequent, but they have significant legal, operational, or fraud-related implications. They impact the National ID lifecycle, require special handling, and cannot be treated as routine CRVS events.
+
+> **Important**: The manual verification approach for rare scenarios reflects the risk-based integration design principles outlined in [Section 1.5](#15-integration-boundaries-principles--real-world-implications). These scenarios carry high potential for fraud, legal disputes, and service denial if processed automatically.
+
+To address these cases safely and consistently, MOSIP must ensure:
+
+- **Traceability**: Every incoming request is logged with clear metadata such as process, source, timestamps, and reason codes.
+- **Controlled Processing**: No direct automatic changes to National ID status; sensitive requests must be routed for internal or country-level manual verification.
+- **Policy Alignment**: MOSIP acts only as the foundational ID platform; final decisions rest with authorized country authorities.
+- **Auditability**: All requests should leave a reliable audit trail for legal, compliance, and investigative needs.
+
+This document outlines the three rare scenarios that the MOSIP-CRVS integration must support and provides the detailed workflow for each in the following sections.
+
+### Scenario Overview
+
+#### 1. Fraudulent Birth Registration - Deactivation
+
+CRVS may later detect that a submitted birth registration was fraudulent, incorrect, duplicated, or otherwise invalid. In such cases, CRVS needs a mechanism to notify MOSIP so that the corresponding National ID (UIN) can be flagged and routed for manual verification.
+
+This scenario is particularly sensitive because:
+
+- Infants do not yet have biometrics in MOSIP.
+- Fraudulent birth certificates are a known global risk for identity systems.
+- Direct ID deactivation without human review can cause wrongful service denial and legal disputes.
+
+#### 2. Reactivation of National ID
+
+CRVS may request MOSIP to deactivate a National ID—for example, because the identity was found invalid, duplicated, or incorrectly issued after verification. In rare cases, CRVS may later request reactivation if it determines that the earlier deactivation was incorrect.
+
+This scenario is sensitive because:
+
+- National ID activation status impacts all downstream services.
+- Repeated activation/deactivation can destabilize integrations with banking, benefits, and authentication services.
+- Errors in these actions carry legal and operational consequences.
+
+#### 3. Reversal of Deceased Flag (Fraud Death or Mistaken Death Entry)
+
+CRVS may detect that a person previously reported as deceased is actually alive. This may occur due to reporting errors, communication delays, mistaken identity, or rare cases in conflict or disaster contexts.
+
+This scenario is highly sensitive because:
+
+- Deceased flags directly affect pensions, insurance, property transfers, and legal identity status.
+- Incorrect deceased tagging can lead to complete service denial.
+- Reversing this flag must be handled with caution and full traceability.
+
+
+
+## 4.6.1 Fraudulent Birth Registrations - National ID Deactivation Request from CRVS
+
+### When Does It Happen?
+
+This rare scenario occurs when a civil registration authority (CRVS) determines that a previously recorded birth registration was fraudulent, incorrect, duplicated, or otherwise invalid. CRVS detects this issue post-registration and needs to notify MOSIP to flag the corresponding National ID (UIN) for review and potential deactivation.
+
+**Triggers**:
+- Discovery of fraudulent birth certificate issuance
+- Detection of duplicate birth registrations for the same infant
+- Identification of data integrity issues in initial registration
+- Legal determination of registration invalidity
+
+**Why This Scenario is Sensitive**:
+- Infants do not yet have biometric authentication in MOSIP
+- Fraudulent birth certificates are a known global identity fraud risk
+- Direct ID deactivation without human review can cause wrongful service denial
+- Legal and ethical implications require careful handling
+
+> **For detailed context on real-world consequences and design principles, see [Section 1.5.4 (Real-World Consequences Framework)](#154-real-world-consequences-framework)**.
+
+### What Does MOSIP Do?
+
+MOSIP receives the fraud notification from CRVS, validates the request against policy rules (time window, duplicate checks), and routes the case to a manual verification queue. MOSIP does **NOT** automatically deactivate the National ID. Instead, it:
+
+1. **Validates the request** against configured time windows and duplicate prevention rules
+2. **Sets a fraud flag** (`Fraud_Birth = True`) on the identity record
+3. **Routes the packet** to manual verification using a dedicated Camel workflow
+4. **Stores metadata** (process, source, reason) for audit and traceability
+5. **Waits for manual decision** from authorized country authorities
+6. **Executes deactivation** only after manual approval
+
+### What Does CRVS Receive?
+
+Under the current implementation:
+- **No automatic notification** is sent back to CRVS regarding packet status
+- CRVS must subscribe to WebSub packet status updates if tracking is required
+- Final deactivation status may be communicated through offline channels depending on country policy
+
+> **Note**: Notification strategy for fraud scenarios is under consideration and may be enhanced in future implementations.
+
+### What Is the Workflow?
+
+#### Step 1: CRVS Submits a Fraudulent Birth Request
+
+CRVS submits a "fraudulent birth" request to MOSIP, including:
+
+**Required Fields:**
+
+- **National ID (UIN)** or **packet reference**
+- **fraud_birth / deactivate_id** = `True` (property name to be finalized based on country requirements)
+- **process** = `CRVS_fraud_birth` / `CRVS_deactivate_ID`
+- **source** = `CRVS1`
+- **fraud_birth_reason / Deactivation_reason** (string describing the reason for deactivation)
+- **date_of_initial_registration**
+- **Optional**: Supporting metadata/document references
+
+> **Note**: These fields must be added to the ID schema to support this workflow.
+
+#### Step 2: MOSIP Validates the Request Window
+
+1. **Compare the submitted date of initial registration to the current date.**
+2. **If within a configurable window** (e.g., 30–60 days as defined in country policy):
+   - MOSIP accepts the request and initiates packet processing.
+   - A new tag is introduced to categorize such requests: `CRVS_deactivate_ID`
+   - This tag helps in anonymous profiling and tracking.
+
+3. **If outside the time window**:
+   - The request is automatically rejected.
+   - Citizens must use offline grievance or legal channels.
+
+> **Note**: MOSIP-side validation for garbage values in the `fraud_birth_reason` / `Deactivation_reason` field is **not required**, as notifications to CRVS are not sent in this workflow.
+
+#### Step 3: Route the Packet to Manual Verification
+
+1. **Basic de-duplication** is performed for any incoming packet in MOSIP.
+2. Based on the **process** and **source** values, a specific **Camel route** is triggered to route the packet directly to the **manual verification stage**.
+3. The following information is provided to the manual reviewer:
+   - `fraud_birth_reason` / `Deactivation_reason`
+   - Any supporting documents (if evidence collection is supported)
+   - Details of the original packet
+
+4. **Set attribute**: `fraud_Birth = True` against the National ID.
+   - **No automatic deactivation** occurs at this stage.
+
+5. **Packet details storage**:
+   - Stored in **Packet Manager** and **Transaction Table** for reference.
+
+#### Step 4: Enforce One-Time Request Policy
+
+1. If a `Fraud_Birth = True` flag already exists, any subsequent request on the same UIN is **automatically rejected** until verification completes.
+2. This prevents duplicate or repeated requests from being processed.
+
+> **Note**: If someone authenticates using the National ID during the manual verification flow, no special flag is added to the KYC info shared with the Relying Party (RP).
+
+#### Step 5: Manual Verification by Country Authorities
+
+1. Responsible admins/legal authorities review:
+   - Supporting documentation
+   - Original packet details
+   - `fraud_birth_reason` / `Deactivation_reason`
+
+2. Authorities decide whether to:
+   - **Approve deactivation**, or
+   - **Reject the fraud claim**
+
+#### Step 6: Final Action
+
+**If Deactivation is Approved:**
+
+1. The National ID is deactivated **offline** by authorities.
+2. MOSIP must add logic to **deactivate the UIN** once the manual verifier approves.
+3. **Manual Steps**: Countries can use the existing **Deactivate UIN (MOSIP ID) API** (not recommended for routine use).
+
+**If Rejected:**
+
+1. The packet is rejected, and the flow is completed.
+2. No changes are made to the record in the ID system.
+
+### Use Case-Based Notifications
+
+> **Note**: This section is under consideration for MOSIP-side changes. Final notification strategy is to be determined based on country requirements.
+
+---
+
+### Pros & Cons of MOSIP Options
+
+| **Option** | **Advantages** | **Disadvantages / Risks** |
+|-----------|---------------|--------------------------|
+| **Automatic Online Deactivation** | Fast, immediate response to CRVS fraud detection | High risk of misuse or wrongful deactivation; no biometric authentication for infants; downstream system disruption; legal + ethical liability |
+| **Flag + Manual Verification (Recommended)** | Ensures traceability; leverages human/legal judgement; safe for infants; audit trail maintained | Requires manual workload; may delay final resolution; depends on country administrative capacity |
+| **Reject All Online Fraud Requests (Offline Only)** | Simplest to implement; full control remains with authorities | Loses benefit of integration; CRVS cannot leverage MOSIP automation; increased overhead and delays; reduced transparency |
+
+---
+
+### Recommended MOSIP Policy
+
+1. **Accept CRVS fraud-birth requests only if submitted within 30–60 days of initial registration.**
+2. On valid request, set **`Fraud_Birth = True`** in schema with metadata:
+   - **Process** = `CRVS_Fraud_Birth`
+   - **Source** = `CRVS1`
+3. **Route flagged requests to manual verification queue** using a dedicated Camel route.
+4. **Enforce one-time request per UIN** until verification completes; block duplicate requests.
+5. **No online deactivation**; final deactivation decision rests with national/regional authorities after their offline review.
+6. **Requests outside the time window are automatically rejected**; citizens must use offline grievance or legal channels.
+
+---
+
+### Additional Considerations & Notes
+
+#### Infants / No Biometric Enrollment
+
+- Without biometric verification, automated deactivation carries high risk.
+- The **flag + manual review** approach maintains safety and due process.
+
+#### Audit & Traceability
+
+- Maintaining metadata (**Process**, **Source**) ensures every request is logged and traceable.
+- This is critical if disputes or legal challenges arise later.
+
+#### Alignment with Global Best Practices
+
+- The recommended workflow mirrors practices observed in other foundational ID systems combining civil registration with identity issuance.
+- Sensitive lifecycle events (fraud, death, deactivation) are reserved for manual review.
+
+#### Policy & Country-Specific Customization
+
+- The **30–60 day window** and verification procedures should be configurable per country's legal and governance environment.
+
+#### Infant Death Cases
+
+- Cases of infant death will be handled through a **death registration request** submitted by CRVS.
+
+---
+
+
+## 4.6.2 Reactivation of Deactivated National ID
+
+### When Does It Happen?
+
+This scenario occurs in rare cases when a National ID has been deactivated following a fraud-birth verification (see Section 4.6.1), but CRVS or country authorities later determine that the original deactivation decision was incorrect or unjustified.
+
+**Triggers**:
+- Discovery that the fraud claim was erroneous
+- New evidence proving the birth registration was legitimate
+- Administrative error correction after review
+- Legal reversal of the deactivation decision
+
+**Why This Scenario is Sensitive**:
+- Original deactivation involved thorough verification by country authorities
+- Automatic reactivation could bypass legal and administrative safeguards
+- Multiple reactivation/deactivation cycles could compromise system integrity
+- Downstream services (banking, benefits, authentication) may be affected
+- Risk of operational confusion or misuse
+
+> **For detailed context on real-world consequences and design principles, see [Section 1.5.4 (Real-World Consequences Framework)](#154-real-world-consequences-framework)**.
+
+### What Does MOSIP Do?
+
+MOSIP receives the reactivation request from CRVS, validates that the National ID was previously deactivated with a fraud flag, and routes the case to manual verification. MOSIP does **NOT** automatically reactivate the National ID. Instead, it:
+
+1. **Validates the request** by confirming the UIN exists and was deactivated with `Fraud_Birth = True`
+2. **Checks time windows** to ensure the request falls within policy-defined limits
+3. **Prevents duplicate requests** by rejecting if a reactivation is already under review
+4. **Routes to manual verification** using the same Camel workflow as deactivation
+5. **Provides context** (original fraud reason, supporting documentation) to reviewers
+6. **Waits for manual decision** from authorized country authorities
+7. **Executes reactivation** only after manual approval
+
+### What Does CRVS Receive?
+
+Under the current implementation:
+- **No automatic notification** is sent back to CRVS regarding reactivation status
+- CRVS may subscribe to WebSub for packet status updates if needed
+- Final reactivation status may be communicated through offline coordination
+
+> **Note**: The notification mechanism for reactivation scenarios is under policy review and may be enhanced based on country requirements.
+
+### What Is the Workflow?
+
+#### Step 1: CRVS Request Submission
+
+CRVS submits a reactivation request via the MOSIP packet API with the following parameters:
+
+**Required Fields:**
+
+- **Fraud_birth** = `False` (indicates reactivation request)
+- **Process** = `CRVS_fraud_birth`
+- **Source** = `CRVS1`
+- **National_ID** (UIN of the individual)
+- **Fraud_birth_reason** (reason for the original deactivation)
+- **Optional**: Supporting metadata/document references
+
+> **Note**: Should evidence documentation be required as reference for manual review?
+
+#### Step 2: Validation by MOSIP
+
+1. **Confirm UIN status**: Verify that the UIN exists and was deactivated with `Fraud_birth = True`.
+2. **Reject duplicate requests**: If a previous reactivation request for the same UIN is already under review, reject the new request.
+3. **Time window validation**: Requests are valid only within a defined period from the initial birth registration date. Requests outside this window are automatically rejected, requiring citizens to follow offline grievance/legal processes.
+   
+   > **Note**: Should the time window be calculated from the date of initial registration or from the date of deactivation?
+
+4. **Optional validation**: Should MOSIP-side validation for garbage values in the `fraud_birth_reason`/`Deactivation_reason` field be added?
+
+5. If all validations pass, initiate packet processing.
+
+#### Step 3: Routing to Manual Verification
+
+1. Route the packet to a dedicated manual verification queue using the Camel route associated with `CRVS_fraud_birth`.
+2. Include the `Fraud_birth_reason` to provide context for the country authorities' review.
+
+> **Note**: Where should the packet details be stored for reference during manual verification?
+
+#### Step 4: Manual Verification by Authorities
+
+Country administrators/legal authorities review the case, using the original deactivation reason and supporting documentation.
+
+**Decision Options:**
+
+- **Approve**: Reactivate the National ID offline.
+- **Reject**: Keep the National ID deactivated. The fraud flag may be retained or cleared depending on policy.
+
+#### Step 5: Logging and Audit
+
+1. Store all request, validation, and verification details in MOSIP for compliance and traceability.
+2. Ensure traceability of all actions for potential audits or legal review.
+
+---
+
+### MOSIP Options and Pros/Cons
+
+| **Option** | **Advantages** | **Disadvantages / Risks** |
+|-----------|---------------|--------------------------|
+| **Automatic Online Reactivation** | Fast; reduces manual overhead | High risk of fraud; bypasses legal review; multiple toggling possible; downstream service disruption; audit challenges |
+| **Receive Request + Route to Manual Verification (Recommended)** | Preserves legal and operational control; ensures traceability; allows genuine corrections | Requires administrative effort; slight delay in final resolution |
+| **Reject All Online Reactivation Requests (Offline Only)** | Fully prevents misuse; simple to implement | Citizens and CRVS cannot leverage integration; delays in legitimate corrections; reduced transparency |
+
+---
+
+### Recommended MOSIP Policy
+
+1. **Accept CRVS reactivation requests only if the UIN was previously deactivated** with `Fraud_birth = True`.
+2. Use `Fraud_birth_reason` to reference the original deactivation during manual verification.
+3. **Route flagged requests to the manual verification queue** using the dedicated Camel route (`CRVS_fraud_birth`).
+4. **Enforce one active request per UIN**: No subsequent requests are accepted until the verification is complete.
+5. **Validate time window**: Requests must fall within the defined time window from the initial birth registration date. Requests outside this window are rejected, and offline grievance/legal channels must be followed.
+6. **No automatic reactivation is allowed**; final decisions rest with country authorities.
+
+---
+
+### Additional Considerations
+
+#### Traceability
+
+Maintaining metadata (**Process**, **Source**, and **Fraud_birth_reason**) ensures every reactivation request is auditable.
+
+#### Operational Safety
+
+Limiting reactivation to manual verification avoids misuse and prevents disruption to downstream authentication services.
+
+#### Time Window Logic
+
+The window for reactivation should be calculated from the initial birth registration date, consistent with the original deactivation policy.
+
+#### Alignment with Global Best Practices
+
+This workflow mirrors international practices, combining civil registration with identity management while reserving sensitive lifecycle events for human review.
+
+---
+
+## 4.6.3 Fraud Death Case - Reversal of the Death Flag
+
+### When Does It Happen?
+
+This rare but critical scenario occurs when CRVS discovers that a person previously registered as deceased is actually alive. These situations are infrequent but carry significant legal, operational, and identity-related implications.
+
+**Triggers**:
+- **Administrative errors**: Data-entry mistakes or communication delays in death reporting
+- **Conflict or displacement**: Individuals reported missing or presumed dead later reappear
+- **Disaster scenarios**: Mistaken identity during emergency response operations
+- **Fraud cases**: Intentional misreporting of death for financial or legal gain
+- **Delayed communication**: Individual resurfaces after being out of contact
+
+**Why This Scenario is Sensitive**:
+- Deceased flags directly affect pensions, insurance, property transfers, and legal identity status
+- Incorrect deceased tagging can lead to complete service denial
+- Reversing the flag requires extreme caution and full traceability
+- May require longer time windows than birth fraud cases (e.g., post-conflict scenarios)
+- Only one reversal per individual is permitted online; re-reversals require offline intervention
+
+> **For detailed context on real-world consequences and design principles, see [Section 1.5.4 (Real-World Consequences Framework)](#154-real-world-consequences-framework)**.
+
+**Standard Death Registration Context**:
+
+For reference, when CRVS submits a standard death registration (Section 4.3), MOSIP updates:
+- `Declared_as_Deceased = Y`
+- `Deceased_Declaration_Date` = Date of death declaration
+- National ID remains technically active; only the deceased flag is set
+- Downstream services may restrict access based on this flag
+
+### What Does MOSIP Do?
+
+MOSIP receives the death reversal request from CRVS, validates the request against multiple criteria (current status, time windows, reversal history), and routes the case to manual verification. MOSIP does **NOT** automatically reverse the deceased flag. Instead, it:
+
+1. **Validates current status** to ensure the individual is currently marked as deceased
+2. **Checks time windows** (recommended 1-2 years from death declaration, configurable)
+3. **Prevents duplicate requests** by rejecting if a reversal is already in progress
+4. **Verifies reversal history** to enforce one-reversal-per-person policy
+5. **Tags the packet** with `CRVS_Fraud_Death` for tracking and profiling
+6. **Routes to manual verification** using dedicated Camel workflow
+7. **Provides complete context** (reversal reason, death history, supporting evidence) to reviewers
+8. **Waits for manual decision** from authorized country authorities
+9. **Updates deceased flag** (`Declared_as_Deceased = N`) only after manual approval
+
+### What Does CRVS Receive?
+
+Under the current implementation:
+- **No automatic notification** is sent back to CRVS regarding reversal status
+- CRVS may subscribe to WebSub for packet status updates if required
+- Final reversal outcome may be communicated through offline channels per country policy
+
+> **Note**: Acknowledgement to CRVS in case of rejection is under consideration for future enhancement.
+
+### What Is the Workflow?
+
+#### Step 1: CRVS Submits Death Reversal Request
+
+When CRVS determines that an individual marked as deceased is alive, they submit a reversal request with:
+
+**Required Fields:**
+
+- **UIN/VID**: National ID of the individual
+- **Declared_as_Deceased**: `N` (indicating reversal)
+- **Process**: `CRVS_Fraud_Death`
+- **Source**: `CRVS1`
+- **Deceased_Declaration_Date**: Original date of death declaration
+- **Reversal_Reason**: Description of why reversal is requested
+- **Supporting Evidence**: Optional documentation references
+
+> **Note**: The process name `CRVS_Fraud_Death` distinguishes reversal requests from standard death registrations.
+
+#### Step 2: MOSIP Validates the Request
+
+MOSIP performs the following validations before accepting the reversal request:
+
+##### 1. Current Status Verification
+
+- **Check**: Ensure the individual is currently marked as deceased (`Declared_as_Deceased = Y`)
+- **Action**: If not currently deceased, reject the request
+
+##### 2. Time Window Validation
+
+Unlike fraud-birth scenarios, death reversals may require a **longer validity window** due to:
+
+- Extended periods before reappearance (e.g., war, displacement, disaster)
+- Lower risk since MOSIP only flips the flag without full ID reactivation
+
+**Recommendation:**
+
+- Calculate time window from `Deceased_Declaration_Date`
+- **Recommended window**: 1-2 years (configurable by country policy)
+- Countries can adjust based on local laws and contextual factors
+
+##### 3. Duplicate Request Check
+
+- **Check**: Verify if a death reversal request for the same UIN is already in progress
+- **Action**: If duplicate found, reject the new request
+
+##### 4. Reversal History Check
+
+- **Check**: Verify if a previous death reversal has already been processed for this UIN
+- **Action**: Accept only **one death reversal request per person** through CRVS
+- **If second reversal attempted**: Reject and instruct the requestor to contact the National ID department for manual offline resolution
+
+##### 5. Add Relevant Tags
+
+- Tag the packet with `CRVS_Fraud_Death` for tracking and anonymous profiling
+- Store metadata for audit and traceability
+
+> **Note**: Should MOSIP send acknowledgement to CRVS in case of rejection? This is under consideration.
+
+#### Step 3: Route to Manual Verification
+
+1. Route the packet to the **manual review queue** via the Camel route tied to `CRVS_Fraud_Death`
+2. Provide the following information to the manual reviewer:
+   - `Reversal_Reason`
+   - **Complete history** of all updates to the packet for this individual
+   - Supporting documentation (if evidence collection is supported)
+   - Original death declaration details
+3. Country authorities verify evidence before allowing reversal
+
+#### Step 4: Manual Verification Decision
+
+Authorized country administrators/legal authorities review:
+
+- Supporting documentation
+- Complete packet history
+- Reversal reason and evidence
+- Context of original death declaration
+
+**Decision Options:**
+
+##### Option 1: Approve the Reversal
+
+1. Set `Declared_as_Deceased = N`
+2. Remove the deceased status/flag in MOSIP ID repository (backend update by NID)
+3. The National ID continues to be active (since it was never deactivated, only flagged)
+4. Audit logs capture the complete chain of actions
+5. No notification to CRVS (current policy)
+
+##### Option 2: Reject the Reversal
+
+1. `Declared_as_Deceased` remains `Y`
+2. No further online reversal requests are accepted for this UIN
+3. Future appeals must go to the National ID authority through **offline processes**
+4. Packet status updated with rejection reason
+
+#### Step 5: Logging and Audit
+
+MOSIP maintains comprehensive audit trails including:
+
+- **Original death declaration**: Date, source, reason
+- **Reversal request**: Submission date, reason, supporting evidence
+- **Validation outcomes**: All checks performed and results
+- **Verification decision**: Approve/reject with justification
+- **Complete action chain**: Full traceability for legal and administrative audits
+
+The request metadata (**Process**, **Source**, and deceased fields) help distinguish:
+
+- Original death registrations (`CRVS_Death`)
+- Fraud/death reversals (`CRVS_Fraud_Death`)
+
+---
+
+### MOSIP Options and Pros/Cons
+
+| **Option** | **Advantages** | **Disadvantages / Risks** |
+|-----------|---------------|--------------------------|
+| **Automatic Online Reversal** | Fast; immediate response | Very risky: could unmark deceased individuals without legal confirmation; prone to misuse; impacts downstream services without verification; legal and ethical liability |
+| **Accept Request + Manual Verification (Recommended)** | Legally safe; aligns with civil registration practices; maintains audit trail; ensures human judgement | Requires administrative involvement; may delay final resolution |
+| **No Online Reversal Allowed (Offline Only)** | Maximum safety; full control remains with authorities | Reduces transparency; delays correction for genuine cases; loses benefit of integration |
+
+---
+
+### Recommended MOSIP Policy
+
+1. **Use dedicated process value**: `CRVS_Fraud_Death` must be used for all reversal requests
+2. **Source remains consistent**: `CRVS1` (or appropriate CRVS system identifier)
+3. **Current status validation**: Only allow reversal if person is currently flagged as deceased (`Declared_as_Deceased = Y`)
+4. **One-time reversal policy**: Accept only **one reversal request per person** through online CRVS integration
+5. **Reject re-reversals**: Any subsequent reversal attempts must be handled offline by National ID authorities
+6. **Longer time window**: Maintain a configurable time window (1-2 years recommended) from `Deceased_Declaration_Date` due to unique real-world scenarios (war, disaster, displacement)
+7. **Mandatory manual verification**: All reversal requests must enter the manual verification queue; no automatic changes
+8. **Full auditability**: Record all events, decisions, and supporting evidence
+
+---
+
+### Additional Considerations
+
+#### National ID Status
+
+- **National ID is never deactivated** upon death declaration; only the deceased flag is set
+- This makes reversal **lower-risk** compared to reactivation scenarios
+- Downstream services rely on the flag for access control decisions
+
+#### Time Window Flexibility
+
+- Longer windows (1-2 years) accommodate real-world contexts:
+  - War or conflict zones
+  - Natural disasters
+  - Displacement scenarios
+  - Administrative backlogs
+- Countries can configure based on local laws and operational needs
+
+#### Clear Rejection Rules
+
+- **One reversal per person** prevents repeated requests from becoming an endless loop
+- Forces escalation to offline channels for complex or disputed cases
+- Maintains system integrity and prevents misuse
+
+#### Traceability
+
+- Using consistent field structure (**Informant info + Deceased info**) enables:
+  - Clear logging across all death-related events
+  - Easier investigations and audits
+  - Pattern detection for fraud prevention
+
+#### Downstream System Impacts
+
+- Financial services (insurance, pensions)
+- Property transfers
+- Legal identity status
+- Access to government services
+
+All these systems rely on the deceased flag, making reversal a sensitive operation requiring careful handling.
+
+
+
+
+
+
 ---
 
 # 5. Technical Architecture
@@ -531,6 +1516,8 @@ The AID format mentioned above is the recommendation to be followed, but not man
    - `CRVS_NEW` - When initiating an infant birth request
    - `CRVS_DEATH` - When initiating a death registration request
    - `CRVS_UPDATE` - When initiating a demographic update request
+   - `CRVS_fraud_birth` or `CRVS_deactivate_ID` - When submitting a fraud detection/deactivation request (Section 4.6.1 and 4.6.2)
+   - `CRVS_Fraud_Death` - When submitting a death flag reversal request (Section 4.6.3)
 3. `id`: The unique identifier for the registration request (AID).
 
 > **Note**: As per the current implementation, if the same AID is used twice, the record will be updated with the latest request data.
@@ -555,6 +1542,24 @@ The AID format mentioned above is the recommendation to be followed, but not man
 12. `region`: Region of the address.
 13. `province`: Province of residence.
 14. Additional fields can be added based on country requirements and ID schema.
+
+**Additional Fields for Rare Scenarios (Section 4.6):**
+
+These fields must be added to the ID schema to support fraud detection, reactivation, and death reversal workflows:
+
+**For Fraud Birth / Deactivation Requests (4.6.1 & 4.6.2):**
+1. `fraud_birth` or `Fraud_Birth`: Boolean field (`True` for deactivation, `False` for reactivation)
+2. `fraud_birth_reason` or `Deactivation_reason`: String describing the reason for deactivation/reactivation
+3. `date_of_initial_registration`: Date of the original birth registration
+4. `National_ID`: UIN of the individual
+
+**For Death Reversal Requests (4.6.3):**
+1. `Declared_as_Deceased`: String field (`Y` = deceased, `N` = reversal)
+2. `Deceased_Declaration_Date`: Original date of death declaration
+3. `Reversal_Reason`: Description of why reversal is requested
+4. `UIN` or `VID`: National ID of the individual
+
+> **Note**: Field names may vary based on country-specific ID schema design. Consult Section 4.6 for detailed workflow requirements.
 
 **MetaInfo Object (Center and Operator Information):**
 
