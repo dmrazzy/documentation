@@ -6,7 +6,7 @@
 
 **Assumption:** This approach assumes that the CRVS system is recognized as the authoritative source of vital event data and is legally authorized to issue official birth and death certificates in accordance with the laws of the country.
 
-> **See Section 1.5.1** for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
+> **See Section [integration-principles-boundaries-and-real-world-implications](integration-principles-boundaries-and-real-world-implications.md)** for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
 
 ### Trust & Data Verification Model
 
