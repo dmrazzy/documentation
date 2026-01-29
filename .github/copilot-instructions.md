@@ -1,5 +1,3 @@
 # MOSIP Base — Copilot Instructions
 
-These instructions help AI coding agents work effectively in this repository, which primarily hosts documentation and OpenAPI specifications for MOSIP services.
-
-I will handcraft this file to ensure clarity and precision in the instructions provided. Untill then do not follow anything from here.
+- Whenever I ask for related topics in a Markdown file, always check the directory structure first to ensure the links are valid.
