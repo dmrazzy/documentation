@@ -21,3 +21,11 @@ Error Scenarios and Handling:
 
 ### Logging & Monitoring
 
+***
+
+### Learn More
+
+* [Registration Processor Overview](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/README.md) - Understanding packet processing workflows, stages, and error handling mechanisms
+* [Operational Considerations](configurations-and-operations/operational-considerations.md) - System setup, monitoring requirements, and operational best practices
+* [Notifications & Event Handling](notifications-and-event-handling.md) - WebSub event subscription and status notification patterns
+* [API Reference & Data Models](api-reference-and-data-models.md) - Packet creation, trigger APIs, and validation requirements
