@@ -107,3 +107,18 @@ Duplicate and/or repeated requests may arise under the following conditions:
 | **Failed eSignet Authentication** | Authentication failures are managed by eSignet. The user token is not generated if authentication fails.                       | Enhancement: Log failure reasons and notify CRVS of authentication issues.                                           |
 | **Validation Failures**           | MOSIP validates the packet structure and rejects invalid packets.                                                              | Enhancement: Provide detailed rejection reasons back to CRVS.                                                        |
 | **Packet Processing Failures**    | Internal MOSIP processing failures are logged and tracked.                                                                     | Enhancement: Send failure notifications to CRVS with actionable error messages.                                      |
+
+
+***
+
+## Learn More
+
+* [**Packet Manager**](../../../../../id-lifecycle-management/supporting-components/packet-manager/README.md) - Understand packet structure, validation, encryption/decryption, and how registration packets are stored and retrieved from object storage for processing.
+
+* [**Registration Processor**](../../../../../id-lifecycle-management/identity-issuance/registration-processor/overview/README.md) - Explore the workflow engine that validates packets, performs deduplication, generates UINs, and orchestrates the complete packet processing lifecycle.
+
+* [**WebSub Event System**](../../../../../id-lifecycle-management/supporting-services/websub/README.md) - Learn about MOSIP's publish-subscribe mechanism for real-time event notifications, topic registration, and credential delivery to subscribed partners.
+
+* [**Notifications & Event Handling**](../../notifications-and-event-handling.md) - Detailed guide on credential issuance notifications, packet status updates, WebSub subscription configuration, and error notification handling for CRVS integration.
+
+

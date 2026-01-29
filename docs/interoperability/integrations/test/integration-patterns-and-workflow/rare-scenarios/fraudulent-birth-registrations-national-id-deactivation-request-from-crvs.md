@@ -166,3 +166,14 @@ CRVS submits a "fraudulent birth" request to MOSIP, including:
 * Cases of infant death will be handled through a **death registration request** submitted by CRVS.
 
 ***
+
+
+## Learn More
+
+- [Birth Registration & UIN Issuance](../integration-flows/birth-registration-and-uin-issuance.md) - Understand the standard birth registration workflow in CRVS-MOSIP integration. This provides essential context for how National IDs are initially issued to infants, which is the baseline process before fraud detection triggers deactivation requests.
+
+- [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system that reviews fraudulent birth deactivation requests. This document details how packets are routed to manual verification queues, the decision-making workflow, and integration with external verification systems.
+
+- [Reactivation of Deactivated National ID](reactivation-of-deactivated-national-id.md) - Explore the reverse scenario where a deactivated National ID needs to be reactivated (e.g., after wrongful deactivation). This complements the deactivation workflow and shows the complete lifecycle management of rare fraud cases.
+
+- [Registration Processor Configurations Details](../../../../../id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details.md) - Discover the Camel route configurations (`CRVS_fraud_birth`) and packet processing workflows that enable fraud detection handling. This technical reference explains how deactivation requests are routed and processed within MOSIP's registration processor.
