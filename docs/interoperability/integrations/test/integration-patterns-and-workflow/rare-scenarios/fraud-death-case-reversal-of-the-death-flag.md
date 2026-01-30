@@ -187,13 +187,7 @@ The request metadata (**Process**, **Source**, and deceased fields) help disting
 7. **Mandatory manual verification**: All reversal requests must enter the manual verification queue; no automatic changes
 8. **Full auditability**: Record all events, decisions, and supporting evidence
 
-
-
-
-
 ***
-
-
 
 #### Additional Considerations
 
@@ -234,15 +228,11 @@ The request metadata (**Process**, **Source**, and deceased fields) help disting
 
 All these systems rely on the deceased flag, making reversal a sensitive operation requiring careful handling.
 
-
-
 ***
+
 ## Learn More
 
-- [Death Registration & Identity Status Update](../integration-flows/death-registration-and-identity-status-update.md) - Understand the standard death registration workflow in CRVS-MOSIP integration, which is the baseline process from which fraud death case reversals deviate. This provides context on how deceased flags are originally set.
-
-- [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system used for reviewing fraud death reversals. This document details the queue-based architecture, decision workflows, and integration points that enable country authorities to approve or reject reversal requests.
-
-- [Registration Processor Configurations Details](../../../../../id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details.md) - Explore the ID schema fields (`declaredAsDeceased`, `deceasedDeclarationDate`, `typeOfDeath`) and Camel route configurations (`CRVS_Fraud_Death`) that enable death-related packet processing and reversal workflows.
-
-- [Reactivation of Deactivated National ID](reactivation-of-deactivated-national-id.md) - Compare fraud death reversal with another rare scenario involving National ID reactivation. Both follow similar manual verification patterns but apply to different identity lifecycle events (death vs. birth fraud).
+* [Death Registration & Identity Status Update](../integration-flows/death-registration-and-identity-status-update.md) - Understand the standard death registration workflow in CRVS-MOSIP integration, which is the baseline process from which fraud death case reversals deviate. This provides context on how deceased flags are originally set.
+* [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system used for reviewing fraud death reversals. This document details the queue-based architecture, decision workflows, and integration points that enable country authorities to approve or reject reversal requests.
+* [Registration Processor Configurations Details](../../configurations-and-operations/configurations-details.md) - Explore the ID schema fields (`declaredAsDeceased`, `deceasedDeclarationDate`, `typeOfDeath`) and Camel route configurations (`CRVS_Fraud_Death`) that enable death-related packet processing and reversal workflows.
+* [Reactivation of Deactivated National ID](reactivation-of-deactivated-national-id.md) - Compare fraud death reversal with another rare scenario involving National ID reactivation. Both follow similar manual verification patterns but apply to different identity lifecycle events (death vs. birth fraud).

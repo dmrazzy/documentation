@@ -44,10 +44,10 @@ Please refer to [this link](https://mosip.atlassian.net/issues/MOSIP-41091?filte
 
 #### **Repositories Released** <a href="#repositories-released" id="repositories-released"></a>
 
-| **Repository Released** | **Tags**                                                         |
-| ----------------------- | ---------------------------------------------------------------- |
-| **registration**        |  [v1.2.1.0](https://github.com/mosip/registration/tree/1.2.1.0)  |
-| **mosip-config**        |  [v1.2.4.0](https://github.com/mosip/mosip-config/tree/v1.2.4.0) |
+| **Repository Released** | **Tags**                                                        |
+| ----------------------- | --------------------------------------------------------------- |
+| **registration**        | [v1.2.1.0](https://github.com/mosip/registration/tree/1.2.1.0)  |
+| **mosip-config**        | [v1.2.4.0](https://github.com/mosip/mosip-config/tree/v1.2.4.0) |
 
 #### **Compatible Modules** <a href="#compatible-modules" id="compatible-modules"></a>
 
@@ -66,7 +66,7 @@ Please refer to [this link](https://mosip.atlassian.net/issues/MOSIP-41091?filte
 
 ### **Config Changes** <a href="#config-changes" id="config-changes"></a>
 
-Please refer to [this](../../../id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details.md) link to know more about the config properties added.
+Please refer to [this](../../../interoperability/integrations/test/configurations-and-operations/configurations-details.md) link to know more about the config properties added.
 
 #### **Documentation** <a href="#documentation" id="documentation"></a>
 

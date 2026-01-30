@@ -2,8 +2,121 @@
 
 ## Overview
 
-Integration does not mean merger, it's a bridge between the two systems and that's why each system maintains its core responsibilities. 
-This section explains the philosophical foundation behind the technical boundaries, limitations, and design decisions documented throughout this guide. While MOSIP's technical capabilities could support various integration patterns, not all technically feasible approaches are recommended or appropriate.
+MOSIP’s API architecture is technically capable of automatically processing a wide range of requests from CRVS systems, including identity creation, demographic changes, status updates, deactivation, and reversals. However, technical capability does not imply recommended or default practice.
+
+As a foundational identity system, MOSIP deliberately enforces integration boundaries to balance automation with legal accountability, data integrity, human rights protection, and downstream system stability. Certain CRVS-initiated actions are therefore **not supported as part of the default integration**, even though they are technically feasible. These boundaries are informed by real-world consequences observed across large-scale national ID implementations.
+
+The following subsections describe the **default integration limitations**, the rationale behind each, and the implications of removing these safeguards.
+
+#### 1. Adult Registration via CRVS Is Not Supported by Default
+
+The default MOSIP–CRVS integration supports identity creation through CRVS only for **infant birth registrations**. Registration of adults through CRVS is not supported.
+
+**Rationale**
+
+For adults, biometric data represents the highest level of identity assurance available in MOSIP. Biometric capture and verification are essential to ensure uniqueness, prevent impersonation, and protect against identity fraud. As a result, adults are required to register through designated National ID enrollment centers, where biometric capture is mandatory and supervised.
+
+MOSIP is configured by default to treat individuals above a configured age threshold as adults. Once this threshold is crossed, biometric presence is required for new identity creation, and CRVS-based registration is intentionally restricted.
+
+**Consequences if Adult Registration via CRVS Were Allowed Without Biometrics**
+
+Allowing adult registrations via CRVS without biometric capture would significantly weaken the assurance level of the national ID system. It would increase the risk of duplicate or fraudulent identities, enable impersonation, and undermine trust in downstream services such as banking, benefits, and authentication-based access controls. Over time, this could erode confidence in the foundational ID itself and expose the system to organized misuse.
+
+#### 2. Demographic Updates for Identities with Linked Biometrics Are Not Supported by Default
+
+The default integration does not support demographic update or correction requests from CRVS for identities where biometrics have already been linked. In practice, this primarily applies to adult citizens.
+
+**Rationale**
+
+MOSIP considers biometric verification to be the strongest mechanism for confirming that the individual requesting a demographic change is the rightful identity holder. For identities with linked biometrics, allowing demographic updates based solely on CRVS submissions—without biometric or in-person verification—would weaken this assurance model.
+
+As a result, demographic updates via CRVS are limited to identities without linked biometrics, which are typically infants below a configured age threshold.
+
+**Consequences if Adult Demographic Updates Were Allowed Automatically**
+
+Allowing demographic updates for biometric-linked identities without direct verification could lead to unintended or malicious changes propagating across multiple dependent systems. Citizens may face service denials, authentication failures, or legal inconsistencies if their identity data changes unexpectedly. In many cases, individuals may not fully understand the downstream impact of such automatic updates, leading to disputes and loss of trust in public systems.
+
+**Note**
+
+By default, MOSIP considers individuals under the age of five as children. This age threshold is configurable based on country-specific policies and legal requirements.
+
+#### 3. Offline Authentication Is Not Supported in the Default Integration
+
+The default integration does not support offline authentication for CRVS-initiated requests. MOSIP recommends online authentication of the reporting individual or approving authority using the eSignet module for all CRVS events, including birth, death, and demographic updates.
+
+**Rationale**
+
+MOSIP requires accountability for every request that affects the identity lifecycle. Online authentication using eSignet ensures that the identity of the person reporting an event—or the legal authority approving it—is known, verifiable, and auditable. The eSignet userinfo token is shared with MOSIP to establish this accountability.
+
+In cases where CRVS data is collected remotely or offline, the expectation is that once connectivity is restored, the responsible registrar or administrator authenticates using their National ID via eSignet before the request is submitted to MOSIP.
+
+**Consequences of Allowing Requests Without eSignet Authentication**
+
+Without authenticated accountability, it becomes difficult to trace who initiated or approved identity-affecting actions. This opens the system to misuse, including unauthorized submissions, fraudulent reporting, and manipulation of identity states for personal or financial gain. Lack of authentication also weakens auditability, complicates legal investigations, and undermines confidence in the integrity of the integration.
+
+#### 4. Automatic Deactivation of National ID on Death Is Not Supported by Default
+
+The default integration does not support automatic deactivation of a National ID upon receipt of a death event from CRVS. Instead, MOSIP marks the identity with a deceased flag.
+
+**Rationale**
+
+A National ID is often deeply integrated across multiple services, including banking, insurance, pensions, healthcare, and inheritance-related processes. Automatic deactivation would immediately disrupt these services, affecting not only the deceased individual but also their family members and dependents.
+
+By using a deceased flag, MOSIP allows service providers to make informed decisions during authentication flows, based on their own legal and operational requirements.
+
+**Consequences if Automatic Deactivation Were Enabled**
+
+Automatic deactivation could freeze accounts, halt benefit disbursements, block insurance claims, and create legal ambiguity. It also increases the risk of misuse, where false or premature death reports could be weaponized to cause harm or financial disruption.
+
+#### 5. Automatic Deactivation for Incorrect Birth Registrations Is Not Supported by Default
+
+In cases where CRVS identifies an incorrect birth registration after an infant identity has already been created, the default integration does not support automatic deactivation. Such requests are routed to MOSIP’s manual verification queue.
+
+**Rationale**
+
+Even infant identities may already be linked to benefits, healthcare, or social services. Immediate deactivation without verification could disrupt essential services for the child and family. Manual verification ensures that legal authorities can assess evidence, intent, and impact before making a decision.
+
+**Consequences of Automatic Deactivation**
+
+Automatic deactivation in such scenarios could cause unnecessary hardship, deny critical services, and create administrative confusion. However, unlike adult cases, deactivation _may_ be performed after manual verification if the incorrect registration is confirmed and identified early.
+
+#### 6. Automatic Reactivation of Deactivated Infant IDs Is Not Supported by Default
+
+Once an infant identity is deactivated following manual verification of an incorrect birth, the default integration does not support automatic reactivation of the same identity.
+
+**Rationale**
+
+If a birth is later confirmed to be legitimate, the correct approach is to register the birth again and issue a new identity. Reactivating a previously deactivated ID undermines identity finality and weakens system control.
+
+**Consequences if Reactivation Were Allowed**
+
+Allowing automatic reactivation would enable repeated toggling of identity states, encouraging system gaming and external control of the national ID lifecycle. This would significantly weaken the authority of the National ID system and is therefore not recommended.
+
+#### 7. Automatic Reversal of Deceased Flag Is Not Supported by Default
+
+The default integration does not support automatic reversal of a deceased flag. If CRVS determines that a death report was incorrect, the reversal request is routed to MOSIP’s manual verification queue.
+
+**Rationale**
+
+Reversing a death status has far-reaching implications, including insurance settlements, pension payouts, inheritance claims, and service eligibility. Such reversals require careful verification from a National ID authority perspective, beyond CRVS records alone.
+
+**Consequences of Automatic Reversal**
+
+Automatic reversals could enable misuse, repeated toggling of death status, and systemic instability. This could result in financial fraud, legal disputes, and erosion of trust across all systems relying on the National ID.
+
+#### Final Note on Technical Capability vs. Policy Choice
+
+All the above limitations are **policy-driven defaults**, not technical constraints. From a purely technical standpoint, MOSIP can be configured to support these actions automatically. However, countries must fully understand the **legal, operational, social, and downstream consequences** before enabling such capabilities.
+
+These boundaries exist to protect individuals, preserve system integrity, and ensure that foundational identity remains stable, trustworthy, and governed by accountable human oversight where risks are high.
+
+
+
+***
+
+### Overview
+
+Integration does not mean merger, it's a bridge between the two systems and that's why each system maintains its core responsibilities. This section explains the philosophical foundation behind the technical boundaries, limitations, and design decisions documented throughout this guide. While MOSIP's technical capabilities could support various integration patterns, not all technically feasible approaches are recommended or appropriate.
 
 ### Foundational ID vs. Civil Registration: Two Different Systems
 
@@ -235,7 +348,6 @@ Behind every technical boundary in this guide is protection against real-world h
 * Time windows balance correction with stability
 * Offline escalation preserves judicial review rights
 
-
 ### Guiding Principles for Integration Boundaries
 
 These principles inform every design decision in this guide:
@@ -398,102 +510,76 @@ When you encounter a limitation or boundary in subsequent sections, refer back t
 
 ***
 
-
 ## System Roles & Responsibilities
-| **Area** | **Responsibility** |
-|---------|-------------------|
-| **Data Collection** | Capture vital event data from informants/applicants |
-| **Data Validation** | Validate completeness and accuracy before sending to MOSIP |
-| **Deduplication** | Prevent duplicate registrations for same vital event |
-| **Authentication** | Integrate eSignet for informant/introducer authentication |
-| **API Integration** | Call MOSIP APIs (Create Packet, Trigger) with proper authentication |
-| **Notification Handling** | Subscribe to WebSub and process credential/status notifications |
-| **Certificate Issuance** | Generate and issue birth/death certificates |
-| **Error Management** | Handle API errors and retry failed requests |
-| **Audit Trail** | Maintain logs of all MOSIP interactions |
-| **Data Security** | Secure transmission and storage of identity data |
+
+| **Area**                  | **Responsibility**                                                  |
+| ------------------------- | ------------------------------------------------------------------- |
+| **Data Collection**       | Capture vital event data from informants/applicants                 |
+| **Data Validation**       | Validate completeness and accuracy before sending to MOSIP          |
+| **Deduplication**         | Prevent duplicate registrations for same vital event                |
+| **Authentication**        | Integrate eSignet for informant/introducer authentication           |
+| **API Integration**       | Call MOSIP APIs (Create Packet, Trigger) with proper authentication |
+| **Notification Handling** | Subscribe to WebSub and process credential/status notifications     |
+| **Certificate Issuance**  | Generate and issue birth/death certificates                         |
+| **Error Management**      | Handle API errors and retry failed requests                         |
+| **Audit Trail**           | Maintain logs of all MOSIP interactions                             |
+| **Data Security**         | Secure transmission and storage of identity data                    |
 
 ## MOSIP Platform Responsibilities
 
-| **Area** | **Responsibility** |
-|---------|-------------------|
-| **Packet Validation** | Validate structure, schema, and mandatory fields |
-| **Identity Processing** | Process registration packets through workflows |
-| **UIN Generation** | Generate unique identifiers for new births |
-| **Status Management** | Update deceased status for death registrations |
-| **Credential Generation** | Create UIN/VID/PSUT tokens |
-| **Notification Publishing** | Publish events to WebSub for credential/status updates |
-| **Authentication** | Validate eSignet tokens for audit purposes |
-| **Technical Validation** | Enforce schema compliance and data integrity |
-| **Error Reporting** | Send validation errors via WebSub notifications |
-| **Partner Management** | Manage CRVS as trusted partner with appropriate policies |
+| **Area**                    | **Responsibility**                                       |
+| --------------------------- | -------------------------------------------------------- |
+| **Packet Validation**       | Validate structure, schema, and mandatory fields         |
+| **Identity Processing**     | Process registration packets through workflows           |
+| **UIN Generation**          | Generate unique identifiers for new births               |
+| **Status Management**       | Update deceased status for death registrations           |
+| **Credential Generation**   | Create UIN/VID/PSUT tokens                               |
+| **Notification Publishing** | Publish events to WebSub for credential/status updates   |
+| **Authentication**          | Validate eSignet tokens for audit purposes               |
+| **Technical Validation**    | Enforce schema compliance and data integrity             |
+| **Error Reporting**         | Send validation errors via WebSub notifications          |
+| **Partner Management**      | Manage CRVS as trusted partner with appropriate policies |
 
 ## Shared Responsibilities
 
-| **Area** | **CRVS Contribution** | **MOSIP Contribution** |
-|---------|----------------------|------------------------|
-| **Field Mapping** | Define CRVS field names and formats | Define ID schema structure |
-| **Error Handling** | Implement retry logic | Provide detailed error codes |
-| **Security** | Secure OAuth2 client credentials | Issue and validate access tokens |
-| **Monitoring** | Monitor API response times | Monitor packet processing times |
-| **Reconciliation** | Track pending requests | Publish status updates |
-| **Testing** | Provide test data and scenarios | Provide sandbox environment |
+| **Area**           | **CRVS Contribution**               | **MOSIP Contribution**           |
+| ------------------ | ----------------------------------- | -------------------------------- |
+| **Field Mapping**  | Define CRVS field names and formats | Define ID schema structure       |
+| **Error Handling** | Implement retry logic               | Provide detailed error codes     |
+| **Security**       | Secure OAuth2 client credentials    | Issue and validate access tokens |
+| **Monitoring**     | Monitor API response times          | Monitor packet processing times  |
+| **Reconciliation** | Track pending requests              | Publish status updates           |
+| **Testing**        | Provide test data and scenarios     | Provide sandbox environment      |
 
 ## Role-Based Access Control
 
 **CRVS Operator:**
-- Access CRVS portal
-- Capture vital event data
-- Initiate authentication flows
-- Cannot directly access MOSIP APIs
+
+* Access CRVS portal
+* Capture vital event data
+* Initiate authentication flows
+* Cannot directly access MOSIP APIs
 
 **CRVS System (OAuth2 Client):**
-- Call Packet Manager API
-- Call Trigger API
-- Receive WebSub notifications
-- Cannot access admin functions
+
+* Call Packet Manager API
+* Call Trigger API
+* Receive WebSub notifications
+* Cannot access admin functions
 
 **MOSIP Administrator:**
-- Configure partner policies
-- Create centres/machines/officers
-- Monitor integration health
-- Cannot access CRVS data directly
+
+* Configure partner policies
+* Create centres/machines/officers
+* Monitor integration health
+* Cannot access CRVS data directly
 
 **System Integrator:**
-- Configure OAuth2 clients
-- Set up WebSub subscriptions
-- Map fields between systems
-- Test end-to-end flows
 
-
-
-
-
-
-
-
-<!-- 
-
-To be analysed and then to be absorbed anywhere else above
-
-# Integration Limitations
-
-The limitations listed below are not arbitrary technical constraints. Each reflects careful consideration of real-world implications documented in Section [Integration Boundries & Real-World Implications](link). These boundaries protect individuals, maintain system integrity, and align with the distinct operational models of Foundational ID and Civil Registration systems.
-
-Although the integration scope includes scenarios for birth, death, and updates, there are still some cases where limitations exist.
-
-1. **No Support for New Adult Birth Registrations**: MOSIP does not support new adult birth registrations when the request comes from CRVS.
-2. **No Support for Demographic Updates When Biometrics Are Already Linked to a National ID**: MOSIP will not support demographic updates from CRVS for individuals whose biometrics are already linked to a National ID. For such updates, individuals are expected to visit the National ID registration centre (MOSIP).
-3. **Integration for Birth and Death Registrations**: The integration works seamlessly for birth and death registrations. However, updates to demographic data are still a work in progress.
-4. **Duplicate Request Rejection**: Since the CRVS system is considered the source of truth, MOSIP currently does not reject duplicate birth/death registration requests received from the CRVS system. This can result in multiple UINs for the same infant or an update of the death flag for the same deceased. Deduplication is expected to be handled by CRVS. **Exception**: For rare scenarios (fraud detection, identity reversals) covered in Section 4.6, MOSIP enforces one-time request policies and routes cases to manual verification rather than automatic processing.
-5. **No Support for Rejected Packets, Status Updates, and Reason**: If a request fails due to validation issues in MOSIP, there is currently no mechanism to send detailed rejection reasons back to CRVS.
-6. **No Automatic Deactivation or Reactivation**: While CRVS can submit fraud reports or reactivation requests (Section 4.6), MOSIP does not automatically deactivate or reactivate National IDs. All such requests are routed to manual verification queues where authorized country authorities make final decisions.
-7. **No support for Offline Integration**: This integration works only when online connectivity is available as eSignet authentication is a necessary step before a request is submitted to CRVS.
-8. **Use of VID/UIN for Death Registration and Demo Data Updates**: Only VID or UIN can be used to register a death or submit requests for the demo data updates. Currently, MOSIP does not support death updates with any other identifier.
-9. **Time-Bound Rare Scenario Requests**: Fraud detection and reversal requests (Section 4.6) are only accepted within configurable time windows from the initial registration/declaration date. Requests outside these windows are automatically rejected and must follow offline grievance channels.
-
--->
-
+* Configure OAuth2 clients
+* Set up WebSub subscriptions
+* Map fields between systems
+* Test end-to-end flows
 
 ***
 
@@ -501,4 +587,3 @@ Although the integration scope includes scenarios for birth, death, and updates,
 
 * [Core Integration Principles](core-integration-principles.md)
 * [Integration Boundaries, Limitations and Implications](integration-principles-boundaries-and-real-world-implications.md)
-

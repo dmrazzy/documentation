@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # Notifications & Event Handling
 
 ### WebSub Overview
@@ -53,8 +57,6 @@ CRVS can filter status updates based on:
 ### Error Notifications
 
 (Detail error notification structure and handling)
-
-
 
 ***
 

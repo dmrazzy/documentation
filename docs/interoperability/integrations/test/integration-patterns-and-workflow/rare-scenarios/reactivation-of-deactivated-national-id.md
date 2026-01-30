@@ -136,11 +136,7 @@ This workflow mirrors international practices, combining civil registration with
 
 ## Learn More
 
-- [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md) - Understand the deactivation workflow that precedes reactivation. This document explains how National IDs are originally deactivated for fraud cases, providing essential context for the reactivation process.
-
-- [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system used for reviewing reactivation requests. This details the queue-based architecture, decision workflows, and how country authorities approve or reject reactivation after reviewing evidence and fraud history.
-
-- [Birth Registration & UIN Issuance](../integration-flows/birth-registration-and-uin-issuance.md) - Explore the standard birth registration workflow that establishes National IDs initially. Understanding this baseline process helps contextualize why reactivation after fraud-based deactivation requires such careful handling.
-
-- [Registration Processor Configurations Details](../../../../../id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details.md) - Discover the technical configurations including Camel routes (`CRVS_fraud_birth`) and packet processing workflows that enable both deactivation and reactivation requests to be routed correctly for manual review.
-
+* [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md) - Understand the deactivation workflow that precedes reactivation. This document explains how National IDs are originally deactivated for fraud cases, providing essential context for the reactivation process.
+* [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system used for reviewing reactivation requests. This details the queue-based architecture, decision workflows, and how country authorities approve or reject reactivation after reviewing evidence and fraud history.
+* [Birth Registration & UIN Issuance](../integration-flows/birth-registration-and-uin-issuance.md) - Explore the standard birth registration workflow that establishes National IDs initially. Understanding this baseline process helps contextualize why reactivation after fraud-based deactivation requires such careful handling.
+* [Registration Processor Configurations Details](../../configurations-and-operations/configurations-details.md) - Discover the technical configurations including Camel routes (`CRVS_fraud_birth`) and packet processing workflows that enable both deactivation and reactivation requests to be routed correctly for manual review.

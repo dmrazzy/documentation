@@ -62,64 +62,9 @@ Once the prerequisites are met, the integration between a CRVS system and MOSIP 
 9. **Issue Certificates and Update Records**\
    Upon receiving the national ID and processing status, the CRVS system should proceed to issue the corresponding official certificate (e.g., birth, death, marriage). Additionally, update the national records to reflect the new identity credentials. This step ensures formal recognition and accurate documentation of the citizen's identity and vital event.
 
-For detailed technical specifications, API documentation, and schema definitions, please refer to the subsequent section [here](technical-details.md). For details on configuration changes, please refer [here](../../../../id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details.md).
-
-
+For detailed technical specifications, API documentation, and schema definitions, please refer to the subsequent section [here](technical-details.md). For details on configuration changes, please refer [here](../../test/configurations-and-operations/configurations-details.md).
 
 ## Other keys and certificates which are required for the integration
 
 1. eSignet integration - If eSignet is used for authentication, refer here for detailed info on the onboarding process and the key required for onboarding to eSignet - [Integrate with eSignet](https://docs.esignet.io/esignet-authentication/test/try-it-out/integrate-with-e-signet).
 2. Auth Partner Onboarding - (Certificates required Auth Partner Onboarding) - Refer to the [Partner Management Services - End User Guide](../../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#authentication-partner-workflow).
-
-<!-- 3. Cred partner onboarding - TBA - link - 3 - Varaniya -->
-
-
-
-
-
-
-<!--
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| ### \[MOSIP-41820\] [Update the CRVS integration documentation to include the missing pre-requisites](https://mosip.atlassian.net/browse/MOSIP-41820) Created: 13/Jun/25  Updated: 28/Jul/25      |
-+=================================================================================================+=================================================================================================+
-
-
-## Task Details
-
----
-
-### Task #1: Add Missing Pre-requisites to CRVS Integration Documentation
-
-The [MOSIP CRVS Integration documentation](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration/approach) currently lacks information on the following pre-requisites. Please update the page to include these, along with the relevant documentation links:
-
-| **Pre-requisite Missing**         | **Docs Link to be Added**                                                                                                                                    |
-|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Key for onboarding to eSignet     | [Integrate with eSignet](https://docs.esignet.io/test/try-it-out/integrate-with-e-signet)                                                                    |
-| Auth partner onboarding - Certificates required | [Partner Management Services - End User Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide) |
-| Cred partner onboarding           | TBA                                                                                                                                                         |
-
----
-
-### Task #2: Migrate Configuration Details Page
-
-- **Current location:**  
-   [Configuration details](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/registration-processor/deploy/configurations-details)
-
-- **New location:**  
-   Create a new page under [Approach section of CRVS](https://docs.mosip.io/1.2.0/interoperability/integrations/mosip-opencrvs-integration/approach)
-
----
-
-### Comments
-
-> **Comment by [Rachik Sharma](https://mosip.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A46054c49-742c-483c-8c0b-9fc2069d4d73) [16/Jun/25]:**  
-> Using this ticket to track the update on the CRVS related documentation.  
-> cc [varaniya](https://mosip.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Aa354eedc-e17e-400c-b961-a8a3f716ad4f), [Keshav Singh](https://mosip.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A89022ae0-b73b-4f19-a5dc-8cf7cf3c67a7)
-
----
-
-*Generated at Fri Aug 01 06:45:22 UTC 2025 by Keshav Singh using Jira 1001.0.0-SNAPSHOT#100287-rev:f621a79c61f778c46520a651f465e9980afc66a2.*
-
-
--->
