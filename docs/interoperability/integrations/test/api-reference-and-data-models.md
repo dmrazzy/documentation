@@ -4,41 +4,17 @@
 
 ### Overview
 
-Once all the [prerequisites](./configurations-and-operations/operational-considerations.md#prerequisites--system-setup) are in place, the next step is to initiate a request (birth/death/update) by calling the create packet API of MOSIP's packet manager module, followed by the trigger API to process the packet.
+Once all the [prerequisites](configurations-and-operations/operational-considerations.md#prerequisites--system-setup) are in place, the next step is to initiate a request (birth/death/update) by calling the create packet API of MOSIP's packet manager module, followed by the trigger API to process the packet.
 
 ### API Creation Process
 
 The API creation workflow consists of three key components that work together to process registration requests:
 
-- **Application ID (AID) Structure**: Each registration request requires a unique Application ID to track and identify the packet throughout its lifecycle.
-
-- **Create Packet API (Packet Manager Module)**: This API endpoint initiates the packet creation process by accepting registration data and storing it in the system.
-
-- **Trigger API (Registration Processor Module)**: After packet creation, this API activates the processing workflow to validate and verify the registration information.
-
+* **Application ID (AID) Structure**: Each registration request requires a unique Application ID to track and identify the packet throughout its lifecycle.
+* **Create Packet API (Packet Manager Module)**: This API endpoint initiates the packet creation process by accepting registration data and storing it in the system.
+* **Trigger API (Registration Processor Module)**: After packet creation, this API activates the processing workflow to validate and verify the registration information.
 
 ### Application ID (AID) Structure
-
-The Application ID (AID) refers to the unique identifier assigned to track the packet that is being processed for events such as birth or death registration. It can be used by MOSIP or CRVS to track the progress and status of the specific event.
-
-**AID Structure (Recommended):**
-
-1. **Centre ID** (First 5 digits): The first 5 digits of the AID represent the **Centre ID**.
-2. **Machine ID** (Next 5 digits): The next 5 digits of the AID represent the **Machine ID**.
-3. **Random Sequence** (next N digits): The next N digits can be a randomly generated sequence based on the length that the country wants to use for the AID.
-
-**Example of AID:**
-
-For the AID `10001100771006920220128223618`
-
-The breakdown is as follows:
-
-1. **Centre ID**: `10001` (First 5 digits)
-2. **Machine ID**: `10077` (Next 5 digits)
-3. **Random Sequence**: `1006920220128223618` (Remaining 16 digits)
-
-The AID format mentioned above is the recommendation to be followed, but not mandatory. CRVS can generate the AID in any specified format as per their requirement and include it in the Create Packet API Request to ensure proper packet identification and mapping.
-
 
 #### Create Packet API (Packet Manager Module)
 
@@ -132,11 +108,17 @@ The AID format mentioned above is the recommendation to be followed, but not man
 11. `zone`: Geographic zone.
 12. `region`: Region of the address.
 13. `province`: Province of residence.
-14. Additional fields can be added based on country requirements and ID schema.
+14. Additional fields for each workflow:
+    1. **Birth registration:**
+       1. `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the birth registration
+    2. **Death registration:**
+       1. `deceasedInformer`: Informant’s eSignet user info jwt token, to be passed when sending a request for the death registration
+       2. `deceasedDeclarationDate`: The date on which the individual was declared deceased.
+       3. `declaredAsDeceased`: A flag indicating that the individual has been officially marked as deceased.
+       4. `typeOfDeath`: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
+       5. `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the death registration
 
 **Additional Fields for** [**Rare Scenarios**](integration-patterns-and-workflow/rare-scenarios/)**:**
-
-<!-- keshav+rachik - These fields must be added to the ID schema to support fraud detection, reactivation, and death reversal workflows: -->
 
 **For** [**Fraud Birth**](integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md) **/ Deactivation Requests:**
 
@@ -191,7 +173,7 @@ It is required that at least one attribute in the audit object is populated with
 
 #### Trigger API (Registration Processor Module)
 
-In MOSIP, after a packet is created, it is processed for validations and verification of the information in the [**Registration Processor**](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/README.md). Inside the Registration Processor, each packet follows a specific workflow defined by the **Camel route**.
+In MOSIP, after a packet is created, it is processed for validations and verification of the information in the [**Registration Processor**](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/). Inside the Registration Processor, each packet follows a specific workflow defined by the **Camel route**.
 
 For the integration with CRVS, the newly created packet is uploaded to the Object Store. To pick up this new packet and trigger the processing, we have developed a new API. This API ensures to trigger the appropriate workflow is triggered for further processing of the registration packet. For this integration, the camel route workflow to be executed is determined by the values provided for the **source** and **process**.
 
@@ -229,8 +211,6 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 }
 ```
 
-
-
 ### Request/Response Schemas
 
 ### Data Exchange Format
@@ -241,15 +221,12 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 
 ### Data Validation Rules
 
-
 ***
 
 ### Learn More
 
 * [Operational Considerations](configurations-and-operations/operational-considerations.md) - Prerequisites, system setup, and configuration steps for CRVS integration
-* [Registration Processor Overview](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/README.md) - Detailed information about packet processing workflows and camel routes
-* [Packet Manager](../../../id-lifecycle-management/supporting-components/packet-manager/README.md) - Comprehensive guide to packet creation, structure, and management
+* [Registration Processor Overview](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/) - Detailed information about packet processing workflows and camel routes
+* [Packet Manager](../../../id-lifecycle-management/supporting-components/packet-manager/) - Comprehensive guide to packet creation, structure, and management
 * [ID Schema](../../../id-lifecycle-management/identity-management/id-schema.md) - Understanding and customizing the identity schema for your deployment
 * [Policy Configuration & Customization](configurations-and-operations/policy-configuration-and-customization.md) - Configurable policies and workflow customization options
-
-

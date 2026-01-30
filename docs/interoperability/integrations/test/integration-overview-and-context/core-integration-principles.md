@@ -4,27 +4,32 @@
 
 **CRVS is considered the source of truth**. MOSIP relies on CRVS to perform deduplication and treats CRVS as the authoritative source of vital event data. MOSIP does not perform de-duplication or data validation on requests from CRVS systems because of this trust relationship.
 
-**Assumption:** This approach assumes that the CRVS system is recognized as the authoritative source of vital event data and is legally authorized to issue official birth and death certificates in accordance with the laws of the country.
+**Rationale:** CRVS is the legally authorized system for registering and certifying vital life events. It has the institutional mandate, legal authority, and statutory processes to verify that a life event occurred. As a foundational identity system, MOSIP trusts CRVS for the accuracy, uniqueness, and validity of vital event data. This establishes a clear authority boundary where MOSIP relies on CRVS-validated events and does not repeat event verification or event-level deduplication (except for the rare/manual scenarios described below).
 
-> **See Section [integration-principles-boundaries-and-real-world-implications](integration-principles-boundaries-and-real-world-implications.md)** for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
+**Assumption:** The CRVS system is legally authorized to issue official birth and death certificates and is institutionally capable of performing the required verification and deduplication in accordance with the laws of the country.
 
-### Trust & Data Verification Model
+> **See Section** [**integration-principles-boundaries-and-real-world-implications**](integration-principles-boundaries-and-real-world-implications.md) for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
 
-#### Data Verification and Trust
+### **Integration Data Exchange & Verification**
 
 1. The initiation of the request with the data will be from CRVS to MOSIP
 2. Data transmitted from CRVS to MOSIP will undergo thorough data/document verification and deduplication before any request is initiated for MOSIP to process.
-3. MOSIP will trust all information provided by CRVS and honor the received requests. MOSIP will ensure that the technical and logical validations are all in place for packet processing.
-4. The integration should define the mandatory attributes to be exchanged between the two systems. It is crucial to agree upon these attributes to ensure consistent and accurate data exchange.
-5. **Exception for Rare Scenarios**: For sensitive cases such as fraud detection (Section 4.6.1), identity reactivation (Section 4.6.2), and death flag reversals (Section 4.6.3), MOSIP does not automatically process requests. Instead, these are routed to manual verification queues where authorized country authorities review evidence and make final decisions. This ensures legal compliance and prevents misuse while maintaining the trust relationship with CRVS.
+3. MOSIP will trust all information provided by CRVS and honor the received requests. MOSIP will ensure that the technical and logical validations are all in place for request processing.
+4. The integration defines a set of mandatory attributes to be exchanged between the two systems. By default, MOSIP specifies a core set of mandatory attributes that CRVS systems must share to enable MOSIP to initiate packet processing.
+
+{% hint style="info" %}
+Note - In addition to these default attributes, the integration **supports customization**, allowing countries to modify, extend, or tailor the set of mandatory attributes based on country-specific legal frameworks, policies, or implementation requirements.
+{% endhint %}
+
+5. **Exception for Rare Scenarios**: For sensitive cases such as identity deactivation in case of [Fraudulent Birth Registration - National ID Deactivation Request](../integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md), [identity reactivation](../integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md) , [death flag reversals](../integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md) or more, MOSIP does not automatically process requests. Instead, these are routed to manual verification queues.
 
 ### Identity Lifecycle Management
 
 ### De-duplication Strategy
 
-> **Note**: MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth. While MOSIP has its internal deduplication mechanism to detect and reject duplicate packets, duplicate and repeated request scenarios are not currently handled for rejection by MOSIP.
+As for the default integration mosip does not perforam deduplication, This essentially means MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth.&#x20;
 
-**Exception for Rare Scenarios**: For fraud detection, reactivation, and death reversal requests (Section 4.6), MOSIP enforces a **one-time request policy** per National ID. If a fraud flag or reversal request is already in progress or has been previously processed, subsequent duplicate requests are automatically rejected. This prevents repeated requests from creating endless loops and maintains system integrity.
+**Exception for Rare Scenarios**: For fraud detection, reactivation, and death reversal requests (Rare Scenarios), MOSIP enforces a **one-time request policy** per National ID. If a fraud flag or reversal request is already in progress or has been previously processed, subsequent duplicate requests are automatically rejected. This prevents repeated requests from creating endless loops and maintains system integrity.
 
 ### Authentication & Authorization Model
 
@@ -39,15 +44,16 @@
 
 1. The identity credential sharing and packet status updates are two separate MOSIP integration points for any CRVS.
 2. MOSIP will generate and share identity credentials for new registration cases via WebSub. Any partner configured according to the policy will receive these notifications automatically.
-3. By default, MOSIP recommends sharing the PSUT token as part of the identity credential returned to CRVS. However, the system also supports sharing UIN, VID, or the PSUT token, based on the country's specific requirements.
-4. MOSIP will publish packet status updates to a separate WebSub. Any credential partner subscribed to this WebSub topic can filter and track specific packets based on their status.
+3. If CRVS requires identity credentials to be shared by MOSIP during identity generation, MOSIP can return such credentials to CRVS. By default, MOSIP recommends sharing the PSUT token to minimize exposure of sensitive identity data. While sharing UIN or VID is supported to meet country-specific requirements, it is not recommended and should be done only when legally mandated.
 
 #### Multiple CRVS Systems
 
 1. If a country deploys multiple CRVS systems, each system will be treated as a separate partner for MOSIP. This allows for independent management and integration with each CRVS system.
-2. Credentials generated/update messages from MOSIP will be sent to all the configured credential partners subscribed to the websub as per policy. It is the responsibility of the country and CRVS systems to manage the sharing of information across multiple CRVS systems.
+2. Credentials generated from MOSIP will be sent to all the configured credential partners subscribed to the websub as per policy. It is the responsibility of the country and CRVS systems to manage the sharing of information across multiple CRVS systems.
 
-
+{% hint style="info" %}
+**Note:** In this document, the term **MOSIP ID** is used to refer to the foundational or national identity issued through MOSIP. The terms **MOSIP ID**, **foundational ID**, **national ID**, and **UIN (Unique Identity Number)** are used interchangeably and denote the same identity, unless stated otherwise.
+{% endhint %}
 
 ***
 
