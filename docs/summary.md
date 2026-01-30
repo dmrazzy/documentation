@@ -320,6 +320,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
+    * [Partner Management System Revamp 1.3.0-beta.4](roadmap-and-releases/releases/partner-management-system-revamp-1.3.0-beta.4.md)
     * [0.1.0 Infra](roadmap-and-releases/releases/0.1.0-infra.md)
     * [ID Authentication 1.2.1.3 and Resident 1.2.1.3](roadmap-and-releases/releases/id-authentication-1.2.1.3-and-resident-1.2.1.3.md)
     * [v1.2.1.0](roadmap-and-releases/releases/v1.2.1.0/README.md)
