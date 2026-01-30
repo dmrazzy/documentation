@@ -110,9 +110,9 @@ All the above limitations are **policy-driven defaults**, not technical constrai
 
 These boundaries exist to protect individuals, preserve system integrity, and ensure that foundational identity remains stable, trustworthy, and governed by accountable human oversight where risks are high.
 
-
-
 ***
+
+<!--
 
 ### Overview
 
@@ -587,3 +587,6 @@ When you encounter a limitation or boundary in subsequent sections, refer back t
 
 * [Core Integration Principles](core-integration-principles.md)
 * [Integration Boundaries, Limitations and Implications](integration-principles-boundaries-and-real-world-implications.md)
+
+
+-->
