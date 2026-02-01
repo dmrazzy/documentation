@@ -20,16 +20,14 @@ partner.
 
 ### Upload Root CA and Sub CA
 
-Only after you 'Upload Root CA and Sub CA Certificates Interface)' that a Partner will then be able to 'Upload CA signed\
-Partner Certificate.
+Only after you 'Upload Root CA and Sub CA Certificates Interface)' that a Partner will then be able to '<mark style="background-color:green;">Upload CA signed Partner Certificate</mark>'.
 
 As a process of Partner onboarding onto PMS after successful registration, Partner is required to **Upload CA signed Partner Certificate** on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation to perform authentication of citizens. Also this certificate is used to encrypt the response shared in e-KYC.
 
 {% hint style="warning" %}
 **Important:**
 
-Before a Partner will be able to '**Upload 'CA Signed Certificate**' it is prerequisite that the '**Partner Admin**' must\
-upload the **Root CA** and **Sub CA**.
+Before a Partner will be able to '**Upload 'CA Signed Certificate**' it is prerequisite that the '**Partner Admin**' must upload the **Root CA** and **Sub CA**.
 {% endhint %}
 
 #### To Upload Root CA and Sub CA Certificates
@@ -39,6 +37,8 @@ upload the **Root CA** and **Sub CA**.
 3. Choose the **Root CA Certificate** to upload (only files with extensions as .cer or .pem).
 4. Click Submit.
 5. Similarly, sub/intermediate CA certificate should be uploaded by following the above steps (1-4).
+
+Refer to the [user guide here](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration#certificate-trust-store) to upload the Root CA and Intermediate CA certificates by logging in with Partner Admin role
 
 <figure><img src="../../../../../Users/keshavsingh/Office/PMS/half/media/image1.png" alt=""><figcaption><p>image</p></figcaption></figure>
 
@@ -76,7 +76,9 @@ On clicking Authentication Policy tab, List of all previously created Authentica
 
 On clicking 'Create Authentication Policy' button, Partner Admin/Policy manager is navigated to Create Authentication Policy page where details such as policy group, policy name, description etc will have to be entered.
 
+{% hint style="success" %}
 Note: Only active policy groups are available in the policy group dropdown.
+{% endhint %}
 
 Click on the upload button to upload policy data . Only json files are allowed for upload.
 
@@ -241,8 +243,8 @@ You must ensure that you re-upload the partner certificate again so that new MOS
 
 After the partner has selected a policy group, uploaded partner certificate, requested for policy and also got admin approval - partner can now perform 'Authentication Services':
 
-* OIDC Client: Create OIDC Client for approved policy
-* API Key : Generate API Key for approved policy
+* **OIDC Client**: Create OIDC Client for approved policy
+* **API Key**: Generate API Key for approved policy
 
 **Prerequisites**: Policy requested by the **Partner** must be already approved by **Policy Manager** (Read More [**here**](end-user-guide.md#approve-policy-request)).
 

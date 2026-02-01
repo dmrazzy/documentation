@@ -4,6 +4,8 @@
 
 Get ready to explore how your **National ID** as **Verifiable Credentials** (VCs) can be leveraged for secure and efficient access to essential services.
 
+{% embed url="https://youtu.be/3dO-mUXCZT8?si=wMfioPTUTma2iI8W" %}
+
 This step-by-step guide will take you through the complete **loan application journey**, demonstrating how a **National ID can be used to seamlessly access financial services**.
 
 By following these simple steps, you will:
@@ -64,13 +66,13 @@ You’ll receive two emails:
 #### 2.1 Install INJI Mobile App <a href="#id-2.1-install-inji-mobile-app" id="id-2.1-install-inji-mobile-app"></a>
 
 1. Download and install the INJI Mobile app using the link provided in the TAN notification email, or [click here](https://collab.mosip.net/) and select the relevant INJI Mobile option, based on your OS (Android or iOS).
-2. Alternatively, You can also visit [INJI Web](https://injiweb.collab.mosip.net/) to download the VCs as PDF.&#x20;
+2. Alternatively, You can also visit [INJI Web](https://injiweb.collab.mosip.net/) to download the VCs as PDF.
 
 Please refer below to know more.
 
 **To download the VCs in your INJI Mobile App follow the steps below:**
 
-#### 2.2 Download Your National ID VC  <a href="#id-2.2-download-your-national-id-vc" id="id-2.2-download-your-national-id-vc"></a>
+#### 2.2 Download Your National ID VC <a href="#id-2.2-download-your-national-id-vc" id="id-2.2-download-your-national-id-vc"></a>
 
 1. Open the INJI Mobile app and tap **+** to view issuers.
 2. Select **National Identity Department** → **MOSIP National ID** (browser redirects to eSignet).
