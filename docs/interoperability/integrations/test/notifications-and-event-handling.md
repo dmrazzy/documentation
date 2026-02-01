@@ -63,6 +63,6 @@ CRVS can filter status updates based on:
 ### Learn More
 
 * [Core Integration Principles](integration-overview-and-context/core-integration-principles.md) - Understanding identity credential sharing and packet status architecture
-* [Policy Configuration & Customization](configurations-and-operations/policy-configuration-and-customization.md) - Partner policy setup and credential sharing configuration
+* [Policy Configuration & Customization](configurations-and-operations/configuration-and-customization.md) - Partner policy setup and credential sharing configuration
 * [Security & Authentication](security-and-authentication.md) - Partner onboarding, authentication mechanisms, and callback security
 * [Error Handling & Reconciliation](error-handling-and-reconciliation.md) - Managing notification failures and implementing retry strategies

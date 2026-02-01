@@ -280,3 +280,13 @@ The AID format mentioned above is the recommendation to be followed, but not man
 Once all the above pre-requisites are in place, the next step is to initiate a request(birth/death/update) by calling the create packet API of MOSIP’s packet manager module. API structure, required fields, and other details are mentioned further in this document.
 
 ***
+
+### Learn more
+
+* [Security & Authentication](../security-and-authentication.md) - OAuth client setup, access tokens, and eSignet flow.
+* [Policy Configuration & Customization](configuration-and-customization.md) - Credential sharing choices (PSUT/UIN/VID) and partner policy setup.
+* [Notifications & Event Handling](../notifications-and-event-handling.md) - WebSub topics for credentials and packet status updates.
+* [API Reference & Data Models](../api-reference-and-data-models.md) - Packet APIs, payloads, and data structures used by CRVS.
+* [Core Integration Principles](../integration-overview-and-context/core-integration-principles.md) - Trust boundary, verification expectations, and defaults.
+* [MOSIP Configuration Changes for CRVS Birth and Death Requests](configurations-details.md) - ID schema fields, auth-policy updates, and routing configs.
+* [Error Handling & Reconciliation](../error-handling-and-reconciliation.md) - Failures, retries, and reconciliation patterns.

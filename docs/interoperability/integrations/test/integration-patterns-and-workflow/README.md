@@ -2,16 +2,13 @@
 
 ## Overview
 
-This section provides detailed workflows for standard and exceptional integration scenarios between MOSIP and external systems. The documented flows serve as reference patterns that illustrate core integration principles in action.
+This section provides detailed workflows for standard and exceptional integration scenarios between MOSIP and external systems. The documented flows serve as reference patterns that illustrate [core integration principles](../integration-overview-and-context/core-integration-principles.md) in action.
 
 ### Important Considerations
 
-- **Patterns, Not Prescriptions**: The workflows documented here are illustrative examples that demonstrate integration principles. They are not exhaustive catalogs of all possible scenarios.
-
-- **Context Matters**: Every country operates within unique legal frameworks, operational contexts, and cultural factors. Your implementation may require adaptations to meet local requirements.
-
-- **Apply the Framework**: Use the [Core Integration Principles](../integration-overview-and-context/core-integration-principles.md) and risk assessment methodology as your guide when designing scenarios not explicitly covered here.
-
+* **Patterns, Not Prescriptions**: The workflows documented here are illustrative examples that demonstrate integration principles. They are not exhaustive catalogs of all possible scenarios.
+* **Context Matters**: Every country operates within unique legal frameworks, operational contexts, and cultural factors. Your implementation may require adaptations to meet local requirements.
+* **Apply the Framework**: Use the [Core Integration Principles](../integration-overview-and-context/core-integration-principles.md) and risk assessment methodology as your guide when designing scenarios not explicitly covered here.
 
 #### Integration Flows
 
@@ -33,7 +30,5 @@ This section provides detailed workflows for standard and exceptional integratio
 
 * [Core Integration Principles](../integration-overview-and-context/core-integration-principles.md)
 * [Integration Boundaries, Limitations and Implications](../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md)
-
-
 
 ***

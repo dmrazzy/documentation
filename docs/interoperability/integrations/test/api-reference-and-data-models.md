@@ -229,4 +229,4 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 * [Registration Processor Overview](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/) - Detailed information about packet processing workflows and camel routes
 * [Packet Manager](../../../id-lifecycle-management/supporting-components/packet-manager/) - Comprehensive guide to packet creation, structure, and management
 * [ID Schema](../../../id-lifecycle-management/identity-management/id-schema.md) - Understanding and customizing the identity schema for your deployment
-* [Policy Configuration & Customization](configurations-and-operations/policy-configuration-and-customization.md) - Configurable policies and workflow customization options
+* [Policy Configuration & Customization](configurations-and-operations/configuration-and-customization.md) - Configurable policies and workflow customization options

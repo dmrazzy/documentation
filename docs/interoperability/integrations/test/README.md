@@ -6,7 +6,7 @@ MOSIP can integrate with CRVS (Civil Registration and Vital Statistics) systems 
 
 **Civil Registration and Vital Statistics (CRVS)** systems are essential for documenting key life events such as births, deaths, marriages, and divorces. These systems provide individuals with legal recognition and play a vital role in ensuring access to rights and services. Additionally, CRVS systems generate important demographic data that supports effective policy-making, governance, and resource planning.
 
-**MOSIP** is an open-source, modular identity platform designed for scalability, interoperability, and compliance with global standards. It allows countries to customize identity systems tailored to their governance needs. To learn more about MOSIP, click [here](../../../id-lifecycle-management/README.md).
+**MOSIP** is an open-source, modular identity platform designed for scalability, interoperability, and compliance with global standards. It allows countries to customize identity systems tailored to their governance needs. To learn more about MOSIP, click [here](../../../id-lifecycle-management/).
 
 This synergy allows for the seamless management of an individual's identity across life events, starting from birth registration, through education and employment, to end-of-life verification.
 
@@ -37,7 +37,7 @@ Detailed workflows for testing standard and exceptional integration scenarios.
 * [Reactivation of Deactivated National ID](integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md)
 * [Fraud Death Case - Reversal of the Death Flag](integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md)
 
-> **Note**: These are the currently supported scenarios. The rare scenarios (4.6.x) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
+> **Note**: These are the currently supported scenarios. The [rare scenarios](integration-patterns-and-workflow/rare-scenarios/) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
 
 #### Technical Implementation
 
@@ -48,5 +48,5 @@ Detailed workflows for testing standard and exceptional integration scenarios.
 
 #### Configuration & Operations
 
-* [Policy Configuration & Customization](configurations-and-operations/policy-configuration-and-customization.md) - Configurable policies and customization options
+* [Policy Configuration & Customization](configurations-and-operations/configuration-and-customization.md) - Configurable policies and customization options
 * [Operational Considerations](configurations-and-operations/operational-considerations.md) - Deployment, monitoring, and maintenance guidelines

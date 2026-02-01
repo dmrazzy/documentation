@@ -1,8 +1,18 @@
 # Security & Authentication
 
+### Overview
+
+In MOSIP–CRVS integration, **Security & Authentication** is the setup you need so CRVS can interact with MOSIP **safely and with the right permissions**.
+
+It covers:
+
+* **How CRVS gets authorized to call MOSIP APIs** (Keycloak OAuth2 client, secret, role, access token).
+* **How informants/introducers are authenticated** via **eSignet**, and how the resulting token is passed to MOSIP for validation and audit.
+* The broader security controls you’ll typically enforce around the integration (certificates/TLS, access control, audit requirements).
+
 ### OAuth2 Client Setup & Authentication
 
-#### Overview
+
 
 As part of the integration approach, two specific APIs are exposed:
 
@@ -122,9 +132,6 @@ eSignet is MOSIP's authentication service that enables secure identity verificat
 4. CRVS receives token and includes it in MOSIP request
 5. MOSIP validates token for audit and authorization
 
-
-
-
 ### Partner Certificate Management
 
 ### API Security (TLS, Encryption)
@@ -133,16 +140,11 @@ eSignet is MOSIP's authentication service that enables secure identity verificat
 
 ### Audit & Compliance Requirements
 
-
-
 ***
 
 ## Learn More
 
 * [**Partner Management Services**](../../../id-lifecycle-management/support-systems/partner-management-services/partners.md) - Learn about partner onboarding processes, policy management, and certificate lifecycle for Authentication Partners, MISP Partners, and credential partners who integrate with MOSIP.
-
 * [**eSignet Configuration**](../../../integrations/esignet/configuring-esignet.md) - Configure eSignet as an OIDC authentication provider, including MISP partner onboarding, ID Authentication integration, and authentication flow setup for CRVS identity verification.
-
 * [**ID Authentication Services**](../../../id-authentication-services.md) - Understand MOSIP's authentication architecture, including KYC authentication, OTP services, biometric verification, and internal authentication APIs used by partners.
-
-* [**Key Manager**](../../../id-lifecycle-management/supporting-components/keymanager/README.md) - Explore key and certificate management, including partner certificate upload, encryption/decryption operations, and HSM integration for secure cryptographic operations.
+* [**Key Manager**](../../../id-lifecycle-management/supporting-components/keymanager/) - Explore key and certificate management, including partner certificate upload, encryption/decryption operations, and HSM integration for secure cryptographic operations.
