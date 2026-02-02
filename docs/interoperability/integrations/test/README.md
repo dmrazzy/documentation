@@ -48,11 +48,11 @@ Detailed workflows for testing standard and exceptional integration scenarios.
 #### Technical Implementation
 
 * [API Reference & Data Models](api-reference-and-data-models.md) - API specifications and data structures
-* [Security & Authentication](security-and-authentication.md) - Authentication mechanisms and security protocols
+* [Security & Authentication](configurations-and-operations/prerequisites/security-and-authentication.md) - Authentication mechanisms and security protocols
 * [Notifications & Event Handling](notifications-and-event-handling.md) - Event-driven communication patterns
 * [Error Handling & Reconciliation](error-handling-and-reconciliation.md) - Error scenarios and data reconciliation strategies
 
 #### Configuration & Operations
 
 * [Policy Configuration & Customization](configurations-and-operations/configuration-and-customization.md) - Configurable policies and customization options
-* [Operational Considerations](configurations-and-operations/operational-considerations.md) - Deployment, monitoring, and maintenance guidelines
+* [Operational Considerations](configurations-and-operations/operational-considerations/) - Deployment, monitoring, and maintenance guidelines

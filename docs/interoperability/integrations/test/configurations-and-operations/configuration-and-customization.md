@@ -31,7 +31,7 @@ CRVS must be onboarded as a MOSIP partner before MOSIP can push events. At a min
 
 See also:
 
-* [Security & Authentication](../security-and-authentication.md)
+* [Security & Authentication](prerequisites/security-and-authentication.md)
 * [Notifications & Event Handling](../notifications-and-event-handling.md)
 
 ### Credential sharing policy
@@ -93,4 +93,4 @@ Common customization points:
 
 * [Core Integration Principles](../integration-overview-and-context/core-integration-principles.md)
 * [Notifications & Event Handling](../notifications-and-event-handling.md)
-* [Operational Considerations](operational-considerations.md)
+* [Operational Considerations](operational-considerations/)

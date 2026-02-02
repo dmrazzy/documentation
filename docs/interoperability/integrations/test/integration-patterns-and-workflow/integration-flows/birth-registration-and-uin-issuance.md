@@ -58,7 +58,7 @@ For newborns who do not yet possess a national ID, the CRVS system can initiate 
   * eSignet User Info Token - received as a response from eSignet upon successful authentication of introducer
 
 {% hint style="info" %}
-**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/configurations-details.md#id-schema-update-for-initiating-infant-birth-requests) for details.
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/prerequisites/configurations-details.md#id-schema-update-for-initiating-infant-birth-requests) for details.
 {% endhint %}
 
 #### **Step 2: Submission of Request to MOSIP**
@@ -68,7 +68,7 @@ In MOSIP, every request is encapsulated within a **registration packet**, which 
 To submit a request, the CRVS system must first **create a registration packet** using the **Packet Manager Create Packet API**. Once the packet is created, it can **pushed to MOSIP for processing**. This approach ensures that all required details are included and that the request is formally registered within MOSIP’s workflow for identity creation.
 
 {% hint style="info" %}
-**Note:** Obtaining an access token is a pre-requisite for submitting requests to MOSIP using the [Create packet API](../../api-reference-and-data-models.md#create-packet-api-packet-manager-module). Please refer to the [referenced guide](../integration-pre-requisites.md#pre-requisites) for a complete list of pre-requisites and [detailed instructions](../../configurations-and-operations/operational-considerations.md#configuring-pre-requisite-steps) on how to complete each one.
+**Note:** Obtaining an access token is a pre-requisite for submitting requests to MOSIP using the [Create packet API](../../api-reference-and-data-models.md#create-packet-api-packet-manager-module). Please refer to the [referenced guide](../../configurations-and-operations/prerequisites/#pre-requisites) for a complete list of pre-requisites and [detailed instructions](../../configurations-and-operations/operational-considerations/#configuring-pre-requisite-steps) on how to complete each one.
 {% endhint %}
 
 #### Step 3: Packet Processing
@@ -90,7 +90,7 @@ A notification is sent to the registered **email or phone number** to inform the
 Duplicate and/or repeated requests may arise under the following conditions:
 
 1. **Repeated Requests - Same AID Used In Multiple Requests:**
-   1. When multiple requests are made using the same AID ([Application ID](../../configurations-and-operations/operational-considerations.md#id-7.-create-the-rid)) for the birth registration of the same infant (with the same or different data).
+   1. When multiple requests are made using the same AID ([Application ID](../../configurations-and-operations/operational-considerations/#id-7.-create-the-rid)) for the birth registration of the same infant (with the same or different data).
    2. Currently, the request will be processed even if the same AID is used in multiple requests.
    3. MOSIP will overwrite the existing data with the **most recent values** provided in the latest request.
 2. **Duplicate Requests - Same Infant Demographic Data with Different AIDs:**

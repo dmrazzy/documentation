@@ -62,7 +62,7 @@ Once the prerequisites are met, the integration between a CRVS system and MOSIP 
 9. **Issue Certificates and Update Records**\
    Upon receiving the national ID and processing status, the CRVS system should proceed to issue the corresponding official certificate (e.g., birth, death, marriage). Additionally, update the national records to reflect the new identity credentials. This step ensures formal recognition and accurate documentation of the citizen's identity and vital event.
 
-For detailed technical specifications, API documentation, and schema definitions, please refer to the subsequent section [here](technical-details.md). For details on configuration changes, please refer [here](../../test/configurations-and-operations/configurations-details.md).
+For detailed technical specifications, API documentation, and schema definitions, please refer to the subsequent section [here](technical-details.md). For details on configuration changes, please refer [here](../../test/configurations-and-operations/prerequisites/configurations-details.md).
 
 ## Other keys and certificates which are required for the integration
 

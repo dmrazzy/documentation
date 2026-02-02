@@ -1,4 +1,4 @@
-# Integration Pre-requisites
+# Prerequisites
 
 ## Overview
 
@@ -65,6 +65,6 @@ For each registration event (e.g., birth or death), the CRVS system must generat
 This section outlines the **onboarding requirements that the CRVS system must complete, along with the pre-requisites defined above, to be able to leverage eSignet for MOSIP ID authentication**:
 
 * **eSignet Onboarding** — If eSignet is used for authentication, the CRVS system must complete the onboarding process and acquire the necessary keys and certificates. Refer to [**Integrate with eSignet**](https://app.gitbook.com/s/ylzvZHp30DQ3rNCClELV/esignet-authentication/test/try-it-out/integrate-with-e-signet) for detailed instructions.
-* **Authentication Partner Onboarding** — The CRVS system must be registered as an authentication partner with MOSIP. This requires the necessary certificates for onboarding. Refer to the [**Partner Management Services – End User Guide**](../../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md)
+* **Authentication Partner Onboarding** — The CRVS system must be registered as an authentication partner with MOSIP. This requires the necessary certificates for onboarding. Refer to the [**Partner Management Services – End User Guide**](../../../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md)
 
 For detailed configuration and step-by-step instructions for each pre-requisite, please refer here (Link to operation Consideration page)

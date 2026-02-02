@@ -45,7 +45,7 @@ A death registration request is initiated by the CRVS system based on the inform
   * eSignet User Info Token – received as a response from eSignet upon successful authentication of informant
 
 {% hint style="info" %}
-**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/configurations-details.md#id-schema-update-for-initiating-death-requests) for details.
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/prerequisites/configurations-details.md#id-schema-update-for-initiating-death-requests) for details.
 {% endhint %}
 
 #### **Step 2: Packet Creation**
@@ -71,7 +71,7 @@ A notification is sent to the registered email or phone number to inform the res
 A request is considered a duplicate under the following conditions:
 
 1. **Repeated Requests - Same AID Used for Multiple Requests:**
-   * When multiple death registration requests are made using the same AID ([Application ID](../../configurations-and-operations/operational-considerations.md#id-7.-create-the-rid)) for the same individual, since the deceased flag has already been updated, subsequent requests do not result in any change to the status.
+   * When multiple death registration requests are made using the same AID ([Application ID](../../configurations-and-operations/operational-considerations/#id-7.-create-the-rid)) for the same individual, since the deceased flag has already been updated, subsequent requests do not result in any change to the status.
    * MOSIP does not reject repeated requests since CRVS is considered the source of truth.
 
 {% hint style="info" %}

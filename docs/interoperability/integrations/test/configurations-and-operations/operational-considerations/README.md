@@ -32,7 +32,7 @@ Before beginning integration, ensure the following are in place:
 
 #### **1. ID schema Configuration:** <a href="#id-schema-configuration" id="id-schema-configuration"></a>
 
-To initiate any registration request, the country must define an ID schema based on the specific requirements for CRVS integration. The sample ID schema can be referred to [here](../../../../_files/id-schema/id-schema-sample.json) and should be customized to include all required fields for packet generation per the country’s requirements. This schema governs the structure of the data submitted to MOSIP for processing and storage in the Identity Repository.
+To initiate any registration request, the country must define an ID schema based on the specific requirements for CRVS integration. The sample ID schema can be referred to [here](../../../../../_files/id-schema/id-schema-sample.json) and should be customized to include all required fields for packet generation per the country’s requirements. This schema governs the structure of the data submitted to MOSIP for processing and storage in the Identity Repository.
 
 {% hint style="info" %}
 **Note:** MOSIP advises adopting and customizing the latest released ID schema version to meet country-specific needs.
@@ -283,10 +283,10 @@ Once all the above pre-requisites are in place, the next step is to initiate a r
 
 ### Learn more
 
-* [Security & Authentication](../security-and-authentication.md) - OAuth client setup, access tokens, and eSignet flow.
-* [Policy Configuration & Customization](configuration-and-customization.md) - Credential sharing choices (PSUT/UIN/VID) and partner policy setup.
-* [Notifications & Event Handling](../notifications-and-event-handling.md) - WebSub topics for credentials and packet status updates.
-* [API Reference & Data Models](../api-reference-and-data-models.md) - Packet APIs, payloads, and data structures used by CRVS.
-* [Core Integration Principles](../integration-overview-and-context/core-integration-principles.md) - Trust boundary, verification expectations, and defaults.
-* [MOSIP Configuration Changes for CRVS Birth and Death Requests](configurations-details.md) - ID schema fields, auth-policy updates, and routing configs.
-* [Error Handling & Reconciliation](../error-handling-and-reconciliation.md) - Failures, retries, and reconciliation patterns.
+* [Security & Authentication](../prerequisites/security-and-authentication.md) - OAuth client setup, access tokens, and eSignet flow.
+* [Policy Configuration & Customization](../configuration-and-customization.md) - Credential sharing choices (PSUT/UIN/VID) and partner policy setup.
+* [Notifications & Event Handling](../../notifications-and-event-handling.md) - WebSub topics for credentials and packet status updates.
+* [API Reference & Data Models](../../api-reference-and-data-models.md) - Packet APIs, payloads, and data structures used by CRVS.
+* [Core Integration Principles](../../integration-overview-and-context/core-integration-principles.md) - Trust boundary, verification expectations, and defaults.
+* [MOSIP Configuration Changes for CRVS Birth and Death Requests](../prerequisites/configurations-details.md) - ID schema fields, auth-policy updates, and routing configs.
+* [Error Handling & Reconciliation](../../error-handling-and-reconciliation.md) - Failures, retries, and reconciliation patterns.
