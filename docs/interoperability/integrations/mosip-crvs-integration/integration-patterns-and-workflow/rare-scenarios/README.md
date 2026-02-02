@@ -1,5 +1,9 @@
 # Exceptional Scenarios
 
+{% hint style="danger" %}
+**Exception scenarios are currently in progress. This section is provided for reference to help readers understand the broader scope!**
+{% endhint %}
+
 ## What does '**Exceptional Scenarios**' mean
 
 In addition to the standard CRVS–MOSIP integration workflows—such as birth registration for infants, death registration to mark a MOSIP ID as deceased, and demographic correction requests—which are well-established, high-volume processes operating smoothly in production environments, there may be exceptional situations that arise outside normal day-to-day operations.
