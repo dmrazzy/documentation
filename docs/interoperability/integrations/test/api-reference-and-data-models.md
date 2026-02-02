@@ -1,30 +1,24 @@
 # API Reference & Data Models
 
-## API Endpoints & Request Structure
+## Overview
 
-### Overview
+Once all the [prerequisites](integration-patterns-and-workflow/integration-pre-requisites.md) are in place, the next step is to initiate a request (birth/death/update) by calling the create packet API of MOSIP's packet manager module, followed by the trigger API to process the packet.
 
-Once all the [prerequisites](configurations-and-operations/operational-considerations.md#prerequisites--system-setup) are in place, the next step is to initiate a request (birth/death/update) by calling the create packet API of MOSIP's packet manager module, followed by the trigger API to process the packet.
+## Packet processing&#x20;
 
-### API Creation Process
-
-The API creation workflow consists of three key components that work together to process registration requests:
+The packet processing workflow consists of three key components that work together to process registration requests:
 
 * **Application ID (AID) Structure**: Each registration request requires a unique Application ID to track and identify the packet throughout its lifecycle.
 * **Create Packet API (Packet Manager Module)**: This API endpoint initiates the packet creation process by accepting registration data and storing it in the system.
 * **Trigger API (Registration Processor Module)**: After packet creation, this API activates the processing workflow to validate and verify the registration information.
 
-### Application ID (AID) Structure
-
-#### Create Packet API (Packet Manager Module)
-
-> **Note**: The API request shared below is only a sample and is not to be used for any implementation. Customize based on country-specific ID schema and requirements.
+## Create Packet API (Packet Manager Module)
 
 **Create Packet Endpoint:** `{domain}/commons/v1/packetmanager/createPacket`
 
 **Method:** PUT
 
-**API Request Structure:**
+#### **API Request Structure:**
 
 ```json
 {
@@ -74,26 +68,36 @@ The API creation workflow consists of three key components that work together to
 }
 ```
 
-**Field Descriptions**
+{% hint style="info" %}
+**Note:** The API request shown below is provided for **illustrative purposes only**. It should **not** be used as-is in any implementation. Customize the request according to **country-specific ID schema and local requirements**.
+{% endhint %}
+
+#### **Field Descriptions**
 
 **Request Object:**
 
 1. `source`: Specifies the source of the registration request. This will be the same for any request that comes to MOSIP for birth or death.
-2. `process`: Identifies the specific process for the registration.
-   * `CRVS_NEW` - When initiating an infant birth request
-   * `CRVS_DEATH` - When initiating a death registration request
-   * `CRVS_UPDATE` - When initiating a demographic update request
-   * `CRVS_fraud_birth` or `CRVS_deactivate_ID` - When submitting a fraud detection/deactivation request - ([Fraud Death Case Reversal](integration-patterns-and-workflow/rare-scenarios/fraudulent-death-case-reversal-of-the-death-flag.md) and [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md))
-   * `CRVS_Fraud_Death` - When submitting a death flag reversal request ([Reactivation of Deactivated National ID](integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md))
+2. `process`: Identifies the registration process being initiated. This value determines which CRVS–MOSIP integration workflow the packet will follow during processing. Refer to the table below for the valid process values to be used for each supported workflow.
+
+| Process Value                        | Purpose / Usage                                                                                                                                       |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **CRVS\_NEW**                        | Used when submitting a **new birth registration request** for an infant to create a MOSIP ID.                                                         |
+| **CRVS\_DEATH**                      | Used when submitting a **death registration request** to mark a MOSIP ID as deceased.                                                                 |
+| **CRVS\_UPDATE**                     | Used when submitting a **demographic update request** for an infant’s MOSIP ID (e.g., name, date of birth, gender).                                   |
+| **CRVS\_DEACTIVATE\_ID**             | Used when submitting a request to **deactivate an infant’s MOSIP ID** due to an incorrect or invalid birth registration.                              |
+| **CRVS\_DECEASED\_STATUS\_REVERSAL** | Used when submitting a request to **reverse the deceased status** of a MOSIP ID if CRVS determines the individual was incorrectly marked as deceased. |
+
 3. `id`: The unique identifier for the registration request (AID).
 
-> **Note**: As per the current implementation, if the same AID is used twice, the record will be updated with the latest request data.
+{% hint style="info" %}
+**Note**: As per the current implementation, if the same AID is used twice, the record will be updated with the latest request data.
+{% endhint %}
 
 4. `ref_id`: Combination of centre ID and machine ID.
    * Ex - "centerid\_machineid"
 5. `schema_version`: The version of the ID schema that the country is using in production.
 
-**Field Object:**
+#### **Field Object:**
 
 1. `fullName`: The full name of the individual.
 2. `dateOfBirth`: The date of birth of the individual.
@@ -136,7 +140,7 @@ The API creation workflow consists of three key components that work together to
 
 > **Note**: Field names may vary based on country-specific ID schema design. Consult Section [rare-scenarios](integration-patterns-and-workflow/rare-scenarios/) for detailed workflow requirements.
 
-**MetaInfo Object (Center and Operator Information):**
+#### **MetaInfo Object (Center and Operator Information):**
 
 1. `centerId`: Unique identifier for the centre where the registration is processed.
 2. `machineId`: Unique identifier for the machine used for registration.
@@ -145,7 +149,7 @@ The API creation workflow consists of three key components that work together to
 
 `centerId`, `machineId`, `officerId` must be provided along with any additional relevant operational information for the request to be processed.
 
-**Audit Object:**
+#### **Audit Object:**
 
 1. `uuid`: Unique uuid to be sent with any request coming from CRVS.
 2. Please add the values for the other fields in the audit object as per the details of the machine and the person who is registering the request from the CRVS.
@@ -154,7 +158,7 @@ It is required that at least one attribute in the audit object is populated with
 
 `schemaJson`: JSON schema (in stringified format) used by the country
 
-**Sample Response:**
+#### **Sample Response:**
 
 ```json
 {
@@ -171,7 +175,7 @@ It is required that at least one attribute in the audit object is populated with
 }
 ```
 
-#### Trigger API (Registration Processor Module)
+## Trigger API (Registration Processor Module)
 
 In MOSIP, after a packet is created, it is processed for validations and verification of the information in the [**Registration Processor**](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/). Inside the Registration Processor, each packet follows a specific workflow defined by the **Camel route**.
 
@@ -183,7 +187,7 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 
 **Method:** POST
 
-**API Request Structure:**
+#### **API Request Structure:**
 
 ```json
 {
@@ -196,7 +200,7 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 }
 ```
 
-**Sample Response:**
+#### **Sample Response:**
 
 ```json
 {
@@ -211,19 +215,7 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 }
 ```
 
-### Request/Response Schemas
-
-### Data Exchange Format
-
-### Field Mapping (CRVS ↔ MOSIP)
-
-### Mandatory vs Optional Fields
-
-### Data Validation Rules
-
-***
-
-### Learn More
+## Learn More
 
 * [Operational Considerations](configurations-and-operations/operational-considerations.md) - Prerequisites, system setup, and configuration steps for CRVS integration
 * [Registration Processor Overview](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/) - Detailed information about packet processing workflows and camel routes

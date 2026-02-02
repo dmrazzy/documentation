@@ -10,7 +10,9 @@ MOSIP can integrate with CRVS (Civil Registration and Vital Statistics) systems 
 
 This synergy allows for the seamless management of an individual's identity across life events, starting from birth registration, through education and employment, to end-of-life verification.
 
-> Note: When these systems operate in isolation, it leads to administrative inefficiencies, fragmented data, and challenges in service access.
+{% hint style="info" %}
+Note: When these systems operate in isolation, it leads to administrative inefficiencies, fragmented data, and challenges in service access.
+{% endhint %}
 
 ### How to navigate through MOSIP - CRVS Integration Document
 
@@ -31,13 +33,17 @@ Detailed workflows for testing standard and exceptional integration scenarios.
 * [Death Registration & Identity Status Update](integration-patterns-and-workflow/integration-flows/death-registration-and-identity-status-update.md)
 * [Demographic Data Updates](integration-patterns-and-workflow/integration-flows/demographic-data-updates.md)
 
-**Rare Scenarios**
+**Exceptional Scenarios**
 
 * [Fraudulent Birth Registrations - National ID Deactivation Request from CRVS](integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md)
 * [Reactivation of Deactivated National ID](integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md)
 * [Fraud Death Case - Reversal of the Death Flag](integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md)
 
 > **Note**: These are the currently supported scenarios. The [rare scenarios](integration-patterns-and-workflow/rare-scenarios/) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
+
+{% hint style="info" %}
+**Note**: These are the currently supported scenarios. The [exceptional Scenarios](integration-patterns-and-workflow/rare-scenarios/) involve manual verification processes and are not fully automated. Additional use cases will be introduced as the integration evolves and expands based on country-specific requirements and feedback.
+{% endhint %}
 
 #### Technical Implementation
 

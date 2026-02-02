@@ -1,69 +1,70 @@
-# Rare Scenarios
+# Exceptional Scenarios
 
-### What does 'Rare-Scenarios' include and mean
+## What does '**Exceptional Scenarios**' mean
 
-Rare Scenarios describe how a CRVS and MOSIP systems drives following flows:
+In addition to the standard CRVS–MOSIP integration workflows—such as birth registration for infants, death registration to mark a MOSIP ID as deceased, and demographic correction requests—which are well-established, high-volume processes operating smoothly in production environments, there may be exceptional situations that arise outside normal day-to-day operations.
 
-* **Fraudulent Birth Registration - Deactivation**
-* **Reactivation of National ID**
-* **Reversal of Deceased Flag (Fraud Death or Mistaken Death Entry)**
+These scenarios typically occur due to circumstances such as:
 
+* Incorrect or incomplete verification during initial registration
+* Submission of incorrect or fraudulent documents
+* Intentional misuse or misreporting by individuals
+* Discovery of new facts during re-verification by the Civil Registration Authority (CRVS)
 
+Such situations may impact existing birth or death registration outcomes. For example, a birth registration may later be identified by CRVS as having been registered incorrectly, or an individual marked as deceased may subsequently be found to be alive.
 
-### Handling Rare Scenarios in MOSIP–CRVS Integration
+As the legally authorized authority for civil registration, **CRVS communicates such findings to MOSIP**. These cases cannot be handled through the standard integration workflows and therefore require **special handling with additional safeguards**. As part of the default CRVS–MOSIP integration, MOSIP processes these scenarios with caution, and the **recommended handling approach is defined in the following sections**.
 
-#### Background
+### Types of Exceptional Scenarios
 
-MOSIP already supports standard integration workflows with Civil Registration and Vital Statistics (CRVS) systems for birth registration and death registration. These are well-established, high-volume processes that operate smoothly in production environments.
+The following exceptional scenarios are supported through recommended workflows:
 
-During implementation, CRVS has requested MOSIP to extend the integration to a set of rare scenarios. These scenarios are infrequent, but they have significant legal, operational, or fraud-related implications. They impact the National ID lifecycle, require special handling, and cannot be treated as routine CRVS events.
+1. **Incorrect Birth Registration**\
+   A request from CRVS to deactivate a MOSIP ID when an infant’s birth registration is found to be incorrect or invalid.
+2. **Reversal of Death Declaration**\
+   A request from CRVS to reverse the deceased status when an individual previously marked as deceased is later confirmed to be alive.
+3. **Reactivation of a Deactivated MOSIP ID**\
+   A request from CRVS to reactivate a previously deactivated MOSIP ID for an infant, based on verified corrective information.
 
-> **Important**: The manual verification approach for rare scenarios reflects the risk-based integration design principles outlined in Section 1.5. These scenarios carry high potential for fraud, legal disputes, and service denial if processed automatically.
+{% hint style="info" %}
+**Note:** By default, the CRVS–MOSIP integration supports **birth registration only for infants**. Accordingly, the deactivation and reactivation workflows described in this section are **applicable only to infant MOSIP IDs**. Please [refer here](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md#id-1.-adult-registration-via-crvs-is-not-supported-by-default) for mode details.
 
-To address these cases safely and consistently, MOSIP must ensure:
+For death registration, since the process involves updating a status flag on an existing MOSIP ID, exceptional handling is limited to **reversal of the deceased flag** in cases where CRVS confirms that the individual is alive.
+{% endhint %}
 
-* **Traceability**: Every incoming request is logged with clear metadata such as process, source, timestamps, and reason codes.
-* **Controlled Processing**: No direct automatic changes to National ID status; sensitive requests must be routed for internal or country-level manual verification.
-* **Policy Alignment**: MOSIP acts only as the foundational ID platform; final decisions rest with authorized country authorities.
-* **Auditability**: All requests should leave a reliable audit trail for legal, compliance, and investigative needs.
+## Scenario Overview
 
-This document outlines the three rare scenarios that the MOSIP-CRVS integration must support and provides the detailed workflow for each in the following sections.
+#### **1. Incorrect Birth Registration**
 
-#### Scenario Overview
+CRVS may subsequently identify that a birth registration submitted earlier was incorrect, fraudulent, duplicated, or otherwise invalid. In such cases, CRVS must notify MOSIP so that the corresponding MOSIP ID (UIN) can be flagged and routed for manual verification.
 
-**1. Fraudulent Birth Registration - Deactivation**
+This scenario requires special handling because:
 
-CRVS may later detect that a submitted birth registration was fraudulent, incorrect, duplicated, or otherwise invalid. In such cases, CRVS needs a mechanism to notify MOSIP so that the corresponding National ID (UIN) can be flagged and routed for manual verification.
+* Infants do not yet have biometrics linked to their MOSIP ID.
+* Fraudulent or erroneous birth registrations are a well-recognized risk in foundational identity systems.
+* Automated or immediate deactivation without human review can lead to wrongful denial of services and potential legal or administrative disputes.
 
-This scenario is particularly sensitive because:
+#### **2. Reversal of Death Declaration**
 
-* Infants do not yet have biometrics in MOSIP.
-* Fraudulent birth certificates are a known global risk for identity systems.
-* Direct ID deactivation without human review can cause wrongful service denial and legal disputes.
-
-**2. Reactivation of National ID**
-
-CRVS may request MOSIP to deactivate a National ID—for example, because the identity was found invalid, duplicated, or incorrectly issued after verification. In rare cases, CRVS may later request reactivation if it determines that the earlier deactivation was incorrect.
-
-This scenario is sensitive because:
-
-* National ID activation status impacts all downstream services.
-* Repeated activation/deactivation can destabilize integrations with banking, benefits, and authentication services.
-* Errors in these actions carry legal and operational consequences.
-
-**3. Reversal of Deceased Flag (Fraud Death or Mistaken Death Entry)**
-
-CRVS may detect that a person previously reported as deceased is actually alive. This may occur due to reporting errors, communication delays, mistaken identity, or rare cases in conflict or disaster contexts.
+CRVS may later determine that an individual previously reported as deceased is, in fact, alive. This can occur due to reporting or data entry errors, communication delays, mistaken identity, or exceptional circumstances such as conflict, displacement, or disaster situations.
 
 This scenario is highly sensitive because:
 
-* Deceased flags directly affect pensions, insurance, property transfers, and legal identity status.
-* Incorrect deceased tagging can lead to complete service denial.
-* Reversing this flag must be handled with caution and full traceability.
+* A deceased status directly impacts pensions, insurance claims, property transfers, and an individual’s legal identity.
+* An incorrect deceased flag can result in complete denial of essential services.
+* Reversal of a death declaration must be performed with extreme caution, supported by manual verification and full audit traceability to prevent misuse and ensure legal accountability.
 
+#### **3. Reactivation of a Deactivated MOSIP ID**
 
+CRVS may request MOSIP to deactivate a MOSIP ID when an identity is later found to be invalid, duplicated, or incorrectly issued based on post-registration verification. In rare cases, CRVS may subsequently determine that the deactivation itself was incorrect and request the reactivation of the MOSIP ID.
 
-***
+This scenario requires careful handling because:
+
+* The activation status of a MOSIP ID directly impacts access to all downstream services.
+* Repeated activation and deactivation can destabilize integrations with banking, benefits, healthcare, and authentication systems.
+* Errors in these actions can result in significant legal, operational, and reputational consequences.
+
+This document outlines three rare scenarios that the MOSIP — CRVS integration can support and provides detailed workflows for each in the following sections.
 
 ### Learn More
 

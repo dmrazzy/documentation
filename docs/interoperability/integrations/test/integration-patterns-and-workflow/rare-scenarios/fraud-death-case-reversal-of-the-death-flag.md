@@ -1,232 +1,107 @@
-# Fraud Death Case - Reversal of the Death Flag
+# Reversal of Death Declaration
 
-#### When Does It Happen?
+## When Does It Happen
 
-This rare but critical scenario occurs when CRVS discovers that a person previously registered as deceased is actually alive. These situations are infrequent but carry significant legal, operational, and identity-related implications.
+This scenario occurs when CRVS identifies that a person previously marked as deceased is actually alive. Such situations may arise due to reporting errors, mistaken identity, communication delays, or new evidence discovered during re-verification. CRVS notifies MOSIP to reverse the deceased flag on the corresponding MOSIP ID.
 
-**Triggers**:
+**Triggers:**
 
-* **Administrative errors**: Data-entry mistakes or communication delays in death reporting
-* **Conflict or displacement**: Individuals reported missing or presumed dead later reappear
-* **Disaster scenarios**: Mistaken identity during emergency response operations
-* **Fraud cases**: Intentional misreporting of death for financial or legal gain
-* **Delayed communication**: Individual resurfaces after being out of contact
+* Discovery that a previously reported death was erroneous
+* Detection of mistaken identity, displacement of individual or diaster scenarios
+* Legal or administrative corrections affecting the death record
 
-**Why This Scenario is Sensitive**:
+{% hint style="info" %}
+**Note:** For detailed context on implications and design principles, [refer](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md#id-7.-automatic-reversal-of-deceased-flag-is-not-supported-by-default) here.
+{% endhint %}
 
-* Deceased flags directly affect pensions, insurance, property transfers, and legal identity status
-* Incorrect deceased tagging can lead to complete service denial
-* Reversing the flag requires extreme caution and full traceability
-* May require longer time windows than birth fraud cases (e.g., post-conflict scenarios)
-* Only one reversal per individual is permitted online; re-reversals require offline intervention
+#### What Does MOSIP Do
 
-> **For detailed context on real-world consequences and design principles, see Section 1.5.4 (Real-World Consequences Framework)**.
+When MOSIP receives a request from CRVS to reverse a death declaration, it performs the required technical and policy validations and routes the request to **manual verification**. The request is reviewed by the designated country authority, and based on the outcome of this review, the deceased flag is either reversed or left unchanged.
 
-**Standard Death Registration Context**:
+#### What Does CRVS Receive
 
-For reference, when CRVS submits a standard death registration (Section 4.3), MOSIP updates:
+By default, MOSIP does not send an automatic acknowledgment to CRVS upon flag reversal. If required, CRVS can be onboarded as a **credential partner** and subscribe to the relevant WebSub events. In that case, MOSIP can publish notifications of successful flag reversal, allowing CRVS to track the completion of the process.
 
-* `Declared_as_Deceased = Y`
-* `Deceased_Declaration_Date` = Date of death declaration
-* National ID remains technically active; only the deceased flag is set
-* Downstream services may restrict access based on this flag
+#### What Is the Workflow
 
-#### What Does MOSIP Do?
+**Step 1: Death Flag Reversal Request Reported to CRVS**
 
-MOSIP receives the death reversal request from CRVS, validates the request against multiple criteria (current status, time windows, reversal history), and routes the case to manual verification. MOSIP does **NOT** automatically reverse the deceased flag. Instead, it:
+* CRVS identifies that a MOSIP ID previously marked as deceased should have the flag reversed.
+* CRVS authenticates the MOSIP ID of the informant reporting the case. In cases where CRVS itself initiates the request, an authorized CRA official (such as a registrar or administrator) may submit the request using their MOSIP ID.
+* The informant’s MOSIP ID is authenticated via eSignet.
 
-1. **Validates current status** to ensure the individual is currently marked as deceased
-2. **Checks time windows** (recommended 1-2 years from death declaration, configurable)
-3. **Prevents duplicate requests** by rejecting if a reversal is already in progress
-4. **Verifies reversal history** to enforce one-reversal-per-person policy
-5. **Tags the packet** with `CRVS_Fraud_Death` for tracking and profiling
-6. **Routes to manual verification** using dedicated Camel workflow
-7. **Provides complete context** (reversal reason, death history, supporting evidence) to reviewers
-8. **Waits for manual decision** from authorized country authorities
-9. **Updates deceased flag** (`Declared_as_Deceased = N`) only after manual approval
+**Information Required by MOSIP** _(Additional fields may be included based on country requirements)_
 
-#### What Does CRVS Receive?
+**Individual Information**
 
-Under the current implementation:
+* MOSIP ID (UIN) for which the deceased flag is to be reversed
 
-* **No automatic notification** is sent back to CRVS regarding reversal status
-* CRVS may subscribe to WebSub for packet status updates if required
-* Final reversal outcome may be communicated through offline channels per country policy
+**Informant Information**
 
-> **Note**: Acknowledgement to CRVS in case of rejection is under consideration for future enhancement.
+* MOSIP ID
+* eSignet User Info Token (obtained upon successful eSignet authentication)
 
-#### What Is the Workflow?
+{% hint style="info" %}
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting this workflow. Required attributes must be added to enable successful data exchange and request submission. Please refer [here](../../configurations-and-operations/configurations-details.md#configuring-mosip-auth-policy-1) for details.
+{% endhint %}
 
-**Step 1: CRVS Submits Death Reversal Request**
+**Step 2: Packet Creation**
 
-When CRVS determines that an individual marked as deceased is alive, they submit a reversal request with:
+* CRVS creates a registration packet using the **Packet Manager Create Packet API**.
+* Once created, the packet is pushed to MOSIP for processing, ensuring all required details are included and formally registered for the death flag reversal workflow.
 
-**Required Fields:**
+**Step 3: Packet Processing**
 
-* **UIN/VID**: National ID of the individual
-* **Declared\_as\_Deceased**: `N` (indicating reversal)
-* **Process**: `CRVS_Fraud_Death`
-* **Source**: `CRVS1`
-* **Deceased\_Declaration\_Date**: Original date of death declaration
-* **Reversal\_Reason**: Description of why reversal is requested
-* **Supporting Evidence**: Optional documentation references
+* After upload to MOSIP’s object store, CRVS initiates processing by calling the **Sync and Trigger APIs** of the Packet Manager.
+* MOSIP performs technical validations and checks the **current deceased status** of the MOSIP ID before proceeding.
 
-> **Note**: The process name `CRVS_Fraud_Death` distinguishes reversal requests from standard death registrations.
+**Step 4: Validate Request Eligibility**
 
-**Step 2: MOSIP Validates the Request**
+* MOSIP validates whether the request is submitted within the allowed policy window.
+* If eligible, the request proceeds to manual verification; otherwise, it must be handled through alternative grievance or legal channels.
 
-MOSIP performs the following validations before accepting the reversal request:
+{% hint style="info" %}
+**Note:** The time window for accepting death flag reversal requests is configurable and determined by country-specific policy requirements. MOSIP suggests that requests be received through the integration only within this defined window.
+{% endhint %}
 
-**1. Current Status Verification**
+**Step 5: Manual Verification & Review**
 
-* **Check**: Ensure the individual is currently marked as deceased (`Declared_as_Deceased = Y`)
-* **Action**: If not currently deceased, reject the request
+* While in manual verification, the MOSIP ID remains active with the original deceased flag unchanged.
+* The manual verifier is provided with the reversal reason, any supporting evidence submitted by CRVS, and the original death registration packet for reference.
+* Packet details are stored in the **Packet Manager** and **Transaction Table** for audit and traceability.
+* Responsible administrators or legally authorized officials review the documentation and decide whether to reverse the deceased flag or take no action.
 
-**2. Time Window Validation**
+{% hint style="info" %}
+**Note:** If a reversal request has already been submitted for a MOSIP ID, any subsequent requests for the same ID are not processed until the initial request completes verification.
+{% endhint %}
 
-Unlike fraud-birth scenarios, death reversals may require a **longer validity window** due to:
+**Step 6: Final Decision and Action**
 
-* Extended periods before reappearance (e.g., war, displacement, disaster)
-* Lower risk since MOSIP only flips the flag without full ID reactivation
+* **If approved:** The deceased flag on the MOSIP ID (UIN) is reversed.
+* **If rejected:** No changes are made to the MOSIP ID, and the request is closed.
+* A notification is sent to the registered email or phone number informing the resident of the outcome.
 
-**Recommendation:**
+Optional: If CRVS is onboarded as a credential partner and subscribed to the relevant WebSub topic, update notifications can be shared. This is not part of the default integration.
 
-* Calculate time window from `Deceased_Declaration_Date`
-* **Recommended window**: 1-2 years (configurable by country policy)
-* Countries can adjust based on local laws and contextual factors
+#### Failure Handling
 
-**3. Duplicate Request Check**
+**Technical Failures:**
 
-* **Check**: Verify if a death reversal request for the same UIN is already in progress
-* **Action**: If duplicate found, reject the new request
+* Requests may fail due to internal MOSIP technical issues. A retry mechanism automatically attempts reprocessing.
 
-**4. Reversal History Check**
+**Validation Failures:**
 
-* **Check**: Verify if a previous death reversal has already been processed for this UIN
-* **Action**: Accept only **one death reversal request per person** through CRVS
-* **If second reversal attempted**: Reject and instruct the requestor to contact the National ID department for manual offline resolution
+* Missing mandatory fields
+* Incorrect or non-existent MOSIP ID (UIN/VID) of the deceased
+* Request submitted outside the allowed policy window
 
-**5. Add Relevant Tags**
+## MOSIP Options: Benefits and Considerations
 
-* Tag the packet with `CRVS_Fraud_Death` for tracking and anonymous profiling
-* Store metadata for audit and traceability
-
-> **Note**: Should MOSIP send acknowledgement to CRVS in case of rejection? This is under consideration.
-
-**Step 3: Route to Manual Verification**
-
-1. Route the packet to the **manual review queue** via the Camel route tied to `CRVS_Fraud_Death`
-2. Provide the following information to the manual reviewer:
-   * `Reversal_Reason`
-   * **Complete history** of all updates to the packet for this individual
-   * Supporting documentation (if evidence collection is supported)
-   * Original death declaration details
-3. Country authorities verify evidence before allowing reversal
-
-**Step 4: Manual Verification Decision**
-
-Authorized country administrators/legal authorities review:
-
-* Supporting documentation
-* Complete packet history
-* Reversal reason and evidence
-* Context of original death declaration
-
-**Decision Options:**
-
-**Option 1: Approve the Reversal**
-
-1. Set `Declared_as_Deceased = N`
-2. Remove the deceased status/flag in MOSIP ID repository (backend update by NID)
-3. The National ID continues to be active (since it was never deactivated, only flagged)
-4. Audit logs capture the complete chain of actions
-5. No notification to CRVS (current policy)
-
-**Option 2: Reject the Reversal**
-
-1. `Declared_as_Deceased` remains `Y`
-2. No further online reversal requests are accepted for this UIN
-3. Future appeals must go to the National ID authority through **offline processes**
-4. Packet status updated with rejection reason
-
-**Step 5: Logging and Audit**
-
-MOSIP maintains comprehensive audit trails including:
-
-* **Original death declaration**: Date, source, reason
-* **Reversal request**: Submission date, reason, supporting evidence
-* **Validation outcomes**: All checks performed and results
-* **Verification decision**: Approve/reject with justification
-* **Complete action chain**: Full traceability for legal and administrative audits
-
-The request metadata (**Process**, **Source**, and deceased fields) help distinguish:
-
-* Original death registrations (`CRVS_Death`)
-* Fraud/death reversals (`CRVS_Fraud_Death`)
-
-***
-
-#### MOSIP Options and Pros/Cons
-
-| **Option**                                             | **Advantages**                                                                                         | **Disadvantages / Risks**                                                                                                                                                |
+| Option                                                 | Advantages                                                                                             | Disadvantages / Risks                                                                                                                                                    |
 | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | **Automatic Online Reversal**                          | Fast; immediate response                                                                               | Very risky: could unmark deceased individuals without legal confirmation; prone to misuse; impacts downstream services without verification; legal and ethical liability |
 | **Accept Request + Manual Verification (Recommended)** | Legally safe; aligns with civil registration practices; maintains audit trail; ensures human judgement | Requires administrative involvement; may delay final resolution                                                                                                          |
 | **No Online Reversal Allowed (Offline Only)**          | Maximum safety; full control remains with authorities                                                  | Reduces transparency; delays correction for genuine cases; loses benefit of integration                                                                                  |
-
-***
-
-#### Recommended MOSIP Policy
-
-1. **Use dedicated process value**: `CRVS_Fraud_Death` must be used for all reversal requests
-2. **Source remains consistent**: `CRVS1` (or appropriate CRVS system identifier)
-3. **Current status validation**: Only allow reversal if person is currently flagged as deceased (`Declared_as_Deceased = Y`)
-4. **One-time reversal policy**: Accept only **one reversal request per person** through online CRVS integration
-5. **Reject re-reversals**: Any subsequent reversal attempts must be handled offline by National ID authorities
-6. **Longer time window**: Maintain a configurable time window (1-2 years recommended) from `Deceased_Declaration_Date` due to unique real-world scenarios (war, disaster, displacement)
-7. **Mandatory manual verification**: All reversal requests must enter the manual verification queue; no automatic changes
-8. **Full auditability**: Record all events, decisions, and supporting evidence
-
-***
-
-#### Additional Considerations
-
-**National ID Status**
-
-* **National ID is never deactivated** upon death declaration; only the deceased flag is set
-* This makes reversal **lower-risk** compared to reactivation scenarios
-* Downstream services rely on the flag for access control decisions
-
-**Time Window Flexibility**
-
-* Longer windows (1-2 years) accommodate real-world contexts:
-  * War or conflict zones
-  * Natural disasters
-  * Displacement scenarios
-  * Administrative backlogs
-* Countries can configure based on local laws and operational needs
-
-**Clear Rejection Rules**
-
-* **One reversal per person** prevents repeated requests from becoming an endless loop
-* Forces escalation to offline channels for complex or disputed cases
-* Maintains system integrity and prevents misuse
-
-**Traceability**
-
-* Using consistent field structure (**Informant info + Deceased info**) enables:
-  * Clear logging across all death-related events
-  * Easier investigations and audits
-  * Pattern detection for fraud prevention
-
-**Downstream System Impacts**
-
-* Financial services (insurance, pensions)
-* Property transfers
-* Legal identity status
-* Access to government services
-
-All these systems rely on the deceased flag, making reversal a sensitive operation requiring careful handling.
 
 ***
 

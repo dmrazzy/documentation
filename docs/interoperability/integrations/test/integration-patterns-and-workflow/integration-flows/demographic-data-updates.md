@@ -47,7 +47,6 @@ By default, the CRVS–MOSIP integration supports demographic updates **only for
 **Information Required for MOSIP Processing:**
 
 * **Introducer Information** _(Additional fields can be included based on country requirements)_
-  * **MOSIP ID** (UIN/VID) of the Introducer
   * **eSignet User Info Token** – received as a response from eSignet upon successful authentication of the Introducer
 * **Infant Information** _(Additional fields can be included based on country requirements)_
   * **MOSIP ID** (UIN/VID) of the infant

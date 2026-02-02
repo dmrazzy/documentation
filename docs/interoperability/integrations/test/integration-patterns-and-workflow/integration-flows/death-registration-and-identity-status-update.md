@@ -42,8 +42,11 @@ A death registration request is initiated by the CRVS system based on the inform
   * MOSIP ID (UIN/VID) of the deceased
   * Date of Death
 * **Introducer Information** _(Additional fields can be included based on country requirements)_:
-  * MOSIP ID (UIN/VID)
   * eSignet User Info Token – received as a response from eSignet upon successful authentication of informant
+
+{% hint style="info" %}
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/configurations-details.md#id-schema-update-for-initiating-death-requests) for details.
+{% endhint %}
 
 #### **Step 2: Packet Creation**
 

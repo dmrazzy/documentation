@@ -1,8 +1,8 @@
-# Fraudulent Birth Registrations - National ID Deactivation Request from CRVS
+# Infant ID Deactivation
 
-#### When Does It Happen?
+## When Does It Happen?
 
-This rare scenario occurs when a civil registration authority (CRVS) determines that a previously recorded birth registration was fraudulent, incorrect, duplicated, or otherwise invalid. CRVS detects this issue post-registration and needs to notify MOSIP to flag the corresponding National ID (UIN) for review and potential deactivation.
+This rare scenario occurs when a civil registration authority (CRVS) determines that a previously recorded birth registration was fraudulent, incorrect, duplicated, or otherwise invalid. CRVS detects this issue post-registration and needs to notify MOSIP to flag the corresponding MOSIP ID for review and potential deactivation.
 
 **Triggers**:
 
@@ -11,161 +11,116 @@ This rare scenario occurs when a civil registration authority (CRVS) determines 
 * Identification of data integrity issues in initial registration
 * Legal determination of registration invalidity
 
-**Why This Scenario is Sensitive**:
+{% hint style="info" %}
+Note: **For detailed context on real-world consequences and design principles,** [**refer here**](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md#id-5.-automatic-deactivation-for-incorrect-birth-registrations-is-not-supported-by-default)**.**
+{% endhint %}
 
-* Infants do not yet have biometric authentication in MOSIP
-* Fraudulent birth certificates are a known global identity fraud risk
-* Direct ID deactivation without human review can cause wrongful service denial
-* Legal and ethical implications require careful handling
+## What Does MOSIP Do?
 
-> **For detailed context on real-world consequences and design principles, see Section 1.5.4 (Real-World Consequences Framework)**.
+When MOSIP receives a request from CRVS indicating that an infant MOSIP ID was created based on an incorrect birth registration, it performs the required technical and policy validations and routes the request to a manual verification workflow. The request is reviewed by the designated country authority, and based on the outcome of this review, the request is either approved or rejected. The MOSIP ID is deactivated only after explicit manual approval by the authorized authority.
 
-#### What Does MOSIP Do?
+## What Does CRVS Receive?
 
-MOSIP receives the fraud notification from CRVS, validates the request against policy rules (time window, duplicate checks), and routes the case to a manual verification queue. MOSIP does **NOT** automatically deactivate the National ID. Instead, it:
+By default, MOSIP does **not** send a change acknowledgment to CRVS upon successfully updating the deceased flag.
 
-1. **Validates the request** against configured time windows and duplicate prevention rules
-2. **Sets a fraud flag** (`Fraud_Birth = True`) on the identity record
-3. **Routes the packet** to manual verification using a dedicated Camel workflow
-4. **Stores metadata** (process, source, reason) for audit and traceability
-5. **Waits for manual decision** from authorized country authorities
-6. **Executes deactivation** only after manual approval
+If required, CRVS can be onboarded as a **credential partner** and subscribe to the relevant WebSub events. In this case, MOSIP can publish notifications of successful updates, allowing CRVS to track the completion of the MOSIP ID deactivation and proceed.
 
-#### What Does CRVS Receive?
+{% hint style="info" %}
+**Note**: Notification strategy for fraud scenarios is under consideration and may be enhanced in future implementations.
+{% endhint %}
 
-Under the current implementation:
+## What Is the Workflow?
 
-* **No automatic notification** is sent back to CRVS regarding packet status
-* CRVS must subscribe to WebSub packet status updates if tracking is required
-* Final deactivation status may be communicated through offline channels depending on country policy
+#### Step 1: Deactivation Request Reported to CRVS
 
-> **Note**: Notification strategy for fraud scenarios is under consideration and may be enhanced in future implementations.
+1. CRVS identifies that an infant MOSIP ID was created based on an incorrect birth registration and initiates a deactivation request.
+2. CRVS authenticates the MOSIP ID of the informant who reported the case. In cases where CRVS itself identifies the issue, the request may be submitted by an authorized CRA official (such as a registrar or administrator) using their MOSIP ID.
+3. The informant’s MOSIP ID is authenticated using eSignet.
 
-#### What Is the Workflow?
+**Information Required by MOSIP**
 
-**Step 1: CRVS Submits a Fraudulent Birth Request**
+_(Additional fields can be included based on country requirements)_
 
-CRVS submits a "fraudulent birth" request to MOSIP, including:
+* **Infant Information**
+  * MOSIP ID (UIN) to be deactivated
+  * Date of birth registration
+* **Informant Information**
+  * eSignet User Info Token _(Obtained upon successful eSignet authentication of Informant's MOSIP ID)_
 
-**Required Fields:**
+{% hint style="info" %}
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/configurations-details.md#configuring-mosip-auth-policy) for details.
+{% endhint %}
 
-* **National ID (UIN)** or **packet reference**
-* **fraud\_birth / deactivate\_id** = `True` (property name to be finalized based on country requirements)
-* **process** = `CRVS_fraud_birth` / `CRVS_deactivate_ID`
-* **source** = `CRVS1`
-* **fraud\_birth\_reason / Deactivation\_reason** (string describing the reason for deactivation)
-* **date\_of\_initial\_registration**
-* **Optional**: Supporting metadata/document references
+#### **Step 2: Packet Creation**
 
-> **Note**: These fields must be added to the ID schema to support this workflow.
+To submit a request, the CRVS system must first **create a registration packet** using the **Packet Manager Create Packet API**. Once the packet is created, it can **pushed to MOSIP for processing**. This approach ensures that all required details are included and that the request is formally registered within MOSIP’s workflow for identity status udpate.
 
-**Step 2: MOSIP Validates the Request Window**
+#### Step 3: Packet Processing
 
-1. **Compare the submitted date of initial registration to the current date.**
-2. **If within a configurable window** (e.g., 30–60 days as defined in country policy):
-   * MOSIP accepts the request and initiates packet processing.
-   * A new tag is introduced to categorize such requests: `CRVS_deactivate_ID`
-   * This tag helps in anonymous profiling and tracking.
-3. **If outside the time window**:
-   * The request is automatically rejected.
-   * Citizens must use offline grievance or legal channels.
+After the registration packet is created and uploaded to MOSIP’s object store using the **Packet Manager Create API**, the CRVS system must **initiate processing** by calling the **Sync and Trigger APIs** of the Packet Manager.
 
-> **Note**: MOSIP-side validation for garbage values in the `fraud_birth_reason` / `Deactivation_reason` field is **not required**, as notifications to CRVS are not sent in this workflow.
+Once initiated, MOSIP initiates certain validations before processing the packet.
 
-**Step 3: Route the Packet to Manual Verification**
+{% hint style="info" %}
+**Note:** Requests for deactivation of a MOSIP ID due to incorrect birth registration are applicable **only for infants** in the default CRVS–MOSIP integration.
+{% endhint %}
 
-1. **Basic de-duplication** is performed for any incoming packet in MOSIP.
-2. Based on the **process** and **source** values, a specific **Camel route** is triggered to route the packet directly to the **manual verification stage**.
-3. The following information is provided to the manual reviewer:
-   * `fraud_birth_reason` / `Deactivation_reason`
-   * Any supporting documents (if evidence collection is supported)
-   * Details of the original packet
-4. **Set attribute**: `fraud_Birth = True` against the National ID.
-   * **No automatic deactivation** occurs at this stage.
-5. **Packet details storage**:
-   * Stored in **Packet Manager** and **Transaction Table** for reference.
+#### Step 4: Validate Request Eligibility
 
-**Step 4: Enforce One-Time Request Policy**
+1. MOSIP validates the request against eligibility, whether it is submitted within the allowed policy window.
+2. If the request meets the eligibility criteria, MOSIP accepts it and initiates packet processing.
+3. Requests outside the allowed window are not processed via the integration and must be handled through alternative grievance or legal channels.
 
-1. If a `Fraud_Birth = True` flag already exists, any subsequent request on the same UIN is **automatically rejected** until verification completes.
-2. This prevents duplicate or repeated requests from being processed.
+{% hint style="info" %}
+**Note:** The time window for accepting infant  MOSIP ID deactivation requests is configurable and determined by country-specific policy requirements. MOSIP suggests that requests be received through the integration only within this defined window.
+{% endhint %}
 
-> **Note**: If someone authenticates using the National ID during the manual verification flow, no special flag is added to the KYC info shared with the Relying Party (RP).
+#### **Step 5: Manual Verification & Review**
 
-**Step 5: Manual Verification by Country Authorities**
+1. Once the request reaches the manual verification stage, the MOSIP ID remains **active** and continues to function normally; no deactivation occurs automatically.
+2. The manual verifier is provided with information such as the **deactivation reason** along with any supporting evidence submitted by CRVS.
+3. MOSIP retrieves the **original packet** that was submitted for the initial creation of the infant’s MOSIP ID and makes it available to the manual verifier for reference.
+4. All packet details are stored in the **Packet Manager** and **Transaction Table** for audit and traceability.
+5. Responsible administrators or legally authorized officials review the supporting documentation and decide whether to **deactivate the MOSIP ID** or **reject the request**.
 
-1. Responsible admins/legal authorities review:
-   * Supporting documentation
-   * Original packet details
-   * `fraud_birth_reason` / `Deactivation_reason`
-2. Authorities decide whether to:
-   * **Approve deactivation**, or
-   * **Reject the fraud claim**
+{% hint style="warning" %}
+**Note:** If a deactivation request has already been submitted for a MOSIP ID, any subsequent requests for the same ID are not processed until the initial request completes verification. This prevents duplicate or repeated requests from being handled simultaneously.
+{% endhint %}
 
-**Step 6: Final Action**
+#### Step 6: Final Decision and Action
 
-**If Deactivation is Approved:**
+After manual verification, the responsible administrators or legally authorized country authorities review the submitted documentation and the original packet details. Based on this review, they decide whether to **approve** or **reject** the deactivation request:
 
-1. The National ID is deactivated **offline** by authorities.
-2. MOSIP must add logic to **deactivate the UIN** once the manual verifier approves.
-3. **Manual Steps**: Countries can use the existing **Deactivate UIN (MOSIP ID) API** (not recommended for routine use).
+* **If approved:** The MOSIP ID (UIN) is deactivated with in MOSIP.&#x20;
+* **If rejected:** The request is closed, and no changes are made to the MOSIP ID.
+* A notification is sent to the registered email or phone number informing the resident of the update outcome.
 
-**If Rejected:**
+**Optional:** If CRVS is onboarded as a credential partner and subscribed to the relevant WebSub topic, update notifications can be shared. This is not part of the default integration.
 
-1. The packet is rejected, and the flow is completed.
-2. No changes are made to the record in the ID system.
+{% hint style="info" %}
+**Note:** Cases of infant death are handled through a death registration request submitted by CRVS.
+{% endhint %}
 
-#### Use Case-Based Notifications
+## MOSIP Options: Benefits and Considerations
 
-> **Note**: This section is under consideration for MOSIP-side changes. Final notification strategy is to be determined based on country requirements.
-
-***
-
-#### Pros & Cons of MOSIP Options
-
-| **Option**                                          | **Advantages**                                                                                  | **Disadvantages / Risks**                                                                                                                      |
+| Option                                              | Advantages                                                                                      | Disadvantages / Risks                                                                                                                          |
 | --------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Automatic Online Deactivation**                   | Fast, immediate response to CRVS fraud detection                                                | High risk of misuse or wrongful deactivation; no biometric authentication for infants; downstream system disruption; legal + ethical liability |
 | **Flag + Manual Verification (Recommended)**        | Ensures traceability; leverages human/legal judgement; safe for infants; audit trail maintained | Requires manual workload; may delay final resolution; depends on country administrative capacity                                               |
 | **Reject All Online Fraud Requests (Offline Only)** | Simplest to implement; full control remains with authorities                                    | Loses benefit of integration; CRVS cannot leverage MOSIP automation; increased overhead and delays; reduced transparency                       |
 
-#### Recommended MOSIP Policy
+#### Failure Handling in this Scenario
 
-1. **Accept CRVS fraud-birth requests only if submitted within 30–60 days of initial registration.**
-2. On valid request, set **`Fraud_Birth = True`** in schema with metadata:
-   * **Process** = `CRVS_Fraud_Birth`
-   * **Source** = `CRVS1`
-3. **Route flagged requests to manual verification queue** using a dedicated Camel route.
-4. **Enforce one-time request per UIN** until verification completes; block duplicate requests.
-5. **No online deactivation**; final deactivation decision rests with national/regional authorities after their offline review.
-6. **Requests outside the time window are automatically rejected**; citizens must use offline grievance or legal channels.
+**Technical Failures:**
 
-#### Additional Considerations & Notes
+1. There is a possibility that some requests may fail due to failure caused by **internal MOSIP** technical problems during processing.
+2. In case of internal processing issues within MOSIP, a **retry mechanism** automatically attempts reprocessing of failed requests
 
-**Infants / No Biometric Enrollment**
+**Validation Failures:**
 
-* Without biometric verification, automated deactivation carries high risk.
-* The **flag + manual review** approach maintains safety and due process.
-
-**Audit & Traceability**
-
-* Maintaining metadata (**Process**, **Source**) ensures every request is logged and traceable.
-* This is critical if disputes or legal challenges arise later.
-
-**Alignment with Global Best Practices**
-
-* The recommended workflow mirrors practices observed in other foundational ID systems combining civil registration with identity issuance.
-* Sensitive lifecycle events (fraud, death, deactivation) are reserved for manual review.
-
-**Policy & Country-Specific Customization**
-
-* The **30–60 day window** and verification procedures should be configurable per country's legal and governance environment.
-
-**Infant Death Cases**
-
-* Cases of infant death will be handled through a **death registration request** submitted by CRVS.
-
-***
+1. Missing mandatory fields
+2. Incorrect/wrong MOSIP ID (UIN/VID) of the infant is provided.
+3. Outside the allowed time window
 
 ## Learn More
 

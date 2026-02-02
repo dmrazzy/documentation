@@ -55,8 +55,11 @@ For newborns who do not yet possess a national ID, the CRVS system can initiate 
   * Gender
   * Date of Birth (DOB)
 * **Introducer Information** _(Additional fields can be included based on country requirements)_:
-  * MOSIP ID (UIN/VID)
   * eSignet User Info Token - received as a response from eSignet upon successful authentication of introducer
+
+{% hint style="info" %}
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/configurations-details.md#id-schema-update-for-initiating-infant-birth-requests) for details.
+{% endhint %}
 
 #### **Step 2: Submission of Request to MOSIP**
 

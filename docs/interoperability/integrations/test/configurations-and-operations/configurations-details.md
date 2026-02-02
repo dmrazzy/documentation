@@ -1,6 +1,6 @@
-# Configurations Details
+# MOSIP configurations needed to support CRVS-Initiated Vital Events
 
-### Overview
+## Overview
 
 This guide details the configuration updates required in MOSIP to enable CRVS-initiated birth and death registration requests. It covers ID schema changes to add key fields, updates to authentication policies, property files, and identity mapping, along with new Camel routes and workflow settings. These changes ensure the proper handling and processing of vital events within the MOSIP ecosystem.
 
@@ -32,6 +32,39 @@ The following fields should be added to support the processing of death registra
 **Note**: The field `declaredAsDeceased` is mandatory and must be included in the ID schema to initiate any death registration request. The remaining fields can be configured based on specific use case requirements.
 {% endhint %}
 
+#### **ID Schema Update for Initiating Demographic Update Requests**
+
+Before initiating a demographic data update request from the CRVS system, the MOSIP ID schema must be updated to include the necessary fields required to capture requestor information.
+
+The following field should be added to support demographic update processing:
+
+* **introducerInfoToken** _(Optional)_\
+  **Description:** A user information token representing the individual or authorized official initiating the demographic update request in CRVS, obtained after successful authentication.
+
+#### ID Schema Update for Infant ID deactivation <a href="#configuring-mosip-auth-policy" id="configuring-mosip-auth-policy"></a>
+
+Before initiating a infant deactivation ID request from the CRVS system, updating the ID schema in MOSIP to include the necessary fields required for capturing information related to the deceased and informant is essential.&#x20;
+
+The following fields should be added to support the processing of such request:
+
+* **deactivateId** _(Mandatory)_
+  * **Description:** A flag indicating that the individual's MOSIP ID is to be deactivated
+* **deactivationReason** _(Optional)_
+  * **Description:** To capture the reason for initiating an identity status change request, such as deactivation, as submitted by the requesting authority.
+* **dateOfIdentityGeneration** _(Optional)_
+  * Description: Date on which the birth was registered and request for new MOSIP ID was created.
+
+#### ID Schema Update for Deceased Status Reversal <a href="#configuring-mosip-auth-policy" id="configuring-mosip-auth-policy"></a>
+
+Before initiating a infant deactivation ID request from the CRVS system, updating the ID schema in MOSIP to include the necessary fields required for capturing information related to the deceased and informant is essential.&#x20;
+
+The following fields should be added to support the processing of such request:
+
+* **reversalReason** _(Optional)_
+  * **Description:** To capture the reason for initiating an identity status change request, such as deceased status, as submitted by the requesting authority.
+* **deceasedDeclarationDate** _(Mandatory)_
+  * **Description:** Date on which the individual was declared as deceased initially.
+
 #### Configuring mosip-auth-policy <a href="#configuring-mosip-auth-policy" id="configuring-mosip-auth-policy"></a>
 
 After updating the ID schema with the necessary fields for birth/death registration, corresponding changes must be applied to the default authentication policy. This step ensures that the new fields are correctly reflected in the ID authentication module particularly required when the authentication process involves the national ID of a deceased individual.
@@ -41,7 +74,7 @@ To include the new attributes in the authentication policy:
 1. Update the existing `policy_file_id` by appending the newly added fields.
 2. Execute the upgrade script to apply the changes.
 
-Below is a sample SQL script for updating  `default-authpolicy` to include the field `declaredAsDeceased`:
+Below is a sample SQL script for updating `default-authpolicy` to include the field `declaredAsDeceased`:
 
 ```sql
 UPDATE pms.auth_policy SET policy_group_id='mpolicygroup-default-auth', "name"='mpolicy-default-auth', descr='mpolicy-default-auth', policy_file_id='{"shareableAttributes":[{"attributeName":"fullName","source":[{"attribute":"fullName"}],"encrypted":true},{"attributeName":"dateOfBirth","source":[{"attribute":"dateOfBirth"}],"encrypted":true},{"attributeName":"gender","source":[{"attribute":"gender"}],"encrypted":true},{"attributeName":"phone","source":[{"attribute":"phone"}],"encrypted":true},{"attributeName":"email","source":[{"attribute":"email"}],"encrypted":true},{"attributeName":"addressLine1","source":[{"attribute":"addressLine1"}],"encrypted":true},{"attributeName":"addressLine2","source":[{"attribute":"addressLine2"}],"encrypted":true},{"attributeName":"addressLine3","source":[{"attribute":"addressLine3"}],"encrypted":true},{"attributeName":"region","source":[{"attribute":"region"}],"encrypted":true},{"attributeName":"province","source":[{"attribute":"province"}],"encrypted":true},{"attributeName":"city","source":[{"attribute":"city"}],"encrypted":true},{"attributeName":"postalCode","source":[{"attribute":"postalCode"}],"encrypted":true},{"attributeName":"zone","source":[{"attribute":"zone"}],"encrypted":true},{"attributeName":"preferredLang","source":[{"attribute":"preferredLang"}],"encrypted":false},{"attributeName":"individualBiometrics","group":"CBEFF","source":[{"attribute":"individualBiometrics"}],"encrypted":true,"format":"extraction"},{"attributeName":"declaredAsDeceased","source":[{"attribute":"declaredAsDeceased"}],"encrypted":true}],"dataSharePolicies":{"typeOfShare":"Data Share","validForInMinutes":"30","transactionsAllowed":"2","encryptionType":"Partner Based","shareDomain":"datashare.datashare","source":"ID Repository"}}' , policy_type='DataShare', "version"='1', policy_schema='https://schemas.mosip.io/v1/auth-policy', valid_from_date='2025-03-17 11:53:55.388', valid_to_date='2025-04-28 09:37:00.000', is_active=true, cr_by='admin', cr_dtimes='2025-03-17 11:53:55.388', upd_by='admin', upd_dtimes='now()', is_deleted=false, del_dtimes=NULL WHERE id='mpolicy-default-auth';
