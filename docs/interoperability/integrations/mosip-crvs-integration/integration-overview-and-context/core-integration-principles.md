@@ -8,7 +8,7 @@
 
 **Assumption:** The CRVS system is legally authorized to issue official birth and death certificates and is institutionally capable of performing the required verification and deduplication in accordance with the laws of the country.
 
-> **See Section** [**integration-principles-boundaries-and-real-world-implications**](integration-principles-boundaries-and-real-world-implications.md) for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
+> **See Section** [**integration-principles-boundaries-and-real-world-implications**](integration-boundaries-and-real-world-implications.md) for a detailed explanation of why Foundational ID and CRVS systems maintain distinct responsibilities and authorities.
 
 ### **Integration Data Exchange & Verification**
 
@@ -59,4 +59,4 @@ As for the default integration mosip does not perforam deduplication, This essen
 ### Learn More
 
 * [Core Integration Principles](core-integration-principles.md)
-* [Integration Boundaries, Limitations and Implications](integration-principles-boundaries-and-real-world-implications.md)
+* [Integration Boundaries, Limitations and Implications](integration-boundaries-and-real-world-implications.md)

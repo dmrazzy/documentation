@@ -1,4 +1,4 @@
-# MOSIP - CRVS - Draft
+# MOSIP - CRVS
 
 ### MOSIP - CRVS Integration&
 
@@ -21,7 +21,7 @@ Note: When these systems operate in isolation, it leads to administrative ineffi
 Understand the foundational principles and real-world context of MOSIP-CRVS integration.
 
 * [Core Integration Principles](integration-overview-and-context/core-integration-principles.md) - Key architectural and design principles
-* [Integration Principles, Boundaries and Real-World Implications](integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md) - Practical boundaries and use case scenarios
+* [Integration Principles, Boundaries and Real-World Implications](integration-overview-and-context/integration-boundaries-and-real-world-implications.md) - Practical boundaries and use case scenarios
 
 #### Integration Patterns & Workflow
 
@@ -48,11 +48,11 @@ Detailed workflows for testing standard and exceptional integration scenarios.
 #### Technical Implementation
 
 * [API Reference & Data Models](api-reference-and-data-models.md) - API specifications and data structures
-* [Security & Authentication](configurations-and-operations/prerequisites/security-and-authentication.md) - Authentication mechanisms and security protocols
+* [Security & Authentication](prerequisites-configurations-and-operations/prerequisites/security-and-authentication.md) - Authentication mechanisms and security protocols
 * [Notifications & Event Handling](notifications-and-event-handling.md) - Event-driven communication patterns
 * [Error Handling & Reconciliation](error-handling-and-reconciliation.md) - Error scenarios and data reconciliation strategies
 
 #### Configuration & Operations
 
-* [Policy Configuration & Customization](configurations-and-operations/configuration-and-customization.md) - Configurable policies and customization options
-* [Operational Considerations](configurations-and-operations/operational-considerations/) - Deployment, monitoring, and maintenance guidelines
+* [Policy Configuration & Customization](prerequisites-configurations-and-operations/configuration-and-customization.md) - Configurable policies and customization options
+* [Operational Considerations](prerequisites-configurations-and-operations/operational-considerations/) - Deployment, monitoring, and maintenance guidelines

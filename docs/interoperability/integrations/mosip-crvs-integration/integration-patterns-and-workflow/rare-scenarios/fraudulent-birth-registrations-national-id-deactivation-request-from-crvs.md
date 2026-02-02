@@ -12,7 +12,7 @@ This rare scenario occurs when a civil registration authority (CRVS) determines 
 * Legal determination of registration invalidity
 
 {% hint style="info" %}
-Note: **For detailed context on real-world consequences and design principles,** [**refer here**](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md#id-5.-automatic-deactivation-for-incorrect-birth-registrations-is-not-supported-by-default)**.**
+Note: **For detailed context on real-world consequences and design principles,** [**refer here**](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md#id-5.-automatic-deactivation-for-incorrect-birth-registrations-is-not-supported-by-default)**.**
 {% endhint %}
 
 ## What Does MOSIP Do?
@@ -48,7 +48,7 @@ _(Additional fields can be included based on country requirements)_
   * eSignet User Info Token _(Obtained upon successful eSignet authentication of Informant's MOSIP ID)_
 
 {% hint style="info" %}
-**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../configurations-and-operations/prerequisites/configurations-details.md#configuring-mosip-auth-policy) for details.
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting these workflows. Each workflow requires specific attributes to be added to the ID schema to enable successful data exchange and request submission from CRVS to MOSIP. Please [refer here](../../prerequisites-configurations-and-operations/prerequisites/configurations-details.md#configuring-mosip-auth-policy) for details.
 {% endhint %}
 
 #### **Step 2: Packet Creation**
@@ -127,4 +127,4 @@ After manual verification, the responsible administrators or legally authorized 
 * [Birth Registration & UIN Issuance](../integration-flows/birth-registration-and-uin-issuance.md) - Understand the standard birth registration workflow in CRVS-MOSIP integration. This provides essential context for how National IDs are initially issued to infants, which is the baseline process before fraud detection triggers deactivation requests.
 * [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system that reviews fraudulent birth deactivation requests. This document details how packets are routed to manual verification queues, the decision-making workflow, and integration with external verification systems.
 * [Reactivation of Deactivated National ID](reactivation-of-deactivated-national-id.md) - Explore the reverse scenario where a deactivated National ID needs to be reactivated (e.g., after wrongful deactivation). This complements the deactivation workflow and shows the complete lifecycle management of rare fraud cases.
-* [Registration Processor Configurations Details](../../configurations-and-operations/prerequisites/configurations-details.md) - Discover the Camel route configurations (`CRVS_fraud_birth`) and packet processing workflows that enable fraud detection handling. This technical reference explains how deactivation requests are routed and processed within MOSIP's registration processor.
+* [Registration Processor Configurations Details](../../prerequisites-configurations-and-operations/prerequisites/configurations-details.md) - Discover the Camel route configurations (`CRVS_fraud_birth`) and packet processing workflows that enable fraud detection handling. This technical reference explains how deactivation requests are routed and processed within MOSIP's registration processor.

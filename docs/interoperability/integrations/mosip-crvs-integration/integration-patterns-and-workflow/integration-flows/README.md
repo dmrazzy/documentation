@@ -15,4 +15,4 @@ Integration flows describe how a CRVS and MOSIP systems drives following flows:
 ### Learn More
 
 * [Core Integration Principles](../../integration-overview-and-context/core-integration-principles.md)
-* [Integration Boundaries, Limitations and Implications](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md)
+* [Integration Boundaries, Limitations and Implications](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md)

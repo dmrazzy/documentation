@@ -2,7 +2,7 @@
 
 ## Overview
 
-Once all the [prerequisites](configurations-and-operations/prerequisites/) are in place, the next step is to initiate a request (birth/death/update) by calling the create packet API of MOSIP's packet manager module, followed by the trigger API to process the packet.
+Once all the [prerequisites](prerequisites-configurations-and-operations/prerequisites/) are in place, the next step is to initiate a request (birth/death/update) by calling the create packet API of MOSIP's packet manager module, followed by the trigger API to process the packet.
 
 ## Packet processing&#x20;
 
@@ -217,8 +217,8 @@ For the integration with CRVS, the newly created packet is uploaded to the Objec
 
 ## Learn More
 
-* [Operational Considerations](configurations-and-operations/operational-considerations/) - Prerequisites, system setup, and configuration steps for CRVS integration
+* [Operational Considerations](prerequisites-configurations-and-operations/operational-considerations/) - Prerequisites, system setup, and configuration steps for CRVS integration
 * [Registration Processor Overview](../../../id-lifecycle-management/identity-issuance/registration-processor/overview/) - Detailed information about packet processing workflows and camel routes
 * [Packet Manager](../../../id-lifecycle-management/supporting-components/packet-manager/) - Comprehensive guide to packet creation, structure, and management
 * [ID Schema](../../../id-lifecycle-management/identity-management/id-schema.md) - Understanding and customizing the identity schema for your deployment
-* [Policy Configuration & Customization](configurations-and-operations/configuration-and-customization.md) - Configurable policies and workflow customization options
+* [Policy Configuration & Customization](prerequisites-configurations-and-operations/configuration-and-customization.md) - Configurable policies and workflow customization options

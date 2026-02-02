@@ -66,7 +66,7 @@ Please refer to [this link](https://mosip.atlassian.net/issues/MOSIP-41091?filte
 
 ### **Config Changes** <a href="#config-changes" id="config-changes"></a>
 
-Please refer to [this](../../../interoperability/integrations/test/configurations-and-operations/prerequisites/configurations-details.md) link to know more about the config properties added.
+Please refer to [this](../../../interoperability/integrations/mosip-crvs-integration/prerequisites-configurations-and-operations/prerequisites/configurations-details.md) link to know more about the config properties added.
 
 #### **Documentation** <a href="#documentation" id="documentation"></a>
 

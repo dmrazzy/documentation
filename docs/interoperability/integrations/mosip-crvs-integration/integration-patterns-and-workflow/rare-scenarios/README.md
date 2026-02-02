@@ -27,7 +27,7 @@ The following exceptional scenarios are supported through recommended workflows:
    A request from CRVS to reactivate a previously deactivated MOSIP ID for an infant, based on verified corrective information.
 
 {% hint style="info" %}
-**Note:** By default, the CRVS–MOSIP integration supports **birth registration only for infants**. Accordingly, the deactivation and reactivation workflows described in this section are **applicable only to infant MOSIP IDs**. Please [refer here](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md#id-1.-adult-registration-via-crvs-is-not-supported-by-default) for mode details.
+**Note:** By default, the CRVS–MOSIP integration supports **birth registration only for infants**. Accordingly, the deactivation and reactivation workflows described in this section are **applicable only to infant MOSIP IDs**. Please [refer here](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md#id-1.-adult-registration-via-crvs-is-not-supported-by-default) for mode details.
 
 For death registration, since the process involves updating a status flag on an existing MOSIP ID, exceptional handling is limited to **reversal of the deceased flag** in cases where CRVS confirms that the individual is alive.
 {% endhint %}
@@ -69,7 +69,7 @@ This document outlines three rare scenarios that the MOSIP — CRVS integration 
 ### Learn More
 
 * [Core Integration Principles](../../integration-overview-and-context/core-integration-principles.md)
-* [Integration Boundaries, Limitations and Implications](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md)
+* [Integration Boundaries, Limitations and Implications](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md)
 
 
 

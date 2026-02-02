@@ -11,7 +11,7 @@ This scenario occurs when CRVS identifies that a person previously marked as dec
 * Legal or administrative corrections affecting the death record
 
 {% hint style="info" %}
-**Note:** For detailed context on implications and design principles, [refer](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md#id-7.-automatic-reversal-of-deceased-flag-is-not-supported-by-default) here.
+**Note:** For detailed context on implications and design principles, [refer](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md#id-7.-automatic-reversal-of-deceased-flag-is-not-supported-by-default) here.
 {% endhint %}
 
 #### What Does MOSIP Do
@@ -42,7 +42,7 @@ By default, MOSIP does not send an automatic acknowledgment to CRVS upon flag re
 * eSignet User Info Token (obtained upon successful eSignet authentication)
 
 {% hint style="info" %}
-**Note:** Updating the MOSIP ID schema is a prerequisite for supporting this workflow. Required attributes must be added to enable successful data exchange and request submission. Please refer [here](../../configurations-and-operations/prerequisites/configurations-details.md#configuring-mosip-auth-policy-1) for details.
+**Note:** Updating the MOSIP ID schema is a prerequisite for supporting this workflow. Required attributes must be added to enable successful data exchange and request submission. Please refer [here](../../prerequisites-configurations-and-operations/prerequisites/configurations-details.md#configuring-mosip-auth-policy-1) for details.
 {% endhint %}
 
 **Step 2: Packet Creation**
@@ -109,5 +109,5 @@ Optional: If CRVS is onboarded as a credential partner and subscribed to the rel
 
 * [Death Registration & Identity Status Update](../integration-flows/death-registration-and-identity-status-update.md) - Understand the standard death registration workflow in CRVS-MOSIP integration, which is the baseline process from which fraud death case reversals deviate. This provides context on how deceased flags are originally set.
 * [Manual Adjudication and Verification](../../../../../manual-adjudication-and-verification.md) - Learn about MOSIP's manual verification system used for reviewing fraud death reversals. This document details the queue-based architecture, decision workflows, and integration points that enable country authorities to approve or reject reversal requests.
-* [Registration Processor Configurations Details](../../configurations-and-operations/prerequisites/configurations-details.md) - Explore the ID schema fields (`declaredAsDeceased`, `deceasedDeclarationDate`, `typeOfDeath`) and Camel route configurations (`CRVS_Fraud_Death`) that enable death-related packet processing and reversal workflows.
+* [Registration Processor Configurations Details](../../prerequisites-configurations-and-operations/prerequisites/configurations-details.md) - Explore the ID schema fields (`declaredAsDeceased`, `deceasedDeclarationDate`, `typeOfDeath`) and Camel route configurations (`CRVS_Fraud_Death`) that enable death-related packet processing and reversal workflows.
 * [Reactivation of Deactivated National ID](reactivation-of-deactivated-national-id.md) - Compare fraud death reversal with another rare scenario involving National ID reactivation. Both follow similar manual verification patterns but apply to different identity lifecycle events (death vs. birth fraud).

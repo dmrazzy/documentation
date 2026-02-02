@@ -1,3 +1,7 @@
+---
+hidden: true
+---
+
 # MOSIP - CRVS
 
 ### Introduction to MOSIP CRVS Integration
@@ -58,7 +62,7 @@ The integration of MOSIP with CRVS systems is designed to achieve several key ob
 
 The following is a list of guiding principles for this integration.
 
-#### **Guidelines**&#x20;
+#### **Guidelines**
 
 1. **Data Verification and Trust:**
    1. The initiation of the request with the data will be from CRVS to MOSIP

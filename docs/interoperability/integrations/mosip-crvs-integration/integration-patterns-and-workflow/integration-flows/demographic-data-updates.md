@@ -5,7 +5,7 @@
 Demographic updates occur when there are changes to an individual’s personal information, such as a name or date of birth (DOB) correction. These updates are more common for infants in the pre-biometric stage but may also apply to minors or adults in specific cases. Such updates are initiated through CRVS based on requests raised by an introducer or another authorized informant who reports the required demographic change.
 
 {% hint style="info" %}
-**Note:** By default, demographic updates in MOSIP are not supported for MOSIP IDs that already have biometrics linked. In such cases, MOSIP recommends that the resident visit a MOSIP registration center to request the update. Please [refer here](../../integration-overview-and-context/integration-principles-boundaries-and-real-world-implications.md) for more details.
+**Note:** By default, demographic updates in MOSIP are not supported for MOSIP IDs that already have biometrics linked. In such cases, MOSIP recommends that the resident visit a MOSIP registration center to request the update. Please [refer here](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md) for more details.
 {% endhint %}
 
 ## **High-Level Workflow**
