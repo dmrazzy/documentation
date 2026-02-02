@@ -12,8 +12,6 @@ It covers:
 
 ### OAuth2 Client Setup & Authentication
 
-
-
 As part of the integration approach, two specific APIs are exposed:
 
 1. Create a packet API from the MOSIP packet manager module to create a packet
@@ -25,7 +23,7 @@ To facilitate this, the external system must be assigned a specific new client I
 
 This role helps MOSIP validate and verify that the request is coming from an authorized and authentic source, ensuring secure and accurate handling of the registration process.
 
-#### Step 1: Create Client ID/Role for the CRVS
+### Create Client ID/Role for the CRVS
 
 **Create the Client**
 
@@ -86,7 +84,7 @@ Once the client is created, please update the properties in the locations below:
    * From the **Client Roles** dropdown, select either `realm-management` or your specific desired client role (if the role is specific to a client).
    * Add the `ONLINE_REGISTRATION_CLIENT` role to the selected client.
 
-#### Step 2: Fetch Access Token to Call the APIs
+### Fetch Access Token to Call the APIs
 
 Once the role is created and mapped to the client ID. As a follow-up step, below keycloak API is to be called to authenticate the CRVS associated with the new role. In the response of the API, there is an access token returned in the response header. This is the access token that should be used when initiating any request using the packet manager API.
 
@@ -112,33 +110,7 @@ Once the role is created and mapped to the client ID. As a follow-up step, below
 
 In the API above, the fields Client ID and Secret key are the values created in the previous steps, as mentioned above. Once the authentication is successful, in the response header, we will receive an access token, which is to be noted and used for the subsequent packet manager API request.
 
-#### eSignet Authentication Flow
 
-**Overview**
-
-eSignet is MOSIP's authentication service that enables secure identity verification. For CRVS integration, eSignet is used to authenticate informants/parents before submitting registration requests to MOSIP.
-
-**When is eSignet Used?**
-
-* During birth registration (to authenticate parent/informant)
-* For demographic update requests
-* When CRVS does not collect biometric data of the applicant
-
-**Authentication Flow**
-
-1. CRVS redirects user to eSignet for authentication
-2. User completes authentication (e.g., OTP, biometric)
-3. eSignet generates authentication token
-4. CRVS receives token and includes it in MOSIP request
-5. MOSIP validates token for audit and authorization
-
-### Partner Certificate Management
-
-### API Security (TLS, Encryption)
-
-### Access Control & Authorization
-
-### Audit & Compliance Requirements
 
 ***
 
