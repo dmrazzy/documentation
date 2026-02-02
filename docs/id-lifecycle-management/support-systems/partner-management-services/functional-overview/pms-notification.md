@@ -2,7 +2,7 @@
 
 ## What all types of notifications does a Partner Admin get?
 
-**Partner Admin** receives three types of notifications within the PMS Portal and via email:
+**Partner Admin** receives  the below of notifications within the PMS Portal and via email:
 
 1\. **Root CA Certificate Expiration**
 
@@ -11,6 +11,10 @@
 2\. **Intermediate CA Certificate Expiration**
 
 * Triggered for certificates expiring within the next **30 days**.
+
+3. **MISP License Key Expiration**
+
+* Triggered for the MISP license Keys Expiring within next **30 days.**
 
 3\. **Weekly Summary of Partner Certificate Expiration**
 
@@ -36,16 +40,48 @@ These notifications are accessible via the **Notification Bell icon** in the top
   * **Timestamp of notification creation** (Displayed in user's local system time based on browser settings)
   * **Description**:
     * \[Root / Intermediate CA Certificate]{.underline}: Includes **Certificate ID**, **partner domain name**, and the **certificate's expiry date**
+    * **MISP License Key Expiration**: Includes **License Key Name**, **partner ID** , and the **license expiry date.**
     * \[Weekly Summary of Partner expiring items]{.underline}: Includes number of Partner Certificates, FTM Chip Certificates, API Keys and SBIs expiring in next 7 days of time.
   * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 * Dismissing a notification is **user-specific** and does not impact other Partner Admins.
 
+#### MISP License Key tab
+
+* Displays the list of all the the notifications for the expiring MISP license Key
+
+{image}
+
+* To filter the certificate results, click the **Filter** button and enter one or more of the following fields: MISP License Key Name, Partner ID, Expiry Date to perform a targeted search.
+
+{image}
+
+* **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
+
+{image}
+
+
+
+
+
+
+
+
+
+
+
+
+
+<mark style="color:$danger;">**Confirm - Why removed 'View all notification'?**</mark>
+
+
+
 #### View All Notifications
 
 * Click **"View All Notifications"** at the bottom of the panel to access the full **Notifications Page** where entire list of certificates nearing expiry within the next 30 days is listed.
-* Notifications are organized across **three tabs**:
+* Notifications are organized across four **tabs**:
   * **Root CA Certificate**
   * **Intermediate CA Certificate**
+  * **MISP License Key**
   * **Weekly Summary - Partner**
 
 **Root CA Certificate tab**
@@ -121,6 +157,7 @@ Email alerts are sent to the registered email address for the following:
 
 * Root and Intermediate CA certificates expiring within the next 30 days
 * Weekly summary of partner certificates expiring within the next 7 days
+* MISP License Key Expiry Date expiring within next 30 days
 
 These notifications are delivered weekly, and the email follows the template provided below.
 
@@ -135,6 +172,14 @@ These notifications are delivered weekly, and the email follows the template pro
 ![](media/media/pms-eug-notification-image12.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image12.png" alt="" width="188"><figcaption></figcaption></figure>
+
+#### **MISP license key expiration email notification:**
+
+{image}
+
+
+
+
 
 #### Weekly Summary of Partner Certificate expiration email notification:
 
@@ -158,7 +203,16 @@ If one or more partner items are not due to expire in a given week’s summary, 
 * All Partner Admins receive the same notification, regardless of who uploaded the certificate.
 * **Newly added Partner Admins** start receiving notifications from the next scheduled batch job.
 
-**b) Weekly Summary of Partner specific items expiration:**
+**b) MISP license key expiration:**
+
+* **First Notification** is generated **30 days prior** to expiry.
+* **Follow-up Notifications** are triggered at:
+  * **15 days**
+  * **Daily from 10 days before expiry until the MISP license key expires**
+* All Partner Admins receive the same notification, regardless of who created the MISP license key.
+* **Newly added Partner Admins** start receiving notifications from the next scheduled batch job.
+
+**c) Weekly Summary of Partner specific items expiration:**
 
 * A summary of all partner certificates, FTM Chip Certificates, API Keys and SBIs expiring within the next 7 days is generated and sent once every week.
 
