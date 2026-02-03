@@ -434,6 +434,7 @@
   * [Collab Environment Guides](general/collab-getting-started-guide/README.md)
     * [Use Cases](general/collab-getting-started-guide/use-cases/README.md)
       * [Loan Application](general/collab-getting-started-guide/use-cases/loan-application.md)
+      * [Global ID Pass Issuance](general/collab-getting-started-guide/use-cases/global-id-pass-issuance.md)
     * [Generating Demo Credentials](general/collab-getting-started-guide/generating-demo-credentials.md)
   * [MOSIP Documentation Style Guide](general/mosip-documentation-style-guide.md)
   * [Contact Us](general/contact-us.md)

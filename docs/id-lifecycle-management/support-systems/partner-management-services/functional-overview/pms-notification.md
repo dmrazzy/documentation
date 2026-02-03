@@ -2,13 +2,14 @@
 
 ## What all types of notifications does a Partner Admin get?
 
-**Partner Admin** receives  the below of notifications within the PMS Portal and via email:
+**Partner Admin** receives the below of notifications within the PMS Portal and via email:
 
 1. **Root CA Certificate Expiration**
 
 * Triggered for certificates expiring within the next **30 days**.
 
 2. **Intermediate CA Certificate Expiration**
+
 * Triggered for certificates expiring within the next **30 days**.
 
 3. **MISP License Key Expiration**
@@ -42,7 +43,6 @@ These notifications are accessible via the **Notification Bell icon** in the top
   * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 * Dismissing a notification is **user-specific** and does not impact other Partner Admins.
 
-
 #### View All Notifications
 
 * Click **"View All Notifications"** at the bottom of the panel to access the full **Notifications Page** where entire list of certificates nearing expiry within the next 30 days is listed.
@@ -74,23 +74,19 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 
-
 **MISP License Key tab**
 
 Displays the list of all the the notifications for the expiring MISP license Key
 
 <figure><img src="../../../../.gitbook/assets/misp-license-key-tab-1.png" alt=""><figcaption></figcaption></figure>
 
-
-- To filter the certificate results, click the Filter button and enter one or more of the following fields: MISP License Key Name, Partner ID, Expiry Date to perform a targeted search.
+* To filter the certificate results, click the Filter button and enter one or more of the following fields: MISP License Key Name, Partner ID, Expiry Date to perform a targeted search.
 
 <figure><img src="../../../../.gitbook/assets/misp-license-key-tab-2.png" alt=""><figcaption></figcaption></figure>
 
-
-- Dismiss button to remove that specific notification (removes from both Notification panel and Notification list page)
+* Dismiss button to remove that specific notification (removes from both Notification panel and Notification list page)
 
 <figure><img src="../../../../.gitbook/assets/misp-license-key-tab-3.png" alt=""><figcaption></figcaption></figure>
-
 
 **'Weekly Summary - Partner' tab**
 
@@ -144,8 +140,6 @@ These notifications are delivered weekly, and the email follows the template pro
 <figure><img src="../../../../.gitbook/assets/MISP-license-key-expiration-email-notification.png" alt="" width="188"><figcaption></figcaption></figure>
 
 MISP-license-key-expiration-email-notification
-
-
 
 #### Weekly Summary of Partner Certificate expiration email notification:
 
@@ -299,8 +293,6 @@ Email alerts are sent to the partner's registered email address for Partner cert
 * If no further notifications are available, a message is displayed:
 
 **"No Notifications Yet -- You have no notifications at the moment."**
-
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image23.png" alt=""><figcaption></figcaption></figure>
 
 #### 3. Language Preference
 
