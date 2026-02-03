@@ -1,8 +1,8 @@
 # Integration Flows
 
-## What does Integration flow includes and mean
+## What does Integration flow include and mean
 
-Integration flows describe how a CRVS and MOSIP systems drives following flows:
+Integration flows describe how CRVS and MOSIP systems drive the following flows:
 
 * [birth-registration-and-uin-issuance.md](birth-registration-and-uin-issuance.md "mention")
 * [death-registration-and-identity-status-update.md](death-registration-and-identity-status-update.md "mention")
