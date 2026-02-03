@@ -112,6 +112,24 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 
+
+**MISP License Key tab**
+
+Displays the list of all the the notifications for the expiring MISP license Key
+
+<figure><img src="../../../../.gitbook/assets/misp-license-key-tab-1.png" alt=""><figcaption></figcaption></figure>
+
+
+- To filter the certificate results, click the Filter button and enter one or more of the following fields: MISP License Key Name, Partner ID, Expiry Date to perform a targeted search.
+
+<figure><img src="../../../../.gitbook/assets/misp-license-key-tab-2.png" alt=""><figcaption></figcaption></figure>
+
+
+- Dismiss button to remove that specific notification (removes from both Notification panel and Notification list page)
+
+<figure><img src="../../../../.gitbook/assets/misp-license-key-tab-3.png" alt=""><figcaption></figcaption></figure>
+
+
 **'Weekly Summary - Partner' tab**
 
 Each notification displays the total count of partner certificates, FTM Chip Certificates, API Keys, SBIsset to expire within a given week.
