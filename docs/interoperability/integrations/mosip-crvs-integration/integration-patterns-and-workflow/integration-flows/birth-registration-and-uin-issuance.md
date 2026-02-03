@@ -22,7 +22,7 @@ Steps and required information are provided below:
 
 ## What Does MOSIP Do?
 
-When MOSIP receives a birth registration request for a infant, it performs technical validations to ensure that all mandatory attributes are present and correctly formatted. Upon successful validation, MOSIP processes the request, stores the identity information, and generates a unique MOSIP ID (UIN) for the infant, which is added to the MOSIP identity repository.
+When MOSIP receives a birth registration request for an infant, it performs technical validations to ensure that all mandatory attributes are present and correctly formatted. Upon successful validation, MOSIP processes the request, stores the identity information, and generates a Unique Identification Number (UIN) for the infant, which is added to the MOSIP identity repository.
 
 ## Birth Registration: **Notifications to CRVS**
 
@@ -30,11 +30,11 @@ The creation of a MOSIP ID (UIN) does **not automatically result in identity cre
 
 Once onboarded, CRVS may subscribe to **WebSub** notifications to receive credential-related information for newly created identities. By default, MOSIP recommends sharing the **PSUT (Partner-Specific User Info Token)** via WebSub. The PSUT serves as a partner-specific reference to the identity and helps limit unnecessary exposure of sensitive identity information.
 
-MOSIP also supports sharing credentials such as the **UIN or VID**, based on country-specific requirements. However, sharing such identifiers is **not recommended** unless explicitly required, as it increases the risk of overexposure of sensitive identity data.
+MOSIP also supports sharing credentials such as the **UIN or VID**, based on country-specific requirements. However, sharing such identifiers is **not recommended** unless explicitly required, as it increases the risk of overexposure of sensitive identity data. Please refer to [integration boundaries](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md) for more information on this.
 
 ## What Is the Workflow?
 
-For newborns who do not yet possess a national ID, the CRVS system can initiate a national ID registration request on their behalf. This request is initiated by an **Introducer**. The Introducer must already be registered in MOSIP and hold a valid MOSIP ID, which is authenticated through **eSignet** during the birth registration process. This authentication ensures the legitimacy of the registration request, helps prevent fraudulent registrations, and strengthens overall data accuracy and system integrity.
+For new-borns who do not yet possess a national ID, the CRVS system can initiate a national ID registration request on their behalf. This request is initiated by an **Introducer**. The Introducer must already be registered in MOSIP and hold a valid MOSIP ID, which is authenticated through **eSignet** during the birth registration process. This authentication ensures the legitimacy of the registration request, helps prevent fraudulent registrations, and strengthens overall data accuracy and system integrity.
 
 {% hint style="info" %}
 **Note:** MOSIP typically defines infants as 0–5 years old. This is configurable as per country requirements or policy, and anyone above the set threshold is treated as a minor or adult.
