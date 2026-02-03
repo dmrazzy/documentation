@@ -88,8 +88,6 @@ These notifications are accessible via the **Notification Bell icon** in the top
 
 The **Root CA Certificate tab** is selected by default upon redirect to Notifications page which displays certificate related details as shown below:
 
-![](media/media/pms-eug-notification-image2.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image2.png" alt=""><figcaption></figcaption></figure>
 
 * To filter the certificate results, click the **Filter** button and enter one or more of the following fields: Certificate ID, Issued By, Issued To, Partner Domain, or Certificate Expiry Date to perform a targeted search.
@@ -175,9 +173,9 @@ These notifications are delivered weekly, and the email follows the template pro
 
 #### **MISP license key expiration email notification:**
 
-{image}
+<figure><img src="../../../../.gitbook/assets/MISP-license-key-expiration-email-notification.png" alt="" width="188"><figcaption></figcaption></figure>
 
-
+MISP-license-key-expiration-email-notification
 
 
 
