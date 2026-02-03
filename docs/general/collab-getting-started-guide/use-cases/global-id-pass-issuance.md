@@ -13,7 +13,7 @@ This step-by-step guide walks you through **issuing, storing, and using Global I
 #### **Use Case 1: Online Registration and Global ID Pass Issuance** <a href="#use-case-1-online-registration-and-global-id-pass-issuance" id="use-case-1-online-registration-and-global-id-pass-issuance"></a>
 
 * Register and issue a **Global ID Pass** via the [**Global ID Pass Admin Portal**](https://globalid-pass.collab.mosip.net/)
-* Download and securely store credentials in the [**Inji Wallet**](https://mosip.atlassian.net/wiki/spaces/Inji/pages/edit-v2/2444296193#Wallet-Downloads)**.**
+* Download and securely store credentials in the [**Inji Wallet**](global-id-pass-issuance.md#wallet-downloads)**.**
 * Use your credentials to **log in and access services** on the [**Republic of Utopia Portal**](https://utopia.collab.mosip.net/)
 
 #### **Use Case 2: Offline Sharing of Global ID Pass via Bluetooth Low Energy (BLE)** <a href="#use-case-2-offline-sharing-of-global-id-pass-via-bluetooth-low-energy-ble" id="use-case-2-offline-sharing-of-global-id-pass-via-bluetooth-low-energy-ble"></a>
