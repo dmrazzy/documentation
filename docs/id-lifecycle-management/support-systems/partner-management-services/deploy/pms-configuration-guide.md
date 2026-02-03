@@ -124,6 +124,10 @@ mosip.pms.esignet.oidc-client-update-url=${mosip.esignet.service.url}/v1/esignet
 
 mosip.pms.esignet.oauth-client-create-url=${mosip.esignet.service.url}/v1/esignet/client-mgmt/oauth-client
 mosip.pms.esignet.oauth-client-update-url=${mosip.esignet.service.url}/v1/esignet/client-mgmt/oauth-client
+
+mosip.pms.esignet.oidc.client.create.url=${mosip.api.internal.url}/v1/esignet/client-mgmt/client
+mosip.pms.esignet.oidc.client.update.url=${mosip.api.internal.url}/v1/esignet/client-mgmt/client
+
 ```
 
 #### User Session Idle Timeout
@@ -345,6 +349,32 @@ Each language uses its standard code (for example, eng for English, hin for Hind
 mosip.pms.supported.notification.languages=eng,hin,ara,fra,tam,kan
 ```
 
+#### Partner Mobile Number Configuration
+
+This property defines the maximum allowed length for a partner's mobile number. The configured value must be less than or equal to 16 digits.
+
+```
+pmp.partner.mobileNumber.max.length=16
+```
+
+#### Supported Languages for OIDC Client
+
+This property specifies the list of supported languages for OIDC client attributes such as client name and description. The values must be provided as a comma-separated list of supported language codes.
+
+```
+mosip.pms.supported.oidc.languages=eng,fra,ara
+```
+
+#### OIDC Client – Additional Info Requirement
+
+This property specifies whether additional information fields (supported in eSignet v1.6.2) are required for OIDC client.
+
+```
+mosip.pms.oidc.client.additional.info.required=true
+```
+
+
+
 #### Partner Type Roles
 
 These properties specify partner type roles that are used to grant access to various APIs in partner management service.
@@ -373,15 +403,20 @@ mosip.role.pms.gettrustcertificates=PARTNER_ADMIN
 mosip.role.pms.getdownloadtrustcertificates=PARTNER_ADMIN
 mosip.role.pms.getpartnersv3=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
 mosip.role.pms.getnotifications=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER
-mosip.role.pms.putnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
-mosip.role.pms.getnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER,POLICYMANAGER
+mosip.role.pms.putnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
+mosip.role.pms.getnotificationseentimestamp=AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,DEVICE_PROVIDER,FTM_PROVIDER,CREDENTIAL_PARTNER,PARTNER_ADMIN,ONLINE_VERIFICATION_PARTNER
 mosip.role.pms.patchdismissnotification=DEVICE_PROVIDER,FTM_PROVIDER,PARTNER_ADMIN,AUTH_PARTNER,ABIS_PARTNER,SDK_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER
 mosip.role.pms.getallmisplicenses=PARTNER_ADMIN
 mosip.role.pms.postlinkpolicygrouptopartner=PARTNER_ADMIN
+mosip.role.pms.patchupdatepartnerapikey=PARTNERMANAGER,PARTNER_ADMIN,AUTH_PARTNER,CREDENTIAL_PARTNER,CREDENTIAL_ISSUANCE,ONLINE_VERIFICATION_PARTNER
 mosip.role.pms.postgeneratemisplicense=PARTNER_ADMIN
 mosip.role.pms.getmisplicensedetails=PARTNER_ADMIN
 mosip.role.pms.patchdeactivatemisplicensekey=PARTNER_ADMIN
 mosip.role.pms.putregeneratemisplicensekey=PARTNER_ADMIN
+mosip.role.pms.postcreateoidcclient=AUTH_PARTNER
+mosip.role.pms.putupdateoidcclient=AUTH_PARTNER
+mosip.role.pms.getoidcclientdetails=AUTH_PARTNER,PARTNER_ADMIN
+mosip.role.pms.patchdeactivateoidcclient=AUTH_PARTNER,PARTNER_ADMIN
 -------- Policy Management Service ---------
 mosip.role.pms.getpolicygroups=AUTH_PARTNER,CREDENTIAL_PARTNER,ONLINE_VERIFICATION_PARTNER,ABIS_PARTNER,MANUAL_ADJUDICATION,PARTNER_ADMIN,POLICYMANAGER
 mosip.role.pms.getallpolicies=PARTNER_ADMIN,POLICYMANAGER
