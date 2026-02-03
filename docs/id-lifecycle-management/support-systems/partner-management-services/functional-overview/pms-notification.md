@@ -45,35 +45,6 @@ These notifications are accessible via the **Notification Bell icon** in the top
   * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 * Dismissing a notification is **user-specific** and does not impact other Partner Admins.
 
-#### MISP License Key tab
-
-* Displays the list of all the the notifications for the expiring MISP license Key
-
-{image}
-
-* To filter the certificate results, click the **Filter** button and enter one or more of the following fields: MISP License Key Name, Partner ID, Expiry Date to perform a targeted search.
-
-{image}
-
-* **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
-
-{image}
-
-
-
-
-
-
-
-
-
-
-
-
-
-<mark style="color:$danger;">**Confirm - Why removed 'View all notification'?**</mark>
-
-
 
 #### View All Notifications
 
