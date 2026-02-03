@@ -277,6 +277,41 @@ After the partner has selected a policy group, uploaded partner certificate, req
 
 <figure><img src="../../../../.gitbook/assets/OIDC_client_creation_7.png" alt=""><figcaption></figcaption></figure>
 
+
+#### Creating OIDC Client with Additional Details
+
+The authentication partner will have to start by providing the basic details:
+- Select suitable Authentication policy for OIDC Client creation. Only the policies that are APPROVED by admin will be available in dropdown for selection.
+- There is an option now to enter the client name in the multiple languages.
+- Enter the public key in JWK format, name or label for OIDC Client, LogoURI and one or more Redirect URI.
+
+{image}
+
+- Also, a section for the additional Info is added which has some optional field that can be updated as per the need of the partner to can be left blank as well.
+
+{image}
+{image}
+
+#### View And Edit OIDC Client:
+
+Once the OIDC client is created the partner has the option to view and and also edit the OIDC client.
+1. Navigate to the Auth Partner dashboard → Authentication Services
+2. Partner can see all the OIDC clients under the OIDC clients tab
+
+{image}
+
+3. Partner can view the OIDC client by choosing the View option from the action menu.
+{image}
+{image}
+
+4. Partner can edit the OIDC client by choosing the Edit option from the action menu. All the field except - Partner ID, Partner Type, Policy Group, Policy Name and Public key are editable.
+
+{image}
+{image}
+
+5. Once the changes are done, partner can submit and update the OIDC Client
+
+
 #### API Key Generation
 
 The authentication partner needs to provide the following details to generate API Key
