@@ -4,19 +4,18 @@
 
 **Partner Admin** receives  the below of notifications within the PMS Portal and via email:
 
-1\. **Root CA Certificate Expiration**
+1. **Root CA Certificate Expiration**
 
 * Triggered for certificates expiring within the next **30 days**.
 
-2\. **Intermediate CA Certificate Expiration**
-
+2. **Intermediate CA Certificate Expiration**
 * Triggered for certificates expiring within the next **30 days**.
 
 3. **MISP License Key Expiration**
 
 * Triggered for the MISP license Keys Expiring within next **30 days.**
 
-3\. **Weekly Summary of Partner Certificate Expiration**
+4. **Weekly Summary of Partner Certificate Expiration**
 
 * A consolidated summary of all partner certificates, FTM Chip Certificates, API Keys, and SBIs scheduled to expire within the next 7 days, sent weekly..
 
@@ -32,8 +31,6 @@ These notifications are accessible via the **Notification Bell icon** in the top
 * Clicking the bell icon opens a dropdown panel showing the **latest 4 notifications**.
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1.png" alt=""><figcaption></figcaption></figure>
-
-![](media/media/pms-eug-notification-image1.png)
 
 * Each notification appears as a row with:
   * **Title**
@@ -63,21 +60,15 @@ The **Root CA Certificate tab** is selected by default upon redirect to Notifica
 
 * To filter the certificate results, click the **Filter** button and enter one or more of the following fields: Certificate ID, Issued By, Issued To, Partner Domain, or Certificate Expiry Date to perform a targeted search.
 
-![](media/media/pms-eug-notification-image3.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image3.png" alt=""><figcaption></figcaption></figure>
 
 * **Dismiss** button to remove that specific notification (removes from both Notification panel and Notification list page)
 
 **'Intermediate CA Certificate' tab**
 
-![](media/media/pms-eug-notification-image4.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image4.png" alt=""><figcaption></figcaption></figure>
 
 * To filter the certificate results, click the **Filter** button and enter one or more of the following fields: Certificate ID, Issued By, Issued To, Partner Domain, or Certificate Expiry Date to perform a targeted search.
-
-![](media/media/pms-eug-notification-image5.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image5.png" alt=""><figcaption></figcaption></figure>
 
@@ -105,20 +96,14 @@ Displays the list of all the the notifications for the expiring MISP license Key
 
 Each notification displays the total count of partner certificates, FTM Chip Certificates, API Keys, SBIsset to expire within a given week.
 
-![](media/media/pms-eug-notification-image6.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image6.png" alt=""><figcaption></figcaption></figure>
 
 * To view the specific Partner IDs associated with each of the expiring items, click the ‘View Expiring Items’ button. This will display a detailed list of all Partner IDs and associated details whose certificates, API Keys, SBIs are due to expire within the next 7 days.
 * Each of the expiring items details within a given weekly summary notification is split into individual sub tabs for easy categorization and readability.
 
-![](media/media/pms-eug-notification-image7.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image7.png" alt=""><figcaption></figcaption></figure>
 
 * To filter the weekly summary results, click the **Filter** button and enter one or more of the following fields: 'Notification Creation Date From' and 'Notification Creation Date To' to perform a targeted search.
-
-![](media/media/pms-eug-notification-image8.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image8.png" alt=""><figcaption></figcaption></figure>
 
@@ -134,8 +119,6 @@ Note: If there is no partner item expiring in a given week, the weekly summary n
 
 * The **Certificate Trust Store** card displays a **red badge** indicating the total count of Root and Intermediate CA certificates **expiring in the next 30 days**.
 
-![](media/media/pms-eug-notification-image9.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image9.png" alt=""><figcaption></figcaption></figure>
 
 ### Email Notifications:
@@ -150,13 +133,9 @@ These notifications are delivered weekly, and the email follows the template pro
 
 #### Root CA Certificate expiry email notification:
 
-![](media/media/pms-eug-notification-image10.png)
-
 <div align="center"><figure><img src="../../../../.gitbook/assets/pms-eug-notification-image10.png" alt="" width="188"><figcaption></figcaption></figure></div>
 
 #### Intermediate CA Certificate expiry email notification:
-
-![](media/media/pms-eug-notification-image12.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image12.png" alt="" width="188"><figcaption></figcaption></figure>
 
@@ -169,8 +148,6 @@ MISP-license-key-expiration-email-notification
 
 
 #### Weekly Summary of Partner Certificate expiration email notification:
-
-![](media/media/pms-eug-notification-image14.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image14.png" alt="" width="188"><figcaption></figcaption></figure>
 
@@ -210,8 +187,6 @@ If one or more partner items are not due to expire in a given week’s summary, 
 
 **"No Notifications Yet - You have no notifications at the moment."**
 
-![](media/media/pms-eug-notification-image16.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image16.png" alt=""><figcaption></figcaption></figure>
 
 #### 3 Language Preference
@@ -238,8 +213,6 @@ Each of these notifications is triggered when the respective item is due to expi
 
 These notifications are accessible to all applicable partner users via the **Notification Bell icon** in the top-right corner of the PMS portal.
 
-![](media/media/pms-eug-notification-image17.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image17.png" alt=""><figcaption></figcaption></figure>
 
 **FTM Chip Certificate Notification (FTM Chip Provider)**
@@ -260,8 +233,6 @@ These notifications are accessible to all applicable partner users via the **Not
 
 * A red alert on the notification bell icon indicates a new notification been triggered.
 * Clicking the bell icon opens a dropdown panel showing the **latest 4 notifications**.
-
-![](media/media/pms-eug-notification-image18.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1 (1).png" alt=""><figcaption></figcaption></figure>
 
@@ -292,13 +263,9 @@ These notifications are accessible to all applicable partner users via the **Not
 * Click **"View All Notifications"** at the bottom of the panel to access the full **Notifications Page** where the 'Partner Certificate' tab displays list of partner certificates nearing expiry within the next 30 days.
 * Each notification displays the expiring partner certificate details as shown below:
 
-![](media/media/pms-eug-notification-image19.png)
-
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image19.png" alt=""><figcaption></figcaption></figure>
 
 * To filter the certificate results, click the **Filter** button and enter one or more of the following fields: Certificate ID, Issued By, Issued To, Partner Domain, or Certificate Expiry Date to perform a targeted search.
-
-![](media/media/pms-eug-notification-image20.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image20.png" alt=""><figcaption></figcaption></figure>
 
@@ -313,8 +280,6 @@ These notifications are accessible to all applicable partner users via the **Not
 ### Email Notifications:
 
 Email alerts are sent to the partner's registered email address for Partner certificates expiring within the next 30 days.
-
-![](media/media/pms-eug-notification-image21.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image21.png" alt="" width="188"><figcaption></figcaption></figure>
 
@@ -334,8 +299,6 @@ Email alerts are sent to the partner's registered email address for Partner cert
 * If no further notifications are available, a message is displayed:
 
 **"No Notifications Yet -- You have no notifications at the moment."**
-
-![](media/media/pms-eug-notification-image23.png)
 
 <figure><img src="../../../../.gitbook/assets/pms-eug-notification-image23.png" alt=""><figcaption></figcaption></figure>
 
