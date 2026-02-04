@@ -56,7 +56,7 @@ PMS provides comprehensive [policy governance](../functional-overview/policy-man
 
 These activities are performed by users assigned the **[Policy Manager](../functional-overview/policy-manager.md)** role in Keycloak. Once a user is created in Keycloak and granted the Policy Manager role, they can manage policies within PMS.
 
-Within a Policy Group, a Policy Manager can [create Authentication Policies and Data Share Policies](../functional-overview/policy-manager.md#create-policy), edit policies in draft state, publish policies, clone policies across Policy Groups, and deactivate policies when no active partner–policy mappings exist.
+Within a Policy Group, a Policy Manager can [create Authentication Policies and Data Share Policies](../functional-overview/policy-manager.md#create-policy), and MISP Policies, edit policies in draft state, publish policies, clone policies across Policy Groups, and deactivate policies when no active partner–policy mappings exist
 
 ### Partner Policy Linking
 
@@ -64,7 +64,7 @@ Once a Policy Group is assigned, partners can request policies through the [Part
 
 Enhancements are available for MISP Partners, allowing Partner Admins to manage MISP-specific policy associations through a dedicated tabular interface.
 
-**Note:** For **[ABIS Partners](../functional-overview/abis-partner-onboarding-by-partner-admin.md#abis-partner-policy-linking)**, only **Data Share Policies** must be selected during policy linking.
+**Note:** For **[ABIS Partners](../functional-overview/abis-partner-onboarding-by-partner-admin.md#abis-partner-policy-linking)**, policy linking supports **Data Share Policies**, **Authentication Policies**, and **MISP Policies**.
 
 ## Authentication Services
 
@@ -103,7 +103,7 @@ If multiple license keys are generated for the same Partner ID, only the latest 
 
 ## Notifications and Alerts
 
-PMS provides proactive [notifications](../functional-overview/pms-notification.md) through both the PMS portal and email. Notifications cover certificate expiries (Root, Intermediate, Partner, FTM Chip), API Keys, SBIs, and weekly summary updates for Partner Admins.
+PMS provides proactive [notifications](../functional-overview/pms-notification.md) through both the PMS portal and email. Notifications cover certificate expiries (Root, Intermediate, Partner, FTM Chip), API Keys, SBIs, MISP License Key and weekly summary updates for Partner Admins.
 
 Notifications are sent at defined intervals: 30 days before expiry, 15 days before expiry, and daily reminders starting 10 days prior to expiry. Weekly summary notifications are sent every seven days.
 

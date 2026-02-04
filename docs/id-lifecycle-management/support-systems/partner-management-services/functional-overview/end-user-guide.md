@@ -279,40 +279,49 @@ After the partner has selected a policy group, uploaded partner certificate, req
 
 
 #### Creating OIDC Client with Additional Details
+Authentication partners can create OIDC Clients by providing both basic and additional optional information. This flexibility allows partners to configure their OIDC clients according to their specific integration requirements.
 
-The authentication partner will have to start by providing the basic details:
-- Select suitable Authentication policy for OIDC Client creation. Only the policies that are APPROVED by admin will be available in dropdown for selection.
-- There is an option now to enter the client name in the multiple languages.
-- Enter the public key in JWK format, name or label for OIDC Client, LogoURI and one or more Redirect URI.
+Provide the following basic details to create an OIDC Client:
 
-{image}
+- **Select Authentication Policy**: Choose an authentication policy from the dropdown. Only policies that the admin has approved appear in the list.
+- **Enter Client Name**: Add the client name in multiple languages.
+- **Enter Public Key**: Provide the public key in JWK format.
+- **Add OIDC Client Details**: Enter the name or label for the OIDC Client, LogoURI, and one or more Redirect URIs.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-1.png" alt=""><figcaption></figcaption></figure>
+
 
 - Also, a section for the additional Info is added which has some optional field that can be updated as per the need of the partner to can be left blank as well.
 
-{image}
-{image}
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-2.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-3.png" alt=""><figcaption></figcaption></figure>
 
 #### View And Edit OIDC Client:
 
 Once the OIDC client is created the partner has the option to view and and also edit the OIDC client.
-1. Navigate to the Auth Partner dashboard → Authentication Services
-2. Partner can see all the OIDC clients under the OIDC clients tab
+1. Navigate to the Auth Partner dashboard → Authentication Services, Partner can see all the OIDC clients under the OIDC clients tab.
 
-{image}
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-4.png" alt=""><figcaption></figcaption></figure>
 
-3. Partner can view the OIDC client by choosing the View option from the action menu.
-{image}
-{image}
+3. You can view the OIDC client by choosing the View option from the action menu.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-5.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-6.png" alt=""><figcaption></figcaption></figure>
 
 4. Partner can edit the OIDC client by choosing the Edit option from the action menu. All the field except - Partner ID, Partner Type, Policy Group, Policy Name and Public key are editable.
 
-{image}
-{image}
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-7.png" alt=""><figcaption></figcaption></figure>
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-8.png" alt=""><figcaption></figcaption></figure>
 
 5. Once the changes are done, partner can submit and update the OIDC Client
 
+#### API Key 
 
-#### API Key Generation
+
+**Generating API Key**
 
 The authentication partner needs to provide the following details to generate API Key
 
@@ -336,6 +345,44 @@ The authentication partner needs to provide the following details to generate AP
 
 <figure><img src="../../../../.gitbook/assets/pms_generating_api_key_5.png" alt=""><figcaption></figcaption></figure>
 
+
+**Modifying API Key Expiry Date**
+
+As a PMS Partner Admin, you can modify the expiry date of an active API key:
+
+1. Navigate to **PMS Portal** --> **Authentication Services** → **API Keys** tab.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-1.png" alt=""><figcaption></figcaption></figure>
+
+2. Locate the API key you want to update in the list view.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-2.png" alt=""><figcaption></figcaption></figure>
+
+3. Click on the **Actions** menu for the corresponding API key.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-3.png" alt=""><figcaption></figcaption></figure>
+
+4. Select **Edit Expiry Date** from the dropdown options.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-4.png" alt=""><figcaption></figcaption></figure>
+5. In the popup window, choose a future expiry date using the date picker.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-5.png" alt=""><figcaption></figcaption></figure>
+
+6. Click **Submit** to save the changes.
+
+<figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-6.png" alt=""><figcaption></figcaption></figure>
+A success message confirms that the API key's expiry date has been updated successfully. The updated expiry date will be reflected in the API Keys list view.
+
+{% hint style="info" %}
+**Note:**
+
+* Only active API keys can have their expiry dates modified.
+* The new expiry date must be set to a future date.
+* Once an API key is deactivated, its expiry date cannot be edited.
+{% endhint %}
+
+
 ## Interface Overview
 
 PMS (Partner Management System) is going under a comprehensive overhaul. This revamp includes improving usability and elevate the overall user experience (UX). The focus is to bring user centered design to PMS, make the PMS more intuitive, efficient, and aligned with our partners' evolving needs.
@@ -346,7 +393,7 @@ Card view presentation is there for each functionality with brief description to
 
 After successfully registering you can access the Home Page / Dashboard. You will be able to view the features and functionalities on the dashboardand based on your Partner Type.
 
-Note: You can access the partner dashboard only when you are duly registered and have selected the 'Policy Group'.
+> Note: You can access the partner dashboard only when you are duly registered and have selected the 'Policy Group'.
 
 <figure><img src="../../../../.gitbook/assets/pms_dashboard.png" alt=""><figcaption></figcaption></figure>
 
@@ -360,7 +407,7 @@ Each functionality that the user can perform is displayed in each card so that t
 
 You can view your organisation name and username on the top right called 'User Profile', logout options is also placed here only.
 
-## Reupload a new partner certificate through the following steps
+## Re-upload a new partner certificate through the following steps
 
 1. Login to PMS and Go to Dashboard.
 2. Click on Partner Certificate option in the dashboard / side panel / hamburger menu ( <img src="../../../../.gitbook/assets/pms_hamburger_menu.png" alt="" data-size="line"> ), you will be redirected to list view of partner certificate.
