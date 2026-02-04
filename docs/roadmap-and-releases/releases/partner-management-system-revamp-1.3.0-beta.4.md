@@ -14,7 +14,7 @@ PMS Revamp v1.3.0-Beta4 introduces key enhancements focused on partner onboardin
 
 #### 1. ABIS Partner Onboarding Support
 
-PMS now supports onboarding of a new partner type — **ABIS (Automated Biometric Identification System) Partner** — through the Partner Admin role.
+PMS now supports onboarding of a new partner type — **[ABIS (Automated Biometric Identification System) Partner](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/abis-partner-onboarding-by-partner-admin.md#overview)** — through the Partner Admin role.
 
 With this enhancement, a **Partner Admin** can:
 
@@ -22,15 +22,15 @@ With this enhancement, a **Partner Admin** can:
 * Upload and re-upload partner certificates
 * Link relevant policies to the ABIS partner
 
-**Note:**\
+**Note:**
 Before onboarding **any partner** (including ABIS partners), the **upload of Root CA and Intermediate CA certificates is a mandatory prerequisite**. Partner onboarding cannot proceed unless this trust chain is already configured in PMS.
 
-**Important Note for ABIS Partners:**\
+**Important Note for ABIS Partners:**
 While linking policies for an ABIS partner, **only Data Share policies are applicable and should be selected**.
 
 #### 2. Updated Partner Admin & Policy Manager Registration Flow
 
-The registration flow for **Partner Admin** and **Policy Manager** roles has been simplified.
+The registration flow for [**Partner Admin**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration.md) page and [**Policy Manager**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/policy-manager.md) roles has been simplified.
 
 From **PMS v1.3.0-Beta4 onwards**, Partner Admins and Policy Managers:
 
@@ -41,12 +41,12 @@ From **PMS v1.3.0-Beta4 onwards**, Partner Admins and Policy Managers:
 
 This change reduces onboarding steps, eliminates redundant self-registration, and centralizes role management within Keycloak.
 
-**Info Note:**\
+**Info Note:**
 This updated registration flow is applicable to **PMS v1.3.0-Beta4 and later versions only**.
 
 #### 3. OIDC Client Enhancement – Additional Configuration Fields
 
-The OIDC client creation flow has been enhanced with a **new “Additional Information” section** in the UI.
+The OIDC client creation flow has been enhanced with a [**new “Additional Information” section**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#creating-oidc-client-with-additional-details) in the UI.
 
 This section allows Relying Parties (RPs) to:
 
@@ -54,13 +54,13 @@ This section allows Relying Parties (RPs) to:
 * Customize OIDC client behavior with greater flexibility
 * Support advanced integration and use-case specific requirements
 
-**Compatibility Note:**\
-The **Additional Information** section is **editable only when PMS is integrated with eSignet version 1.6.2 or above**.\
+**Compatibility Note:**
+The **Additional Information** section is **editable only when PMS is integrated with eSignet version 1.6.2 or above**.
 For PMS deployments using **eSignet versions lower than 1.6.2**, this section will be visible but **not editable**.
 
 #### 4. API Key Expiry Date Management by Partner Admin
 
-An enhancement has been introduced to allow **editing the expiry date of API keys** by partner admin. With this change:
+An enhancement has been introduced to allow [**editing the expiry date of API keys**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#api-key) by partner admin. With this change:
 
 * Partner can continue using the **same API key** for an extended period
 * The expiry date can be **updated as it approaches**, without regenerating a new key
@@ -68,7 +68,7 @@ An enhancement has been introduced to allow **editing the expiry date of API key
 
 #### 5. MISP License Key Expiry Notifications
 
-PMS now provides **proactive notifications for expiring MISP license keys**, targeted at the **Partner Admin** role.
+PMS now provides [**proactive notifications for expiring MISP license keys**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/pms-notification.md#what-all-types-of-notifications-does-a-partner-admin-get), targeted at the **Partner Admin** role.
 
 Notifications are delivered through:
 
