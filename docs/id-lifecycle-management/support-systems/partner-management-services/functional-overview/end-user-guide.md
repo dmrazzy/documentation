@@ -40,8 +40,6 @@ Before a Partner will be able to '**Upload 'CA Signed Certificate**' it is prere
 
 Refer to the [user guide here](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration#certificate-trust-store) to upload the Root CA and Intermediate CA certificates by logging in with Partner Admin role
 
-<figure><img src="../../../../../Users/keshavsingh/Office/PMS/half/media/image1.png" alt=""><figcaption><p>image</p></figcaption></figure>
-
 ### Creating Policy Group and Policy
 
 As Partner Admin you are required to '**Create Policy Group**' and '**Create Policy(s)**' which a 'Partner' will be able to select while self-registering on PMS.
@@ -243,8 +241,12 @@ You must ensure that you re-upload the partner certificate again so that new MOS
 
 After the partner has selected a policy group, uploaded partner certificate, requested for policy and also got admin approval - partner can now perform 'Authentication Services':
 
-* **OIDC Client**: Create OIDC Client for approved policy
-* **API Key**: Generate API Key for approved policy
+* **OIDC Client**:&#x20;
+  * Create OIDC Client for approved policy
+  * Creating OIDC Client with Additional Details
+* **API Key**:&#x20;
+  * Generate API Key for approved policy
+  * Modify API Key Expiry
 
 **Prerequisites**: Policy requested by the **Partner** must be already approved by **Policy Manager** (Read More [**here**](end-user-guide.md#approve-policy-request)).
 
@@ -277,21 +279,20 @@ After the partner has selected a policy group, uploaded partner certificate, req
 
 <figure><img src="../../../../.gitbook/assets/OIDC_client_creation_7.png" alt=""><figcaption></figcaption></figure>
 
-
 #### Creating OIDC Client with Additional Details
+
 Authentication partners can create OIDC Clients by providing both basic and additional optional information. This flexibility allows partners to configure their OIDC clients according to their specific integration requirements.
 
 Provide the following basic details to create an OIDC Client:
 
-- **Select Authentication Policy**: Choose an authentication policy from the dropdown. Only policies that the admin has approved appear in the list.
-- **Enter Client Name**: Add the client name in multiple languages.
-- **Enter Public Key**: Provide the public key in JWK format.
-- **Add OIDC Client Details**: Enter the name or label for the OIDC Client, LogoURI, and one or more Redirect URIs.
+* **Select Authentication Policy**: Choose an authentication policy from the dropdown. Only policies that the admin has approved appear in the list.
+* **Enter Client Name**: Add the client name in multiple languages.
+* **Enter Public Key**: Provide the public key in JWK format.
+* **Add OIDC Client Details**: Enter the name or label for the OIDC Client, LogoURI, and one or more Redirect URIs.
 
 <figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-1.png" alt=""><figcaption></figcaption></figure>
 
-
-- Also, a section for the additional Info is added which has some optional field that can be updated as per the need of the partner to can be left blank as well.
+* Also, a section for the additional Info is added which has some optional field that can be updated as per the need of the partner to can be left blank as well.
 
 <figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-2.png" alt=""><figcaption></figcaption></figure>
 
@@ -300,6 +301,7 @@ Provide the following basic details to create an OIDC Client:
 #### View And Edit OIDC Client:
 
 Once the OIDC client is created the partner has the option to view and and also edit the OIDC client.
+
 1. Navigate to the Auth Partner dashboard → Authentication Services, Partner can see all the OIDC clients under the OIDC clients tab.
 
 <figure><img src="../../../../.gitbook/assets/pms-ap-oidc-client-wed-4.png" alt=""><figcaption></figcaption></figure>
@@ -318,8 +320,7 @@ Once the OIDC client is created the partner has the option to view and and also 
 
 5. Once the changes are done, partner can submit and update the OIDC Client
 
-#### API Key 
-
+#### API Key
 
 **Generating API Key**
 
@@ -345,7 +346,6 @@ The authentication partner needs to provide the following details to generate AP
 
 <figure><img src="../../../../.gitbook/assets/pms_generating_api_key_5.png" alt=""><figcaption></figcaption></figure>
 
-
 **Modifying API Key Expiry Date**
 
 As a PMS Partner Admin, you can modify the expiry date of an active API key:
@@ -365,13 +365,15 @@ As a PMS Partner Admin, you can modify the expiry date of an active API key:
 4. Select **Edit Expiry Date** from the dropdown options.
 
 <figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-4.png" alt=""><figcaption></figcaption></figure>
-5. In the popup window, choose a future expiry date using the date picker.
+
+5\. In the popup window, choose a future expiry date using the date picker.
 
 <figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-5.png" alt=""><figcaption></figcaption></figure>
 
 6. Click **Submit** to save the changes.
 
 <figure><img src="../../../../.gitbook/assets/pms-ap-modify-api-key-expiry-6.png" alt=""><figcaption></figcaption></figure>
+
 A success message confirms that the API key's expiry date has been updated successfully. The updated expiry date will be reflected in the API Keys list view.
 
 {% hint style="info" %}
@@ -381,7 +383,6 @@ A success message confirms that the API key's expiry date has been updated succe
 * The new expiry date must be set to a future date.
 * Once an API key is deactivated, its expiry date cannot be edited.
 {% endhint %}
-
 
 ## Interface Overview
 

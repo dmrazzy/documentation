@@ -11,7 +11,7 @@ icon: book-open
 
 **Version**: Partner Management System Revamp 1.3.0-beta.4
 
-* Date: Coming Soon!
+* Date: 4th February, 2026
 * [Release Notes](partner-management-system-revamp-1.3.0-beta.4.md)
 
 **Version**: Infra

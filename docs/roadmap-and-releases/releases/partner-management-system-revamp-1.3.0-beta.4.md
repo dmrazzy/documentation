@@ -4,7 +4,7 @@
 
 **Release Number**: 1.3.0-beta.4
 
-**Release Date**: Coming Soon!
+**Release Date**: 4th February, 2026
 
 ### Overview
 
@@ -99,11 +99,25 @@ Validation checks to verify whether a partner already exists in the PMS database
 
 ### Repositories Released
 
-<table><thead><tr><th width="302.3828125">partner-management-services</th><th width="221.76171875">release-1.3.x</th><th>v1.3.0-beta.4</th></tr></thead><tbody><tr><td><strong>partner-management-portal</strong></td><td>release-1.3.x</td><td><a href="https://github.com/mosip/partner-management-portal/tree/v1.3.0-beta.4">v1.3.0-beta.4</a></td></tr><tr><td><strong>partner-management-services</strong></td><td>release-1.3.x</td><td><a href="https://github.com/mosip/partner-management-services/tree/1.3.0-beta.4">1.3.0-beta.4</a></td></tr><tr><td><strong>mosip-data</strong></td><td>release-1.3.x</td><td>v1.3.0-beta.4</td></tr></tbody></table>
+<table><thead><tr><th width="302.3828125">partner-management-services</th><th width="221.76171875">release-1.3.x</th><th>v1.3.0-beta.4</th></tr></thead><tbody><tr><td><strong>partner-management-portal</strong></td><td>release-1.3.x</td><td><a href="https://github.com/mosip/partner-management-portal/tree/v1.3.0-beta.4">v1.3.0-beta.4</a></td></tr><tr><td><strong>partner-management-services</strong></td><td>release-1.3.x</td><td><a href="https://github.com/mosip/partner-management-services/tree/1.3.0-beta.4">1.3.0-beta.4</a></td></tr><tr><td><strong>mosip-data</strong></td><td>release-1.3.x</td><td><a href="https://github.com/mosip/mosip-functional-tests/tree/v1.4.0">v1.3.0-beta.4</a></td></tr></tbody></table>
 
 ### Compatible Modules
 
-<table><thead><tr><th width="348.26171875">Module/ Repo</th><th>Tags</th></tr></thead><tbody><tr><td>Key Manager</td><td>v1.3.0-beta.3</td></tr><tr><td>mosip-openid-bridge</td><td>v1.3.0-beta.2</td></tr><tr><td>artifactory</td><td>v1.2.0.2</td></tr><tr><td>IDA</td><td>v1.2.1.0</td></tr><tr><td>eSignet</td><td>v1.4.1</td></tr><tr><td>Reg Proc</td><td>v1.2.0.2</td></tr><tr><td>Notifier (Kernel)</td><td>v1.2.0.1</td></tr><tr><td>Audit manager</td><td>v1.2.0.1</td></tr><tr><td>ID Repo</td><td>v1.2.2.0</td></tr><tr><td>datashare</td><td>v1.2.0.1</td></tr><tr><td>Keycloak</td><td>v1.2.0.1</td></tr><tr><td>config-server</td><td>v1.1.2</td></tr><tr><td>Websub</td><td>v1.2.0.1</td></tr></tbody></table>
+| Module/ Repo        | Tags                                                                             |
+| ------------------- | -------------------------------------------------------------------------------- |
+| Key Manager         | [v1.3.0-beta.3](https://github.com/mosip/keymanager/tree/v1.3.0-beta.3)          |
+| mosip-openid-bridge | [v1.3.0-beta.2](https://github.com/mosip/mosip-openid-bridge/tree/v1.3.0-beta.2) |
+| artifactory         | [v1.2.0.2](https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2)          |
+| IDA                 | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)             |
+| eSignet             | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                           |
+| Reg Proc            | [v1.2.0.2](https://github.com/mosip/registration/tree/v1.2.0.2)                  |
+| Notifier (Kernel)   | [v1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel)                |
+| Audit manager       | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)                 |
+| ID Repo             | [v1.2.2.0](https://github.com/mosip/id-repository/tree/v1.2.2.0)                 |
+| datashare           | [v1.2.0.1](https://github.com/mosip/durian/tree/v1.2.0.1)                        |
+| Keycloak            | [v1.2.0.1](https://github.com/mosip/keycloak/tree/v1.2.0.1)                      |
+| config-server       | [v1.1.2](https://github.com/mosip/mosip-config/tree/v1.1.2)                      |
+| Websub              | [v1.2.0.1](https://github.com/mosip/websub/tree/v1.2.0.1)                        |
 
 ***
 
@@ -114,3 +128,8 @@ Validation checks to verify whether a partner already exists in the PMS database
 * [Features](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/overview/features)
 * [End User Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding)
 * [Technical Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/develop)
+
+### Test Report
+
+For details on the test results, refer here.
+

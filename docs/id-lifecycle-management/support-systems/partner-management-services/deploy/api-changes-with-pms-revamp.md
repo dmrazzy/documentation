@@ -8,7 +8,7 @@ This document captures all the changes that have been made in the API endpoints 
 
 ### /oauth/client (GET)
 
-**Description:** This endpoint retrieves a list of all OAuth clients created by the Auth Partners. It supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the PARTNER_ADMIN role, then it will fetch all the OAuth clients created by all the partners associated with the logged in user only. If the token used to access this endpoint, has PARTNER_ADMIN role, then it will fetch all the OAuth clients created by all the partners. It is configured for **PARTNER_ADMIN** and **AUTH_PARTNER** roles.
+**Description:** This endpoint retrieves a list of all OAuth clients created by the Auth Partners. It supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the PARTNER\_ADMIN role, then it will fetch all the OAuth clients created by all the partners associated with the logged in user only. If the token used to access this endpoint, has PARTNER\_ADMIN role, then it will fetch all the OAuth clients created by all the partners. It is configured for **PARTNER\_ADMIN** and **AUTH\_PARTNER** roles.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -26,7 +26,7 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.2.2.0:**
 
-1. Added validation to check the partner id in the request body belongs to the user who's token is being used to access this endpoint. This will ensure that PMS user can create OIDC client only for the partner id which belongs to the user. This validation is skipped if the user's role is **PARTNER_ADMIN**.
+1. Added validation to check the partner id in the request body belongs to the user who's token is being used to access this endpoint. This will ensure that PMS user can create OIDC client only for the partner id which belongs to the user. This validation is skipped if the user's role is **PARTNER\_ADMIN**.
 2. Added validation to check if the **Partner ID** used in the request body is active. This will ensure that OIDC client cannot be created for an inactive partner. ([MOSIP-34276](https://mosip.atlassian.net/browse/MOSIP-34276))
 3. If multiple policy requests were created by the partner for a policy, then while creating the OIDC client, this endpoint was checking the status of only the first policy request. So even if there was an approved policy request, it was still throwing an error. Fixed this bug ([MOSIP-34599](https://mosip.atlassian.net/browse/MOSIP-34599))
 4. Improved JWK validation for the public key by adding validation that n value (modulus value) of the JWK must be unique ([MOSIP-36219](https://mosip.atlassian.net/browse/MOSIP-36219))
@@ -40,14 +40,13 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.4:** This endpoint has been deprecated since the release 1.3.0-beta.4 and replaced by POST /oidc-clients.
 
-
-### /oauth/client/{client_id} (GET)
+### /oauth/client/{client\_id} (GET)
 
 **Description:** This endpoint retrieves the OIDC client details by client id
 
 **Changes done in release 1.2.2.0:**
 
-1. Added validation to check the partner id in the request belongs to the user who's token is being used to access this endpoint. This will ensure that PMS user can access OIDC client only for the partner id which belongs to the user. This validation is skipped if the user's role is **PARTNER_ADMIN**.
+1. Added validation to check the partner id in the request belongs to the user who's token is being used to access this endpoint. This will ensure that PMS user can access OIDC client only for the partner id which belongs to the user. This validation is skipped if the user's role is **PARTNER\_ADMIN**.
 
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
@@ -57,16 +56,16 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.4:** This endpoint has been deprecated since the release 1.3.0-beta.4 and replaced by GET /oidc-clients/{clientId}.
 
-### /oauth/client/{client_id} (PUT)
+### /oauth/client/{client\_id} (PUT)
 
 **Description:** This endpoint is used for updating OIDC Client based on client id
 
 **Changes done in release 1.2.2.0:**
 
-1. Added validation to check the partner id in the request body belongs to the user who's token is being used to access this endpoint. This will ensure that PMS user can update OIDC client only for the partner id which belongs to the user. This validation is skipped if the user's role is **PARTNER_ADMIN**.
-2. Added validation to check if the **Partner ID** used in the request body is active. This will ensure that OIDC client cannot be updated for an inactive partner. This validation is skipped if the user's role is **PARTNER_ADMIN** and status in the request is changed to **INACTIVE**. ([MOSIP-34276](https://mosip.atlassian.net/browse/MOSIP-34276))
+1. Added validation to check the partner id in the request body belongs to the user who's token is being used to access this endpoint. This will ensure that PMS user can update OIDC client only for the partner id which belongs to the user. This validation is skipped if the user's role is **PARTNER\_ADMIN**.
+2. Added validation to check if the **Partner ID** used in the request body is active. This will ensure that OIDC client cannot be updated for an inactive partner. This validation is skipped if the user's role is **PARTNER\_ADMIN** and status in the request is changed to **INACTIVE**. ([MOSIP-34276](https://mosip.atlassian.net/browse/MOSIP-34276))
 3. If the status in the request is changed to **INACTIVE**, only the status is updated in the database other fields remain unchanged. This will ensure that PUT endpoint can be used to deactivate the OIDC client.
-4. Added a bypass for a user with **PARTNER_ADMIN** role. If the user with **PARTNER_ADMIN** role is used to access this endpoint, then it will deactivate the OIDC client for any partner ID, even if the partner ID is deactivated.
+4. Added a bypass for a user with **PARTNER\_ADMIN** role. If the user with **PARTNER\_ADMIN** role is used to access this endpoint, then it will deactivate the OIDC client for any partner ID, even if the partner ID is deactivated.
 5. Added a validation to check if the OIDC client is already deactivated.([MOSIP-34108](https://mosip.atlassian.net/browse/MOSIP-34108))
 6. Updated client name to be a JSON string to support client name language map ([ES-836](https://mosip.atlassian.net/browse/ES-836))
 
@@ -76,50 +75,41 @@ This document captures all the changes that have been made in the API endpoints 
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:**This endpoint has been deprecated since the release 1.3.0-beta.4 and replaced by PUT /oidc-clients/{clientId}.
-
-
+\*\*Changes done in release 1.3.0-beta.4:\*\*This endpoint has been deprecated since the release 1.3.0-beta.4 and replaced by PUT /oidc-clients/{clientId}.
 
 ### /oidc-clients (POST)
 
-Description: Creates a new OIDC client for a specified Auth Partner. This endpoint is accessible only to users with the AUTH_PARTNER role and supports the new additionalConfig field added in Esignet v1.6.2 in the request.
+Description: Creates a new OIDC client for a specified Auth Partner. This endpoint is accessible only to users with the AUTH\_PARTNER role and supports the new additionalConfig field added in Esignet v1.6.2 in the request.
 
 **Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4. Supports Esignet v1.6.2
 
 ### /oidc-clients/{clientId} (PUT)
 
-Description: Updates an existing OIDC client for a specified Auth Partner. This endpoint is accessible only to users with the AUTH_PARTNER role and supports the new additionalConfig field added in Esignet v1.6.2 in the request.
+Description: Updates an existing OIDC client for a specified Auth Partner. This endpoint is accessible only to users with the AUTH\_PARTNER role and supports the new additionalConfig field added in Esignet v1.6.2 in the request.
 
 **Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4. Supports Esignet v1.6.2
-
 
 ### /oidc-clients/{clientId} (GET)
 
-Description: Retrieves the details of an existing OIDC client for a specified Auth Partner. This endpoint is accessible to users with the PARTNER_ADMIN or AUTH_PARTNER role and supports the new additionalConfig field added in Esignet v1.6.2 in the response.
+Description: Retrieves the details of an existing OIDC client for a specified Auth Partner. This endpoint is accessible to users with the PARTNER\_ADMIN or AUTH\_PARTNER role and supports the new additionalConfig field added in Esignet v1.6.2 in the response.
 
 **Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4. Supports Esignet v1.6.2
-
 
 ### /oidc-clients/{clientId} (PATCH)
-Description: Deactivates an OIDC client identified by its Client ID. This endpoint is accessible to users with the AUTH_PARTNER or PARTNER_ADMIN role.
+
+Description: Deactivates an OIDC client identified by its Client ID. This endpoint is accessible to users with the AUTH\_PARTNER or PARTNER\_ADMIN role.
 
 **Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4. Supports Esignet v1.6.2
-
 
 ### /oidc-clients (GET)
 
-Description: Retrieves a list of all OIDC clients created by Auth Partners. It supports pagination, sorting, and filtering through optional query parameters.
-Access is controlled by the role associated with the access token:
-•	If the token does not have the PARTNER_ADMIN role, the response includes only the OIDC clients created by partners associated with the logged-in user.
-•	If the token has the PARTNER_ADMIN role, the response includes OIDC clients created by all partners.
-This endpoint is accessible to users with PARTNER_ADMIN and AUTH_PARTNER roles.
+Description: Retrieves a list of all OIDC clients created by Auth Partners. It supports pagination, sorting, and filtering through optional query parameters. Access is controlled by the role associated with the access token: • If the token does not have the PARTNER\_ADMIN role, the response includes only the OIDC clients created by partners associated with the logged-in user. • If the token has the PARTNER\_ADMIN role, the response includes OIDC clients created by all partners. This endpoint is accessible to users with PARTNER\_ADMIN and AUTH\_PARTNER roles.
 
 **Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4. Supports Esignet v1.6.2
 
-
 ### /devicedetail (GET)
 
-**Description:** This endpoint retrieves a list of all the Devices across all the Device Providers in PMS. It supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves a list of all the Devices across all the Device Providers in PMS. It supports pagination, sorting, and filtering. It is configured for the role **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -130,7 +120,6 @@ This endpoint is accessible to users with PARTNER_ADMIN and AUTH_PARTNER roles.
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
-
 
 ### /devicedetail (PUT)
 
@@ -145,7 +134,6 @@ This endpoint is accessible to users with PARTNER_ADMIN and AUTH_PARTNER roles.
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
- 
 
 ### /devicedetail (POST)
 
@@ -159,7 +147,7 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -175,12 +163,11 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:**No changes made in release 1.3.0-beta.4
-
+\*\*Changes done in release 1.3.0-beta.4:\*\*No changes made in release 1.3.0-beta.4
 
 ### /devicedetail/{deviceId} (PATCH)
 
-**Description:** This endpoint is used for deactivating a Device. This endpoint will check if the Device Id belongs to the logged in user or not. This endpoint is configured for the roles DEVICE_PROVIDER or PARTNER_ADMIN.
+**Description:** This endpoint is used for deactivating a Device. This endpoint will check if the Device Id belongs to the logged in user or not. This endpoint is configured for the roles DEVICE\_PROVIDER or PARTNER\_ADMIN.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -190,13 +177,11 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
-
-
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /devicedetail/{id}/approval (POST)
 
-**Description:** This endpoint is for the Partner Admin user to approve or reject a Device and activate the mapping between the Device and the SBI. It is configured for the role **PARTNER_ADMIN**
+**Description:** This endpoint is for the Partner Admin user to approve or reject a Device and activate the mapping between the Device and the SBI. It is configured for the role **PARTNER\_ADMIN**
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -280,7 +265,7 @@ This ensures that a device will always be created for a SBI and not without one.
 
 ### /ftpchipdetail (GET)
 
-**Description:** This endpoint retrieves a list of all FTM Chip details created by all the FTM Providers associated with the logged in user. It is configured for the roles **FTM_PROVIDER** or **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves a list of all FTM Chip details created by all the FTM Providers associated with the logged in user. It is configured for the roles **FTM\_PROVIDER** or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -320,7 +305,7 @@ This ensures that a device will always be created for a SBI and not without one.
 
 **Changes done in release 1.3.0-beta.3**:
 
-Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -340,7 +325,7 @@ Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.
 
 ### /ftpchipdetail/{ftmId} (PATCH)
 
-**Description:** This endpoint deactivates the ftp chip detail based on the ftp chip detail Id. It is configured for the roles **FTM_PROVIDER** or **PARTNER_ADMIN**.
+**Description:** This endpoint deactivates the ftp chip detail based on the ftp chip detail Id. It is configured for the roles **FTM\_PROVIDER** or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -350,11 +335,11 @@ Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /ftpchipdetail/{ftmId}/certificate-data (GET)
 
-**Description:** This endpoint fetches both the CA signed certificate uploaded by the FTM Chip Provider and the MOSIP signed certificate generated by PMS. It is configured for the roles **FTM_PROVIDER** or **PARTNER_ADMIN**.
+**Description:** This endpoint fetches both the CA signed certificate uploaded by the FTM Chip Provider and the MOSIP signed certificate generated by PMS. It is configured for the roles **FTM\_PROVIDER** or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -364,7 +349,7 @@ Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /ftpchipdetail/getPartnerCertificate/{ftpChipDetailId} (GET)
 
@@ -402,7 +387,7 @@ Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.
 
 **Changes done in release 1.2.2.0:**
 
-1. Added validation to allow certificate upload only if the FTM chip details certificate status is **APPROVED** or **PENDING_CERT_UPLOAD**.([MOSIP-36283](https://mosip.atlassian.net/browse/MOSIP-36283)). So for Rejected or Deactivated FTM, a certificate cannot be uploaded.
+1. Added validation to allow certificate upload only if the FTM chip details certificate status is **APPROVED** or **PENDING\_CERT\_UPLOAD**.([MOSIP-36283](https://mosip.atlassian.net/browse/MOSIP-36283)). So for Rejected or Deactivated FTM, a certificate cannot be uploaded.
 2. Improved Key Manager error handling, to capture the correct error code from Key Manager and send it in the endpoint's response.
 3. Set isActive to false after certificate re-upload. This will ensure that after cert is reuploaded, partner admin will have to approve the FTM again. ([MOSIP-36285](https://mosip.atlassian.net/browse/MOSIP-36285))
 
@@ -416,7 +401,7 @@ Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.
 
 ### /ftpchipdetail/v2 (GET)
 
-**Description:** This endpoint retrieves a list of all FTM Chip details created by all the FTM Providers. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves a list of all FTM Chip details created by all the FTM Providers. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -430,14 +415,14 @@ Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.
 
 ### /admin-partners (GET)
 
-**Description:** This endpoint retrieves a list of all Partners. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves a list of all Partners. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
-* Disabled sorting on the email_id column due to encryption-related limitations.
-* Modified filtering behavior for the email_id column: now supports only exact match filtering; partial or "contains" search is no longer supported.
+* Disabled sorting on the email\_id column due to encryption-related limitations.
+* Modified filtering behavior for the email\_id column: now supports only exact match filtering; partial or "contains" search is no longer supported.
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sortFieldName, sortType, partnerId, partnerType, orgName, emailAddress, certificateUploadStatus, policyGroupName
 
@@ -449,7 +434,7 @@ A new query parameter called `status` has been introduced, enabling filtering ba
 
 ### /admin-partners/{partnerId} (GET)
 
-**Description:** This endpoint retrieves all the details of the Partner based on Partner Id. It is configured for the role **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves all the details of the Partner based on Partner Id. It is configured for the role **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -459,11 +444,11 @@ A new query parameter called `status` has been introduced, enabling filtering ba
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /partner-api-keys (GET)
 
-**Description:** This endpoint retrieves a list of all the API keys created by the Auth Partners. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER_ADMIN** role, then it will fetch all the API keys created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER_ADMIN** role, then it will fetch all the API keys created by all the partners.
+**Description:** This endpoint retrieves a list of all the API keys created by the Auth Partners. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER\_ADMIN** role, then it will fetch all the API keys created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER\_ADMIN** role, then it will fetch all the API keys created by all the partners.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -480,7 +465,7 @@ A new query parameter called `status` has been introduced, enabling filtering ba
 
 ### /partner-api-keys/v2 (GET)
 
-**Description:** This endpoint retrieves a list of all the API keys created by the Auth Partners. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER_ADMIN** role, then it will fetch all the API keys created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER_ADMIN** role, then it will fetch all the API keys created by all the partners.
+**Description:** This endpoint retrieves a list of all the API keys created by the Auth Partners. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER\_ADMIN** role, then it will fetch all the API keys created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER\_ADMIN** role, then it will fetch all the API keys created by all the partners.
 
 **Changes done in release 1.2.2.0:** -
 
@@ -492,12 +477,12 @@ A new query parameter called `status` has been introduced, enabling filtering ba
 2. Also added input regex validation for the following fields: sortFieldName, sortType, partnerId, apiKeyLabel, orgName, status, policyName, policyGroupName
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
- 
+
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
 ### /partner-policy-requests (GET)
 
-**Description:** This endpoint fetches list of all the policy requests made by the partners. Also supports pagination, sorting, and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER_ADMIN** role, then it will fetch all the policy requests made by all the partners associated with the logged in user only.If the token used to access this endpoint, has **PARTNER_ADMIN** role, then it will fetch all the policy requests made by all the partners.
+**Description:** This endpoint fetches list of all the policy requests made by the partners. Also supports pagination, sorting, and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER\_ADMIN** role, then it will fetch all the policy requests made by all the partners associated with the logged in user only.If the token used to access this endpoint, has **PARTNER\_ADMIN** role, then it will fetch all the policy requests made by all the partners.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -576,7 +561,7 @@ A new query parameter called `status` has been introduced, enabling filtering ba
 **Changes done in release 1.2.2.0:**
 
 1. If the API key is already deactivated, it cannot be deactivated again.([MOSIP-34430](https://mosip.atlassian.net/browse/MOSIP-34430))
-2. Added a validation to check if the **Partner ID** used in the request body is active. This will ensure that API cannot be deactivated if partner has been deactivated. This validation is skipped if the user's role is **PARTNER_ADMIN**. ([MOSIP-34430](https://mosip.atlassian.net/browse/MOSIP-34430))
+2. Added a validation to check if the **Partner ID** used in the request body is active. This will ensure that API cannot be deactivated if partner has been deactivated. This validation is skipped if the user's role is **PARTNER\_ADMIN**. ([MOSIP-34430](https://mosip.atlassian.net/browse/MOSIP-34430))
 
 **Changes done in release 1.3.0-beta.1:** No changes made in release 1.3.0-beta.1
 
@@ -588,20 +573,9 @@ A new query parameter called `status` has been introduced, enabling filtering ba
 
 ### /partners/{partnerId}/policies/{policyId}/api-keys/{apiKeyName} (PATCH)
 
-Description: This endpoint allows updating the status or expiry date of an API key.
-The request must include at least one of the following:
-•	status – Set to 'De-active' to deactivate the API key.
-•	expiryDateTime – Provide a new expiry date and time to update the API key.
-Notes:
-•	The expiry date can only be updated for active API keys.
-•	Once an API key is deactivated, its expiry date cannot be changed.
-•	Only users with the role PARTNER_ADMIN can update the expiry date.
-•	Users with the role AUTH_PARTNER can only update the status.
-This endpoint is accessible only to users with roles AUTH_PARTNER or PARTNER_ADMIN.
+Description: This endpoint allows updating the status or expiry date of an API key. The request must include at least one of the following: • status – Set to 'De-active' to deactivate the API key. • expiryDateTime – Provide a new expiry date and time to update the API key. Notes: • The expiry date can only be updated for active API keys. • Once an API key is deactivated, its expiry date cannot be changed. • Only users with the role PARTNER\_ADMIN can update the expiry date. • Users with the role AUTH\_PARTNER can only update the status. This endpoint is accessible only to users with roles AUTH\_PARTNER or PARTNER\_ADMIN.
 
-
-**Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4. 
-
+**Changes done in release 1.3.0-beta.4:** Newly added in release 1.3.0-beta.4.
 
 ### /partners/apikey (GET)
 
@@ -661,7 +635,7 @@ This endpoint is accessible only to users with roles AUTH_PARTNER or PARTNER_ADM
 
 ### /trust-chain-certificates (GET)
 
-**Description:** This endpoint retrieves a list of all the Trust Certificates uploaded by the Partner Admin. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves a list of all the Trust Certificates uploaded by the Partner Admin. Also supports pagination, sorting, and filtering. It is configured for the role **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -675,7 +649,7 @@ This endpoint is accessible only to users with roles AUTH_PARTNER or PARTNER_ADM
 
 ### /trust-chain-certificates/{certificateId}/certificateFile (GET)
 
-**Description:** This endpoint will download p7b file for a CA / Intermediate CA certificate along with the trust chain based on Certificate Id. It is configured for the role **PARTNER_ADMIN**.
+**Description:** This endpoint will download p7b file for a CA / Intermediate CA certificate along with the trust chain based on Certificate Id. It is configured for the role **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -706,12 +680,10 @@ This endpoint is accessible only to users with roles AUTH_PARTNER or PARTNER_ADM
 This endpoint is used for partner self registration. Newly added in release-1.3.0-beta.3
 
 ### /partners/v3 (GET)
-Description: This endpoint retrieves a list of partners associated with the logged-in user based on the provided query parameters. The query parameter status is mandatory. The endpoint will return all Partner Id's with corresponding status value and which are mapped to the logged in user. The query parameter policyGroupAvailable is optional. If it is true, then this endpoint will return all Partner Id's which have a Policy Group associated with them. The query parameter partnerType is optional. If the partner type is provided as MISP_Partner or ABIS_Partner, admin users will receive all MISP/ABIS partner records, while non-admin users will receive only those records mapped to their user account. It is configured for role any of the partner type or PARTNER_ADMIN.
 
-**Changes done in release 1.3.0-beta.4:** Added support for the partnerType field with the value ABIS_Partner and also
-Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+Description: This endpoint retrieves a list of partners associated with the logged-in user based on the provided query parameters. The query parameter status is mandatory. The endpoint will return all Partner Id's with corresponding status value and which are mapped to the logged in user. The query parameter policyGroupAvailable is optional. If it is true, then this endpoint will return all Partner Id's which have a Policy Group associated with them. The query parameter partnerType is optional. If the partner type is provided as MISP\_Partner or ABIS\_Partner, admin users will receive all MISP/ABIS partner records, while non-admin users will receive only those records mapped to their user account. It is configured for role any of the partner type or PARTNER\_ADMIN.
 
-
+**Changes done in release 1.3.0-beta.4:** Added support for the partnerType field with the value ABIS\_Partner and also Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users. \[[MOSIP-41030](https://mosip.atlassian.net/browse/MOSIP-41030)]
 
 ### /partners/exists (PUT)
 
@@ -719,7 +691,7 @@ This endpoint checks whether a partner already exists in PMS by validating dupli
 
 ### partners/{partnerId}/policy-group (POST)
 
-This endpoint is used to link a policy group to a MISP partner. It is configured for users with the PARTNER_ADMIN role. Newly added in release-1.3.0-beta.3
+This endpoint is used to link a policy group to a MISP partner. It is configured for users with the PARTNER\_ADMIN role. Newly added in release-1.3.0-beta.3
 
 ### /partners/{partnerId} (GET)
 
@@ -782,7 +754,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 ### /partners/{partnerId}/certificate-data (GET)
 
-**Description:** This endpoint retrieves both the CA signed certificate uploaded by the partner and the MOSIP-signed certificate generated by PMS. It is configured for role any of the partner type or **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves both the CA signed certificate uploaded by the partner and the MOSIP-signed certificate generated by PMS. It is configured for role any of the partner type or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -792,7 +764,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /partners/{partnerId}/contact/add (POST)
 
@@ -804,7 +776,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -818,7 +790,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -832,7 +804,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -945,7 +917,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
-* Support for email_id**, contact_no**, and address fields has been removed due to encryption constraints.
+* Support for email\_id\*\*, contact\_no\*\*, and address fields has been removed due to encryption constraints.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
@@ -989,7 +961,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.1:** Handled encryption and decryption for PII columns([MOSIP-38061](https://mosip.atlassian.net/browse/MOSIP-38061))
 
-* Support for email_id**, contact_no**, and address columns has been removed due to encryption constraints.
+* Support for email\_id\*\*, contact\_no\*\*, and address columns has been removed due to encryption constraints.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
@@ -1027,7 +999,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 ### partners/v3 (GET)
 
-**Description:** This endpoint retrieves a list of Partners associated with the logged in user, based on the query parameters. It is configured for role any of the partner type or **PARTNER_ADMIN**.
+**Description:** This endpoint retrieves a list of Partners associated with the logged in user, based on the query parameters. It is configured for role any of the partner type or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1055,7 +1027,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 ### /securebiometricinterface (GET)
 
-**Description:** This endpoint retrieves a list of all SBIs created by the Device Providers. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER_ADMIN** role, then it will fetch all SBIs created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER_ADMIN** role, then it will fetch all the SBIs created by all the partners.
+**Description:** This endpoint retrieves a list of all SBIs created by the Device Providers. Also supports pagination, sorting, and and filtering based on optional query parameters. If the token used to access this endpoint, does not have the **PARTNER\_ADMIN** role, then it will fetch all SBIs created by all the partners associated with the logged in user only. If the token used to access this endpoint, has **PARTNER\_ADMIN** role, then it will fetch all the SBIs created by all the partners.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1114,7 +1086,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 ### /securebiometricinterface/{sbiId} (PATCH)
 
-**Description:** This endpoint deactivates an SBI along with associated Devices. It is configured for the roles **DEVICE_PROVIDER** or **PARTNER_ADMIN**.
+**Description:** This endpoint deactivates an SBI along with associated Devices. It is configured for the roles **DEVICE\_PROVIDER** or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1124,11 +1096,11 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /securebiometricinterface/{sbiId}/devices (GET)
 
-**Description:** This endpoint fetches the list of Devices associated with a given SBI Id. It is configured for the roles **DEVICE_PROVIDER** or **PARTNER_ADMIN**.
+**Description:** This endpoint fetches the list of Devices associated with a given SBI Id. It is configured for the roles **DEVICE\_PROVIDER** or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1142,7 +1114,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 ### /securebiometricinterface/{sbiId}/devices (POST)
 
-**Description:** This endpoint adds a new Device and creates an inactive mapping between the device and the given SBI. It is configured for the roles **DEVICE_PROVIDER** or **PARTNER_ADMIN**.
+**Description:** This endpoint adds a new Device and creates an inactive mapping between the device and the given SBI. It is configured for the roles **DEVICE\_PROVIDER** or **PARTNER\_ADMIN**.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1150,7 +1122,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.2:** Added input regex validation for the following fields: sbiId, id, make, model, deviceTypeCode, deviceSubTypeCode
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -1264,7 +1236,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /users/user-consent (POST)
 
@@ -1278,7 +1250,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /users/{userId}/notifications-seen-timestamp (GET)
 
@@ -1292,7 +1264,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /users/{userId}/notifications-seen-timestamp (PUT)
 
@@ -1306,7 +1278,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /notifications (GET)
 
@@ -1320,7 +1292,7 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the user exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /notifications/{notificationId} (PATCH)
 
@@ -1334,27 +1306,27 @@ This endpoint is used to link a policy group to a MISP partner. It is configured
 
 **Changes done in release 1.3.0-beta.3:** No changes made in release 1.3.0-beta.3
 
-**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.[https://mosip.atlassian.net/browse/MOSIP-41030]
+**Changes done in release 1.3.0-beta.4:** Validation to check whether the partner exists in the PMS database has been removed for Partner Admin users.\[https://mosip.atlassian.net/browse/MOSIP-41030]
 
 ### /misp-licenses (GET)
 
-This endpoint retrieves all MISP license keys with support for pagination, sorting, and filtering. It is configured for users with the PARTNER_ADMIN role. Newly added in release-1.3.0-beta.3
+This endpoint retrieves all MISP license keys with support for pagination, sorting, and filtering. It is configured for users with the PARTNER\_ADMIN role. Newly added in release-1.3.0-beta.3
 
 ### /misp-licenses (POST)
 
-This endpoint generates a MISP license key for a specified MISP partner. It supports creating multiple license keys for the same partner, allows setting an expiry date, and includes the licenseKeyName field to distinguish between different keys. It is configured for users with the PARTNER_ADMIN role. Newly added in release-1.3.0-beta.3
+This endpoint generates a MISP license key for a specified MISP partner. It supports creating multiple license keys for the same partner, allows setting an expiry date, and includes the licenseKeyName field to distinguish between different keys. It is configured for users with the PARTNER\_ADMIN role. Newly added in release-1.3.0-beta.3
 
 ### /misp-licenses/{partnerId} GET
 
-This endpoint retrieves MISP license key details for a specified partner using the partnerId. It supports optional query parameters to filter or refine the results and is configured for users with the PARTNER_ADMIN role. Newly added in release-1.3.0-beta.3
+This endpoint retrieves MISP license key details for a specified partner using the partnerId. It supports optional query parameters to filter or refine the results and is configured for users with the PARTNER\_ADMIN role. Newly added in release-1.3.0-beta.3
 
 ### /misp-licenses/{partnerId} (PUT)
 
-This endpoint re-generates a MISP license key for a specified partner using the partnerId. It allows setting a new expiry date and issues a new license key for the requested partner. It is configured for users with the PARTNER_ADMIN role. Newly added in release-1.3.0-beta.3
+This endpoint re-generates a MISP license key for a specified partner using the partnerId. It allows setting a new expiry date and issues a new license key for the requested partner. It is configured for users with the PARTNER\_ADMIN role. Newly added in release-1.3.0-beta.3
 
 ### /misp-licenses/{partnerId} (PATCH)
 
-This endpoint deactivates the MISP license key for a specified partner using the partnerId. It is configured for users with the PARTNER_ADMIN role. Newly added in release-1.3.0-beta.3
+This endpoint deactivates the MISP license key for a specified partner using the partnerId. It is configured for users with the PARTNER\_ADMIN role. Newly added in release-1.3.0-beta.3
 
 ### /misps POST
 
@@ -1392,7 +1364,7 @@ No changes made in release 1.3.0-beta.2
 
 This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the GET /misp-licenses endpoint.
 
-### /misps/{mispId}/licenseKey  GET
+### /misps/{mispId}/licenseKey GET
 
 This endpoint re-generates a MISP license key for the specified partner.
 
@@ -1414,8 +1386,7 @@ No changes made in release 1.3.0-beta.1
 
 No changes made in release 1.3.0-beta.2
 
-This endpoint has been deprecated since the release-1.3.0-beta.3
-and replaced by the GET /misp-licenses endpoint.
+This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the GET /misp-licenses endpoint.
 
 ### /misps/search POST
 
@@ -1427,10 +1398,7 @@ No changes made in release 1.3.0-beta.1
 
 No changes made in release 1.3.0-beta.2
 
-This endpoint has been deprecated since the release-1.3.0-beta.3
-and replaced by the GET /misp-licenses endpoint.
-
-
+This endpoint has been deprecated since the release-1.3.0-beta.3 and replaced by the GET /misp-licenses endpoint.
 
 ***
 
@@ -1460,7 +1428,7 @@ and replaced by the GET /misp-licenses endpoint.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -1494,7 +1462,7 @@ and replaced by the GET /misp-licenses endpoint.
 
 ### /policies/{policyId} (PATCH)
 
-**Description:** This endpoint deactivates a policy based on the Policy Id. It checks if any policy requests are associated with the policy: it can be deactivated if there are no requests or if there are rejected requests. It cannot be deactivated if there are approved or pending requests, returning error codes PMS_POL_063 or PMS_POL_064, respectively. This endpoint is configured for the **POLICYMANAGER** or **PARTNER_ADMIN** roles.
+**Description:** This endpoint deactivates a policy based on the Policy Id. It checks if any policy requests are associated with the policy: it can be deactivated if there are no requests or if there are rejected requests. It cannot be deactivated if there are approved or pending requests, returning error codes PMS\_POL\_063 or PMS\_POL\_064, respectively. This endpoint is configured for the **POLICYMANAGER** or **PARTNER\_ADMIN** roles.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1550,7 +1518,7 @@ and replaced by the GET /misp-licenses endpoint.
 
 ### /policies/group/{policyGroupId} (PATCH)
 
-**Description:** Service for Partner Admin users to deactivate a Policy Group based on the Policy Group Id. It is configured for the **POLICYMANAGER** or **PARTNER_ADMIN** roles.
+**Description:** Service for Partner Admin users to deactivate a Policy Group based on the Policy Group Id. It is configured for the **POLICYMANAGER** or **PARTNER\_ADMIN** roles.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
@@ -1572,7 +1540,7 @@ and replaced by the GET /misp-licenses endpoint.
 
 **Changes done in release 1.3.0-beta.2:** No changes made in release 1.3.0-beta.2
 
-**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. [MOSIP-42232]
+**Changes done in release 1.3.0-beta.3**: Fixed the Random ID generator issue by introducing the `mosip.pms.id.generation.max.retries` property, which allows the system to retry ID generation until a unique value is found in the database, thereby preventing conflicts. \[MOSIP-42232]
 
 **Changes done in release 1.3.0-beta.4:** No changes made in release 1.3.0-beta.4
 
@@ -1606,7 +1574,7 @@ and replaced by the GET /misp-licenses endpoint.
 
 ### /policies/v2 (GET)
 
-**Description:** Service to retrieve the list of all Policies. It is configured for the **POLICYMANAGER** or **PARTNER_ADMIN** roles.
+**Description:** Service to retrieve the list of all Policies. It is configured for the **POLICYMANAGER** or **PARTNER\_ADMIN** roles.
 
 **Changes done in release 1.2.2.0:** Newly added in release 1.2.2.0
 
