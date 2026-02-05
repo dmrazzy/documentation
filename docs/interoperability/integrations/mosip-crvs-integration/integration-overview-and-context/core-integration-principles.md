@@ -22,13 +22,13 @@ Note - In addition to these default attributes, the integration **supports custo
 {% endhint %}
 
 5. **Exceptional Scenarios:** For sensitive cases such as identity deactivation in case of [Incorrect Birth Registration - National ID Deactivation Request](../integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md), [identity reactivation](../integration-patterns-and-workflow/rare-scenarios/reactivation-of-deactivated-national-id.md) , [death flag reversals](../integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md) or more, MOSIP does not automatically process requests. Instead, these are routed to manual verification queues.
-6. Every request submitted to MOSIP must include explicitly defined `source` and `process` values. MOSIP evaluates and processes the request based on this source–process combination, and each CRVS workflow must use a unique, pre-defined pair to ensure correct routing, policy enforcement, and auditability.
+6. Every request submitted to MOSIP must include explicitly defined `source` and `process` values. MOSIP evaluates and processes the request based on this source–process combination, and each CRVS workflow must use a unique, pre-defined pair to ensure correct routing, policy enforcement, and audibility.
 
 ## De-duplication Strategy
 
-As for the default integration mosip does not perforam deduplication, This essentially means MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth.&#x20;
+As for the default integration MOSIP does not perform deduplication. This essentially means MOSIP relies on CRVS to perform deduplication and treats CRVS as the source of truth.&#x20;
 
-**Exceptional Scenarios**: For fraud detection, reactivation, and death reversal requests (Rare Scenarios), MOSIP enforces a **one-time request policy** per National ID. If a fraud flag or reversal request is already in progress or has been previously processed, subsequent duplicate requests are automatically rejected. This prevents repeated requests from creating endless loops and maintains system integrity.
+**Exceptional Scenarios**: For sensitive cases such as identity deactivation, reactivation, and death reversal requests, MOSIP enforces a **one-time request policy** per National ID. If a fraud flag or reversal request is already in progress or has been previously processed, subsequent duplicate requests are automatically rejected. This prevents repeated requests from creating endless loops and maintains system integrity.
 
 ### Authentication & Authorization
 
@@ -36,6 +36,10 @@ As for the default integration mosip does not perforam deduplication, This essen
 
 1. For any request submitted to MOSIP, it is essential to include the biometric data of the informant or applicant, whenever feasible, to ensure the accurate verification of the individual initiating the request and confirm their legitimacy.
 2. For cases where biometric data is not collected by CRVS, it is recommended for CRVS to use eSignet for the applicant or introducer authentication. Post-authentication user info token should be shared with MOSIP for validation and auditing purposes.
+
+{% hint style="info" %}
+**Note:** In MOSIP, a parent, guardian, relative, or any other authorized individual reporting a vital event or submitting a correction request to the CRVS is referred to as an **Introducer or Informant**. Going forward, this document uses the term **Introducer or Informant interchangebly** to represent any person performing these actions in the context of integration workflows.
+{% endhint %}
 
 ### Notification & Event Architecture
 
@@ -58,5 +62,4 @@ As for the default integration mosip does not perforam deduplication, This essen
 
 ### Learn More
 
-* [Core Integration Principles](core-integration-principles.md)
 * [Integration Boundaries, Limitations and Implications](integration-boundaries-and-real-world-implications.md)

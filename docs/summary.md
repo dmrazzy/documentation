@@ -256,7 +256,7 @@
       * [Integration Overview and Context](interoperability/integrations/mosip-crvs-integration/integration-overview-and-context/README.md)
         * [Core Integration Principles](interoperability/integrations/mosip-crvs-integration/integration-overview-and-context/core-integration-principles.md)
         * [Integration Boundaries, Limitation and Real-World Implications](interoperability/integrations/mosip-crvs-integration/integration-overview-and-context/integration-boundaries-and-real-world-implications.md)
-      * [Prerequisites, Configurations and Operations](interoperability/integrations/mosip-crvs-integration/prerequisites-configurations-and-operations/README.md)
+      * [Configurations and Operations](interoperability/integrations/mosip-crvs-integration/prerequisites-configurations-and-operations/README.md)
         * [Configuration & Customization](interoperability/integrations/mosip-crvs-integration/prerequisites-configurations-and-operations/configuration-and-customization.md)
         * [Prerequisites](interoperability/integrations/mosip-crvs-integration/prerequisites-configurations-and-operations/prerequisites/README.md)
           * [MOSIP configurations needed to support CRVS-Initiated Vital Events](interoperability/integrations/mosip-crvs-integration/prerequisites-configurations-and-operations/prerequisites/configurations-details.md)

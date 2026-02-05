@@ -5,10 +5,6 @@
 Birth registration occurs when a **parent, guardian, relative, or any other authorized individual** reports and notifies the occurrence of birth to the concerned Civil Registration Authority (CRA). The default CRVS–MOSIP integration supports **birth registration for infants** and is initiated from the CRVS system after the CRA completes identity proofing and informant authentication. Upon completion, a request is submitted to MOSIP to create a new identity for the infant.
 
 {% hint style="info" %}
-**Note:** In MOSIP, a parent, guardian, relative, or any other authorized individual reporting a vital event or submitting a correction request to the CRVS is referred to as an **Introducer or Informant**. Going forward, this document uses the term **Introducer or Informant interchangebly** to represent any person performing these actions in the context of integration workflows.
-{% endhint %}
-
-{% hint style="info" %}
 Note: The default MOSIP–CRVS integration supports identity creation through CRVS only for **infant birth registrations**. MOSIP ID generation for adults through CRVS is not supported. Please refer [integration boundaries](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md).
 {% endhint %}
 
@@ -30,7 +26,11 @@ The creation of a MOSIP ID (UIN) does **not automatically result in identity cre
 
 Once onboarded, CRVS may subscribe to **WebSub** notifications to receive credential-related information for newly created identities. By default, MOSIP recommends sharing the **PSUT (Partner-Specific User Info Token)** via WebSub. The PSUT serves as a partner-specific reference to the identity and helps limit unnecessary exposure of sensitive identity information.
 
-MOSIP also supports sharing credentials such as the **UIN or VID**, based on country-specific requirements. However, sharing such identifiers is **not recommended** unless explicitly required, as it increases the risk of overexposure of sensitive identity data. Please refer to [integration boundaries](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md) for more information on this.
+Although it is technically possible to share credentials such as the UIN or VID based on country-specific requirements, MOSIP does not recommend sharing these identifiers unless explicitly required, as doing so increases the risk of overexposure of sensitive identity data. Please refer to [integration boundaries](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md) for more information on this.
+
+{% hint style="info" %}
+**Note:** In cases where a country requires the MOSIP ID to be printed on the birth certificate, CRVS can be onboarded as a **credential partner** to securely receive the required identifier, as described above.
+{% endhint %}
 
 ## What Is the Workflow?
 
@@ -113,6 +113,8 @@ Duplicate and/or repeated requests may arise under the following conditions:
 1. This includes requests failing due to:
    * Missing mandatory fields
    * Schema validation errors
+
+
 
 | Scenario                      | Existing Handling / Mechanism                                                                                                                                           |
 | ----------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |

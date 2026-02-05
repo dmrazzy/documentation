@@ -18,7 +18,7 @@ For such cases, MOSIP **does not recommend deactivating and then reactivating th
 
 * This workflow is **not part of the default CRVS–MOSIP integration**.
 * Implementing countries may decide whether to enable reactivation workflows.
-* For detailed guidance on handling such situations, please refer \[here].
+* For detailed guidance on handling such situations, please [refer here](../../integration-overview-and-context/integration-boundaries-and-real-world-implications.md#id-6.-automatic-reactivation-of-deactivated-infant-ids-is-not-supported-by-default).
 {% endhint %}
 
 ## Learn More

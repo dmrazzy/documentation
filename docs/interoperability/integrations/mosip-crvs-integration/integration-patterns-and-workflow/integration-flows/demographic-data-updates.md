@@ -18,7 +18,7 @@ When MOSIP receives a demographic update request from CRVS, it performs the requ
 
 ## **Demographic Update: Notifications to CRVS**
 
-By default, MOSIP does **not** send a demographic data update acknowledgment to CRVS upon successfully updating the deceased flag.
+By default, MOSIP does **not** send a demographic data update acknowledgment to CRVS upon successfully updating the identity attributes.
 
 If required, CRVS can be onboarded as a **credential partner** and subscribe to the relevant WebSub events. In this case, MOSIP can publish notifications of successful updates, allowing CRVS to track the completion of the data update process.
 
