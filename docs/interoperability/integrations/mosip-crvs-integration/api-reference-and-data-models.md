@@ -135,6 +135,10 @@ It is required that at least one attribute in the audit object is populated with
 
 `schemaJson`: JSON schema (in stringified format) used by the country
 
+{% hint style="info" %}
+Note: For detailed information on the specific fields to be added for each scenario, please [refer here](prerequisites-configurations-and-operations/prerequisites/configurations-details.md#overview).
+{% endhint %}
+
 #### **Sample Response:**
 
 ```json
