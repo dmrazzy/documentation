@@ -69,14 +69,14 @@ The packet processing workflow consists of three key components that work togeth
 ```
 
 {% hint style="info" %}
-**Note:** The API request shown below is provided for **illustrative purposes only**. It should **not** be used as-is in any implementation. Customize the request according to **country-specific ID schema and local requirements**.
+**Note:** The API request shown below is provided for **illustrative purposes only**. It should **not** be used as-is in any implementation. Customize the request according to **country-specific ID schema and local requirements**. For detailed information on the specific fields to be added for each scenario, please [refer here](prerequisites-configurations-and-operations/prerequisites/configurations-details.md#overview).
 {% endhint %}
 
 #### **Field Descriptions**
 
 **Request Object:**
 
-1. `source`: Specifies the source of the registration request. This will be the same for any request that comes to MOSIP for birth or death.
+1. `source`: Specifies the source of the registration request. This will be the same for any request that comes to MOSIP from CRVS.
 2. `process`: Identifies the registration process being initiated. This value determines which CRVS–MOSIP integration workflow the packet will follow during processing. Refer to the table below for the valid process values to be used for each supported workflow.
 
 | Process Value                        | Purpose / Usage                                                                                                                                       |
@@ -134,10 +134,6 @@ The packet processing workflow consists of three key components that work togeth
 It is required that at least one attribute in the audit object is populated with valid data before making the request.
 
 `schemaJson`: JSON schema (in stringified format) used by the country
-
-{% hint style="info" %}
-Note: For detailed information on the specific fields to be added for each scenario, please [refer here](prerequisites-configurations-and-operations/prerequisites/configurations-details.md#overview).
-{% endhint %}
 
 #### **Sample Response:**
 
