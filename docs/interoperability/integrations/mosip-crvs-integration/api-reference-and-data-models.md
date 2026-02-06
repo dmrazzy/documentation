@@ -112,33 +112,10 @@ The packet processing workflow consists of three key components that work togeth
 11. `zone`: Geographic zone.
 12. `region`: Region of the address.
 13. `province`: Province of residence.
-14. Additional fields for each workflow:
-    1. **Birth registration:**
-       1. `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the birth registration
-    2. **Death registration:**
-       1. `deceasedInformer`: Informant’s eSignet user info jwt token, to be passed when sending a request for the death registration
-       2. `deceasedDeclarationDate`: The date on which the individual was declared deceased.
-       3. `declaredAsDeceased`: A flag indicating that the individual has been officially marked as deceased.
-       4. `typeOfDeath`: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
-       5. `introducerInfoToken`: Introducer’s eSignet user info jwt token, to be passed when sending a request for the death registration
 
-**Additional Fields for** [**Rare Scenarios**](integration-patterns-and-workflow/rare-scenarios/)**:**
-
-**For** [**Fraud Birth**](integration-patterns-and-workflow/rare-scenarios/fraudulent-birth-registrations-national-id-deactivation-request-from-crvs.md) **/ Deactivation Requests:**
-
-1. `fraud_birth` or `Fraud_Birth`: Boolean field (`True` for deactivation, `False` for reactivation)
-2. `fraud_birth_reason` or `Deactivation_reason`: String describing the reason for deactivation/reactivation
-3. `date_of_initial_registration`: Date of the original birth registration
-4. `National_ID`: UIN of the individual
-
-**For** [**Death Reversal Requests**](integration-patterns-and-workflow/rare-scenarios/fraud-death-case-reversal-of-the-death-flag.md) **:**
-
-1. `Declared_as_Deceased`: String field (`Y` = deceased, `N` = reversal)
-2. `Deceased_Declaration_Date`: Original date of death declaration
-3. `Reversal_Reason`: Description of why reversal is requested
-4. `UIN` or `VID`: National ID of the individual
-
-> **Note**: Field names may vary based on country-specific ID schema design. Consult Section [rare-scenarios](integration-patterns-and-workflow/rare-scenarios/) for detailed workflow requirements.
+{% hint style="info" %}
+**Note**: Field names may vary based on country-specific ID schema design.
+{% endhint %}
 
 #### **MetaInfo Object (Center and Operator Information):**
 

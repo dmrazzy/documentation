@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide details the configuration updates required in MOSIP to enable CRVS-initiated birth and death registration requests. It covers ID schema changes to add key fields, updates to authentication policies, property files, and identity mapping, along with new Camel routes and workflow settings. These changes ensure the proper handling and processing of vital events within the MOSIP ecosystem.
+This guide details the configuration updates required in MOSIP to enable CRVS-initiated requests. It covers ID schema changes to add key fields, updates to authentication policies, property files, and identity mapping, along with new Camel routes and workflow settings. These changes ensure the proper handling and processing of vital events within the MOSIP ecosystem.
 
 #### ID Schema Update for Initiating Infant Birth Requests <a href="#id-schema-update-for-initiating-infant-birth-requests" id="id-schema-update-for-initiating-infant-birth-requests"></a>
 
@@ -23,13 +23,14 @@ The following fields should be added to support the processing of death registra
   * **Description**: The date on which the individual was declared deceased.
 * **declaredAsDeceased** _(Mandatory)_
   * **Description**: A flag indicating that the individual has been officially declared deceased.
+  * (`Y` = deceased, `N` = reversal)
 * **typeOfDeath** _(Optional)_
   * **Description**: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
 * **deceasedInformer** _(Optional)_
   * **Description**: A user information token representing the individual reporting the death to CRVS.
 
 {% hint style="info" %}
-**Note**: The field `declaredAsDeceased` is mandatory and must be included in the ID schema to initiate any death registration request. The remaining fields can be configured based on specific use case requirements.
+**Note**: The field `declaredAsDeceased`  and MOSIP ID of the deceased is mandatory and must be included in the ID schema to initiate any death registration request. The remaining fields can be configured based on specific use case requirements.
 {% endhint %}
 
 #### **ID Schema Update for Initiating Demographic Update Requests**
@@ -49,10 +50,13 @@ The following fields should be added to support the processing of such request:
 
 * **deactivateId** _(Mandatory)_
   * **Description:** A flag indicating that the individual's MOSIP ID is to be deactivated
+    * (`Y` for deactivation)
 * **deactivationReason** _(Optional)_
   * **Description:** To capture the reason for initiating an identity status change request, such as deactivation, as submitted by the requesting authority.
 * **dateOfIdentityGeneration** _(Optional)_
   * Description: Date on which the birth was registered and request for new MOSIP ID was created.
+* **introducerInfoToken** _(Optional)_
+  * **Description**: A user information token representing the individual reporting the incorrect infant's birth to CRVS.
 
 #### ID Schema Update for Deceased Status Reversal <a href="#configuring-mosip-auth-policy" id="configuring-mosip-auth-policy"></a>
 
@@ -64,6 +68,11 @@ The following fields should be added to support the processing of such request:
   * **Description:** To capture the reason for initiating an identity status change request, such as deceased status, as submitted by the requesting authority.
 * **deceasedDeclarationDate** _(Mandatory)_
   * **Description:** Date on which the individual was declared as deceased initially.
+* **declaredAsDeceased** _(Mandatory)_
+  * **Description**: A flag indicating that the individual has been officially declared deceased.
+    * &#x20;`N` = reversal
+* **deceasedInformer** _(Optional)_
+  * **Description**: A user information token representing the individual reporting the incorrect death to CRVS.
 
 #### Configuring mosip-auth-policy <a href="#configuring-mosip-auth-policy" id="configuring-mosip-auth-policy"></a>
 
