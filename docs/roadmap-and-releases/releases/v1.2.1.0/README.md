@@ -10,7 +10,7 @@
 
 The MOSIP v1.2.1.0 release marks a major platform advancement, delivering a **stable and production-ready migration from Java 11 to Java 21**. This transition brings significant improvements in performance, security, and long-term maintainability. The release also consolidates all enhancements introduced during the beta cycle and introduces several key updates across security, automation, data handling, and developer tooling.
 
-Additionally, this version includes a **Resource Calculator** built from extensive performance testing, to help implementers size their MOSIP deployments accurately and efficiently, You can find the **Resource Calculator** on [**Server Hardware Requirements**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md) page.
+Additionally, this version includes a **Resource Calculator** built from extensive performance testing, to help implementers size their MOSIP deployments accurately and efficiently, You can find the **Resource Calculator** on [**Server Hardware Requirements**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements/) page.
 
 ### **Major Areas of Work**
 
@@ -119,7 +119,7 @@ Below are a few key bugs marked as known issues for this release. Please click [
 * **Documents published/revised with the release**:
   * [Versioning Policy](../versioning-policy.md)
   * [Upgrade Runbook 1.2.1.0](../../../setup/upgrade/upgrade-runbook-1.2.1.0.md)
-  * [Hardware Requirements](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md)
+  * [Hardware Requirements](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements/)
   * [Adapting Changes in Administration Roles](../../../setup/upgrade/upgrade-runbook/mock-services/upgrade-admin-services-roles-guide.md)
 * **Reports**:
   * [QA Report](test-report.md)

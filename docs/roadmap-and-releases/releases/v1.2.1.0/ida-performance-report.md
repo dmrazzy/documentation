@@ -26,8 +26,6 @@ No performance degradation or bottlenecks were observed throughout the test dura
 
 * For performance test purpose, OTP Manager Service was modified to return a static OTP post dynamic OTP generation. The change was made to support for performance test script without impacting the performance test.
 
-&#x20;
-
 ### **Software (Under Test)**
 
 Following ‘Images’ were under the scope of ‘Performance Testing’:
@@ -121,8 +119,6 @@ Performance data load has been populated before the run to ensure realistic resu
 * 4 out of 5 APIs displayed consistent response time throughout the test.
 * “Send OTP endpoint” exhibited some response‑time variability during the test, but it remained largely within the 1‑second target. This does not indicate a significant performance issue, though there may be opportunities for further tuning.
 
-&#x20;
-
 #### **Resource Utilization**
 
 For sake of brevity of the report, resource metrics are grouped by Namespace and all services in Namespace is displayed even if they did not actively participate in the test.
@@ -159,11 +155,9 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 * Idgenerator service within Kernel namespace showed a brief spike (<8mins). This module is out of scope for this test. There was no measurable impact on overall system performance and throughput. &#x20;
 
-&#x20;
-
 ### **Resource Calculator**
 
-Find the '**Resource Calculator**' here on this [**page**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md).
+Find the '**Resource Calculator**' here on this [**page**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements/).
 
 ### **Resource level configuration**
 
@@ -189,8 +183,6 @@ Following configuration was used for the performance test.
 | IDREPO                                       | CREDENTIALREQUEST    | 1000          | 8000           | 1000         | 8000           | 2900            | 2900    | 3              |
 | IDREPO                                       | IDENTITY             | 2000          | 10000          | 2000         | 10000          | 3850            | 3850    | 4              |
 | IDREPO                                       | VID                  | 600           | 5001           | 600          | 5001           | 2250            | 2250    | 3              |
-
-&#x20;
 
 &#x20;
 

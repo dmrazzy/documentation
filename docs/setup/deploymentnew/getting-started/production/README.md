@@ -6,7 +6,7 @@
 
 ## Hardware requirements
 
-* [Server Hardware Requirements](server-hardware-requirements.md)
+* [Server Hardware Requirements](server-hardware-requirements/)
 * [Devices Calculator](../../../../id-lifecycle-management/supporting-components/biometrics/biometric-devices.md#devices-calculator)
 
 ## Production hardening

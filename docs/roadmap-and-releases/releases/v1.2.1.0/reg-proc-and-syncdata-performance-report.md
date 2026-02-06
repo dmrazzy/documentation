@@ -188,7 +188,7 @@ For sake of brevity of the report, resource metrics are grouped by Namespace and
 
 ### **Resource Calculator**
 
-Find the '**Resource Calculator**' here on this [**page**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements.md).
+Find the '**Resource Calculator**' here on this [**page**](../../../setup/deploymentnew/getting-started/production/server-hardware-requirements/).
 
 ### **Resource level configuration**
 
