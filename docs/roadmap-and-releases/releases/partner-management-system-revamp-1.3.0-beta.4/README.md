@@ -14,7 +14,7 @@ PMS Revamp v1.3.0-Beta4 introduces key enhancements focused on partner onboardin
 
 #### 1. ABIS Partner Onboarding Support
 
-PMS now supports onboarding of a new partner type — [**ABIS (Automated Biometric Identification System) Partner**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/abis-partner-onboarding-by-partner-admin.md#overview) — through the Partner Admin role.
+PMS now supports onboarding of a new partner type — [**ABIS (Automated Biometric Identification System) Partner**](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/abis-partner-onboarding-by-partner-admin.md#overview) — through the Partner Admin role.
 
 With this enhancement, a **Partner Admin** can:
 
@@ -32,7 +32,7 @@ With this enhancement, a **Partner Admin** can:
 
 #### 2. Updated Partner Admin & Policy Manager Registration Flow
 
-The registration flow for [**Partner Admin**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration.md) and [**Policy Manager**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/policy-manager.md) roles has been simplified.
+The registration flow for [**Partner Admin**](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/partner-administration.md) and [**Policy Manager**](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/policy-manager.md) roles has been simplified.
 
 From **PMS v1.3.0-Beta4 onwards**, Partner Admins and Policy Managers:
 
@@ -49,7 +49,7 @@ This change reduces onboarding steps, eliminates redundant self-registration, an
 
 #### 3. OIDC Client Enhancement – Additional Configuration Fields
 
-The OIDC client creation flow has been enhanced with a [**new “Additional Information” section**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#creating-oidc-client-with-additional-details) in the UI.
+The OIDC client creation flow has been enhanced with a [**new “Additional Information” section**](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#creating-oidc-client-with-additional-details) in the UI.
 
 This section allows Relying Parties (RPs) to:
 
@@ -63,7 +63,7 @@ This section allows Relying Parties (RPs) to:
 
 #### 4. API Key Expiry Date Management by Partner Admin
 
-An enhancement has been introduced to allow [**editing the expiry date of API keys**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#api-key) by partner admin. With this change:
+An enhancement has been introduced to allow [**editing the expiry date of API keys**](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/end-user-guide.md#api-key) by partner admin. With this change:
 
 * Partner can continue using the **same API key** for an extended period
 * The expiry date can be **updated as it approaches**, without regenerating a new key
@@ -71,7 +71,7 @@ An enhancement has been introduced to allow [**editing the expiry date of API ke
 
 #### 5. MISP License Key Expiry Notifications
 
-PMS now provides [**proactive notifications for expiring MISP license keys**](../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/pms-notification.md#what-all-types-of-notifications-does-a-partner-admin-get), targeted at the **Partner Admin** role.
+PMS now provides [**proactive notifications for expiring MISP license keys**](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/pms-notification.md#what-all-types-of-notifications-does-a-partner-admin-get), targeted at the **Partner Admin** role.
 
 Notifications are delivered through:
 
@@ -87,7 +87,7 @@ Validation checks to verify whether a partner already exists in the PMS database
 
 ### Deprecated APIs
 
-<table><thead><tr><th width="198.140625">API Endpoint</th><th width="98.5546875">Method</th><th width="253.6328125">Deprecation</th><th>Replacement</th></tr></thead><tbody><tr><td>/oauth/client</td><td>GET</td><td>This endpoint retrieves a list of all OAuth clients created by the Auth Partners.</td><td><a href="../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients</a></td></tr><tr><td>/oauth/client</td><td>POST</td><td>This endpoint is used for creating OIDC Client.</td><td><a href="../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients</a></td></tr><tr><td>/oauth/client/{client_id}</td><td>GET</td><td>This endpoint retrieves the OIDC client details by client id.</td><td><a href="../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients/{clientId}.“</a></td></tr><tr><td>/oauth/client/{client_id}</td><td>PUT</td><td>This endpoint is used for updating OIDC Client based on client id.</td><td><a href="../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients/{clientId}.“</a></td></tr><tr><td>/partners/{partnerId}/policy/{policyId}/apikey/status</td><td>PATCH</td><td>Service to activate/de-activate partner API key.</td><td><a href="../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/partners/{partnerId}/policies/{policyId}/api-keys/{apiKeyName}</a></td></tr></tbody></table>
+<table><thead><tr><th width="198.140625">API Endpoint</th><th width="98.5546875">Method</th><th width="253.6328125">Deprecation</th><th>Replacement</th></tr></thead><tbody><tr><td>/oauth/client</td><td>GET</td><td>This endpoint retrieves a list of all OAuth clients created by the Auth Partners.</td><td><a href="../../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients</a></td></tr><tr><td>/oauth/client</td><td>POST</td><td>This endpoint is used for creating OIDC Client.</td><td><a href="../../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients</a></td></tr><tr><td>/oauth/client/{client_id}</td><td>GET</td><td>This endpoint retrieves the OIDC client details by client id.</td><td><a href="../../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients/{clientId}.“</a></td></tr><tr><td>/oauth/client/{client_id}</td><td>PUT</td><td>This endpoint is used for updating OIDC Client based on client id.</td><td><a href="../../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/oidc-clients/{clientId}.“</a></td></tr><tr><td>/partners/{partnerId}/policy/{policyId}/apikey/status</td><td>PATCH</td><td>Service to activate/de-activate partner API key.</td><td><a href="../../../id-lifecycle-management/support-systems/partner-management-services/deploy/api-changes-with-pms-revamp.md">/partners/{partnerId}/policies/{policyId}/api-keys/{apiKeyName}</a></td></tr></tbody></table>
 
 ### User Stories
 

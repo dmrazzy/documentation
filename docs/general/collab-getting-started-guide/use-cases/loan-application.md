@@ -1,6 +1,6 @@
 # Loan Application
 
-### Welcome to the **Self-Experience Demo Guide!** ✨
+### Overview
 
 Get ready to explore how your **National ID** as **Verifiable Credentials** (VCs) can be leveraged for secure and efficient access to essential services.
 
