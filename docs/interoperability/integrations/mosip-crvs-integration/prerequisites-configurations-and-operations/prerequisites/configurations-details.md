@@ -28,6 +28,8 @@ The following fields should be added to support the processing of death registra
   * **Description**: Specifies the nature of the death, such as _natural_ or _jurisdictional_.
 * **deceasedInformer** _(Optional)_
   * **Description**: A user information token representing the individual reporting the death to CRVS.
+* **UIN** _(Mandatory)_
+  * **Description**: MOSIP ID of the deceased individual.
 
 {% hint style="info" %}
 **Note**: The field `declaredAsDeceased`  and MOSIP ID of the deceased is mandatory and must be included in the ID schema to initiate any death registration request. The remaining fields can be configured based on specific use case requirements.
@@ -73,6 +75,8 @@ The following fields should be added to support the processing of such request:
     * &#x20;`N` = reversal
 * **deceasedInformer** _(Optional)_
   * **Description**: A user information token representing the individual reporting the incorrect death to CRVS.
+* **UIN** _(Mandatory)_
+  * **Description**: MOSIP ID of the deceased individual.
 
 #### Configuring mosip-auth-policy <a href="#configuring-mosip-auth-policy" id="configuring-mosip-auth-policy"></a>
 
