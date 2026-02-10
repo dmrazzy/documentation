@@ -2,7 +2,7 @@
 
 ### Try It Out
 
-Click [**here**](global-id-pass-issuance.md#what-youll-experience) to 'Try This Out' now using the given portal addresses and the demo credentials provided, or, read through the guide to understand the steps and then then explore the solution.
+Click [**here**](global-id-pass-issuance.md#what-youll-experience) to 'Try This Out' now using the given portal addresses and the demo credentials provided, or, read through the guide to understand the steps and then explore the solution.
 
 ### **Overview**  <a href="#welcome-to-the-global-id-pass-self-experience-demo-guide" id="welcome-to-the-global-id-pass-self-experience-demo-guide"></a>
 
