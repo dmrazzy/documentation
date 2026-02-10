@@ -1,6 +1,10 @@
 # Global ID Pass Issuance
 
-### **Welcome to the Global ID Pass Self-Experience Demo Guide!**  <a href="#welcome-to-the-global-id-pass-self-experience-demo-guide" id="welcome-to-the-global-id-pass-self-experience-demo-guide"></a>
+### Try It Out
+
+Click [**here**](global-id-pass-issuance.md#what-youll-experience) to 'Try This Out' now using the given portal addresses and the demo credentials provided, or, read through the guide to understand the steps and then then explore the solution.
+
+### **Overview**  <a href="#welcome-to-the-global-id-pass-self-experience-demo-guide" id="welcome-to-the-global-id-pass-self-experience-demo-guide"></a>
 
 **Global ID Pass Credential** is a **government-issued digital identity**, implemented as a **Verifiable Credential (VC)** in the **Republic of Utopia** _(a fictional country used for demonstration purposes)_. It enables residents to securely prove their identity and access government services both **online and offline**, while preserving privacy and user consent. Stored in the Inji Wallet, the credential showcases how modern digital identity systems can enable trusted, seamless, and connectivity-independent service delivery.
 
