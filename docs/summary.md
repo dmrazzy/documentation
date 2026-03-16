@@ -24,6 +24,7 @@
       * [169 - QR Code Specifications 1.0.0](readme/standards-and-specifications/mosip-standards/169-qr-code-specifications-1.0.0.md)
   * [Inji](readme/inji.md)
   * [eSignet](readme/esignet.md)
+  * [Media Kit](readme/media-kit.md)
 * [ID Lifecycle Management](id-lifecycle-management/README.md)
   * [Identity Issuance](id-lifecycle-management/identity-issuance/README.md)
     * [Pre-registration](id-lifecycle-management/identity-issuance/pre-registration/README.md)
