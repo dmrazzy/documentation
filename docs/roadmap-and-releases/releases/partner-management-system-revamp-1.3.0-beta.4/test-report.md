@@ -207,7 +207,6 @@ It outlines the strategy used to ensure a comprehensive evaluation.
 
 <table><thead><tr><th>Version</th><th>Author</th><th>Date</th><th valign="top">Review</th><th valign="top">Affected Sections</th></tr></thead><tbody><tr><td>V1.0</td><td>Swetha N</td><td>30/01/2026</td><td valign="top">Ragini Krishnamurthy</td><td valign="top"> </td></tr></tbody></table>
 
-&#x20;
 
-&#x20;
 
+For more on reports refer [here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beta.4).
