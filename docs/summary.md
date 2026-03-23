@@ -433,6 +433,7 @@
     * [Partner Management System 1.2.2.3(Patch)](roadmap-and-releases/releases/partner-management-system-1.2.2.3/README.md)
       * [Test Report](roadmap-and-releases/releases/partner-management-system-1.2.2.3/test-report.md)
     * [Versioning Policy](roadmap-and-releases/releases/versioning-policy.md)
+    * [0.2.0 Infra](roadmap-and-releases/releases/0.2.0-infra.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
