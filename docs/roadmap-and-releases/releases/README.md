@@ -9,6 +9,16 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: DSL Orchestrator & Packet Creator
+
+* Date: 25th March, 2026
+* [Release Notes](v1.4.0-dsl.md)
+
+**Version**: API Test Commons v1.5.0
+
+* Date: 25th March, 2026
+* [Release Notes](api-test-commons-releases/v1.5.0.md)
+
 **Version**: Partner Management System Revamp 1.3.0-beta.4
 
 * Date: 4th February, 2026
