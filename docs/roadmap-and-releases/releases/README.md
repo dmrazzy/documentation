@@ -19,6 +19,11 @@ icon: book-open
 * Date: 25th March, 2026
 * [Release Notes](api-test-commons-releases/v1.5.0.md)
 
+**Version**: 0.2.0 Infra
+
+* Date: 24th March, 2026
+* [Release Notes](0.2.0-infra.md)
+
 **Version**: Partner Management System Revamp 1.3.0-beta.4
 
 * Date: 4th February, 2026
