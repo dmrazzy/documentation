@@ -1,0 +1,94 @@
+# V1.4.0-DSL
+
+**Release Name**: DSL Orchestrator & Packet Creator
+
+**Release Version**: 1.4.0
+
+**Release Type**: Minor Release
+
+**Release Date**: 25th March, 2026
+
+### **Overview**
+
+We are pleased to announce the release of **DSL Orchestrator & Packet Creator v1.4.0**, focused on improving test coverage, reporting capabilities, and execution reliability across the MOSIP DSL testing pipeline.
+
+This release introduces 21 new DSL scenarios covering a wide range of registration, UIN management, biometric updates, authentication flows, and negative validation cases. These additions significantly strengthen validation across multiple system workflows, including packet creation, biometric exception handling, and error scenarios.
+
+Along with expanded scenario coverage, this release brings several enhancements to reporting and execution visibility. Test reports now include execution statistics such as fastest, slowest, and average execution times, along with pass/fail/skip percentages and detailed execution summaries. Scenario listings now support Bug ID to Jira linking, enabling faster traceability of known issues.
+
+Additional improvements include enhanced Excel report formatting, generation of dedicated Failed & Skipped reports, configurable notification handling, and improved S3 upload reporting. The reporting system now also captures richer environment metadata such as commit, branch, Docker image, and runtime details, improving debugging and traceability.
+
+To further improve execution stability, several bug fixes and reliability enhancements have been implemented, including improved error handling, null-safety checks in biometric processing, better REST error propagation, and refined scenario skip logic.
+
+This release also introduces **selective biometric update support**, allowing updates for individual fingerprints or irises, along with enhancements to biometric regeneration flows and packet processing validation.
+
+With these improvements, **DSL execution becomes more reliable, traceable, and comprehensive**, enabling stronger validation of MOSIP registration and identity workflows.
+
+### **Major Highlights / Key Features**
+
+As part of this release, the following key improvements have been delivered:
+
+* Added 21 new DSL scenarios covering registration, UIN management, biometric updates, authentication flows, and multiple negative validation cases
+* Improved test coverage across registration, packet creation, biometric validation, and UIN update workflows
+* Enhanced test reporting with execution statistics, including fastest, slowest, and average execution times
+* Reports now display pass, fail, and skip percentages along with detailed execution summaries
+* Added Bug ID to Jira linking support in scenario reports for better traceability
+* Introduced separate Failed & Skipped HTML reports alongside the main execution report
+* Improved Excel report format with styled layout, colour coding, auto-sizing columns, and frozen headers
+* Reports now include environment metadata such as commit details, branch links, Docker image information, and runtime environment details
+* Added configurable notification handling and request tracking for notification-based flows
+* Introduced DSL step to capture and report notifications during scenario execution
+* Added a post-execution step to delete all registration centres, ensuring cleaner test environments between executions
+* Implemented selective biometric updates, enabling updates of individual fingerprints or irises
+* Improved execution reliability with enhanced error handling, null-safety checks, and REST error propagation
+* Strengthened system security and stability with improved context handling, path validation, and safer file operations
+
+### **New Scenarios Added**
+
+* Resident walks into a registration centre, uploads a packet, and attempts to update the name using mixed cases.
+* A differently abled resident completes registration and later performs biometric delegated authentication using face modality with UIN and VID.
+* Resident uploads a packet and attempts to update the date of birth as empty.
+* Resident attempts to update UIN biometrics using a non-registered person’s biometrics.
+* Resident A and Resident B obtain UINs; mixed biometric capture results in bio-dedupe detection and manual adjudication.
+* Resident updates biometrics capturing left-hand fingerprints and irises, while marking right-hand fingerprints as valid exceptions.
+* Resident performs biometric update capturing iris and face while marking all fingerprints as valid exceptions.
+* Infant resident receives UIN and later updates to adult using biometrics of another registered resident.
+* Resident 1 successfully updates biometrics twice; Resident 2 attempts update using Resident 1’s biometrics resulting in packet rejection.
+* Resident generates UIN where ABIS response is delayed, and biometric update succeeds during packet reprocessing.
+* Resident completes registration with invalid packet type resulting in error during upload.
+* Resident obtains UIN and performs multiple sequential updates including name, DOB, gender, and email.
+* Resident updates name after receiving UIN and attempts authentication using the old name.
+* Resident completes registration with gender marked as “Other” and receives UIN card.
+* Resident attempts registration with empty email ID, resulting in failure.
+* Resident uploads packet, receives UIN, and later performs multiple biometric updates for iris, face, and fingerprints successfully.
+* Resident updates a single fingerprint previously marked as exception and performs biometric authentication using the same fingerprint.
+* Resident updates a single iris previously marked as exception and performs biometric authentication.
+* Resident attempts registration where packet creation date is in the future, resulting in validation error.
+* Additional negative and edge-case validations across registration, packet creation, and biometric workflows.
+
+Refer below table to know more enhancements included in this release in addition to the key items listed above:&#x20;
+
+<table><thead><tr><th width="147.6640625">JIRA</th><th width="189.82421875">Feature</th><th>Summary</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-43461">MOSIP-43461</a></td><td><strong>Separate Error Report for DSL Test Rig</strong></td><td>Introduced a dedicated <strong>Failed &#x26; Skipped report for DSL executions</strong>, similar to the API Test Rig. This allows users to quickly review failing scenarios without downloading the complete execution report, improving usability when only a small number of failures occur.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44449">MOSIP-44449</a></td><td><strong>Bug ID Integration in DSL Reports</strong></td><td>Added support to include <strong>Bug IDs for known issues directly in DSL reports</strong>, with links to the corresponding Jira tickets. This improves traceability and helps users quickly identify known issues associated with scenario failures.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44180">MOSIP-44180</a></td><td><strong>Notification Capture in DSL Scenarios</strong></td><td>Implemented a new <strong>DSL step to capture and log system notifications generated during scenario execution</strong>. Notifications such as UIN creation, VID generation, and authentication results are now recorded in the DSL/TestNG reports, improving visibility and debugging capabilities.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44268">MOSIP-44268</a></td><td><strong>Biometric Update Scenario Stabilization</strong></td><td>Investigated and resolved failures occurring in <strong>Update Biometric scenarios within the DSL framework</strong>. Root causes were analysed and fixes were implemented to ensure stable and reliable execution of biometric update workflows.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-35453">MOSIP-35453</a></td><td><strong>Packet Creator Log Traceability</strong></td><td>Enhanced DSL reporting by improving <strong>traceability of Packet Creator interactions</strong>. The framework now captures execution-related details to better correlate orchestrator runs with Packet Creator activities, improving debugging and execution analysis for distributed DSL runs.</td></tr></tbody></table>
+
+**Bug Fixes**
+
+<table><thead><tr><th width="151.87109375">JIRA</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41698">MOSIP-41698</a></td><td>Fixed an issue in Scenario_11 where packets were getting PROCESSED instead of REJECTED despite the manual verification (MV) decision being explicitly set to REJECTED. The fix ensures packets are correctly rejected when manual verification status is set accordingly.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41714">MOSIP-41714</a></td><td>Resolved a multi-factor authentication failure in Scenario_30 caused by an identity type mismatch between OTP request and authentication call (IDA-OTA-010). Authentication now succeeds when the same transaction ID and identity type are used consistently across OTP and authentication flows.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41715">MOSIP-41715</a></td><td>Fixed a packet processing issue in Scenario_185 where registration failed due to a 'Potential Biometric Match Found while Processing Packet' validation error. The fix ensures legitimate registrations with biometric exceptions are processed correctly.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-43029">MOSIP-43029</a></td><td>Addressed intermittent DSL automation failures caused by OTP transaction mismatches, identity type mismatches, and missing digital signature headers. Improved handling of transaction IDs, identity validation, and signature generation to ensure stable authentication flows.</td></tr></tbody></table>
+
+**Known Issues**
+
+<table><thead><tr><th width="152.70703125">JIRA</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-39352">MOSIP-39352</a></td><td>In <strong>Scenarios 22, 23, 24, 83, and 161</strong>, after completing registration and receiving UIN, bio eSignet authentication using face fails with error IDA-MLC-009.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41695">MOSIP-41695</a></td><td>In Scenario_89, when biometric image quality remains below the threshold even after maximum correction attempts, the packet should move to REJECTED status but instead remains stuck in Paused &#x26; Request Additional Info.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41699">MOSIP-41699</a></td><td>In Scenario_76, a packet created with only supervisor biometrics and without operator biometrics is incorrectly marked as REGISTERED instead of the expected PROCESSED status.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41694">MOSIP-41694</a></td><td>In Scenario_108, the child packet gets stuck or rejected before the parent packet verification completes, whereas it should be rejected only if the parent packet is rejected.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-43847">MOSIP-43847</a></td><td>In Scenario_144, the machine is unmapped before generating the offline packet. Instead of failing CMD validation, the packet validation itself fails earlier due to incorrect validation logic.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44593">MOSIP-44593</a></td><td>In Scenario_157, registration is performed on a declared holiday. The packet should fail CMD validation and move to REREGISTER, but it is processed successfully with RID status PROCESSED.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44556">MOSIP-44556</a></td><td>In Scenario_158, a packet created using a deactivated machine should fail during VALIDATE_PACKET, but instead moves to REPROCESS.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-35360">MOSIP-35360</a></td><td>In Scenario_178, a resident attempts to update biometrics using an unregistered resident’s biometrics. Instead of failing ABIS matching and moving to Manual Adjudication, the system incorrectly updates biometrics successfully.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41109">MOSIP-41109</a></td><td>In Scenarios 194, 198, 199, 200, 201, 202, 203, 204, 208, 209, and 210, the rid/check-status API returns “RID not found” for CRVS packets even though the RID exists in the database.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-42426">MOSIP-42426</a></td><td>In Scenarios 195 and 212, updating resident details using VID fails during IDRepo draft update with IDR-IDC-007 (No records found for RID), causing the update process to fail.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-41701">MOSIP-41701</a></td><td>In Scenario_205, registration performed using an inactive user is incorrectly processed successfully instead of being rejected and marked as FAILED.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44591">MOSIP-44591</a></td><td>In Scenario_214, a differently abled resident performs biometric delegated authentication using face modality, but authentication fails due to a partner registration error.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44580">MOSIP-44580</a></td><td>In Scenario_221, Resident 2 attempts biometric update using Resident 1’s biometric data. Instead of rejecting the packet due to duplication or mismatch, the packet is processed successfully.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44548">MOSIP-44548</a></td><td>In Scenario_229, a packet created with an invalid gender value should fail during VALIDATE_PACKET, but the system processes it successfully and RID status is shown as PROCESSED.</td></tr></tbody></table>
+
+### Summary
+
+Release **v1.4.0** strengthens the DSL framework by focusing on **execution stability and performance under parallel load**. These enhancements make the DSL pipeline more reliable for large-scale and continuous executions, while ensuring clean, actionable reports for teams.
+
+### **Repositories Released**
+
+| Repository                 | Version                                                                      |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| **mosip-automation-tests** | [v1.4.0](https://github.com/mosip/mosip-automation-tests/tree/release-1.4.x) |
+
+### **Documentation**
+
+**Build & Setup:** [mosip-automation-tests/README.md at release-1.4.x · mosip/mosip-automation-tests](https://github.com/mosip/mosip-automation-tests/blob/release-1.4.x/README.md)
+
