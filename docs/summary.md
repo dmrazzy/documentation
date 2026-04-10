@@ -329,6 +329,7 @@
     * [Roadmap 2024](roadmap-and-releases/roadmap/roadmap-2024-2025.md)
     * [Roadmap 2023](roadmap-and-releases/roadmap/roadmap-2023-2024.md)
   * [Releases](roadmap-and-releases/releases/README.md)
+    * [Android Registration Client v1.3.0](roadmap-and-releases/releases/android-registration-client-v1.3.0.md)
     * [0.2.0 Infra](roadmap-and-releases/releases/0.2.0-infra.md)
     * [V1.4.0-DSL](roadmap-and-releases/releases/v1.4.0-dsl.md)
     * [Partner Management System Revamp 1.3.0-beta.4](roadmap-and-releases/releases/partner-management-system-revamp-1.3.0-beta.4/README.md)
