@@ -18,5 +18,6 @@ For more details on UI specifications for the Android Registration Client, refer
 
 The Android Registration Client is compatible with the following MOSIP platform versions:
 
-1. 1.1.5.x
-2. LTS 1.2.0 and above
+**Note**: Compatible with[ MOSIP version 1.2.0](https://docs.mosip.io/1.2.0/releases/release-notes)
+
+**Note**: **NOT** Compatible with MOSIP Version 1.3.0

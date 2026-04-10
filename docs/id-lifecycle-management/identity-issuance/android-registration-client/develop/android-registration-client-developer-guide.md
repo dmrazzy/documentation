@@ -17,9 +17,7 @@ To set up the Android Registration Client with Flutter and Android Studio, follo
 
 The `develop` branch of android-reg-client is currently being actively developed. If you wish to access this branch, you can clone the repository by executing the following command in your terminal. Alternatively, you can download one of the releases available in the repository's release section.
 
-```
-git clone -b feature-flutter https://github.com/mosip/android-registration-client.git
-```
+`git clone -b develop https://github.com/mosip/android-registration-client.git`
 
 **Active Branches**:
 
@@ -38,7 +36,7 @@ git clone -b feature-flutter https://github.com/mosip/android-registration-clien
 **Customizing the Registration Client**
 
 * Styling of the application can be configured by modifying these files `lib/utils/app_style.dart, lib/utils/app_config.dart`
-* Application language bundles can be added to this path `lib/l10n` After adding the bundle run the below command to generate Localization data (Required for the first time).
+* Application language bundles can be added to this path `assets/l10n`. After adding the bundle run the below command to generate Localization data (Required for the first time).
 
 ```
 flutter gen-l10n

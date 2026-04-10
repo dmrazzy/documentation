@@ -155,3 +155,9 @@ The Android Registration Client now fully supports landscape orientation across 
 
 We’ve optimised the Android Registration Client for smaller screens to ensure a clean, intuitive, and efficient experience on mobile phones. Layouts, forms, and action buttons are now adaptive, automatically adjusting to the constraints of smaller displays without compromising functionality. This enhancement enables field officers and mobile registration teams to operate the client comfortably on compact devices, ensuring consistent performance across a wider range of Android form factors.
 
+
+
+### ARC 1.3.0
+
+**Match SDK:** This feature ensures that Operator biometrics are not mistakenly captured during an applicant’s registration. When enabled, local deduplication is performed to match the applicant’s biometrics against the Operator’s onboarded biometrics. If a match is found, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating “Biometrics Matched With Operator Biometrics, Please Try Again” will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
+
