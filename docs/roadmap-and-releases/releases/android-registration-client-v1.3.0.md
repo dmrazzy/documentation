@@ -36,11 +36,35 @@ This enhancement also strengthens security and compliance by reducing the risk o
 
 **Note**: **NOT** Compatible with MOSIP Version 1.3.0
 
+### Stories
+
+| **Jira Link**                                           | **Description**                                                                         |
+| ------------------------------------------------------- | --------------------------------------------------------------------------------------- |
+| [RCF-351](https://mosip.atlassian.net/browse/RCF-351)   | As an Operator, my biometrics should not be accepted when I am registering an applicant |
+| [RCF-1301](https://mosip.atlassian.net/browse/RCF-1301) | We had a few values that were hardcoded which has now made to be configurable.          |
+| [RCF-1278](https://mosip.atlassian.net/browse/RCF-1278) | Editable Cron Job in Scheduled Job Settings                                             |
+| [RCF-1277](https://mosip.atlassian.net/browse/RCF-1277) | Audits have been added to be in parity with Desktop Registration Client                 |
+| [RCF-1275](https://mosip.atlassian.net/browse/RCF-1275) | Added syncs and batch jobs                                                              |
+
+
+
+### Bugs Fixed
+
+{% embed url="https://mosip.atlassian.net/issues/?jql=text%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug*%22%20or%20summary%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug*%22%20or%20key%20%3D%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug%22%20ORDER%20BY%20created%20DESC" %}
+
+
+
 ### **Repository Released**
 
 | **Repositories**            | **Tags Released**      |
 | --------------------------- | ---------------------- |
 | android-registration-client | **Insert the version** |
+
+
+
+### **Known Issues**
+
+To view the list of known issues, refer [**here**](https://mosip.atlassian.net/issues/?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20%28closed%2C%20Canceled%29%20and%20labels%21%3DARC_Real_Device).
 
 ### **Build and Deploy**
 
