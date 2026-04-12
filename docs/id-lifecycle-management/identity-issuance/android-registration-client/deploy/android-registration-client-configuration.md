@@ -1,5 +1,246 @@
 # Configuration Guide
 
+
+
+### Overview
+
+This Android Reg Client Configuration Guide lists down important properties that can be configured based on preference. The properties listed here are not exhaustive, but a checklist to review properties that are likely to be configured.
+
+All the properties are synced to the Android Registration Client from registration-default.properties file.
+
+## **Configuration Files:**
+
+application-default.properties
+
+registration-default.properties
+
+## **SBI related configurations:**
+
+Timeouts in milliseconds set during any http calls to SBI.
+
+mosip.registration.mdm.connection.timeout=10000\
+mosip.registration.mdm.RCAPTURE.connection.timeout=40000\
+mosip.registration.mdm.MOSIPDINFO.connection.timeout=5000\
+mosip.registration.mdm.MOSIPDISC.connection.timeout=5000
+
+&#x20;
+
+Quality score threshold based on modality, Possible values 1 to 100
+
+mosip.registration.leftslap\_fingerprint\_threshold=40\
+mosip.registration.rightslap\_fingerprint\_threshold=40\
+mosip.registration.thumbs\_fingerprint\_threshold=40\
+mosip.registration.iris\_threshold=60\
+mosip.registration.face\_threshold=9
+
+&#x20;
+
+Quality score threshold based on modality for operator authentication. Possible values 1 to 100
+
+mosip.fingerprint\_authentication.quality\_score=30\
+mosip.iris\_authentication.quality\_score=30\
+mosip.face\_authentication.quality\_score=30&#x20;
+
+## **Batch Size:**
+
+Jobs like RID sync, packet upload, status sync is carried out in batches, number of registration records to be executed in a batch on every trigger.
+
+mosip.registration.rid\_sync\_batch\_size=5\
+mosip.registration.packet\_upload\_batch\_size=5\
+mosip.registration.status\_sync\_batch\_size=5&#x20;
+
+## **Scheduled Jobs:**
+
+Default CRON expression for scheduling the Jobs.
+
+mosip.registration.sync\_jobs\_restart\_freq=0 0 \*/11 ? \* \*
+
+### **GPS Device Connection**
+
+Enable GPS device for capturing the geo-location. If y, GPS device will be enabled. If n, GPS device will be disabled.\
+mosip.registration.gps\_device\_enable\_flag=N
+
+### **Default Values to be used for Auditing**
+
+Application ID\
+mosip.registration.audit\_application\_id=REG
+
+Application Name\
+mosip.registration.audit\_application\_name=REGISTRATION
+
+Default HOST IP Address, if unable to get the Host IP address\
+mosip.registration.audit\_default\_host\_ip=120.0.0.0
+
+Default Host Name, if unable to get the Host Name\
+mosip.registration.audit\_default\_host\_name=localhost
+
+### &#x20;**Global Properties:**
+
+**mosip.kernel.prid.length=${mosip.kernel.prid.length}**
+
+mosip.kernel.uin.length=${mosip.kernel.uin.length}
+
+mosip.kernel.vid.length=${mosip.kernel.vid.length}<br>
+
+## **Other Configurations:**
+
+&#x20;
+
+Enables / disables reviewer authentication on any biometric exception during registration
+
+mosip.registration.reviewer\_authentication\_configuration=Y
+
+If enabled cross-checks of residents biometrics with locally stored operator biometric templates.
+
+mosip.registration.mds.deduplication.enable.flag=N
+
+Minimum disk space required to create a packet - in MB
+
+mosip.registration.disk\_space\_size=5
+
+Maximum no. of days for approved packet pending to be synced to server beyond which Registration Client is frozen for registration
+
+mosip.registration.last\_export\_registration\_config\_time=100
+
+No. of days beyond audit creation date to delete audits
+
+mosip.registration.audit\_log\_deletion\_configured\_days=10
+
+Maximum duration to which registration is permitted without sync of master data
+
+mosip.registration.sync\_transaction\_no\_of\_days\_limit=5
+
+Allowed number of invalid login attempts
+
+mosip.registration.invalid\_login\_count=50
+
+_NOTE:- As we are using **Keycloak** for login authentication, we need to add the same configuration for **login attempts** and **account lock (retry) time**._
+
+Configuration used to check if any sync job is missed / failed beyond expected days, this configuration is checked everytime operator clicks on any registration process. We follow below convention to create this config key.
+
+mosip.registration.job api name as in sync\_job\_def table.frequency=value in days
+
+Maximum no. of days for a packet pending EOD approval beyond which client is frozen for registration\
+mosip.registration.reg\_pak\_max\_time\_apprv\_limit=50
+
+Maximum no. of days without running Registration User Mapping Sync Job beyond which client is frozen for registration\
+mosip.registration.regUserMappingSyncJob.frequency=190
+
+Maximum no. of days without running Pre-Registration Packet Deletion beyond which client is frozen for registration\
+mosip.registration.preRegistrationPacketDeletionJob.frequency=190
+
+Maximum no. of days without running Registration Packet Sync Job beyond which client is frozen for registration\
+mosip.registration.registrationPacketSyncJob.frequency=190
+
+Maximum no. of packets pending EOD approval beyond which client is frozen for registration\
+mosip.registration.packet.maximum.count.offline.frequency=70
+
+System will capture the lattitue and longitude of machine every time when a new registration is performed\
+mosip.registration.geo.capture.frequency=y
+
+&#x20;used to fill env in the MDM rcapture request\
+mosip.registration.server\_profile=Staging
+
+File Type of the Document Scanned\
+mosip.registration.document\_scanner\_doctype=PDF
+
+Maximum length of the Password to be entered\
+mosip.registration.username\_pwd\_length=50
+
+Max Document size in Bytes allowed to be uploaded\
+mosip.registration.document\_size=2000000
+
+Maximum age limit\
+mosip.registration.max\_age=150
+
+fields that should NOT be overridden with prereg packet data, it is comma separated list of field IDs:\
+mosip.registration.fields.to.retain.post.prid.fetch=consent,consentText,preferredLang\
+Registration Packet Local Storage File Path\
+mosip.registration.registration\_packet\_store\_location=..//PacketStore
+
+offline jobs, which will be not part of manual sync, add by comma (,) separator if to add more jobs\
+mosip.registration.jobs.offline =DEL\_J00013,RDJ\_J00010,ADJ\_J00012,PVS\_J00015
+
+restart jobs, which requests application to be restarted post the job success, add by comma (,) separator if to add more jobs\
+mosip.registration.jobs.restart =RCS\_J00005
+
+Untagged jobs, which will be not part of manual sync but only from scheduler, add by comma (,) separator if to add more jobs\
+mosip.registration.jobs.unTagged =PDS\_J00003
+
+Timeout used in MDM request.\
+mosip.registration.capture\_time\_out=10000
+
+## **Date Formats:**
+
+Date format to be displayed on acknowledgement slip, default value - dd/MM/yyyy hh:mm a
+
+mosip.registration.application\_date\_format
+
+Date format to be displayed on Registration Client dashboard, default format - dd MMM hh:mm a
+
+mosip.registration.dashboard\_date\_format
+
+## **Supporting properties for 1.1.5.x server compatibility:**
+
+As 1.1.5.x versions did not have ui-specs, in android regclient, the backward compatibility is handled by migrating 1.1.5.x schema to LTS UI Spec structure.
+
+To handle this migration, we have added some configurations and templates to support the 1.1.5.x server compatibility. Those configurations are listed below.
+
+* mosip.registration.consent-screen-template-name=reg-consent-screen-content-template
+  * Consent screen is not a part of 1.1.5.x schema structure. So, we are completely fetching this consent screen content from “master.template" table, and the templateTypeCode for the consent screen content is mentioned in the above configuration.
+* mosip.registration.individual-biometrics-id=individualBiometrics
+  * The id of individual biometrics should be mentioned in the above property according to the configured 1.1.5.x schema.
+* mosip.registration.introducer-biometrics-id=guardianBiometrics
+  * The id of guardian / introducer biometrics should be mentioned in the above property according to the configured 1.1.5.x schema.
+* mosip.registration.infant-agegroup-name=INFANT
+  * The age-group name for infants (aged below 5 years) which is configured in the configured server should be mentioned in the above property.
+* mosip.registration.agegroup-config={"INFANT":{"bioAttributes":\["face"],"isGuardianAuthRequired":true},"ADULT":{"bioAttributes":\["leftEye","rightEye","rightIndex","rightLittle","rightRing","rightMiddle","leftIndex","leftLittle","leftRing","leftMiddle","leftThumb","rightThumb","face"],"isGuardianAuthRequired":false},"SENIOR\_CITIZEN":{"bioAttributes":\["leftEye","rightEye","rightIndex","rightLittle","rightRing","rightMiddle","leftIndex","leftLittle","leftRing","leftMiddle","leftThumb","rightThumb","face"],"isGuardianAuthRequired":false\}}
+  * The above property indicates list of age-groups, required bio-attributes, and a flag which indicates guardian authentication is required or not. This property should be changed according to the server configuration and requirements.
+* mosip.registration.allowed-bioattributes=leftEye,rightEye,rightIndex,rightLittle,rightRing,rightMiddle,leftIndex,leftLittle,leftRing,leftMiddle,leftThumb,rightThumb,face
+  * The above property defines the list of bio-attributes that are allowed for scanning during registration. If there are any changes in the server, it should be changed accordingly.
+* mosip.registration.default-app-type-code=000
+  * The above property defines the default applicantTypeCode. In LTS, we have applicanttype.mvel script to fetch the documents according to the age, gender and some other attributes. Based on the applicant details, the script returns an applicantTypeCode which can be any value from “000” to “014”, and respective documents will be fetched from master.applicant\_valid\_document table. But we do not have this script defined in 1.1.5.x, to handle this, we have added a default applicantTypeCode.
+
+**Templates:**
+
+Ensure that preview and acknowledge templates are present in template table of mosip\_master database with the following type code
+
+reg-android-preview-template-part
+
+reg-android-ack-template-part
+
+### Logout:
+
+Logout from ARC will check for any running background tasks in the background. And ask user that if user is still wants to logout from the application.
+
+* If user click on logout on the popup all the jobs that are running and scheduled jobs will stop.
+* If no jobs running in the background, Simply user will logout and navigate to login screen.
+* There are no configuration changes required for logout in ARC.
+
+### Enhanced version
+
+#### Logout:
+
+Logout from ARC will check for any running background tasks in the background. Ask the user if the user still wants to logout from the application.
+
+* If the user clicks on logout on the popup, all the jobs running and scheduled jobs will stop.
+* If no jobs are running in the background, the user will simply log out and navigate to the login screen.
+* No configuration changes are required to log out of ARC.
+
+
+
+
+
+
+
+
+
+
+
+
+
+### OLD
+
 This guide provides a comprehensive list of configurable properties for the Android Registration Client. Please note that this list is not exhaustive but serves as a helpful checklist for reviewing commonly configured properties.
 
 It is important to acknowledge that all properties listed in this guide are automatically synchronized with the Android Registration Client. These properties are sourced from the `registration-default.properties` file.
@@ -188,15 +429,15 @@ The Android Registration Client supports two types of password management:
 
 ### Forgot Password
 
-- Available on the **Password Login** screen.
-- Used when the operator has forgotten their password.
-- Clicking **Forgot Password** redirects to a configurable Keycloak URL.
+* Available on the **Password Login** screen.
+* Used when the operator has forgotten their password.
+* Clicking **Forgot Password** redirects to a configurable Keycloak URL.
 
 ### Reset Password
 
-- Available on the **Profile screen**.
-- Used by a logged-in operator to change their existing password.
-- Clicking **Reset Password** redirects to the same configurable Keycloak URL.
+* Available on the **Profile screen**.
+* Used by a logged-in operator to change their existing password.
+* Clicking **Reset Password** redirects to the same configurable Keycloak URL.
 
 This redirects the operator to a configurable URL:
 
