@@ -10,27 +10,25 @@
 
 ### **Overview**
 
-The Android Registration Client is a tablet application designed to provide a mobile version of the existing desktop [Registration Client](https://docs.mosip.io/1.2.0/modules/registration-client).  It has been developed to ensure accessibility on all Android devices and to meet the mobility needs of countries implementing MOSIP.
+Android Registration Client v1.3.0 introduces significant improvements to system flexibility, auditability, and security. This release focuses on three key areas: enhanced configurability that reduces hardcoded values for easier deployment across different environments, comprehensive audit logging for improved transparency and compliance tracking, and operator biometric validation to prevent unauthorized data capture during applicant registration. These enhancements strengthen the system's maintainability, accountability, and data integrity while supporting diverse implementation requirements.
 
-Version 1.3.0 of the Android Registration Client includes the below features:
-
-1.  **Configurability Improvements**\
-    This release introduces enhanced configurability by replacing several previously hardcoded values with configurable parameters. This change allows the system to be more adaptable to different deployment environments and requirements without needing code-level modifications.
+1.  **Configurability Improvements**
+    This release improves configurability by moving several previously fixed system values into configuration settings. As a result, the platform can adapt more easily to different deployment environments and operational requirements without requiring source code changes.
 
     With these updates, administrators can easily adjust system behavior through configuration settings, making it quicker to respond to changing needs. This reduces reliance on development teams for minor updates and helps streamline operational workflows.
 
     Overall, this improvement increases system flexibility, scalability, and maintainability, ensuring smoother deployments and easier long-term management across diverse implementations.
-2. **Audit Enhancements**\
+2. **Audit Enhancements**
    Audit logging has been introduced for key system actions and workflows, improving overall transparency and traceability. Critical operations are now recorded, providing clear visibility into system usage and user activities. These logs enable faster debugging and issue resolution by offering a detailed history of events. Teams can track what actions were performed, when they occurred, and by whom, making it easier to identify and resolve problems.
+   
+   In addition, the audit capability supports compliance and governance requirements by ensuring that all significant actions are documented. This strengthens accountability and builds trust in the system.
 
-In addition, the audit capability supports compliance and governance requirements by ensuring that all significant actions are documented. This strengthens accountability and builds trust in the system.
-
-3. **Operator Biometric Restriction**\
+3. **Operator Biometric Restriction**
    A new validation has been implemented to ensure that an operator’s biometrics are not accepted during applicant registration. This prevents scenarios where operator data could be mistakenly or intentionally captured as part of an applicant’s record.
-
-By enforcing this rule, the system ensures that only the applicant’s biometric information is recorded, maintaining the accuracy and authenticity of identity data. This is critical for preserving the integrity of the registration process.
-
-This enhancement also strengthens security and compliance by reducing the risk of misuse and aligning with best practices for handling sensitive biometric information.
+   
+   By enforcing this rule, the system ensures that only the applicant’s biometric information is recorded, maintaining the accuracy and authenticity of identity data. This is critical for preserving the integrity of the registration process.
+   
+   This enhancement also strengthens security and compliance by reducing the risk of misuse and aligning with best practices for handling sensitive biometric information.
 
 **Note**: Compatible with[ MOSIP version 1.2.0](https://docs.mosip.io/1.2.0/releases/release-notes)
 
@@ -52,9 +50,12 @@ This enhancement also strengthens security and compliance by reducing the risk o
 
 {% embed url="https://mosip.atlassian.net/issues/?jql=text%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug*%22%20or%20summary%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug*%22%20or%20key%20%3D%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug%22%20ORDER%20BY%20created%20DESC" %}
 
+### Known Issues
+
+To view the list of known issues, refer **here**. **Insert the correct link here.**
 
 
-### **Repository Released**
+### Repository Released
 
 | **Repositories**            | **Tags Released**      |
 | --------------------------- | ---------------------- |
@@ -62,22 +63,18 @@ This enhancement also strengthens security and compliance by reducing the risk o
 
 
 
-### **Known Issues**
+### Known Issues
 
 To view the list of known issues, refer [**here**](https://mosip.atlassian.net/issues/?jql=parent%3Drcf-31%20and%20issuetype%3Dbug%20and%20status%20not%20in%20%28closed%2C%20Canceled%29%20and%20labels%21%3DARC_Real_Device).
 
-### **Build and Deploy**
+### Build and Deploy
 
 To access the build and read through the deployment instructions, refer to the[ Developer Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-developer-guide).
 
-### **Configurations**
+### Configurations
 
 For details related to Android Registration Client configurations, refer to the[ Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration).
 
-### **User Guide**
+### User Guide
 
 To learn more about the available features, processes, and user interface, refer[ Android Registration User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide) for further information.
-
-### **Known Issues**
-
-To view the list of known issues, refer **here**. **Insert the correct link here.**
