@@ -99,65 +99,62 @@ In a scenario where the Resident wants to update their data, they can do so by l
 
 Using this feature, once the user is done with their registration and other activities, they can logout. If no background tasks are running, the user will be immediately logged out. If there are tasks (like sync) running in the background, the user will be notified about the same. From here if the User wants to cancel the logout, the background activities will keep running whereas if the user chooses to logout, they will be logged out and the background activities will be terminated.
 
-### 11. Update operator's biometrics
+### 11. Match SDK
+ This feature ensures that Operator biometrics are not mistakenly captured during an applicant’s registration. When enabled, local deduplication is performed to match the applicant’s biometrics against the Operator’s onboarded biometrics. If a match is found, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating “Biometrics Matched With Operator Biometrics, Please Try Again” will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
+
+
+### 12. Update operator's biometrics
 
 In a scenario where the operator wants to update his biometric section from operational tasks to update.
 
-### 12. Handles Feature
+### 13. Handles Feature
 
 The Handles Feature is designed to streamline citizen registration and authentication. During registration, specific attributes such as email or national ID can be designated as a handle. This handle serves as a unique identifier that can later be used for authentication for various services. Handles can also be used to update data in case of data discrepancies. By allowing flexible and secure identification, the feature enhances the accuracy and integrity of citizen records while simplifying user interactions with government systems-
 
-### 13. Lost UIN
+### 14. Lost UIN
 
 In a scenario where the Resident has forgotten their UIN, the Operator can use the “Retrieve Lost UIN” option to initiate a request by capturing the resident’s consent, optional demographic details, and mandatory biometrics. After verifying the data in the preview screen and authenticating themselves, the Operator can generate and upload the packet to the server, following which an acknowledgment receipt with the new Application ID (AID) will be shown.
 
-### 14. Scan AID QR Code
+### 15. Scan AID QR Code
 
 This feature allows Operators to scan a resident’s pre-registration AID QR code to auto-fill their demographic and document data during a new registration. After logging in and selecting “New Registration", the Operator chooses display and notification languages, captures consent, and proceeds to the demographic page. From here, they can scan the AID QR code or enter it manually. If the AID is valid, the system fetches the pre-filled demographic and document data. The Operator can then proceed to capture biometrics and complete registration. This works whether or not the pre-registration was done for the same center and zone, using on-demand fetch if needed. Alternate flows include continuing without scanning or by manually entering the AID.
 
-### 15. Reset Password
+### 16. Reset Password
 
 This feature allows Operators and Supervisors to reset their password using the “Reset Password” option available in the Profile section. On clicking the option, users are redirected to the Keycloak login page (this link is configurable) where they can update their password. After resetting the password, users can return to the ARC login page and sign in with the new password.
 
-### 16. Forgot Password
+### 17. Forgot Password
 
 If a Supervisor or Operator forgets their password, they can use the "Forgot Password" option available on the login screen. After entering their username, users will be redirected to the Keycloak login page (configurable link) where they can click the "Forgot Password" link. This triggers an email to the registered email ID with instructions to reset the password. Once the password is updated, users can return to the ARC login page and log in using their new password.
 
-### 17. Auto Logout
+### 18. Auto Logout
 
 The Auto Logout feature enhances application security by automatically logging out users after a defined period of inactivity. The system monitors user activity, and when inactivity exceeds a configurable threshold, a warning message appears with a countdown timer. Users can choose to stay logged in or log out immediately. If the user remains inactive during the warning period, the application automatically logs them out and securely clears all authentication states and session data.
 
-### 18. GPS Location
+### 19. GPS Location
 
 This feature enables the Operator to automatically capture GPS location (latitude and longitude) when creating any packet through Android Registration Client. The GPS location is captured at the point of packet creation and attached as metadata to the packet, ensuring that the Operator's location is tracked for audit and verification purposes. If the device's location services are disabled or GPS is unavailable, the system will log a warning but will not block packet creation.
 
-### 19. Biometrics Correction
+### 20. Biometrics Correction
 
 The Biometric Correction feature enables operators to update and correct the biometric information of applicants, ensuring accurate association with their Unique Identification Number (UIN). When a resident's biometric data does not meet the required threshold during the registration process, the system generates an Additional Info Request ID. This ID is sent to the resident via notification, allowing them to schedule an appointment and update their biometric information at a registration centre.
 
-### 20. Scheduled Jobs Settings
+### 21. Scheduled Jobs Settings
 
 The Manage Scheduled Jobs feature allows admin and supervisor users to view, manage, and trigger scheduled sync/batch jobs directly from the Scheduled Jobs Settings screen. This feature provides visibility into system jobs (e.g., syncs, cleanup, updates) and enables supervisors to modify their scheduling configuration (cron expressions) on the local device. Each job entry displays the Job Name, Next Run Time, Last Run Time, Cron Expression (editable), and a Manual Trigger Button (Run Now).
 
-### 21. Global Config Settings
+### 22. Global Config Settings
 
 This feature enables authorized users (Supervisors) to view and manage global configurations in a single Global Config Settings screen. The feature displays server values fetched from masterdata and allows supervisors to override these values locally on the device. Local configuration changes apply only to the current device and do not affect server-side configurations or other devices. Supervisors can edit Local Values for permitted configuration keys and submit changes, which will automatically restart the app to apply the updates.
 
-### 22. Device Settings
+### 23. Device Settings
 
 This feature enables authorized users (Supervisors and Officers) to view and monitor all devices/peripherals connected to the Android Registration Client tablet. On opening the Device Settings page, the system will automatically scan for connected devices and display device information including device name, device ID, and connection status. If no devices are detected, users can click on the "Scan Now" button to manually trigger a device scan.
 
-### 23. Responsive Landscape Orientation Support
+### 24. Responsive Landscape Orientation Support
 
 The Android Registration Client now fully supports landscape orientation across key screens and workflows. This enhancement ensures a seamless and responsive experience when devices are used horizontally particularly useful for tablets, rugged field devices, and setups where landscape mode improves visibility, usability, or ergonomics. UI components dynamically adjust to maintain clarity, readability, and smooth navigation, offering operators greater flexibility in diverse registration environments.
 
-### 24. Adaptive Small Screen (Phone) Experience
+### 25. Adaptive Small Screen (Phone) Experience
 
 We’ve optimised the Android Registration Client for smaller screens to ensure a clean, intuitive, and efficient experience on mobile phones. Layouts, forms, and action buttons are now adaptive, automatically adjusting to the constraints of smaller displays without compromising functionality. This enhancement enables field officers and mobile registration teams to operate the client comfortably on compact devices, ensuring consistent performance across a wider range of Android form factors.
-
-
-
-### ARC 1.3.0
-
-**Match SDK:** This feature ensures that Operator biometrics are not mistakenly captured during an applicant’s registration. When enabled, local deduplication is performed to match the applicant’s biometrics against the Operator’s onboarded biometrics. If a match is found, the biometric data will not be saved, and the Operator will be blocked from proceeding. An error message stating “Biometrics Matched With Operator Biometrics, Please Try Again” will be displayed. This check works in both online and offline modes and is configurable via the system settings. If disabled, the registration flow continues normally.
-
