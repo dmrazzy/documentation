@@ -27,11 +27,11 @@ Android Registration Client v1.0.1 introduces significant improvements to system
     In addition, the audit capability supports compliance and governance requirements by ensuring that all significant actions are documented. This strengthens accountability and builds trust in the system.
 
 {% hint style="success" %}
-**Note**: Compatible with[ ](https://docs.mosip.io/1.2.0/releases/release-notes)MOSIP [1.2.0.1](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/release-notes-1.2.0.1) - (ARC 1.0.1 and MOSIP 1.2.0.1 both are built with JAVA 11)
+**Note**: Compatible with[ ](https://docs.mosip.io/1.2.0/releases/release-notes)MOSIP [1.2.0.1](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/release-notes-1.2.0.1) (JAVA 11)
 {% endhint %}
 
 {% hint style="warning" %}
-**Note**: **NOT** Compatible with MOSIP [v1.2.1.0](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/v1.2.1.0) - (MOSIP 1.2.1.0 got upgraded to JAVA 21 and ARC upgrade to JAVA 21 is planned)
+**Note**: **NOT** Compatible with MOSIP [v1.2.1.0](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/v1.2.1.0) (JAVA 21)
 {% endhint %}
 
 ### Story Progress & Updates
@@ -59,7 +59,7 @@ The following table outlines the tested and certified compatibility of Inji Veri
 <table><thead><tr><th width="313.71484375">Platform/Module</th><th>Version</th></tr></thead><tbody><tr><td><strong>MOSIP</strong></td><td><a href="https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/release-notes-1.2.0.1"><strong>1.2.0.1</strong></a> </td></tr></tbody></table>
 
 {% hint style="warning" %}
-**Note**: **NOT** Compatible with **MOSIP** [**v1.2.1.0**](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/v1.2.1.0) - (MOSIP v1.2.1.0 got upgraded to JAVA 21 and ARC upgrade to JAVA 21 is planned).
+**Note**: **NOT** Compatible with **MOSIP** [**v1.2.1.0**](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/v1.2.1.0) (JAVA 21)
 {% endhint %}
 
 ### Build and Deploy
