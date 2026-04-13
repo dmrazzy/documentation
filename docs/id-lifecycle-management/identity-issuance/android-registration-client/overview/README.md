@@ -18,7 +18,5 @@ For more details on UI specifications for the Android Registration Client, refer
 
 The Android Registration Client is compatible with the following MOSIP platform versions:
 
-| MOSIP Version | Compatibility |
-|---------------|---------------|
-| [1.2.0](https://docs.mosip.io/1.2.0/releases/release-notes) | Compatible |
-| 1.3.0 | Not Compatible |
+<table><thead><tr><th width="188.59765625">MOSIP Version</th><th>Compatibility</th></tr></thead><tbody><tr><td>MOSIP <a href="https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/release-notes-1.2.0.1">1.2.0.1</a></td><td><strong>Compatible</strong> - (ARC 1.0.1 and MOSIP 1.2.0.1 both are built with JAVA 11)</td></tr><tr><td>MOSIP <a href="https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/v1.2.1.0">1.2.1.0</a></td><td><strong>Not Compatible</strong> - (MOSIP 1.2.1.0 got upgraded to JAVA 21 and ARC upgrade to JAVA 21 is planned)</td></tr></tbody></table>
+
