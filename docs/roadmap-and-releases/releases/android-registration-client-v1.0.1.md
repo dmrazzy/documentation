@@ -10,7 +10,7 @@
 
 ### **Overview**
 
-Android Registration Client v1.3.0 introduces significant improvements to system flexibility, auditability, and security. This release focuses on three key areas: enhanced configurability that reduces hardcoded values for easier deployment across different environments, comprehensive audit logging for improved transparency and compliance tracking, and operator biometric validation to prevent unauthorized data capture during applicant registration. These enhancements strengthen the system's maintainability, accountability, and data integrity while supporting diverse implementation requirements.
+Android Registration Client v1.0.1 introduces significant improvements to system flexibility, auditability, and security. This release focuses on three key areas: enhanced configurability that reduces hardcoded values for easier deployment across different environments, comprehensive audit logging for improved transparency and compliance tracking, and operator biometric validation to prevent unauthorized data capture during applicant registration. These enhancements strengthen the system's maintainability, accountability, and data integrity while supporting diverse implementation requirements.
 
 1.  **Configurability Improvements:** This release improves configurability by moving several previously fixed system values into configuration settings. As a result, the platform can adapt more easily to different deployment environments and operational requirements without requiring source code changes.
 
@@ -36,7 +36,7 @@ Android Registration Client v1.3.0 introduces significant improvements to system
 
 ### Bugs Fixed
 
-Below is the list of bug fixes as part of the 1.0.0 release, To get the complete list of bug fixes please refer [**here**](https://mosip.atlassian.net/issues?jql=text%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug%22%20OR%20summary%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug%22%20OR%20\(parent%20%3D%20RCF-31%20AND%20fixVersion%20%3D%20rcf-1.0.1%20AND%20issuetype%20%3D%20Bug\)%20ORDER%20BY%20created%20DESC).
+Below is the list of bug fixes as part of the 1.0.1 release, To get the complete list of bug fixes please refer [**here**](https://mosip.atlassian.net/issues?jql=text%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug%22%20OR%20summary%20~%20%22parent%3Drcf-31%20and%20fixVersion%3Drcf-1.0.1%20and%20issuetype%20%3D%20bug%22%20OR%20\(parent%20%3D%20RCF-31%20AND%20fixVersion%20%3D%20rcf-1.0.1%20AND%20issuetype%20%3D%20Bug\)%20ORDER%20BY%20created%20DESC).
 
 
 
