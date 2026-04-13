@@ -12,7 +12,7 @@ icon: book-open
 **Version**: Android Registration Client v1.0.1
 
 * Date: 10th April, 2026
-* [Release Notes](android-registration-client-v1.0.1.md)
+* [Release Notes](android-registration-client-v1.0.1/)
 
 **Version**: DSL Orchestrator & Packet Creator V1.4.0-DSL
 
