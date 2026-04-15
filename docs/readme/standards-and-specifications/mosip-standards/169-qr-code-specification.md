@@ -18,11 +18,13 @@ description: '** Draft WIP**'
 
 **Version:** 1.2.1&#x20;
 
+**Release Date**: TBA
+
 ### 1. Introduction
 
 This document specifies an enhanced version of the generic data structure and encoding mechanism for storing the Identity Data of a registered person using any ID platform, along with the corresponding transport encoding mechanism in a machine-readable optical format (QR).
 
-This enhanced version is the outcome of the revival of the Claim 169 Working Group discussions following the release of v1.2.0 in February 2026, which undertook a collaborative effort to refine and extend the specification.
+This enhanced version is the outcome of the revival of the Claim 169 Working Group discussions following the release of [v1.2.0](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specifications-1.2.0) in January 2026, which undertook a collaborative effort to refine and extend the specification.
 
 In this iteration, Attributes 16 and 17 have been deprecated in favor of the biometric object (#62) to enable a more standardized and extensible representation. The CWT compression guidance has been updated to support both zlib and Brotli, with verifiers required to detect the format based on the presence of the zlib magic number.
 
