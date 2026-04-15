@@ -28,13 +28,11 @@ This enhanced version is the outcome of the revival of the Claim 169 Working Gro
 
 In this iteration, Attributes 16 and 17 have been deprecated in favor of the biometric object (#62) to enable a more standardized and extensible representation. The CWT compression guidance has been updated to support both zlib and Brotli, with verifiers required to detect the format based on the presence of the zlib magic number.
 
-References to JWKS-based key discovery via `.well-known` endpoints have been removed, with COSE-based mechanisms recommended instead. Implementers should refer to the COSE section for public key discovery.
-
-The CBOR example has also been updated to require the `iss` claim to use a fully qualified URI (e.g., `https://mosip.io`) instead of a bare hostname.
+References to JWKS-based key discovery via `.well-known` endpoints have been removed, with COSE-based mechanisms recommended instead. Implementers should refer to the COSE section for public key discovery. The CBOR example has also been updated to require the `iss` claim to use a fully qualified URI (e.g., `https://mosip.io`) instead of a bare hostname.
 
 For details on the specific updates introduced in this version, refer to the section titled **"**[**What Changed**](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-8.-what-changed)**" below.**
 
-Further details on the evolution of these changes and detailed discussions can be found under the section titled "Iteration 2" [here](https://mosip.atlassian.net/wiki/external/OWExMjBhYzQ3Mjk1NGZlOWExMWEzODA2YzVjYjExNmQ).
+Further details on the evolution of these changes and detailed discussions can be found under the section titled "Iteration 3" [here](https://mosip.atlassian.net/wiki/external/OWExMjBhYzQ3Mjk1NGZlOWExMWEzODA2YzVjYjExNmQ).
 
 ### 2. Rationale
 

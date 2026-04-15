@@ -14,6 +14,8 @@
 
 **Version:** 1.1.0 <[Click here for latest version 1.2.1](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification)>
 
+**Release Date**: November, 2024
+
 ## 1. Introduction
 
 This document specifies an updated version of the generic data structure and encoding mechanism for storing the Identity Data of a registered person using any ID platform. It also provides a transport encoding mechanism in a machine-readable optical format (QR).
