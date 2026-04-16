@@ -26,7 +26,7 @@ This document specifies an enhanced version of the generic data structure and en
 
 This enhanced version is the outcome of the revival of the Claim 169 Working Group discussions following the release of [v1.2.0](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specifications-1.2.0) in January 2026, which undertook a collaborative effort to refine and extend the specification.
 
-In this iteration, Attributes 16 and 17 have been deprecated in favor of the biometric object (#62) to enable a more standardized and extensible representation. The CWT compression guidance has been updated to support both zlib and Brotli, with verifiers required to detect the format based on the presence of the zlib magic number.
+Changes: In this iteration, Attributes #16 and #17 have been deprecated in favor of the biometric object (#62) to enable a more standardized and extensible representation. The CWT compression guidance has been updated to support both zlib and Brotli, with verifiers required to detect the format based on the presence of the zlib magic number.
 
 References to JWKS-based key discovery via `.well-known` endpoints have been removed, with COSE-based mechanisms recommended instead. Implementers should refer to the COSE section for public key discovery. The CBOR example has also been updated to require the `iss` claim to use a fully qualified URI (e.g., `https://mosip.io`) instead of a bare hostname.
 
