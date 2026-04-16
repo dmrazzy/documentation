@@ -89,6 +89,53 @@ A toast message will be displayed indicating the success of the validation proce
 
 To download the Mock SBI APK, click on `camera-mds.zip`.
 
+#### Set up Vendor MatchSDK (Local Dedup)
+
+The Vendor MatchSDK can be used to enable local biometric deduplication in the Registration Client. Refer [here](https://github.com/mosip/android-registration-client/blob/master/docs/design/bioSdk_quality_and_match_packaging_loading.md) for a comprehensive document explaining this.
+
+Add the vendor SDK file under the below path:
+
+```
+android/clientmanager/src/main/assets/biosdk/
+```
+
+Supported formats are .dex, .jar, .apk, and .zip (must contain classes.dex).
+
+If the vendor provides an .aar file:
+
+* Place it in the same biosdk folder
+* During build, it will be automatically converted to a DEX .jar
+* If a \<vendor>.jar already exists, it will be used directly
+
+Configure the provider details in global parameters:
+
+```
+mosip.biometric.sdk.providers.<modality>.<vendorId>.classname=<CLASS_NAME>
+mosip.biometric.sdk.providers.<modality>.<vendorId>.version=<VERSION>
+mosip.biometric.sdk.providers.<modality>.<vendorId>.args=<ARGS>
+mosip.biometric.sdk.providers.<modality>.<vendorId>.threshold=<THRESHOLD>
+```
+
+Where \<modality> can be finger, iris, or face.
+
+Example:
+
+```
+mosip.biometric.sdk.providers.finger.vendor.classname=io.mosip.mock.sdk.impl.SampleSDK
+mosip.biometric.sdk.providers.finger.vendor.version=0.9
+mosip.biometric.sdk.providers.finger.vendor.args=
+mosip.biometric.sdk.providers.finger.vendor.threshold=60
+```
+
+Repeat the same for iris and face if supported.
+
+Vendors can build the SDK using MOSIP Android Match SDK ([https://github.com/mosip/android-match-sdk/pull/4](https://github.com/mosip/android-match-sdk/pull/4) ).
+
+Ensure the configured class:
+
+* Matches exactly with the SDK implementation
+* Implements IBioApiV2
+
 ### Contributions
 
 If you would like to contribute to the Android Registration Client, please follow the guidelines outlined [here](https://docs.mosip.io/1.2.0/community/code-contributions).
