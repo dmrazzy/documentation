@@ -419,7 +419,7 @@ Sasikumar G ([sasi@](mailto:sasi@duck.com)mosip.io)
 
 ### 8. What Changed
 
-* Attributes 16 and 17 have been deprecated and replaced with the biometric object (#62), enabling a more standardized and extensible approach to representing biometric data. _(Refer:_ [_Attribute Definitions table above_](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-3.-semantics)_)_
+* Attributes #16 and #17 have been deprecated and replaced with the biometric object (#62), enabling a more standardized and extensible approach to representing biometric data. _(Refer:_ [_Attribute Definitions table above_](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-3.-semantics)_)_
 * The compression guidance for CWT has been updated _(Refer: Compress CWT section_ [_here_](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specification#id-3.2.1-steps-for-claim-169-compliant-qr-code-generation)_)_:
   * Implementations may use either zlib or Brotli compression for the generated CWT data.
   * Verifiers must determine the compression format prior to decompression by checking for the zlib magic number.
