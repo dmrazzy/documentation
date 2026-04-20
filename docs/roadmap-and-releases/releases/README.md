@@ -9,10 +9,15 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: DSL Orchestrator & Packet Creator
+
+* Date: 20th April, 2026
+* [Release Notes](v1.2.2.0-dsl.md)
+
 **Version**: Android Registration Client v1.0.1
 
 * Date: 10th April, 2026
-* [Release Notes](android-registration-client-v1.0.1/)
+* [Release Notes](android-registration-client-v1.0.1)
 
 **Version**: DSL Orchestrator & Packet Creator V1.4.0-DSL
 
@@ -32,7 +37,7 @@ icon: book-open
 **Version**: Partner Management System Revamp 1.3.0-beta.4
 
 * Date: 4th February, 2026
-* [Release Notes](partner-management-system-revamp-1.3.0-beta.4/)
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.4)
 
 **Version**: Infra
 
@@ -52,7 +57,7 @@ icon: book-open
 **Version**: v1.2.1.0
 
 * Date: Coming Soon
-* [Release Notes](v1.2.1.0/)
+* [Release Notes](v1.2.1.0)
 
 **Version**: V1.3.0-DSL
 
@@ -62,12 +67,12 @@ icon: book-open
 **Version**: Android Registration Client v1.0.0
 
 * Date: 1st December, 2025
-* [Release Notes](android-registration-client-v1.0.0/)
+* [Release Notes](android-registration-client-v1.0.0)
 
 **Version**: v1.2.2.4 ID Repository & v1.2.1.2 ID Authentication
 
 * Date: 17th November, 2025
-* [Release Notes](1.2.2.4-id-repository-and-1.2.1.2-id-authentication/)
+* [Release Notes](1.2.2.4-id-repository-and-1.2.1.2-id-authentication)
 
 **Version**: Partner Management System Revamp 1.3.0-beta.3
 
