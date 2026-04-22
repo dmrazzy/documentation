@@ -1,12 +1,10 @@
-# Registration Processor 1.2.1.3 and ID Repository 1.2.3.0
+# Registration Processor 1.2.1.3 & ID Repository 1.2.3.0
 
 **Version**: Registration Processor 1.2.1.3 & ID Repository 1.2.3.0
 
 **Release Type**: Major Release
 
 **Release Date**: Coming Soon
-
-Steps required on how the schema and uispec to be updated for existing customers
 
 ### Overview
 
@@ -23,7 +21,7 @@ The handle creation process has been corrected to properly support email handles
 Additional validation has been introduced during biometric updates to prevent unauthorized updates to another resident’s UIN. The system now validates the biometric reference returned from the ABIS system against the UIN provided in the update request to ensure that the biometric data belongs to the correct resident before processing the update.
 
 {% hint style="info" %}
-This fix includes a schema update; therefore, the schema must be updated when adopting this release. Please refer [here](https://github.com/mosip/mosip-data/blob/master/mosip_master/xlsx/identity_schema.xlsx) (link to be added once tagging is completed) for the updated schema
+This fix includes a schema update; therefore, the schema must be updated when adopting this release. Please refer here for the updated schema.
 {% endhint %}
 
 ### Bug Fixes
