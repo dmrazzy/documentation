@@ -9,6 +9,11 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: Registration Processor 1.2.1.3 & ID Repository 1.2.3.0
+
+* Date: 22nd April, 2026
+* [Release Notes](registration-processor-1.2.1.3-and-id-repository-1.2.3.0.md)
+
 **Version**: DSL Orchestrator & Packet Creator
 
 * Date: 20th April, 2026

@@ -4,7 +4,7 @@
 
 **Release Type**: Major Release
 
-**Release Date**: Coming Soon
+**Release Date**: 22nd April, 2026
 
 ### Overview
 
@@ -33,12 +33,12 @@ This fix includes a schema update; therefore, the schema must be updated when ad
 
 ### Repositories Released
 
-| Repository    | Tags Released |
-| ------------- | ------------- |
-| id-repository | v1.2.3.0      |
-| registration  | v1.2.1.3      |
-| mosip-config  | v1.2.5.0      |
-| mosip-data    | v1.2.2.1      |
+| Repository    | Tags Released                                                    |
+| ------------- | ---------------------------------------------------------------- |
+| id-repository | [v1.2.3.0](https://github.com/mosip/id-repository/tree/v1.2.3.0) |
+| registration  | [v1.2.1.3](https://github.com/mosip/registration/tree/v1.2.1.3)  |
+| mosip-config  | [v1.2.5.0](https://github.com/mosip/mosip-config/tree/v1.2.5.0)  |
+| mosip-data    | [v1.2.2.1](https://github.com/mosip/mosip-data/tree/v1.2.2.1)    |
 
 #### Compatibility Matrix
 
