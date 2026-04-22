@@ -18,15 +18,15 @@ Release of components ID Repository 1.2.2.4 and ID Authentication 1.2.1.2 is a p
 
 * **Fixed registrant lifecycle transitions** - Child-to-Adult identity updates now process correctly, preventing data inconsistencies during age-based transitions.
 
+**Token Management Consistency**
+
+* **Fixed PSUT token generation** - Resolved token inconsistencies across [UIN](../../../id-lifecycle-management/identity-management/identifiers.md#uin), [VID](../../../id-lifecycle-management/identity-management/identifiers.md#vid), and [Handle](../../../id-lifecycle-management/identity-issuance/id-repository/custom-handle.md#what-is-a-handle) identifiers, ensuring reliable authentication workflows.
+
 ### ID Authentication v1.2.1.2 - API Reliability & Automation Support
 
 **Improved Authentication Reliability**
 
 * **Resolved server-side API issues** - Fixed critical authentication processing failures that impacted service availability.
-
-**Token Management Consistency**
-
-* **Fixed PSUT token generation** - Resolved token inconsistencies across [UIN](../../../id-lifecycle-management/identity-management/identifiers.md#uin), [VID](../../../id-lifecycle-management/identity-management/identifiers.md#vid), and [Handle](../../../id-lifecycle-management/identity-issuance/id-repository/custom-handle.md#what-is-a-handle) identifiers, ensuring reliable authentication workflows.
 
 ### **Infrastructure Security Enhancement**
 
