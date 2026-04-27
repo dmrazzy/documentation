@@ -26,11 +26,11 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 1. Go to **PMS Portal** and login as Partner Admin.
 2. Click on **Certificate Trust Store** on Admin dashboard.
 
-![Test Image](<../../../../.gitbook/assets/temp-pms-admin-image6 (1).png>)
+![Test Image](../../../../.gitbook/assets/temp-pms-admin-image6.png)
 
 2. Within Root CA tab click on **Upload Trust Certificate** button on the top-right of the screen.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
 3. Select the Partner Domain (AUTH)
 
@@ -38,7 +38,7 @@ A **Certificate Authority (CA)** is an organization that acts to validate the id
 
 4. Choose the **Root CA Certificate** to upload (only files with extensions as .cer or .pem).
 
-<figure><img src="../../../../.gitbook/assets/temp-device-provider-image4 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image4.png" alt=""><figcaption></figcaption></figure>
 
 <figure><img src="../../../../.gitbook/assets/temp-pms-admin-image14.png" alt=""><figcaption></figcaption></figure>
 
@@ -71,7 +71,7 @@ To be able to access the services by PMS and to validate that the partner (Devic
 
 3. **On successful registration**, you will be asked to read through '**Terms and Conditions**' and having carefully read through it you can agree and accept it.
 
-<figure><img src="../../../../.gitbook/assets/temp-device-provider-image8 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image8.png" alt=""><figcaption></figcaption></figure>
 
 **Validations**:
 
@@ -83,13 +83,13 @@ To be able to access the services by PMS and to validate that the partner (Devic
 * For existing partner users who are already registered with PMS Portal, they can login to the portal through their email username and password.
 * On login, the User lands on Partner Dashboard (considering the pre-requisites such as policy group selection and consent are already completed).
 
-<figure><img src="../../../../.gitbook/assets/temp-device-provider-image9 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image9.png" alt=""><figcaption></figcaption></figure>
 
 ## Forgot Password:
 
 * Partner User has option to 'Reset Password'.
 
-<figure><img src="../../../../.gitbook/assets/temp-device-provider-image10 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-device-provider-image10.png" alt=""><figcaption></figcaption></figure>
 
 ## CA Signed Partner Certificate Upload / Download or Re-Upload
 
@@ -182,15 +182,15 @@ You (Partner Admin) can approve or reject SBI.
 
 Go to Dashboard → SBI-Device → List of SBIs
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67.png" alt=""><figcaption></figcaption></figure>
 
 You (admin) can select Approve or Reject option from the given record.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68.png" alt=""><figcaption></figcaption></figure>
 
 On approval, the status changes to 'Approved' and on rejection the status changes to 'Rejected'.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69.png" alt=""><figcaption></figcaption></figure>
 
 ## Partner's Portal - (Add Device)
 
@@ -246,17 +246,17 @@ On clicking 'Devices' tab, **List of all Devices** submitted so far are displaye
 
 On clicking the action menu of the respective device record, an option 'Approve/ Reject' is provided
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77.png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action- APPROVE/ REJECT and select the respective button
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78.png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved/ Rejected based on the above action.
 
 'Pending for Approval' status is displayed when the device request is pending with admin for approval and no action has been taken by admin yet.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79.png" alt=""><figcaption></figcaption></figure>
 
 ## Deactivate Device
 

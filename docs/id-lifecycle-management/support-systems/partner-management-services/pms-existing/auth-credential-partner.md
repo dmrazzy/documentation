@@ -50,8 +50,6 @@ The Partner admin needs to upload the CA certificate to enable the partner for u
 
 ![](../../../../.gitbook/assets/ca-cert-data-upload.PNG)
 
-![](../../../../_images/ca-cert-data-success.PNG)
-
 The uploaded certificates can be viewed by clicking on `View Certificates-> View`.
 
 ![](../../../../.gitbook/assets/auth-partner-view-cert.PNG)

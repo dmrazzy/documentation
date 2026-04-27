@@ -97,7 +97,7 @@ Each notification displays the total count of partner certificates, FTM Chip Cer
 * To view the specific Partner IDs associated with each of the expiring items, click the ‘View Expiring Items’ button. This will display a detailed list of all Partner IDs and associated details whose certificates, API Keys, SBIs are due to expire within the next 7 days.
 * Each of the expiring items details within a given weekly summary notification is split into individual sub tabs for easy categorization and readability.
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image7.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image6.png" alt=""><figcaption></figcaption></figure>
 
 * To filter the weekly summary results, click the **Filter** button and enter one or more of the following fields: 'Notification Creation Date From' and 'Notification Creation Date To' to perform a targeted search.
 
@@ -228,7 +228,7 @@ These notifications are accessible to all applicable partner users via the **Not
 * A red alert on the notification bell icon indicates a new notification been triggered.
 * Clicking the bell icon opens a dropdown panel showing the **latest 4 notifications**.
 
-<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/pms-eug-notification-image1.png" alt=""><figcaption></figcaption></figure>
 
 * Each Partner Certificate notification appears as a row with:
   * **Title**

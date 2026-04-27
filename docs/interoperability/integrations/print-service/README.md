@@ -27,8 +27,6 @@ To know more about the different configurations, steps for build and deployment,
 
 ## Design
 
-![](../../../_images/print-service-design-white.png)
-
 **MOSIP Server** : All the components that are responsible for generating and sharing credentials resides inside the MOSIP server. Registration requests or updates are sent to the MOSIP server for processing. The MOSIP server after successfully processing the registration data generates a Unique Identification Number (UIN) which is unique to every resident of a country.
 
 **Print Stage** : This is a component inside the MOSIP server which is responsible for generating a credential and sharing it with the Partner printing system.

@@ -135,9 +135,7 @@ Verification is performed on various configurations as mentioned below
 
 ## Feature Health
 
-<figure><img src="../../../.gitbook/assets/pms-1-3-0-beta-4-test-report-sonar-feature-health.png" alt=""><figcaption></figcaption></figure>
-
-
+<figure><img src="../../../.gitbook/assets/feature-health.png" alt=""><figcaption></figcaption></figure>
 
 ### Known Issues Metrics
 
@@ -153,13 +151,9 @@ This section focuses on a separate category of issues that are known but not add
 
 <figure><img src="../../../.gitbook/assets/pms-1-3-0-beta-4-test-report-sonar-1.png" alt=""><figcaption></figcaption></figure>
 
-
-
 **Partner- Management-Portal**:
 
 <figure><img src="../../../.gitbook/assets/pms-1-3-0-beta-4-test-report-sonar-2.png" alt=""><figcaption></figcaption></figure>
-
-
 
 <figure><img src="../../../.gitbook/assets/pms-1-3-0-beta-4-test-report-sonar-3.png" alt=""><figcaption></figcaption></figure>
 
@@ -199,14 +193,10 @@ This includes additional reference information for the report. It contains a his
 
 <table data-header-hidden><thead><tr><th valign="top">Acronym</th><th valign="top">Literal Translation</th></tr></thead><tbody><tr><td valign="top"><p>SBI</p><p>FTM</p><p>ABIS</p></td><td valign="top"><p>Secure Biometric Interface</p><p>Foundational Trust Module</p><p>Automated Biometric Identification System</p></td></tr></tbody></table>
 
-
-
 ### Document History
 
 It outlines the strategy used to ensure a comprehensive evaluation.
 
-<table><thead><tr><th>Version</th><th>Author</th><th>Date</th><th valign="top">Review</th><th valign="top">Affected Sections</th></tr></thead><tbody><tr><td>V1.0</td><td>Swetha N</td><td>30/01/2026</td><td valign="top">Ragini Krishnamurthy</td><td valign="top"> </td></tr></tbody></table>
-
-
+<table><thead><tr><th>Version</th><th>Author</th><th>Date</th><th valign="top">Review</th><th valign="top">Affected Sections</th></tr></thead><tbody><tr><td>V1.0</td><td>Swetha N</td><td>30/01/2026</td><td valign="top">Ragini Krishnamurthy</td><td valign="top"></td></tr></tbody></table>
 
 For more on reports refer [here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beta.4).

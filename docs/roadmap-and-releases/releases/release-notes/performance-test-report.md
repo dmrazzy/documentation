@@ -174,7 +174,7 @@ Detailed Metrics for all 14 modules is available below:
 
 **Response Time Percentile Graph using Jmeter**
 
-![](<../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001 (1).png>)
+![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
 
 **CPU and Memory Utilization Graphs using Grafana**
 
@@ -241,8 +241,6 @@ _We only have the graph for Validate token as the previous ones were cleared_
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.008.png)
 
 **Application Response Time Graph from Kibana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
 
 **Dependent Application Response Time from Kibana**
 
@@ -317,10 +315,6 @@ _Keycloak was having issue by end of user id password API run, so the keycloak w
 
 **CPU and Memory Utilization Graphs using Grafana**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
-
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.016.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.011.png)
@@ -328,8 +322,6 @@ _Keycloak was having issue by end of user id password API run, so the keycloak w
 **Application Response Time Graph from Kibana**
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.017.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.018.png)
 
@@ -366,10 +358,6 @@ _Dependency app graph was empty so above are the graphs for the application serv
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.010.png) ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.007.png)
 
 **CPU and Memory Utilization Graphs using Grafana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
 
 _**Note:** The grafana graphs for the other services like otpmanager, ridgenerator, pridgenerator & id generator services are lost as they were old data_
 
@@ -471,8 +459,6 @@ _Grafana graphs were erased for older data._
 
 **CPU and Memory Utilization Graphs using Grafana**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
-
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.016.png)
 
 **Application Response Time Graph from Kibana**
@@ -504,8 +490,6 @@ _**Note:** Registration processor stage group 1 service is a vertx app so there 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.007.png)
 
 **CPU and Memory Utilization Graphs using Grafana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.011.png)
 
@@ -541,13 +525,9 @@ _**Note:** registration processor stage group 1 service is a vertx app, so there
 
 **Response Time Percentile Graph using Jmeter**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 **CPU and Memory Utilization Graphs using Grafana**
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.006.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
 
 **Application Response Time Graph from Kibana**
 
@@ -575,13 +555,9 @@ _**Note:** registration processor stage group 1 service is a vertx app, so there
 
 **Response Time Percentile Graph using Jmeter**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 **CPU and Memory Utilization Graphs using Grafana**
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.011.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
 
 **Application Response Time Graph from Kibana**
 
@@ -698,10 +674,6 @@ _**CPU container usage grafana graphs are not available for resident service con
 
 **CPU and Memory Utilization Graphs using Grafana**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.002.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
-
 **Application Response Time Graph from Kibana**
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.024.png)
@@ -721,11 +693,7 @@ _**CPU container usage grafana graphs are not available for resident service con
 
 **Response Time Percentile Graph using Jmeter**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 **CPU and Memory Utilization Graphs using Grafana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.035.png)
 
@@ -769,8 +737,6 @@ _\norg.postgresql.util.PSQLException: ERROR: duplicate key value violates unique
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.011.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.008.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
 
 **Application Response Time Graph from Kibana**
 
@@ -820,8 +786,6 @@ _No data was captured for the Kibana graphs of ID repository identity & VID serv
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.013.png)
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
-
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.037.png)
 
 #### Masterdata
@@ -841,15 +805,11 @@ _No data was captured for the Kibana graphs of ID repository identity & VID serv
 
 **Response Time Percentile Graph using Jmeter**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 **CPU and Memory Utilization Graphs using Grafana**
 
 _No data was captured for the Grafana - CPU & memory container usage graphs_
 
 **Application Response Time Graph from Kibana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
 
 **Dependent Application Response Time from Kibana**
 
@@ -901,8 +861,6 @@ _No data was captured for dependency apps in Kibana._
 
 **Response Time Percentile Graph using Jmeter**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.032.png)
 
 **CPU and Memory Utilization Graphs using Grafana**
@@ -934,8 +892,6 @@ _No data was captured for dependency apps in Kibana._
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.032.png)
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 **CPU and Memory Utilization Graphs using Grafana**
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.011.png)
@@ -943,8 +899,6 @@ _No data was captured for dependency apps in Kibana._
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.006.png)
 
 **Application Response Time Graph from Kibana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.015.png)
 
@@ -988,8 +942,6 @@ _Slots were generated for 947 unique reg centres and for the rest 53 centres slo
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.033.png)
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
-
 **Self-response time graphs from Kibana**
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.022.png)
@@ -1000,11 +952,7 @@ _Slots were generated for 947 unique reg centres and for the rest 53 centres slo
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.013.png)
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
-
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.037.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
 
 _**Notes:** Prereg is connected to the internal database because when we tried connecting it to the external database we were getting failures while booking appointments manually._
 
@@ -1035,11 +983,7 @@ _**Note:**_
 
 **Response Time Percentile Graph using Jmeter**
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.001.png)
-
 **CPU and Memory Utilization Graphs using Grafana**
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.003.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.038.png)
 
@@ -1051,11 +995,7 @@ _**Note:**_
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.022.png)
 
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
-
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.013.png)
-
-![](../../../release/1.2.0/performance-report/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.004.png)
 
 ![](../../../.gitbook/assets/Aspose.Words.847091e4-d70a-4b8a-b618-47c1e39d7377.013.png)
 

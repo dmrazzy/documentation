@@ -65,7 +65,7 @@ After registration you need to go to keycloak to enable roles.
 
 By following the above steps (1-4) in keycloak, the admin can also configure **Policy Manager** role to enable and manage **Policies** card as shown in the dashboard below:
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image6.png" alt=""><figcaption></figcaption></figure>
 
 {% hint style="info" %}
 **Note**:
@@ -110,7 +110,7 @@ In Certificate Trust Store (List View), the user can view the list of '**Root CA
 
 Each active certificate record has two options in action menu - **View** and **Download** Certificate.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
 **View Root CA details**
 
@@ -122,7 +122,7 @@ On clicking View, the Root CA certificate detail can be viewed individually.
 
 To upload Root CA / Intermediate CA Certificate, click on 'Upload Trust Certificate'.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image9.png" alt=""><figcaption></figcaption></figure>
 
 Admin is thus navigated to Upload Trust Certificate page.
 
@@ -343,15 +343,15 @@ The 'SBI-Devices' has 2 Tabs namely **SBI and Device**. SBI tab view is selected
 
 Go to Dashboard → SBI-Device → List of SBIs to Approved or Reject.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image67.png" alt=""><figcaption></figcaption></figure>
 
 Select on Approve / Reject option from the given record and chooses appropriate action.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image68.png" alt=""><figcaption></figcaption></figure>
 
 On approval, the status changes to 'Approved' and on rejection, the status changes to 'Rejected'
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image69.png" alt=""><figcaption></figcaption></figure>
 
 You can click on View option in the action menu to view any individual records,
 
@@ -405,17 +405,17 @@ Click on view option in action menu or the row item itself (of any active device
 
 On clicking the action menu of the respective device record, an option 'Approve / Reject' is provided
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image77.png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image78.png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
 'Pending for Approval' status is displayed when the device request is pending with admin for approval and no action has been taken by admin yet.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image79.png" alt=""><figcaption></figcaption></figure>
 
 #### Deactivate Device
 
@@ -448,7 +448,7 @@ The List of FTM Chip details displays all FTM Chip details created by FTM Chip P
 
 You can navigate to view 'List of FTM Chip details' page where list of all FTM Chip records submitted so far by different FTM Chip providers.
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image85.png" alt=""><figcaption></figcaption></figure>
 
 ### View Details of FTM Chip
 
@@ -460,11 +460,11 @@ To view FTM Chip details indivudally, click on View option in action menu
 
 Click on the action menu of the respective FTM Chip record, an option 'Approve/ Reject' is provided
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image86.png" alt=""><figcaption></figcaption></figure>
 
 A popup window appears for the admin to take appropriate action - Approve / Reject and select the respective button
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image87.png" alt=""><figcaption></figcaption></figure>
 
 The status is thus updated accordingly in **List of Devices** Page as Approved / Rejected based on the above action.
 
@@ -472,7 +472,7 @@ The status is thus updated accordingly in **List of Devices** Page as Approved /
 **Note**: 'Pending for Approval' status is displayed when the FTM Chip request is pending with admin for approval and no action has been taken by admin yet.
 {% endhint %}
 
-<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88 (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../../../.gitbook/assets/temp-pms-admin-image88.png" alt=""><figcaption></figcaption></figure>
 
 ### Download FTM Chip Certificate
 
