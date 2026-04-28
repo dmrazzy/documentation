@@ -21,7 +21,7 @@ The handle creation process has been corrected to properly support email handles
 Additional validation has been introduced during biometric updates to prevent unauthorized updates to another resident’s UIN. The system now validates the biometric reference returned from the ABIS system against the UIN provided in the update request to ensure that the biometric data belongs to the correct resident before processing the update.
 
 {% hint style="info" %}
-This fix includes a schema update; therefore, the schema must be updated when adopting this release. Please refer [here](https://github.com/mosip/id-repository/tree/release-1.2.3.x-backup/docs/design) for the updated schema.
+This fix includes a schema update; therefore, the schema must be updated when adopting this release. Please refer [here](https://github.com/mosip/mosip-data/blob/v1.2.2.1/mosip_master_csv/csv/identity_schema.csv) for the updated schema.
 {% endhint %}
 
 ### Bug Fixes
@@ -58,5 +58,6 @@ This fix includes a schema update; therefore, the schema must be updated when ad
 
 ### Documentation
 
+* [Test Report](./)
 * [Registration](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/registration-processor/overview)
 * [ID Repository](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/id-repository)
