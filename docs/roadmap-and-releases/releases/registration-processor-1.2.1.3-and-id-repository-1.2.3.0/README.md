@@ -58,6 +58,6 @@ This fix includes a schema update; therefore, the schema must be updated when ad
 
 ### Documentation
 
-* [Test Report](./)
+* [Test Report](https://docs.mosip.io/1.2.0/roadmap-and-releases/releases/registration-processor-1.2.1.3-and-id-repository-1.2.3.0/test-report)
 * [Registration](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/registration-processor/overview)
 * [ID Repository](https://docs.mosip.io/1.2.0/id-lifecycle-management/identity-issuance/id-repository)
