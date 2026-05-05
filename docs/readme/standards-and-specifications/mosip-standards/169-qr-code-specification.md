@@ -1,7 +1,3 @@
----
-description: '** Draft WIP**'
----
-
 # 169 - QR Code Specifications
 
 ### CBOR Identity Data in QR Code
@@ -16,13 +12,13 @@ description: '** Draft WIP**'
 
 **IANA Registration**: [IANA CWT Registry](https://www.iana.org/assignments/cwt/cwt.xhtml) (Search for: 169)
 
-**Version:** 1.2.1&#x20;
+**Version:** 1.2.1
 
-**Release Date**: TBA
+**Release Date**: 5th May, 2026
 
 ### 1. Introduction
 
-This document specifies an enhanced version of the generic data structure and encoding mechanism for storing the Identity Data of a registered person using any ID platform, along with the corresponding transport encoding mechanism in a machine-readable optical format (QR).
+This document specifies an **enhanced version** of the generic data structure and encoding mechanism for storing the Identity Data of a registered person using any ID platform, along with the corresponding transport encoding mechanism in a machine-readable optical format (QR).
 
 This enhanced version is the outcome of the revival of the Claim 169 Working Group discussions following the release of [v1.2.0](https://docs.mosip.io/1.2.0/readme/standards-and-specifications/mosip-standards/169-qr-code-specifications-1.2.0) in January 2026, which undertook a collaborative effort to refine and extend the specification.
 
@@ -358,7 +354,7 @@ The status of the credential, when represented using CWT, is outside the scope o
 ```
 
 * **Compress the CWT**
-  * The generated CWT data SHALL be compressed using either `zlib` or `Brotli`.&#x20;
+  * The generated CWT data SHALL be compressed using either `zlib` or `Brotli`.
   * Verifiers MUST determine the compression format prior to decompression by checking for the presence of the zlib magic number. If the magic number is present, the data SHALL be interpreted as zlib-compressed; otherwise, it SHALL be treated as Brotli-compressed.
 * **Encode to Base45 and Generate QR Code**
   * Encode the compressed CWT using Base45.
