@@ -398,10 +398,11 @@ We extend our gratitude to the committee members for their invaluable time and i
 GetGroup: Aiman Tarek\
 PWC: Chaitanya Giri\
 Tech 5: Bejoy Ak, Nelson Branco, Rahul Parthe\
-UNHCR: Norbert Trosien, Samantha Eisenhauer, Sam Jefferies\
+UNHCR: Norbert Trosien, Samantha Eisenhauer, Sam Jefferies, Joseph Carroll\
 Ooru: Rounak Nayak, Priyank Trivdei\
 GIZ: Anita Mittal, Aisha Merhebi\
 OpenSPP: Jeremi Joslin\
+XInfotech: Andrejs Katakins\
 \
 MOSIP: Janardhan BS, Mahammed Taheer, Mayura Deshmukh, Pragya Kumari, Preeti Hongal, Ramesh Narayanan, Reeba Thomas, Resham Chugani, Sanchi Singh, Sasikumar Ganesan, Sivanand Lanka, Swati Goel, Varaniya Selvaraja, Vishwanath V
 
