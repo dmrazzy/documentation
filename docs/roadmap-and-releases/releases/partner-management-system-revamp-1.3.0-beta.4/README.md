@@ -131,5 +131,4 @@ Validation checks to verify whether a partner already exists in the PMS database
 
 ### Test Report
 
-For details on the test results, refer here.
-
+For details on the test results, [refer here](test-report.md).
