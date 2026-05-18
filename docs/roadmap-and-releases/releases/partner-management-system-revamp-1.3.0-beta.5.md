@@ -3,7 +3,7 @@
 <mark style="color:red;">**Coming Soon**</mark>!
 
 **Release Number:** 1.3.0-beta.5\
-**Release Date:** May 15, 2026
+**Release Date:** <mark style="color:red;">**Coming Soon**</mark>!
 
 ### Overview
 
