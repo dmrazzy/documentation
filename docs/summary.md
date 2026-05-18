@@ -143,7 +143,7 @@
         * [PMS Notification](id-lifecycle-management/support-systems/partner-management-services/functional-overview/pms-notification.md)
         * [MISP Partner Onboarding](id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding.md)
         * [ABIS Partner Onboarding by Partner Admin](id-lifecycle-management/support-systems/partner-management-services/functional-overview/abis-partner-onboarding-by-partner-admin.md)
-        * [Onboard Manual Adjudication](id-lifecycle-management/support-systems/partner-management-services/functional-overview/onboard-manual-adjudication.md)
+        * [Onboard Manual Adjudication Partner](id-lifecycle-management/support-systems/partner-management-services/functional-overview/onboard-manual-adjudication-partner.md)
         * [Onboard Credential Partner](id-lifecycle-management/support-systems/partner-management-services/functional-overview/onboard-credential-partner.md)
       * [Deploy](id-lifecycle-management/support-systems/partner-management-services/deploy/README.md)
         * [PMS Configuration Guide](id-lifecycle-management/support-systems/partner-management-services/deploy/pms-configuration-guide.md)
