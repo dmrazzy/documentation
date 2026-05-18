@@ -67,12 +67,12 @@ that the Partner Admini has uploaded the necessary Trust Chains.
     14. Address, Phone number
     15. Email, Username and password
 
-image1.png
+![](../../../../.gitbook/assets/pms-b5-ocp-image1.png)
 
 15. **Click** on **Register**, a popup comes up which asks you to '**Choose a Policy Group**' and seeks you to '**Agree to Terms and Conditions**' before you can be considered as 'Credential Partner.
 16. Select the relevant/applicable **Policy Group** on **Select Policy Group** popup using **Policy Group** dropdown by reading through policy group description in dropdown.
 
-image2.png
+![](../../../../.gitbook/assets/pms-b5-ocp-image2.png)
 
 17. On Submit it will ask you to read through '**Terms and Condition**' and having carefully read through it you can agree and accept it.
 
@@ -97,19 +97,19 @@ image3
 
 23. Click on **Partner Certificate** option, Click on the **Upload** button to upload the partner certificate signed by CA.
 
-image4
+![](../../../../.gitbook/assets/pms-b5-ocp-image4.png)
 
 24. Certificate is successfully fetched from local system.
 
-image5
+![](../../../../.gitbook/assets/pms-b5-ocp-image5.png)
 
 25. Click on **Submit**, Partner Certificate is uploaded successfully.
 
-image6
+![](../../../../.gitbook/assets/pms-b5-ocp-image6.png)
 
 26. On closing the popup, The user can view the uploaded certificate details in the form of a list view.
 
-image7
+![](../../../../.gitbook/assets/pms-b5-ocp-image7.png)
 
 **Download Certificate**
 
@@ -125,32 +125,35 @@ Re-uploading certificate is required in cases when MOSIP Signed Certificate gets
 
 27. Credential Partner clicks on the **"Policies"** card from the dashboard.
 
-image8
+![](../../../../.gitbook/assets/pms-b5-ocp-image8.png)
 
 28. Credential partner clicks the "Request Policy" button on the centre of page.
 
-image9
-
+![](../../../../.gitbook/assets/pms-b5-ocp-image9.png)
 **Note:** If partner has submitted policy requests previously, they will appear in a summary list on this page. To create a new submission, click the **Request Policy** button will be located in the top-right corner.
 
 29. Requesting a policy for credential partner involves 3 steps:
     17. Add the policy Details: Credential partner selects a required policy from the available list as per policy group linked to the partner and clicks "Save and Proceed" to continue to next step.
 
-image10
+![](../../../../.gitbook/assets/pms-b5-ocp-image10.png)
 
 > b. Map Biometric Extractor Provider Configuration: As second step credential partner will map a biometric extractor provider configuration to the policy selected in first step. During mapping biometric extractor configuration, partner will choose modality and will select a configuration from the list and clicks "Save and Proceed" to continue to last step.
 
-image11
+![](../../../../.gitbook/assets/pms-b5-ocp-image11.png)
 
 **Pre-requisite:** Ensure that Partner Admin has created the Biometric extraction provider configurations. This ensures the correct options are available in your dropdown menu during the policy request step. image12 image13
 
 > c. Map Credential type: As last step credential partner will map a credential type to the policy selected in first step. During mapping credential type, partner will select a credential type from the dropdown list. Partner clicks on the **"Submit"** button to complete the policy request.
 
-image14 image15 image16
+![](../../../../.gitbook/assets/pms-b5-ocp-image14.png)
+
+![](../../../../.gitbook/assets/pms-b5-ocp-image15.png)
+
+![](../../../../.gitbook/assets/pms-b5-ocp-image16.png)
 
 30. Once the policy request is submitted, it will be added to the queue to be approved by Partner Admin.
 
-image17
+![](../../../../.gitbook/assets/pms-b5-ocp-image17.png)
 
 #### Partner Admin - User Flow
 
@@ -164,23 +167,23 @@ Partner admin should create the biometric extraction provider configuration so t
 
 31. Partner admin clicks on the "**Biometric Extractor Provider Configurations**" card from the dashboard.
 
-image18
+![](../../../../.gitbook/assets/pms-b5-ocp-image18.png)
 
 32. Partner admin lands on the "**Biometric Extractor Provider Configurations**" list page and clicks on the "Create Configurations" button on the top right.
 
-image19
+![](../../../../.gitbook/assets/pms-b5-ocp-image19.png)
 
 33. Partner admin fills the details required in the from and selects a biometric modality from the dropdown.
 
-image20
+![](../../../../.gitbook/assets/pms-b5-ocp-image20.png)
 
 34. After entering the required details partner admin clicks submit to create new biometric extractor provider information and is landed on the acknowledgement page.
 
-image21
+![](../../../../.gitbook/assets/pms-b5-ocp-image21.png)
 
 35. After successful creation of configuration partner admin clicks on 'Go Back' and is landed on the configuration list page with the new configuration created listed on the top in the table.
 
-image22
+![](../../../../.gitbook/assets/pms-b5-ocp-image22.png)
 
 36. Now this is available for mapping when credential partner is requesting a new policy.
 
@@ -188,24 +191,24 @@ image22
 
 37. Once the policy request is submitted by the credential partner, partner admin can view the list of pending request by clicking on "Partner-Policy Linking" card.
 
-image23
+![](../../../../.gitbook/assets/pms-b5-ocp-image23.png)
 
 38. Partner admin can see the list of the request submitted with status as "Pending for approval".
 
-image24
+![](../../../../.gitbook/assets/pms-b5-ocp-image24.png)
 
 39. Partner admin can approve or reject the policy by clicking the "Approve/Reject" option from the actions menu.
 
-image25
+![](../../../../.gitbook/assets/pms-b5-ocp-image25.png)
 
 40. The Partner Admin can review the full details of each policy request, including the selected Biometric Extractor configuration and the specific Credential Type mappings.
 
-image26
+![](../../../../.gitbook/assets/pms-b5-ocp-image26.png)
 
 **Note:** Partner admin cannot approve nay policy request that does not have credential type and biometric extractor provider configurations added.
 
 41. Clicking on the "Approve" button completes the process and the status of the policy is changed to "Active".
 
-image27
+![](../../../../.gitbook/assets/pms-b5-ocp-image27.png)
 
 The credential partner onboarding is completed.

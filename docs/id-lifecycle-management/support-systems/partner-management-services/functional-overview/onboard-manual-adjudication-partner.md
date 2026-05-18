@@ -20,7 +20,7 @@ Singh*](https://mosip.atlassian.net/wiki/people/712020:db7f76c3-b494-4ddf-93dc-7
 Link to the ABIS Partner Guide Page) identifies a possible duplicate
 identity that requires human judgment to resolve.
 
-## **3. Key Responsibilities of Manual Adjudication Partner**
+## 3. Key Responsibilities of Manual Adjudication Partner
 
 - Receive and manage cases flagged as potential identity duplicates.
 - Perform side-by-side human expert comparisons of fingerprints, iris
@@ -32,7 +32,7 @@ identity that requires human judgment to resolve.
 - Flag cases where biometric quality is too low for a human to make a
   reliable decision.
 
-## **4. Who can \'Onboard a Manual Adjudication Partner\' and What you need to know?**
+## 4. Who can 'Onboard a Manual Adjudication Partner\' and What you need to know?
 
 Partner Admins with the appropriate credentials can onboard Manual
 Adjudication Partners in PMS. Before starting, ensure CA certificates
@@ -57,13 +57,13 @@ Partners\' tabular view.
 
 8.  Log into the PMS portal with your Partner Admin account.
 
-![](pms-images/image1.png){width="4.875in" height="2.21875in"}
+![](../../../../.gitbook/assets/pms-b5-map-image1.png){width="4.875in" height="2.21875in"}
 
 9.  Click on **Partners** card (from the left navigation panel or
     dashboard itself). You will be redirected to \'List of Partners\'
     page (tabular view).
 
-![](pms-images/image2.png){width="4.875in" height="2.53125in"}
+![](../../../../.gitbook/assets/pms-b5-map-image2.png){width="4.875in" height="2.53125in"}
 
 ## Onboarding Manual Adjudication Partners
 
@@ -81,7 +81,7 @@ Onboarding includes following:
     records already exist) or positioned at the centre of the screen (if
     no records exist).
 
-![](pms-images/image3.png){width="4.875in" height="2.08333in"}
+![](../../../../.gitbook/assets/pms-b5-map-image3.png){width="4.875in" height="2.08333in"}
 
 15. Enter details in the **Create Partner** form:
 
@@ -93,12 +93,12 @@ Onboarding includes following:
 Note: Ensure that the Organization name matches the one in the \'CA
 Signed Certificate\' that will be uploaded later.
 
-![](pms-images/image4.png){width="4.875in" height="2.36458in"}
+![](../../../../.gitbook/assets/pms-b5-map-image4.png){width="4.875in" height="2.36458in"}
 
 16. Click **Save/Submit**. A confirmation message appears on successful
     creation.
 
-![](pms-images/image5.png){width="4.875in" height="2.36458in"}
+![](../../../../.gitbook/assets/pms-b5-map-image5.png)
 
 Note: On the \'Success/Confirmation\' screen itself, you are provided
 with an option to upload CA-Signed partner certificate or return to
@@ -107,9 +107,9 @@ with an option to upload CA-Signed partner certificate or return to
 17. Click **Upload Certificate** to proceed with uploading the \'CA
     Signed Partner Certificate\'.
 
-![](pms-images/image6.png){width="4.875in" height="2.36458in"}
+![](../../../../.gitbook/assets/pms-b5-map-image6.png)
 
-### Upload \'CA Signed Partner Certificate\' (First time upload)
+### Upload'CA Signed Partner Certificate\' (First time upload)
 
 Either you can upload the partner certificate right after Manual
 Adjudication partner creation as explained in Create a Manual
@@ -122,26 +122,25 @@ can do it later from the **\'List of Partners\'** page.
     status) and choose **Upload Certificate** from the action menu, The
     **Upload Partner Certificate** popup opens.
 
-![](pms-images/image7.png){width="4.875in" height="2.53125in"}
+![](../../../../.gitbook/assets/pms-b5-map-image7.png)
 
 20. Click the upload area and select the \'CA Signed Certificate\' file
     from local folder in *.cer* or *.pem* format.
 
-![](pms-images/image8.png){width="4.875in" height="2.51042in"}
+![](../../../../.gitbook/assets/pms-b5-map-image8.png)
 
 21. Verify the certificate details by clicking **Submit**.
 
-![](pms-images/image9.png){width="4.875in" height="2.51042in"}
+![](../../../../.gitbook/assets/pms-b5-map-image9.png)
 
 22. On success, you (admin) receives a confirmation and the partner row
     should show the certificate upload date/status along with status as
     \'ACTIVE\'.
 
-![](pms-images/image10.png){width="4.875in" height="1.125in"}
+![](../../../../.gitbook/assets/pms-b5-map-image10.png)
 
- 
 
-**Note:** \
+**Note:**
 If Root/Intermediate CA is missing, the system will reject the upload.
 Therefore ensure that the CA certificates are uploaded first in
 Certificate Trust Store.
@@ -167,7 +166,7 @@ continue to use PMS services without interruption.
 27. Go to **Partner Policy Linking** (dashboard card or from left side
     menu).
 
-![](pms-images/image11.png){width="4.875in" height="1.9375in"}
+![](../../../../.gitbook/assets/pms-b5-map-image11.png)
 
 28. Click '**Request Policy'** to submit a policy request for the
     selected **Manual Adjudication Partner ID**.\
@@ -179,34 +178,34 @@ continue to use PMS services without interruption.
 Policies** must be selected.The available policies are automatically
 filtered based on the Policy Group linked to the selected Partner ID.
 
-![](pms-images/image12.png){width="4.875in"
-height="2.54167in"}![](pms-images/image13.png){width="4.875in"
-height="1.97917in"}
+![](../../../../.gitbook/assets/pms-b5-map-image12.png)
+
+![](../../../../.gitbook/assets/pms-b5-map-image13.png)
 
 29. On clicking **Submit**, the policy request is submitted successfully
     with an option to **\'Approve\'** the policy right Away.
 
-![](pms-images/image14.png){width="4.875in" height="1.98958in"}
+![](../../../../.gitbook/assets/pms-b5-map-image14.png)
 
 30. If user choses not to **'Approve\'** the policy right after
     submitting the request the request policy is added to the partner
     policy linking list page with status **\'Pending for Approval'**
 
-![](pms-images/image15.png){width="4.875in" height="2.5in"}
+![](../../../../.gitbook/assets/pms-b5-map-image15.png)
 
 31. Approve the requests after requesting policy, by navigating to the
     list of all policy requests and selecting \'Approve/Reject\' from
     the action menu against each request. (View details to inspect the
     mapping and comments before acting).
 
-![](pms-images/image16.png){width="4.875in"
-height="2.54167in"}![](pms-images/image17.png){width="4.875in"
-height="2.5in"}
+![](../../../../.gitbook/assets/pms-b5-map-image16.png)
+
+![](../../../../.gitbook/assets/pms-b5-map-image17.png)
 
 32. Upon successful approval the policy request is approved and policy
     request status is changed to **\'Approved\'**
 
-![](pms-images/image18.png){width="4.875in" height="1.10417in"}
+![](../../../../.gitbook/assets/pms-b5-map-image18.png)
 
 **Success check:** Approved partner-policy links will appear in the
 partner\'s policy list.
@@ -219,16 +218,16 @@ future requests & license generation).
 33. Go to **Partners**. From Partners list, open the action menu →
     **Deactivate Partner**.
 
-![](pms-images/image19.png){width="4.875in" height="2.51042in"}
+![](../../../../.gitbook/assets/pms-b5-map-image19.png)
 
 34. Upon confirmation to deactivate the status is changed to
     **\'Deactivated\'** and note the consequences (deactivated Manual
     Adjudication partner cannot request policies )
 
-![](pms-images/image20.png){width="4.875in" height="2.52083in"}
+![](../../../../.gitbook/assets/pms-b5-map-image20.png)
 
 35. The partner is successfully deactivated.
 
-![](pms-images/image21.png){width="4.875in" height="1.11458in"}
+![](../../../../.gitbook/assets/pms-b5-map-image21.png)
 
  
