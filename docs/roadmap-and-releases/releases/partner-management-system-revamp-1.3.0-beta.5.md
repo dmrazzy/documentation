@@ -2,8 +2,11 @@
 
 <mark style="color:red;">**Coming Soon**</mark>!
 
-**Release Number:** 1.3.0-beta.5\
-**Release Date:** <mark style="color:red;">**Coming Soon**</mark>!
+**Release Name**: Partner Management System Revamp
+
+**Release Number**: 1.3.0-beta.5
+
+**Release Date**: <mark style="color:red;">**Coming Soon**</mark>!
 
 ### Overview
 
@@ -24,17 +27,23 @@ This release introduces support for a new partner type called **Credential Partn
 * Biometric Extractor configuration creation support for Partner Admins.
 * End-to-end onboarding lifecycle support for Credential Partners across PMS workflows.
 
+{% hint style="info" %}
 **Note** : Credential Partner onboarding requires mandatory mapping of **Biometric Extractors** and **Credential Types** as part of the policy request workflow. To support this, two additional steps have been introduced in the policy request process for configuring these mappings.
 
 The Partner Admin will not be able to approve the policy request if either of these mappings is missing or incomplete.
+{% endhint %}
 
 Please refer to the [User Guide](https://mosip.atlassian.net/wiki/spaces/PMS/pages/2582773932/New+-+Credential+Partner+Onboarding+End+User+Guide#Step-3%3A-Partner-requests-Policy) for detailed instructions and configuration steps.
 
+{% hint style="info" %}
 **Note**:As part of the current release, editing an existing policy request is not supported. Once a policy request has been created and approved, the associated **Biometric Extractor** and **Credential Type** mappings cannot be modified for that policy.
 
 If changes to these mappings are required, a new policy request must be created with the updated configuration.
+{% endhint %}
 
+{% hint style="info" %}
 **Note**: For a given partner, mapping the same **Credential Type** multiple times is not supported. Each Credential Type can be associated only once per partner.
+{% endhint %}
 
 ### 2. Support for Manual Adjudication Partner Onboarding
 
@@ -58,43 +67,11 @@ The endpoint validation logic has been updated to validate policy-to-partner map
 
 ## Deprecated APIs
 
-<table data-header-hidden><thead><tr><th width="141.203125"></th><th width="106.44921875"></th><th width="316.91015625"></th><th></th></tr></thead><tbody><tr><td>API Endpoint</td><td>Method</td><td>Deprecation Description</td><td>Replacement Endpoint</td></tr><tr><td>/{partnerId}/credentialtype/{credentialType}/policies/{policyName}</td><td>POST</td><td><ul><li>It <strong>directly creates the partner–policy–credentialType mapping immediately</strong>, which bypasses the partner-policy request workflow and makes it difficult to support controlled <strong>approval/reject</strong> handling and consistent validations tied to a policy-request lifecycle. We introduced POST /partners/{partnerId}/policies/{policyId}/credential-types-request to align credential-type association with the <strong>existing partner policy mapping request flow</strong>: it validates the parent request (must exist and be <strong>IN_PROGRESS</strong>), enforces <strong>single-request-per-policy-request</strong>, performs duplicate checks against existing mappings, and persists the request in pms.partner_policy_credential_type_request so that the mapping can be <strong>approved or rejected</strong> reliably as part of the overall workflow.</li></ul></td><td><ul><li>POST<br>/partners/{partnerId}/policies/{policyId}/credential-types-request</li></ul></td></tr><tr><td>/{partnerId}/bioextractors/{policyId}</td><td>POST</td><td>It <strong>directly creates/updates the final extractor configuration</strong> for a partner-policy (writes into the extractor provider table) and therefore cannot reliably support the partner-policy mapping workflow’s <strong>approval/reject</strong> lifecycle. We introduced POST /partners/{partnerId}/policies/{policyId}/bio-extractors-request to align bio-extractor submissions with the <strong>existing partner policy request flow</strong>: it validates that the referenced partner-policy request exists and is <strong>IN_PROGRESS</strong>, prevents duplicate/overlapping extractor configurations (both within the request and against existing configuration), and persists the submission as request rows so the system can <strong>approve or reject</strong> them consistently and audibly.</td><td>POST<br>/partners/{partnerId}/policies/{policyId}/bio-extractors-request</td></tr></tbody></table>
+<table><thead><tr><th width="141.203125">API Endpoint</th><th width="106.44921875">Method</th><th width="316.91015625">Deprecation Description</th><th>Replacement Endpoint</th></tr></thead><tbody><tr><td>/{partnerId}/credentialtype/{credentialType}/policies/{policyName}</td><td>POST</td><td><ul><li>It <strong>directly creates the partner–policy–credentialType mapping immediately</strong>, which bypasses the partner-policy request workflow and makes it difficult to support controlled <strong>approval/reject</strong> handling and consistent validations tied to a policy-request lifecycle. We introduced POST /partners/{partnerId}/policies/{policyId}/credential-types-request to align credential-type association with the <strong>existing partner policy mapping request flow</strong>: it validates the parent request (must exist and be <strong>IN_PROGRESS</strong>), enforces <strong>single-request-per-policy-request</strong>, performs duplicate checks against existing mappings, and persists the request in pms.partner_policy_credential_type_request so that the mapping can be <strong>approved or rejected</strong> reliably as part of the overall workflow.</li></ul></td><td><ul><li>POST<br>/partners/{partnerId}/policies/{policyId}/credential-types-request</li></ul></td></tr><tr><td>/{partnerId}/bioextractors/{policyId}</td><td>POST</td><td>It <strong>directly creates/updates the final extractor configuration</strong> for a partner-policy (writes into the extractor provider table) and therefore cannot reliably support the partner-policy mapping workflow’s <strong>approval/reject</strong> lifecycle. We introduced POST /partners/{partnerId}/policies/{policyId}/bio-extractors-request to align bio-extractor submissions with the <strong>existing partner policy request flow</strong>: it validates that the referenced partner-policy request exists and is <strong>IN_PROGRESS</strong>, prevents duplicate/overlapping extractor configurations (both within the request and against existing configuration), and persists the submission as request rows so the system can <strong>approve or reject</strong> them consistently and audibly.</td><td>POST<br>/partners/{partnerId}/policies/{policyId}/bio-extractors-request</td></tr></tbody></table>
 
 ## User Stories
 
-| **Feature**                   | Jira Issue ID                                                 | Summary                                                                                                      |
-| ----------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| Credential Partner Onboarding | [MOSIP-44515](https://mosip.atlassian.net/browse/MOSIP-44515) | Credential Partner – Login & Dashboard Display with Service Cards                                            |
-|                               | [MOSIP-44519](https://mosip.atlassian.net/browse/MOSIP-44519) | Credential Partner – View Policy Request Details                                                             |
-|                               | [MOSIP-44518](https://mosip.atlassian.net/browse/MOSIP-44518) | Credential Partner – View Submitted Policies (Tabular View)                                                  |
-|                               | [MOSIP-44662](https://mosip.atlassian.net/browse/MOSIP-44662) | Partner Admin: Approve/Reject Partner Policy Request for Credential Partner                                  |
-|                               | [MOSIP-44660](https://mosip.atlassian.net/browse/MOSIP-44660) | Credential Partner: Map Credential Type                                                                      |
-|                               | [MOSIP-44659](https://mosip.atlassian.net/browse/MOSIP-44659) | Credential Partner: Map Biometric Extractor Provider while requesting policy                                 |
-|                               | [MOSIP-44656](https://mosip.atlassian.net/browse/MOSIP-44656) | Partner Admin : Biometric Provider Configuration Dashboard Card in PMS                                       |
-|                               | [MOSIP-44597](https://mosip.atlassian.net/browse/MOSIP-44597) | Partner Admin: View Biometric Extractor Provider Configuration Details                                       |
-|                               | [MOSIP-44596](https://mosip.atlassian.net/browse/MOSIP-44596) | Partner Admin : Display Biometric Extractor Provider Configuration Listing for Credential partner            |
-|                               | [MOSIP-44595](https://mosip.atlassian.net/browse/MOSIP-44595) | Partner Admin: Create Biometric Extractor Provider Configuration                                             |
-|                               | [MOSIP-44517](https://mosip.atlassian.net/browse/MOSIP-44517) | Credential Partner – Request Policy                                                                          |
-|                               | [MOSIP-44836](https://mosip.atlassian.net/browse/MOSIP-44836) | API Service: Update endpoint PUT /partners/policy/{mappingkey} for Approve / Reject a Partner Policy Request |
-|                               | [MOSIP-44835](https://mosip.atlassian.net/browse/MOSIP-44835) | API Service: Add new endpoint GET /partner-policy-requests/{requestId}/credential-types-request              |
-|                               | [MOSIP-44834](https://mosip.atlassian.net/browse/MOSIP-44834) | API Service: Add new endpoint GET /partner-policy-requests/{requestId}/bio-extractors-request                |
-|                               | [MOSIP-44832](https://mosip.atlassian.net/browse/MOSIP-44832) | API Service: Add new endpoint POST /partners/{partnerId}/policies/{policyId}/credential-types-request        |
-|                               | [MOSIP-44827](https://mosip.atlassian.net/browse/MOSIP-44827) | API Service: Add new endpoint POST /partners/{partnerId}/policies/{policyId}/bio-extractors-request          |
-|                               | [MOSIP-44792](https://mosip.atlassian.net/browse/MOSIP-44792) | API Service: Correct Policy-Partner Mapping Validation in DataShare Service by Updating Endpoint Logic       |
-|                               | [MOSIP-44676](https://mosip.atlassian.net/browse/MOSIP-44676) | API Service: Add new endpoint GET /bio-extractor-configurations/{bio-extractor-configurations-id}            |
-|                               | [MOSIP-44674](https://mosip.atlassian.net/browse/MOSIP-44674) | API Service: Add new endpoint GET /bio-extractor-configurations                                              |
-|                               | [MOSIP-44673](https://mosip.atlassian.net/browse/MOSIP-44673) | API Service: Add new endpoint POST /bio-extractor-configurations                                             |
-| Manual Adjudication Partner   | [MOSIP-44348](https://mosip.atlassian.net/browse/MOSIP-44348) | Create Manual Adjudication Partner                                                                           |
-|                               | [MOSIP-44350](https://mosip.atlassian.net/browse/MOSIP-44350) | Policy Linking Management for Manual Adjudication Partner                                                    |
-|                               | [MOSIP-44410](https://mosip.atlassian.net/browse/MOSIP-44410) | Partner Admin: View Manual Adjudication Partner Details                                                      |
-|                               | [MOSIP-44411](https://mosip.atlassian.net/browse/MOSIP-44411) | Partner Admin: Deactivate Manual Adjudication Partner                                                        |
-|                               | [MOSIP-44349](https://mosip.atlassian.net/browse/MOSIP-44349) | Upload / Re-Upload Certificate for Manual Adjudication Partner                                               |
-|                               | [MOSIP-44443](https://mosip.atlassian.net/browse/MOSIP-44443) | API: Update GET /partners/v3 endpoint to support Manual Adjudication partner type                            |
-|                               | [MOSIP-44438](https://mosip.atlassian.net/browse/MOSIP-44438) | API: Update GET /partner-api-keys/v2 endpoint to include partnerType in request filter and response          |
-|                               | [MOSIP-44793](https://mosip.atlassian.net/browse/MOSIP-44793) | Manual Adjudication Partner: Remove API Key related UI Features and Manual Adjudication Services Card        |
-| Enchancements                 | [MOSIP-42447](https://mosip.atlassian.net/browse/MOSIP-42447) | Data length validation for all textboxes in Filter section                                                   |
-|                               | [MOSIP-38412](https://mosip.atlassian.net/browse/MOSIP-38412) | Side panel should cover the entire screen height \<in progress>                                              |
-| Automation                    | [MOSIP-44921](https://mosip.atlassian.net/browse/MOSIP-44921) | PMS UI Automation: push the code from develop to release 1.3.x branch for PMS 1.3.0-beta.5 release.          |
+<table><thead><tr><th width="168.32421875">Feature</th><th width="173.5625">Jira Issue ID</th><th>Summary</th></tr></thead><tbody><tr><td>Credential Partner Onboarding</td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44515">MOSIP-44515</a></td><td>Credential Partner – Login &#x26; Dashboard Display with Service Cards</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44519">MOSIP-44519</a></td><td>Credential Partner – View Policy Request Details</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44518">MOSIP-44518</a></td><td>Credential Partner – View Submitted Policies (Tabular View)</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44662">MOSIP-44662</a></td><td>Partner Admin: Approve/Reject Partner Policy Request for Credential Partner</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44660">MOSIP-44660</a></td><td>Credential Partner: Map Credential Type</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44659">MOSIP-44659</a></td><td>Credential Partner: Map Biometric Extractor Provider while requesting policy</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44656">MOSIP-44656</a></td><td>Partner Admin : Biometric Provider Configuration Dashboard Card in PMS</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44597">MOSIP-44597</a></td><td>Partner Admin: View Biometric Extractor Provider Configuration Details</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44596">MOSIP-44596</a></td><td>Partner Admin : Display Biometric Extractor Provider Configuration Listing for Credential partner</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44595">MOSIP-44595</a></td><td>Partner Admin: Create Biometric Extractor Provider Configuration</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44517">MOSIP-44517</a></td><td>Credential Partner – Request Policy</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44836">MOSIP-44836</a></td><td>API Service: Update endpoint PUT /partners/policy/{mappingkey} for Approve / Reject a Partner Policy Request</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44835">MOSIP-44835</a></td><td>API Service: Add new endpoint GET /partner-policy-requests/{requestId}/credential-types-request</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44834">MOSIP-44834</a></td><td>API Service: Add new endpoint GET /partner-policy-requests/{requestId}/bio-extractors-request</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44832">MOSIP-44832</a></td><td>API Service: Add new endpoint POST /partners/{partnerId}/policies/{policyId}/credential-types-request</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44827">MOSIP-44827</a></td><td>API Service: Add new endpoint POST /partners/{partnerId}/policies/{policyId}/bio-extractors-request</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44792">MOSIP-44792</a></td><td>API Service: Correct Policy-Partner Mapping Validation in DataShare Service by Updating Endpoint Logic</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44676">MOSIP-44676</a></td><td>API Service: Add new endpoint GET /bio-extractor-configurations/{bio-extractor-configurations-id}</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44674">MOSIP-44674</a></td><td>API Service: Add new endpoint GET /bio-extractor-configurations</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44673">MOSIP-44673</a></td><td>API Service: Add new endpoint POST /bio-extractor-configurations</td></tr><tr><td>Manual Adjudication Partner</td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44348">MOSIP-44348</a></td><td>Create Manual Adjudication Partner</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44350">MOSIP-44350</a></td><td>Policy Linking Management for Manual Adjudication Partner</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44410">MOSIP-44410</a></td><td>Partner Admin: View Manual Adjudication Partner Details</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44411">MOSIP-44411</a></td><td>Partner Admin: Deactivate Manual Adjudication Partner</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44349">MOSIP-44349</a></td><td>Upload / Re-Upload Certificate for Manual Adjudication Partner</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44443">MOSIP-44443</a></td><td>API: Update GET /partners/v3 endpoint to support Manual Adjudication partner type</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44438">MOSIP-44438</a></td><td>API: Update GET /partner-api-keys/v2 endpoint to include partnerType in request filter and response</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44793">MOSIP-44793</a></td><td>Manual Adjudication Partner: Remove API Key related UI Features and Manual Adjudication Services Card</td></tr><tr><td>Enchancements</td><td><a href="https://mosip.atlassian.net/browse/MOSIP-42447">MOSIP-42447</a></td><td>Data length validation for all textboxes in Filter section</td></tr><tr><td></td><td><a href="https://mosip.atlassian.net/browse/MOSIP-38412">MOSIP-38412</a></td><td>Side panel should cover the entire screen height &#x3C;in progress></td></tr><tr><td>Automation</td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44921">MOSIP-44921</a></td><td>PMS UI Automation: push the code from develop to release 1.3.x branch for PMS 1.3.0-beta.5 release.</td></tr></tbody></table>
 
 ## Known Issues
 
@@ -102,6 +79,7 @@ Please refer here for the full list of known issues.
 
 | Issue ID | Summary |
 | -------- | ------- |
+|          |         |
 |          |         |
 |          |         |
 |          |         |
@@ -116,7 +94,7 @@ Please refer here for the full list of known issues.
 
 ## Compatible Modules
 
-| **Module/ Repo**    | **Tags**      |
+| Module/ Repo        | Tags          |
 | ------------------- | ------------- |
 | Key Manager         | v1.3.0-beta.3 |
 | mosip-openid-bridge | v1.3.0-beta.2 |
