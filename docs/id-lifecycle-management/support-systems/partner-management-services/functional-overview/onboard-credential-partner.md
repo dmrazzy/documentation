@@ -146,7 +146,7 @@ Re-uploading certificate is required in cases when MOSIP Signed Certificate gets
 
 **Step 1: Upload Root Certificate**
 
-Partner admin has to upload the root certificate as the primary steps for any partner onboarding. Please refer the guide here ( [_Keshav Singh_](https://mosip.atlassian.net/wiki/people/712020:db7f76c3-b494-4ddf-93dc-7036472db6d0?ref=confluence) Link to the Root Certificate upload guide under Partner admin end user guide) to know more about the steps.
+Partner admin has to upload the root certificate as the primary steps for any partner onboarding. Please refer the guide [here](partner-administration.md#root-trust-root-ca-certificate-features) to know more about the steps.
 
 **Step 2: Create Biometric Extractor Provider Configuration**
 
@@ -176,25 +176,25 @@ Partner admin should create the biometric extraction provider configuration so t
 
 **Step 3: Approve Policy request Submitted by Credential Partner**
 
-7. Once the policy request is submitted by the credential partner, partner admin can view the list of pending request by clicking on "Partner-Policy Linking" card.
+1. Once the policy request is submitted by the credential partner, partner admin can view the list of pending request by clicking on "Partner-Policy Linking" card.
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image23.png)
 
-8. Partner admin can see the list of the request submitted with status as "Pending for approval".
+2. Partner admin can see the list of the request submitted with status as "Pending for approval".
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image24.png)
 
-9. Partner admin can approve or reject the policy by clicking the "Approve/Reject" option from the actions menu.
+3. Partner admin can approve or reject the policy by clicking the "Approve/Reject" option from the actions menu.
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image25.png)
 
-10. The Partner Admin can review the full details of each policy request, including the selected Biometric Extractor configuration and the specific Credential Type mappings.
+4. The Partner Admin can review the full details of each policy request, including the selected Biometric Extractor configuration and the specific Credential Type mappings.
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image26.png)
 
 **Note:** Partner admin cannot approve nay policy request that does not have credential type and biometric extractor provider configurations added.
 
-11. Clicking on the "Approve" button completes the process and the status of the policy is changed to "Active".
+5. Clicking on the "Approve" button completes the process and the status of the policy is changed to "Active".
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image27.png)
 
