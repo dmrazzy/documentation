@@ -12,7 +12,12 @@ PMS supports multiple partner types and enforces role-based access through integ
 
 ### Self-Registration and User Access
 
-PMS allows partners to [self-register](../functional-overview/end-user-guide.md#partner-self-registration) through a guided and partially automated process, reducing the need for manual intervention. During registration, users provide organizational and contact details and explicitly consent to Terms and Conditions, which clearly describe how personal and organizational data will be used within PMS.
+PMS allows partners to [self-register](../functional-overview/end-user-guide.md#partner-self-registration) through a guided and partially automated process, reducing the need for manual intervention. During registration, users provide organizational and contact details and explicitly consent to Terms and Conditions, which clearly describe how personal and organizational data will be used within PMS. Self Registration can be done for below partners:
+
+1. \[Authentication Partner]\(Link to the Respective User Guide)
+2. \[Credential Partner]\(Link to the Respective User Guide)
+3. \[FTM Partner]\(Link to the Respective User Guide)
+4. \[Device Provider Partner]\(Link to the Respective User Guide)
 
 Once registered, partners can log in using their email or username and password. Password recovery is supported through the “Forgot Password” option, enabling secure credential reset without administrative involvement.
 
@@ -45,16 +50,16 @@ The system continuously tracks certificate validity and triggers expiry notifica
 PMS supports onboarding and lifecycle management for multiple partner types, including Authentication Partners, MISP Partners, ABIS Partners, Device Providers, FTM Chip Providers, and Credential Partners. Each partner type is governed by role-specific permissions and service capabilities.
 
 ### Partner Management
+
 Partners can be viewed in both [list and detailed views](../functional-overview/partner-administration.md#view-partners). Depending on the partner type and onboarding mode, Partner Admins can deactivate partners, download original and MOSIP-signed certificates, and manage policy associations.
 
-For **self-registered partners**, PMS supports certificate download and lifecycle management.
-For **[MISP Partners](../functional-overview/misp-partner-onboarding.md)** and **[ABIS Partners](../functional-overview/abis-partner-onboarding-by-partner-admin.md)** onboarding and management are handled exclusively by Partner Admins through the PMS UI.
+For **self-registered partners**, PMS supports certificate download and lifecycle management. For [**MISP Partners**](../functional-overview/misp-partner-onboarding.md) , [**ABIS Partners**](../functional-overview/abis-partner-onboarding-by-partner-admin.md) and [**Manual Adjudication Partners**](../functional-overview/onboard-manual-adjudication-partner.md) onboarding and management are handled exclusively by Partner Admins through the PMS UI.
 
 ## Policy Management and Governance
 
 PMS provides comprehensive [policy governance](../functional-overview/policy-manager.md) through Policy Groups and individual policies. Policy Groups act as logical containers for related policies and enable structured access control across partner types.
 
-These activities are performed by users assigned the **[Policy Manager](../functional-overview/policy-manager.md)** role in Keycloak. Once a user is created in Keycloak and granted the Policy Manager role, they can manage policies within PMS.
+These activities are performed by users assigned the [**Policy Manager**](../functional-overview/policy-manager.md) role in Keycloak. Once a user is created in Keycloak and granted the Policy Manager role, they can manage policies within PMS.
 
 Within a Policy Group, a Policy Manager can [create Authentication Policies and Data Share Policies](../functional-overview/policy-manager.md#create-policy), and MISP Policies, edit policies in draft state, publish policies, clone policies across Policy Groups, and deactivate policies when no active partner–policy mappings exist
 
@@ -64,7 +69,7 @@ Once a Policy Group is assigned, partners can request policies through the [Part
 
 Enhancements are available for MISP Partners, allowing Partner Admins to manage MISP-specific policy associations through a dedicated tabular interface.
 
-**Note:** For **[ABIS Partners](../functional-overview/abis-partner-onboarding-by-partner-admin.md#abis-partner-policy-linking)**, policy linking supports **Data Share Policies**, **Authentication Policies**, and **MISP Policies**.
+**Note:** For [**ABIS Partners**](../functional-overview/abis-partner-onboarding-by-partner-admin.md#abis-partner-policy-linking), [**Manual Adjudication Partners**](../functional-overview/onboard-manual-adjudication-partner.md) **and** [**Credential Partners**](../functional-overview/onboard-credential-partner.md) only **Data Share Policies** must be selected during policy linking.
 
 ## Authentication Services
 
@@ -95,6 +100,7 @@ API Keys automatically deactivate upon expiry. By default, newly generated API K
 [FTM Chip Providers](../functional-overview/ftm-chip-provider.md) can add, view, and deactivate FTM chip details and manage FTM chip certificates. [Partner Admins review and approve or reject](../functional-overview/partner-administration.md#ftm-chip-approval) submitted FTM chip requests.
 
 ## MISP Services
+
 PMS includes a dedicated [MISP Services](../functional-overview/misp-partner-onboarding.md#misp-license-key) module for managing MISP License Keys. Partner Admins can generate new license keys, regenerate them with updated validity, view existing keys, and deactivate active keys.
 
 If multiple license keys are generated for the same Partner ID, only the latest key remains active in the ID Authentication (IDA) module. License keys automatically deactivate upon expiry.
@@ -103,7 +109,7 @@ If multiple license keys are generated for the same Partner ID, only the latest 
 
 ## Notifications and Alerts
 
-PMS provides proactive [notifications](../functional-overview/pms-notification.md) through both the PMS portal and email. Notifications cover certificate expiries (Root, Intermediate, Partner, FTM Chip), API Keys, SBIs, MISP License Key and weekly summary updates for Partner Admins.
+PMS provides proactive [notifications](../functional-overview/pms-notification.md) through both the PMS portal and email. Notifications cover certificate expiries (Root, Intermediate, Partner, FTM Chip),MISP License Keys, API Keys, SBIs, and weekly summary updates for Partner Admins.
 
 Notifications are sent at defined intervals: 30 days before expiry, 15 days before expiry, and daily reminders starting 10 days prior to expiry. Weekly summary notifications are sent every seven days.
 

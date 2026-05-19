@@ -1,4 +1,4 @@
-# Onboard Credential Partner as a Partner Admin
+# Onboard Credential Partner
 
 ### Overview of Guide
 
@@ -25,7 +25,11 @@ Onboarding is performed by the Partner and Partner Admin using the PMS portal. B
 2. **Policy Group Selection by Partner:** Select the appropriate "Credential Partner" policy group to unlock your specific dashboard view.
 3. **CA Certificate Upload by Partner:** Upload your organization's CA certificate.
 
+{% hint style="info" %}
 **Note**: This requires that the Partner Admin has already uploaded the Trust Chain (Root and Intermediate certificates).
+{% endhint %}
+
+
 
 4. **Policy Request by Partner:** Initiate a policy request which involves three sub-steps:
    1. Select the required Policy.
@@ -48,11 +52,11 @@ Onboarding is performed by the Partner and Partner Admin using the PMS portal. B
 
 1. The Credential Partner can register themselves on MOSIP PMS portal by clicking **Register** on the Login Page, a form comes up.
 2. Enter the Authentication Partner details:
-    1. Partner type (Authentication Partner)
-    2. First and Last name
-    3. Organization Name
-    4. Address, Phone number
-    5. Email, Username and password
+   1. Partner type (Authentication Partner)
+   2. First and Last name
+   3. Organization Name
+   4. Address, Phone number
+   5. Email, Username and password
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image1.png)
 
@@ -63,20 +67,30 @@ Onboarding is performed by the Partner and Partner Admin using the PMS portal. B
 
 5. On Submit it will ask you to read through '**Terms and Condition**' and having carefully read through it you can agree and accept it.
 
+{% hint style="info" %}
 **Validations**:
 
 * User can select only one **Policy Group** per **Partner Type**.
 * Policy selected once cannot be edited later.
 * **Terms & Conditions:** Partner consent refers to voluntary and informed agreement provided by a partner user on behalf of the Partner Organisation, to a specific action or process where the users have a clear understanding of what they are consenting to. User consent is important to ensure data privacy, where it is compliant to obtain explicit consent from partners before collecting, processing, or sharing their personal/ organisation level data.
 * A detailed description explaining which of their personal and organisation data is used and for what purposes it will be used in PMS will be informed while seeking user consent.
+{% endhint %}
 
 **Step 2: CA Signed Partner Certificate Upload**
 
 Once registered, user is required to perform upload CA signed Partner Certificate on behalf of their organisation which would be used to build a trust store in MOSIP to cryptographically validate that they are from a trusted organisation to perform authentication of citizens. Also this certificate is used to encrypt the response shared in e-KYC.
 
+{% hint style="info" %}
 **Note**: Later when required a Partner can also 'Download Certificate' and 'Re-Upload Certificate' (As the need may be).
+{% endhint %}
 
+
+
+{% hint style="info" %}
 **Important**: Before a Partner can upload a 'CA Signed Certificate' it is prerequisite that the 'Partner Admin' should have already had uploaded the **Root CA** and **Sub CA** certificates.
+{% endhint %}
+
+
 
 1. Credential partner log in to the PMS portal and lands on the Dashboard.
 
@@ -106,7 +120,11 @@ There is also an option to download initially uploaded CA signed certificate and
 
 Re-uploading certificate is required in cases when MOSIP Signed Certificate gets expired after one year.
 
+{% hint style="info" %}
 **Note:** 'MOSIP Signed Certificate has a validity of 1 year from the time of Partner Certificate Upload. You must ensure that you re-upload the partner certificate again so that new MOSIP signed certificate can be generated and other functionalities such as Request Policy, Authentication Policies can function.
+{% endhint %}
+
+
 
 **Step 3: Partner requests Policy**
 
@@ -116,21 +134,28 @@ Re-uploading certificate is required in cases when MOSIP Signed Certificate gets
 
 2. Credential partner clicks the "Request Policy" button on the centre of page.
 
-![](../../../../.gitbook/assets/pms-b5-ocp-image9.png)
-**Note:** If partner has submitted policy requests previously, they will appear in a summary list on this page. To create a new submission, click the **Request Policy** button will be located in the top-right corner.
+<img src="../../../../.gitbook/assets/pms-b5-ocp-image9.png" alt="" data-size="original">&#x20;
 
-3. Requesting a policy for credential partner involves 3 steps:
-  a. Add the policy Details: Credential partner selects a required policy from the available list as per policy group linked to the partner and clicks "Save and Proceed" to continue to next step.
+
+
+{% hint style="info" %}
+**Note:** If partner has submitted policy requests previously, they will appear in a summary list on this page. To create a new submission, click the **Request Policy** button will be located in the top-right corner.
+{% endhint %}
+
+
+
+3. Requesting a policy for credential partner involves 3 steps:&#x20;
+   1. Add the policy Details: Credential partner selects a required policy from the available list as per policy group linked to the partner and clicks "Save and Proceed" to continue to next step.
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image10.png)
 
-  b. Map Biometric Extractor Provider Configuration: As second step credential partner will map a biometric extractor provider configuration to the policy selected in first step. During mapping biometric extractor configuration, partner will choose modality and will select a configuration from the list and clicks "Save and Proceed" to continue to last step.
+b. Map Biometric Extractor Provider Configuration: As second step credential partner will map a biometric extractor provider configuration to the policy selected in first step. During mapping biometric extractor configuration, partner will choose modality and will select a configuration from the list and clicks "Save and Proceed" to continue to last step.
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image11.png)
 
 **Pre-requisite:** Ensure that Partner Admin has created the Biometric extraction provider configurations. This ensures the correct options are available in your dropdown menu during the policy request step. image12 image13
 
-  c. Map Credential type: As last step credential partner will map a credential type to the policy selected in first step. During mapping credential type, partner will select a credential type from the dropdown list. Partner clicks on the **"Submit"** button to complete the policy request.
+c. Map Credential type: As last step credential partner will map a credential type to the policy selected in first step. During mapping credential type, partner will select a credential type from the dropdown list. Partner clicks on the **"Submit"** button to complete the policy request.
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image14.png)
 
@@ -192,10 +217,11 @@ Partner admin should create the biometric extraction provider configuration so t
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image26.png)
 
+{% hint style="info" %}
 **Note:** Partner admin cannot approve nay policy request that does not have credential type and biometric extractor provider configurations added.
+{% endhint %}
 
 5. Clicking on the "Approve" button completes the process and the status of the policy is changed to "Active".
 
 ![](../../../../.gitbook/assets/pms-b5-ocp-image27.png)
 
-The credential partner onboarding is completed.
