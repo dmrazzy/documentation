@@ -12,10 +12,8 @@ portal**.
 
 A Manual Adjudication Partner is an authorized entity - either a
 government department or a specialized service provider - that employs
-biometric experts. They act as the final decision-makers whenever ABIS
-Partner ([*Keshav
-Singh*](https://mosip.atlassian.net/wiki/people/712020:db7f76c3-b494-4ddf-93dc-7036472db6d0?ref=confluence)
-Link to the ABIS Partner Guide Page) identifies a possible duplicate
+biometric experts. They act as the final decision-makers whenever [ABIS
+Partner](abis-partner-onboarding-by-partner-admin.md) identifies a possible duplicate
 identity that requires human judgment to resolve.
 
 ## Key Responsibilities of Manual Adjudication Partner
