@@ -4,8 +4,6 @@ icon: file-certificate
 
 # License
 
-> All MOSIP code is owned and maintained by International Institute of Information Technology, Bangalore, on behalf of MOSIP.
-
 ## Introduction
 
 MOSIP is built on a strong foundation of open-source principles: transparency, modularity, reusability, and global collaboration. To maintain consistency and compliance across all repositories, MOSIP adopts licensing practices that allow safe integration of external dependencies while staying true to its core licensing model.
@@ -13,6 +11,8 @@ MOSIP is built on a strong foundation of open-source principles: transparency, m
 MOSIP’s primary licenses across its repositories are the Mozilla Public License 2.0 (MPL 2.0) and the MIT License. These licenses support modularity, file‑level copyleft (in the case of MPL), and broad reuse (in the case of MIT). Their flexibility allows MOSIP to integrate permissive and certain weak‑copyleft components while maintaining a clear and consistent compliance framework.
 
 ## Licensing in MOSIP Repositories
+
+> All MOSIP code is owned and maintained by International Institute of Information Technology, Bangalore, on behalf of MOSIP.
 
 MOSIP follows a structured licensing approach across repositories.
 
