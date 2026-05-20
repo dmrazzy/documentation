@@ -120,5 +120,5 @@ Please refer here for the full list of known issues.
 
 #### Test Report
 
-For details on the test results, refer here.
+For details on the test results, [refer here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beat.5).
 
