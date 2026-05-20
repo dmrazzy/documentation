@@ -9,6 +9,18 @@ icon: book-open
 
 ## Latest Releases
 
+
+
+**Version**: Partner Management System Revamp 1.3.0-beta.5
+
+* Date: 20th May, 2026
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.5.md)
+
+**Version:** API Test Commons v1.6.0
+
+* Date: 25th March, 2026
+* [Release Notes](api-test-commons-releases/v1.6.0.md)
+
 **Version**: Registration Processor 1.2.1.3 & ID Repository 1.2.3.0
 
 * Date: 22nd April, 2026

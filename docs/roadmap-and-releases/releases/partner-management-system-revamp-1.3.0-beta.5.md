@@ -6,7 +6,7 @@
 
 **Release Number**: 1.3.0-beta.5
 
-**Release Date**: <mark style="color:red;">**Coming Soon**</mark>!
+**Release Date**: 20th May, 2026 - <mark style="color:red;">**Coming Soon**</mark>!
 
 ### Overview
 
@@ -87,10 +87,10 @@ Please refer here for the full list of known issues.
 
 ## Repositories Released
 
-| Repository                        | Branch        | Release Tag   |
-| --------------------------------- | ------------- | ------------- |
-| mosip-partner-management-services | release-1.3.x | v1.3.0-beta.5 |
-| mosip-partner-management-ui       | release-1.3.x | v1.3.0-beta.5 |
+| Repository                        | Release Tag                                                                              |
+| --------------------------------- | ---------------------------------------------------------------------------------------- |
+| mosip-partner-management-services | [v1.3.0-beta.5](https://github.com/mosip/partner-management-services/tree/v1.3.0-beta.5) |
+| mosip-partner-management-ui       | [v1.3.0-beta.5](https://github.com/mosip/partner-management-portal/tree/v1.3.0-beta.5)   |
 
 ## Compatible Modules
 
