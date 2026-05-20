@@ -14,7 +14,7 @@ icon: book-open
 **Version**: Partner Management System Revamp 1.3.0-beta.5
 
 * Date: 20th May, 2026
-* [Release Notes](partner-management-system-revamp-1.3.0-beta.5.md)
+* [Release Notes](partner-management-system-revamp-1.3.0-beta.5/)
 
 **Version:** API Test Commons v1.6.0
 
