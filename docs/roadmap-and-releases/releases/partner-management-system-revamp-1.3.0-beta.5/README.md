@@ -1,12 +1,10 @@
 # Partner Management System Revamp 1.3.0-beta.5
 
-<mark style="color:red;">**Coming Soon**</mark>!
-
 **Release Name**: Partner Management System Revamp
 
 **Release Number**: 1.3.0-beta.5
 
-**Release Date**: 20th May, 2026 - <mark style="color:red;">**Coming Soon**</mark>!
+**Release Date**: 20th May, 2026&#x20;
 
 ### Overview
 
@@ -75,15 +73,9 @@ The endpoint validation logic has been updated to validate policy-to-partner map
 
 ## Known Issues
 
-Please refer here for the full list of known issues.
+Please refer [here](https://mosip.atlassian.net/issues?jql=project%20%3D%20MOSIP%20AND%20issuetype%20%3D%20Bug%20AND%20%22epic%20link%22%20%3D%20MOSIP-32075%20AND%20status%20NOT%20IN%20\(Canceled%2C%20Closed\)%20AND%20affectedVersion%20%3D%20%221.3.0-Beta.5%22%20ORDER%20BY%20created%20DESC) for the full list of known issues.
 
-| Issue ID | Summary |
-| -------- | ------- |
-|          |         |
-|          |         |
-|          |         |
-|          |         |
-|          |         |
+<table data-first-column-sticky><thead><tr><th>Issue ID</th><th>Summary</th></tr></thead><tbody><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-45014">MOSIP-45014</a></td><td>PMS Revamp-Email notifications are not received in Arabic and French languages despite user language registration</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-45000">MOSIP-45000</a></td><td>PMS Revamp- The acknowledgement Title and subtitle popping up in the UI is not as per the requirement mentioned in the story criteria</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44976">MOSIP-44976</a></td><td>PMS Revamp- Unable to create configuration with same name and different modality – uniqueness constraint unclear in Create Biometric Extractor Provider Configuration screen</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44940">MOSIP-44940</a></td><td>PMS Revamp- On providing invalid attribute name/extractor provider/biometric/extractorproviderversion user is still able to submit the request for bio extract request</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44815">MOSIP-44815</a></td><td>PMS-Revamp - Policy Group Selection Fails for Authentication partner with long Organization name and username.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44783">MOSIP-44783</a></td><td>PMS-Revamp - Language code mismatch between Keycloak and DB During New Partner Registration for Notification Preference language.</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44680">MOSIP-44680</a></td><td>PMS Revamp- Partner ID/Username allows more than 36 characters during registration but fails at login with validation error</td></tr><tr><td><a href="https://mosip.atlassian.net/browse/MOSIP-44091">MOSIP-44091</a></td><td>PMS Revamp UI Automation: Fix all commented-out issues and remove them from UI automation.</td></tr></tbody></table>
 
 ## Repositories Released
 
@@ -94,21 +86,21 @@ Please refer here for the full list of known issues.
 
 ## Compatible Modules
 
-| Module/ Repo        | Tags          |
-| ------------------- | ------------- |
-| Key Manager         | v1.3.0-beta.3 |
-| mosip-openid-bridge | v1.3.0-beta.2 |
-| artifactory         | v1.2.0.2      |
-| IDA                 | v1.2.1.0      |
-| eSignet             | v1.6.2        |
-| Reg Proc            | v1.2.0.2      |
-| Notifier (Kernel)   | v1.2.0.1      |
-| Audit manager       | v1.2.0.1      |
-| ID Repo             | v1.2.2.0      |
-| datashare           | v1.2.0.1      |
-| Keycloak            | v1.2.0.1      |
-| config-server       | v1.1.2        |
-| Websub              | v1.2.0.1      |
+| Module/ Repo        | Tags                                                                             |
+| ------------------- | -------------------------------------------------------------------------------- |
+| Key Manager         | [v1.3.0-beta.3](https://github.com/mosip/keymanager/tree/v1.3.0-beta.3)          |
+| mosip-openid-bridge | [v1.3.0-beta.2](https://github.com/mosip/mosip-openid-bridge/tree/v1.3.0-beta.2) |
+| artifactory         | [v1.2.0.2](https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2)          |
+| IDA                 | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)             |
+| eSignet             | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                           |
+| Reg Proc            | [v1.2.0.2](https://github.com/mosip/registration/tree/v1.2.0.2)                  |
+| Notifier (Kernel)   | [v1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel)                |
+| Audit manager       | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)                 |
+| ID Repo             | [v1.2.2.0](https://github.com/mosip/id-repository/tree/v1.2.2.0)                 |
+| datashare           | [v1.2.0.1](https://github.com/mosip/durian/tree/v1.2.0.1)                        |
+| Keycloak            | [v1.2.0.1](https://github.com/mosip/keycloak/tree/v1.2.0.1)                      |
+| config-server       | [v1.1.2](https://github.com/mosip/mosip-config/tree/v1.1.2)                      |
+| Websub              | [v1.2.0.1](https://github.com/mosip/websub/tree/v1.2.0.1)                        |
 
 ## Learn More
 
