@@ -14,7 +14,7 @@ Partner Management System (PMS) Revamp 1.3.0-beta.5 introduces support for onboa
 
 ### 1. Support for Credential Partner Onboarding
 
-This release introduces support for a new partner type called **Credential Partner** with [complete end-to-end onboarding](https://mosip.atlassian.net/wiki/spaces/PMS/pages/2582773932) capabilities in PMS.
+This release introduces support for a new partner type called **Credential Partner** with [complete end-to-end onboarding](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/onboard-credential-partner.md) capabilities in PMS.
 
 #### Added support for:
 
@@ -31,7 +31,7 @@ This release introduces support for a new partner type called **Credential Partn
 The Partner Admin will not be able to approve the policy request if either of these mappings is missing or incomplete.
 {% endhint %}
 
-Please refer to the [User Guide](https://mosip.atlassian.net/wiki/spaces/PMS/pages/2582773932/New+-+Credential+Partner+Onboarding+End+User+Guide#Step-3%3A-Partner-requests-Policy) for detailed instructions and configuration steps.
+Please refer to the [User Guide](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/onboard-credential-partner.md) for detailed instructions and configuration steps.
 
 {% hint style="info" %}
 **Note**:As part of the current release, editing an existing policy request is not supported. Once a policy request has been created and approved, the associated **Biometric Extractor** and **Credential Type** mappings cannot be modified for that policy.
@@ -45,7 +45,7 @@ If changes to these mappings are required, a new policy request must be created 
 
 ### 2. Support for Manual Adjudication Partner Onboarding
 
-This release introduces support for a new partner type called **Manual Adjudication Partner** with [full onboarding support](https://mosip.atlassian.net/wiki/spaces/PMS/pages/2582839443).
+This release introduces support for a new partner type called **Manual Adjudication Partner** with [full onboarding](../../../id-lifecycle-management/support-systems/partner-management-services/functional-overview/onboard-manual-adjudication-partner.md) support.
 
 With this partner admin can:
 
@@ -57,15 +57,15 @@ With this partner admin can:
 
 The behavior of the following endpoint has been corrected in the DataShare service:
 
-/v1/policymanager/policies/{policyId}/partner/{partnerId}
+`/v1/policymanager/policies/{policyId}/partner/{partnerId}`
 
 #### Enhancement Details
 
-The endpoint validation logic has been updated to validate policy-to-partner mappings using the partner\_policy\_request table instead of the partner\_policy table.
+The endpoint validation logic has been updated to validate policy-to-partner mappings using the `partner_policy_request table` instead of the `partner_policy table`.
 
 ## Deprecated APIs
 
-<table><thead><tr><th width="141.203125">API Endpoint</th><th width="106.44921875">Method</th><th width="316.91015625">Deprecation Description</th><th>Replacement Endpoint</th></tr></thead><tbody><tr><td>/{partnerId}/credentialtype/{credentialType}/policies/{policyName}</td><td>POST</td><td><ul><li>It <strong>directly creates the partner–policy–credentialType mapping immediately</strong>, which bypasses the partner-policy request workflow and makes it difficult to support controlled <strong>approval/reject</strong> handling and consistent validations tied to a policy-request lifecycle. We introduced POST /partners/{partnerId}/policies/{policyId}/credential-types-request to align credential-type association with the <strong>existing partner policy mapping request flow</strong>: it validates the parent request (must exist and be <strong>IN_PROGRESS</strong>), enforces <strong>single-request-per-policy-request</strong>, performs duplicate checks against existing mappings, and persists the request in pms.partner_policy_credential_type_request so that the mapping can be <strong>approved or rejected</strong> reliably as part of the overall workflow.</li></ul></td><td><ul><li>POST<br>/partners/{partnerId}/policies/{policyId}/credential-types-request</li></ul></td></tr><tr><td>/{partnerId}/bioextractors/{policyId}</td><td>POST</td><td>It <strong>directly creates/updates the final extractor configuration</strong> for a partner-policy (writes into the extractor provider table) and therefore cannot reliably support the partner-policy mapping workflow’s <strong>approval/reject</strong> lifecycle. We introduced POST /partners/{partnerId}/policies/{policyId}/bio-extractors-request to align bio-extractor submissions with the <strong>existing partner policy request flow</strong>: it validates that the referenced partner-policy request exists and is <strong>IN_PROGRESS</strong>, prevents duplicate/overlapping extractor configurations (both within the request and against existing configuration), and persists the submission as request rows so the system can <strong>approve or reject</strong> them consistently and audibly.</td><td>POST<br>/partners/{partnerId}/policies/{policyId}/bio-extractors-request</td></tr></tbody></table>
+<table><thead><tr><th width="141.203125">API Endpoint</th><th width="106.44921875">Method</th><th width="316.91015625">Deprecation Description</th><th>Replacement Endpoint</th></tr></thead><tbody><tr><td><code>/{partnerId}/credentialtype/{credentialType}/policies/{policyName}</code></td><td><strong>POST</strong></td><td>Creates mappings directly and bypasses the partner-policy request approval workflow.</td><td><br><code>/partners/{partnerId}/policies/{policyId}/credential-types-request</code></td></tr><tr><td><code>/{partnerId}/bioextractors/{policyId}</code></td><td><strong>POST</strong></td><td>Direct biometric extractor configuration creation/update without workflow-based approval handling.</td><td><br><code>/partners/{partnerId}/policies/{policyId}/bio-extractors-request</code></td></tr></tbody></table>
 
 ## User Stories
 
@@ -92,7 +92,7 @@ Please refer [here](https://mosip.atlassian.net/issues?jql=project%20%3D%20MOSIP
 | mosip-openid-bridge | [v1.3.0-beta.2](https://github.com/mosip/mosip-openid-bridge/tree/v1.3.0-beta.2) |
 | artifactory         | [v1.2.0.2](https://github.com/mosip/artifactory-ref-impl/tree/v1.2.0.2)          |
 | IDA                 | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)             |
-| eSignet             | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                           |
+| eSignet             | [v1.6.2](https://github.com/mosip/esignet/tree/v1.6.2)                           |
 | Reg Proc            | [v1.2.0.2](https://github.com/mosip/registration/tree/v1.2.0.2)                  |
 | Notifier (Kernel)   | [v1.2.0.1](https://github.com/mosip/commons/tree/v1.2.0.1/kernel)                |
 | Audit manager       | [v1.2.0.1](https://github.com/mosip/audit-manager/tree/v1.2.0.1)                 |
@@ -104,13 +104,13 @@ Please refer [here](https://mosip.atlassian.net/issues?jql=project%20%3D%20MOSIP
 
 ## Learn More
 
-* [Services](https://github.com/mosip/partner-management-services/tree/release-1.3.x)
-* [Partner Management Portal](https://github.com/mosip/partner-management-portal/tree/release-1.3.x): For code and implementation of Partner Management Portal (revamp),
+* [Services](https://github.com/mosip/partner-management-services/tree/v1.3.0-beta.5)
+* [Partner Management Portal](https://github.com/mosip/partner-management-portal/tree/v1.3.0-beta.5): For code and implementation of Partner Management Portal (revamp),
 * [Features](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/overview/features)
-* [End User Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview/misp-partner-onboarding)
+* [End User Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/functional-overview)
 * [Technical Guide](https://docs.mosip.io/1.2.0/id-lifecycle-management/support-systems/partner-management-services/develop)
 
 #### Test Report
 
-For details on the test results, [refer here](https://github.com/mosip/test-management/tree/master/PMS%20Revamp/1.3.0-beat.5).
+For details on the test results, [refer here](test-report.md).
 
