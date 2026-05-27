@@ -447,6 +447,7 @@
     * [Partner Management System 1.2.2.3(Patch)](roadmap-and-releases/releases/partner-management-system-1.2.2.3/README.md)
       * [Test Report](roadmap-and-releases/releases/partner-management-system-1.2.2.3/test-report.md)
     * [Versioning Policy](roadmap-and-releases/releases/versioning-policy.md)
+    * [MOSIP Component Release - v1.3.1](roadmap-and-releases/releases/mosip-component-release-v1.3.1.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
