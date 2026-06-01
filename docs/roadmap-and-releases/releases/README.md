@@ -9,7 +9,10 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: MOSIP Component Release - v1.3.1
 
+* Date: Coming Soon!
+* [Release Notes](mosip-component-release-v1.3.1.md)
 
 **Version**: Partner Management System Revamp 1.3.0-beta.5
 
