@@ -449,6 +449,7 @@
     * [Versioning Policy](roadmap-and-releases/releases/versioning-policy.md)
     * [MOSIP Component Release - v1.3.1](roadmap-and-releases/releases/mosip-component-release-v1.3.1.md)
     * [Registration Processor RC](roadmap-and-releases/releases/registration-processor-rc.md)
+    * [Android Registration Client v1.1.0](roadmap-and-releases/releases/android-registration-client-v1.1.0.md)
 * [General](general/README.md)
   * [Glossary](glossary.md)
   * [Resources](general/resources.md)
