@@ -50,27 +50,13 @@ As part of the performance validation carried out for this release, the system i
 
 ### Repositories Released
 
-| Repository          | Tag Version   |
-| ------------------- | ------------- |
-| registration        | v1.3.1-rc.1   |
-| mosip-config        | v1.3.1-rc.1   |
-| packet-manager      | v1.3.1-rc.1   |
-| mosip-data          | v1.3.1-rc.1   |
-| commons             | v1.3.1-rc.1   |
-| khazana             | v1.3.1-rc.1   |
-| keymanager          | v1.4.1-rc.1   |
-| mosip-ref-impl      | v1.3.1-rc.1   |
-| id-repository       | v1.3.1-rc.1   |
-| id-authentication   | v1.3.1-rc.1   |
-| mosip-mock-services | v1.3.1-rc.1   |
-| durian              | v1.3.1-rc.1   |
-| audit-manager       | v1.3.1-rc.1   |
-| biosdk-services     | v1.3.1-rc.1   |
-| websub              | v1.3.1-rc.1   |
-| artifcatory         | v1.3.1-rc.1   |
-| infra               | v0.3.0-rc.1   |
-| k8s-infra           | v1.2.1.3-rc.1 |
-| mosip-infra         | v1.2.1.1-rc.1 |
+<table data-header-hidden><thead><tr><th width="369.12890625">Repositories</th><th>Tag Links</th></tr></thead><tbody><tr><td>mosip-config</td><td><a href="https://github.com/mosip/mosip-config/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-data</td><td><a href="https://github.com/mosip/mosip-data/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>commons</td><td><a href="https://github.com/mosip/commons/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>khazana</td><td><a href="https://github.com/mosip/khazana/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>key-manager</td><td><a href="https://github.com/mosip/keymanager/tree/v1.4.1-rc.1">v1.4.1-rc.1</a></td></tr><tr><td>registration</td><td><a href="https://github.com/mosip/registration/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-ref-impl</td><td><a href="https://github.com/mosip/mosip-ref-impl/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>id-repository</td><td><a href="https://github.com/mosip/id-repository/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>id-authentication</td><td><a href="https://github.com/mosip/id-authentication/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-mock-services</td><td><a href="https://github.com/mosip/mosip-mock-services/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>packet -manager</td><td><a href="https://github.com/mosip/packet-manager/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>durian</td><td><a href="https://github.com/mosip/durian/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>audit-manager</td><td><a href="https://github.com/mosip/audit-manager/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>biosdk-services</td><td><a href="https://github.com/mosip/biosdk-services/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>websbub</td><td><a href="https://github.com/mosip/websub/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>artifactory</td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>infra</td><td></td></tr><tr><td>k8s-infra</td><td></td></tr><tr><td>mosip-infra</td><td></td></tr></tbody></table>
+
+
+
+
+
+
 
 ### Known Issues
 
@@ -93,17 +79,7 @@ Below are a few key bugs marked as known issues for this release. Please click [
 
 ### Dependency Matrix
 
-| Component                                                | Version                                                                       | Helm Chart version (If applicable) |
-| -------------------------------------------------------- | ----------------------------------------------------------------------------- | ---------------------------------- |
-| Key Cloak                                                | v7.1.18                                                                       |                                    |
-| <p>Kafka</p><p>Kafka-zookeeper</p>                       | <p>3.2.1 ( Both components deployed with the same helm chart)</p><p>3.8.0</p> | 18.3.1                             |
-| Mock-SMTP                                                | 1.0.0                                                                         | 1.0.0                              |
-| ActiveMQ                                                 | 2.39.0                                                                        | 0.0.3                              |
-| Minio                                                    | 2025.2.28-debian-12-r1                                                        | 15.0.6                             |
-| Redis (used only if eSignet exists)                      | v7.0.5                                                                        | 17.3.14                            |
-| Postgres                                                 | v16                                                                           | 13.1.5                             |
-| Softhsm (Recommended to use only in sandbox environment) | v2                                                                            | 12.0.1                             |
-| clamav                                                   | v1.2                                                                          | 3.1.0                              |
+<table><thead><tr><th width="305.31640625">Component</th><th>Version</th><th>Helm Chart version (If applicable)</th></tr></thead><tbody><tr><td>Key Cloak</td><td>v7.1.18</td><td></td></tr><tr><td><p>Kafka</p><p>Kafka-zookeeper</p></td><td><p>3.2.1 ( Both components deployed with the same helm chart)</p><p>3.8.0</p></td><td>18.3.1</td></tr><tr><td>Mock-SMTP</td><td>1.0.0</td><td>1.0.0</td></tr><tr><td>ActiveMQ</td><td>2.39.0</td><td>0.0.3</td></tr><tr><td>Minio</td><td>2025.2.28-debian-12-r1</td><td>15.0.6</td></tr><tr><td>Redis (used only if eSignet exists)</td><td>v7.0.5</td><td>17.3.14</td></tr><tr><td>Postgres</td><td>v16</td><td>13.1.5</td></tr><tr><td>Softhsm (Recommended to use only in sandbox environment)</td><td>v2</td><td>12.0.1</td></tr><tr><td>clamav</td><td>v1.2</td><td>3.1.0</td></tr></tbody></table>
 
 ### Documentation
 
