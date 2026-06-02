@@ -9,6 +9,13 @@ icon: book-open
 
 ## Latest Releases
 
+
+
+**Version**: Registration Processor RC
+
+* Date: Coming Soon!
+* [Release Notes](registration-processor-rc.md)
+
 **Version**: MOSIP Component Release - v1.3.1
 
 * Date: Coming Soon!

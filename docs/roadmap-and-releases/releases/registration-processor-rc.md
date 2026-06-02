@@ -44,38 +44,31 @@ As part of the performance validation carried out for this release, the system i
 
 ### Stories Released
 
-| **Feature**                    | **Description**                                                                                                     | **JIRA**                                                      |
-| ------------------------------ | ------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------- |
-| System Performance Enhancement | Performance optimization and code-level enhancements to enable processing of approximately 500,000 packets per day. | [MOSIP-42620](https://mosip.atlassian.net/browse/MOSIP-42620) |
+<table><thead><tr><th width="183.4921875">Feature</th><th width="175.4140625">JIRA</th><th>Description</th></tr></thead><tbody><tr><td>System Performance Enhancement</td><td><a href="https://mosip.atlassian.net/browse/MOSIP-42620">MOSIP-42620</a></td><td>Performance optimization and code-level enhancements to enable processing of approximately 500,000 packets per day.</td></tr></tbody></table>
 
 ### Repositories Released
 
-<table data-header-hidden><thead><tr><th width="369.12890625">Repositories</th><th>Tag Links</th></tr></thead><tbody><tr><td>mosip-config</td><td><a href="https://github.com/mosip/mosip-config/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-data</td><td><a href="https://github.com/mosip/mosip-data/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>commons</td><td><a href="https://github.com/mosip/commons/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>khazana</td><td><a href="https://github.com/mosip/khazana/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>key-manager</td><td><a href="https://github.com/mosip/keymanager/tree/v1.4.1-rc.1">v1.4.1-rc.1</a></td></tr><tr><td>registration</td><td><a href="https://github.com/mosip/registration/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-ref-impl</td><td><a href="https://github.com/mosip/mosip-ref-impl/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>id-repository</td><td><a href="https://github.com/mosip/id-repository/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>id-authentication</td><td><a href="https://github.com/mosip/id-authentication/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-mock-services</td><td><a href="https://github.com/mosip/mosip-mock-services/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>packet -manager</td><td><a href="https://github.com/mosip/packet-manager/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>durian</td><td><a href="https://github.com/mosip/durian/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>audit-manager</td><td><a href="https://github.com/mosip/audit-manager/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>biosdk-services</td><td><a href="https://github.com/mosip/biosdk-services/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>websbub</td><td><a href="https://github.com/mosip/websub/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>artifactory</td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>infra</td><td></td></tr><tr><td>k8s-infra</td><td></td></tr><tr><td>mosip-infra</td><td></td></tr></tbody></table>
-
-
-
-
-
-
+<table><thead><tr><th width="369.12890625">Repositories</th><th>Tag Links</th></tr></thead><tbody><tr><td>mosip-config</td><td><a href="https://github.com/mosip/mosip-config/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-data</td><td><a href="https://github.com/mosip/mosip-data/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>commons</td><td><a href="https://github.com/mosip/commons/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>khazana</td><td><a href="https://github.com/mosip/khazana/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>key-manager</td><td><a href="https://github.com/mosip/keymanager/tree/v1.4.1-rc.1">v1.4.1-rc.1</a></td></tr><tr><td>registration</td><td><a href="https://github.com/mosip/registration/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-ref-impl</td><td><a href="https://github.com/mosip/mosip-ref-impl/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>id-repository</td><td><a href="https://github.com/mosip/id-repository/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>id-authentication</td><td><a href="https://github.com/mosip/id-authentication/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>mosip-mock-services</td><td><a href="https://github.com/mosip/mosip-mock-services/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>packet -manager</td><td><a href="https://github.com/mosip/packet-manager/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>durian</td><td><a href="https://github.com/mosip/durian/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>audit-manager</td><td><a href="https://github.com/mosip/audit-manager/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>biosdk-services</td><td><a href="https://github.com/mosip/biosdk-services/tree/v1.3.1-rc.1">v1.3.1-rc.1</a></td></tr><tr><td>websbub</td><td><a href="https://github.com/mosip/websub/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>artifactory</td><td><a href="https://github.com/mosip/artifactory-ref-impl/tree/v1.3.2-rc.1">v1.3.2-rc.1</a></td></tr><tr><td>infra</td><td></td></tr><tr><td>k8s-infra</td><td></td></tr><tr><td>mosip-infra</td><td></td></tr></tbody></table>
 
 ### Known Issues
 
 Below are a few key bugs marked as known issues for this release. Please click [here](https://mosip.atlassian.net/jira/software/c/projects/MOSIP/issues/?jql=project%20%3D%20MOSIP%20AND%20type%20%3D%20Bug%20AND%20labels%20%3D%20known_issue%20AND%20affectedVersion%20%3D%20PLA_1.2.1.0%20ORDER%20BY%20created%20DESC\&selectedIssue=MOSIP-43976) to view the complete list of fixes.
 
-| **JIRA** | **Description** |
-| -------- | --------------- |
-|          |                 |
-|          |                 |
+| JIRA | Description |
+| ---- | ----------- |
+|      |             |
+|      |             |
+|      |             |
 
 ### Compatible Modules
 
-| Module/Repo                 | Compatible Version |
-| --------------------------- | ------------------ |
-| partner-management-services | v1.2.2.3           |
-| resident-ui                 | v0.9.0             |
-| eSignet                     | v1.4.1             |
-| registration-client         | v1.2.0.2           |
-| mosip-automation-test       | v1.4.0             |
+| Module/Repo                 | Compatible Version                                                             |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| partner-management-services | [v1.2.2.3](https://github.com/mosip/partner-management-services/tree/v1.2.2.3) |
+| resident-ui                 | [v0.9.0](https://github.com/mosip/resident-ui/releases/tag/v0.9.0)             |
+| eSignet                     | [v1.4.1](https://github.com/mosip/esignet/tree/v1.4.1)                         |
+| registration-client         | [v1.2.0.2](https://github.com/mosip/registration-client/tree/v1.2.0.2)         |
+| mosip-automation-test       | [v1.4.0](https://github.com/mosip/mosip-automation-tests/tree/release-1.4.x)   |
 
 ### Dependency Matrix
 

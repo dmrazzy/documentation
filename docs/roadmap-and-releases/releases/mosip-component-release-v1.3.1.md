@@ -20,7 +20,7 @@ The issue impacted license file path validation and repository consistency acros
 * Standardized the license folder structure across impacted repositories.
 * Improved repository consistency and ensured proper path resolution for license-related validations and processing.
 
-## Bug Released
+## Bugs Fixed
 
 <table><thead><tr><th width="161.23828125">Issue</th><th width="425.08203125">Description</th><th>JIRA</th></tr></thead><tbody><tr><td>License Folder Path Fix</td><td>Fixed invalid file paths in license folders by removing extra spaces from folder paths across impacted repositories.</td><td><a href="https://mosip.atlassian.net/browse/MOSIP-44867">MOSIP-44867</a></td></tr></tbody></table>
 
