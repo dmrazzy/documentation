@@ -61,6 +61,7 @@
         * [Developer Guide](id-lifecycle-management/identity-issuance/android-registration-client/develop/android-registration-client-developer-guide.md)
         * [UI Specification](id-lifecycle-management/identity-issuance/android-registration-client/develop/ui-spec-documentation.md)
         * [Technology Stack](id-lifecycle-management/identity-issuance/android-registration-client/develop/technology-stack.md)
+        * [j11-to-j21](id-lifecycle-management/identity-issuance/android-registration-client/develop/j11-to-j21.md)
       * [Test](id-lifecycle-management/identity-issuance/android-registration-client/test/README.md)
         * [End User Guide](id-lifecycle-management/identity-issuance/android-registration-client/test/android-registration-client-user-guide.md)
         * [Collab Guide](id-lifecycle-management/identity-issuance/android-registration-client/test/collab-android-reg-client.md)
