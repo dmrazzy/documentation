@@ -37,7 +37,7 @@ The issue impacted license file path validation and repository consistency acros
 | mosip-data           | [v1.3.1](https://github.com/mosip/mosip-data/tree/v1.3.1)           |
 | audit-manager        | [v1.3.1](https://github.com/mosip/audit-manager/tree/v1.3.1)        |
 | mosip-openid-bridge  | [v1.3.1](https://github.com/mosip/mosip-openid-bridge/tree/v1.3.1)  |
-| khazan               | [v1.3.1](https://github.com/mosip/khazana/tree/v1.3.1)              |
+| khazana              | [v1.3.1](https://github.com/mosip/khazana/tree/v1.3.1)              |
 | nfiq                 | [v0.1.1](https://github.com/mosip/nfiq/tree/v0.1.1)                 |
 | biosdk-client        | [v1.3.1](https://github.com/mosip/biosdk-client/tree/v1.3.1)        |
 | demosdk              | [v1.3.1](https://github.com/mosip/demosdk/tree/v1.3.1)              |

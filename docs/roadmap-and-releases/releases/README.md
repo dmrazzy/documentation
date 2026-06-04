@@ -11,10 +11,10 @@ icon: book-open
 
 
 
-**Version**: Registration Processor RC
+**Version**: v1.2.1.1-RC.1
 
-* Date: Coming Soon!
-* [Release Notes](registration-processor-rc.md)
+* Date: 1st June, 2026
+* [Release Notes](v1.2.1.1-rc.1.md)
 
 **Version**: MOSIP Component Release - v1.3.1
 

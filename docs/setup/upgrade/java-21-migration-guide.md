@@ -11,7 +11,7 @@ This document is designed to be a comprehensive resource for users who have depl
 3. **Optional:**
 
 * A modern IDE (e.g., Eclipse, IntelliJ IDEA, or others) is compatible with Java 21 to streamline coding and debugging.
-* Ensure the **Lombok library** version is compatible with your IDE. \
+* Ensure the **Lombok library** version is compatible with your IDE.\
   For instance, **Lombok 1.18.30** works seamlessly with the latest IDE versions.
 
 {% hint style="info" %}
@@ -28,8 +28,7 @@ This document is designed to be a comprehensive resource for users who have depl
 
 2. Java applications compiled with older versions are compatible with the Java 21 runtime. However, to ensure these application JARs run correctly in Java 21, additional JVM arguments may need to be specified when running the applications.
    1. The libraries must be API-compatible and should not rely on deprecated or removed APIs.
-   2. The libraries should not depend on older Spring Boot versions (before 3.x), as the newer Spring Boot versions introduce significant API changes. Failure to meet this requirement can lead to compile-time or runtime issues, such as errors during class loading, bean initialization, or method invocation.\
-
+   2. The libraries should not depend on older Spring Boot versions (before 3.x), as the newer Spring Boot versions introduce significant API changes. Failure to meet this requirement can lead to compile-time or runtime issues, such as errors during class loading, bean initialization, or method invocation.\\
 3. The dependent libraries of any module that have a dependency on any other MOSIP library (such as kernel-core) or older Spring Boot version (older than 3.x) need to be migrated before migrating the specific module. This applies not only to the static dependencies mentioned in the POM file, but also to the dynamic dependencies loaded from the classpath such as Kernel Auth Adaptor, BioSDK client, or any such libraries.
 
 ## **3. Migration Changes in a module/repository:**
@@ -53,8 +52,7 @@ This document is designed to be a comprehensive resource for users who have depl
 **Note:** A new kernel-bom file has been introduced as part of this release in the commons repo which contains all the latest version changes to the spring-boot and other dependencies. Here spring-boot:3.2.3 is used.
 {% endhint %}
 
-4. Please refer to this [file ](https://github.com/mosip/commons/blob/v1.3.0-beta.1/kernel/kernel-bom/pom.xml)to learn about the dependencies and versions. this file is created to remove the repetitiveness in defining the dependencies. If you have other repositories that use repeated definitions of dependencies, create a new bom file for that specific repository that includes the kernel-bom in the dependencyManagement section then add the extra dependencies with appropriate versions, and then use the same bom file in your respective modules pom files.\
-
+4. Please refer to this [file ](https://github.com/mosip/commons/blob/v1.3.0-beta.1/kernel/kernel-bom/pom.xml)to learn about the dependencies and versions. this file is created to remove the repetitiveness in defining the dependencies. If you have other repositories that use repeated definitions of dependencies, create a new bom file for that specific repository that includes the kernel-bom in the dependencyManagement section then add the extra dependencies with appropriate versions, and then use the same bom file in your respective modules pom files.\\
 5.  Any module that needs the predefined versions for any of its dependencies should import the kernel-bom file into the module pom file’s dependency management section. Remove all the versions from the properties and dependencies section for which kernel-bom has already defined the version.\
     \
     Please refer to the example in the [audit-service pom file](https://github.com/mosip/audit-manager/blob/e7b86dfa27da2a083cbe28e8ac950ac798a38bfe/kernel/kernel-auditmanager-api/pom.xml#L32). (You will need to include the latest link once tagging is done). If a module does not need any version from the kernel-bom, it's not needed to import it.
@@ -79,8 +77,7 @@ This document is designed to be a comprehensive resource for users who have depl
     To upgrade to **Swagger-UI version 3**, make the following changes:\
     \
     **1. Update the Dependency**\
-    Add the `springdoc-openapi-starter-webmvc-ui` dependency to your [pom.xml](https://github.com/mosip/audit-manager/blob/release-1.3.x/kernel/kernel-auditmanager-service/pom.xml) file.\
-
+    Add the `springdoc-openapi-starter-webmvc-ui` dependency to your [pom.xml](https://github.com/mosip/audit-manager/blob/release-1.3.x/kernel/kernel-auditmanager-service/pom.xml) file.\\
 
     ```xml
     <dependency>
@@ -90,8 +87,8 @@ This document is designed to be a comprehensive resource for users who have depl
     </dependency>
     ```
 
-&#x20;      **2. Remove Deprecated Dependency**\
-&#x20;     Remove any reference to the `springdoc-openapi-ui` dependency to prevent conflicts.
+**2. Remove Deprecated Dependency**\
+Remove any reference to the `springdoc-openapi-ui` dependency to prevent conflicts.
 
 {% hint style="info" %}
 **Note**: If swagger-2 was used in the module already, change it to Swagger-3 and also make the above change.
@@ -109,7 +106,7 @@ This document is designed to be a comprehensive resource for users who have depl
 ```
 
 {% hint style="info" %}
-#### **Note:**
+**Note:**
 
 * Any exclusions specified for a library in the POM can be retained. However, the version mentioned in that dependency can be removed, allowing it to inherit the version defined in the kernel-bom or another POM file.
 * Always make it a practice to keep the versions in the properties instead of hardcoding.
@@ -123,27 +120,26 @@ This document is designed to be a comprehensive resource for users who have depl
 11. Check and remove any unused version properties. With the use of kernel-bom, the version does not need to be mentioned to the dependencies mostly, unless it needs to be overridden or a different version is used.
 12. POM files should not include duplicate version properties, as this can lead to errors. For example, even if the version property is updated correctly in its first occurrence, subsequent occurrences may override it with an outdated or incorrect version. This behavior can go unnoticed and may cause unexpected errors or functionality issues. To avoid such problems, carefully review POM files to identify and remove any repeated version properties. This ensures consistent version management and prevents overriding conflicts.
 
-### **II. Java file changes:**&#x20;
+### **II. Java file changes:**
 
 1. Below are the package changes that need to be applied in Java files.
 
-| Text to Replace                                       | Replacement                                                |
-| ----------------------------------------------------- | ---------------------------------------------------------- |
-| javax.servlet.\*                                      |  jakarta.servlet.\*,                                       |
-| javax.annotation.\*                                   |  jakarta.annotation.\*,                                    |
-| javax.activation.\*                                   |  jakarta.activation.\*,                                    |
-| javax.persistence.\*                                  |  jakarta.persistence.\*,                                   |
-| javax.validation.\*                                   |  jakarta.validation.\*,                                    |
-| javax.mail.\*                                         |  jakarta.mail.\*,                                          |
-| org.apache.http.impl.client.\*                        |  org.apache.hc.client5.http.impl.classic.\*,               |
-| org.apache.http.conn.ssl.SSLConnectionSocketFactory   |  org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory |
+| Text to Replace                                     | Replacement                                               |
+| --------------------------------------------------- | --------------------------------------------------------- |
+| javax.servlet.\*                                    | jakarta.servlet.\*,                                       |
+| javax.annotation.\*                                 | jakarta.annotation.\*,                                    |
+| javax.activation.\*                                 | jakarta.activation.\*,                                    |
+| javax.persistence.\*                                | jakarta.persistence.\*,                                   |
+| javax.validation.\*                                 | jakarta.validation.\*,                                    |
+| javax.mail.\*                                       | jakarta.mail.\*,                                          |
+| org.apache.http.impl.client.\*                      | org.apache.hc.client5.http.impl.classic.\*,               |
+| org.apache.http.conn.ssl.SSLConnectionSocketFactory | org.apache.hc.client5.http.ssl.SSLConnectionSocketFactory |
 
 {% hint style="info" %}
 **Note:** While doing a text replacement for the above packages, it might be accidentally renaming the properties having the same naming for example javax.persistence.jdbc.driver. Please make sure this does not happen. Please refer [here](https://github.com/mosip/commons/pull/1505/files) to such fixes.
 {% endhint %}
 
-2. **Postgres Hibernate Dialect:** Instead of using specific version dialects for PostgreSQL, such as org.hibernate.dialect.PostgreSQL95Dialect or org.hibernate.dialect.PostgreSQL92Dialect, it should be org.hibernate.dialect.PostgreSQLDialect. This is applicable for properties referred to in Java code and any properties file as well.\
-
+2. **Postgres Hibernate Dialect:** Instead of using specific version dialects for PostgreSQL, such as org.hibernate.dialect.PostgreSQL95Dialect or org.hibernate.dialect.PostgreSQL92Dialect, it should be org.hibernate.dialect.PostgreSQLDialect. This is applicable for properties referred to in Java code and any properties file as well.\\
 3. **The Sleuth configuration** has now been migrated to the Micrometer Tracer
    1. This required the addition of micrometer tracing dependencies and quartz scheduler dependency which is already included in [kernel-core pom file.](https://github.com/mosip/commons/blob/release-1.3.x/kernel/kernel-core/pom.xml)
    2. Code changes were also necessary for the migration.
@@ -156,7 +152,7 @@ This document is designed to be a comprehensive resource for users who have depl
       4. Refer to the details below for the changes made.
          1. [Sleuth Auto Configuration](https://github.com/mosip/commons/blob/73aa49a9e943fcfe6f65b1158688429432c8397e/kernel/kernel-applicanttype-api/pom.xml#L8)
          2. [Sleuth Valve](https://github.com/mosip/commons/blob/73aa49a9e943fcfe6f65b1158688429432c8397e/kernel/kernel-applicanttype-api/pom.xml#L8)
-4.  **HTTP Connection Manager**  changes:&#x20;
+4.  **HTTP Connection Manager** changes:
 
     The following changes have been introduced related to the HTTP Connection Manager:
 
@@ -184,8 +180,7 @@ This document is designed to be a comprehensive resource for users who have depl
 8. **DB Changes**:
    1. The Map-based job repository is now deprecated. Therefore, any application running a batch job must have a database with Batch Job-related tables. If a database is not feasible, at least an in-memory database must be configured. Refer to the [DB script ](https://github.com/spring-projects/spring-batch/blob/main/spring-batch-core/src/main/resources/org/springframework/batch/core/schema-postgresql.sql)for creating the tables.
    2. If a Spring datasource is already being used in the Spring Batch job application, the Batch Job-related tables must be created in that datasource (i.e., database) using the aforementioned DB script.
-   3.  The existing Spring Batch Job tables have to be applied with the below upgrade script:\
-
+   3.  The existing Spring Batch Job tables have to be applied with the below upgrade script:\\
 
        ```
        -- ------------------------------------------------------------------------------------------
@@ -211,8 +206,7 @@ This document is designed to be a comprehensive resource for users who have depl
        CREATE SEQUENCE BATCH_JOB_EXECUTION_SEQ START WITH 0 MINVALUE 0 MAXVALUE 9223372036854775807 NO CYCLE;
        CREATE SEQUENCE BATCH_JOB_SEQ START WITH 0 MINVALUE 0 MAXVALUE 9223372036854775807 NO CYCLE;
        ```
-   4.  The rollback script for the above is given below:\
-
+   4.  The rollback script for the above is given below:\\
 
        ```
        -- ------------------------------------------------------------------------------------------
@@ -238,34 +232,28 @@ This document is designed to be a comprehensive resource for users who have depl
        DROP SEQUENCE BATCH_JOB_EXECUTION_SEQ;
        DROP SEQUENCE BATCH_JOB_SEQ;
        ```
-9.  **POM Changes:**
+9. **POM Changes:**
+   1.  Add `spring-boot-starter-batch` if it does not already exist. The version will be 3.x if `kernel-bom` is used, as discussed in the previous sections.\\
 
-    1.  Add `spring-boot-starter-batch` if it does not already exist. The version will be 3.x if `kernel-bom` is used, as discussed in the previous sections.\
+       ```xml
+       <dependency>
+           <groupId>org.springframework.boot</groupId>
+           <artifactId>spring-boot-starter-batch</artifactId>
+       </dependency>
+       ```
+   2.  Add hibernate-validate dependency if it does not exist. The version will be 8.x if kernel-bom is used as discussed in the previous sections.\\
 
-
-        ```xml
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-batch</artifactId>
-        </dependency>
-        ```
-    2.  Add hibernate-validate dependency if it does not exist. The version will be 8.x if kernel-bom is used as discussed in the previous sections.\
-
-
-        ```xml
-        <dependency>
-            <groupId>org.hibernate.validator</groupId>
-            <artifactId>hibernate-validator</artifactId>
-        </dependency>
-        ```
-
-
+       ```xml
+       <dependency>
+           <groupId>org.hibernate.validator</groupId>
+           <artifactId>hibernate-validator</artifactId>
+       </dependency>
+       ```
 10. **Java Code changes:**
     1. Remove `@EnableBatchProcessing` Annotation
     2. The `BatchConfigurer` and `DefaultBatchConfigurer` classes are deprecated, and any references to them must be removed. For example, in the `kernel-salt-generator`, these classes were used to implement a Map-based Job Repository. However, since the Map-based Job Repository is no longer supported and requires the use of database tables, the only option is to remove references to these classes and create the necessary batch job tables.
     3.  Create a bean definition for `PlatformTransactionManager`\
-        Please refer to the[ SaltGeneratorConfig.java](https://github.com/mosip/commons/blob/release-1.3.x/kernel/kernel-salt-generator/src/main/java/io/mosip/kernel/saltgenerator/config/SaltGeneratorConfig.java#L113-#L116) file. Below is the relevant code snippet from the file:\
-
+        Please refer to the[ SaltGeneratorConfig.java](https://github.com/mosip/commons/blob/release-1.3.x/kernel/kernel-salt-generator/src/main/java/io/mosip/kernel/saltgenerator/config/SaltGeneratorConfig.java#L113-#L116) file. Below is the relevant code snippet from the file:\\
 
         ```java
         @Bean
@@ -291,8 +279,7 @@ This document is designed to be a comprehensive resource for users who have depl
        2. Similar to the `List.of()` the method used for creating a `List`, you can use the `Chunk.of()` method to create a `Chunk`.
 11. **References:**
     1. **Spring Batch 5.0 Migration Guide**: [Spring Batch 5.0 Migration Guide](https://github.com/spring-projects/spring-batch/wiki/Spring-Batch-5.0-Migration-Guide#ms-sqlserver)
-    2.  In `@RestControllerAdvice`, if the response content type is not explicitly set to `application/json`, it might default to returning an XML response. To prevent this, ensure the `contentType` is specified in the `ResponseEntity` as shown below:\
-
+    2.  In `@RestControllerAdvice`, if the response content type is not explicitly set to `application/json`, it might default to returning an XML response. To prevent this, ensure the `contentType` is specified in the `ResponseEntity` as shown below:\\
 
         ```java
         return ResponseEntity.status(<any code>)
@@ -324,8 +311,7 @@ This document is designed to be a comprehensive resource for users who have depl
 
 ### **III. JUnit Test Case related changes**
 
-1.  **JUnit Test Dependency:** To run the JUnit tests, the following dependency is required and has now been added to `kernel-core`. For reference, see: [kernel-core pom.xml](https://github.com/mosip/commons/blob/release-1.3.x/kernel/kernel-core/pom.xml#L255-L258)\
-
+1.  **JUnit Test Dependency:** To run the JUnit tests, the following dependency is required and has now been added to `kernel-core`. For reference, see: [kernel-core pom.xml](https://github.com/mosip/commons/blob/release-1.3.x/kernel/kernel-core/pom.xml#L255-L258)\\
 
     ```xml
     <dependency>
@@ -336,16 +322,14 @@ This document is designed to be a comprehensive resource for users who have depl
 2. MVEL Dependency Update: If MVEL-related test cases are failing, update the MVEL dependency as per the [kernel-applicanttype-api pom.xml](https://github.com/mosip/commons/blob/release-1.3.x/kernel/kernel-applicanttype-api/pom.xml#L32-L36) file.
 3.  **Spring Boot Test Error Fix:**
 
-    If you encounter the following error:\
-
+    If you encounter the following error:\\
 
     ```vbnet
     Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception with message: Failed to determine a suitable driver class
     ```
 
     \
-    Add the exclusion in the Spring Boot Test application as shown below:\
-
+    Add the exclusion in the Spring Boot Test application as shown below:\\
 
     ```java
     @SpringBootApplication(scanBasePackages = { "any.packages.*" },
@@ -368,9 +352,7 @@ This will exclude the `DataSourceAutoConfiguration.class`, resolving the issue.
 
     **Solution:** Ensure that the `mockito-core` version is set to `3.4.3`.
 
-
-
-    &#x20; b. **Maven Build Access Issues:**
+    b. **Maven Build Access Issues:**
 
     * If the build fails due to access-related issues, add the following `argLine` configuration in the `maven-surefire-plugin` section of the `pom.xml`:
 
@@ -405,8 +387,7 @@ then add the below command to the argument line.
 --add-opens java.base/java.io=ALL-UNNAMED
 ```
 
-*   If you encounter the `PBKDF2WithHmacSHA256 algorithm not supported` error, add `javax.crypto.*` to `@PowerMockitoIgnore` as shown below:\
-
+*   If you encounter the `PBKDF2WithHmacSHA256 algorithm not supported` error, add `javax.crypto.*` to `@PowerMockitoIgnore` as shown below:\\
 
     ```java
     @PowerMockIgnore({ "@PowerMockIgnore({
@@ -438,8 +419,7 @@ ApplicationContext failure threshold (1) exceeded: skipping repeated attempt to 
 ```
 
 \
-Use the `-e` flag with the `mvn clean install` command to enable stack trace printing:\
-
+Use the `-e` flag with the `mvn clean install` command to enable stack trace printing:\\
 
 ```java
 mvn clean install -e
@@ -449,15 +429,13 @@ After running the command, scroll to the top of the errors to locate the **real 
 
 7. **Dependency Version Issue:** In `kernel-pdfgenerator-itext`, downgrade the `itext-core` version from `7.2.0` to `7.1.0` to fix test case issues.
 8.  **Error: MockMvc - 401 or 403 Status**\
-    If using `mockMvc` results in errors like the below:\
-
+    If using `mockMvc` results in errors like the below:\\
 
     <pre class="language-makefile"><code class="lang-makefile"><strong>java.lang.AssertionError: Status expected:&#x3C;200> but was:&#x3C;401>
     </strong></code></pre>
 
     \
-    Check the `TestSecurityConfig` to ensure that the URLs are permitted. Configure it as shown below to allow all requests during JUnit tests:\
-
+    Check the `TestSecurityConfig` to ensure that the URLs are permitted. Configure it as shown below to allow all requests during JUnit tests:\\
 
     <pre class="language-java"><code class="lang-java"><strong>Fix: Modify the SecurityFilterChain bean definition:
     </strong>httpSecurity.authorizeHttpRequests(http -> http.anyRequest().permitAll());
@@ -484,7 +462,7 @@ javaCopyEdit@TestPropertySource("classpath:application.properties")
 Replace `application.properties` with the correct properties file name, if different.
 
 {% hint style="info" %}
-**Note:** \
+**Note:**\
 **Avoid Mixing JUnit 4 and JUnit 5**
 
 While this may not be directly related to Java migration, it is strongly recommended to use either JUnit 4 or JUnit 5 consistently throughout your test classes. Mixing the two versions can cause compatibility issues, leading to test failures or unexpected behavior.
@@ -503,7 +481,7 @@ While this may not be directly related to Java migration, it is strongly recomme
 
 **1. Explicitly Configuring Ant Path Matcher**
 
-In Spring MVC, the default path-matching strategy has changed to `PathPatternParser`. This can cause failures when processing Ant-style patterns. To avoid such issues, explicitly configure the application to use  `AntPathMatcher` by setting the appropriate property in your configuration file.
+In Spring MVC, the default path-matching strategy has changed to `PathPatternParser`. This can cause failures when processing Ant-style patterns. To avoid such issues, explicitly configure the application to use `AntPathMatcher` by setting the appropriate property in your configuration file.
 
 **For example:**
 
@@ -565,7 +543,7 @@ The following updates are done in the docker file.
    Please refer to the related commit [here](https://github.com/mosip/commons/commit/a987dc0cf45b3925b8ea3f71bf8fa62eaf087d1a).
 
 {% hint style="info" %}
-#### **Note:**
+**Note:**
 
 * Please refer to the changes made for running the audit service in the following pull requests (PRs):
   * [PR 1499 - mosip/commons](https://github.com/mosip/commons/pull/1499)
@@ -617,10 +595,9 @@ return Interceptor.super.onFlushDirty(entity, id, currentState, previousState, p
     * However, a migrated `registration-client` will work with a non-migrated `registration-processor`, or both modules must be migrated together.
     * As part of the Java migration, JavaFX has been upgraded to version 21.0.3 to support the latest features. When setting up the Java 21-migrated `registration-client` repository in your IDE, you will need to:
       1. Download the required JavaFX ZIP file.
-    * While running or debugging the `Initialization.java` class to start the `registration-client` application, we pass certain VM arguments to ensure the application runs correctly. One of these arguments specifies the path to the OpenJFX ZIP file. You will need to update the path in the VM arguments to point to the latest JavaFX ZIP file that was downloaded in the previous step. Additionally, a few changes have been made to the existing VM arguments to support Java 21.&#x20;
+    * While running or debugging the `Initialization.java` class to start the `registration-client` application, we pass certain VM arguments to ensure the application runs correctly. One of these arguments specifies the path to the OpenJFX ZIP file. You will need to update the path in the VM arguments to point to the latest JavaFX ZIP file that was downloaded in the previous step. Additionally, a few changes have been made to the existing VM arguments to support Java 21.
 
-    The updated VM arguments are listed below:\
-
+    The updated VM arguments are listed below:\\
 
     ```css
     --module-path <path-to-zip-file>\openjfx-21.0.3_windows-x64_bin-sdk\javafx-sdk-21.0.3\lib 
@@ -632,7 +609,7 @@ return Interceptor.super.onFlushDirty(entity, id, currentState, previousState, p
 
 #### Running the Registration Client Downloader Docker image
 
-* The base image in the Dockerfile has been updated to `mosipdev/openjdk-21-jdk:latest`    to support Java 21.
+* The base image in the Dockerfile has been updated to `mosipdev/openjdk-21-jdk:latest` to support Java 21.
 * The `registration-api-stub-impl` JAR dependency has been added to the Artifactory POM file. During the deployment of the registration client, this dependency is pulled from Artifactory and bundled with other JAR files in the `lib` folder. This approach avoids adding the dependency directly to the `registration-services` POM file. If custom implementations related to document scanning or geo-positioning are required, they can be pulled from Artifactory and bundled without modifying the `registration-client` codebase.
 * Since JavaFX has been migrated to version 21.0.3, the JavaFX-related files, specifically `zulu21.34.19-ca-fx-jre21.0.3-win_x64.zip`, have been added to Artifactory. This ZIP file is used when preparing the registration-client downloadable ZIP file.
 * Modifications have been made to the `configure.sh` script to support the above two changes.

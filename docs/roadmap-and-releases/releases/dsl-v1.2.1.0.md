@@ -1,4 +1,4 @@
-# DSL-V1.2.1.0
+# DSL- 1.2.1.0
 
 #### **Release Name:** DSL Orchestrator & Packet Creator <a href="#release-name-dsl-orchestrator-and-packet-creator" id="release-name-dsl-orchestrator-and-packet-creator"></a>
 
@@ -38,16 +38,16 @@ Few intermittent issues observed which are still existing and will be fixed in t
 
 ### **Repositories Released**
 
-| **Repository**                                                                           | **Version**                                                     |
-| ---------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
-| <h4 id="dsl-orchestrator-and-packet-creator">DSL Orchestrator &#x26; Packet Creator</h4> | [v1.2.1.0](https://github.com/mosip/mosip-automation-tests.git) |
+| **Repository**                        | **Version**                                                     |
+| ------------------------------------- | --------------------------------------------------------------- |
+| **DSL Orchestrator & Packet Creator** | [v1.2.1.0](https://github.com/mosip/mosip-automation-tests.git) |
 
 ### **Compatibility:**
 
 | **Modules**                 | **Version**                                                                    |
 | --------------------------- | ------------------------------------------------------------------------------ |
-|  id-authentication          |  [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)          |
-|  id-repository              |  [v1.2.2.2](https://github.com/mosip/id-repository/tree/v1.2.2.2)              |
+| id-authentication           | [v1.2.1.0](https://github.com/mosip/id-authentication/tree/v1.2.1.0)           |
+| id-repository               | [v1.2.2.2](https://github.com/mosip/id-repository/tree/v1.2.2.2)               |
 | admin-services              | [v1.2.1.2](https://github.com/mosip/admin-services)                            |
 | resident-services           | [v1.2.1.2](https://github.com/mosip/resident-services/tree/v1.2.1.2)           |
 | partner-management-services | [v1.2.2.2](https://github.com/mosip/partner-management-services/tree/v1.2.2.2) |
