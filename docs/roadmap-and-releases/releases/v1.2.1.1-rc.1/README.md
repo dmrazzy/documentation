@@ -70,4 +70,4 @@ Below are a few key bugs marked as known issues for this release. Please click [
 
 ### Documentation
 
-* QA Report
+* [QA Report](test-report.md)

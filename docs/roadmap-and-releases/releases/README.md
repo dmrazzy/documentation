@@ -14,7 +14,7 @@ icon: book-open
 **Version**: v1.2.1.1-RC.1
 
 * Date: 1st June, 2026
-* [Release Notes](v1.2.1.1-rc.1.md)
+* [Release Notes](v1.2.1.1-rc.1/)
 
 **Version**: MOSIP Component Release - v1.3.1
 
