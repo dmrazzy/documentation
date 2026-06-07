@@ -40,20 +40,13 @@ With these enhancements, the Android Registration Client provides a more secure 
 
 ### Story Progress & Updates
 
-| JIRA        | Description                                                                                                                             |
-| ----------- | --------------------------------------------------------------------------------------------------------------------------------------- |
-| MOSIP-44993 | Android Registration Client now ensures Transaction ID and Capture Time are populated and sent correctly in biometric capture requests. |
-| #828        | Upgrade Java version from Java 11 to Java 21 for Android Registration Client services.                                                  |
+<table><thead><tr><th width="206.640625">JIRA</th><th>Description</th></tr></thead><tbody><tr><td>MOSIP-44993</td><td>Android Registration Client now ensures Transaction ID and Capture Time are populated and sent correctly in biometric capture requests.</td></tr><tr><td>#828</td><td>Upgrade Java version from Java 11 to Java 21 for Android Registration Client services.</td></tr></tbody></table>
 
 ### Bugs Fixed
 
 Below is the list of bug fixes included as part of the Android Registration Client v1.1.0 release.
 
-| JIRA        | Description                                                                                                        |
-| ----------- | ------------------------------------------------------------------------------------------------------------------ |
-| MOSIP-44993 | Android Registration Client was sending null Transaction ID and Capture Time values in biometric capture requests. |
-| MOSIP-42301 | Security testing: ARC – Match SDK validation issue fixed.                                                          |
-| MOSIP-42281 | Security testing: ARC – Clear text traffic vulnerability fixed.                                                    |
+<table><thead><tr><th width="202.1796875">JIRA</th><th>Description</th></tr></thead><tbody><tr><td>MOSIP-44993</td><td>Android Registration Client was sending null Transaction ID and Capture Time values in biometric capture requests.</td></tr><tr><td>MOSIP-42301</td><td>Security testing: ARC – Match SDK validation issue fixed.</td></tr><tr><td>MOSIP-42281</td><td>Security testing: ARC – Clear text traffic vulnerability fixed.</td></tr></tbody></table>
 
 ### Known Issues
 
@@ -61,26 +54,17 @@ To view the list of known issues, refer [**here**](https://github.com/mosip/andr
 
 ### Repository Released
 
-| Repositories                | Tags Released |
-| --------------------------- | ------------- |
-| android-registration-client | v1.1.0        |
+<table><thead><tr><th width="535.453125">Repositories</th><th>Tags Released</th></tr></thead><tbody><tr><td>android-registration-client</td><td>v1.1.0</td></tr></tbody></table>
 
 ### Compatible Platform/Module
 
 The following table outlines the tested and certified compatibility of Android Registration Client v1.1.0 with other modules.
 
-| Platform/Module | Version |
-| --------------- | ------- |
-| MOSIP           | 1.2.1.0 |
+<table><thead><tr><th width="543.37109375">Platform/Module</th><th>Version</th></tr></thead><tbody><tr><td>MOSIP</td><td>1.2.1.0</td></tr></tbody></table>
 
-### Build and Deploy
+### Documentation
 
-To access the build and deployment instructions, refer to the [Developer Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-developer-guide).
-
-### Configurations
-
-For details related to Android Registration Client configurations, refer to the [Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration).
-
-### User Guide
-
-To learn more about the available features, workflows, and user interface, refer to the [Android Registration Client User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide).
+* **Java Upgrade**: [Java Upgrade](../../id-lifecycle-management/identity-issuance/android-registration-client/develop/j11-to-j21.md)
+* **Build and Deploy**: To access the build and deployment instructions, refer to the [Developer Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-developer-guide).
+* **Configurations**: For details related to Android Registration Client configurations, refer to the [Configuration Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-configuration).
+* **User Guide**: To learn more about the available features, workflows, and user interface, refer to the [Android Registration Client User Guide](https://docs.mosip.io/1.2.0/modules/android-registration-client/android-registration-client-user-guide).
