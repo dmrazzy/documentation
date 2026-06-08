@@ -9,7 +9,10 @@ icon: book-open
 
 ## Latest Releases
 
+**Version**: Android Registration Client v1.1.0
 
+* Date: Coming Soon!
+* [Release Notes](android-registration-client-v1.1.0.md)
 
 **Version**: v1.2.1.1-RC.1
 
@@ -18,7 +21,7 @@ icon: book-open
 
 **Version**: MOSIP Component Release - v1.3.1
 
-* Date: Coming Soon!
+* Date: 28th May, 2026
 * [Release Notes](mosip-component-release-v1.3.1.md)
 
 **Version**: Partner Management System Revamp 1.3.0-beta.5

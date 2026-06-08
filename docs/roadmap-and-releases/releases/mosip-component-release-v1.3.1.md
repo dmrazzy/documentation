@@ -4,7 +4,7 @@
 
 **Release Type:** Patch Release
 
-**Release Date:** Coming Soon!
+**Release Date:** 28th May, 2026
 
 ## Overview
 
