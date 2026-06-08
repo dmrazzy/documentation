@@ -464,3 +464,4 @@
     * [Generating Demo Credentials](general/collab-getting-started-guide/generating-demo-credentials.md)
   * [MOSIP Documentation Style Guide](general/mosip-documentation-style-guide.md)
   * [Contact Us](general/contact-us.md)
+  * [API Documents](https://mosip.github.io/documentation/1.2.0/1.2.0.html)
