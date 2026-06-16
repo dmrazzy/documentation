@@ -51,6 +51,8 @@ Property mentioned below is introduced in `Id-authentication-default.properties`
 
 `mosip.ida.handle-types.regex={ '@phone' : '^\\+91[1-9][0-9]{7,9}@phone$' }`
 
+> **Note:** Currently, custom handles can only be used for authentication and identity verification workflows. Update and revoke operations are not yet supported. Identity lifecycle operations that require a UIN or VID, such as demographic or biometric updates, cannot be performed using a custom handle. Support for these capabilities is planned for future releases.
+
 ## Conclusion
 
 Implementing custom handles provides a user-friendly approach to user authentication without burdening end users with the need to remember additional or system generated complex IDs.
