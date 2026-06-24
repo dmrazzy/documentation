@@ -300,7 +300,7 @@ ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal IP of NFS server>
 * Clone the `k8s-infra` repo on the NFS VM:
 
 ```bash
-git clone https://github.com/mosip/k8s-infra -b v1.2.1.3
+git clone https://github.com/mosip/k8s-infra -b v1.2.1.3-rc.1
 ```
 
 * Move to the NFS directory and run the install script:
@@ -397,7 +397,7 @@ host -t TXT _acme-challenge.org.net
 
 * Press Enter in the `certbot` prompt to proceed.
 * Certificates are created in `/etc/letsencrypt/` and are valid for 3 months.
-* For certificate renewal, see the [wildcard SSL renewal guide](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/docs/wildcard-ssl-certs-letsencrypt.md#ssl-certificate-renewal).
+* For certificate renewal, see the [wildcard SSL renewal guide](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/docs/wildcard-ssl-certs-letsencrypt.md#ssl-certificate-renewal).
 
 #### 4.b. Install Nginx
 
@@ -578,7 +578,7 @@ openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 \
 #### 5.d. RBAC for Rancher using Keycloak
 
 * Assign **cluster** and **project** roles in Rancher for Keycloak users. Add all namespaces under the `default` project. Non-admin users can be granted the Read-Only role at the project level.
-* To create custom roles, follow the steps [here](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/docs/create-custom-role.md).
+* To create custom roles, follow the steps [here](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/docs/create-custom-role.md).
 * To add a member to a cluster or project in Rancher:
   * Navigate to RBAC cluster members.
   * Add the member name exactly as the `username` in Keycloak.
@@ -781,7 +781,7 @@ ssh -i ~/.ssh/nfs-ssh.pem ubuntu@<internal IP of NFS server>
 * Clone the `k8s-infra` repo on the NFS VM:
 
 ```bash
-git clone https://github.com/mosip/k8s-infra -b v1.2.1.3
+git clone https://github.com/mosip/k8s-infra -b v1.2.1.3-rc.1
 ```
 
 * Move to the NFS directory and run the install script:
@@ -881,7 +881,7 @@ host -t TXT _acme-challenge.sandbox.mosip.net
 
 * Press Enter in the `certbot` prompt to proceed.
 * Certificates are created in `/etc/letsencrypt/` and are valid for 3 months.
-* For certificate renewal, see the [wildcard SSL renewal guide](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/docs/wildcard-ssl-certs-letsencrypt.md#ssl-certificate-renewal).
+* For certificate renewal, see the [wildcard SSL renewal guide](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/docs/wildcard-ssl-certs-letsencrypt.md#ssl-certificate-renewal).
 
 #### 9.b. Nginx Server Setup for MOSIP K8s Cluster
 
@@ -1044,7 +1044,7 @@ cd $K8_ROOT/alerting/
 > * For production environments, alternative logging tools may be used.
 > * These steps can be skipped in development environments if logging is not needed.
 
-MOSIP uses [Rancher Fluentd](https://ranchermanager.docs.rancher.com/v2.0-v2.4/explanations/integrations-in-rancher/cluster-logging/fluentd) and Elasticsearch to collect logs from all services and display them in a Kibana dashboard.
+MOSIP uses [Rancher Logging](https://ranchermanager.docs.rancher.com/integrations-in-rancher/logging) and Elasticsearch to collect logs from all services and display them in a Kibana dashboard.
 
 * Install the Rancher FluentD system (required to scrape logs from all MOSIP microservices):
   * In Rancher UI, go to `Apps & Marketplaces` and install the Logging app.
@@ -1079,11 +1079,11 @@ cd $K8_ROOT/logging
 
 | Dashboard file                                                                                                             | Description                                                                                          |
 | -------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| [01-logstash.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/logging/dashboards/01-logstash.ndjson)               | Logstash index pattern required by all other dashboards                                              |
-| [02-error-only-logs.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/logging/dashboards/02-error-only-logs.ndjson) | Shows only error-level logs (`MOSIP Error Logs` dashboard)                                           |
-| [03-service-logs.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/logging/dashboards/03-service-logs.ndjson)       | Shows all logs for a specific service (`MOSIP Service Logs` dashboard)                               |
-| [04-insight.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/logging/dashboards/04-insight.ndjson)                 | Shows MOSIP process insights such as UINs generated and packets uploaded (`MOSIP Insight` dashboard) |
-| [05-response-time.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3/logging/dashboards/05-response-time.ndjson)     | Shows API response time trends across MOSIP services (`Response Time` dashboard)                     |
+| [01-logstash.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/logging/dashboards/01-logstash.ndjson)               | Logstash index pattern required by all other dashboards                                              |
+| [02-error-only-logs.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/logging/dashboards/02-error-only-logs.ndjson) | Shows only error-level logs (`MOSIP Error Logs` dashboard)                                           |
+| [03-service-logs.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/logging/dashboards/03-service-logs.ndjson)       | Shows all logs for a specific service (`MOSIP Service Logs` dashboard)                               |
+| [04-insight.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/logging/dashboards/04-insight.ndjson)                 | Shows MOSIP process insights such as UINs generated and packets uploaded (`MOSIP Insight` dashboard) |
+| [05-response-time.ndjson](https://github.com/mosip/k8s-infra/blob/v1.2.1.3-rc.1/logging/dashboards/05-response-time.ndjson)     | Shows API response time trends across MOSIP services (`Response Time` dashboard)                     |
 
 * Import dashboards:
 
