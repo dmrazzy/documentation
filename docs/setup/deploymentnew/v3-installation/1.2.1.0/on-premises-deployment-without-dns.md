@@ -1101,7 +1101,7 @@ cd $K8_ROOT/monitoring/alerting/
 > * For production environments, alternative logging tools can be used.
 > * These steps can also be skipped in development environments if logging is not needed.
 
-MOSIP uses [Rancher Fluentd](https://ranchermanager.docs.rancher.com/v2.0-v2.4/explanations/integrations-in-rancher/cluster-logging/fluentd) and elasticsearch to collect logs from all services and reflect the same in Kibana Dashboard.
+MOSIP uses [Rancher Logging](https://ranchermanager.docs.rancher.com/integrations-in-rancher/logging) and elasticsearch to collect logs from all services and reflect the same in Kibana Dashboard.
 
 * Install Rancher FluentD system : for scraping logs outs of all the microservices from MOSIP k8 cluster.
   * Install Logging from Apps and marketplace within the Rancher UI.

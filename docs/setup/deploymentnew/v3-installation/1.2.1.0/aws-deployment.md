@@ -161,7 +161,7 @@ Once the rancher cluster is ready we need ingress and storage class to be set fo
       cd $K8_ROOT/storage-class/ebs/
       kubectl apply -f gp2-sc-retain.yaml
       ```
-  * EBS driver installation for our storage class to work, follow the steps [here](https://www.stacksimplify.com/aws-eks/kubernetes-storage/install-aws-ebs-csi-driver-on-aws-eks-for-persistent-storage/) to setup EBS driver.
+  * EBS driver installation for our storage class to work, follow the steps [here](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) to setup EBS driver.
 
 ### 4. Domain name mapping
 
@@ -202,7 +202,7 @@ Once the rancher cluster is ready we need ingress and storage class to be set fo
   * `keycloak_client.json`: Used to create SAML client on Keycloak for Rancher integration.
 * **5.c. Keycloak - Rancher Integration**
   * Login as `admin` user in Keycloak and make sure an email id, and first name field is populated for `admin` user. This is important for Rancher authentication as given below.
-  * Enable authentication with Keycloak using the steps given [here](https://rancher.com/docs/rancher/v2.6/en/admin-settings/authentication/keycloak-saml/).
+  * Enable authentication with Keycloak using the steps given [here](https://ranchermanager.docs.rancher.com/how-to-guides/new-user-guides/authentication-permissions-and-global-configuration/authentication-config/configure-keycloak-saml).
   * In Keycloak add another Mapper for the rancher client (in Master realm) with following fields:
     * Protocol: saml
     * Name: username
@@ -215,8 +215,8 @@ Once the rancher cluster is ready we need ingress and storage class to be set fo
     * Display Name Field: givenName
     * User Name Field: email
     * UID Field: username
-    * Entity ID Field: [https://your-rancher-domain/v1-saml/keycloak/saml/metadata](https://your-rancher-domain/v1-saml/keycloak/saml/metadata)
-    * Rancher API Host: [https://your-rancher-domain](https://your-rancher-domain/)
+    * Entity ID Field: `https://your-rancher-domain/v1-saml/keycloak/saml/metadata`
+    * Rancher API Host: `https://your-rancher-domain/`
     * Groups Field: member
 * **RBAC :**
   * For users in Keycloak assign roles in Rancher - **cluster** and **project** roles. Under `default` project add all the namespaces. Then, to a non-admin user you may provide Read-Only role (under projects).
@@ -228,7 +228,7 @@ Once the rancher cluster is ready we need ingress and storage class to be set fo
 * **Certificates expiry**
   *   In case you see certificate expiry message while adding users, on **local** cluster run these commands:
 
-      [https://rancher.com/docs/rancher/v2.6/en/troubleshooting/expired-webhook-certificates/](https://rancher.com/docs/rancher/v2.6/en/troubleshooting/expired-webhook-certificates/)
+      [https://ranchermanager.docs.rancher.com/troubleshooting/other-troubleshooting-tips/expired-webhook-certificate-rotation](https://ranchermanager.docs.rancher.com/troubleshooting/other-troubleshooting-tips/expired-webhook-certificate-rotation)
 
 ### 6. MOSIP K8s Cluster setup
 
@@ -307,7 +307,7 @@ kubectl apply -f https://rancher.e2e.mosip.net/v3/import/pdmkx6b4xxtpcd699gzwdtt
       cd $K8_ROOT/storage-class/ebs/
       kubectl apply -f gp2-sc.yaml
       ```
-  * We need the EBS driver for our storage class to work, follow the steps [here](https://www.stacksimplify.com/aws-eks/kubernetes-storage/install-aws-ebs-csi-driver-on-aws-eks-for-persistent-storage/) to setup EBS driver.
+  * We need the EBS driver for our storage class to work, follow the steps [here](https://docs.aws.amazon.com/eks/latest/userguide/ebs-csi.html) to setup EBS driver.
   * Also we need EFS CSI driver for the regproc services, because EBS driver only supports RWO but we need RWX, follow these [steps](https://docs.aws.amazon.com/eks/latest/userguide/efs-csi.html) to setup EFS CSI driver.
 * **8.c. Ingress and load balancer (LB)** :
   * Ingress is not installed by default on EKS. We use Istio ingress gateway controller to allow traffic in the cluster. Two channels are created - public and internal. See [architecture](https://github.com/mosip/k8s-infra/blob/1.2.0.1-B1/README.md).
