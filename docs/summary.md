@@ -269,6 +269,7 @@
     * [V2 installation](setup/upgrade/v2-installer.md)
     * [Java 21 Migration Guide](setup/upgrade/java-21-migration-guide.md)
   * [Artifactory](setup/artifactory.md)
+  * [CookBook](setup/cookbook.md)
 * [Interoperability](interoperability/README.md)
   * [Integrations](interoperability/integrations/README.md)
     * [MOSIP - CRVS](interoperability/integrations/mosip-crvs-integration/README.md)
