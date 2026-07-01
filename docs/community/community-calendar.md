@@ -1,10 +1,5 @@
 ---
 hidden: true
-description: >-
-  This section enlists calendars pertinent to MOSIP's community engagements,
-  including meetings and events. Click on a specific calendar to view & track
-  activities based on your area of interest.
-icon: calendar-days
 ---
 
 # Community Calendars
