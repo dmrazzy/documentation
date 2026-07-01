@@ -1,4 +1,5 @@
 ---
+hidden: true
 description: >-
   This section enlists calendars pertinent to MOSIP's community engagements,
   including meetings and events. Click on a specific calendar to view & track
